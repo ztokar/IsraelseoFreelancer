@@ -99,7 +99,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   freelance: {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
-    title: 'Freelance SEO Services in Israel',
+    title: 'Freelance SEO Israel: Real Rankings. Real Leads. No Agency Markup',
     subtitle: 'US Market Focus',
     description: "Helping American businesses get more calls, leads, and sales using AI-optimized SEO systems. I offer premium US-standard work without the agency bloat.",
     ugcIntro: {
@@ -147,7 +147,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'consultant-seo',
     slug: 'seoconsulting',
-    title: 'SEO Consulting in Israel',
+    title: 'SEO Consulting: Stop Guessing. Get Your 90-Day Roadmap',
     subtitle: 'Strategic Planning',
     description: "High-level SEO consulting for businesses that need a roadmap, not just busy work.",
     ugcIntro: {
@@ -194,7 +194,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   b2b: {
     id: 'b2b-seo',
     slug: 'b2b-seo-company',
-    title: 'B2B SEO Company Israel',
+    title: 'B2B SEO Company Israel: From Invisible to +300% Google Sales',
     subtitle: 'Authority & Trust',
     description: "Helping B2B companies generate qualified leads through SEO, content, and digital PR.",
     ugcIntro: {
@@ -242,7 +242,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   content: {
     id: 'content-marketing',
     slug: 'content-marketing-for-seo',
-    title: 'Content Marketing for SEO in Israel',
+    title: 'Content Marketing for SEO: Rank Above the AI Spam (Real Strategy)',
     subtitle: 'Revenue-Driven Content',
     description: "Content that helps businesses get found by Google, ChatGPT, and high-intent customers.",
     ugcIntro: {
