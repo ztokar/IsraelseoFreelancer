@@ -6,7 +6,7 @@ import { ArrowUpRight, ShieldCheck, Star } from 'lucide-react';
 export const HomePage: React.FC = () => {
   
   useEffect(() => {
-    document.title = "Israel SEO Freelancer | Zechariah Tokar";
+    document.title = "Israel SEO Freelancer → Stop Being Invisible. Start Getting Found.";
   }, []);
 
   return (
