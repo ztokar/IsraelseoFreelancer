@@ -145,7 +145,7 @@ export const HomePage: React.FC = () => {
           {SERVICES_LIST.map((service) => (
             <NavLink 
               key={service.key}
-              to={`/${service.key}-seo`}
+              to={`/${service.slug}`}
               className="group relative bg-zinc-900/20 border border-zinc-800 p-10 hover:border-zinc-600 transition-all duration-500 overflow-hidden backdrop-blur-sm"
             >
               {/* Hover Glow */}

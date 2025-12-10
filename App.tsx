@@ -13,19 +13,19 @@ const App: React.FC = () => {
           <Route index element={<HomePage />} />
           
           <Route 
-            path="freelance-seo" 
+            path="freelance-seo-israel" 
             element={<ServicePage content={SERVICE_DATA.freelance} />} 
           />
           <Route 
-            path="consultant-seo" 
+            path="seoconsulting" 
             element={<ServicePage content={SERVICE_DATA.consultant} />} 
           />
           <Route 
-            path="b2b-seo" 
+            path="b2b-seo-company" 
             element={<ServicePage content={SERVICE_DATA.b2b} />} 
           />
           <Route 
-            path="content-marketing" 
+            path="content-marketing-for-seo" 
             element={<ServicePage content={SERVICE_DATA.content} />} 
           />
 

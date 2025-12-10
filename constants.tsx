@@ -10,10 +10,10 @@ export const SOCIAL_LINKS = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Freelance SEO', path: '/freelance-seo' },
-  { label: 'Consulting', path: '/consultant-seo' },
-  { label: 'B2B SEO', path: '/b2b-seo' },
-  { label: 'Content Marketing', path: '/content-marketing' },
+  { label: 'Freelance SEO', path: '/freelance-seo-israel' },
+  { label: 'Consulting', path: '/seoconsulting' },
+  { label: 'B2B SEO', path: '/b2b-seo-company' },
+  { label: 'Content Marketing', path: '/content-marketing-for-seo' },
 ];
 
 export const TOOLS_LIST = [
@@ -98,7 +98,8 @@ export const CASE_STUDIES: CaseStudy[] = [
 export const SERVICE_DATA: Record<string, ServiceContent> = {
   freelance: {
     id: 'freelance-seo',
-    title: 'Freelance SEO Specialist',
+    slug: 'freelance-seo-israel',
+    title: 'Freelance SEO Services in Israel',
     subtitle: 'US Market Focus',
     description: "Helping American businesses get more calls, leads, and sales using AI-optimized SEO systems. I offer premium US-standard work without the agency bloat.",
     ugcIntro: {
@@ -145,7 +146,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   },
   consultant: {
     id: 'consultant-seo',
-    title: 'SEO Consulting & Strategy',
+    slug: 'seoconsulting',
+    title: 'SEO Consulting in Israel',
     subtitle: 'Strategic Planning',
     description: "High-level SEO consulting for businesses that need a roadmap, not just busy work.",
     ugcIntro: {
@@ -191,7 +193,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   },
   b2b: {
     id: 'b2b-seo',
-    title: 'B2B SEO Strategy',
+    slug: 'b2b-seo-company',
+    title: 'B2B SEO Company Israel',
     subtitle: 'Authority & Trust',
     description: "Helping B2B companies generate qualified leads through SEO, content, and digital PR.",
     ugcIntro: {
@@ -238,7 +241,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   },
   content: {
     id: 'content-marketing',
-    title: 'Content Marketing for SEO',
+    slug: 'content-marketing-for-seo',
+    title: 'Content Marketing for SEO in Israel',
     subtitle: 'Revenue-Driven Content',
     description: "Content that helps businesses get found by Google, ChatGPT, and high-intent customers.",
     ugcIntro: {

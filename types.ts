@@ -16,6 +16,7 @@ export interface CaseStudy {
 
 export interface ServiceContent {
   id: string;
+  slug: string;
   title: string;
   subtitle: string;
   description: string;
