@@ -3,6 +3,7 @@ import { ServiceContent, CaseStudy } from '../types';
 import { SOCIAL_LINKS } from '../constants';
 import { Check, ArrowRight, TrendingUp, BarChart3, Target, HelpCircle, AlertCircle, Wrench, DollarSign } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { ServiceSchema, BreadcrumbSchema } from './Schema';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -70,8 +71,22 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
     document.title = `${content.title} | Zechariah Tokar`;
   }, [content]);
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://israelseofreelancer.com/' },
+    { name: content.title, url: `https://israelseofreelancer.com/${content.slug}` }
+  ];
+
   return (
     <div className="animate-fade-in">
+      {/* Schema Markup */}
+      <ServiceSchema
+        serviceName={content.title}
+        description={content.description}
+        priceRange={content.pricing.management}
+        url={`https://israelseofreelancer.com/${content.slug}`}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       {/* Hero Section */}
       <section className="relative py-32 md:py-40 px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">

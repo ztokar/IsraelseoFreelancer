@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { NAV_ITEMS, SOCIAL_LINKS } from '../constants';
 import { Menu, X } from 'lucide-react';
+import { OrganizationSchema, WebSiteSchema } from './Schema';
 
 export const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,11 @@ export const Layout: React.FC = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-brand-dark font-sans text-zinc-300 selection:bg-brand-green selection:text-white flex flex-col relative overflow-x-hidden">
-      
+
+      {/* Schema Markup */}
+      <OrganizationSchema />
+      <WebSiteSchema />
+
       {/* Interactive Background Ambience */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Static Grid */}
