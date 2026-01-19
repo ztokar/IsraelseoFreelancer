@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export interface ResultItem {
   label: string;
   value: string;
@@ -9,9 +7,11 @@ export interface CaseStudy {
   client: string;
   metric: string;
   context: string;
+  industry?: string;
+  market?: string;
   description: string;
-  icon?: ReactNode;
-  graphData?: any[]; // For the simulated GSC chart
+  icon?: string;
+  graphData?: any[];
 }
 
 export interface ServiceContent {
@@ -19,7 +19,11 @@ export interface ServiceContent {
   slug: string;
   title: string;
   subtitle: string;
+  heroColor?: 'primary' | 'secondary' | 'ice';
   description: string;
+  entityDefinition?: string;
+  marketFit?: string;
+  industries?: string[];
   ugcIntro: {
     what: string;
     why: string;
