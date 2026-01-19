@@ -17,41 +17,41 @@ const GSCVisual: React.FC<{ data: any[]; clientName: string }> = ({
   data,
   clientName,
 }) => (
-  <div className="bg-surface-card border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group">
+  <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-lg relative overflow-hidden group">
     {/* Fake Browser Top Bar */}
-    <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-3">
-      <div className="w-3 h-3 rounded-full bg-red-500/50" />
-      <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-      <div className="w-3 h-3 rounded-full bg-green-500/50" />
-      <div className="ml-4 text-xs text-gray-500 font-mono">
+    <div className="flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
+      <div className="w-3 h-3 rounded-full bg-red-400" />
+      <div className="w-3 h-3 rounded-full bg-yellow-400" />
+      <div className="w-3 h-3 rounded-full bg-green-400" />
+      <div className="ml-4 text-xs text-slate-400 font-mono">
         search.google.com/search-console
       </div>
     </div>
 
     <div className="flex justify-between items-center mb-4">
       <div>
-        <div className="text-xs text-gray-400">Performance on Search results</div>
-        <div className="text-sm font-bold text-white">{clientName}</div>
+        <div className="text-xs text-slate-500">Performance on Search results</div>
+        <div className="text-sm font-bold text-slate-900">{clientName}</div>
       </div>
-      <div className="text-primary text-xs font-mono animate-pulse flex items-center gap-1">
-        <span className="w-2 h-2 rounded-full bg-primary" />
+      <div className="text-primary text-xs font-mono flex items-center gap-1">
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         Live Data
       </div>
     </div>
 
     {/* GSC Metric Boxes */}
     <div className="flex gap-4 mb-6">
-      <div className="bg-bg-dark/50 p-3 rounded-lg w-1/2 border-l-4 border-secondary">
-        <div className="text-[10px] text-gray-400 uppercase tracking-wide">
+      <div className="bg-slate-50 p-3 rounded-lg w-1/2 border-l-4 border-secondary">
+        <div className="text-[10px] text-slate-500 uppercase tracking-wide">
           Total Clicks
         </div>
-        <div className="text-xl font-bold text-white">2.45K</div>
+        <div className="text-xl font-bold text-slate-900">2.45K</div>
       </div>
-      <div className="bg-bg-dark/50 p-3 rounded-lg w-1/2 border-l-4 border-primary">
-        <div className="text-[10px] text-gray-400 uppercase tracking-wide">
+      <div className="bg-slate-50 p-3 rounded-lg w-1/2 border-l-4 border-primary">
+        <div className="text-[10px] text-slate-500 uppercase tracking-wide">
           Total Impressions
         </div>
-        <div className="text-xl font-bold text-white">85.2K</div>
+        <div className="text-xl font-bold text-slate-900">85.2K</div>
       </div>
     </div>
 
@@ -61,24 +61,24 @@ const GSCVisual: React.FC<{ data: any[]; clientName: string }> = ({
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorImpressions" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#00E072" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#00E072" stopOpacity={0} />
+              <stop offset="5%" stopColor="#059669" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#059669" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="colorClicks" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#22D3EE" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#22D3EE" stopOpacity={0} />
+              <stop offset="5%" stopColor="#0891B2" stopOpacity={0.2} />
+              <stop offset="95%" stopColor="#0891B2" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid
             strokeDasharray="3 3"
-            stroke="#1a1a1a"
+            stroke="#e2e8f0"
             vertical={false}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: '#010804',
-              borderColor: '#1a1a1a',
-              color: '#fff',
+              backgroundColor: '#fff',
+              borderColor: '#e2e8f0',
+              color: '#1e293b',
               borderRadius: '8px',
             }}
             itemStyle={{ fontSize: '12px' }}
@@ -86,14 +86,14 @@ const GSCVisual: React.FC<{ data: any[]; clientName: string }> = ({
           <Area
             type="monotone"
             dataKey="clicks"
-            stroke="#22D3EE"
+            stroke="#0891B2"
             strokeWidth={2}
             fill="url(#colorClicks)"
           />
           <Area
             type="monotone"
             dataKey="impressions"
-            stroke="#00E072"
+            stroke="#059669"
             strokeWidth={2}
             fill="url(#colorImpressions)"
           />
@@ -112,34 +112,17 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
     content.heroColor === 'secondary'
       ? 'secondary'
       : content.heroColor === 'ice'
-      ? 'ice'
+      ? 'secondary'
       : 'primary';
 
   return (
     <div className="animate-fade-in-up">
       {/* Hero Section */}
-      <header className="relative py-32 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden perspective-container">
-        {/* Chess Floor */}
-        <div className="chess-floor opacity-20" />
-
-        {/* Ambient Glows */}
-        <div
-          className={`absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-${colorClass}/10 rounded-full blur-[120px] animate-pulse`}
-        />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
-
-        {/* Floating Chess Pieces */}
-        <div className="absolute top-[20%] left-[5%] animate-float-slow z-0 opacity-15 hidden lg:block">
-          <div className="chess-piece transform rotate-[-10deg] scale-50">♗</div>
-        </div>
-        <div className="absolute bottom-[25%] right-[5%] animate-float z-0 opacity-20 hidden lg:block">
-          <div className="chess-piece green transform rotate-[5deg] scale-60">♖</div>
-        </div>
-
+      <header className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           {/* Badge */}
           <div
-            className={`inline-flex items-center gap-2 px-6 py-2 mb-10 rounded-full border border-${colorClass}/20 bg-surface-dark/50 backdrop-blur-md shadow-[0_0_20px_rgba(0,224,114,0.1)]`}
+            className={`inline-flex items-center gap-2 px-6 py-2.5 mb-10 rounded-full border border-${colorClass}/20 bg-white shadow-sm`}
           >
             <span className="relative flex h-2 w-2">
               <span
@@ -150,27 +133,27 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               />
             </span>
             <span
-              className={`text-xs font-bold uppercase tracking-[0.2em] text-${colorClass}`}
+              className={`text-sm font-semibold text-${colorClass}`}
             >
               {content.subtitle}
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8 tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
             {content.title.split('.').map((part, idx) => (
               <span key={idx}>
                 {idx === 0 ? (
-                  <span className={`text-${colorClass} text-glow`}>{part}.</span>
+                  <span className={`text-${colorClass}`}>{part}.</span>
                 ) : (
-                  <span className="block mt-2 text-white">{part}</span>
+                  <span className="block mt-2 text-slate-700">{part}</span>
                 )}
               </span>
             ))}
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             {content.description}
           </p>
 
@@ -180,7 +163,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               {content.industries.map((industry, idx) => (
                 <span
                   key={idx}
-                  className={`px-4 py-2 rounded-full border border-${colorClass}/20 bg-surface-dark/50 text-sm text-gray-300 font-medium`}
+                  className={`px-4 py-2 rounded-full border border-slate-200 bg-white text-sm text-slate-600 font-medium`}
                 >
                   {industry}
                 </span>
@@ -192,7 +175,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center">
             <a
               href="#audit"
-              className="group bg-white text-bg-dark px-10 py-4 font-bold flex items-center justify-center gap-2 hover:bg-primary transition-all duration-300 rounded-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(0,224,114,0.4)] hover:-translate-y-1"
+              className="group bg-primary text-white px-10 py-4 font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Get Free Audit
               <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
@@ -203,7 +186,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               href={SOCIAL_LINKS.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-10 py-4 font-medium border border-${colorClass}/30 text-white rounded-lg hover:bg-${colorClass}/10 transition-all`}
+              className={`px-10 py-4 font-semibold border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-100 transition-all`}
             >
               Book Strategy Call
             </a>
@@ -212,7 +195,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       </header>
 
       {/* What/Why/How Section */}
-      <section className="py-24 bg-surface-dark/50 border-y border-white/5">
+      <section className="py-20 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
           {[
             {
@@ -234,24 +217,23 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             <div key={idx} className="scroll-trigger" style={{ transitionDelay: `${idx * 100}ms` }}>
               <div className={`flex items-center gap-2 mb-4 text-${colorClass}`}>
                 <span className="material-symbols-outlined">{item.icon}</span>
-                <h3 className="font-bold text-white">{item.title}</h3>
+                <h3 className="font-bold text-slate-900">{item.title}</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{item.text}</p>
+              <p className="text-slate-600 leading-relaxed text-lg">{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Social Proof & GSC Visuals */}
-      <section className="py-24 bg-bg-dark relative">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <section className="py-20 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mb-12 scroll-trigger">
-            <span className={`text-${colorClass} font-bold text-sm uppercase tracking-widest mb-3 block`}>
-              Proof of Work
+            <span className={`text-${colorClass} font-bold text-sm uppercase tracking-wide mb-3 block`}>
+              Client Results
             </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
-              Real clients, real graphs. No photoshop.
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
+              Real results. Real data.
             </h2>
           </div>
 
@@ -259,29 +241,29 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             {/* Left: Text & Metrics */}
             <div className="scroll-trigger">
               <div
-                className={`inline-block bg-${colorClass}/10 text-${colorClass} px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-6`}
+                className={`inline-block bg-${colorClass}/10 text-${colorClass} px-4 py-1.5 rounded-full text-sm font-semibold mb-6`}
               >
                 Case Study: {content.caseStudyHighlight.client}
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 {content.caseStudyHighlight.metric}{' '}
-                <span className="text-gray-400 font-normal text-2xl">
+                <span className="text-slate-500 font-normal text-2xl">
                   {content.caseStudyHighlight.context}
                 </span>
               </h3>
-              <p className="text-gray-400 mb-8 text-lg leading-relaxed">
+              <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                 {content.caseStudyHighlight.description}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {content.results.slice(0, 2).map((r, i) => (
                   <div
                     key={i}
-                    className="bg-surface-card/50 p-5 border border-white/5 rounded-xl"
+                    className="bg-white p-5 border border-slate-200 rounded-xl shadow-sm"
                   >
-                    <div className="text-gray-500 text-xs font-bold uppercase mb-1">
+                    <div className="text-slate-500 text-sm font-semibold uppercase mb-1">
                       {r.label}
                     </div>
-                    <div className="text-2xl font-bold text-white">{r.value}</div>
+                    <div className="text-2xl font-bold text-slate-900">{r.value}</div>
                   </div>
                 ))}
               </div>
@@ -299,12 +281,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       </section>
 
       {/* Process & Tools */}
-      <section className="py-24 bg-surface-dark/30 border-y border-white/5">
+      <section className="py-20 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             {/* Process Timeline */}
             <div className="scroll-trigger">
-              <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                 <span className={`material-symbols-outlined text-${colorClass}`}>
                   flag
                 </span>
@@ -317,9 +299,9 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 {content.process.steps.map((step, i) => (
                   <div key={i} className="relative pl-8 group">
                     <div
-                      className={`absolute left-0 top-1.5 w-4 h-4 bg-surface-dark border-2 border-${colorClass} rounded-full z-10 group-hover:bg-${colorClass} transition-colors`}
+                      className={`absolute left-0 top-1.5 w-4 h-4 bg-white border-2 border-${colorClass} rounded-full z-10 group-hover:bg-${colorClass} transition-colors`}
                     />
-                    <p className="text-gray-300 text-base group-hover:text-white transition-colors">
+                    <p className="text-slate-600 text-base group-hover:text-slate-900 transition-colors">
                       {step}
                     </p>
                   </div>
@@ -331,8 +313,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             <div className="space-y-10">
               {/* Tools */}
               <div className="scroll-trigger" style={{ transitionDelay: '100ms' }}>
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-gray-500">
+                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-slate-400">
                     build
                   </span>
                   My Stack
@@ -341,7 +323,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                   {content.tools.map((tool, i) => (
                     <span
                       key={i}
-                      className="bg-surface-card border border-white/5 px-4 py-2 text-sm text-gray-400 rounded-full hover:border-primary/30 hover:text-white transition-colors"
+                      className="bg-slate-100 border border-slate-200 px-4 py-2 text-sm text-slate-600 rounded-full hover:border-primary/50 hover:text-slate-900 transition-colors"
                     >
                       {tool}
                     </span>
@@ -351,7 +333,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
 
               {/* Pricing Card */}
               <div
-                className="scroll-trigger bg-gradient-to-br from-surface-card to-bg-dark border border-white/10 p-8 rounded-2xl relative overflow-hidden"
+                className="scroll-trigger bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden"
                 style={{ transitionDelay: '200ms' }}
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -359,21 +341,21 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                     payments
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-6">Investment</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-6">Investment</h3>
 
-                <div className="flex justify-between items-center mb-4 pb-4 border-b border-white/5">
-                  <span className="text-gray-400">Deep Dive Audit</span>
+                <div className="flex justify-between items-center mb-4 pb-4 border-b border-slate-100">
+                  <span className="text-slate-600">Deep Dive Audit</span>
                   <span className="text-primary font-bold text-xl">
                     {content.pricing.audit}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Monthly Management</span>
-                  <span className="text-white font-bold text-lg">
+                  <span className="text-slate-600">Monthly Management</span>
+                  <span className="text-slate-900 font-bold text-lg">
                     {content.pricing.management}
                   </span>
                 </div>
-                <p className="text-xs text-gray-600 mt-6 italic">
+                <p className="text-sm text-slate-400 mt-6 italic">
                   *Pricing depends on site size & competition level.
                 </p>
               </div>
@@ -383,13 +365,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       </section>
 
       {/* Why Me Section */}
-      <section className="py-24 bg-bg-dark">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 scroll-trigger">
-            <span className={`text-${colorClass} font-bold text-sm uppercase tracking-widest mb-3 block`}>
+            <span className={`text-${colorClass} font-bold text-sm uppercase tracking-wide mb-3 block`}>
               Why Work With Me
             </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
               No agency bloat. Just results.
             </h2>
           </div>
@@ -398,15 +380,15 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             {content.whyMe.map((reason, idx) => (
               <div
                 key={idx}
-                className="scroll-trigger flex items-start gap-4 bg-surface-card/50 border border-white/5 p-6 rounded-xl hover:border-primary/30 transition-colors group"
+                className="scroll-trigger flex items-start gap-4 bg-white border border-slate-200 p-6 rounded-xl hover:border-primary/50 hover:shadow-lg transition-all group"
                 style={{ transitionDelay: `${idx * 50}ms` }}
               >
                 <span
-                  className={`flex items-center justify-center w-8 h-8 rounded-full bg-${colorClass}/20 text-${colorClass} flex-shrink-0`}
+                  className={`flex items-center justify-center w-8 h-8 rounded-full bg-${colorClass}/10 text-${colorClass} flex-shrink-0`}
                 >
                   <span className="material-symbols-outlined text-lg">check</span>
                 </span>
-                <p className="text-gray-300 group-hover:text-white transition-colors">
+                <p className="text-slate-600 group-hover:text-slate-900 transition-colors text-base">
                   {reason}
                 </p>
               </div>
@@ -418,37 +400,26 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       {/* CTA Section */}
       <section
         id="audit"
-        className="py-32 bg-black relative overflow-hidden"
+        className="py-24 bg-slate-900 relative overflow-hidden"
       >
-        <div className="absolute inset-0">
-          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/10 blur-[120px] rounded-full" />
-        </div>
-
-        {/* Floating Chess Piece */}
-        <div className="absolute top-[10%] right-[10%] opacity-15 pointer-events-none animate-float-slow hidden md:block">
-          <div className="chess-piece ice transform rotate-[15deg] scale-50">♕</div>
-        </div>
-
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 scroll-trigger">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
               Ready to{' '}
-              <span className="gradient-text-emerald">checkmate?</span>
+              <span className="text-primary">get started?</span>
             </h2>
-            <p className="text-xl text-gray-400 font-light max-w-xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-xl mx-auto">
               {content.cta}
             </p>
           </div>
 
-          <div className="bg-surface-card border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden backdrop-blur-md">
-            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${colorClass} to-transparent opacity-50`} />
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
             <div className="relative z-10">
-              <div className="text-center mb-10">
-                <p className={`text-${colorClass} font-bold text-xs tracking-[0.25em] uppercase mb-4`}>
+              <div className="text-center mb-8">
+                <p className={`text-${colorClass} font-semibold text-sm uppercase tracking-wide mb-2`}>
                   Request Strategy Call
                 </p>
-                <div className="h-px w-20 bg-white/20 mx-auto" />
+                <div className="h-px w-20 bg-slate-200 mx-auto" />
               </div>
 
               <form
@@ -464,13 +435,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="group">
                     <label
-                      className={`block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 group-focus-within:text-${colorClass} transition-colors`}
+                      className={`block text-sm font-semibold text-slate-700 mb-2`}
                       htmlFor="url"
                     >
                       Website URL
                     </label>
                     <input
-                      className={`w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:ring-1 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-gray-700`}
+                      className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
                       id="url"
                       name="website"
                       placeholder="mysite.com"
@@ -480,13 +451,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                   </div>
                   <div className="group">
                     <label
-                      className={`block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 group-focus-within:text-${colorClass} transition-colors`}
+                      className={`block text-sm font-semibold text-slate-700 mb-2`}
                       htmlFor="email"
                     >
                       Business Email
                     </label>
                     <input
-                      className={`w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:ring-1 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-gray-700`}
+                      className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
                       id="email"
                       name="email"
                       placeholder="you@company.com"
@@ -497,30 +468,29 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 </div>
                 <div className="group">
                   <label
-                    className={`block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 group-focus-within:text-${colorClass} transition-colors`}
+                    className={`block text-sm font-semibold text-slate-700 mb-2`}
                     htmlFor="message"
                   >
                     Biggest Challenge
                   </label>
                   <textarea
-                    className={`w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:ring-1 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-gray-700 h-28 resize-none`}
+                    className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 h-28 resize-none text-base`}
                     id="message"
                     name="message"
                     placeholder="What's your biggest SEO challenge right now?"
                   />
                 </div>
                 <button
-                  className="w-full bg-white text-bg-dark font-bold text-lg py-5 rounded-xl hover:bg-primary transition-all border border-transparent shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(0,224,114,0.4)] transform hover:-translate-y-1 active:translate-y-0 relative overflow-hidden group"
+                  className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   type="submit"
                 >
-                  <span className="relative z-10">Get Free Audit & Consult</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  Get Free Audit & Consult
                 </button>
-                <p className="text-center text-xs text-gray-500 mt-6">
+                <p className="text-center text-sm text-slate-500 mt-4">
                   Or{' '}
                   <a
                     href={SOCIAL_LINKS.calendly}
-                    className={`text-${colorClass} underline hover:no-underline`}
+                    className={`text-${colorClass} underline hover:no-underline font-medium`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

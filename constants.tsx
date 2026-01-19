@@ -58,7 +58,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: "Increase in Google Sales",
     industry: "E-COMMERCE",
     market: "United States",
-    description: "This campaign targeted competitive US eCommerce search terms. I optimized collection pages for Lucite shtenders and ran targeted Google Shopping campaigns during Purim and Pesach. The result? A 3x jump in revenue from organic search alone.",
+    description: "Optimized collection pages for Lucite shtenders + targeted Google Shopping during Purim and Pesach. Result: 3x revenue from organic search alone.",
     icon: "trending_up",
     graphData: DATA_ECOMMERCE
   },
@@ -68,7 +68,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: "Midwood Brooklyn Real Estate",
     industry: "REAL ESTATE",
     market: "United States",
-    description: "This campaign targeted competitive US real estate search terms. Outranked Zillow and Compass for 'Midwood real estate agents' through hyper-local content silos and strategic entity stacking. They now own the local pack.",
+    description: "Outranked Zillow and Compass for 'Midwood real estate agents' using hyper-local content silos. They now own the local pack.",
     icon: "emoji_events",
     graphData: DATA_LOCAL
   },
@@ -78,7 +78,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: "Micro Weddings Montana",
     industry: "HOSPITALITY",
     market: "United States",
-    description: "This campaign demonstrates bottom-of-funnel SEO for high-intent lead generation. Found the 'micro wedding' keyword gap everyone else missed. Zero ad spend required. The site now generates consistent monthly bookings purely from organic search.",
+    description: "Found the 'micro wedding' keyword gap competitors missed. Zero ad spend. Consistent monthly bookings from organic search.",
     icon: "groups",
     graphData: DATA_B2B
   },
@@ -88,7 +88,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: "Luxury E-commerce",
     industry: "LUXURY",
     market: "United States",
-    description: "This campaign targeted competitive US luxury eCommerce terms. Applied advanced schema markup and 'People Also Ask' optimization to capture rich snippets, resulting in immediate visibility jumps for competitive luxury terms.",
+    description: "Advanced schema markup + 'People Also Ask' optimization. Captured rich snippets for competitive luxury terms.",
     icon: "diamond",
     graphData: DATA_ECOMMERCE
   },
@@ -98,7 +98,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: "Eating Disorder Therapy NJ",
     industry: "HEALTHCARE",
     market: "United States",
-    description: "This campaign targeted competitive US healthcare search terms. Built content around specific search intents: therapy specializations, insurance questions, first session fears. Result: Top 3 in local map pack, fully booked practice.",
+    description: "Built content around therapy specializations, insurance questions, first session fears. Top 3 in local map pack, fully booked.",
     icon: "psychology",
     graphData: DATA_LOCAL
   }
@@ -111,14 +111,14 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     title: 'Dominate Search with Freelance SEO. Crushing Results in the Era of AI.',
     subtitle: 'Freelance SEO Consultant',
     heroColor: 'primary',
-    description: "Freelance SEO is a hands-on search engine optimization service for US and international companies, delivered directly by an English-native consultant based in Israel. Strategy, execution, and accountability are handled by a senior SEO consultant, not a rotating agency team.",
-    entityDefinition: "As a freelance SEO consultant, I personally execute every aspect of your campaign. No outsourcing, no junior team members, no account manager telephone games. You get direct access to senior-level strategy and execution.",
-    marketFit: "I work with US and international companies in local services, B2B, SaaS, and eCommerce that need SEO strategy tied directly to revenue.",
+    description: "Hands-on SEO for US and international companies. Strategy and execution by a senior consultant, not a rotating agency team.",
+    entityDefinition: "I personally execute every aspect of your campaign. No outsourcing, no junior team members. Direct access to senior-level strategy.",
+    marketFit: "US and international companies in local services, B2B, SaaS, and eCommerce that need SEO tied to revenue.",
     industries: ["Local Services", "B2B", "SaaS", "eCommerce"],
     ugcIntro: {
-      what: "Freelance SEO means hands-on search engine optimization focused on rankings, traffic, and conversions. Executed directly by a senior SEO consultant instead of an agency team. I fix your site so Google actually likes it.",
-      why: "If you aren't on page 1 for what you sell, you basically don't exist. Paid ads get expensive fast. SEO is an asset that pays you back forever.",
-      how: "I analyze what your top competitors are doing, find the gaps they missed (specific product collections, local intent angles, question-based content), and build pages that fill those gaps better than anyone else."
+      what: "Hands-on SEO focused on rankings, traffic, and conversions. Executed by a senior consultant, not an agency team. I fix your site so Google actually likes it.",
+      why: "Not on page 1? You don't exist. Paid ads get expensive. SEO pays you back forever.",
+      how: "I find gaps your competitors missed—product collections, local intent, question-based content—and build pages that fill them better."
     },
     results: [
       { label: 'Ecommerce Revenue (30 Days)', value: '+$9,000' },
@@ -155,7 +155,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Proven US market results: NY real estate, Montana hospitality, nationwide e-commerce',
       'You pay for results: Not hours, not "strategy sessions," actual ranking improvements'
     ],
-    cta: 'If you want your website to start driving real leads from the US market instead of sitting there invisible, let\'s see if we\'re a fit.'
+    cta: 'Ready to stop being invisible and start driving real leads? Let\'s see if we\'re a fit.'
   },
   consultant: {
     id: 'consultant-seo',
@@ -163,14 +163,14 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     title: 'Crush Competitors. Dominate Search.',
     subtitle: 'SEO Consulting Services',
     heroColor: 'secondary',
-    description: "SEO consulting is expert-level strategy and direction for US and international companies, delivered by an English-native consultant based in Israel. I help in-house teams and founders understand exactly what to do, and in what order, to grow organic traffic. You keep full control while getting senior-level guidance.",
-    entityDefinition: "SEO consulting differs from full-service SEO: I provide the strategy, audits, and roadmap while you or your team handles execution. Ideal for businesses with some marketing capacity who need expert direction, not another agency retainer.",
-    marketFit: "I work primarily with US and international companies that want senior-level SEO strategy without agency overhead.",
+    description: "Expert SEO strategy for US and international companies. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
+    entityDefinition: "I provide strategy, audits, and roadmap—you handle execution. Expert direction without agency retainers.",
+    marketFit: "US and international companies that want senior SEO strategy without agency overhead.",
     industries: ["In-house Teams", "Startups", "Founders", "Marketing Agencies"],
     ugcIntro: {
-      what: "SEO consulting means expert-level strategy and audits without the overhead of full execution. I tell you exactly what to do to grow organically, without you needing to hire a full-time SEO person or pay agency retainers. You leave with a clear execution plan, prioritized keyword targets, and a roadmap your team can actually implement.",
-      why: "Most marketing teams are just guessing. You need a strategy based on competitor data and search behavior, not gut feelings or whatever worked in 2019.",
-      how: "We jump on a call. I tear apart your current strategy (nicely). Then I deliver a 90-day roadmap using Moz, manual competitor research, and GSC data to find your quickest wins and biggest opportunities."
+      what: "Expert strategy without full execution overhead. Clear plan, prioritized keywords, actionable roadmap your team can implement.",
+      why: "Most teams are guessing. You need strategy based on competitor data, not gut feelings or 2019 tactics.",
+      how: "Call → I tear apart your current strategy → 90-day roadmap with quickest wins and biggest opportunities."
     },
     results: [
       { label: 'Real Estate Visibility', value: 'Top Rank' },
@@ -206,7 +206,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Strategies tested on real businesses: Retail, therapy practices, real estate teams',
       'Avoid expensive mistakes: That slow growth or get you penalized'
     ],
-    cta: 'If you want an SEO strategist who explains the "why" behind every action and gives you a clear plan you can actually follow, I can help.'
+    cta: 'Want clear SEO strategy your team can actually execute? Let\'s talk.'
   },
   b2b: {
     id: 'b2b-seo',
@@ -214,14 +214,14 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     title: 'Dominating Google. Crushing Expectations.',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
-    description: "B2B SEO services for US and international companies, delivered by an English-native consultant based in Israel. I help B2B companies generate qualified inbound leads through search, not traffic vanity metrics. Longer sales cycles and high-value contracts mean every ranking matters.",
-    entityDefinition: "B2B SEO targets the keywords decision-makers search when they're actively evaluating solutions. This means pricing pages, comparison content, use case pages, and industry-specific landing pages. Not fluffy thought leadership that never converts.",
-    marketFit: "I work with US and international B2B companies, SaaS platforms, and professional services firms that need qualified leads, not just traffic.",
+    description: "B2B SEO for qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
+    entityDefinition: "Target keywords decision-makers search when evaluating solutions. Pricing pages, comparisons, use cases—not fluffy thought leadership.",
+    marketFit: "US and international B2B companies, SaaS, and professional services that need qualified leads.",
     industries: ["SaaS", "Professional Services", "Manufacturing", "B2B Tech"],
     ugcIntro: {
-      what: "B2B SEO means getting you in front of decision makers when they're actually looking for a solution. Not when they're scrolling LinkedIn half-asleep. I focus on bottom-of-funnel content: landing pages, solution pages, and comparison content.",
-      why: "B2B buyers research heavily before reaching out. If you aren't the authority they find during that research phase, your competitor is. And they'll get the meeting, not you.",
-      how: "I create content that answers the hard questions: pricing pages, comparison articles, 'vs' posts, detailed use cases. Internal linking and page hierarchy funnel authority toward revenue-driving pages. Then I use Featured.com and targeted PR to build backlinks that signal authority to Google."
+      what: "Get in front of decision makers when they're looking for solutions. Bottom-of-funnel content: landing pages, solution pages, comparison content.",
+      why: "B2B buyers research before reaching out. If you aren't the authority they find, your competitor gets the meeting.",
+      how: "Pricing pages, comparison articles, 'vs' posts, use cases. Authority links via Featured.com and targeted PR."
     },
     results: [
       { label: 'SaaS Google Sales', value: '+300%' },
@@ -258,7 +258,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Experience with complex B2B verticals: SaaS, professional services, manufacturing',
       'Optimized for Google AND AI search: Future-proofing your visibility'
     ],
-    cta: 'If your B2B site isn\'t generating qualified leads, the problem isn\'t your industry. It\'s your SEO strategy. Let\'s fix that.'
+    cta: 'Not getting qualified B2B leads? It\'s not your industry—it\'s your SEO. Let\'s fix that.'
   },
   content: {
     id: 'content-marketing',
@@ -266,14 +266,14 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     title: 'Crushing Google\'s Algorithm',
     subtitle: 'Content Marketing for SEO',
     heroColor: 'ice',
-    description: "Content marketing for SEO services for US and international businesses competing in English-language search markets. Delivered by an English-native consultant based in Israel. This isn't blogging. It's building the information architecture that establishes your authority and converts visitors into qualified leads.",
-    entityDefinition: "SEO content includes landing pages, guides, comparison content, and topical clusters designed to rank, earn links, and convert. Not blog posts written for volume. Content marketing for SEO means creating content as infrastructure: service pages, location pages, comparison content, FAQ resources, and strategic blog posts that support your core offerings.",
-    marketFit: "I work with US and international companies that need content-driven organic growth. Not content calendars filled with fluff that never ranks or converts.",
+    description: "Content that ranks and converts. Not blogging—information architecture that establishes authority and drives qualified leads.",
+    entityDefinition: "Landing pages, guides, comparisons, topical clusters designed to rank, earn links, and convert. Content as infrastructure.",
+    marketFit: "US and international companies that need content-driven organic growth, not fluff that never ranks.",
     industries: ["eCommerce", "Local Services", "SaaS", "Professional Services"],
     ugcIntro: {
-      what: "SEO content means strategic pages targeting specific queries with conversion intent. Writing stuff that actually ranks and sells. Not content for content's sake.",
-      why: "AI content is flooding the web. Every competitor can pump out 50 blog posts a week now. The only way to stand out is human expertise, original insights, and content that genuinely helps searchers. Google rewards helpfulness.",
-      how: "I use Reddit, Quora, and industry forums to see what people actually ask. Not what keyword tools say they ask. Then I write the best answer on the internet for that question. First-hand experience, specific examples, actionable advice."
+      what: "Strategic pages targeting queries with conversion intent. Content that ranks and sells.",
+      why: "AI content is flooding the web. Stand out with human expertise, original insights, and genuine helpfulness.",
+      how: "Reddit, Quora, forums → find real questions → write the best answer on the internet."
     },
     results: [
       { label: 'Impressions to Clicks', value: '+244 Clicks' },
@@ -310,7 +310,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Focused on questions US customers actually ask: Real research, not assumptions',
       'Designed to build authority and trust: E-E-A-T optimization built in'
     ],
-    cta: 'If you want content that ranks and brings in leads (not filler articles that collect dust), this is exactly what I build.'
+    cta: 'Want content that ranks and converts—not filler that collects dust? This is what I build.'
   }
 };
 

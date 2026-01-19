@@ -55,22 +55,21 @@ export const Layout: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-bg-dark font-sans text-zinc-100 selection:bg-primary/30 selection:text-white flex flex-col relative overflow-x-hidden"
+      className="min-h-screen bg-bg-dark font-sans text-slate-800 selection:bg-primary/20 selection:text-slate-900 flex flex-col relative overflow-x-hidden"
     >
-      {/* Interactive Background */}
+      {/* Interactive Background - subtle for light theme */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Mouse Spotlight */}
         <div
           className="absolute inset-0 transition-opacity duration-500"
           style={{
-            background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(0, 224, 114, 0.04), transparent 40%)`,
+            background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(5, 150, 105, 0.03), transparent 40%)`,
           }}
         />
 
-        {/* Ambient Glows */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px] translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-[200px]" />
+        {/* Ambient Glows - very subtle for light theme */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/[0.02] rounded-full blur-[150px] translate-x-1/2 translate-y-1/2" />
       </div>
 
       {/* Navbar */}
@@ -86,13 +85,13 @@ export const Layout: React.FC = () => {
               to="/"
               className="flex items-center gap-3 group cursor-pointer"
             >
-              <div className="relative w-10 h-10 flex items-center justify-center bg-transparent group-hover:bg-white/5 rounded-lg transition-colors">
+              <div className="relative w-10 h-10 flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 rounded-lg transition-colors">
                 <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">
                   north_east
                 </span>
               </div>
               <div>
-                <span className="font-sans font-bold text-lg tracking-tight text-white block">
+                <span className="font-sans font-bold text-lg tracking-tight text-slate-900 block">
                   Zechariah Tokar
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-secondary group-hover:text-primary transition-colors">
@@ -108,8 +107,8 @@ export const Layout: React.FC = () => {
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-all hover:text-white hover:scale-105 ${
-                      isActive ? 'text-white' : 'text-gray-400'
+                    `text-base font-medium transition-all hover:text-primary hover:scale-105 ${
+                      isActive ? 'text-primary' : 'text-slate-600'
                     }`
                   }
                 >
@@ -118,18 +117,17 @@ export const Layout: React.FC = () => {
               ))}
               <a
                 href="#audit"
-                className="relative overflow-hidden group border border-primary/40 bg-primary/10 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/20 transition-all shadow-[0_0_15px_rgba(0,224,114,0.1)] hover:shadow-[0_0_25px_rgba(0,224,114,0.3)]"
+                className="relative overflow-hidden group bg-primary px-6 py-2.5 rounded-full text-base font-semibold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
               >
-                <span className="relative z-10 text-primary group-hover:text-white transition-colors">
+                <span className="relative z-10 text-white">
                   Get Free Audit
                 </span>
-                <div className="absolute inset-0 h-full w-full bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
               </a>
             </div>
 
             {/* Mobile Toggle */}
             <button
-              className="md:hidden text-white p-2"
+              className="md:hidden text-slate-700 p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="material-symbols-outlined text-2xl">
@@ -141,14 +139,14 @@ export const Layout: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-white/5 p-6 flex flex-col gap-4 shadow-2xl">
+          <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-slate-200 p-6 flex flex-col gap-4 shadow-xl">
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
                   `text-lg font-medium py-2 transition-colors ${
-                    isActive ? 'text-primary' : 'text-gray-300 hover:text-white'
+                    isActive ? 'text-primary' : 'text-slate-600 hover:text-primary'
                   }`
                 }
               >
@@ -157,7 +155,7 @@ export const Layout: React.FC = () => {
             ))}
             <a
               href="#audit"
-              className="bg-primary text-bg-dark px-6 py-4 text-center font-bold mt-4 rounded-lg shadow-[0_0_20px_rgba(0,224,114,0.3)]"
+              className="bg-primary text-white px-6 py-4 text-center font-bold mt-4 rounded-lg shadow-md"
             >
               Get Free Audit
             </a>
@@ -171,28 +169,27 @@ export const Layout: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 bg-[#020503] py-16 z-10 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+      <footer className="border-t border-slate-200 bg-white py-16 z-10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 flex items-center justify-center bg-white/5 rounded-lg border border-white/10">
+                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
                   <span className="material-symbols-outlined text-primary text-xl">
                     north_east
                   </span>
                 </div>
                 <div>
-                  <span className="font-display font-bold text-xl text-white block">
+                  <span className="font-display font-bold text-xl text-slate-900 block">
                     Zechariah Tokar
                   </span>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-500">
+                  <span className="text-[10px] uppercase tracking-widest text-slate-500">
                     SEO Consultant
                   </span>
                 </div>
               </div>
-              <p className="text-gray-500 text-sm max-w-sm leading-relaxed">
+              <p className="text-slate-600 text-base max-w-sm leading-relaxed">
                 English-native SEO consultant based in Israel, providing strategic SEO services for US and international businesses.
               </p>
             </div>
@@ -204,7 +201,7 @@ export const Layout: React.FC = () => {
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-secondary transition-colors text-sm font-medium flex items-center gap-1"
+                  className="text-slate-500 hover:text-primary transition-colors text-base font-medium flex items-center gap-1"
                 >
                   LinkedIn
                   <span className="material-symbols-outlined text-xs">
@@ -215,7 +212,7 @@ export const Layout: React.FC = () => {
                   href={SOCIAL_LINKS.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-secondary transition-colors text-sm font-medium flex items-center gap-1"
+                  className="text-slate-500 hover:text-primary transition-colors text-base font-medium flex items-center gap-1"
                 >
                   X (Twitter)
                   <span className="material-symbols-outlined text-xs">
@@ -224,7 +221,7 @@ export const Layout: React.FC = () => {
                 </a>
                 <a
                   href={`mailto:${SOCIAL_LINKS.email}`}
-                  className="text-gray-500 hover:text-secondary transition-colors text-sm font-medium flex items-center gap-1"
+                  className="text-slate-500 hover:text-primary transition-colors text-base font-medium flex items-center gap-1"
                 >
                   Email
                   <span className="material-symbols-outlined text-xs">
@@ -232,7 +229,7 @@ export const Layout: React.FC = () => {
                   </span>
                 </a>
               </div>
-              <p className="text-gray-700 text-xs font-mono">
+              <p className="text-slate-400 text-sm">
                 © {new Date().getFullYear()} All Rights Reserved.
                 ISRAELSEOFREELANCER.COM
               </p>

@@ -34,37 +34,37 @@ export const HomePage: React.FC = () => {
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-secondary/20 bg-surface-dark/50 backdrop-blur-md mb-10 animate-fade-in-up shadow-[0_0_20px_rgba(34,211,238,0.15)]"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary/20 bg-white shadow-sm mb-10 animate-fade-in-up"
             style={{ animationDelay: '0.1s' }}
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-secondary">
-              AI-Powered Search Domination
+            <span className="text-sm font-semibold tracking-wide text-primary">
+              AI-Powered SEO for US & International Markets
             </span>
           </div>
 
           {/* Headline */}
           <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight mb-8 animate-fade-in-up"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight mb-8 animate-fade-in-up text-slate-900"
             style={{ animationDelay: '0.2s' }}
           >
-            Crush the{' '}
-            <span className="text-primary text-glow">Algorithm.</span>
+            Dominate{' '}
+            <span className="text-primary">Google.</span>
             <br />
-            <span className="gradient-text-ice text-ice-glow">
-              Own the Results.
+            <span className="gradient-text-ice">
+              Drive Revenue.
             </span>
           </h1>
 
           {/* Subheadline */}
           <p
-            className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light animate-fade-in-up"
+            className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-slate-600 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
-            <span className="text-white font-medium">English-native SEO consultant based in Israel</span>, specializing in SEO for US and international businesses. I turn invisible websites into lead-generating machines.
+            <span className="text-slate-900 font-semibold">Israel SEO Freelancer</span> helping US businesses rank higher and convert better. Direct access to senior-level strategy.
           </p>
 
           {/* CTAs */}
@@ -74,32 +74,30 @@ export const HomePage: React.FC = () => {
           >
             <a
               href="#audit"
-              className="relative group bg-white text-bg-dark font-bold py-4 px-10 rounded-lg overflow-hidden transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,224,114,0.4)] hover:-translate-y-1"
+              className="group bg-primary text-white font-bold py-4 px-10 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-primary-dark"
             >
-              <span className="relative z-10 flex items-center gap-2 text-lg">
-                Start Crushing It
+              <span className="flex items-center gap-2 text-lg">
+                Get Free SEO Audit
                 <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                  bolt
+                  arrow_forward
                 </span>
               </span>
-              <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
             </a>
             <a
               href="#results"
-              className="text-gray-400 hover:text-secondary font-medium px-8 py-4 flex items-center gap-2 transition-colors border-b border-transparent hover:border-secondary/30"
+              className="text-slate-600 hover:text-primary font-semibold px-8 py-4 flex items-center gap-2 transition-colors"
             >
-              <span className="material-symbols-outlined text-secondary">
+              <span className="material-symbols-outlined text-primary">
                 monitoring
               </span>
-              View Live Results
+              See Client Results
             </a>
           </div>
         </div>
       </header>
 
       {/* Stats Bar */}
-      <section className="border-y border-white/5 bg-surface-dark/50 py-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-glow opacity-30" />
+      <section className="border-y border-slate-200 bg-white py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -109,22 +107,21 @@ export const HomePage: React.FC = () => {
             ].map((stat, idx) => (
               <div
                 key={idx}
-                className="scroll-trigger group flex flex-col gap-3 rounded-2xl p-8 border border-white/5 bg-bg-dark/80 hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 relative overflow-hidden"
+                className="scroll-trigger group flex flex-col gap-3 rounded-2xl p-8 border border-slate-200 bg-slate-50 hover:border-primary/50 hover:bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">
+                  <p className="text-slate-500 text-base font-semibold uppercase tracking-wider">
                     {stat.label}
                   </p>
-                  <span className="material-symbols-outlined text-white/20 group-hover:text-primary transition-colors">
+                  <span className="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">
                     {stat.icon}
                   </span>
                 </div>
-                <p className="text-white tracking-tight text-5xl font-bold leading-tight group-hover:text-primary transition-colors">
+                <p className="text-slate-900 tracking-tight text-5xl font-bold leading-tight group-hover:text-primary transition-colors">
                   {stat.value}
                 </p>
-                <p className="text-primary text-sm font-medium leading-normal flex items-center gap-1">
+                <p className="text-primary text-base font-medium leading-normal flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm">arrow_upward</span>
                   {stat.sublabel}
                 </p>
@@ -135,33 +132,33 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Who I Work With */}
-      <section className="py-20 relative">
+      <section className="py-24 relative bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 scroll-trigger">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
+          <div className="text-center mb-16 scroll-trigger">
+            <span className="text-primary font-bold tracking-wide uppercase text-sm mb-4 block">
               Who I Work With
             </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
               Is This <span className="text-primary">You?</span>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 scroll-trigger">
             {[
-              { icon: 'public', label: 'US & International Companies', desc: 'Targeting English-speaking markets' },
+              { icon: 'public', label: 'US & International Companies', desc: 'English-speaking markets' },
               { icon: 'store', label: 'Local Service Businesses', desc: 'Dentists, lawyers, contractors' },
-              { icon: 'business', label: 'B2B & SaaS Companies', desc: 'Long sales cycles, high-value leads' },
-              { icon: 'shopping_cart', label: 'E-commerce Brands', desc: 'Product & collection page SEO' },
-              { icon: 'rocket_launch', label: 'Founders Who Want Strategy', desc: 'Not execution bloat' },
+              { icon: 'business', label: 'B2B & SaaS Companies', desc: 'High-value leads' },
+              { icon: 'shopping_cart', label: 'E-commerce Brands', desc: 'Product page SEO' },
+              { icon: 'rocket_launch', label: 'Growth-Focused Founders', desc: 'Strategy-first approach' },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group bg-surface-card border border-white/5 rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white border border-slate-200 rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <span className="material-symbols-outlined text-3xl text-primary mb-3 block group-hover:scale-110 transition-transform">
                   {item.icon}
                 </span>
-                <p className="text-white font-bold text-sm mb-1">{item.label}</p>
-                <p className="text-gray-500 text-xs">{item.desc}</p>
+                <p className="text-slate-900 font-bold text-base mb-2">{item.label}</p>
+                <p className="text-slate-500 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -169,74 +166,64 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <section className="py-24 relative overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20 scroll-trigger">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
-              The Methodology
+          <div className="text-center mb-16 scroll-trigger">
+            <span className="text-secondary font-bold tracking-wide uppercase text-sm mb-4 block">
+              My Process
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-              The Grandmaster{' '}
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
+              The SEO{' '}
               <span className="text-primary">Strategy</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              I don't guess. I calculate. My AI-powered approach uses a
-              three-phase attack pattern designed for total market dominance.
-            </p>
-            <p className="text-gray-500 max-w-3xl mx-auto text-base mt-6">
-              This SEO methodology combines technical SEO, content architecture, internal linking, and conversion optimization to improve rankings, organic traffic, and qualified leads for US and international businesses.
+            <p className="text-slate-600 max-w-2xl mx-auto text-xl">
+              A data-driven, three-phase approach to rank higher and convert better.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: 'chess_pawn',
-                title: 'Opening Theory',
+                icon: 'search',
+                title: 'Technical Foundation',
                 description:
-                  'Technical on-page optimization to secure the board center. I fix structure, speed, and schema to give Google no choice but to rank you.',
+                  'Fix site structure, speed, and schema markup. Ensure Google can crawl and index your pages properly.',
                 color: 'primary',
               },
               {
-                icon: 'psychology',
-                title: 'Mid-Game Tactics',
+                icon: 'edit_note',
+                title: 'Content Strategy',
                 description:
-                  'AI-driven content generation to outmaneuver competitors. I identify content gaps and fill them with high-authority semantic clusters.',
+                  'Identify keyword gaps your competitors missed. Create content that ranks and converts.',
                 color: 'secondary',
               },
               {
-                icon: 'chess_queen',
-                title: 'Endgame Strategy',
+                icon: 'rocket_launch',
+                title: 'Conversion Focus',
                 description:
-                  'Conversion rate optimization to capture the king. Traffic is vanity; revenue is sanity. I turn visitors into high-value leads.',
+                  'Turn traffic into qualified leads. Optimize for revenue, not vanity metrics.',
                 color: 'primary',
               },
             ].map((pillar, idx) => (
               <div
                 key={idx}
-                className="scroll-trigger group flex flex-col gap-6 rounded-3xl border border-white/5 bg-surface-card p-8 hover:bg-surface-elevated transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,224,114,0.1)] relative overflow-hidden"
+                className="scroll-trigger group flex flex-col gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-8 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/30"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
                 <div
-                  className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-${pillar.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}
-                />
-                <div
-                  className={`w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-${pillar.color} group-hover:rotate-6 transition-all duration-300 shadow-inner`}
+                  className={`w-16 h-16 rounded-2xl bg-${pillar.color}/10 flex items-center justify-center group-hover:bg-${pillar.color} transition-all duration-300`}
                 >
                   <span
-                    className={`material-symbols-outlined text-${pillar.color} text-4xl group-hover:text-bg-dark transition-colors`}
+                    className={`material-symbols-outlined text-${pillar.color} text-3xl group-hover:text-white transition-colors`}
                   >
                     {pillar.icon}
                   </span>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3
-                    className={`text-white text-xl font-bold leading-tight group-hover:text-${pillar.color} transition-colors`}
-                  >
+                  <h3 className="text-slate-900 text-xl font-bold leading-tight">
                     {pillar.title}
                   </h3>
-                  <p className="text-gray-400 text-base font-normal leading-relaxed">
+                  <p className="text-slate-600 text-lg leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
@@ -247,20 +234,19 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Case Studies */}
-      <section id="results" className="py-32 bg-surface-dark/30 border-y border-white/5">
+      <section id="results" className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 scroll-trigger">
             <div>
-              <span className="text-primary font-bold text-sm uppercase tracking-widest mb-3 block">
-                Grandmaster Moves
+              <span className="text-primary font-bold text-sm uppercase tracking-wide mb-3 block">
+                Client Results
               </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900">
                 Proven Results
               </h2>
             </div>
-            <p className="text-gray-400 max-w-md text-lg leading-relaxed md:text-right border-l-2 md:border-l-0 md:border-r-2 border-primary/20 pl-6 md:pl-0 md:pr-6">
-              Real results from AI-enhanced SEO campaigns targeting
-              high-competition keywords in the US market.
+            <p className="text-slate-600 max-w-md text-lg leading-relaxed md:text-right">
+              Real results from SEO campaigns for US clients.
             </p>
           </div>
 
@@ -268,40 +254,39 @@ export const HomePage: React.FC = () => {
             {CASE_STUDIES.slice(0, 3).map((study, idx) => (
               <div
                 key={idx}
-                className="scroll-trigger group bg-surface-card border border-white/5 p-10 rounded-2xl hover:border-primary/50 transition-all duration-500 relative overflow-hidden hover:-translate-y-2 shadow-lg hover:shadow-[0_10px_40px_-10px_rgba(0,224,114,0.1)]"
+                className="scroll-trigger group bg-white border border-slate-200 p-8 rounded-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="bg-primary/10 p-3 rounded-xl border border-primary/20">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="bg-primary/10 p-3 rounded-xl">
                       <span className="material-symbols-outlined text-primary text-2xl">
                         {study.icon}
                       </span>
                     </div>
-                    <span className="text-5xl font-display font-bold text-white group-hover:text-glow transition-all">
+                    <span className="text-4xl font-display font-bold text-primary">
                       {study.metric}
                     </span>
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-white">
+                  <h3 className="font-bold text-xl mb-2 text-slate-900">
                     {study.client}
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {study.industry && (
-                      <span className="text-[10px] font-bold text-secondary uppercase tracking-wide bg-secondary/10 px-2 py-1 rounded">
+                      <span className="text-xs font-semibold text-secondary uppercase tracking-wide bg-secondary/10 px-3 py-1 rounded-full">
                         {study.industry}
                       </span>
                     )}
                     {study.market && (
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide bg-white/5 px-2 py-1 rounded">
+                      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-3 py-1 rounded-full">
                         {study.market}
                       </span>
                     )}
                   </div>
-                  <p className="text-xs font-bold text-primary uppercase tracking-wide mb-4">
+                  <p className="text-sm font-semibold text-primary mb-4">
                     {study.context}
                   </p>
-                  <p className="text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4 group-hover:border-white/10 transition-colors">
+                  <p className="text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
                     {study.description}
                   </p>
                 </div>
@@ -312,46 +297,33 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Quote / Problem Section */}
-      <section className="py-32 bg-black relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'radial-gradient(#222 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-secondary/10 blur-[150px] rounded-full transform -translate-y-1/2" />
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             {/* Quote */}
             <div className="w-full lg:w-1/2 scroll-trigger">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl rounded-3xl animate-pulse-glow" />
-                <div className="relative bg-surface-card border border-white/10 p-10 md:p-12 rounded-2xl shadow-2xl backdrop-blur-sm">
-                  <span className="material-symbols-outlined text-6xl text-white/5 absolute top-6 right-8">
-                    format_quote
-                  </span>
-                  <p className="font-display italic text-2xl md:text-3xl text-gray-200 leading-relaxed mb-10 relative z-10">
-                    "Last week your site was a ghost town. This week it's the
-                    one everyone bumps into. Wild what a little{' '}
-                    <span className="text-secondary font-bold">actual SEO</span>{' '}
-                    can do."
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-black rounded-full flex items-center justify-center border border-white/20 shadow-lg">
-                      <span className="material-symbols-outlined text-secondary text-2xl">
-                        person
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-bold text-white text-lg">
-                        Zechariah Tokar
-                      </p>
-                      <p className="text-xs text-secondary font-bold uppercase tracking-wider mt-1">
-                        SEO Strategist
-                      </p>
-                    </div>
+              <div className="relative bg-slate-50 border border-slate-200 p-10 md:p-12 rounded-2xl shadow-sm">
+                <span className="material-symbols-outlined text-6xl text-slate-200 absolute top-6 right-8">
+                  format_quote
+                </span>
+                <p className="font-display italic text-2xl md:text-3xl text-slate-700 leading-relaxed mb-10 relative z-10">
+                  "Your site went from invisible to front page. That's what{' '}
+                  <span className="text-primary font-bold">strategic SEO</span>{' '}
+                  does."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-2xl">
+                      person
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-lg">
+                      Zechariah Tokar
+                    </p>
+                    <p className="text-sm text-primary font-semibold">
+                      Israel SEO Freelancer
+                    </p>
                   </div>
                 </div>
               </div>
@@ -359,49 +331,44 @@ export const HomePage: React.FC = () => {
 
             {/* Problem */}
             <div
-              className="w-full lg:w-1/2 space-y-8 scroll-trigger"
+              className="w-full lg:w-1/2 space-y-6 scroll-trigger"
               style={{ transitionDelay: '200ms' }}
             >
               <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight">
                   The "Invisible Site"
                   <br />
-                  <span className="text-gray-500">Problem</span>
+                  <span className="text-slate-400">Problem</span>
                 </h2>
-                <div className="h-1.5 w-24 bg-gradient-to-r from-secondary to-transparent mt-6 rounded-full" />
+                <div className="h-1.5 w-24 bg-primary mt-6 rounded-full" />
               </div>
-              <div className="space-y-5 text-lg text-gray-400 leading-relaxed font-light">
+              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  I keep seeing the same pattern play out with founders in
-                  Israel and the US: They pour serious money into gorgeous
-                  branding and a shiny website... then it just sits there.
-                  Invisible.
+                  Beautiful website. Zero traffic. Sound familiar?
                 </p>
                 <p>
-                  No one finds it. No one lands on it. No one buys from it.
+                  Without SEO, your site is invisible to the people searching for what you offer.
                 </p>
               </div>
               <ul className="space-y-4 pt-4">
-                <li className="flex items-center gap-4 text-white text-lg font-medium">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary">
+                <li className="flex items-center gap-4 text-slate-800 text-lg font-medium">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">
                     <span className="material-symbols-outlined text-lg">
                       check
                     </span>
                   </span>
                   <span>
-                    <strong className="text-primary">Relevance</strong>: Content
-                    matching what customers search for
+                    <strong className="text-primary">Relevance</strong>: Content matching search intent
                   </span>
                 </li>
-                <li className="flex items-center gap-4 text-white text-lg font-medium">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/20 text-secondary">
+                <li className="flex items-center gap-4 text-slate-800 text-lg font-medium">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/10 text-secondary">
                     <span className="material-symbols-outlined text-lg">
                       check
                     </span>
                   </span>
                   <span>
-                    <strong className="text-secondary">Reputation</strong>:
-                    Digital authority Google trusts
+                    <strong className="text-secondary">Authority</strong>: Trust signals Google values
                   </span>
                 </li>
               </ul>
@@ -411,19 +378,17 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.02%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-50" />
+      <section className="py-24 relative bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 scroll-trigger">
-            <span className="text-secondary font-bold text-sm uppercase tracking-[0.2em] mb-3 block">
+            <span className="text-primary font-bold text-sm uppercase tracking-wide mb-3 block">
               Services
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Select Your Opening Strategy
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
+              SEO Services
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              Tailored SEO solutions for businesses that demand high ROI. No
-              cookie-cutter packages.
+            <p className="text-slate-600 max-w-2xl mx-auto text-xl">
+              Tailored solutions for businesses that demand results.
             </p>
           </div>
 
@@ -432,11 +397,10 @@ export const HomePage: React.FC = () => {
               <NavLink
                 key={service.key}
                 to={`/${service.slug}`}
-                className="scroll-trigger group relative bg-surface-card border border-white/5 p-10 md:p-12 rounded-xl h-full flex flex-col hover:border-primary/50 transition-all duration-500 overflow-hidden hover:bg-white/[0.02]"
+                className="scroll-trigger group relative bg-white border border-slate-200 p-10 rounded-xl h-full flex flex-col hover:border-primary/50 transition-all duration-500 hover:shadow-xl"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[60px] transform translate-x-1/2 -translate-y-1/2 group-hover:bg-primary/20 transition-all duration-500" />
-                <div className="w-14 h-14 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-xl flex items-center justify-center mb-8 text-gray-400 group-hover:text-primary group-hover:border-primary/50 group-hover:bg-primary/10 transition-all duration-500 shadow-inner">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <span className="material-symbols-outlined text-2xl">
                     {service.key === 'freelance'
                       ? 'person_search'
@@ -447,23 +411,23 @@ export const HomePage: React.FC = () => {
                       : 'description'}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-primary transition-colors">
                   {service.key === 'freelance'
-                    ? 'Freelance SEO Services'
+                    ? 'Freelance SEO'
                     : service.key === 'consultant'
                     ? 'SEO Consulting'
                     : service.key === 'b2b'
-                    ? 'B2B SEO Services'
-                    : 'Content Marketing for SEO'}
+                    ? 'B2B SEO'
+                    : 'Content Marketing'}
                 </h3>
-                <p className="text-sm font-bold text-primary uppercase tracking-wide mb-6">
+                <p className="text-sm font-semibold text-primary mb-4">
                   {service.subtitle}
                 </p>
-                <p className="text-gray-400 leading-relaxed mb-8 flex-grow">
-                  {service.description.slice(0, 150)}...
+                <p className="text-slate-600 text-base leading-relaxed mb-6 flex-grow">
+                  {service.description.slice(0, 120)}...
                 </p>
-                <div className="flex items-center text-xs font-bold uppercase tracking-widest text-white group-hover:text-primary transition-colors mt-auto border-t border-white/5 pt-6 group-hover:border-primary/20">
-                  Explore Strategy
+                <div className="flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors mt-auto border-t border-slate-100 pt-6">
+                  Learn More
                   <span className="material-symbols-outlined text-sm ml-2 transform group-hover:translate-x-2 transition-transform duration-300">
                     arrow_forward
                   </span>
@@ -475,19 +439,19 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Client Logos */}
-      <section className="py-16 border-y border-white/5 bg-surface-dark/30">
+      <section className="py-16 border-y border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-gray-500 mb-10">
-            Trusted by Rapidly Growing Brands
+          <p className="text-center text-sm font-semibold uppercase tracking-wide text-slate-500 mb-10">
+            Trusted by Growing Brands
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
             {CLIENT_LOGOS.map((logo, idx) => (
               <div
                 key={idx}
-                className="flex justify-center group opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="flex justify-center group opacity-50 hover:opacity-100 transition-all duration-500"
               >
                 <span
-                  className={`${logo.style} text-white group-hover:text-primary transition-colors cursor-default`}
+                  className={`${logo.style} text-slate-600 group-hover:text-primary transition-colors cursor-default`}
                 >
                   {logo.name}
                 </span>
@@ -498,55 +462,55 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* How I'm Different */}
-      <section className="py-24 relative">
+      <section className="py-24 relative bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="scroll-trigger">
-              <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
+              <span className="text-primary font-bold tracking-wide uppercase text-sm mb-4 block">
                 Why Work With Me
               </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
                 How I'm <span className="text-primary">Different</span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                I'm not an agency. I'm not a faceless team. I'm a senior SEO consultant who works directly with you on strategy and execution.
+              <p className="text-slate-600 text-xl leading-relaxed">
+                Direct access to senior SEO expertise. No agency overhead.
               </p>
             </div>
             <div className="scroll-trigger space-y-5" style={{ transitionDelay: '200ms' }}>
               {[
                 {
                   icon: 'person',
-                  title: 'Direct Access to Senior Expertise',
-                  desc: 'No account managers or junior staff. You work directly with me on every call and every decision.',
+                  title: 'Direct Senior Access',
+                  desc: 'Work directly with me on every decision.',
                 },
                 {
                   icon: 'public',
                   title: 'Israel-Based, US-Focused',
-                  desc: 'English-native consultant based in Israel, specializing in SEO for US and international markets.',
+                  desc: 'Native English speaker serving international markets.',
                 },
                 {
                   icon: 'psychology',
                   title: 'Strategy Over Busywork',
-                  desc: 'I focus on moves that actually impact rankings and revenue. No fluff reports or vanity metrics.',
+                  desc: 'Focus on rankings and revenue, not vanity metrics.',
                 },
                 {
                   icon: 'handshake',
                   title: 'Transparent Partnership',
-                  desc: 'You own all the work. No lock-in contracts. Clear communication on what we do and why.',
+                  desc: 'No lock-in contracts. You own all the work.',
                 },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="group flex gap-5 p-5 rounded-xl border border-white/5 bg-surface-card hover:border-primary/30 transition-all duration-300"
+                  className="group flex gap-5 p-5 rounded-xl border border-slate-200 bg-white hover:border-primary/50 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <span className="material-symbols-outlined text-primary text-xl">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span className="material-symbols-outlined text-primary group-hover:text-white text-xl">
                       {item.icon}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h3>
+                    <p className="text-slate-600 text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -556,37 +520,25 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="audit" className="py-32 bg-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/10 blur-[120px] rounded-full" />
-        </div>
-
-        {/* Floating Chess Piece */}
-        <div className="absolute top-[10%] right-[10%] opacity-20 pointer-events-none animate-float-slow hidden md:block">
-          <div className="chess-piece ice transform rotate-[10deg] scale-50">♕</div>
-        </div>
-
+      <section id="audit" className="py-24 bg-slate-900 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 scroll-trigger">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6">
-              It's Your{' '}
-              <span className="gradient-text-emerald">Move.</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+              Get Your Free{' '}
+              <span className="text-primary">SEO Audit</span>
             </h2>
-            <p className="text-xl text-gray-400 font-light max-w-xl mx-auto">
-              Don't let competitors own your keywords. Claim your free audit and
-              see the board clearly for the first time.
+            <p className="text-xl text-slate-300 max-w-xl mx-auto">
+              See exactly how to improve your rankings. No commitment required.
             </p>
           </div>
 
-          <div className="bg-surface-card border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden backdrop-blur-md">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
             <div className="relative z-10">
-              <div className="text-center mb-10">
-                <p className="text-secondary font-bold text-xs tracking-[0.25em] uppercase mb-4">
-                  Request Your Analysis
+              <div className="text-center mb-8">
+                <p className="text-primary font-semibold text-sm uppercase tracking-wide mb-2">
+                  Request Your Free Analysis
                 </p>
-                <div className="h-px w-20 bg-white/20 mx-auto" />
+                <div className="h-px w-20 bg-slate-200 mx-auto" />
               </div>
 
               <form
@@ -602,13 +554,13 @@ export const HomePage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="group">
                     <label
-                      className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 group-focus-within:text-primary transition-colors"
+                      className="block text-sm font-semibold text-slate-700 mb-2"
                       htmlFor="url"
                     >
                       Website URL
                     </label>
                     <input
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-gray-700"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-400 text-base"
                       id="url"
                       name="website"
                       placeholder="mysite.com"
@@ -618,13 +570,13 @@ export const HomePage: React.FC = () => {
                   </div>
                   <div className="group">
                     <label
-                      className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 group-focus-within:text-primary transition-colors"
+                      className="block text-sm font-semibold text-slate-700 mb-2"
                       htmlFor="email"
                     >
                       Business Email
                     </label>
                     <input
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-gray-700"
+                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-400 text-base"
                       id="email"
                       name="email"
                       placeholder="you@company.com"
@@ -634,15 +586,14 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
                 <button
-                  className="w-full bg-white text-bg-dark font-bold text-lg py-5 rounded-xl hover:bg-primary transition-all border border-transparent shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(0,224,114,0.4)] transform hover:-translate-y-1 active:translate-y-0 relative overflow-hidden group"
+                  className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   type="submit"
                 >
-                  <span className="relative z-10">Start Winning Today</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  Get My Free SEO Audit
                 </button>
-                <p className="text-center text-xs text-gray-500 mt-6 flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  No commitment required. 100% free strategy session.
+                <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  Free strategy session. No commitment.
                 </p>
               </form>
             </div>
