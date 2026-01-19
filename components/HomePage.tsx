@@ -64,7 +64,7 @@ export const HomePage: React.FC = () => {
             className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-slate-600 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.3s' }}
           >
-            <span className="text-slate-900 font-semibold">Israel SEO Freelancer</span> helping US businesses rank higher and convert better. Direct access to senior-level strategy.
+            <span className="text-slate-900 font-semibold">Israel SEO Freelancer</span> helping US and international businesses rank higher and convert better. Direct access to senior-level strategy.
           </p>
 
           {/* CTAs */}
