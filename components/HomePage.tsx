@@ -51,11 +51,11 @@ export const HomePage: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight mb-8 animate-fade-in-up text-slate-900"
             style={{ animationDelay: '0.2s' }}
           >
-            Dominate{' '}
-            <span className="text-primary">Google.</span>
+            Israel SEO{' '}
+            <span className="text-primary">Freelancer.</span>
             <br />
             <span className="gradient-text-ice">
-              Drive Revenue.
+              Dominate Google. Drive Revenue.
             </span>
           </h1>
 
@@ -92,6 +92,25 @@ export const HomePage: React.FC = () => {
               </span>
               See Client Results
             </a>
+          </div>
+
+          {/* Trust Signals */}
+          <div
+            className="mt-12 flex flex-wrap justify-center items-center gap-8 animate-fade-in-up"
+            style={{ animationDelay: '0.5s' }}
+          >
+            <div className="flex items-center gap-2 text-slate-500">
+              <span className="material-symbols-outlined text-primary">school</span>
+              <span className="text-sm font-medium">Wharton School</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500">
+              <span className="material-symbols-outlined text-primary">verified</span>
+              <span className="text-sm font-medium">Semrush Certified</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-500">
+              <span className="material-symbols-outlined text-primary">workspace_premium</span>
+              <span className="text-sm font-medium">10+ Years Experience</span>
+            </div>
           </div>
         </div>
       </header>

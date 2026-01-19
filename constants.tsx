@@ -108,7 +108,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   freelance: {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
-    title: 'Dominate Search with Freelance SEO. Crushing Results in the Era of AI.',
+    title: 'Freelance SEO Israel. Hands-On Search Optimization That Delivers.',
     subtitle: 'Freelance SEO Consultant',
     heroColor: 'primary',
     description: "Hands-on SEO for US and international companies. Strategy and execution by a senior consultant, not a rotating agency team.",
@@ -160,8 +160,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'consultant-seo',
     slug: 'seoconsulting',
-    title: 'Crush Competitors. Dominate Search.',
-    subtitle: 'SEO Consulting Services',
+    title: 'SEO Consulting Services. Expert Strategy for Search Dominance.',
+    subtitle: 'SEO Consulting',
     heroColor: 'secondary',
     description: "Expert SEO strategy for US and international companies. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
     entityDefinition: "I provide strategy, audits, and roadmap—you handle execution. Expert direction without agency retainers.",
@@ -211,7 +211,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   b2b: {
     id: 'b2b-seo',
     slug: 'b2b-seo-company',
-    title: 'Dominating Google. Crushing Expectations.',
+    title: 'B2B SEO Company. Generate Qualified Leads Through Search.',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
     description: "B2B SEO for qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
@@ -263,7 +263,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   content: {
     id: 'content-marketing',
     slug: 'content-marketing-for-seo',
-    title: 'Crushing Google\'s Algorithm',
+    title: 'Content Marketing for SEO. Strategic Content That Ranks and Converts.',
     subtitle: 'Content Marketing for SEO',
     heroColor: 'ice',
     description: "Content that ranks and converts. Not blogging—information architecture that establishes authority and drives qualified leads.",
