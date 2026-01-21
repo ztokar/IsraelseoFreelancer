@@ -10,107 +10,87 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="animate-fade-in-up">
-      {/* Hero Section */}
-      <header className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden perspective-container">
-        {/* Animated Chess Floor Grid */}
-        <div className="chess-floor opacity-30" />
+      {/* Hero Section - Clean & Focused */}
+      <header className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
+        {/* Subtle background accent */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
-        {/* Ambient Glows */}
-        <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent pointer-events-none z-0" />
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Floating Chess Pieces */}
-        <div className="absolute top-[15%] left-[5%] animate-float-slow z-0 opacity-20 hidden lg:block">
-          <div className="chess-piece ice transform rotate-[-15deg] scale-75">♘</div>
-        </div>
-        <div className="absolute bottom-[20%] right-[5%] animate-float z-0 opacity-30 hidden lg:block">
-          <div className="chess-piece green transform rotate-[10deg] scale-90">♔</div>
-        </div>
-        <div className="absolute top-[40%] right-[15%] animate-float-fast z-0 opacity-15 hidden lg:block">
-          <div className="chess-piece transform scale-50">♖</div>
-        </div>
+            {/* Left: Content */}
+            <div className="text-center lg:text-left space-y-8">
 
-        {/* Hero Content */}
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary/20 bg-white shadow-sm mb-10 animate-fade-in-up"
-            style={{ animationDelay: '0.1s' }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-primary">
-              AI-Powered SEO for US & International Markets
-            </span>
-          </div>
+              {/* Overline */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-sm font-medium text-primary">Israel-Based SEO Expert</span>
+              </div>
 
-          {/* Headline */}
-          <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[1.05] tracking-tight mb-8 animate-fade-in-up text-slate-900"
-            style={{ animationDelay: '0.2s' }}
-          >
-            Israel SEO{' '}
-            <span className="text-primary">Freelancer.</span>
-            <br />
-            <span className="gradient-text-ice">
-              Dominate Google. Drive Revenue.
-            </span>
-          </h1>
+              {/* Main Headline */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+                Rank Higher.
+                <br />
+                <span className="text-primary">Convert Better.</span>
+              </h1>
 
-          {/* Subheadline */}
-          <p
-            className="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-slate-600 leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: '0.3s' }}
-          >
-            <span className="text-slate-900 font-semibold">Israel SEO Freelancer</span> helping US and international businesses rank higher and convert better. Direct access to senior-level strategy.
-          </p>
+              {/* Subheadline */}
+              <p className="text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Strategic SEO for US & international businesses. Direct access to senior expertise—no agency overhead.
+              </p>
 
-          {/* CTAs */}
-          <div
-            className="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center animate-fade-in-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            <a
-              href="#audit"
-              className="group bg-primary text-white font-bold py-4 px-10 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-primary-dark"
-            >
-              <span className="flex items-center gap-2 text-lg">
-                Get Free SEO Audit
-                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </span>
-            </a>
-            <a
-              href="#results"
-              className="text-slate-600 hover:text-primary font-semibold px-8 py-4 flex items-center gap-2 transition-colors"
-            >
-              <span className="material-symbols-outlined text-primary">
-                monitoring
-              </span>
-              See Client Results
-            </a>
-          </div>
+              {/* Single Primary CTA */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                <a
+                  href="#audit"
+                  className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  Get Free SEO Audit
+                  <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                </a>
+                <a
+                  href="#results"
+                  className="inline-flex items-center justify-center gap-2 text-slate-700 hover:text-primary font-medium px-8 py-4 border border-slate-200 hover:border-primary/30 rounded-lg transition-all hover:shadow-sm"
+                >
+                  <span className="material-symbols-outlined">monitoring</span>
+                  View Results
+                </a>
+              </div>
 
-          {/* Trust Signals */}
-          <div
-            className="mt-12 flex flex-wrap justify-center items-center gap-8 animate-fade-in-up"
-            style={{ animationDelay: '0.5s' }}
-          >
-            <div className="flex items-center gap-2 text-slate-500">
-              <span className="material-symbols-outlined text-primary">school</span>
-              <span className="text-sm font-medium">Wharton School</span>
+              {/* Compact Trust Signals */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 text-sm text-slate-500">
+                <div className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-base text-primary">verified</span>
+                  <span>Semrush Certified</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-base text-primary">school</span>
+                  <span>Wharton MBA</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-base text-primary">workspace_premium</span>
+                  <span>10+ Years</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-slate-500">
-              <span className="material-symbols-outlined text-primary">verified</span>
-              <span className="text-sm font-medium">Semrush Certified</span>
+
+            {/* Right: Hero Image */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+                  <img
+                    src="/images/hero-seo-growth.jpg"
+                    alt="SEO Growth Visualization"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Subtle glow accent */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl -z-10" />
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-slate-500">
-              <span className="material-symbols-outlined text-primary">workspace_premium</span>
-              <span className="text-sm font-medium">10+ Years Experience</span>
-            </div>
+
           </div>
         </div>
       </header>
@@ -192,58 +172,76 @@ export const HomePage: React.FC = () => {
               My Process
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              The SEO{' '}
-              <span className="text-primary">Strategy</span>
+              How I{' '}
+              <span className="text-primary">Rank Your Site</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-              A data-driven, three-phase approach to rank higher and convert better.
+              A systematic, data-driven approach to dominate search rankings and drive qualified leads.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: 'search',
-                title: 'Technical Foundation',
+                image: '/images/methodology-audit.jpg',
+                number: '01',
+                title: 'Technical SEO Audit',
                 description:
-                  'Fix site structure, speed, and schema markup. Ensure Google can crawl and index your pages properly.',
-                color: 'primary',
+                  'Deep dive into site structure, crawlability, broken links, page speed, mobile responsiveness, and indexing issues.',
               },
               {
-                icon: 'edit_note',
-                title: 'Content Strategy',
+                image: '/images/methodology-keyword-research.jpg',
+                number: '02',
+                title: 'Keyword & Competitor Research',
                 description:
-                  'Identify keyword gaps your competitors missed. Create content that ranks and converts.',
-                color: 'secondary',
+                  'Identify high-intent keywords competitors missed. Analyze gaps in their content strategy to find quick wins.',
               },
               {
-                icon: 'rocket_launch',
-                title: 'Conversion Focus',
+                image: '/images/methodology-content-optimization.jpg',
+                number: '03',
+                title: 'Content Optimization',
                 description:
-                  'Turn traffic into qualified leads. Optimize for revenue, not vanity metrics.',
-                color: 'primary',
+                  'Optimize existing pages and create new content targeting bottom-of-funnel queries that convert.',
               },
-            ].map((pillar, idx) => (
+              {
+                image: '/images/methodology-link-building.jpg',
+                number: '04',
+                title: 'Authority Link Building',
+                description:
+                  'Earn quality backlinks through digital PR, expert quotes, and strategic outreach. No spam, no PBNs.',
+              },
+              {
+                image: '/images/methodology-technical-seo.jpg',
+                number: '05',
+                title: 'Technical Implementation',
+                description:
+                  'Schema markup, XML sitemaps, robots.txt optimization, Core Web Vitals improvement, and ongoing monitoring.',
+              },
+            ].map((step, idx) => (
               <div
                 key={idx}
-                className="scroll-trigger group flex flex-col gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-8 hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/30"
+                className="scroll-trigger group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div
-                  className={`w-16 h-16 rounded-2xl bg-${pillar.color}/10 flex items-center justify-center group-hover:bg-${pillar.color} transition-all duration-300`}
-                >
-                  <span
-                    className={`material-symbols-outlined text-${pillar.color} text-3xl group-hover:text-white transition-colors`}
-                  >
-                    {pillar.icon}
-                  </span>
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden bg-slate-50">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                    {step.number}
+                  </div>
                 </div>
-                <div className="flex flex-col gap-3">
+
+                {/* Content */}
+                <div className="p-6 flex flex-col gap-3">
                   <h3 className="text-slate-900 text-xl font-bold leading-tight">
-                    {pillar.title}
+                    {step.title}
                   </h3>
-                  <p className="text-slate-600 text-lg leading-relaxed">
-                    {pillar.description}
+                  <p className="text-slate-600 text-base leading-relaxed">
+                    {step.description}
                   </p>
                 </div>
               </div>
@@ -411,48 +409,67 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {SERVICES_LIST.map((service, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICES_LIST.map((service, idx) => {
+              const serviceImage = service.key === 'freelance'
+                ? '/images/service-freelance-seo.jpg'
+                : service.key === 'consultant'
+                ? '/images/service-seo-consulting.jpg'
+                : service.key === 'b2b'
+                ? '/images/service-b2b-seo.jpg'
+                : service.key === 'content'
+                ? '/images/service-content-marketing.jpg'
+                : null;
+
+              return (
               <NavLink
                 key={service.key}
                 to={`/${service.slug}`}
-                className="scroll-trigger group relative bg-white border border-slate-200 p-10 rounded-xl h-full flex flex-col hover:border-primary/50 transition-all duration-500 hover:shadow-xl"
+                className="scroll-trigger group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <span className="material-symbols-outlined text-2xl">
-                    {service.key === 'freelance'
-                      ? 'person_search'
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden bg-slate-50">
+                  <img
+                    src={serviceImage}
+                    alt={service.key === 'freelance'
+                      ? 'Freelance SEO Services'
                       : service.key === 'consultant'
-                      ? 'business_center'
+                      ? 'SEO Consulting'
                       : service.key === 'b2b'
-                      ? 'trending_up'
-                      : 'description'}
-                  </span>
+                      ? 'B2B SEO Services'
+                      : 'Content Marketing for SEO'}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-primary transition-colors">
-                  {service.key === 'freelance'
-                    ? 'Freelance SEO'
-                    : service.key === 'consultant'
-                    ? 'SEO Consulting'
-                    : service.key === 'b2b'
-                    ? 'B2B SEO'
-                    : 'Content Marketing'}
-                </h3>
-                <p className="text-sm font-semibold text-primary mb-4">
-                  {service.subtitle}
-                </p>
-                <p className="text-slate-600 text-base leading-relaxed mb-6 flex-grow">
-                  {service.description.slice(0, 120)}...
-                </p>
-                <div className="flex items-center text-sm font-semibold text-primary group-hover:text-primary-dark transition-colors mt-auto border-t border-slate-100 pt-6">
-                  Learn More
-                  <span className="material-symbols-outlined text-sm ml-2 transform group-hover:translate-x-2 transition-transform duration-300">
-                    arrow_forward
-                  </span>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col gap-3 flex-grow">
+                  <h3 className="text-xl font-bold text-slate-900 leading-tight">
+                    {service.key === 'freelance'
+                      ? 'Freelance SEO'
+                      : service.key === 'consultant'
+                      ? 'SEO Consulting'
+                      : service.key === 'b2b'
+                      ? 'B2B SEO'
+                      : 'Content Marketing'}
+                  </h3>
+                  <p className="text-sm font-medium text-primary">
+                    {service.subtitle}
+                  </p>
+                  <p className="text-slate-600 text-base leading-relaxed flex-grow">
+                    {service.description.slice(0, 100)}...
+                  </p>
+                  <div className="flex items-center text-sm font-semibold text-primary mt-2">
+                    Learn More
+                    <span className="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">
+                      arrow_forward
+                    </span>
+                  </div>
                 </div>
               </NavLink>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
