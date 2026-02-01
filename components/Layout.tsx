@@ -233,6 +233,17 @@ export const Layout: React.FC = () => {
                 © {new Date().getFullYear()} All Rights Reserved.
                 ISRAELSEOFREELANCER.COM
               </p>
+              <p className="text-slate-400 text-sm">
+                Part of{' '}
+                <a
+                  href="https://seocompanyisrael.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  SEO Company Israel
+                </a>
+              </p>
             </div>
           </div>
         </div>
