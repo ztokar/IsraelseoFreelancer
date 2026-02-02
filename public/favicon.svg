@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+
+  <!-- Modern "I" and "S" monogram -->
+  <!-- Letter I (styled as a pillar/growth bar) -->
+  <rect x="190" y="140" width="40" height="240" rx="20" fill="url(#accentGradient)"/>
+  <circle cx="210" cy="120" r="25" fill="url(#accentGradient)"/>
+
+  <!-- Letter S (flowing, dynamic) -->
+  <path d="M 290 160 C 260 160 240 175 240 195 C 240 213 252 223 280 230 L 305 236 C 325 241 335 248 335 262 C 335 278 320 288 290 288 C 262 288 247 278 245 262 L 220 268 C 223 293 250 310 290 310 C 325 310 360 295 360 262 C 360 242 348 230 318 223 L 293 217 C 273 212 265 205 265 195 C 265 183 277 177 290 177 C 315 177 328 185 330 200 L 355 194 C 352 172 330 160 290 160 Z" fill="url(#primaryGradient)"/>
+
+  <!-- Search magnifier accent (subtle) -->
+  <circle cx="370" cy="360" r="30" stroke="#60a5fa" stroke-width="8" fill="none" opacity="0.8"/>
+  <line x1="390" y1="380" x2="410" y2="400" stroke="#60a5fa" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Growth indicators (small bars) -->
+  <rect x="120" y="360" width="12" height="30" rx="6" fill="#2563eb" opacity="0.5"/>
+  <rect x="140" y="350" width="12" height="40" rx="6" fill="#2563eb" opacity="0.6"/>
+  <rect x="160" y="335" width="12" height="55" rx="6" fill="#3b82f6" opacity="0.7"/>
+</svg>
