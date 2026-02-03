@@ -177,7 +177,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               href="#audit"
               className="group bg-primary text-white px-10 py-4 font-bold flex items-center justify-center gap-2 hover:bg-primary-dark transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
-              Get Free Audit
+              Find Your Quick Wins
               <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
                 arrow_forward
               </span>
@@ -484,7 +484,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                   className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   type="submit"
                 >
-                  Get Free Audit & Consult
+                  Get Quick Wins & Consult
                 </button>
                 <p className="text-center text-sm text-slate-500 mt-4">
                   Or{' '}

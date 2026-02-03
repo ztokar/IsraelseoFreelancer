@@ -120,7 +120,7 @@ export const Layout: React.FC = () => {
                 className="relative overflow-hidden group bg-primary px-6 py-2.5 rounded-full text-base font-semibold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
               >
                 <span className="relative z-10 text-white">
-                  Get Free Audit
+                  Find Quick Wins
                 </span>
               </a>
             </div>

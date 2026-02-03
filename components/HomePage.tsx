@@ -24,19 +24,19 @@ export const HomePage: React.FC = () => {
               {/* Overline */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm font-medium text-primary">Israel-Based SEO Expert</span>
+                <span className="text-sm font-medium text-primary">US & International SEO</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                Rank Higher.
+                Stop Losing Customers
                 <br />
-                <span className="text-primary">Convert Better.</span>
+                <span className="text-primary">to Page 1 Competitors.</span>
               </h1>
 
               {/* Subheadline */}
               <p className="text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Strategic SEO for US & international businesses. Direct access to senior expertise—no agency overhead.
+                Work directly with a senior consultant—no agency teams, no overhead. 10+ years optimizing sites for US & international markets.
               </p>
 
               {/* Single Primary CTA */}
@@ -45,7 +45,7 @@ export const HomePage: React.FC = () => {
                   href="#audit"
                   className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
-                  Get Free SEO Audit
+                  Find Your Quick Wins
                   <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
@@ -521,8 +521,8 @@ export const HomePage: React.FC = () => {
                 },
                 {
                   icon: 'public',
-                  title: 'Israel-Based, US-Focused',
-                  desc: 'Native English speaker serving international markets.',
+                  title: 'Global SEO Reach',
+                  desc: 'Native English speaker serving US & international markets.',
                 },
                 {
                   icon: 'psychology',
@@ -625,7 +625,7 @@ export const HomePage: React.FC = () => {
                   className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   type="submit"
                 >
-                  Get My Free SEO Audit
+                  Get My Quick Wins Audit
                 </button>
                 <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />

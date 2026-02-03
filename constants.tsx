@@ -108,7 +108,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   freelance: {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
-    title: 'Freelance SEO Israel. Hands-On Search Optimization That Delivers.',
+    title: 'Hands-On SEO Without the Agency Markup.',
     subtitle: 'Freelance SEO Consultant',
     heroColor: 'primary',
     description: "Hands-on SEO for US and international companies. Strategy and execution by a senior consultant, not a rotating agency team.",
