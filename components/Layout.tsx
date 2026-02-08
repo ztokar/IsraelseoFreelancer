@@ -196,7 +196,7 @@ export const Layout: React.FC = () => {
 
             {/* Right */}
             <div className="flex flex-col md:items-end gap-6">
-              <div className="flex gap-6">
+              <div className="flex flex-wrap gap-6">
                 <a
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
@@ -215,6 +215,17 @@ export const Layout: React.FC = () => {
                   className="text-slate-500 hover:text-primary transition-colors text-base font-medium flex items-center gap-1"
                 >
                   X (Twitter)
+                  <span className="material-symbols-outlined text-xs">
+                    open_in_new
+                  </span>
+                </a>
+                <a
+                  href={SOCIAL_LINKS.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-500 hover:text-primary transition-colors text-base font-medium flex items-center gap-1"
+                >
+                  YouTube
                   <span className="material-symbols-outlined text-xs">
                     open_in_new
                   </span>

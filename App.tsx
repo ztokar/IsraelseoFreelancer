@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
 import { ServicePage } from './components/ServicePage';
+import { BlogPage } from './components/BlogPage';
+import { BlogArticle } from './components/BlogArticle';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -11,22 +13,29 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          
-          <Route 
-            path="freelance-seo-israel" 
-            element={<ServicePage content={SERVICE_DATA.freelance} />} 
+
+          <Route
+            path="freelance-seo-israel"
+            element={<ServicePage content={SERVICE_DATA.freelance} />}
           />
-          <Route 
-            path="seoconsulting" 
-            element={<ServicePage content={SERVICE_DATA.consultant} />} 
+          <Route
+            path="seoconsulting"
+            element={<ServicePage content={SERVICE_DATA.consultant} />}
           />
-          <Route 
-            path="b2b-seo-company" 
-            element={<ServicePage content={SERVICE_DATA.b2b} />} 
+          <Route
+            path="b2b-seo-company"
+            element={<ServicePage content={SERVICE_DATA.b2b} />}
           />
-          <Route 
-            path="content-marketing-for-seo" 
-            element={<ServicePage content={SERVICE_DATA.content} />} 
+          <Route
+            path="content-marketing-for-seo"
+            element={<ServicePage content={SERVICE_DATA.content} />}
+          />
+
+          {/* Blog Routes */}
+          <Route path="blog" element={<BlogPage />} />
+          <Route
+            path="blog/israel-b2b-seo-services-pipeline-focus"
+            element={<BlogArticle />}
           />
 
           {/* Fallback */}

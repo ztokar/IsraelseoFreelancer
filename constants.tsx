@@ -4,6 +4,7 @@ import React from 'react';
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/zechariah-tokar-167b7672/",
   twitter: "https://x.com/ZackTokar",
+  youtube: "https://www.youtube.com/@IsraelB2BSEO",
   calendly: "https://calendly.com/zack-tokar/consultation",
   email: "zechariah@israelseofreelancer.com"
 };
@@ -13,6 +14,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Consulting', path: '/seoconsulting' },
   { label: 'B2B SEO', path: '/b2b-seo-company' },
   { label: 'Content Marketing', path: '/content-marketing-for-seo' },
+  { label: 'Blog', path: '/blog' },
 ];
 
 export const TOOLS_LIST = [
