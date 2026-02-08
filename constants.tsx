@@ -162,7 +162,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'consultant-seo',
     slug: 'seoconsulting',
-    title: 'SEO Consultant Israel | International SEO Strategy for US & Global Brands',
+    title: 'SEO Consultant Israel. International Strategy for US Markets.',
+    seoTitle: 'SEO Consultant Israel | International SEO Strategy for US & Global Brands',
     subtitle: 'SEO Consulting',
     heroColor: 'secondary',
     description: "Expert SEO consulting for Israeli startups and B2B companies expanding to US markets. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
@@ -213,7 +214,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   b2b: {
     id: 'b2b-seo',
     slug: 'b2b-seo-company',
-    title: 'B2B SEO Services in Israel | SaaS, Tech & B2B SEO Agency',
+    title: 'B2B SEO Services in Israel. SaaS & Tech Lead Generation.',
+    seoTitle: 'B2B SEO Services in Israel | SaaS, Tech & B2B SEO Agency',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
     description: "B2B SEO for Israeli companies targeting US markets. Qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
@@ -265,7 +267,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   content: {
     id: 'content-marketing',
     slug: 'content-marketing-for-seo',
-    title: 'SEO Content Marketing in Israel | Strategic Content That Ranks & Converts',
+    title: 'SEO Content Marketing in Israel. Content That Converts.',
+    seoTitle: 'SEO Content Marketing in Israel | Strategic Content That Ranks & Converts',
     subtitle: 'Content Marketing for SEO',
     heroColor: 'ice',
     description: "Content marketing that ranks and converts for Israeli companies. Not blogging—information architecture that establishes authority and drives qualified leads.",

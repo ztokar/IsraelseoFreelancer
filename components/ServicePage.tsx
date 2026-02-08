@@ -175,7 +175,7 @@ const parseTextWithLinks = (text: string): React.ReactNode => {
 
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
-    document.title = `${content.title} | Zechariah Tokar`;
+    document.title = `${content.seoTitle || content.title} | Zechariah Tokar`;
   }, [content]);
 
   const colorClass =
