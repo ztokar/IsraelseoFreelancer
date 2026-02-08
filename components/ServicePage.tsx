@@ -103,6 +103,76 @@ const GSCVisual: React.FC<{ data: any[]; clientName: string }> = ({
   </div>
 );
 
+// Helper function to convert service mentions to links
+const parseTextWithLinks = (text: string): React.ReactNode => {
+  const serviceLinks: { [key: string]: string } = {
+    'B2B SEO services': '/b2b-seo-company',
+    'B2B SEO': '/b2b-seo-company',
+    'B2B content': '/b2b-seo-company',
+    'SEO consulting': '/seoconsulting',
+    'strategic consulting': '/seoconsulting',
+    'Strategic consulting': '/seoconsulting',
+    'content marketing': '/content-marketing-for-seo',
+    'Content marketing': '/content-marketing-for-seo',
+    'content architecture': '/content-marketing-for-seo',
+  };
+
+  let result: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  // Find all service mentions in the text
+  const matches: { index: number; length: number; link: string; text: string }[] = [];
+
+  Object.entries(serviceLinks).forEach(([serviceName, link]) => {
+    let index = text.indexOf(serviceName);
+    while (index !== -1) {
+      matches.push({ index, length: serviceName.length, link, text: serviceName });
+      index = text.indexOf(serviceName, index + 1);
+    }
+  });
+
+  // Sort matches by index to process them in order
+  matches.sort((a, b) => a.index - b.index);
+
+  // Remove overlapping matches (keep the first match)
+  const filteredMatches: typeof matches = [];
+  let lastEnd = -1;
+  matches.forEach(match => {
+    if (match.index >= lastEnd) {
+      filteredMatches.push(match);
+      lastEnd = match.index + match.length;
+    }
+  });
+
+  // Build the result with text and links
+  filteredMatches.forEach((match, idx) => {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      result.push(text.substring(lastIndex, match.index));
+    }
+
+    // Add the link
+    result.push(
+      <a
+        key={idx}
+        href={match.link}
+        className="text-primary hover:underline font-medium"
+      >
+        {match.text}
+      </a>
+    );
+
+    lastIndex = match.index + match.length;
+  });
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    result.push(text.substring(lastIndex));
+  }
+
+  return result.length > 0 ? result : text;
+};
+
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
     document.title = `${content.title} | Zechariah Tokar`;
@@ -219,7 +289,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <span className="material-symbols-outlined">{item.icon}</span>
                 <h3 className="font-bold text-slate-900">{item.title}</h3>
               </div>
-              <p className="text-slate-600 leading-relaxed text-lg">{item.text}</p>
+              <p className="text-slate-600 leading-relaxed text-lg">{parseTextWithLinks(item.text)}</p>
             </div>
           ))}
         </div>
@@ -389,7 +459,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                   <span className="material-symbols-outlined text-lg">check</span>
                 </span>
                 <p className="text-slate-600 group-hover:text-slate-900 transition-colors text-base">
-                  {reason}
+                  {parseTextWithLinks(reason)}
                 </p>
               </div>
             ))}

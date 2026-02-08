@@ -162,17 +162,17 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'consultant-seo',
     slug: 'seoconsulting',
-    title: 'SEO Consulting Services. Expert Strategy for Search Dominance.',
+    title: 'SEO Consultant Israel | International SEO Strategy for US & Global Brands',
     subtitle: 'SEO Consulting',
     heroColor: 'secondary',
-    description: "Expert SEO strategy for US and international companies. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
+    description: "Expert SEO consulting for Israeli startups and B2B companies expanding to US markets. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
     entityDefinition: "I provide strategy, audits, and roadmap—you handle execution. Expert direction without agency retainers.",
     marketFit: "US and international companies that want senior SEO strategy without agency overhead.",
     industries: ["In-house Teams", "Startups", "Founders", "Marketing Agencies"],
     ugcIntro: {
-      what: "Expert strategy without full execution overhead. Clear plan, prioritized keywords, actionable roadmap your team can implement.",
-      why: "Most teams are guessing. You need strategy based on competitor data, not gut feelings or 2019 tactics.",
-      how: "Call → I tear apart your current strategy → 90-day roadmap with quickest wins and biggest opportunities."
+      what: "Expert strategy without full execution overhead. Clear plan, prioritized keywords, actionable roadmap your team can implement. Need full execution? Check B2B SEO services.",
+      why: "Most Israeli startups are guessing on US market SEO. You need strategy based on competitor data, not gut feelings or 2019 tactics.",
+      how: "Call → I tear apart your current strategy → 90-day roadmap with quickest wins. Complement with content marketing for ongoing growth."
     },
     results: [
       { label: 'Real Estate Visibility', value: 'Top Rank' },
@@ -196,34 +196,34 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       management: "Custom Retainers"
     },
     features: [
-      'Complete audit of your site\'s market relevance',
-      '90-day roadmap focused on high-intent traffic',
-      'Keyword strategy built for Google + AI search',
-      'Content outlines and upload instructions',
-      'Monthly calls to track progress and adapt'
+      'Complete audit of your site\'s US market relevance',
+      '90-day roadmap focused on high-intent B2B traffic for Israeli companies',
+      'Keyword strategy built for Google + AI search (ChatGPT, Perplexity)',
+      'Content marketing outlines and upload instructions for your team',
+      'Monthly calls to track progress and adapt strategy'
     ],
     whyMe: [
-      'Expert direction without agency overhead: You get senior-level strategy, not junior execution',
-      'You keep full control: Of content, pacing, and budget',
-      'Strategies tested on real businesses: Retail, therapy practices, real estate teams',
-      'Avoid expensive mistakes: That slow growth or get you penalized'
+      'Expert direction without agency overhead: You get senior-level strategy, not junior execution. Need full implementation? Check our B2B SEO services.',
+      'You keep full control: Of content, pacing, and budget. Your team executes while I guide every decision.',
+      'Strategies tested on Israeli and US businesses: SaaS startups, professional services, and tech companies',
+      'Avoid expensive mistakes: That slow growth or get you penalized. Strategic consulting prevents costly trial-and-error.'
     ],
     cta: 'Want clear SEO strategy your team can actually execute? Let\'s talk.'
   },
   b2b: {
     id: 'b2b-seo',
     slug: 'b2b-seo-company',
-    title: 'B2B SEO Company. Generate Qualified Leads Through Search.',
+    title: 'B2B SEO Services in Israel | SaaS, Tech & B2B SEO Agency',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
-    description: "B2B SEO for qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
+    description: "B2B SEO for Israeli companies targeting US markets. Qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
     entityDefinition: "Target keywords decision-makers search when evaluating solutions. Pricing pages, comparisons, use cases—not fluffy thought leadership.",
     marketFit: "US and international B2B companies, SaaS, and professional services that need qualified leads.",
     industries: ["SaaS", "Professional Services", "Manufacturing", "B2B Tech"],
     ugcIntro: {
-      what: "Get in front of decision makers when they're looking for solutions. Bottom-of-funnel content: landing pages, solution pages, comparison content.",
-      why: "B2B buyers research before reaching out. If you aren't the authority they find, your competitor gets the meeting.",
-      how: "Pricing pages, comparison articles, 'vs' posts, use cases. Authority links via Featured.com and targeted PR."
+      what: "Get in front of decision makers when they're looking for solutions. Bottom-of-funnel content: landing pages, solution pages, comparison content. Pair with content marketing for long-term authority.",
+      why: "B2B buyers research before reaching out. If you aren't the authority they find, your competitor gets the meeting. Israeli tech companies need US market visibility.",
+      how: "Pricing pages, comparison articles, 'vs' posts, use cases. Start with SEO consulting to map your strategy, then execute B2B content that converts."
     },
     results: [
       { label: 'SaaS Google Sales', value: '+300%' },
@@ -247,35 +247,35 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       management: "$2,000 - $3,500"
     },
     features: [
-      'In-depth keyword research for decision-makers',
-      'Content that speaks to problems, use cases, and ROI',
-      'Authority-driven link building + PR placements',
-      'On-page optimization for E-E-A-T signals',
-      'Landing pages built to convert',
-      'Analytics tracking that reflects lead quality'
+      'In-depth keyword research for US B2B decision-makers',
+      'Content marketing that speaks to problems, use cases, and ROI',
+      'Authority-driven link building + PR placements for Israeli tech companies',
+      'On-page optimization for E-E-A-T signals and Google rankings',
+      'Landing pages built to convert US enterprise buyers',
+      'Analytics tracking that reflects lead quality, not vanity metrics'
     ],
     whyMe: [
-      'Clear reporting on revenue: Not just traffic and impressions',
-      'Fast execution: Strategy, content, publishing in weeks not months',
-      'Experience with complex B2B verticals: SaaS, professional services, manufacturing',
-      'Optimized for Google AND AI search: Future-proofing your visibility'
+      'Clear reporting on revenue: Not just traffic and impressions. B2B SEO for Israeli companies targeting US markets.',
+      'Fast execution: Strategy through our SEO consulting, then content marketing for long-term growth.',
+      'Experience with complex B2B verticals: SaaS, professional services, manufacturing—especially Israeli tech companies.',
+      'Optimized for Google AND AI search: Future-proofing your visibility as ChatGPT and Perplexity change the game.'
     ],
     cta: 'Not getting qualified B2B leads? It\'s not your industry—it\'s your SEO. Let\'s fix that.'
   },
   content: {
     id: 'content-marketing',
     slug: 'content-marketing-for-seo',
-    title: 'Content Marketing for SEO. Strategic Content That Ranks and Converts.',
+    title: 'SEO Content Marketing in Israel | Strategic Content That Ranks & Converts',
     subtitle: 'Content Marketing for SEO',
     heroColor: 'ice',
-    description: "Content that ranks and converts. Not blogging—information architecture that establishes authority and drives qualified leads.",
+    description: "Content marketing that ranks and converts for Israeli companies. Not blogging—information architecture that establishes authority and drives qualified leads.",
     entityDefinition: "Landing pages, guides, comparisons, topical clusters designed to rank, earn links, and convert. Content as infrastructure.",
     marketFit: "US and international companies that need content-driven organic growth, not fluff that never ranks.",
     industries: ["eCommerce", "Local Services", "SaaS", "Professional Services"],
     ugcIntro: {
-      what: "Strategic pages targeting queries with conversion intent. Content that ranks and sells.",
-      why: "AI content is flooding the web. Stand out with human expertise, original insights, and genuine helpfulness.",
-      how: "Reddit, Quora, forums → find real questions → write the best answer on the internet."
+      what: "Strategic pages targeting queries with conversion intent. Content that ranks and sells. Works best with B2B SEO for maximum visibility.",
+      why: "AI content is flooding the web. Israeli companies need authentic US-market content that stands out with human expertise and original insights.",
+      how: "Reddit, Quora, forums → find real questions US customers ask → write the best answer. Guided by strategic consulting to stay on track."
     },
     results: [
       { label: 'Impressions to Clicks', value: '+244 Clicks' },
@@ -299,18 +299,18 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       management: "$1,500+"
     },
     features: [
-      'Keyword-driven content strategy',
-      'AI-assisted outlines for faster, smarter production',
-      'Blog posts written for search intent, not word count',
-      'Service pages that convert visitors into leads',
-      'Internal linking + on-page optimization',
-      'Uploading and formatting done for you'
+      'Keyword-driven content strategy from SEO consulting foundations',
+      'AI-assisted outlines for faster, smarter production—human-written execution',
+      'Blog posts written for US market search intent, not word count',
+      'Service pages that convert B2B visitors into qualified leads',
+      'Internal linking + on-page optimization for maximum visibility',
+      'Uploading and formatting done for you—zero technical lift'
     ],
     whyMe: [
-      'Content built for Google AND AI search engines: ChatGPT, Perplexity, Gemini',
-      'Structured for featured snippets: Grabbing position zero',
-      'Focused on questions US customers actually ask: Real research, not assumptions',
-      'Designed to build authority and trust: E-E-A-T optimization built in'
+      'Content built for Google AND AI search engines: ChatGPT, Perplexity, Gemini. Pair with B2B SEO for maximum impact.',
+      'Structured for featured snippets: Grabbing position zero with strategic content architecture.',
+      'Focused on questions US customers actually ask: Real research, not assumptions. Israeli companies need US-focused content.',
+      'Designed to build authority and trust: E-E-A-T optimization built in. Strategic consulting ensures your content roadmap is solid.'
     ],
     cta: 'Want content that ranks and converts—not filler that collects dust? This is what I build.'
   }
