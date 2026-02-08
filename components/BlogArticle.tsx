@@ -47,6 +47,8 @@ export const BlogArticle: React.FC = () => {
 
             <h2 id="why-most-b2b-seo-fails">Why Most B2B SEO Fails in Israel</h2>
 
+            <p>I've seen this pattern repeatedly while working with Israeli B2B companies targeting US and UK buyers — strong traffic, polished content, but zero pipeline impact from organic search.</p>
+
             <p>Think about your sales cycle for a minute.</p>
 
             <p>
@@ -90,6 +92,8 @@ export const BlogArticle: React.FC = () => {
             </p>
 
             <p>Six months in? Organic traffic was up 180%. Demo requests from organic? Exactly zero additional demos.</p>
+
+            <p>This is usually the point where companies reach out to me — after six or twelve months of SEO activity that looks good in reports but never touched revenue.</p>
 
             <p>Why?</p>
 
@@ -481,6 +485,9 @@ export const BlogArticle: React.FC = () => {
               </p>
               <p className="text-slate-700 mt-4">
                 This perspective comes from working with B2B companies where a single qualified lead can represent $50K-$500K+ in contract value. At that level, traditional "traffic-focused" SEO doesn't work. You need a pipeline-first approach.
+              </p>
+              <p className="text-slate-700 mt-4">
+                This guide reflects how B2B SEO services should work for Israeli companies selling into English-speaking markets.
               </p>
             </div>
 

@@ -34,7 +34,7 @@ const App: React.FC = () => {
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
           <Route
-            path="blog/israel-b2b-seo-services-pipeline-focus"
+            path="blog/israel-b2b-seo-pipeline"
             element={<BlogArticle />}
           />
 

@@ -8,7 +8,7 @@ export const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
-      slug: 'israel-b2b-seo-services-pipeline-focus',
+      slug: 'israel-b2b-seo-pipeline',
       title: 'Israel B2B SEO Services: How to Choose a Partner That Drives Pipeline (Not Just Traffic)',
       excerpt: 'Most Israeli B2B companies targeting English markets run into the same problem—lots of content, decent traffic, zero pipeline contribution. Here\'s how to fix that.',
       date: 'February 2026',
