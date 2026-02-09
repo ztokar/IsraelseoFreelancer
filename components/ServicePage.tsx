@@ -106,9 +106,9 @@ const GSCVisual: React.FC<{ data: any[]; clientName: string }> = ({
 // Helper function to convert service mentions to links
 const parseTextWithLinks = (text: string): React.ReactNode => {
   const serviceLinks: { [key: string]: string } = {
-    'B2B SEO services': '/b2b-seo-company',
-    'B2B SEO': '/b2b-seo-company',
-    'B2B content': '/b2b-seo-company',
+    'B2B SEO services': '/b2b-seo-israel',
+    'B2B SEO': '/b2b-seo-israel',
+    'B2B content': '/b2b-seo-israel',
     'SEO consulting': '/seoconsulting',
     'strategic consulting': '/seoconsulting',
     'Strategic consulting': '/seoconsulting',
@@ -176,6 +176,12 @@ const parseTextWithLinks = (text: string): React.ReactNode => {
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
     document.title = `${content.seoTitle || content.title} | Zechariah Tokar`;
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && content.metaDescription) {
+      metaDescription.setAttribute('content', content.metaDescription);
+    }
   }, [content]);
 
   const colorClass =

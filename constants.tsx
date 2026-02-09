@@ -12,7 +12,7 @@ export const SOCIAL_LINKS = {
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Freelance SEO', path: '/freelance-seo-israel' },
   { label: 'Consulting', path: '/seoconsulting' },
-  { label: 'B2B SEO', path: '/b2b-seo-company' },
+  { label: 'B2B SEO', path: '/b2b-seo-israel' },
   { label: 'Content Marketing', path: '/content-marketing-for-seo' },
   { label: 'Blog', path: '/blog' },
 ];
@@ -213,9 +213,10 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   },
   b2b: {
     id: 'b2b-seo',
-    slug: 'b2b-seo-company',
+    slug: 'b2b-seo-israel',
     title: 'B2B SEO Services in Israel. SaaS & Tech Lead Generation.',
-    seoTitle: 'B2B SEO Services in Israel | SaaS, Tech & B2B SEO Agency',
+    seoTitle: 'B2B SEO Services Israel | SaaS & Tech SEO Agency',
+    metaDescription: 'B2B SEO services in Israel for SaaS, tech, and B2B companies. Proven SEO strategies that generate qualified leads in the US and globally.',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
     description: "B2B SEO for Israeli companies targeting US markets. Qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",

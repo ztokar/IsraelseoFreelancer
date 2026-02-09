@@ -2,5 +2,8 @@
 /sitemap.xml  /sitemap.xml  200
 /robots.txt   /robots.txt   200
 
+# B2B SEO page redirect (301 permanent)
+/b2b-seo-company  /b2b-seo-israel  301
+
 # Redirect all other requests to index.html for SPA
 /*  /index.html  200

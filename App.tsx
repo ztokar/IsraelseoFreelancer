@@ -23,7 +23,7 @@ const App: React.FC = () => {
             element={<ServicePage content={SERVICE_DATA.consultant} />}
           />
           <Route
-            path="b2b-seo-company"
+            path="b2b-seo-israel"
             element={<ServicePage content={SERVICE_DATA.b2b} />}
           />
           <Route

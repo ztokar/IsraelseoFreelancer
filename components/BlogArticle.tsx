@@ -109,7 +109,7 @@ export const BlogArticle: React.FC = () => {
 
             <h2 id="what-b2b-seo-should-deliver">What B2B SEO Services Should Actually Deliver</h2>
 
-            <p>Let me clarify what effective <NavLink to="/b2b-seo-company" className="text-primary hover:underline">B2B SEO</NavLink> actually looks like.</p>
+            <p>Let me clarify what effective <NavLink to="/b2b-seo-israel" className="text-primary hover:underline">B2B SEO</NavLink> actually looks like.</p>
 
             <h3>Demand Capture vs Content Marketing</h3>
 
@@ -481,7 +481,7 @@ export const BlogArticle: React.FC = () => {
                 His methodology emphasizes demand capture over content marketing, bottom-of-funnel optimization over blog volume, and revenue attribution over vanity metrics.
               </p>
               <p className="text-slate-700 mt-4">
-                He works directly with clients on <NavLink to="/b2b-seo-company" className="text-primary hover:underline font-semibold">B2B SEO strategy</NavLink> focused on generating qualified pipeline—the kind of work that requires understanding buyer psychology, not just keyword research tools.
+                He works directly with clients on <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">B2B SEO strategy</NavLink> focused on generating qualified pipeline—the kind of work that requires understanding buyer psychology, not just keyword research tools.
               </p>
               <p className="text-slate-700 mt-4">
                 This perspective comes from working with B2B companies where a single qualified lead can represent $50K-$500K+ in contract value. At that level, traditional "traffic-focused" SEO doesn't work. You need a pipeline-first approach.
@@ -528,7 +528,7 @@ export const BlogArticle: React.FC = () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Related Services</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <NavLink
-                to="/b2b-seo-company"
+                to="/b2b-seo-israel"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">B2B SEO Services</h4>

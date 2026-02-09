@@ -19,6 +19,7 @@ export interface ServiceContent {
   slug: string;
   title: string;
   seoTitle?: string;
+  metaDescription?: string;
   subtitle: string;
   heroColor?: 'primary' | 'secondary' | 'ice';
   description: string;
