@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts';
+import { TestimonialsCarousel } from './TestimonialsCarousel';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -470,6 +471,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TestimonialsCarousel autoPlayInterval={7000} />
         </div>
       </section>
 

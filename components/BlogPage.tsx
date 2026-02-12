@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { TestimonialsCarousel } from './TestimonialsCarousel';
+import { VideoGrid } from './YouTubeEmbed';
+import { YOUTUBE_VIDEOS } from '../constants-videos';
 
 export const BlogPage: React.FC = () => {
   useEffect(() => {
@@ -93,6 +96,39 @@ export const BlogPage: React.FC = () => {
               </NavLink>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Video Tutorials Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm mb-6">
+              <span className="material-symbols-outlined text-sm text-primary">play_circle</span>
+              <span className="text-sm font-medium text-primary">Video Tutorials</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+              Learn from My Videos
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Practical SEO strategies and tactics you can implement right away
+            </p>
+          </div>
+
+          <VideoGrid
+            videos={YOUTUBE_VIDEOS.map(video => ({
+              ...video,
+              thumbnail: `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`
+            }))}
+            columns={3}
+          />
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TestimonialsCarousel />
         </div>
       </section>
     </div>

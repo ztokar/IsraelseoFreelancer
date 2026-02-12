@@ -5,6 +5,7 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/zechariah-tokar-167b7672/",
   twitter: "https://x.com/ZackTokar",
   youtube: "https://www.youtube.com/@IsraelB2BSEO",
+  reddit: "https://www.reddit.com/r/SEO_Israel/",
   calendly: "https://calendly.com/zack-tokar/consultation",
   email: "zechariah@israelseofreelancer.com"
 };

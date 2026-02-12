@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { SERVICES_LIST, CASE_STUDIES, CLIENT_LOGOS } from '../constants';
 import { NavLink } from 'react-router-dom';
+import { TestimonialsCarousel } from './TestimonialsCarousel';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -99,33 +100,50 @@ export const HomePage: React.FC = () => {
       <section className="border-y border-slate-200 bg-white py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { value: '+300%', label: 'Organic Growth', sublabel: 'Average Client Gain', icon: 'trending_up' },
-              { value: '10x', label: 'Client ROI', sublabel: 'Return on Investment', icon: 'monetization_on' },
-              { value: '500+', label: 'Rank 1 Keywords', sublabel: 'Secured This Quarter', icon: 'workspace_premium' },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="scroll-trigger group flex flex-col gap-3 rounded-2xl p-8 border border-slate-200 bg-slate-50 hover:border-primary/50 hover:bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-slate-500 text-base font-semibold uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                  <span className="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">
-                    {stat.icon}
-                  </span>
-                </div>
-                <p className="text-slate-900 tracking-tight text-5xl font-bold leading-tight group-hover:text-primary transition-colors">
-                  {stat.value}
-                </p>
-                <p className="text-primary text-base font-medium leading-normal flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">arrow_upward</span>
-                  {stat.sublabel}
-                </p>
+            {/* Stat 1 */}
+            <div className="text-center scroll-trigger">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <span className="material-symbols-outlined text-primary text-4xl">
+                  trending_up
+                </span>
+                <div className="text-5xl font-bold text-slate-900">+300%</div>
               </div>
-            ))}
+              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
+                <span className="material-symbols-outlined text-lg">arrow_upward</span>
+                <span>Average Client Gain</span>
+              </div>
+              <div className="text-slate-500 text-sm mt-1">Organic Growth</div>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="text-center scroll-trigger" style={{ transitionDelay: '100ms' }}>
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <span className="material-symbols-outlined text-primary text-4xl">
+                  monetization_on
+                </span>
+                <div className="text-5xl font-bold text-slate-900">10x</div>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
+                <span className="material-symbols-outlined text-lg">arrow_upward</span>
+                <span>Return on Investment</span>
+              </div>
+              <div className="text-slate-500 text-sm mt-1">Client ROI</div>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="text-center scroll-trigger" style={{ transitionDelay: '200ms' }}>
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <span className="material-symbols-outlined text-primary text-4xl">
+                  workspace_premium
+                </span>
+                <div className="text-5xl font-bold text-slate-900">500+</div>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
+                <span className="material-symbols-outlined text-lg">arrow_upward</span>
+                <span>Secured This Quarter</span>
+              </div>
+              <div className="text-slate-500 text-sm mt-1">Rank 1 Keywords</div>
+            </div>
           </div>
         </div>
       </section>
@@ -552,6 +570,13 @@ export const HomePage: React.FC = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TestimonialsCarousel />
         </div>
       </section>
 
