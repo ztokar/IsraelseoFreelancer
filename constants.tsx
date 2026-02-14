@@ -15,6 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Consulting', path: '/seoconsulting' },
   { label: 'B2B SEO', path: '/b2b-seo-israel' },
   { label: 'Content Marketing', path: '/content-marketing-for-seo' },
+  { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
   { label: 'Blog', path: '/blog' },
 ];
 
@@ -318,6 +319,58 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Designed to build authority and trust: E-E-A-T optimization built in. Strategic consulting ensures your content roadmap is solid.'
     ],
     cta: 'Want content that ranks and converts—not filler that collects dust? This is what I build.'
+  },
+  lawyers: {
+    id: 'seo-lawyers',
+    slug: 'seo-for-lawyers',
+    title: 'SEO for Lawyers: Get More Clients from Google',
+    seoTitle: 'SEO for Lawyers | Get More Clients from Google | Zechariah Tokar',
+    subtitle: 'SEO for Lawyers',
+    heroColor: 'secondary',
+    description: "SEO for lawyers gets you on page 1 when potential clients search for legal help. I work with law firms and solo practitioners who need qualified leads from Google, not just website traffic.",
+    entityDefinition: "Legal SEO focuses on local search visibility—showing up in Google's local pack, ranking for 'lawyer near me' searches, and capturing clients actively looking for representation. Not vanity traffic, actual cases.",
+    marketFit: "Law firms, solo practitioners, and legal professionals who need client-generating SEO, not generic agency packages.",
+    industries: ["Personal Injury", "Family Law", "Criminal Defense", "Estate Planning"],
+    ugcIntro: {
+      what: "SEO for lawyers means showing up when someone in your city searches for legal help. It's about local pack rankings, Google Business Profile optimization, and content that answers the exact questions potential clients type into Google at 2am.",
+      why: "Your competitors are on page 1. If you're not, you're invisible. Most people don't scroll past the first few results. They call the first lawyer they find who looks credible. That needs to be you.",
+      how: "I optimize your Google Business Profile, build location-specific content, earn citations from legal directories, and create service pages that rank for '[practice area] lawyer [city]' searches. Then I make sure your site converts visitors into consultations."
+    },
+    results: [
+      { label: 'Local Pack Rankings', value: 'Top 3' },
+      { label: 'Consultation Requests', value: '+40%' },
+      { label: 'Organic Visibility', value: 'Page 1' },
+    ],
+    process: {
+      title: "How I Get You Ranked",
+      steps: [
+        "Google Business Profile Optimization: Photos, categories, service areas, Q&A",
+        "Local Citation Building: Avvo, Justia, FindLaw, Martindale-Hubbell",
+        "Service Page Creation: [Practice Area] + [City] landing pages",
+        "Content Strategy: Answering questions potential clients actually search",
+        "Review Management: Getting more 5-star reviews that help rankings"
+      ]
+    },
+    tools: ["Google Business Profile", "BrightLocal", "Avvo", "Legal Directories"],
+    pricing: {
+      audit: "$250",
+      management: "$1,500 - $2,500"
+    },
+    features: [
+      'Google Business Profile optimization for local pack visibility',
+      'Location-specific landing pages for each practice area',
+      'Legal directory citations (Avvo, Justia, FindLaw)',
+      'FAQ content targeting common client questions',
+      'Review generation strategy for credibility',
+      'Consultation-focused conversion optimization'
+    ],
+    whyMe: [
+      'Experience with legal SEO and compliance requirements',
+      'Focus on consultation generation, not vanity metrics',
+      'Direct communication—no account manager middleman',
+      'Strategies proven on competitive local legal markets'
+    ],
+    cta: 'If potential clients can\'t find you on Google, they\'re calling someone else. Let\'s fix that and get you consistent leads from local search.'
   }
 };
 

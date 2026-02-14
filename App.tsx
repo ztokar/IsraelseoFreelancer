@@ -5,6 +5,8 @@ import { HomePage } from './components/HomePage';
 import { ServicePage } from './components/ServicePage';
 import { BlogPage } from './components/BlogPage';
 import { BlogArticle } from './components/BlogArticle';
+import { BlogArticle2 } from './components/BlogArticle2';
+import { BlogArticle3 } from './components/BlogArticle3';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -30,12 +32,24 @@ const App: React.FC = () => {
             path="content-marketing-for-seo"
             element={<ServicePage content={SERVICE_DATA.content} />}
           />
+          <Route
+            path="seo-for-lawyers"
+            element={<ServicePage content={SERVICE_DATA.lawyers} />}
+          />
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
           <Route
             path="blog/israel-b2b-seo-pipeline"
             element={<BlogArticle />}
+          />
+          <Route
+            path="blog/geo-ai-generative-engine-optimization"
+            element={<BlogArticle2 />}
+          />
+          <Route
+            path="blog/seo-reputation-management"
+            element={<BlogArticle3 />}
           />
 
           {/* Fallback */}

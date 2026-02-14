@@ -303,59 +303,61 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       </section>
 
       {/* Social Proof & GSC Visuals */}
-      <section className="py-20 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="mb-12 scroll-trigger">
-            <span className={`text-${colorClass} font-bold text-sm uppercase tracking-wide mb-3 block`}>
-              Client Results
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
-              Real results. Real data.
-            </h2>
-          </div>
+      {content.caseStudyHighlight && (
+        <section className="py-20 bg-slate-50 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="mb-12 scroll-trigger">
+              <span className={`text-${colorClass} font-bold text-sm uppercase tracking-wide mb-3 block`}>
+                Client Results
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
+                Real results. Real data.
+              </h2>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Text & Metrics */}
-            <div className="scroll-trigger">
-              <div
-                className={`inline-block bg-${colorClass}/10 text-${colorClass} px-4 py-1.5 rounded-full text-sm font-semibold mb-6`}
-              >
-                Case Study: {content.caseStudyHighlight.client}
-              </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                {content.caseStudyHighlight.metric}{' '}
-                <span className="text-slate-500 font-normal text-2xl">
-                  {content.caseStudyHighlight.context}
-                </span>
-              </h3>
-              <p className="text-slate-600 mb-8 text-lg leading-relaxed">
-                {content.caseStudyHighlight.description}
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {content.results.slice(0, 2).map((r, i) => (
-                  <div
-                    key={i}
-                    className="bg-white p-5 border border-slate-200 rounded-xl shadow-sm"
-                  >
-                    <div className="text-slate-500 text-sm font-semibold uppercase mb-1">
-                      {r.label}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left: Text & Metrics */}
+              <div className="scroll-trigger">
+                <div
+                  className={`inline-block bg-${colorClass}/10 text-${colorClass} px-4 py-1.5 rounded-full text-sm font-semibold mb-6`}
+                >
+                  Case Study: {content.caseStudyHighlight.client}
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  {content.caseStudyHighlight.metric}{' '}
+                  <span className="text-slate-500 font-normal text-2xl">
+                    {content.caseStudyHighlight.context}
+                  </span>
+                </h3>
+                <p className="text-slate-600 mb-8 text-lg leading-relaxed">
+                  {content.caseStudyHighlight.description}
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  {content.results.slice(0, 2).map((r, i) => (
+                    <div
+                      key={i}
+                      className="bg-white p-5 border border-slate-200 rounded-xl shadow-sm"
+                    >
+                      <div className="text-slate-500 text-sm font-semibold uppercase mb-1">
+                        {r.label}
+                      </div>
+                      <div className="text-2xl font-bold text-slate-900">{r.value}</div>
                     </div>
-                    <div className="text-2xl font-bold text-slate-900">{r.value}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: GSC Simulator */}
+              <div className="scroll-trigger" style={{ transitionDelay: '200ms' }}>
+                <GSCVisual
+                  data={content.caseStudyHighlight.graphData || []}
+                  clientName={content.caseStudyHighlight.client}
+                />
               </div>
             </div>
-
-            {/* Right: GSC Simulator */}
-            <div className="scroll-trigger" style={{ transitionDelay: '200ms' }}>
-              <GSCVisual
-                data={content.caseStudyHighlight.graphData || []}
-                clientName={content.caseStudyHighlight.client}
-              />
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Process & Tools */}
       <section className="py-20 bg-white border-y border-slate-200">

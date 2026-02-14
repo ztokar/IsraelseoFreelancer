@@ -19,6 +19,24 @@ export const BlogPage: React.FC = () => {
       category: 'B2B SEO Strategy',
       image: '/images/blog-b2b-seo-pipeline.jpg',
     },
+    {
+      slug: 'geo-ai-generative-engine-optimization',
+      title: 'Geo AI: The New SEO Israeli Companies Can\'t Ignore',
+      excerpt: 'Google searches are dying. ChatGPT, Perplexity, and Gemini are taking over. Learn what Geo AI (GEO) means for Israeli B2B companies targeting US markets.',
+      date: 'February 2026',
+      readTime: '2 min read',
+      category: 'AI Search',
+      image: '/images/blog-b2b-seo-pipeline.jpg',
+    },
+    {
+      slug: 'seo-reputation-management',
+      title: 'SEO Reputation Management: Control What Google Shows About You',
+      excerpt: 'Negative search results costing you deals? Learn how SEO reputation management pushes down damaging content and builds positive visibility on page 1.',
+      date: 'February 2026',
+      readTime: '8 min read',
+      category: 'Reputation Management',
+      image: '/images/blog-b2b-seo-pipeline.jpg',
+    },
   ];
 
   return (
