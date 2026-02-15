@@ -7,6 +7,8 @@ import { BlogPage } from './components/BlogPage';
 import { BlogArticle } from './components/BlogArticle';
 import { BlogArticle2 } from './components/BlogArticle2';
 import { BlogArticle3 } from './components/BlogArticle3';
+import { BlogArticle4 } from './components/BlogArticle4';
+import { BlogArticle5 } from './components/BlogArticle5';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -50,6 +52,14 @@ const App: React.FC = () => {
           <Route
             path="blog/seo-reputation-management"
             element={<BlogArticle3 />}
+          />
+          <Route
+            path="blog/ai-search-2026-updates"
+            element={<BlogArticle4 />}
+          />
+          <Route
+            path="blog/hebrew-seo-checkers-free-tools"
+            element={<BlogArticle5 />}
           />
 
           {/* Fallback */}

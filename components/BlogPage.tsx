@@ -37,6 +37,24 @@ export const BlogPage: React.FC = () => {
       category: 'Reputation Management',
       image: '/images/blog-b2b-seo-pipeline.jpg',
     },
+    {
+      slug: 'ai-search-2026-updates',
+      title: 'AI Search 2026: The 6 Updates Israeli Companies Must Prepare For',
+      excerpt: 'Your #2 ranking doesn\'t matter if nobody clicks. ChatGPT Search, Perplexity, and Google AI Overviews are changing how prospects find solutions. Here\'s what Israeli B2B companies need to do right now.',
+      date: 'February 2026',
+      readTime: '7 min read',
+      category: 'AI Search',
+      image: '/images/blog-ai-search-2026.jpg',
+    },
+    {
+      slug: 'hebrew-seo-checkers-free-tools',
+      title: 'Best Free SEO Checkers for Hebrew Websites & Israeli Startups in 2026',
+      excerpt: 'Hebrew SEO isn\'t just regular SEO in another language. RTL layout breaks half the tools. Here are 8 free SEO checkers I tested on actual Hebrew sites that actually work.',
+      date: 'February 2026',
+      readTime: '8 min read',
+      category: 'Hebrew SEO',
+      image: '/images/blog-hebrew-seo-checkers.jpg',
+    },
   ];
 
   return (
