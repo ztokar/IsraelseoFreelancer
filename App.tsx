@@ -11,6 +11,9 @@ import { BlogArticle4 } from './components/BlogArticle4';
 import { BlogArticle5 } from './components/BlogArticle5';
 import { BlogArticle6 } from './components/BlogArticle6';
 import { BlogArticle7 } from './components/BlogArticle7';
+import { BlogArticle8 } from './components/BlogArticle8';
+import { BlogArticle9 } from './components/BlogArticle9';
+import { BlogArticle10 } from './components/BlogArticle10';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -43,6 +46,18 @@ const App: React.FC = () => {
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
+          <Route
+            path="blog/israeli-tech-seo-gap"
+            element={<BlogArticle10 />}
+          />
+          <Route
+            path="blog/seo-drives-pipeline-b2b"
+            element={<BlogArticle9 />}
+          />
+          <Route
+            path="blog/why-israeli-b2b-fail-seo"
+            element={<BlogArticle8 />}
+          />
           <Route
             path="blog/seo-israeli-cybersecurity-companies"
             element={<BlogArticle7 />}
