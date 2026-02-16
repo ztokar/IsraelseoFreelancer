@@ -11,6 +11,15 @@ export const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
+      slug: 'seo-israeli-saas-companies-us-markets',
+      title: 'SEO for Israeli SaaS Companies Targeting US Markets',
+      excerpt: 'Most Israeli SaaS companies burn cash on content marketing that drives traffic but zero qualified trials. Learn how to own comparison pages, alternative searches, and feature queries that actually convert.',
+      date: 'February 2026',
+      readTime: '10 min read',
+      category: 'SaaS SEO',
+      image: '/images/blog-saas-seo.jpg',
+    },
+    {
       slug: 'israel-b2b-seo-pipeline',
       title: 'Israel B2B SEO Services: How to Choose a Partner That Drives Pipeline (Not Just Traffic)',
       excerpt: 'Most Israeli B2B companies targeting English markets run into the same problem—lots of content, decent traffic, zero pipeline contribution. Here\'s how to fix that.',
