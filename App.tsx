@@ -10,6 +10,7 @@ import { BlogArticle3 } from './components/BlogArticle3';
 import { BlogArticle4 } from './components/BlogArticle4';
 import { BlogArticle5 } from './components/BlogArticle5';
 import { BlogArticle6 } from './components/BlogArticle6';
+import { BlogArticle7 } from './components/BlogArticle7';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -42,6 +43,10 @@ const App: React.FC = () => {
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
+          <Route
+            path="blog/seo-israeli-cybersecurity-companies"
+            element={<BlogArticle7 />}
+          />
           <Route
             path="blog/seo-israeli-saas-companies-us-markets"
             element={<BlogArticle6 />}

@@ -11,6 +11,15 @@ export const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
+      slug: 'seo-israeli-cybersecurity-companies',
+      title: 'SEO for Israeli Cybersecurity Companies Competing Globally',
+      excerpt: 'Israeli cybersecurity companies have the technical edge but are invisible to US enterprise buyers. Learn how to own technical long-tail searches, build authority in high-trust industries, and leverage Israel\'s cybersecurity reputation.',
+      date: 'February 2026',
+      readTime: '11 min read',
+      category: 'Cybersecurity SEO',
+      image: '/images/blog-cybersecurity-seo.jpg',
+    },
+    {
       slug: 'seo-israeli-saas-companies-us-markets',
       title: 'SEO for Israeli SaaS Companies Targeting US Markets',
       excerpt: 'Most Israeli SaaS companies burn cash on content marketing that drives traffic but zero qualified trials. Learn how to own comparison pages, alternative searches, and feature queries that actually convert.',
