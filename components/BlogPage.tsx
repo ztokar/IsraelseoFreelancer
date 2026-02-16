@@ -31,7 +31,7 @@ export const BlogPage: React.FC = () => {
     {
       slug: 'why-israeli-b2b-fail-seo',
       title: 'Why Most Israeli B2B Companies Fail at SEO (And How to Fix It)',
-      excerpt: 'Most Israeli B2B companies targeting US markets make the same fatal SEO mistakes: chasing traffic over pipeline, copying content without authority, and ignoring bottom-of-funnel strategies. Here's how to fix it.',
+      excerpt: 'Most Israeli B2B companies targeting US markets make the same fatal SEO mistakes: chasing traffic over pipeline, copying content without authority, and ignoring bottom-of-funnel strategies. Here\'s how to fix it.',
       date: 'February 2026',
       readTime: '12 min read',
       category: 'B2B SEO Strategy',
