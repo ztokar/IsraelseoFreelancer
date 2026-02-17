@@ -516,19 +516,18 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 submitButtonText="Get Quick Wins & Consult"
                 showMessage={true}
               />
-                <p className="text-center text-sm text-slate-500 mt-4">
-                  Or{' '}
-                  <a
-                    href={SOCIAL_LINKS.calendly}
-                    className={`text-${colorClass} underline hover:no-underline font-medium`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    book directly via Calendly
-                  </a>
-                  .
-                </p>
-              </form>
+              <p className="text-center text-sm text-slate-500 mt-4">
+                Or{' '}
+                <a
+                  href={SOCIAL_LINKS.calendly}
+                  className={`text-${colorClass} underline hover:no-underline font-medium`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  book directly via Calendly
+                </a>
+                .
+              </p>
             </div>
           </div>
         </div>
