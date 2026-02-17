@@ -1,29 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const BlogArticle11: React.FC = () => {
-  return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
-      {/* Hero Image */}
-      <img
-        src="/blog-claude-code-content-marketing.jpg"
-        alt="Using Claude Code for content marketing in startups"
-        className="w-full h-auto rounded-lg shadow-lg mb-8"
-      />
+  useEffect(() => {
+    document.title = 'Using Claude Code For Content Marketing For Startups | Zechariah Tokar';
+    window.scrollTo(0, 0);
+  }, []);
 
+  return (
+    <div className="animate-fade-in-up">
       {/* Article Header */}
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">
-          Using Claude Code For Content Marketing For Startups
-        </h1>
-        <div className="flex items-center text-gray-600 text-sm">
-          <time dateTime="2026-02-17">February 17, 2026</time>
-          <span className="mx-2">•</span>
-          <span>12 min read</span>
+      <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
+        <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm">
+            <span className="text-sm font-medium text-primary">AI Content Strategy</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+            Using Claude Code For Content Marketing For Startups
+          </h1>
+
+          <div className="flex items-center justify-center gap-4 text-slate-600">
+            <span>February 17, 2026</span>
+            <span>•</span>
+            <span>12 min read</span>
+          </div>
         </div>
       </header>
 
       {/* Article Content */}
-      <div className="prose prose-lg max-w-none">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="prose prose-lg max-w-none">
         <p className="text-xl leading-relaxed mb-6">
           Most Israeli startups treat content marketing like an afterthought — hire a writer, publish some blog posts, hope for traffic. Claude Code for content marketing flips that model: you're not outsourcing content creation, you're building a content system that scales with your team's expertise, not your budget.
         </p>
@@ -396,8 +403,9 @@ const BlogArticle11: React.FC = () => {
           </p>
         </section>
 
-      </div>
-    </article>
+        </div>
+      </article>
+    </div>
   );
 };
 

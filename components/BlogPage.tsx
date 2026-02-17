@@ -17,7 +17,7 @@ export const BlogPage: React.FC = () => {
       date: 'February 2026',
       readTime: '12 min read',
       category: 'AI Content Strategy',
-      image: '/blog-claude-code-content-marketing.jpg',
+      image: '/images/blog-claude-code-content-marketing.jpg',
     },
     {
       slug: 'israeli-tech-seo-gap',
