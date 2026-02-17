@@ -11,6 +11,15 @@ export const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
+      slug: 'claude-code-content-marketing-startups',
+      title: 'Using Claude Code For Content Marketing For Startups',
+      excerpt: 'Claude Code turns your product knowledge into SEO-optimized content at startup speed. Learn how Israeli tech startups use AI to scale content marketing without hiring writers.',
+      date: 'February 2026',
+      readTime: '12 min read',
+      category: 'AI Content Strategy',
+      image: '/blog-claude-code-content-marketing.jpg',
+    },
+    {
       slug: 'israeli-tech-seo-gap',
       title: 'The Israeli Tech SEO Gap: Why Startups Struggle to Rank in US Markets',
       excerpt: 'Israeli startups have world-class products but struggle to rank in US search results. Learn why the SEO gap exists and what successful Israeli tech companies do differently.',

@@ -14,6 +14,7 @@ import { BlogArticle7 } from './components/BlogArticle7';
 import { BlogArticle8 } from './components/BlogArticle8';
 import { BlogArticle9 } from './components/BlogArticle9';
 import { BlogArticle10 } from './components/BlogArticle10';
+import BlogArticle11 from './components/BlogArticle11';
 import { SERVICE_DATA } from './constants';
 
 const App: React.FC = () => {
@@ -46,6 +47,10 @@ const App: React.FC = () => {
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
+          <Route
+            path="blog/claude-code-content-marketing-startups"
+            element={<BlogArticle11 />}
+          />
           <Route
             path="blog/israeli-tech-seo-gap"
             element={<BlogArticle10 />}
