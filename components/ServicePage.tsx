@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from 'recharts';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
+import { ProtectedForm } from './ProtectedForm';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -508,70 +509,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <div className="h-px w-20 bg-slate-200 mx-auto" />
               </div>
 
-              <form
-                action="https://formspree.io/f/mpwvyzbr"
-                method="POST"
-                className="space-y-6"
-              >
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value={`New Inquiry: ${content.title}`}
-                />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label
-                      className={`block text-sm font-semibold text-slate-700 mb-2`}
-                      htmlFor="url"
-                    >
-                      Website URL
-                    </label>
-                    <input
-                      className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
-                      id="url"
-                      name="website"
-                      placeholder="mysite.com"
-                      type="url"
-                      required
-                    />
-                  </div>
-                  <div className="group">
-                    <label
-                      className={`block text-sm font-semibold text-slate-700 mb-2`}
-                      htmlFor="email"
-                    >
-                      Business Email
-                    </label>
-                    <input
-                      className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
-                      id="email"
-                      name="email"
-                      placeholder="you@company.com"
-                      type="email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="group">
-                  <label
-                    className={`block text-sm font-semibold text-slate-700 mb-2`}
-                    htmlFor="message"
-                  >
-                    Biggest Challenge
-                  </label>
-                  <textarea
-                    className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 h-28 resize-none text-base`}
-                    id="message"
-                    name="message"
-                    placeholder="What's your biggest SEO challenge right now?"
-                  />
-                </div>
-                <button
-                  className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  type="submit"
-                >
-                  Get Quick Wins & Consult
-                </button>
+              <ProtectedForm
+                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
+                subject={`New Inquiry: ${content.title}`}
+                colorClass={colorClass}
+                submitButtonText="Get Quick Wins & Consult"
+                showMessage={true}
+              />
                 <p className="text-center text-sm text-slate-500 mt-4">
                   Or{' '}
                   <a

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { SERVICES_LIST, CASE_STUDIES, CLIENT_LOGOS } from '../constants';
 import { NavLink } from 'react-router-dom';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
+import { ProtectedForm } from './ProtectedForm';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -602,61 +603,16 @@ export const HomePage: React.FC = () => {
                 <div className="h-px w-20 bg-slate-200 mx-auto" />
               </div>
 
-              <form
-                action="https://formspree.io/f/mpwvyzbr"
-                method="POST"
-                className="space-y-6"
-              >
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="New SEO Audit Request from Homepage"
-                />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label
-                      className="block text-sm font-semibold text-slate-700 mb-2"
-                      htmlFor="url"
-                    >
-                      Website URL
-                    </label>
-                    <input
-                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-400 text-base"
-                      id="url"
-                      name="website"
-                      placeholder="mysite.com"
-                      type="url"
-                      required
-                    />
-                  </div>
-                  <div className="group">
-                    <label
-                      className="block text-sm font-semibold text-slate-700 mb-2"
-                      htmlFor="email"
-                    >
-                      Business Email
-                    </label>
-                    <input
-                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-400 text-base"
-                      id="email"
-                      name="email"
-                      placeholder="you@company.com"
-                      type="email"
-                      required
-                    />
-                  </div>
-                </div>
-                <button
-                  className="w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  type="submit"
-                >
-                  Get My Quick Wins Audit
-                </button>
-                <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary" />
-                  Free strategy session. No commitment.
-                </p>
-              </form>
+              <ProtectedForm
+                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
+                subject="New SEO Audit Request from Homepage"
+                submitButtonText="Get My Quick Wins Audit"
+                showMessage={false}
+              />
+              <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                Free strategy session. No commitment.
+              </p>
             </div>
           </div>
         </div>
