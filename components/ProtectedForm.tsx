@@ -32,10 +32,12 @@ const FormContent: React.FC<ProtectedFormProps> = ({
     setSubmitStatus('idle');
 
     try {
+      const formElement = e.currentTarget; // capture before async call — currentTarget goes null after await
+
       // Get reCAPTCHA token
       const token = await executeRecaptcha('contact_form');
 
-      const formData = new FormData(e.currentTarget);
+      const formData = new FormData(formElement);
       formData.append('g-recaptcha-response', token);
 
       // Submit to Formspree

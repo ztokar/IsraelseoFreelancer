@@ -607,7 +607,7 @@ export const HomePage: React.FC = () => {
                 formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
                 subject="New SEO Audit Request from Homepage"
                 submitButtonText="Get My Quick Wins Audit"
-                showMessage={false}
+                showMessage={true}
               />
               <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary" />
