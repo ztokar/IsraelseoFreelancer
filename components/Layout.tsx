@@ -75,7 +75,7 @@ export const Layout: React.FC = () => {
       {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-panel py-4' : 'bg-transparent py-6'
+          isScrolled ? 'glass-panel py-4' : 'bg-white/90 backdrop-blur-sm py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,7 +164,7 @@ export const Layout: React.FC = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow z-10 pt-20">
+      <main className="flex-grow z-10 pt-24">
         <Outlet />
       </main>
 
