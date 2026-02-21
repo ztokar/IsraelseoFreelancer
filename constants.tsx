@@ -16,6 +16,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'B2B SEO', path: '/b2b-seo-israel' },
   { label: 'Content Marketing', path: '/content-marketing-for-seo' },
   { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
+  { label: 'Israel SEO Specialist', path: '/israel-seo-specialist' },
   { label: 'Blog', path: '/blog' },
 ];
 
@@ -319,6 +320,60 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Designed to build authority and trust: E-E-A-T optimization built in. Strategic consulting ensures your content roadmap is solid.'
     ],
     cta: 'Want content that ranks and converts—not filler that collects dust? This is what I build.'
+  },
+  israelSpecialist: {
+    id: 'israel-seo-specialist',
+    slug: 'israel-seo-specialist',
+    title: 'Israel SEO Specialist. Get Found in the US and Israel.',
+    seoTitle: 'Israel SEO Specialist | Bilingual US & Israeli Market SEO | Zack Tokar',
+    metaDescription: 'Israel SEO specialist Zack Tokar bridges US and Israeli search markets. Bilingual strategy for Israeli companies entering the US and US brands targeting Israel.',
+    subtitle: 'Israel SEO Specialist',
+    heroColor: 'primary',
+    description: "Israel SEO specialist with proven results in both US and Israeli markets. I help Israeli companies rank on Google.com and US companies break into the Israeli market—with cultural fluency, not guesswork.",
+    entityDefinition: "Israel SEO means understanding search behavior in Hebrew and English, the Israeli business culture, and how US buyers differ from Israeli buyers. Not generic SEO—market-specific strategy that works on both Google.co.il and Google.com.",
+    marketFit: "Israeli tech companies expanding to US markets, US companies targeting Israel, and global brands that need bilingual SEO strategy without agency overhead.",
+    industries: ["Israeli Tech & SaaS", "B2B Services", "US Market Entry", "Hebrew-Language SEO"],
+    ugcIntro: {
+      what: "I'm an Israel SEO specialist with experience in both markets. I work with Israeli companies that need to rank in the US and US companies that need to crack Israel. Combines freelance SEO execution with deep B2B SEO expertise for lead generation on both sides.",
+      why: "You can't apply US SEO playbooks to Israel. Hebrew search intent works differently. Israeli buyers behave differently. Google.co.il and Google.com rankings are not the same game. Generic agencies guess at the other market. I know both.",
+      how: "Bilingual keyword research across Hebrew and English. Competitor gap analysis in both markets. Content that ranks on Google.co.il and Google.com simultaneously. Start with SEO consulting to map the strategy, then execute through full B2B SEO services."
+    },
+    results: [
+      { label: 'Israeli SaaS US Visibility', value: 'Page 1' },
+      { label: 'Bilingual Rankings', value: 'Dual Market' },
+      { label: 'B2B Israeli Leads', value: '+200%' },
+    ],
+    caseStudyHighlight: CASE_STUDIES[0],
+    process: {
+      title: "Israel SEO Process",
+      steps: [
+        "Bilingual Keyword Research: Hebrew and English intent mapping—Israeli buyers and US buyers search completely differently",
+        "Israeli Market Competitor Analysis: Who owns Google.co.il in your niche and exactly what it takes to beat them",
+        "Dual-Market Content Strategy: Pages that rank in Israel and convert in the US—often they're different pages",
+        "Cultural SEO Adaptation: Israeli directness vs US storytelling—each market needs different messaging to convert",
+        "Technical International SEO: Hreflang setup, Hebrew encoding, geo-targeting in Google Search Console"
+      ]
+    },
+    tools: ["Google Search Console", "Keywords Everywhere", "Moz", "Google Trends", "Google Ads"],
+    pricing: {
+      audit: "$250",
+      management: "$1,800 - $3,500"
+    },
+    features: [
+      'Bilingual SEO strategy: Hebrew and English keyword research run in parallel',
+      'Israeli market intelligence: what Israeli B2B buyers search vs what US buyers search',
+      'US market penetration content built for Israeli tech and SaaS companies',
+      'Google.co.il and Google.com optimization at the same time',
+      'Cultural messaging adaptation—Israeli directness vs US persuasion-led copy',
+      'International technical SEO: hreflang, geo-targeting, Hebrew character encoding'
+    ],
+    whyMe: [
+      'Native Israeli with US market depth: I grew up in Israel and built my career in US markets. I don\'t translate between them—I interpret. Most consultants are guessing at whichever market isn\'t their home.',
+      'Real bilingual rankings: Israeli ecommerce, US B2B, Israeli tech companies ranking on Google.com. Not theory—actual results across both Google.co.il and Google.com.',
+      'Hebrew SEO is not translated English: Intent, phrasing, and competitive dynamics are completely different. Your English-only SEO agency doesn\'t know this. I do.',
+      'B2B depth for tech companies: Israeli B2B clients need content that speaks to US enterprise buyers. Our B2B SEO services handle the full funnel—from Israeli startup to US decision-maker.'
+    ],
+    cta: 'Trying to rank in both Israel and the US without someone who actually knows both markets? That\'s why it\'s not working. Let\'s fix that.'
   },
   lawyers: {
     id: 'seo-lawyers',

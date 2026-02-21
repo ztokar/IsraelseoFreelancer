@@ -117,6 +117,8 @@ const parseTextWithLinks = (text: string): React.ReactNode => {
     'content marketing': '/content-marketing-for-seo',
     'Content marketing': '/content-marketing-for-seo',
     'content architecture': '/content-marketing-for-seo',
+    'Israel SEO specialist': '/israel-seo-specialist',
+    'Israel SEO specialist services': '/israel-seo-specialist',
   };
 
   let result: React.ReactNode[] = [];

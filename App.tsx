@@ -44,6 +44,10 @@ const App: React.FC = () => {
             path="seo-for-lawyers"
             element={<ServicePage content={SERVICE_DATA.lawyers} />}
           />
+          <Route
+            path="israel-seo-specialist"
+            element={<ServicePage content={SERVICE_DATA.israelSpecialist} />}
+          />
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogPage />} />
