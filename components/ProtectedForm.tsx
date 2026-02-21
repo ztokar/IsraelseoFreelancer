@@ -160,7 +160,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 };
 
 export const ProtectedForm: React.FC<ProtectedFormProps> = (props) => {
-  const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LcExample-Key-For-Testing-Only';
+  const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LdUym4sAAAAAH7-MgGMCadlrdecy7COFvsMgBxx';
 
   return (
     <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
