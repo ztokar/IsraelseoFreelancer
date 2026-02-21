@@ -324,56 +324,56 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   israelSpecialist: {
     id: 'israel-seo-specialist',
     slug: 'israel-seo-specialist',
-    title: 'Israel SEO Specialist. Get Found in the US and Israel.',
-    seoTitle: 'Israel SEO Specialist | Bilingual US & Israeli Market SEO | Zack Tokar',
-    metaDescription: 'Israel SEO specialist Zack Tokar bridges US and Israeli search markets. Bilingual strategy for Israeli companies entering the US and US brands targeting Israel.',
+    title: 'Israel SEO Specialist. Rankings in the US, UK, and Beyond.',
+    seoTitle: 'Israel SEO Specialist | Ranking International Companies in English-Speaking Markets',
+    metaDescription: 'SEO specialist based in Israel helping international companies rank in the US, UK, and English-speaking markets worldwide. Senior strategy, no agency markup.',
     subtitle: 'Israel SEO Specialist',
     heroColor: 'primary',
-    description: "Israel SEO specialist with proven results in both US and Israeli markets. I help Israeli companies rank on Google.com and US companies break into the Israeli market—with cultural fluency, not guesswork.",
-    entityDefinition: "Israel SEO means understanding search behavior in Hebrew and English, the Israeli business culture, and how US buyers differ from Israeli buyers. Not generic SEO—market-specific strategy that works on both Google.co.il and Google.com.",
-    marketFit: "Israeli tech companies expanding to US markets, US companies targeting Israel, and global brands that need bilingual SEO strategy without agency overhead.",
-    industries: ["Israeli Tech & SaaS", "B2B Services", "US Market Entry", "Hebrew-Language SEO"],
+    description: "SEO consultant based in Israel, focused entirely on English-speaking markets. I work with Israeli startups, European companies, and international brands that need to rank in the US, UK, and beyond.",
+    entityDefinition: "Being based in Israel doesn't limit who I work with—it means I work across time zones and serve companies globally. My specialty is English-speaking markets: US, UK, Canada, Australia.",
+    marketFit: "Israeli startups, European companies, and international businesses that need senior SEO execution in English-speaking markets without paying agency rates.",
+    industries: ["Israeli Startups", "International B2B", "SaaS & Tech", "US & UK Market Entry"],
     ugcIntro: {
-      what: "I'm an Israel SEO specialist with experience in both markets. I work with Israeli companies that need to rank in the US and US companies that need to crack Israel. Combines freelance SEO execution with deep B2B SEO expertise for lead generation on both sides.",
-      why: "You can't apply US SEO playbooks to Israel. Hebrew search intent works differently. Israeli buyers behave differently. Google.co.il and Google.com rankings are not the same game. Generic agencies guess at the other market. I know both.",
-      how: "Bilingual keyword research across Hebrew and English. Competitor gap analysis in both markets. Content that ranks on Google.co.il and Google.com simultaneously. Start with SEO consulting to map the strategy, then execute through full B2B SEO services."
+      what: "Senior SEO strategy and execution for companies targeting English-speaking markets. Whether you're an Israeli startup going after the US or a UK company entering new markets, I handle the research, content, and technical work. Pairs well with B2B SEO services for full-funnel lead generation.",
+      why: "Most agencies serving international companies apply the same generic playbook regardless of market. English-speaking markets—especially the US—are competitive and specific. You need someone who actually knows how US and UK buyers search, not someone adapting a template.",
+      how: "Competitor research in your target English-speaking market. Keyword strategy built on what real buyers search. Content written, optimized, and published. Start with SEO consulting to map the opportunity, then execute through B2B SEO services."
     },
     results: [
-      { label: 'Israeli SaaS US Visibility', value: 'Page 1' },
-      { label: 'Bilingual Rankings', value: 'Dual Market' },
-      { label: 'B2B Israeli Leads', value: '+200%' },
+      { label: 'US Organic Visibility', value: 'Page 1' },
+      { label: 'International B2B Leads', value: '+200%' },
+      { label: 'Ecommerce Revenue (30 Days)', value: '+$9,000' },
     ],
     caseStudyHighlight: CASE_STUDIES[0],
     process: {
-      title: "Israel SEO Process",
+      title: "How I Get You Ranked",
       steps: [
-        "Bilingual Keyword Research: Hebrew and English intent mapping—Israeli buyers and US buyers search completely differently",
-        "Israeli Market Competitor Analysis: Who owns Google.co.il in your niche and exactly what it takes to beat them",
-        "Dual-Market Content Strategy: Pages that rank in Israel and convert in the US—often they're different pages",
-        "Cultural SEO Adaptation: Israeli directness vs US storytelling—each market needs different messaging to convert",
-        "Technical International SEO: Hreflang setup, Hebrew encoding, geo-targeting in Google Search Console"
+        "Market Competitor Research: Who ranks in your target English-speaking market and exactly what it takes to beat them",
+        "Keyword Strategy: High-intent keywords US and UK buyers use when evaluating solutions like yours",
+        "Content Creation: Service pages, comparison content, and guides written for English-speaking buyers",
+        "On-Page & Technical SEO: Site structure, schema, speed, and indexing built for competitive markets",
+        "Authority Building: PR placements and link building that earn credibility in English-speaking markets"
       ]
     },
-    tools: ["Google Search Console", "Keywords Everywhere", "Moz", "Google Trends", "Google Ads"],
+    tools: ["Google Search Console", "Keywords Everywhere", "Moz", "Reddit (Research)", "Featured.com"],
     pricing: {
       audit: "$250",
       management: "$1,800 - $3,500"
     },
     features: [
-      'Bilingual SEO strategy: Hebrew and English keyword research run in parallel',
-      'Israeli market intelligence: what Israeli B2B buyers search vs what US buyers search',
-      'US market penetration content built for Israeli tech and SaaS companies',
-      'Google.co.il and Google.com optimization at the same time',
-      'Cultural messaging adaptation—Israeli directness vs US persuasion-led copy',
-      'International technical SEO: hreflang, geo-targeting, Hebrew character encoding'
+      'Competitor research in your specific English-speaking target market',
+      'Keyword strategy built around how US and UK buyers actually search',
+      'Content written, optimized, and published—no technical lift on your side',
+      'On-page SEO and technical fixes for competitive English markets',
+      'B2B SEO execution for Israeli and international companies targeting the US',
+      'Direct senior access—no account managers, no junior execution teams'
     ],
     whyMe: [
-      'Native Israeli with US market depth: I grew up in Israel and built my career in US markets. I don\'t translate between them—I interpret. Most consultants are guessing at whichever market isn\'t their home.',
-      'Real bilingual rankings: Israeli ecommerce, US B2B, Israeli tech companies ranking on Google.com. Not theory—actual results across both Google.co.il and Google.com.',
-      'Hebrew SEO is not translated English: Intent, phrasing, and competitive dynamics are completely different. Your English-only SEO agency doesn\'t know this. I do.',
-      'B2B depth for tech companies: Israeli B2B clients need content that speaks to US enterprise buyers. Our B2B SEO services handle the full funnel—from Israeli startup to US decision-maker.'
+      'English-market focus, global client base: I work with companies from Israel, Europe, and beyond—all targeting the US and UK. That\'s my lane. I don\'t dilute it.',
+      'Proven results in competitive English markets: NY real estate, US ecommerce, US B2B SaaS. Page 1 rankings in markets where it\'s actually hard to rank.',
+      'Senior execution, not oversight: You get me doing the work—not a team lead who reviews what a junior wrote. Consistent quality, direct communication.',
+      'Built for B2B: Israeli and international companies with complex products need content that speaks to US and UK decision-makers. Our B2B SEO services handle the full funnel.'
     ],
-    cta: 'Trying to rank in both Israel and the US without someone who actually knows both markets? That\'s why it\'s not working. Let\'s fix that.'
+    cta: 'Based anywhere. Targeting the US, UK, or English-speaking markets? That\'s exactly what I do. Let\'s talk.'
   },
   lawyers: {
     id: 'seo-lawyers',
