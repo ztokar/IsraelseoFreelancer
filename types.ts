@@ -45,6 +45,7 @@ export interface ServiceContent {
   features: string[];
   whyMe: string[];
   cta: string;
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface NavItem {

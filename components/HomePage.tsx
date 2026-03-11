@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
 
               {/* Subheadline */}
               <p className="text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Work directly with a senior consultant—no agency teams, no overhead. 10+ years optimizing sites for US & international markets.
+                Work directly with Zechariah Tokar, a senior SEO consultant with 10+ years optimizing sites for US and international markets. No agency teams, no overhead.
               </p>
 
               {/* Single Primary CTA */}
@@ -96,6 +96,15 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </header>
+
+      {/* Entity Definition - Front-loaded for AI citation */}
+      <section className="border-b border-slate-200 bg-white py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Zechariah Tokar is a freelance SEO consultant based in Israel, specializing in US and international organic search strategy. He works with B2B companies, SaaS startups, ecommerce brands, and local service businesses to drive qualified leads through Google and AI search engines like ChatGPT and Perplexity.
+          </p>
+        </div>
+      </section>
 
       {/* Stats Bar */}
       <section className="border-y border-slate-200 bg-white py-16 relative overflow-hidden">
@@ -191,11 +200,11 @@ export const HomePage: React.FC = () => {
               My Process
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              How I{' '}
-              <span className="text-primary">Rank Your Site</span>
+              How Does Zechariah Tokar{' '}
+              <span className="text-primary">Rank Your Site?</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-              A systematic, data-driven approach to dominate search rankings and drive qualified leads.
+              Zechariah Tokar uses a five-step SEO process: technical audit, keyword gap analysis, content optimization, authority link building, and ongoing technical implementation. Each step targets measurable ranking improvements and qualified lead generation.
             </p>
           </div>
 
@@ -278,11 +287,11 @@ export const HomePage: React.FC = () => {
                 Client Results
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900">
-                Proven Results
+                What Results Has Zechariah Tokar Delivered?
               </h2>
             </div>
             <p className="text-slate-600 max-w-md text-lg leading-relaxed md:text-right">
-              Real results from SEO campaigns for US clients.
+              Zechariah Tokar has driven +300% organic revenue for ecommerce clients, #1 rankings against Zillow in local real estate, and consistent monthly leads for hospitality businesses. All through organic search, zero ad spend.
             </p>
           </div>
 
@@ -421,10 +430,10 @@ export const HomePage: React.FC = () => {
               Services
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              SEO Services
+              What SEO Services Does Zechariah Tokar Offer?
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-              Tailored solutions for businesses that demand results.
+              Zechariah Tokar offers freelance SEO, SEO consulting, B2B SEO for SaaS and tech companies, and content marketing. Each service targets US and international markets with a focus on revenue, not vanity metrics.
             </p>
           </div>
 
@@ -525,10 +534,13 @@ export const HomePage: React.FC = () => {
                 Why Work With Me
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-                How I'm <span className="text-primary">Different</span>
+                Why Choose Zechariah Tokar <span className="text-primary">Over an Agency?</span>
               </h2>
               <p className="text-slate-600 text-xl leading-relaxed">
-                Direct access to senior SEO expertise. No agency overhead.
+                Zechariah Tokar provides direct senior-level SEO execution. No account managers, no junior team members, no agency overhead. You work with the person doing the work.{' '}
+                <NavLink to="/seo-freelancer-vs-agency" className="text-primary hover:underline font-medium">
+                  See the full freelancer vs agency comparison
+                </NavLink>.
               </p>
             </div>
             <div className="scroll-trigger space-y-5" style={{ transitionDelay: '200ms' }}>

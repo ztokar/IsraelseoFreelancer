@@ -119,6 +119,8 @@ const parseTextWithLinks = (text: string): React.ReactNode => {
     'content architecture': '/content-marketing-for-seo',
     'Israel SEO specialist': '/israel-seo-specialist',
     'Israel SEO specialist services': '/israel-seo-specialist',
+    'freelancer vs agency': '/seo-freelancer-vs-agency',
+    'freelancer vs. agency': '/seo-freelancer-vs-agency',
   };
 
   let result: React.ReactNode[] = [];
@@ -478,6 +480,53 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section with Schema */}
+      {content.faqs && content.faqs.length > 0 && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: content.faqs.map((faq) => ({
+                  '@type': 'Question',
+                  name: faq.question,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: faq.answer,
+                  },
+                })),
+              }),
+            }}
+          />
+          <section className="py-20 bg-white border-y border-slate-200">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12 scroll-trigger">
+                <span className={`text-${colorClass} font-bold text-sm uppercase tracking-wide mb-3 block`}>
+                  Common Questions
+                </span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+              <div className="space-y-6">
+                {content.faqs.map((faq, idx) => (
+                  <div
+                    key={idx}
+                    className="scroll-trigger bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-primary/50 transition-all"
+                    style={{ transitionDelay: `${idx * 50}ms` }}
+                  >
+                    <h3 className="text-lg font-bold text-slate-900 mb-3">{faq.question}</h3>
+                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Testimonials Section */}
       <section className="py-20 bg-slate-50">

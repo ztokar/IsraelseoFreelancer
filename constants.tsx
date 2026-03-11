@@ -4,7 +4,7 @@ import React from 'react';
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/zechariah-tokar-167b7672/",
   twitter: "https://x.com/ZackTokar",
-  youtube: "https://www.youtube.com/@IsraelB2BSEO",
+  youtube: "https://www.youtube.com/@Zechariah_T",
   reddit: "https://www.reddit.com/r/SEO_Israel/",
   calendly: "https://calendly.com/zack-tokar/consultation",
   email: "zechariah@israelseofreelancer.com"
@@ -116,8 +116,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     title: 'Hands-On SEO Without the Agency Markup.',
     subtitle: 'Freelance SEO Consultant',
     heroColor: 'primary',
-    description: "Hands-on SEO for US and international companies. Strategy and execution by a senior consultant, not a rotating agency team.",
-    entityDefinition: "I personally execute every aspect of your campaign. No outsourcing, no junior team members. Direct access to senior-level strategy.",
+    description: "Zechariah Tokar provides hands-on SEO for US and international companies. Strategy and execution by a senior consultant, not a rotating agency team.",
+    entityDefinition: "Zechariah Tokar personally executes every aspect of your SEO campaign. No outsourcing, no junior team members. Direct access to senior-level strategy and a Wharton MBA.",
     marketFit: "US and international companies in local services, B2B, SaaS, and eCommerce that need SEO tied to revenue.",
     industries: ["Local Services", "B2B", "SaaS", "eCommerce"],
     ugcIntro: {
@@ -160,7 +160,13 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Proven US market results: NY real estate, Montana hospitality, nationwide e-commerce',
       'You pay for results: Not hours, not "strategy sessions," actual ranking improvements'
     ],
-    cta: 'Ready to stop being invisible and start driving real leads? Let\'s see if we\'re a fit.'
+    cta: 'Ready to stop being invisible and start driving real leads? Let\'s see if we\'re a fit.',
+    faqs: [
+      { question: 'How long does it take to see SEO results?', answer: 'Most clients see measurable ranking improvements within 60-90 days. Zechariah Tokar prioritizes quick wins first, targeting keywords where small optimizations produce fast gains, then builds toward competitive terms over 3-6 months.' },
+      { question: 'What does a freelance SEO consultant do differently than an agency?', answer: 'Zechariah Tokar personally handles strategy and execution. No account managers, no junior team members rotating through your project. You get direct access to 10+ years of senior SEO experience on every decision.' },
+      { question: 'How much does freelance SEO cost?', answer: 'A deep dive audit starts at $250. Monthly SEO management ranges from $1,500 to $3,500 depending on site size and competition level. Every dollar goes to actual work, not agency overhead.' },
+      { question: 'Do you work with international companies?', answer: 'Yes. Zechariah Tokar works with US companies, Israeli startups, European businesses, and international brands targeting English-speaking markets. He specializes in US market SEO strategy.' },
+    ]
   },
   consultant: {
     id: 'consultant-seo',
@@ -169,8 +175,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     seoTitle: 'SEO Consultant Israel | International SEO Strategy for US & Global Brands',
     subtitle: 'SEO Consulting',
     heroColor: 'secondary',
-    description: "Expert SEO consulting for Israeli startups and B2B companies expanding to US markets. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
-    entityDefinition: "I provide strategy, audits, and roadmap—you handle execution. Expert direction without agency retainers.",
+    description: "Zechariah Tokar provides expert SEO consulting for startups and B2B companies expanding to US markets. Know exactly what to do and in what order to grow organic traffic. Full control, senior guidance.",
+    entityDefinition: "Zechariah Tokar provides strategy, audits, and a 90-day roadmap. You handle execution. Expert direction without agency retainers.",
     marketFit: "US and international companies that want senior SEO strategy without agency overhead.",
     industries: ["In-house Teams", "Startups", "Founders", "Marketing Agencies"],
     ugcIntro: {
@@ -212,7 +218,12 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Strategies tested on Israeli and US businesses: SaaS startups, professional services, and tech companies',
       'Avoid expensive mistakes: That slow growth or get you penalized. Strategic consulting prevents costly trial-and-error.'
     ],
-    cta: 'Want clear SEO strategy your team can actually execute? Let\'s talk.'
+    cta: 'Want clear SEO strategy your team can actually execute? Let\'s talk.',
+    faqs: [
+      { question: 'What is SEO consulting vs full SEO management?', answer: 'SEO consulting means Zechariah Tokar provides strategy, audits, and a prioritized roadmap. Your team handles execution. Full management means he handles everything. Consulting works best for companies with in-house marketing teams.' },
+      { question: 'How does an SEO consultant help Israeli companies rank in the US?', answer: 'Zechariah Tokar researches US competitor landscapes, identifies keyword gaps, and builds content strategies around how American buyers actually search. He bridges the gap between Israeli product expertise and US market search behavior.' },
+      { question: 'What does the first 90 days look like?', answer: 'Month 1: Full audit and competitor analysis. Month 2: Quick win implementation and content strategy. Month 3: Execution begins on high-priority keywords. You get a clear roadmap from day one.' },
+    ]
   },
   b2b: {
     id: 'b2b-seo',
@@ -222,8 +233,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'B2B SEO services in Israel for SaaS, tech, and B2B companies. Proven SEO strategies that generate qualified leads in the US and globally.',
     subtitle: 'B2B SEO Services',
     heroColor: 'primary',
-    description: "B2B SEO for Israeli companies targeting US markets. Qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
-    entityDefinition: "Target keywords decision-makers search when evaluating solutions. Pricing pages, comparisons, use cases—not fluffy thought leadership.",
+    description: "Zechariah Tokar delivers B2B SEO for companies targeting US markets. Qualified inbound leads, not vanity metrics. Every ranking matters when contracts are high-value.",
+    entityDefinition: "Zechariah Tokar targets keywords decision-makers search when evaluating solutions. Pricing pages, comparisons, use cases. Not fluffy thought leadership.",
     marketFit: "US and international B2B companies, SaaS, and professional services that need qualified leads.",
     industries: ["SaaS", "Professional Services", "Manufacturing", "B2B Tech"],
     ugcIntro: {
@@ -266,7 +277,13 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Experience with complex B2B verticals: SaaS, professional services, manufacturing—especially Israeli tech companies.',
       'Optimized for Google AND AI search: Future-proofing your visibility as ChatGPT and Perplexity change the game.'
     ],
-    cta: 'Not getting qualified B2B leads? It\'s not your industry—it\'s your SEO. Let\'s fix that.'
+    cta: 'Not getting qualified B2B leads? It\'s not your industry, it\'s your SEO. Let\'s fix that.',
+    faqs: [
+      { question: 'What is B2B SEO and how is it different from regular SEO?', answer: 'B2B SEO targets keywords that decision-makers search when evaluating solutions. Zechariah Tokar focuses on bottom-of-funnel content like pricing pages, comparison articles, and use cases that generate qualified leads, not generic traffic.' },
+      { question: 'How does Zechariah Tokar generate B2B leads through SEO?', answer: 'By creating content around buyer-intent keywords: "best [solution] for [use case]", comparison pages, pricing breakdowns, and case studies. This content ranks for searches from people ready to buy, not people doing casual research.' },
+      { question: 'Can SEO work for complex B2B products?', answer: 'Yes. Zechariah Tokar has experience with SaaS, professional services, and manufacturing. Complex products benefit most from SEO because buyers do extensive research before contacting sales. The company that owns that research wins the deal.' },
+      { question: 'How do you measure B2B SEO success?', answer: 'Qualified leads, pipeline contribution, and revenue attribution. Not traffic or impressions. Zechariah Tokar sets up lead tracking that connects organic search to actual business outcomes.' },
+    ]
   },
   content: {
     id: 'content-marketing',
@@ -275,8 +292,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     seoTitle: 'SEO Content Marketing in Israel | Strategic Content That Ranks & Converts',
     subtitle: 'Content Marketing for SEO',
     heroColor: 'ice',
-    description: "Content marketing that ranks and converts for Israeli companies. Not blogging—information architecture that establishes authority and drives qualified leads.",
-    entityDefinition: "Landing pages, guides, comparisons, topical clusters designed to rank, earn links, and convert. Content as infrastructure.",
+    description: "Zechariah Tokar builds content marketing that ranks and converts. Not blogging. Information architecture that establishes authority and drives qualified leads.",
+    entityDefinition: "Zechariah Tokar creates landing pages, guides, comparisons, and topical clusters designed to rank, earn links, and convert. Content as infrastructure.",
     marketFit: "US and international companies that need content-driven organic growth, not fluff that never ranks.",
     industries: ["eCommerce", "Local Services", "SaaS", "Professional Services"],
     ugcIntro: {
@@ -319,7 +336,12 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Focused on questions US customers actually ask: Real research, not assumptions. Israeli companies need US-focused content.',
       'Designed to build authority and trust: E-E-A-T optimization built in. Strategic consulting ensures your content roadmap is solid.'
     ],
-    cta: 'Want content that ranks and converts—not filler that collects dust? This is what I build.'
+    cta: 'Want content that ranks and converts, not filler that collects dust? This is what I build.',
+    faqs: [
+      { question: 'What is SEO content marketing?', answer: 'SEO content marketing is creating pages specifically designed to rank in Google and AI search engines for keywords your buyers search. Zechariah Tokar builds landing pages, guides, comparisons, and topical clusters, not random blog posts.' },
+      { question: 'How is this different from regular content marketing?', answer: 'Regular content marketing often produces blog posts that never rank. Zechariah Tokar starts with keyword research and search intent, then creates content engineered to capture that traffic. Every piece targets a specific query with conversion potential.' },
+      { question: 'How do you create content that AI search engines cite?', answer: 'Zechariah Tokar structures content with definitive statements, question-based headings, specific entity mentions, and front-loaded insights. This format matches how ChatGPT, Perplexity, and Google AI Overviews select sources to cite.' },
+    ]
   },
   israelSpecialist: {
     id: 'israel-seo-specialist',
@@ -329,7 +351,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'SEO specialist based in Israel helping international companies rank in the US, UK, and English-speaking markets worldwide. Senior strategy, no agency markup.',
     subtitle: 'Israel SEO Specialist',
     heroColor: 'primary',
-    description: "SEO consultant based in Israel, focused entirely on English-speaking markets. I work with Israeli startups, European companies, and international brands that need to rank in the US, UK, and beyond.",
+    description: "Zechariah Tokar is an SEO consultant based in Israel, focused entirely on English-speaking markets. He works with Israeli startups, European companies, and international brands that need to rank in the US, UK, and beyond.",
     entityDefinition: "Being based in Israel doesn't limit who I work with—it means I work across time zones and serve companies globally. My specialty is English-speaking markets: US, UK, Canada, Australia.",
     marketFit: "Israeli startups, European companies, and international businesses that need senior SEO execution in English-speaking markets without paying agency rates.",
     industries: ["Israeli Startups", "International B2B", "SaaS & Tech", "US & UK Market Entry"],
@@ -373,7 +395,12 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Senior execution, not oversight: You get me doing the work—not a team lead who reviews what a junior wrote. Consistent quality, direct communication.',
       'Built for B2B: Israeli and international companies with complex products need content that speaks to US and UK decision-makers. Our B2B SEO services handle the full funnel.'
     ],
-    cta: 'Based anywhere. Targeting the US, UK, or English-speaking markets? That\'s exactly what I do. Let\'s talk.'
+    cta: 'Based anywhere. Targeting the US, UK, or English-speaking markets? That\'s exactly what I do. Let\'s talk.',
+    faqs: [
+      { question: 'Can an SEO consultant based in Israel rank websites in the US?', answer: 'Yes. Zechariah Tokar is a native English speaker based in Israel who specializes in US and UK market SEO. He has ranked clients on page 1 for competitive US keywords in real estate, ecommerce, hospitality, and B2B SaaS.' },
+      { question: 'What markets does Zechariah Tokar serve?', answer: 'Zechariah Tokar serves companies targeting English-speaking markets: US, UK, Canada, and Australia. His clients include Israeli startups, European companies, and international brands entering the US market.' },
+      { question: 'Do you work across time zones?', answer: 'Yes. Zechariah Tokar works with clients across US, European, and Israeli time zones. Communication is async-friendly with regular progress calls scheduled at convenient times.' },
+    ]
   },
   lawyers: {
     id: 'seo-lawyers',
@@ -382,8 +409,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     seoTitle: 'SEO for Lawyers | Get More Clients from Google | Zechariah Tokar',
     subtitle: 'SEO for Lawyers',
     heroColor: 'secondary',
-    description: "SEO for lawyers gets you on page 1 when potential clients search for legal help. I work with law firms and solo practitioners who need qualified leads from Google, not just website traffic.",
-    entityDefinition: "Legal SEO focuses on local search visibility—showing up in Google's local pack, ranking for 'lawyer near me' searches, and capturing clients actively looking for representation. Not vanity traffic, actual cases.",
+    description: "Zechariah Tokar provides SEO for lawyers that gets you on page 1 when potential clients search for legal help. He works with law firms and solo practitioners who need qualified leads from Google, not just website traffic.",
+    entityDefinition: "Legal SEO focuses on local search visibility: showing up in Google's local pack, ranking for 'lawyer near me' searches, and capturing clients actively looking for representation. Not vanity traffic, actual cases.",
     marketFit: "Law firms, solo practitioners, and legal professionals who need client-generating SEO, not generic agency packages.",
     industries: ["Personal Injury", "Family Law", "Criminal Defense", "Estate Planning"],
     ugcIntro: {
@@ -425,7 +452,12 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       'Direct communication—no account manager middleman',
       'Strategies proven on competitive local legal markets'
     ],
-    cta: 'If potential clients can\'t find you on Google, they\'re calling someone else. Let\'s fix that and get you consistent leads from local search.'
+    cta: 'If potential clients can\'t find you on Google, they\'re calling someone else. Let\'s fix that and get you consistent leads from local search.',
+    faqs: [
+      { question: 'How does SEO for lawyers work?', answer: 'SEO for lawyers focuses on local search visibility. Zechariah Tokar optimizes your Google Business Profile, builds location-specific landing pages, earns citations from legal directories like Avvo and Justia, and creates content answering questions potential clients search.' },
+      { question: 'How long does it take for a law firm to rank on Google?', answer: 'Most law firms see local pack improvements within 60-90 days. Competitive practice areas in major cities take 3-6 months for page 1 organic rankings. Zechariah Tokar prioritizes Google Business Profile and local pack first for faster results.' },
+      { question: 'What is the ROI of SEO for lawyers?', answer: 'A single personal injury case can be worth $10,000-$100,000+. If SEO generates even 2-3 additional consultations per month, the return far exceeds the investment. Zechariah Tokar tracks consultation requests as the primary metric.' },
+    ]
   }
 };
 
