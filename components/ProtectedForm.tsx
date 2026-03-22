@@ -28,16 +28,17 @@ const FormContent: React.FC<ProtectedFormProps> = ({
       return;
     }
 
+    // Capture form data and form ref BEFORE disabling inputs — disabled fields are excluded from FormData
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      const formElement = e.currentTarget; // capture before async call — currentTarget goes null after await
-
       // Get reCAPTCHA token
       const token = await executeRecaptcha('contact_form');
 
-      const formData = new FormData(formElement);
       formData.append('g-recaptcha-response', token);
 
       // Submit to Formspree
@@ -51,7 +52,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
       if (response.ok) {
         setSubmitStatus('success');
-        (e.target as HTMLFormElement).reset();
+        formElement.reset();
       } else {
         setSubmitStatus('error');
       }
