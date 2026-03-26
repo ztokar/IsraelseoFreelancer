@@ -453,7 +453,11 @@ export const HomePage: React.FC = () => {
                 ? '/images/service-b2b-seo.jpg'
                 : service.key === 'content'
                 ? '/images/service-content-marketing.jpg'
-                : null;
+                : service.key === 'israelSpecialist'
+                ? '/images/service-seo-consulting.jpg'
+                : service.key === 'lawyers'
+                ? '/images/service-freelance-seo.jpg'
+                : '/images/service-freelance-seo.jpg';
 
               return (
               <NavLink
@@ -472,7 +476,13 @@ export const HomePage: React.FC = () => {
                       ? 'SEO Consulting'
                       : service.key === 'b2b'
                       ? 'B2B SEO Services'
-                      : 'Content Marketing for SEO'}
+                      : service.key === 'content'
+                      ? 'Content Marketing for SEO'
+                      : service.key === 'israelSpecialist'
+                      ? 'Israel SEO Specialist'
+                      : service.key === 'lawyers'
+                      ? 'SEO for Lawyers'
+                      : 'SEO Services'}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
