@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
 import { VideoGrid } from './YouTubeEmbed';
 import { YOUTUBE_VIDEOS } from '../constants-videos';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const BlogPage: React.FC = () => {
   useEffect(() => {
@@ -117,7 +117,9 @@ export const BlogPage: React.FC = () => {
   ];
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="B2B SEO Insights | Israel SEO Freelancer Blog" description="SEO strategies for B2B companies, Israeli tech startups, and businesses targeting US markets. Practical guides on technical SEO, content marketing, and AI search." path="/blog" />
+      <div className="animate-fade-in-up">
       {/* Hero Section */}
       <header className="relative min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -227,5 +229,6 @@ export const BlogPage: React.FC = () => {
         </div>
       </section>
     </div>
+  </>
   );
 };

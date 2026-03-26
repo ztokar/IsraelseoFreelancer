@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 const BlogArticle11: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ const BlogArticle11: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="Using Claude Code For Content Marketing For Startups | Zechariah Tokar" description="How startups can use Claude Code to scale content marketing. Practical workflow for AI-assisted keyword research, writing, and publishing." path="/blog/claude-code-content-marketing-startups" image="/images/blog-claude-code-content-marketing.jpg" type="article" />
+      <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
@@ -413,6 +415,7 @@ const BlogArticle11: React.FC = () => {
         </div>
       </article>
     </div>
+  </>
   );
 };
 

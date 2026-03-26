@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { ClientOnly } from 'vite-react-ssg';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 interface ProtectedFormProps {
@@ -166,8 +167,12 @@ export const ProtectedForm: React.FC<ProtectedFormProps> = (props) => {
   const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LdUym4sAAAAAH7-MgGMCadlrdecy7COFvsMgBxx';
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
-      <FormContent {...props} />
-    </GoogleReCaptchaProvider>
+    <ClientOnly>
+      {() => (
+        <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
+          <FormContent {...props} />
+        </GoogleReCaptchaProvider>
+      )}
+    </ClientOnly>
   );
 };

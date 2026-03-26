@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const BlogArticle8: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ export const BlogArticle8: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar" description="Most Israeli B2B companies make the same SEO mistakes: wrong keywords, thin content, no internal linking. Here is a practical fix for each one." path="/blog/why-israeli-b2b-fail-seo" image="/images/blog-why-israeli-b2b-fail-seo.jpg" type="article" />
+      <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
@@ -145,5 +147,6 @@ export const BlogArticle8: React.FC = () => {
         </div>
       </article>
     </div>
+  </>
   );
 };

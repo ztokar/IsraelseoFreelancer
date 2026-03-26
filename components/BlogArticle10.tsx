@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const BlogArticle10: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ export const BlogArticle10: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="The Israeli Tech SEO Gap: Why Startups Struggle to Rank in US Markets | Zechariah Tokar" description="Israeli tech startups build great products but struggle to rank on Google in the US. This article breaks down the SEO gap and how to close it." path="/blog/israeli-tech-seo-gap" image="/images/blog-israeli-tech-seo-gap.jpg" type="article" />
+      <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
@@ -156,5 +158,6 @@ export const BlogArticle10: React.FC = () => {
         </div>
       </article>
     </div>
+  </>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ServiceContent } from '../types';
 import { SOCIAL_LINKS } from '../constants';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 import {
   ResponsiveContainer,
   AreaChart,
@@ -197,6 +197,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       : 'primary';
 
   return (
+    <>
+      <HeadSEO
+        title={`${content.seoTitle || content.title} | Zechariah Tokar`}
+        description={content.metaDescription || ''}
+        path={`/${content.slug}`}
+      />
     <div className="animate-fade-in-up">
       {/* Hero Section */}
       <header className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50">
@@ -583,5 +589,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         </div>
       </section>
     </div>
+    </>
   );
 };

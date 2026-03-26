@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ProtectedForm } from './ProtectedForm';
 import { SOCIAL_LINKS } from '../constants';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const ComparisonFreelancerVsAgency: React.FC = () => {
   useEffect(() => {
@@ -14,7 +14,9 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="SEO Freelancer vs Agency: Which Is Right for Your Business? | Zechariah Tokar" description="Comparing SEO freelancers vs agencies for Israeli and international businesses. Costs, response times, expertise, and which delivers better ROI." path="/seo-freelancer-vs-agency" />
+      <div className="animate-fade-in-up">
       {/* Schema */}
       <script
         type="application/ld+json"
@@ -200,5 +202,6 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
         </div>
       </section>
     </div>
+  </>
   );
 };

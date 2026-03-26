@@ -3,7 +3,7 @@ import { SERVICES_LIST, CASE_STUDIES, CLIENT_LOGOS } from '../constants';
 import { NavLink } from 'react-router-dom';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
 import { ProtectedForm } from './ProtectedForm';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="Israel SEO Freelancer | +300% Sales for US Clients | Free Audit" description="Senior SEO consultant Zechariah Tokar drove +300% Google sales for e-commerce and B2B clients. 10+ years experience. Based in Israel, serving US and international markets. Book your free audit." path="/" />
+      <div className="animate-fade-in-up">
       {/* Hero Section - Clean & Focused */}
       <header className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         {/* Subtle background accent */}
@@ -634,5 +636,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
     </div>
+  </>
   );
 };

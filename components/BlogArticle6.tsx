@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const BlogArticle6: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ export const BlogArticle6: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar" description="How Israeli SaaS companies can rank in US search results. Covers domain strategy, content localization, and building topical authority for American buyers." path="/blog/seo-israeli-saas-companies-us-markets" image="/images/blog-saas-seo.jpg" type="article" />
+      <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
@@ -256,5 +258,6 @@ export const BlogArticle6: React.FC = () => {
         </div>
       </article>
     </div>
+  </>
   );
 };

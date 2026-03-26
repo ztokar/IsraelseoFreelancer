@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { updatePageSEO } from '../utils/seo';
+import { updatePageSEO, HeadSEO } from '../utils/seo';
 
 export const BlogArticle9: React.FC = () => {
   useEffect(() => {
@@ -15,7 +15,9 @@ export const BlogArticle9: React.FC = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in-up">
+    <>
+      <HeadSEO title="How SEO Drives Pipeline for B2B Companies (Not Just Traffic) | Zechariah Tokar" description="B2B SEO should drive qualified leads and pipeline, not just traffic numbers. Learn how to connect organic search to real revenue for your sales team." path="/blog/seo-drives-pipeline-b2b" image="/images/blog-seo-drives-pipeline-b2b.jpg" type="article" />
+      <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">
@@ -113,5 +115,6 @@ export const BlogArticle9: React.FC = () => {
         </div>
       </article>
     </div>
+  </>
   );
 };
