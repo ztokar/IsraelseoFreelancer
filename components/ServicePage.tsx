@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ServiceContent } from '../types';
 import { SOCIAL_LINKS } from '../constants';
+import { updatePageSEO } from '../utils/seo';
 import {
   ResponsiveContainer,
   AreaChart,
@@ -181,13 +182,11 @@ const parseTextWithLinks = (text: string): React.ReactNode => {
 
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
-    document.title = `${content.seoTitle || content.title} | Zechariah Tokar`;
-    
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && content.metaDescription) {
-      metaDescription.setAttribute('content', content.metaDescription);
-    }
+    updatePageSEO({
+      title: `${content.seoTitle || content.title} | Zechariah Tokar`,
+      description: content.metaDescription || '',
+      path: window.location.pathname,
+    });
   }, [content]);
 
   const colorClass =

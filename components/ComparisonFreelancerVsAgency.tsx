@@ -2,11 +2,15 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ProtectedForm } from './ProtectedForm';
 import { SOCIAL_LINKS } from '../constants';
+import { updatePageSEO } from '../utils/seo';
 
 export const ComparisonFreelancerVsAgency: React.FC = () => {
   useEffect(() => {
-    document.title =
-      'SEO Freelancer vs Agency: Which Is Right for Your Business? | Zechariah Tokar';
+    updatePageSEO({
+      title: 'SEO Freelancer vs Agency: Which Is Right for Your Business? | Zechariah Tokar',
+      description: 'Comparing SEO freelancers vs agencies for Israeli and international businesses. Costs, response times, expertise, and which delivers better ROI.',
+      path: '/seo-freelancer-vs-agency',
+    });
   }, []);
 
   return (

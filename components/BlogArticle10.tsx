@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle10: React.FC = () => {
   useEffect(() => {
-    document.title = 'The Israeli Tech SEO Gap: Why Startups Struggle to Rank in US Markets | Zechariah Tokar';
+    updatePageSEO({
+      title: 'The Israeli Tech SEO Gap: Why Startups Struggle to Rank in US Markets | Zechariah Tokar',
+      description: 'Israeli tech startups build great products but struggle to rank on Google in the US. This article breaks down the SEO gap and how to close it.',
+      path: '/blog/israeli-tech-seo-gap',
+      image: '/images/blog-israeli-tech-seo-gap.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

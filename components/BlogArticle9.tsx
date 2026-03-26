@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle9: React.FC = () => {
   useEffect(() => {
-    document.title = 'How SEO Drives Pipeline for B2B Companies (Not Just Traffic) | Zechariah Tokar';
+    updatePageSEO({
+      title: 'How SEO Drives Pipeline for B2B Companies (Not Just Traffic) | Zechariah Tokar',
+      description: 'B2B SEO should drive qualified leads and pipeline, not just traffic numbers. Learn how to connect organic search to real revenue for your sales team.',
+      path: '/blog/seo-drives-pipeline-b2b',
+      image: '/images/blog-seo-drives-pipeline-b2b.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle3: React.FC = () => {
   useEffect(() => {
-    document.title = 'SEO Reputation Management: Control What Google Shows About You | Zechariah Tokar';
+    updatePageSEO({
+      title: 'SEO Reputation Management: Control What Google Shows About You | Zechariah Tokar',
+      description: 'Take control of your Google search results. Practical SEO reputation management strategies for businesses and executives who want to own page 1.',
+      path: '/blog/seo-reputation-management',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

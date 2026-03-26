@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle8: React.FC = () => {
   useEffect(() => {
-    document.title = 'Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar',
+      description: 'Most Israeli B2B companies make the same SEO mistakes: wrong keywords, thin content, no internal linking. Here is a practical fix for each one.',
+      path: '/blog/why-israeli-b2b-fail-seo',
+      image: '/images/blog-why-israeli-b2b-fail-seo.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

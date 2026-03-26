@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle5: React.FC = () => {
   useEffect(() => {
-    document.title = 'Best Free SEO Checkers for Hebrew Websites & Israeli Startups in 2026 | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Best Free SEO Checkers for Hebrew Websites & Israeli Startups in 2026 | Zechariah Tokar',
+      description: 'Free SEO tools that actually work for Hebrew websites. Tested checkers for Israeli startups covering technical audits, keyword tracking, and content optimization.',
+      path: '/blog/hebrew-seo-checkers-free-tools',
+      image: '/images/blog-hebrew-seo-checkers.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

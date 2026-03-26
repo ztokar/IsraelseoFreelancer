@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle: React.FC = () => {
   useEffect(() => {
-    document.title = 'Israel B2B SEO Services: Choose a Partner That Drives Pipeline | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Israel B2B SEO Services: Choose a Partner That Drives Pipeline | Zechariah Tokar',
+      description: 'Compare Israel B2B SEO service providers. Learn what separates pipeline-focused SEO from traffic-only strategies for Israeli tech companies.',
+      path: '/blog/israel-b2b-seo-pipeline',
+      image: '/images/blog-b2b-seo-pipeline.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

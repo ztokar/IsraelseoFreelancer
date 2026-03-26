@@ -3,10 +3,15 @@ import { NavLink } from 'react-router-dom';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
 import { VideoGrid } from './YouTubeEmbed';
 import { YOUTUBE_VIDEOS } from '../constants-videos';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'B2B SEO Insights | Israel SEO Freelancer Blog';
+    updatePageSEO({
+      title: 'B2B SEO Insights | Israel SEO Freelancer Blog',
+      description: 'SEO strategies for B2B companies, Israeli tech startups, and businesses targeting US markets. Practical guides on technical SEO, content marketing, and AI search.',
+      path: '/blog',
+    });
   }, []);
 
   const blogPosts = [

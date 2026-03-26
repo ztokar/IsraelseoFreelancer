@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle2: React.FC = () => {
   useEffect(() => {
-    document.title = 'Geo AI: The New SEO Israeli Companies Can\'t Ignore | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Geo AI: The New SEO Israeli Companies Can\'t Ignore | Zechariah Tokar',
+      description: 'Generative Engine Optimization (GEO) is reshaping how Israeli companies get found in AI search. Learn how to optimize for ChatGPT, Perplexity, and Google AI Overviews.',
+      path: '/blog/geo-ai-generative-engine-optimization',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

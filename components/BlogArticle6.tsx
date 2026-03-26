@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle6: React.FC = () => {
   useEffect(() => {
-    document.title = 'SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar';
+    updatePageSEO({
+      title: 'SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar',
+      description: 'How Israeli SaaS companies can rank in US search results. Covers domain strategy, content localization, and building topical authority for American buyers.',
+      path: '/blog/seo-israeli-saas-companies-us-markets',
+      image: '/images/blog-saas-seo.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

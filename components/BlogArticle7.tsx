@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle7: React.FC = () => {
   useEffect(() => {
-    document.title = 'SEO for Israeli Cybersecurity Companies Competing Globally | Zechariah Tokar';
+    updatePageSEO({
+      title: 'SEO for Israeli Cybersecurity Companies Competing Globally | Zechariah Tokar',
+      description: 'Israeli cybersecurity companies have world-class products but struggle to rank in US search. Here is how to fix that with targeted SEO strategies.',
+      path: '/blog/seo-israeli-cybersecurity-companies',
+      image: '/images/blog-cybersecurity-seo.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

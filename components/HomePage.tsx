@@ -3,11 +3,15 @@ import { SERVICES_LIST, CASE_STUDIES, CLIENT_LOGOS } from '../constants';
 import { NavLink } from 'react-router-dom';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
 import { ProtectedForm } from './ProtectedForm';
+import { updatePageSEO } from '../utils/seo';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
-    document.title =
-      'Israel SEO Freelancer | AI-Driven Rankings & Revenue | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Israel SEO Freelancer | +300% Sales for US Clients | Free Audit',
+      description: 'Senior SEO consultant Zechariah Tokar drove +300% Google sales for e-commerce and B2B clients. 10+ years experience. Based in Israel, serving US and international markets. Book your free audit.',
+      path: '/',
+    });
   }, []);
 
   return (

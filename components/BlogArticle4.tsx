@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 export const BlogArticle4: React.FC = () => {
   useEffect(() => {
-    document.title = 'AI Search 2026: The 6 Updates Israeli Companies Must Prepare For | Zechariah Tokar';
+    updatePageSEO({
+      title: 'AI Search 2026: The 6 Updates Israeli Companies Must Prepare For | Zechariah Tokar',
+      description: 'Google AI Overviews, Perplexity citations, and ChatGPT search are changing SEO in 2026. Here are the 6 updates Israeli companies need to act on now.',
+      path: '/blog/ai-search-2026-updates',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 

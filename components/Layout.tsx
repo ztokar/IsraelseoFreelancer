@@ -18,6 +18,10 @@ export const Layout: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // Skip mouse tracking on touch devices / small screens
+    const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+    if (isMobile) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (containerRef.current) {
         setMousePos({ x: e.clientX, y: e.clientY });
@@ -32,8 +36,10 @@ export const Layout: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  // Scroll animation observer
+  // Scroll animation observer - adds js-ready class so content is visible without JS
   useEffect(() => {
+    const elements = document.querySelectorAll('.scroll-trigger');
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,7 +51,8 @@ export const Layout: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll('.scroll-trigger').forEach((el) => {
+    elements.forEach((el) => {
+      el.classList.add('js-ready');
       observer.observe(el);
     });
 

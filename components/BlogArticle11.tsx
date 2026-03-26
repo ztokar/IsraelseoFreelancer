@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { updatePageSEO } from '../utils/seo';
 
 const BlogArticle11: React.FC = () => {
   useEffect(() => {
-    document.title = 'Using Claude Code For Content Marketing For Startups | Zechariah Tokar';
+    updatePageSEO({
+      title: 'Using Claude Code For Content Marketing For Startups | Zechariah Tokar',
+      description: 'How startups can use Claude Code to scale content marketing. Practical workflow for AI-assisted keyword research, writing, and publishing.',
+      path: '/blog/claude-code-content-marketing-startups',
+      image: '/images/blog-claude-code-content-marketing.jpg',
+      type: 'article',
+    });
     window.scrollTo(0, 0);
   }, []);
 
