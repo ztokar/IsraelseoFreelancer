@@ -277,6 +277,14 @@ export const Layout: React.FC = () => {
                 >
                   SEO Company Israel
                 </a>
+                {' | '}
+                <a
+                  href="/feed.xml"
+                  className="hover:text-primary transition-colors"
+                  aria-label="RSS Feed"
+                >
+                  RSS
+                </a>
               </p>
             </div>
           </div>

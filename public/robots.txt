@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://israelseofreelancer.com/sitemap.xml
+Sitemap: https://israelseofreelancer.com/feed.xml
