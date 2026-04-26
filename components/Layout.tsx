@@ -102,7 +102,7 @@ export const Layout: React.FC = () => {
                   Zechariah Tokar
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-secondary group-hover:text-primary transition-colors">
-                  AI SEO Strategist
+                  SEO consultant for US-facing companies
                 </span>
               </div>
             </NavLink>
@@ -127,7 +127,7 @@ export const Layout: React.FC = () => {
                 className="relative overflow-hidden group bg-primary px-6 py-2.5 rounded-full text-base font-semibold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
               >
                 <span className="relative z-10 text-white">
-                  Find Quick Wins
+                  Get audit
                 </span>
               </a>
             </div>
@@ -164,7 +164,7 @@ export const Layout: React.FC = () => {
               href="#audit"
               className="bg-primary text-white px-6 py-4 text-center font-bold mt-4 rounded-lg shadow-md"
             >
-              Get Free Audit
+              Get audit
             </a>
           </div>
         )}
@@ -192,12 +192,12 @@ export const Layout: React.FC = () => {
                     Zechariah Tokar
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-slate-500">
-                    SEO Consultant
+                    SEO consultant
                   </span>
                 </div>
               </div>
               <p className="text-slate-600 text-base max-w-sm leading-relaxed">
-                English-native SEO consultant based in Israel, providing strategic SEO services for US and international businesses.
+                Senior SEO work for companies that need clearer pages, stronger offers, and better search visibility in US-facing markets.
               </p>
             </div>
 
@@ -268,7 +268,7 @@ export const Layout: React.FC = () => {
                 ISRAELSEOFREELANCER.COM
               </p>
               <p className="text-slate-400 text-sm">
-                Part of{' '}
+                Also visit{' '}
                 <a
                   href="https://seocompanyisrael.com"
                   target="_blank"

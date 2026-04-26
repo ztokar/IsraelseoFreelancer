@@ -20,12 +20,15 @@ const FormContent: React.FC<ProtectedFormProps> = ({
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('Something went wrong. Please try again or email directly.');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!executeRecaptcha) {
       console.error('reCAPTCHA not loaded');
+      setSubmitStatus('error');
+      setErrorMessage('The verification check did not load. Please refresh and try again.');
       return;
     }
 
@@ -35,6 +38,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorMessage('Something went wrong. Please try again or email directly.');
 
     try {
       // Get reCAPTCHA token
@@ -55,10 +59,22 @@ const FormContent: React.FC<ProtectedFormProps> = ({
         setSubmitStatus('success');
         formElement.reset();
       } else {
+        try {
+          const responseData = await response.json();
+          const firstError = responseData?.errors?.[0]?.message;
+          if (firstError) {
+            setErrorMessage(firstError);
+          }
+        } catch {
+          // Keep the default message if the response is not JSON.
+        }
         setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      if (error instanceof Error && error.message) {
+        setErrorMessage(error.message);
+      }
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -152,7 +168,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
       {submitStatus === 'error' && (
         <p className="text-center text-red-600 font-medium">
-          Something went wrong. Please try again or email directly.
+          {errorMessage}
         </p>
       )}
 

@@ -11,12 +11,11 @@ export const SOCIAL_LINKS = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Freelance SEO', path: '/freelance-seo-israel' },
-  { label: 'Consulting', path: '/seoconsulting' },
   { label: 'B2B SEO', path: '/b2b-seo-israel' },
-  { label: 'Content Marketing', path: '/content-marketing-for-seo' },
-  { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
-  { label: 'Israel SEO Specialist', path: '/israel-seo-specialist' },
+  { label: 'Consulting', path: '/seoconsulting' },
+  { label: 'Content SEO', path: '/content-marketing-for-seo' },
+  { label: 'Freelance SEO', path: '/freelance-seo-israel' },
+  { label: 'Comparison', path: '/seo-freelancer-vs-agency' },
   { label: 'Blog', path: '/blog' },
 ];
 
