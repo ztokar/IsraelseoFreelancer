@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CheckCircle, Clock3 } from 'lucide-react';
-import { PRICING_SUMMARY, REVIEWS, SERVICE_SPOKES, SOCIAL_LINKS } from '../constants';
+import { PRICING_SUMMARY, REVIEWS } from '../constants';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProtectedForm } from './ProtectedForm';
@@ -15,20 +15,16 @@ interface SpokeServicePageProps {
 export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) => {
   useEffect(() => {
     updatePageSEO({
-      title: `${content.seoTitle} | Zechariah Tokar`,
+      title: content.seoTitle,
       description: content.metaDescription,
       path: `/${content.slug}`,
     });
   }, [content]);
 
-  const relatedCards = SERVICE_SPOKES.filter((service) =>
-    content.related.some((label) => service.title.toLowerCase().includes(label.toLowerCase().split(' ')[0]))
-  ).filter((service) => service.slug !== content.slug).slice(0, 3);
-
   return (
     <>
       <HeadSEO
-        title={`${content.seoTitle} | Zechariah Tokar`}
+        title={content.seoTitle}
         description={content.metaDescription}
         path={`/${content.slug}`}
       />
@@ -129,22 +125,6 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             </aside>
           </div>
         </section>
-
-        {relatedCards.length > 0 && (
-          <section className="py-12">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Related service pages</h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
-                {relatedCards.map((service) => (
-                  <NavLink key={service.slug} to={`/${service.slug}`} className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#108a00]">
-                    <p className="text-sm font-semibold text-[#108a00]">{service.eyebrow}</p>
-                    <h3 className="mt-2 text-xl font-bold text-slate-950">{service.title}</h3>
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         <section id="hire" className="bg-slate-950 py-16">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@
 export const YOUTUBE_VIDEOS = [
   {
     videoId: 'qh3QEPNVfxg',
-    title: 'AI SEO for Israeli B2B Companies – Track Your AI Citations for Free',
+    title: 'AI SEO for Israeli B2B Companies - Track Your AI Citations for Free',
     description: 'Bing released a free AI Performance tab. Learn how to track AI visibility, citations, and LLM traffic.',
     category: 'AI SEO',
   },
