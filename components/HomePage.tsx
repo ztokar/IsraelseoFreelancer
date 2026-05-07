@@ -1,83 +1,26 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CASE_STUDIES, CLIENT_LOGOS, SOCIAL_LINKS } from '../constants';
-import { TestimonialsCarouselCompact } from './TestimonialsCarouselCompact';
+import { CASE_STUDIES, CLIENT_LOGOS, MARKETPLACE_SERVICES, PRICING_SUMMARY, REVIEWS, SOCIAL_LINKS } from '../constants';
 import { ProtectedForm } from './ProtectedForm';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
+import { ProfileAvatar } from './ProfileAvatar';
+import { SocialIconLinks } from './SocialIconLinks';
+import { ServiceThumbnail } from './ServiceThumbnail';
+import { FEATURED_VIDEO } from '../constants-videos';
 
-const servicePaths = [
-  {
-    title: 'B2B SEO',
-    path: '/b2b-seo-israel',
-    icon: 'conversion_path',
-    label: 'Best current fit',
-    description: 'For SaaS, service, and B2B companies that need pipeline, not random traffic.',
-  },
-  {
-    title: 'SEO consulting',
-    path: '/seoconsulting',
-    icon: 'strategy',
-    label: 'Senior guidance',
-    description: 'For teams that want a sharper plan, tighter priorities, and direct feedback from me.',
-  },
-  {
-    title: 'Content marketing for SEO',
-    path: '/content-marketing-for-seo',
-    icon: 'edit_square',
-    label: 'Content that converts',
-    description: 'For companies that already have traffic goals but need pages that can actually rank and sell.',
-  },
-  {
-    title: 'Freelance SEO Israel',
-    path: '/freelance-seo-israel',
-    icon: 'person_check',
-    label: 'Direct execution',
-    description: 'For companies that want one accountable operator instead of an agency relay race.',
-  },
-];
-
-const credibilitySurfaces = [
-  {
-    title: 'LinkedIn',
-    href: SOCIAL_LINKS.linkedin,
-    icon: 'work',
-    description: 'Reviews, work history, and how I talk to actual business owners.',
-  },
-  {
-    title: 'YouTube',
-    href: SOCIAL_LINKS.youtube,
-    icon: 'play_circle',
-    description: 'Breakdowns of AI search, Reddit visibility, and practical SEO decisions.',
-  },
-  {
-    title: 'Reddit',
-    href: SOCIAL_LINKS.reddit,
-    icon: 'forum',
-    description: 'A better place to judge whether my thinking is useful or just polished.',
-  },
-];
-
-const workStyle = [
-  {
-    title: 'Direct work, not account management',
-    description: 'You work with me. Strategy, prioritization, and execution direction stay in the same hands.',
-  },
-  {
-    title: 'Money pages before content volume',
-    description: 'I would rather fix the pages closest to revenue than publish filler just to look busy.',
-  },
-  {
-    title: 'Built for Google and AI search',
-    description: 'Search is no longer just ten blue links. I look at Google, AI answers, and forum visibility together.',
-  },
-];
+const groupedServices = MARKETPLACE_SERVICES.reduce<Record<string, typeof MARKETPLACE_SERVICES>>((groups, service) => {
+  const category = service.category || 'SEO services';
+  groups[category] = groups[category] || [];
+  groups[category].push(service);
+  return groups;
+}, {});
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'Israel SEO Freelancer | Zechariah Tokar | SEO for US-Facing Companies',
+      title: 'SEO Freelancer Israel | Hire Zechariah Tokar',
       description:
-        'Senior SEO consultant Zechariah Tokar helps B2B companies, service businesses, and selected ecommerce brands turn SEO into pipeline. Based in Israel, working on US and international markets.',
+        'Hire Zechariah Tokar for freelance SEO in Israel. SEO consults, writing, audits, local SEO, Shopify SEO, AI SEO, backlinks, Reddit, YouTube, and monthly SEO.',
       path: '/',
     });
   }, []);
@@ -85,290 +28,268 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <HeadSEO
-        title="Israel SEO Freelancer | Zechariah Tokar | SEO for US-Facing Companies"
-        description="Senior SEO consultant Zechariah Tokar helps B2B companies, service businesses, and selected ecommerce brands turn SEO into pipeline. Based in Israel, working on US and international markets."
+        title="SEO Freelancer Israel | Hire Zechariah Tokar"
+        description="Hire Zechariah Tokar for freelance SEO in Israel. SEO consults, writing, audits, local SEO, Shopify SEO, AI SEO, backlinks, Reddit, YouTube, and monthly SEO."
         path="/"
       />
-      <div className="animate-fade-in-up">
-        <header className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top_left,_rgba(13,150,104,0.08),_transparent_30%),linear-gradient(180deg,_#ffffff_0%,_#f8fafc_100%)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/85 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-primary" />
-                  Senior SEO consultant based in Israel, working on US-facing growth
-                </div>
-                <h1 className="mt-8 max-w-4xl text-5xl sm:text-6xl lg:text-7xl font-display font-semibold tracking-[-0.03em] leading-[0.95] text-slate-900 text-balance">
-                  SEO that feels clear, sounds like you, and brings in the right buyers.
-                </h1>
-                <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-slate-600">
-                  I&apos;m Zechariah Tokar. I help B2B companies, service businesses, and selected ecommerce brands turn search into pipeline. No junior handoff. No vague monthly deck. No bloated agency layers.
-                </p>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#audit"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary-dark"
-                  >
-                    Get my quick-wins audit
-                    <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                  </a>
-                  <a
-                    href="#proof"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-slate-700 transition-all hover:border-primary/30 hover:text-primary"
-                  >
-                    See the proof
-                    <span className="material-symbols-outlined text-lg">south</span>
-                  </a>
-                </div>
-
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Good fit</p>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-700">US-facing B2B, local service, and niche ecommerce offers with real commercial intent.</p>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">What I focus on</p>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-700">Money pages, BOFU content, technical cleanup, and AI search visibility.</p>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">How to judge me</p>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-700">Look at the proof, the reviews, and how I think in public before you book.</p>
-                  </div>
-                </div>
+      <div className="bg-[#f6f7f2] text-slate-900">
+        <header className="border-b border-slate-200 bg-[#f6f7f2]">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_400px] lg:px-8 lg:py-14">
+            <div className="flex flex-col justify-center">
+              <div className="mb-5 flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-700">
+                  Available for SEO work
+                </span>
+                <span className="text-sm font-medium text-slate-500">Israel based. English-speaking markets.</span>
               </div>
 
-              <div className="lg:pt-6">
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_25px_60px_rgba(15,23,42,0.08)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">What you actually get</p>
-                  <div className="mt-6 space-y-4">
-                    {workStyle.map((item) => (
-                      <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <h2 className="text-lg font-semibold text-slate-900">{item.title}</h2>
-                        <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 rounded-2xl bg-slate-900 p-5 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Quick note</p>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                      If you want SEO that is tightly tied to actual offers, comparisons, pricing intent, and pipeline, this is where I do my best work.
-                    </p>
-                    <a
-                      href={SOCIAL_LINKS.calendly}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-primary"
-                    >
-                      Book a call
-                      <span className="material-symbols-outlined text-base">north_east</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <section className="border-b border-slate-200 bg-white py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">How to vet me quickly</p>
-                <p className="mt-3 text-lg leading-relaxed text-slate-700">
-                  Don&apos;t rely on homepage claims. Check the reviews, the public thinking, and the pages already pulling impressions around B2B SEO, content marketing, and AI-search topics.
-                </p>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-3 lg:min-w-[540px]">
-                {credibilitySurfaces.map((surface) => (
-                  <a
-                    key={surface.title}
-                    href={surface.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white hover:shadow-md"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-primary">{surface.icon}</span>
-                      <span className="font-semibold text-slate-900">{surface.title}</span>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{surface.description}</p>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-slate-50 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Start with the right page</p>
-              <h2 className="mt-4 text-4xl md:text-5xl font-display font-semibold tracking-tight text-slate-900">
-                The site should route people fast, not make them decode what you do.
-              </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
-                These are the strongest entry points if someone is already comparing providers, planning SEO work, or looking for a clear next step.
+              <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                Hire a freelance SEO consultant who can actually do the work.
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+                I help companies with SEO strategy, writing, local SEO, ecommerce SEO, AI visibility, backlinks, and search-focused distribution. Send the site and I will quote the likely hours.
               </p>
-            </div>
 
-            <div className="mt-12 grid gap-5 lg:grid-cols-2">
-              {servicePaths.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className="group rounded-[1.75rem] border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_25px_60px_rgba(15,23,42,0.08)]"
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#hire"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#108a00] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(16,138,0,0.18)] hover:bg-[#0b6f00]"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                        <span className="material-symbols-outlined">{item.icon}</span>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{item.label}</p>
-                        <h3 className="mt-1 text-2xl font-semibold text-slate-900">{item.title}</h3>
-                      </div>
-                    </div>
-                    <span className="material-symbols-outlined text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-primary">
-                      arrow_forward
-                    </span>
-                  </div>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">{item.description}</p>
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="proof" className="bg-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Selected proof</p>
-                <h2 className="mt-4 text-4xl md:text-5xl font-display font-semibold tracking-tight text-slate-900">
-                  Results matter more than how polished the homepage looks.
-                </h2>
-                <p className="mt-5 text-lg leading-relaxed text-slate-600">
-                  These are the kinds of outcomes that matter to me: better rankings tied to revenue, local visibility that actually produces leads, and faster movement on high-intent searches.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-relaxed text-slate-600">
-                Current GSC signal is strongest around B2B SEO, content marketing, and AI-search adjacent topics.
-              </div>
-            </div>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {CASE_STUDIES.slice(0, 3).map((study) => (
-                <article
-                  key={study.client}
-                  className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:bg-white hover:shadow-[0_25px_60px_rgba(15,23,42,0.08)]"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{study.industry}</p>
-                      <h3 className="mt-2 text-2xl font-semibold text-slate-900">{study.client}</h3>
-                    </div>
-                    <div className="rounded-2xl bg-white px-4 py-3 text-right shadow-sm">
-                      <p className="text-3xl font-display font-semibold text-primary">{study.metric}</p>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{study.context}</p>
-                    </div>
-                  </div>
-                  <p className="mt-6 text-base leading-relaxed text-slate-600">{study.description}</p>
-                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">{study.market}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-slate-200 bg-slate-50 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Some of the brands and businesses I&apos;ve worked with
-            </p>
-            <div className="mt-10 grid grid-cols-2 items-center gap-6 md:grid-cols-3 lg:grid-cols-5">
-              {CLIENT_LOGOS.map((logo) => (
-                <div
-                  key={logo.name}
-                  className="flex min-h-[72px] items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-5 text-center transition-colors hover:border-primary/30"
-                >
-                  <span className={`${logo.style} text-slate-600`}>{logo.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">How I work</p>
-                <h2 className="mt-4 text-4xl md:text-5xl font-display font-semibold tracking-tight text-slate-900">
-                  Straight process. Clear priorities. No filler.
-                </h2>
-                <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-                  The job is to find what is closest to revenue, fix what is holding it back, and build the next best pages in order. That is the whole game.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {[
-                  'Audit the current site and locate the pages closest to money.',
-                  'Find the keyword gaps, content gaps, and AI-search gaps competitors left open.',
-                  'Fix technical blockers and weak page structure before publishing more.',
-                  'Build or rewrite pages that deserve to rank, especially bottom-of-funnel pages.',
-                  'Track the signals that matter: impressions, clicks, rankings, leads, and sales context.',
-                ].map((step, index) => (
-                  <div key={step} className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-primary shadow-sm">
-                      0{index + 1}
-                    </div>
-                    <p className="text-base leading-relaxed text-slate-700">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[linear-gradient(180deg,_#ffffff_0%,_#f8fafc_100%)] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <TestimonialsCarouselCompact className="max-w-5xl mx-auto" />
-          </div>
-        </section>
-
-        <section id="audit" className="relative overflow-hidden bg-slate-900 py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(13,150,104,0.22),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(14,116,144,0.18),_transparent_30%)]" />
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Free audit</p>
-              <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight text-white">
-                If you want clarity on what to fix first, start here.
-              </h2>
-              <p className="mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-slate-300">
-                Send me the site, tell me the main problem, and I&apos;ll look for the fastest practical wins. You won&apos;t get a generic report.
-              </p>
-            </div>
-
-            <div className="mt-12 rounded-[2rem] border border-white/10 bg-white p-8 shadow-[0_35px_80px_rgba(15,23,42,0.35)]">
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject="New SEO Audit Request from Homepage"
-                submitButtonText="Get my quick-wins audit"
-                showMessage={true}
-              />
-              <p className="mt-4 text-center text-sm text-slate-500">
-                Or book directly on{' '}
+                  Request SEO quote
+                </a>
                 <a
                   href={SOCIAL_LINKS.calendly}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-primary hover:text-primary-dark transition-colors"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#108a00] hover:text-[#108a00]"
                 >
-                  Calendly
+                  Book a call
                 </a>
-                .
+              </div>
+
+              <div className="mt-7 flex flex-wrap gap-2">
+                {['Technical SEO', 'Local SEO', 'Shopify SEO', 'AI SEO', 'Backlinks', 'Reddit SEO', 'YouTube SEO'].map((skill) => (
+                  <span key={skill} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <aside className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+              <div className="flex items-center gap-4 border-b border-slate-100 pb-5">
+                <ProfileAvatar size="lg" />
+                <div>
+                  <p className="text-2xl font-bold text-slate-950">Zechariah Tokar</p>
+                  <p className="text-sm font-medium text-slate-500">Freelance SEO consultant</p>
+                  <div className="mt-2 flex items-center gap-1 text-sm font-semibold text-[#108a00]">
+                    <span className="material-symbols-outlined text-base">verified</span>
+                    Direct senior SEO work
+                  </div>
+                </div>
+              </div>
+
+              <div className="py-5">
+                <div className="rounded-xl bg-slate-50 p-3">
+                  <p className="text-xs font-semibold text-slate-500">Rate</p>
+                  <p className="mt-1 text-lg font-bold text-slate-950">{PRICING_SUMMARY.hourly}</p>
+                </div>
+              </div>
+
+              <blockquote className="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4">
+                <p className="text-base leading-7 text-slate-800">"{REVIEWS[0].quote}"</p>
+                <footer className="mt-3 text-sm font-semibold text-slate-700">{REVIEWS[0].name}</footer>
+              </blockquote>
+
+              <div className="mt-5">
+                <SocialIconLinks />
+              </div>
+            </aside>
+          </div>
+        </header>
+
+        <section id="services" className="border-b border-slate-200 bg-white py-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">Services</p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                  Browse the SEO work I can help with.
+                </h2>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-slate-600">
+                Most SEO work is quoted by expected hours at {PRICING_SUMMARY.hourly}. You send the site, I review the likely scope, then I reply with a practical quote.
               </p>
+            </div>
+
+            <div className="mt-8 flex gap-2 overflow-x-auto pb-2">
+              {Object.keys(groupedServices).map((category) => (
+                <a
+                  key={category}
+                  href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  className="shrink-0 rounded-full border border-slate-200 bg-[#fbfbf8] px-4 py-2 text-sm font-bold text-slate-700 hover:border-[#108a00] hover:text-[#108a00]"
+                >
+                  {category}
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-8 space-y-10">
+              {Object.entries(groupedServices).map(([category, services]) => (
+                <div key={category} id={category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <h3 className="text-xl font-bold text-slate-950">{category}</h3>
+                    <span className="hidden text-sm font-semibold text-slate-500 sm:inline">{services.length} services</span>
+                  </div>
+                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                    {services.map((service) => (
+                      <NavLink
+                        key={`${service.title}-${service.path}`}
+                        to={service.path}
+                        className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.05)] transition hover:-translate-y-1 hover:border-[#108a00] hover:shadow-[0_20px_45px_rgba(15,23,42,0.10)]"
+                      >
+                        <div className="p-3">
+                          <ServiceThumbnail visual={service.visual} title={service.title} />
+                        </div>
+                        <div className="px-5 pb-5">
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#108a00]">{service.tag}</p>
+                          </div>
+                          <h4 className="mt-3 text-xl font-bold leading-6 text-slate-950">{service.title}</h4>
+                          <p className="mt-2 min-h-[48px] text-sm leading-6 text-slate-600">{service.description}</p>
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {service.skills.slice(0, 3).map((skill) => (
+                              <span key={skill} className="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-600">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                            <span className="text-xs font-semibold text-slate-500">{service.proof}</span>
+                            <span className="text-sm font-bold text-[#108a00]">View service</span>
+                          </div>
+                        </div>
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f6f7f2] py-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">Results</p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                  Real people, real outcomes.
+                </h2>
+              </div>
+              <NavLink to="/reviews-results" className="font-bold text-[#108a00] hover:text-[#0b6f00]">
+                See the proof hub
+              </NavLink>
+            </div>
+
+            <div className="mt-8 grid grid-cols-2 gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-slate-500 sm:grid-cols-3 lg:grid-cols-5">
+              {CLIENT_LOGOS.map((logo) => (
+                <div key={logo.name} className="flex min-h-[72px] items-center justify-center rounded-xl bg-[#fbfbf8] px-3 text-center">
+                  <span className={logo.style}>{logo.name}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-4">
+              {REVIEWS.slice(0, 4).map((review) => (
+                <article key={review.name} className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-sm font-bold text-white">
+                      {review.initial}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-1">
+                        <h3 className="font-bold text-slate-950">{review.name}</h3>
+                        {review.linkedinVerified && <span className="material-symbols-outlined text-base text-[#0A66C2]">verified</span>}
+                      </div>
+                      <p className="text-xs font-semibold text-slate-500">{review.role}</p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-slate-700">"{review.quote}"</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {CASE_STUDIES.map((study) => (
+                <article key={study.client} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                  <div className="h-2 bg-[#108a00]" />
+                  <div className="p-5">
+                  <p className="text-sm font-semibold text-slate-500">{study.industry}</p>
+                  <h3 className="mt-2 text-xl font-bold text-slate-950">{study.client}</h3>
+                  <p className="mt-4 text-3xl font-semibold text-[#108a00]">{study.metric}</p>
+                  <p className="text-sm font-semibold text-slate-500">{study.context}</p>
+                  <p className="mt-4 text-sm leading-6 text-slate-600">{study.description}</p>
+                  <div className="mt-5 flex h-16 items-end gap-1">
+                    {(study.graphData || []).map((point, index) => (
+                      <span
+                        key={`${study.client}-${index}`}
+                        className="flex-1 rounded-t bg-emerald-500/75"
+                        style={{ height: `${Math.max(18, Math.min(64, point.clicks / 20))}px` }}
+                      />
+                    ))}
+                  </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-[1fr_1.35fr] md:p-6">
+              <div className="relative overflow-hidden rounded-xl bg-slate-950 p-5 text-white">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,138,0,0.55),transparent_32%)]" />
+                <div className="relative flex aspect-video items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                  <span className="material-symbols-outlined text-6xl text-emerald-300">play_circle</span>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">Video proof</p>
+                <h3 className="mt-2 text-2xl font-bold text-slate-950">{FEATURED_VIDEO.title}</h3>
+                <p className="mt-3 text-base leading-7 text-slate-600">{FEATURED_VIDEO.description}</p>
+                <div className="mt-5">
+                  <a
+                    href={SOCIAL_LINKS.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:border-[#108a00] hover:text-[#108a00]"
+                  >
+                    Watch SEO videos
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="hire" className="bg-slate-950 py-16">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">Hire Zechariah</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                Send the site and what you want help with.
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
+                You can ask about a consult, hourly help, or a scoped SEO project.
+              </p>
+            </div>
+
+            <div className="mt-9 rounded-2xl bg-white p-6 shadow-2xl md:p-8">
+              <ProtectedForm
+                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
+                subject="New Hire Zechariah Request"
+                submitButtonText="Request SEO quote"
+                showMessage={true}
+              />
             </div>
           </div>
         </section>

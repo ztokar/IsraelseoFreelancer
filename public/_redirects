@@ -4,6 +4,8 @@
 
 # B2B SEO page redirect (301 permanent)
 /b2b-seo-company  /b2b-seo-israel  301
+/israel-seo-specialist  /freelance-seo-israel  301
+/seo-for-lawyers  /seo-services-israel  301
 
 # Redirect all other requests to index.html for SPA
 /*  /index.html  200
