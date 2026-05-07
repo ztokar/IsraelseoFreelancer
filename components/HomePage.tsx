@@ -7,6 +7,7 @@ import { ProfileAvatar } from './ProfileAvatar';
 import { SocialIconLinks } from './SocialIconLinks';
 import { ServiceThumbnail } from './ServiceThumbnail';
 import { FEATURED_VIDEO } from '../constants-videos';
+import { YouTubeEmbed } from './YouTubeEmbed';
 
 const groupedServices = MARKETPLACE_SERVICES.reduce<Record<string, typeof MARKETPLACE_SERVICES>>((groups, service) => {
   const category = service.category || 'SEO services';
@@ -18,7 +19,7 @@ const groupedServices = MARKETPLACE_SERVICES.reduce<Record<string, typeof MARKET
 export const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'SEO Freelancer Israel | Hire Zechariah Tokar',
+      title: 'SEO Freelancer Israel | Hire Direct SEO Help for More Rankings, Leads, Local Visibility, AI Search, Shopify SEO and B2B Growth | Zechariah Tokar',
       description:
         'Hire Zechariah Tokar for freelance SEO in Israel. SEO consults, writing, audits, local SEO, Shopify SEO, AI SEO, backlinks, Reddit, YouTube, and monthly SEO.',
       path: '/',
@@ -28,7 +29,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <HeadSEO
-        title="SEO Freelancer Israel | Hire Zechariah Tokar"
+        title="SEO Freelancer Israel | Hire Direct SEO Help for More Rankings, Leads, Local Visibility, AI Search, Shopify SEO and B2B Growth | Zechariah Tokar"
         description="Hire Zechariah Tokar for freelance SEO in Israel. SEO consults, writing, audits, local SEO, Shopify SEO, AI SEO, backlinks, Reddit, YouTube, and monthly SEO."
         path="/"
       />
@@ -45,10 +46,10 @@ export const HomePage: React.FC = () => {
               </div>
 
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                Hire a freelance SEO consultant who can actually do the work.
+                Get more qualified SEO traffic without hiring a full agency.
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-                I help companies with SEO strategy, writing, local SEO, ecommerce SEO, AI visibility, backlinks, and search-focused distribution. Send the site and I will quote the likely hours.
+                I help companies turn underperforming pages into clearer rankings, leads, local visibility, ecommerce traffic, AI search visibility, and buyer-ready content. Send the site and I will quote the likely hours.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -158,15 +159,7 @@ export const HomePage: React.FC = () => {
                           </div>
                           <h4 className="mt-3 text-xl font-bold leading-6 text-slate-950">{service.title}</h4>
                           <p className="mt-2 min-h-[48px] text-sm leading-6 text-slate-600">{service.description}</p>
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {service.skills.slice(0, 3).map((skill) => (
-                              <span key={skill} className="rounded-md bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-600">
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                          <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-                            <span className="text-xs font-semibold text-slate-500">{service.proof}</span>
+                          <div className="mt-5 flex items-center justify-end border-t border-slate-100 pt-4">
                             <span className="text-sm font-bold text-[#108a00]">View service</span>
                           </div>
                         </div>
@@ -245,12 +238,9 @@ export const HomePage: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-8 grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-[1fr_1.35fr] md:p-6">
-              <div className="relative overflow-hidden rounded-xl bg-slate-950 p-5 text-white">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,138,0,0.55),transparent_32%)]" />
-                <div className="relative flex aspect-video items-center justify-center rounded-lg border border-white/10 bg-white/5">
-                  <span className="material-symbols-outlined text-6xl text-emerald-300">play_circle</span>
-                </div>
+            <div className="mt-8 grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-[1.1fr_1fr] md:p-6">
+              <div>
+                <YouTubeEmbed videoId={FEATURED_VIDEO.videoId} title={FEATURED_VIDEO.title} />
               </div>
               <div className="flex flex-col justify-center">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">SEO videos</p>

@@ -33,7 +33,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Pages and content',
     description: 'Service pages, BOFU content, refreshes, and SEO writing that has a clear job.',
     skills: ['SEO writing', 'BOFU pages', 'Content refreshes'],
-    proof: 'Service pages and BOFU content',
     visual: 'writing',
   },
   {
@@ -44,7 +43,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Fast diagnosis',
     description: 'A practical audit of technical issues, Search Console data, indexation, and quick wins.',
     skills: ['Technical SEO', 'Indexing', 'Site structure'],
-    proof: 'Technical review',
     visual: 'audit',
   },
   {
@@ -55,7 +53,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Quick advice',
     description: 'A focused SEO consult for questions, priorities, second opinions, and next-step clarity.',
     skills: ['Consulting', 'Priorities', 'Roadmap'],
-    proof: 'Priority setting',
     visual: 'consulting',
   },
   {
@@ -66,7 +63,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Ongoing help',
     description: 'Monthly SEO support for writing, technical fixes, authority, or strategy.',
     skills: ['Monthly SEO', 'Reporting', 'Execution'],
-    proof: 'Ongoing SEO help',
     visual: 'monthly',
   },
   {
@@ -77,7 +73,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Pipeline pages',
     description: 'SEO for B2B, SaaS, and service companies that need buyer-intent traffic.',
     skills: ['B2B SEO', 'SaaS SEO', 'Use cases'],
-    proof: 'B2B and SaaS SEO',
     visual: 'b2b',
   },
   {
@@ -88,7 +83,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Store visibility',
     description: 'Collection pages, product SEO, technical cleanup, and search visibility for Shopify stores.',
     skills: ['Shopify SEO', 'Collections', 'Products'],
-    proof: 'Ecommerce +300% result',
     visual: 'shopify',
   },
   {
@@ -99,7 +93,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Feed cleanup',
     description: 'Merchant Center and product feed checks for ecommerce stores that depend on Google surfaces.',
     skills: ['Merchant Center', 'Feeds', 'Shopping'],
-    proof: 'Product data review',
     visual: 'merchant',
   },
   {
@@ -110,7 +103,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Maps and local',
     description: 'GBP cleanup, local page priorities, and Google Maps visibility for local service businesses.',
     skills: ['GBP', 'Google Maps', 'Local SEO'],
-    proof: '#1 local SEO result',
     visual: 'local',
   },
   {
@@ -121,7 +113,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Trust signals',
     description: 'Local citations, directories, profiles, and NAP consistency work that supports local rankings.',
     skills: ['Citations', 'Directories', 'NAP'],
-    proof: 'Local trust signals',
     visual: 'citations',
   },
   {
@@ -132,7 +123,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'AI visibility',
     description: 'Get clearer visibility in Google, AI answers, Reddit, and brand recommendation surfaces.',
     skills: ['AI SEO', 'GEO', 'Automation'],
-    proof: 'AI search visibility',
     visual: 'ai',
   },
   {
@@ -143,7 +133,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Forum visibility',
     description: 'Reddit posting and visibility work for communities that influence search and AI answers.',
     skills: ['Reddit', 'LLM visibility', 'Brand mentions'],
-    proof: 'AI search surface',
     visual: 'reddit',
   },
   {
@@ -154,7 +143,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Distribution',
     description: 'Search-aware social posts that support visibility, trust, and content distribution.',
     skills: ['Social SEO', 'Posts', 'Distribution'],
-    proof: 'LinkedIn + social search',
     visual: 'social',
   },
   {
@@ -165,7 +153,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Video search',
     description: 'YouTube titles, descriptions, topic strategy, and search-friendly video packaging.',
     skills: ['YouTube SEO', 'Video topics', 'Descriptions'],
-    proof: 'Live SEO video library',
     visual: 'youtube',
   },
   {
@@ -176,7 +163,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Authority',
     description: 'Authority building through relevant mentions, links, profiles, and third-party surfaces.',
     skills: ['Backlinks', 'PR mentions', 'Citations'],
-    proof: 'Authority building',
     visual: 'links',
   },
   {
@@ -187,7 +173,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Scale pages',
     description: 'Template-led SEO for useful location, comparison, directory, or use-case pages.',
     skills: ['Templates', 'Internal links', 'Indexing'],
-    proof: 'Page systems',
     visual: 'programmatic',
   },
   {
@@ -198,7 +183,6 @@ export const MARKETPLACE_SERVICES = [
     tag: 'PR visibility',
     description: 'Press releases and third-party mentions that support authority, brand search, and AI visibility.',
     skills: ['PR', 'Brand search', 'Mentions'],
-    proof: 'Third-party visibility',
     visual: 'pr',
   },
 ];
@@ -251,8 +235,8 @@ export const REVIEWS: ReviewItem[] = [
 export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'shopify-seo',
-    title: 'Shopify SEO for stores that need cleaner collection and product visibility.',
-    seoTitle: 'Shopify SEO Consultant | Ecommerce SEO at $75-$100/hr',
+    title: 'Get more Shopify traffic from collection and product pages.',
+    seoTitle: 'Shopify SEO Consultant | Improve Collection Pages, Product SEO, Technical Cleanup, Merchant Center Visibility and Ecommerce Search Traffic | Zechariah Tokar',
     metaDescription: 'Shopify SEO help for collections, product pages, technical cleanup, Google Search Console, and ecommerce search visibility.',
     eyebrow: 'Shopify SEO',
     parentPath: '/seo-services-israel',
@@ -266,8 +250,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'google-merchant-center-seo',
-    title: 'Google Merchant Center SEO and feed cleanup for ecommerce stores.',
-    seoTitle: 'Google Merchant Center SEO | Feed Cleanup and Shopping Visibility',
+    title: 'Fix Merchant Center issues that hold back product visibility.',
+    seoTitle: 'Google Merchant Center SEO | Product Feed Cleanup, Shopping Visibility, Ecommerce Indexing, Feed Titles and Technical SEO Help | Zechariah Tokar',
     metaDescription: 'Google Merchant Center SEO and product feed cleanup for ecommerce stores that depend on Google Shopping and organic product visibility.',
     eyebrow: 'Google Merchant Center SEO',
     parentPath: '/seo-services-israel',
@@ -281,8 +265,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'google-business-profile-seo',
-    title: 'Google Business Profile and local SEO for service businesses.',
-    seoTitle: 'Google Business Profile SEO | Local SEO Consultant',
+    title: 'Get found in Maps and local search by better-fit customers.',
+    seoTitle: 'Google Business Profile SEO | Local SEO Consultant for Maps Visibility, Service Area Pages, Reviews, Citations and Lead Growth | Zechariah Tokar',
     metaDescription: 'Google Business Profile SEO for local service businesses, Maps visibility, local pages, reviews, and search consistency.',
     eyebrow: 'Google Business Profile SEO',
     parentPath: '/seo-services-israel',
@@ -296,8 +280,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'local-citations-directories',
-    title: 'Local citations and directories that support local search trust.',
-    seoTitle: 'Local Citations and Directory SEO | NAP Cleanup',
+    title: 'Clean up local citations so Google can trust the business.',
+    seoTitle: 'Local Citations and Directory SEO | NAP Cleanup, Business Listings, Local Authority Signals and Google Maps Support | Zechariah Tokar',
     metaDescription: 'Local citation and directory SEO for NAP consistency, business profiles, authority signals, and local search visibility.',
     eyebrow: 'Citations and directories',
     parentPath: '/link-building-services',
@@ -311,8 +295,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'reddit-seo',
-    title: 'Reddit SEO for brand visibility, AI search, and buyer research.',
-    seoTitle: 'Reddit SEO Consultant | Reddit Visibility and AI Search',
+    title: 'Use Reddit to support brand discovery and AI search visibility.',
+    seoTitle: 'Reddit SEO Consultant | Brand Visibility, Reddit Research, Forum Mentions, AI Search Retrieval and Search Demand Support | Zechariah Tokar',
     metaDescription: 'Reddit SEO help for search visibility, brand mentions, buyer research, AI visibility, and useful discussion-led content.',
     eyebrow: 'Reddit SEO',
     parentPath: '/ai-seo-consultant-israel',
@@ -326,8 +310,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'youtube-seo',
-    title: 'YouTube SEO for videos that need search-friendly packaging.',
-    seoTitle: 'YouTube SEO Consultant | Video Titles, Topics, and Descriptions',
+    title: 'Turn videos into searchable assets buyers can actually find.',
+    seoTitle: 'YouTube SEO Consultant | Video Titles, Topic Strategy, Descriptions, Search Packaging and AI Visibility for SEO Content | Zechariah Tokar',
     metaDescription: 'YouTube SEO help for video topics, titles, descriptions, search intent, internal links, and Google video visibility.',
     eyebrow: 'YouTube SEO',
     parentPath: '/content-marketing-for-seo',
@@ -341,8 +325,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'programmatic-seo',
-    title: 'Programmatic SEO for useful page systems, not thin page spam.',
-    seoTitle: 'Programmatic SEO Consultant | Template SEO and Scalable Pages',
+    title: 'Build scalable SEO pages that are useful enough to rank.',
+    seoTitle: 'Programmatic SEO Consultant | Useful Template Pages, Internal Linking, Indexation Control, Location Pages and Scalable SEO Systems | Zechariah Tokar',
     metaDescription: 'Programmatic SEO consulting for useful template pages, internal linking, indexation, data structure, and scalable search pages.',
     eyebrow: 'Programmatic SEO',
     parentPath: '/ai-seo-consultant-israel',
@@ -356,8 +340,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'seo-consult',
-    title: 'SEO consults for clear priorities before you spend more.',
-    seoTitle: 'SEO Consult | Freelance SEO Consultant at $75-$100/hr',
+    title: 'Get a clear SEO plan before spending more time or budget.',
+    seoTitle: 'SEO Consult | Freelance SEO Consultant for Site Reviews, Priority Roadmaps, Technical Direction and Content Decisions | Zechariah Tokar',
     metaDescription: 'SEO consults for audits, strategy, second opinions, content plans, technical questions, and clear SEO priorities.',
     eyebrow: 'SEO consult',
     parentPath: '/seoconsulting',
@@ -371,8 +355,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'press-release-seo',
-    title: 'Press release SEO for brand search, authority, and third-party visibility.',
-    seoTitle: 'Press Release SEO | PR Mentions and Authority Building',
+    title: 'Use press releases to support brand search and authority.',
+    seoTitle: 'Press Release SEO | PR Mentions, Brand Search Visibility, Authority Building, Third-Party Signals and AI Search Support | Zechariah Tokar',
     metaDescription: 'Press release SEO help for brand search, authority building, third-party mentions, AI visibility, and reputation support.',
     eyebrow: 'Press release SEO',
     parentPath: '/link-building-services',
@@ -386,8 +370,8 @@ export const SERVICE_SPOKES: SpokeService[] = [
   },
   {
     slug: 'blog-content-seo',
-    title: 'Blog content SEO for articles that support rankings and buyers.',
-    seoTitle: 'Blog Content SEO | SEO Writing and Content Refreshes',
+    title: 'Publish blog content that supports rankings, trust, and leads.',
+    seoTitle: 'Blog Content SEO | SEO Writing, Content Refreshes, BOFU Articles, Internal Links and Search-Led Topic Planning | Zechariah Tokar',
     metaDescription: 'Blog content SEO help for article strategy, content refreshes, BOFU posts, internal links, and search-focused writing.',
     eyebrow: 'Blog content SEO',
     parentPath: '/content-marketing-for-seo',
@@ -476,15 +460,15 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   services: {
     id: 'seo-services',
     slug: 'seo-services-israel',
-    title: 'SEO services in Israel, priced like a freelancer menu.',
-    seoTitle: 'SEO Services Israel | Freelance SEO Services at $75-$100/hr',
+    title: 'SEO services in Israel for more rankings, leads, and search visibility.',
+    seoTitle: 'SEO Services Israel | Hire Freelance SEO for Technical Audits, SEO Writing, Local SEO, Shopify SEO, AI Search, Backlinks and B2B Growth | Zechariah Tokar',
     metaDescription: 'Hire Zechariah Tokar for SEO writing, audits, AI SEO, backlinks, technical SEO, B2B SEO, and monthly SEO services by hourly quote.',
     subtitle: 'SEO Services Israel',
     primaryKeyword: 'SEO services Israel',
     priceFrom: '$75-$100/hr',
     timeline: '1 week to monthly',
     bestFor: 'Businesses that know the SEO service they need and want a clear starting point.',
-    description: 'Choose the SEO help you need without sitting through a vague agency pitch. Most work is quoted by expected hours at $75-$100/hr.',
+    description: 'Choose the SEO help that can move the business first: technical cleanup, service pages, local search, Shopify SEO, content, AI visibility, backlinks, or ongoing support.',
     deliverables: ['SEO writing', 'Technical SEO audit', 'Monthly SEO support', 'Shopify SEO', 'Google Merchant Center', 'Google Business Profile', 'Reddit SEO', 'YouTube SEO'],
     relatedServices: ['SEO writing', 'Audits', 'B2B SEO', 'AI SEO', 'Backlinks'],
     ugcIntro: {
@@ -512,8 +496,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   freelance: {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
-    title: 'Freelance SEO in Israel for companies that want direct help.',
-    seoTitle: 'Freelance SEO Israel | Hire Zechariah Tokar',
+    title: 'Freelance SEO in Israel for companies that need leads, not reports.',
+    seoTitle: 'Freelance SEO Israel | Hire Direct SEO Help for Service Pages, Technical Fixes, Content, Local Search, AI Visibility and Lead Growth | Zechariah Tokar',
     metaDescription: 'Hire Zechariah Tokar for freelance SEO in Israel. SEO work quoted at $75-$100/hr after a quick project review.',
     subtitle: 'Freelance SEO Israel',
     primaryKeyword: 'freelance SEO Israel',
@@ -558,8 +542,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   b2b: {
     id: 'b2b-seo',
     slug: 'b2b-seo-israel',
-    title: 'B2B SEO in Israel for US-facing companies.',
-    seoTitle: 'B2B SEO Israel | SaaS and Service SEO Consultant',
+    title: 'B2B SEO in Israel that helps buyers find and trust you.',
+    seoTitle: 'B2B SEO Israel | SaaS and Service SEO for Buyer Intent Pages, US Market Visibility, BOFU Content and Pipeline Growth | Zechariah Tokar',
     metaDescription: 'B2B SEO in Israel for SaaS, service, and international companies targeting US and English-speaking buyers.',
     subtitle: 'B2B SEO Israel',
     primaryKeyword: 'B2B SEO Israel',
@@ -604,8 +588,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'seo-consulting',
     slug: 'seoconsulting',
-    title: 'SEO consultant in Israel for clear strategy and priorities.',
-    seoTitle: 'SEO Consultant Israel | Strategy, Audits, and Roadmaps',
+    title: 'SEO consulting in Israel for clearer priorities and faster wins.',
+    seoTitle: 'SEO Consultant Israel | Strategy, Technical Audits, SEO Roadmaps, Content Priorities, AI Visibility and Execution Guidance | Zechariah Tokar',
     metaDescription: 'SEO consultant in Israel for audits, strategy, roadmaps, technical SEO, content planning, and AI visibility.',
     subtitle: 'SEO Consultant Israel',
     primaryKeyword: 'SEO consultant Israel',
@@ -650,8 +634,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   content: {
     id: 'content-seo',
     slug: 'content-marketing-for-seo',
-    title: 'SEO writing services for pages that need to rank and sell.',
-    seoTitle: 'SEO Writing Services | Content Marketing for SEO',
+    title: 'SEO writing services for pages that rank, explain, and convert.',
+    seoTitle: 'SEO Writing Services | Content Marketing for SEO, BOFU Pages, Service Page Copy, Content Refreshes and Lead-Focused Search Copy | Zechariah Tokar',
     metaDescription: 'SEO writing services for BOFU pages, service pages, content refreshes, SEO briefs, and search-focused content by hourly quote.',
     subtitle: 'SEO Writing Services',
     primaryKeyword: 'SEO writing services',
@@ -696,8 +680,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   ai: {
     id: 'ai-seo',
     slug: 'ai-seo-consultant-israel',
-    title: 'AI SEO consultant in Israel for Google and AI visibility.',
-    seoTitle: 'AI SEO Consultant Israel | GEO and AI Visibility',
+    title: 'AI SEO consulting for brands that want to be found and recommended.',
+    seoTitle: 'AI SEO Consultant Israel | GEO, AI Search Visibility, ChatGPT and Perplexity Retrieval, Reddit Signals and Brand Clarity | Zechariah Tokar',
     metaDescription: 'AI SEO consultant in Israel for GEO, AI visibility, ChatGPT and Perplexity recommendation checks, and automation-assisted SEO.',
     subtitle: 'AI SEO Consultant Israel',
     primaryKeyword: 'AI SEO freelancer',
@@ -742,8 +726,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   technical: {
     id: 'technical-seo-audit',
     slug: 'technical-seo-audit',
-    title: 'Technical SEO audit for crawl, indexation, and GSC cleanup.',
-    seoTitle: 'Technical SEO Audit | GSC, Indexing, and Site Fixes',
+    title: 'Technical SEO audit that shows what to fix first.',
+    seoTitle: 'Technical SEO Audit | Google Search Console Cleanup, Indexing Fixes, Crawl Issues, Metadata, Schema and Site Structure | Zechariah Tokar',
     metaDescription: 'Technical SEO audit for Google Search Console, indexing, crawl issues, site structure, metadata, schema, and practical quick wins by hourly quote.',
     subtitle: 'Technical SEO Audit',
     primaryKeyword: 'technical SEO audit',
@@ -778,8 +762,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   links: {
     id: 'link-building',
     slug: 'link-building-services',
-    title: 'Link building services for authority that supports real SEO.',
-    seoTitle: 'Link Building Services | SEO Backlinks and Authority Building',
+    title: 'Link building services that support pages worth ranking.',
+    seoTitle: 'Link Building Services | SEO Backlinks, Authority Building, PR Mentions, Citations, Third-Party Visibility and Trust Signals | Zechariah Tokar',
     metaDescription: 'Link building services for SEO backlinks, authority building, mentions, citations, and third-party visibility by hourly quote.',
     subtitle: 'Link Building Services',
     primaryKeyword: 'SEO backlinks',
@@ -814,8 +798,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   reviews: {
     id: 'reviews-results',
     slug: 'reviews-results',
-    title: 'SEO freelancer reviews and selected results.',
-    seoTitle: 'SEO Freelancer Reviews | Zechariah Tokar Results',
+    title: 'SEO freelancer reviews, results, and proof before you hire.',
+    seoTitle: 'SEO Freelancer Reviews | Zechariah Tokar Results, Client Feedback, SEO Outcomes, Local SEO Wins and Public Profile Proof | Zechariah Tokar',
     metaDescription: 'Read selected SEO freelancer reviews and results for Zechariah Tokar, including SEO wins across ecommerce, local services, and B2B.',
     subtitle: 'Reviews and Results',
     primaryKeyword: 'SEO freelancer reviews',

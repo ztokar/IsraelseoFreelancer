@@ -13,20 +13,18 @@ interface ServicePageProps {
 }
 
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
+  const pageTitle = content.seoTitle || `${content.title} | Zechariah Tokar`;
+
   useEffect(() => {
     updatePageSEO({
-      title: `${content.seoTitle || content.title} | Zechariah Tokar`,
+      title: pageTitle,
       description: content.metaDescription || content.description,
       path: window.location.pathname,
     });
-  }, [content]);
+  }, [content, pageTitle]);
 
   const isServicesHub = content.slug === 'seo-services-israel';
-  const relatedCards = isServicesHub
-    ? MARKETPLACE_SERVICES
-    : MARKETPLACE_SERVICES.filter((service) =>
-        content.relatedServices?.some((related) => service.title.toLowerCase().includes(related.toLowerCase().split(' ')[0]))
-      ).slice(0, 3);
+  const relatedCards = isServicesHub ? MARKETPLACE_SERVICES : [];
 
   const visualBySlug: Record<string, string> = {
     'freelance-seo-israel': 'consulting',
@@ -42,7 +40,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   return (
     <>
       <HeadSEO
-        title={`${content.seoTitle || content.title} | Zechariah Tokar`}
+        title={pageTitle}
         description={content.metaDescription || content.description}
         path={`/${content.slug}`}
       />
@@ -203,17 +201,15 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                   <div>
                     <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">
-                      {isServicesHub ? 'Service directory' : 'Related services'}
+                      Service directory
                     </p>
                     <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                      {isServicesHub ? 'Choose the SEO service you need.' : 'Related SEO services'}
+                      Choose the SEO service you need.
                     </h2>
                   </div>
-                  {isServicesHub && (
-                    <p className="max-w-xl text-base leading-7 text-slate-600">
-                      Click into a service to see what I handle, what I check, and when it makes sense.
-                    </p>
-                  )}
+                  <p className="max-w-xl text-base leading-7 text-slate-600">
+                    Click into a service to see what I handle, what I check, and when it makes sense.
+                  </p>
                 </div>
                 <div className={`mt-6 grid gap-4 ${isServicesHub ? 'md:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-3'}`}>
                   {relatedCards.map((service) => (
