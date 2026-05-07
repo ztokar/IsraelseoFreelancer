@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CheckCircle, Clock3 } from 'lucide-react';
-import { PRICING_SUMMARY, REVIEWS } from '../constants';
+import { PRICING_SUMMARY } from '../constants';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProtectedForm } from './ProtectedForm';
@@ -102,27 +102,6 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="border-b border-slate-200 bg-white py-12">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_380px] lg:px-8">
-            <article className="rounded-2xl bg-[#f6f7f2] p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">Relevant result</p>
-              <p className="mt-4 text-xl font-semibold leading-8 text-slate-900">{content.proof}</p>
-            </article>
-            <aside className="rounded-2xl border border-slate-200 bg-white p-6">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 text-sm font-bold text-white">
-                  {REVIEWS[0].initial}
-                </div>
-                <div>
-                  <p className="font-bold text-slate-950">{REVIEWS[0].name}</p>
-                  <p className="text-xs font-semibold text-slate-500">{REVIEWS[0].role}</p>
-                </div>
-              </div>
-              <blockquote className="mt-4 text-base leading-7 text-slate-700">"{REVIEWS[0].quote}"</blockquote>
-            </aside>
           </div>
         </section>
 
