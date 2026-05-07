@@ -10,6 +10,23 @@ interface ProtectedFormProps {
   submitButtonText: string;
 }
 
+const serviceOptions = [
+  'SEO consult',
+  'Technical SEO audit',
+  'Shopify SEO',
+  'Google Merchant Center SEO',
+  'Google Business Profile / Local SEO',
+  'Local citations / directories',
+  'SEO writing / blog content',
+  'B2B SEO',
+  'AI SEO / GEO',
+  'Backlinks / PR / authority',
+  'YouTube SEO',
+  'Reddit / social SEO',
+  'Programmatic SEO',
+  'Other',
+];
+
 const FormContent: React.FC<ProtectedFormProps> = ({
   formspreeEndpoint,
   subject,
@@ -32,7 +49,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
       return;
     }
 
-    // Capture form data and form ref BEFORE disabling inputs — disabled fields are excluded from FormData
+    // Capture form data before disabling inputs because disabled fields are excluded from FormData.
     const formElement = e.currentTarget;
     const formData = new FormData(formElement);
 
@@ -62,8 +79,9 @@ const FormContent: React.FC<ProtectedFormProps> = ({
         try {
           const responseData = await response.json();
           const firstError = responseData?.errors?.[0]?.message;
-          if (firstError) {
-            setErrorMessage(firstError);
+          const formspreeError = responseData?.error;
+          if (firstError || formspreeError) {
+            setErrorMessage(firstError || formspreeError);
           }
         } catch {
           // Keep the default message if the response is not JSON.
@@ -132,6 +150,32 @@ const FormContent: React.FC<ProtectedFormProps> = ({
         </div>
       </div>
 
+      <div className="group">
+        <label
+          className="block text-sm font-semibold text-slate-700 mb-2"
+          htmlFor="service"
+        >
+          What do you need help with?
+        </label>
+        <select
+          className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all text-base`}
+          id="service"
+          name="service"
+          required
+          disabled={isSubmitting}
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Choose a service
+          </option>
+          {serviceOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {showMessage && (
         <div className="group">
           <label
@@ -145,6 +189,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             id="message"
             name="message"
             placeholder="What's your biggest SEO challenge right now?"
+            required
             disabled={isSubmitting}
           />
         </div>
@@ -162,7 +207,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
       {submitStatus === 'success' && (
         <p className="text-center text-green-600 font-medium">
-          ✓ Thank you! We'll be in touch soon.
+          Thank you. I will review it and reply with next steps.
         </p>
       )}
 
@@ -171,10 +216,6 @@ const FormContent: React.FC<ProtectedFormProps> = ({
           {errorMessage}
         </p>
       )}
-
-      <p className="text-center text-xs text-slate-400 mt-2">
-        Protected by reCAPTCHA
-      </p>
     </form>
   );
 };

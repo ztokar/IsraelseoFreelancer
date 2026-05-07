@@ -3,6 +3,14 @@ export interface ResultItem {
   value: string;
 }
 
+export interface ReviewItem {
+  quote: string;
+  name: string;
+  role: string;
+  initial: string;
+  linkedinVerified?: boolean;
+}
+
 export interface CaseStudy {
   client: string;
   metric: string;
@@ -23,6 +31,12 @@ export interface ServiceContent {
   subtitle: string;
   heroColor?: 'primary' | 'secondary' | 'ice';
   description: string;
+  primaryKeyword?: string;
+  priceFrom?: string;
+  timeline?: string;
+  bestFor?: string;
+  deliverables?: string[];
+  relatedServices?: string[];
   entityDefinition?: string;
   marketFit?: string;
   industries?: string[];
@@ -46,9 +60,30 @@ export interface ServiceContent {
   whyMe: string[];
   cta: string;
   faqs?: { question: string; answer: string }[];
+  gscSignal?: string;
+  deepDive?: {
+    title: string;
+    body: string;
+  }[];
 }
 
 export interface NavItem {
   label: string;
   path: string;
+}
+
+export interface SpokeService {
+  slug: string;
+  title: string;
+  seoTitle: string;
+  metaDescription: string;
+  eyebrow: string;
+  parentPath: string;
+  parentLabel: string;
+  bestFor: string;
+  intro: string;
+  handles: string[];
+  proof: string;
+  related: string[];
+  cta: string;
 }
