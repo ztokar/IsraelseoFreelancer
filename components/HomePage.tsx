@@ -189,7 +189,7 @@ export const HomePage: React.FC = () => {
                 </h2>
               </div>
               <NavLink to="/reviews-results" className="font-bold text-[#108a00] hover:text-[#0b6f00]">
-                See the proof hub
+                See reviews and results
               </NavLink>
             </div>
 
@@ -253,7 +253,7 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col justify-center">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">Video proof</p>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">SEO videos</p>
                 <h3 className="mt-2 text-2xl font-bold text-slate-950">{FEATURED_VIDEO.title}</h3>
                 <p className="mt-3 text-base leading-7 text-slate-600">{FEATURED_VIDEO.description}</p>
                 <div className="mt-5">

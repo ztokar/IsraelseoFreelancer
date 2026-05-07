@@ -49,7 +49,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
       return;
     }
 
-    // Capture form data and form ref BEFORE disabling inputs — disabled fields are excluded from FormData
+    // Capture form data before disabling inputs because disabled fields are excluded from FormData.
     const formElement = e.currentTarget;
     const formData = new FormData(formElement);
 
@@ -189,6 +189,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             id="message"
             name="message"
             placeholder="What's your biggest SEO challenge right now?"
+            required
             disabled={isSubmitting}
           />
         </div>

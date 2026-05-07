@@ -94,6 +94,8 @@ export const Layout: React.FC = () => {
               Freelance SEO services from Israel for companies targeting English-speaking markets. Work is quoted by expected hours at $75-$100/hr.
             </p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
+              <NavLink to="/about" className="text-slate-600 hover:text-[#108a00]">About</NavLink>
+              <NavLink to="/seo-services-israel" className="text-slate-600 hover:text-[#108a00]">Services</NavLink>
               <NavLink to="/videos" className="text-slate-600 hover:text-[#108a00]">Videos</NavLink>
               <NavLink to="/blog" className="text-slate-600 hover:text-[#108a00]">Blog</NavLink>
               <NavLink to="/reviews-results" className="text-slate-600 hover:text-[#108a00]">Reviews</NavLink>

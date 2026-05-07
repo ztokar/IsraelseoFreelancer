@@ -18,6 +18,7 @@ import { BlogArticle10 } from './components/BlogArticle10';
 import BlogArticle11 from './components/BlogArticle11';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
+import { AboutPage } from './components/AboutPage';
 import { SERVICE_DATA, SERVICE_SPOKES } from './constants';
 import type { RouteRecord } from 'vite-react-ssg';
 
@@ -47,6 +48,7 @@ export const routes: RouteRecord[] = [
 
       // Comparison pages
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
+      { path: 'about', element: <AboutPage /> },
       { path: 'videos', element: <VideosPage /> },
 
       // Blog

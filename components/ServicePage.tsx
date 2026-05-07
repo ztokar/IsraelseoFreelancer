@@ -21,9 +21,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
     });
   }, [content]);
 
-  const relatedCards = MARKETPLACE_SERVICES.filter((service) =>
-    content.relatedServices?.some((related) => service.title.toLowerCase().includes(related.toLowerCase().split(' ')[0]))
-  ).slice(0, 3);
+  const isServicesHub = content.slug === 'seo-services-israel';
+  const relatedCards = isServicesHub
+    ? MARKETPLACE_SERVICES
+    : MARKETPLACE_SERVICES.filter((service) =>
+        content.relatedServices?.some((related) => service.title.toLowerCase().includes(related.toLowerCase().split(' ')[0]))
+      ).slice(0, 3);
 
   const visualBySlug: Record<string, string> = {
     'freelance-seo-israel': 'consulting',
@@ -60,11 +63,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 {content.title}
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">{content.description}</p>
-              {content.gscSignal && (
-                <p className="mt-4 max-w-2xl rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm font-semibold leading-6 text-emerald-900">
-                  {content.gscSignal}
-                </p>
-              )}
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -152,7 +150,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                   <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">How I think about it</p>
                   <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Practical SEO detail without the agency fog.</h2>
                   <p className="mt-4 text-base leading-7 text-slate-600">
-                    These pages are built around the queries already showing in Search Console, then expanded with the kind of information buyers need before they ask for help.
+                    The page stays focused on the questions people usually have before hiring SEO help, with enough detail to decide whether the service fits.
                   </p>
                 </div>
                 <div className="grid gap-4">
@@ -202,8 +200,22 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           {relatedCards.length > 0 && (
             <section className="bg-white py-12">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Related SEO services</h2>
-                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">
+                      {isServicesHub ? 'Service directory' : 'Related services'}
+                    </p>
+                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+                      {isServicesHub ? 'Choose the SEO service you need.' : 'Related SEO services'}
+                    </h2>
+                  </div>
+                  {isServicesHub && (
+                    <p className="max-w-xl text-base leading-7 text-slate-600">
+                      Click into a service to see what I handle, what I check, and when it makes sense.
+                    </p>
+                  )}
+                </div>
+                <div className={`mt-6 grid gap-4 ${isServicesHub ? 'md:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-3'}`}>
                   {relatedCards.map((service) => (
                     <NavLink key={`${service.title}-${service.path}`} to={service.path} className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-5 hover:border-[#108a00] hover:bg-white">
                       <ServiceThumbnail visual={service.visual} title={service.title} />

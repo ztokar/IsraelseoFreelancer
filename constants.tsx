@@ -11,8 +11,8 @@ export const SOCIAL_LINKS = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Services', path: '/seo-services-israel' },
-  { label: 'Pricing', path: '/seo-services-israel#pricing' },
   { label: 'Reviews', path: '/reviews-results' },
+  { label: 'About', path: '/about' },
   { label: 'Blog', path: '/blog' },
 ];
 
@@ -33,7 +33,7 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Pages and content',
     description: 'Service pages, BOFU content, refreshes, and SEO writing that has a clear job.',
     skills: ['SEO writing', 'BOFU pages', 'Content refreshes'],
-    proof: '2 clicks from content SEO page',
+    proof: 'Service pages and BOFU content',
     visual: 'writing',
   },
   {
@@ -42,9 +42,9 @@ export const MARKETPLACE_SERVICES = [
     price: '$75-$100/hr',
     category: 'Core SEO',
     tag: 'Fast diagnosis',
-    description: 'A practical audit of technical issues, GSC data, indexation, and quick wins.',
-    skills: ['Technical SEO', 'GSC', 'Indexing'],
-    proof: 'GSC-first cleanup',
+    description: 'A practical audit of technical issues, Search Console data, indexation, and quick wins.',
+    skills: ['Technical SEO', 'Indexing', 'Site structure'],
+    proof: 'Technical review',
     visual: 'audit',
   },
   {
@@ -55,7 +55,7 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Quick advice',
     description: 'A focused SEO consult for questions, priorities, second opinions, and next-step clarity.',
     skills: ['Consulting', 'Priorities', 'Roadmap'],
-    proof: '89 impressions for consultant intent',
+    proof: 'Priority setting',
     visual: 'consulting',
   },
   {
@@ -77,7 +77,7 @@ export const MARKETPLACE_SERVICES = [
     tag: 'Pipeline pages',
     description: 'SEO for B2B, SaaS, and service companies that need buyer-intent traffic.',
     skills: ['B2B SEO', 'SaaS SEO', 'Use cases'],
-    proof: '1,662 impressions on B2B page',
+    proof: 'B2B and SaaS SEO',
     visual: 'b2b',
   },
   {
@@ -132,7 +132,7 @@ export const MARKETPLACE_SERVICES = [
     tag: 'AI visibility',
     description: 'Get clearer visibility in Google, AI answers, Reddit, and brand recommendation surfaces.',
     skills: ['AI SEO', 'GEO', 'Automation'],
-    proof: '126 impressions on GEO article',
+    proof: 'AI search visibility',
     visual: 'ai',
   },
   {
@@ -544,7 +544,6 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     whyMe: ['No account manager relay', 'Plain explanations', 'Search work tied to actual business goals'],
     cta: 'Send the site and tell me what you want SEO to fix first.',
     faqs: baseFaqs,
-    gscSignal: 'GSC shows freelance SEO Israel ranking around position 7.67, so this page keeps the freelancer intent clear instead of folding it into a broad agency page.',
     deepDive: [
       {
         title: 'What I check first',
@@ -591,7 +590,6 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     whyMe: ['I focus on pages that help buyers choose', 'I do not treat B2B SEO as generic blogging'],
     cta: 'Send your B2B site and I will identify the pages closest to revenue.',
     faqs: baseFaqs,
-    gscSignal: 'This is the biggest current opportunity: the B2B SEO page has 1,662 impressions, and B2B SEO Israel queries are already close enough to improve.',
     deepDive: [
       {
         title: 'What I build for B2B companies',
@@ -638,7 +636,6 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     whyMe: ['Clear priorities instead of a bloated report', 'Useful for founders, marketers, and small teams'],
     cta: 'Send the site and I will tell you if consulting is the right fit.',
     faqs: baseFaqs,
-    gscSignal: 'Consultant SEO Israel and consultant SEO variants already show impressions, so this page should stay focused on advisory and priority-setting intent.',
     deepDive: [
       {
         title: 'What a consult is useful for',
@@ -685,7 +682,6 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     whyMe: ['I write for buyers, not just keyword density', 'Pages stay clear, short, and useful'],
     cta: 'Send the page or keyword you want to improve.',
     faqs: baseFaqs,
-    gscSignal: 'The content marketing page has clicks and position 8.68, and content marketing for SEO in Israel is already ranking around position 6.07.',
     deepDive: [
       {
         title: 'How I decide what to write',
@@ -732,7 +728,6 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     whyMe: ['I treat AI SEO as brand retrieval, not spam content', 'I connect AI visibility with regular Google visibility'],
     cta: 'Send the brand and site. I will check what AI and Google understand about it.',
     faqs: baseFaqs,
-    gscSignal: 'The GEO article has 2 clicks from 126 impressions and AI SEO freelancer is already visible, so this page should connect AI visibility with real SEO work.',
     deepDive: [
       {
         title: 'What I mean by AI SEO',
