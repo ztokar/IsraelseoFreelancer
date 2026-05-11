@@ -1,4 +1,4 @@
-import { ServiceContent, NavItem, CaseStudy, ReviewItem, SpokeService } from './types';
+import { ServiceContent, NavItem, CaseStudy, ReviewItem, SpokeService, SupportPage } from './types';
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/zechariah-tokar-167b7672/',
@@ -355,7 +355,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     handles: ['Thread research and repeated objections', 'Post ideas that fit the community', 'Comment guidance before anyone replies', 'Landing-page alignment', 'Search result review'],
     avoids: ['Fake upvote packages', 'Spammy brand mentions', 'Posting in communities that do not fit', 'Volume campaigns that look automated'],
     proof: 'The goal is simple: use Reddit to learn what buyers actually need, then send them to a page that answers it better than the thread did.',
-    related: ['Reddit SEO', 'Reddit marketing expert', 'Reddit posting service', 'AI SEO / GEO', 'Content marketing for SEO'],
+    related: ['Reddit SEO', 'Reddit marketing expert', 'Reddit posting service', 'How to market on Reddit without getting banned', 'How to find subreddits for marketing', 'AI SEO / GEO'],
     cta: 'Send the brand, site, and the Reddit topic you want to test first.',
   },
   {
@@ -375,7 +375,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     handles: ['Opportunity review', 'Community fit checks', 'Competitor thread research', 'Risk flags', 'Plain next-step advice'],
     avoids: ['Generic social media calendars', 'Scripted replies that ignore the thread', 'Advice built only around karma', 'Promising results Reddit cannot guarantee'],
     proof: 'The point is to make Reddit useful without turning your brand into the thing people complain about.',
-    related: ['Reddit SEO', 'Reddit marketing services', 'Reddit posting service', 'SEO consulting', 'AI SEO / GEO'],
+    related: ['Reddit SEO', 'Reddit marketing services', 'Reddit posting service', 'How to market on Reddit without getting banned', 'Why Reddit posts get removed', 'AI SEO / GEO'],
     cta: 'Send the site and the Reddit move you are considering.',
   },
   {
@@ -395,7 +395,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     handles: ['Post angle selection', 'Title and body writing', 'Subreddit fit checks', 'Pre-publish review', 'Landing-page alignment'],
     avoids: ['Bulk posting', 'Fake accounts or fake engagement', 'Thin promotional posts', 'Link drops'],
     proof: 'The post should help the reader first. The business benefit comes from earning the click, not forcing it.',
-    related: ['Reddit SEO', 'Reddit marketing services', 'Reddit marketing expert', 'Content marketing for SEO', 'SEO services'],
+    related: ['Reddit SEO', 'Reddit marketing services', 'Reddit marketing expert', 'Why Reddit posts get removed', 'How to market on Reddit without getting banned', 'Content marketing for SEO'],
     cta: 'Send the draft idea, subreddit, and page you want the post to support.',
   },
   {
@@ -472,6 +472,137 @@ export const SERVICE_SPOKES: SpokeService[] = [
     proof: 'The current site already has indexed B2B, AI search, cybersecurity, SaaS, and content marketing articles.',
     related: ['SEO writing', 'B2B SEO', 'AI SEO / GEO'],
     cta: 'Send the blog URL or keyword cluster you want to improve.',
+  },
+];
+
+export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
+  {
+    slug: 'how-to-market-on-reddit-without-getting-banned',
+    title: 'How to market on Reddit without getting banned.',
+    seoTitle: 'How to Market on Reddit Without Getting Banned | Safer Reddit Marketing, Subreddit Rules, Account Trust and Post Planning',
+    metaDescription: 'Learn how to market on Reddit without getting banned by checking subreddit fit, account trust, post format, link use, and community expectations first.',
+    eyebrow: 'Reddit marketing guide',
+    parentPath: '/reddit-marketing-services',
+    parentLabel: 'Reddit marketing services',
+    intro: 'Do not start with the post. Start with the subreddit, rules, account history, accepted threads, and whether a link actually helps. That is the difference between useful Reddit marketing and a post that gets removed before anyone sees it.',
+    sections: [
+      {
+        heading: 'Check the community before writing',
+        body: [
+          'Every subreddit has its own tolerance for business participation. Some allow useful links in context. Others remove anything that looks like promotion, even if the advice is decent.',
+          'Before posting, read the rules, pinned threads, flair requirements, recent top posts, and recent removed-looking discussions. The goal is to understand what survives in that community, not what would work on LinkedIn.',
+        ],
+        bullets: ['Read rules and pinned posts', 'Study recent accepted posts', 'Check link and flair requirements', 'Look for how people answer similar questions'],
+      },
+      {
+        heading: 'Build trust before the link',
+        body: [
+          'Reddit often judges the account and the pattern, not only the sentence you wrote. New accounts, low-karma profiles, repeated links, and sudden brand mentions can trigger filters or downvotes.',
+          'A safer path is to answer questions, comment without linking, and only mention the brand or page when it directly helps the thread. Reddit marketing services should reduce risk before they increase posting volume.',
+        ],
+      },
+      {
+        heading: 'Use the page only when it answers the thread',
+        body: [
+          'A landing page should match the exact question being discussed. A homepage link, sales page, or thin blog post usually feels like a drop-in promotion.',
+          'If the page does not answer the conversation better than the comment could, fix the page first. A Reddit marketing expert can review the subreddit, post idea, and destination page before anything goes public.',
+        ],
+      },
+      {
+        heading: 'When posting needs a second review',
+        body: [
+          'Get another set of eyes when the subreddit is strict, the account is new, the topic is sensitive, or the post points to a commercial page. A careful Reddit posting service should be comfortable saying not to post yet.',
+        ],
+      },
+    ],
+    related: ['Reddit marketing services', 'Reddit marketing expert', 'Reddit posting service', 'How to find subreddits for marketing', 'Why Reddit posts get removed'],
+    cta: 'Send the site and subreddit before you post.',
+  },
+  {
+    slug: 'how-to-find-subreddits-for-marketing',
+    title: 'How to find subreddits for marketing.',
+    seoTitle: 'How to Find Subreddits for Marketing | Reddit Community Research, Buyer Language, Search Visibility and Posting Fit',
+    metaDescription: 'Find better subreddits for marketing by looking at active problem threads, rules, moderation patterns, buyer language, and search visibility.',
+    eyebrow: 'Reddit audience research',
+    parentPath: '/reddit-marketing-services',
+    parentLabel: 'Reddit marketing services',
+    intro: 'The best subreddit is not always the biggest one. Look for active problem threads, clear rules, fresh comments, and people describing the problem in the same language your buyers use.',
+    sections: [
+      {
+        heading: 'Start with problems, not subreddit size',
+        body: [
+          'A large subreddit can look attractive and still be useless for marketing. Big communities often have stricter rules, faster downvotes, and less patience for brand participation.',
+          'Search for the problem your buyer has, the words they use when they complain, and the alternatives they compare. Reddit marketing services should find the communities where those conversations already happen.',
+        ],
+      },
+      {
+        heading: 'Use Google and Reddit together',
+        body: [
+          'Google can reveal Reddit threads that already rank for buyer questions. Reddit search can show whether the same topic is still active now.',
+          'Try searches like site:reddit.com plus the problem, product category, competitor, or exact buyer question. Then sort Reddit by newest and top posts to compare current activity with older search-visible threads.',
+        ],
+        bullets: ['Search the problem on Google with site:reddit.com', 'Search Reddit by newest and top', 'Check whether threads still get comments', 'Look for repeated complaints and comparisons'],
+      },
+      {
+        heading: 'Read the rules like a marketer who wants to stay',
+        body: [
+          'A useful subreddit has more than traffic. It has a predictable posting culture. Check whether links are allowed, whether product mentions are common, whether founders participate, and whether posts need a flair, tag, or weekly thread.',
+          'If the rules are unclear, study what moderators leave up. If every brand post disappears, the better move may be research, comments, or a page update before posting.',
+        ],
+      },
+      {
+        heading: 'Turn subreddit research into better pages',
+        body: [
+          'The best community research also improves your site. The phrases people repeat on Reddit often expose weak page copy, missing objections, and topics that deserve clearer answers.',
+          'A Reddit marketing expert can turn that research into safer post ideas and better landing-page language before the brand enters the discussion.',
+        ],
+      },
+    ],
+    related: ['Reddit marketing services', 'Reddit marketing expert', 'How to market on Reddit without getting banned', 'Why Reddit posts get removed'],
+    cta: 'Send the product, audience, and site for subreddit research.',
+  },
+  {
+    slug: 'why-reddit-posts-get-removed',
+    title: 'Why Reddit posts get removed.',
+    seoTitle: 'Why Reddit Posts Get Removed | AutoModerator, Karma, Subreddit Rules, Promotional Tone and Safer Post Review',
+    metaDescription: 'Learn why Reddit posts get removed, including AutoModerator filters, account age, karma, missing flair, self-promotion rules, direct links, and poor subreddit fit.',
+    eyebrow: 'Reddit posting guide',
+    parentPath: '/reddit-posting-service',
+    parentLabel: 'Reddit posting service',
+    intro: 'A Reddit post can be useful and still get removed. The issue is often the account, format, rules, link pattern, or promotional tone, not just the idea itself.',
+    sections: [
+      {
+        heading: 'Filters may remove the post first',
+        body: [
+          'AutoModerator and subreddit filters can act before a human moderator reads the post. Common triggers include account age, karma, link domains, missing flair, banned words, repeated submissions, or a format the subreddit does not allow.',
+          'That is why a post may disappear quickly or seem visible to the author while getting no real attention.',
+        ],
+      },
+      {
+        heading: 'Promotional tone is easy to spot',
+        body: [
+          'Reddit users are fast at noticing brand language. A direct pitch, generic CTA, repeated brand mention, or link-first post can feel like an ad even when the writer thinks it is helpful.',
+          'A good Reddit posting service should shape the post around the reader question first, then decide whether a brand mention or link belongs there at all.',
+        ],
+        bullets: ['Remove unnecessary links', 'Rewrite the title in community language', 'Add context before mentioning the brand', 'Avoid posting the same angle in multiple subreddits'],
+      },
+      {
+        heading: 'The subreddit may be wrong for the post',
+        body: [
+          'Some posts fail because they are in the wrong community. A SaaS launch, SEO question, product complaint, or founder lesson may need completely different framing depending on the subreddit.',
+          'Before reposting, compare your draft against accepted posts in that exact community. If the tone, format, or subject does not match, rewriting alone may not fix it.',
+        ],
+      },
+      {
+        heading: 'Review before reposting',
+        body: [
+          'Before trying again, check the rules, account trust, flair, title, link destination, and whether the post gives enough value without asking for a click.',
+          'If the post supports a commercial page, get a Reddit marketing expert to review it first. Reddit marketing services can also identify whether the better move is a comment, a different subreddit, or a stronger landing page.',
+        ],
+      },
+    ],
+    related: ['Reddit posting service', 'Reddit marketing expert', 'Reddit marketing services', 'How to market on Reddit without getting banned', 'How to find subreddits for marketing'],
+    cta: 'Send the removed post, subreddit, and target page for review.',
   },
 ];
 

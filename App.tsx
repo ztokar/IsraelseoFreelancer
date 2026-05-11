@@ -4,6 +4,7 @@ import { HomePage } from './components/HomePage';
 import { ServicePage } from './components/ServicePage';
 import { ReviewsResultsPage } from './components/ReviewsResultsPage';
 import { SpokeServicePage } from './components/SpokeServicePage';
+import { RedditSupportPage } from './components/RedditSupportPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogArticle } from './components/BlogArticle';
 import { BlogArticle2 } from './components/BlogArticle2';
@@ -19,7 +20,7 @@ import BlogArticle11 from './components/BlogArticle11';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
 import { AboutPage } from './components/AboutPage';
-import { SERVICE_DATA, SERVICE_SPOKES } from './constants';
+import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import type { RouteRecord } from 'vite-react-ssg';
 
 export const routes: RouteRecord[] = [
@@ -44,6 +45,10 @@ export const routes: RouteRecord[] = [
       ...SERVICE_SPOKES.map((spoke) => ({
         path: spoke.slug,
         element: <SpokeServicePage content={spoke} />,
+      })),
+      ...REDDIT_SUPPORT_PAGES.map((page) => ({
+        path: page.slug,
+        element: <RedditSupportPage content={page} />,
       })),
 
       // Comparison pages

@@ -92,3 +92,21 @@ export interface SpokeService {
   related: string[];
   cta: string;
 }
+
+export interface SupportPage {
+  slug: string;
+  title: string;
+  seoTitle: string;
+  metaDescription: string;
+  eyebrow: string;
+  parentPath: string;
+  parentLabel: string;
+  intro: string;
+  sections: {
+    heading: string;
+    body: string[];
+    bullets?: string[];
+  }[];
+  related: string[];
+  cta: string;
+}
