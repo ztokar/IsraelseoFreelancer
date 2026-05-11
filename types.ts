@@ -78,11 +78,16 @@ export interface SpokeService {
   seoTitle: string;
   metaDescription: string;
   eyebrow: string;
+  visual?: string;
   parentPath: string;
   parentLabel: string;
   bestFor: string;
   intro: string;
+  fit?: string;
+  handleTitle?: string;
+  handleIntro?: string;
   handles: string[];
+  avoids?: string[];
   proof: string;
   related: string[];
   cta: string;

@@ -33,6 +33,9 @@ const iconMap: Record<string, React.ElementType> = {
   citations: Globe2,
   ai: Bot,
   reddit: MessageCircle,
+  redditMarketing: MessageCircle,
+  redditExpert: Search,
+  redditPosting: PenLine,
   social: MessageCircle,
   youtube: Youtube,
   links: Link2,
@@ -136,6 +139,30 @@ const thumbnailData: Record<string, {
     glow: 'bg-orange-400/20',
     bars: [24, 40, 58],
   },
+  redditMarketing: {
+    headline: 'REDDIT',
+    main: 'MARKETING',
+    bullets: ['Subreddit fit', 'Buyer objections', 'Search support', 'Clean strategy'],
+    color: 'text-orange-300',
+    glow: 'bg-orange-400/20',
+    bars: [28, 48, 66],
+  },
+  redditExpert: {
+    headline: 'REDDIT',
+    main: 'EXPERT',
+    bullets: ['Strategy review', 'Thread research', 'Risk checks', 'AI visibility'],
+    color: 'text-amber-300',
+    glow: 'bg-amber-400/20',
+    bars: [24, 46, 64],
+  },
+  redditPosting: {
+    headline: 'REDDIT',
+    main: 'POSTING',
+    bullets: ['Post angles', 'Native wording', 'Review pass', 'No spam'],
+    color: 'text-rose-300',
+    glow: 'bg-rose-400/20',
+    bars: [22, 42, 60],
+  },
   social: {
     headline: 'SOCIAL SEO',
     main: 'POSTING',
@@ -204,7 +231,7 @@ export const ServiceThumbnail: React.FC<ServiceThumbnailProps> = ({ visual = 'au
           <div className="mt-4 space-y-1.5">
             {data.bullets.map((bullet) => (
               <div key={bullet} className="flex items-center gap-1.5 text-[10.5px] font-black uppercase italic leading-3.5 text-white">
-                <span className="text-base leading-none text-lime-400">★</span>
+                <span className="text-base leading-none text-lime-400">+</span>
                 <span>{bullet}</span>
               </div>
             ))}
