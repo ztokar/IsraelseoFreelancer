@@ -2,6 +2,12 @@ import React, { useState, FormEvent } from 'react';
 import { ClientOnly } from 'vite-react-ssg';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
+declare global {
+  interface Window {
+    dataLayer?: Array<Record<string, unknown>>;
+  }
+}
+
 interface ProtectedFormProps {
   formspreeEndpoint: string;
   subject: string;
@@ -26,6 +32,75 @@ const serviceOptions = [
   'Programmatic SEO',
   'Other',
 ];
+
+const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
+const clickIdFields = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'] as const;
+
+const classifyReferrer = (referrer: string) => {
+  if (!referrer) return '';
+
+  const hostname = (() => {
+    try {
+      return new URL(referrer).hostname.toLowerCase();
+    } catch {
+      return referrer.toLowerCase();
+    }
+  })();
+
+  if (/(chatgpt|openai|perplexity|claude|anthropic|gemini|bard|copilot|you\.com|phind)/.test(hostname)) {
+    return 'ai_search';
+  }
+
+  if (/(google|bing|duckduckgo|yahoo|yandex|baidu|ecosia|brave)/.test(hostname)) {
+    return 'organic_search';
+  }
+
+  return 'referral';
+};
+
+const readAttribution = () => {
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+  const firstLandingPageKey = 'isf_first_landing_page';
+  const firstReferrerKey = 'isf_first_referrer';
+
+  if (!window.sessionStorage.getItem(firstLandingPageKey)) {
+    window.sessionStorage.setItem(firstLandingPageKey, window.location.href);
+  }
+
+  if (!window.sessionStorage.getItem(firstReferrerKey)) {
+    window.sessionStorage.setItem(firstReferrerKey, document.referrer || '');
+  }
+
+  const attribution: Record<string, string> = {
+    form_page: window.location.pathname,
+    landing_page: window.sessionStorage.getItem(firstLandingPageKey) || window.location.href,
+    referrer: window.sessionStorage.getItem(firstReferrerKey) || document.referrer || '',
+    current_url: window.location.href,
+  };
+
+  [...utmFields, ...clickIdFields].forEach((field) => {
+    attribution[field] = params.get(field) || '';
+  });
+
+  attribution.search_channel_hint = classifyReferrer(attribution.referrer);
+
+  return attribution;
+};
+
+const appendAttributionFields = (formData: FormData, attribution: Record<string, string>) => {
+  Object.entries(attribution).forEach(([key, value]) => {
+    formData.set(key, value);
+  });
+};
+
+const pushLeadEvent = (payload: Record<string, string>) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'lead_form_submit',
+    ...payload,
+  });
+};
 
 const FormContent: React.FC<ProtectedFormProps> = ({
   formspreeEndpoint,
@@ -52,6 +127,15 @@ const FormContent: React.FC<ProtectedFormProps> = ({
     // Capture form data before disabling inputs because disabled fields are excluded from FormData.
     const formElement = e.currentTarget;
     const formData = new FormData(formElement);
+    const attribution = readAttribution();
+    const formSource = subject || submitButtonText || 'SEO quote form';
+    const selectedService = String(formData.get('service') || '');
+
+    appendAttributionFields(formData, {
+      ...attribution,
+      form_source: formSource,
+      selected_service: selectedService,
+    });
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -74,6 +158,16 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
       if (response.ok) {
         setSubmitStatus('success');
+        pushLeadEvent({
+          form_source: formSource,
+          form_page: attribution.form_page,
+          landing_page: attribution.landing_page,
+          utm_source: attribution.utm_source,
+          utm_medium: attribution.utm_medium,
+          utm_campaign: attribution.utm_campaign,
+          search_channel_hint: attribution.search_channel_hint,
+          selected_service: selectedService,
+        });
         formElement.reset();
       } else {
         try {
