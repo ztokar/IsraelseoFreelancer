@@ -72,7 +72,7 @@ const thumbnailData: Record<string, {
     main: 'CONSULT',
     bullets: ['Priorities', 'Roadmap', 'Second opinion', 'Clear next steps'],
     color: 'text-lime-300',
-    glow: 'bg-lime-400/20',
+    glow: 'bg-[#10C988]/20',
     bars: [24, 42, 56],
   },
   monthly: {
@@ -88,7 +88,7 @@ const thumbnailData: Record<string, {
     main: 'PIPELINE',
     bullets: ['Use-case pages', 'Comparison pages', 'Buyer-intent content', 'US market fit'],
     color: 'text-lime-300',
-    glow: 'bg-lime-400/20',
+    glow: 'bg-[#10C988]/20',
     bars: [26, 48, 70],
   },
   shopify: {
@@ -192,7 +192,7 @@ const thumbnailData: Record<string, {
     main: 'SEO PAGES',
     bullets: ['Templates', 'Useful data', 'Internal links', 'Indexing control'],
     color: 'text-lime-300',
-    glow: 'bg-lime-400/20',
+    glow: 'bg-[#10C988]/20',
     bars: [34, 50, 68],
   },
   pr: {
@@ -210,17 +210,17 @@ export const ServiceThumbnail: React.FC<ServiceThumbnailProps> = ({ visual = 'au
   const Icon = iconMap[visual] || Search;
 
   return (
-    <div className="relative h-48 overflow-hidden rounded-xl bg-[#191d3f] p-4 text-white shadow-sm">
+    <div className="relative h-48 overflow-hidden rounded-xl bg-[#0F1115] p-4 text-white shadow-sm">
       <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.16)_1px,transparent_1px)] [background-size:24px_24px]" />
-      <div className={`absolute -right-10 -top-10 h-36 w-36 rounded-full ${data.glow} blur-sm`} />
-      <div className="absolute -bottom-12 -left-8 h-36 w-36 rounded-full bg-lime-400/15 blur-sm" />
+      <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#10C988]/25 blur-sm" />
+      <div className="absolute -bottom-12 -left-8 h-36 w-36 rounded-full bg-[#0BA66C]/15 blur-sm" />
 
       <div className="relative z-10 grid h-full grid-cols-[1fr_74px] gap-3">
         <div className="min-w-0">
           <div className="flex items-start gap-2">
-            <Icon className={`mt-1 h-8 w-8 shrink-0 ${data.color}`} />
+            <Icon className="mt-1 h-8 w-8 shrink-0 text-[#10C988]" />
             <div className="min-w-0">
-              <p className={`text-[1.25rem] font-black italic leading-none tracking-tight ${data.color}`}>
+              <p className="text-[1.25rem] font-black italic leading-none tracking-tight text-[#10C988]">
                 {data.headline}
               </p>
               <p className="text-[1.55rem] font-black italic leading-none tracking-tight text-white">
@@ -231,7 +231,7 @@ export const ServiceThumbnail: React.FC<ServiceThumbnailProps> = ({ visual = 'au
           <div className="mt-4 space-y-1.5">
             {data.bullets.map((bullet) => (
               <div key={bullet} className="flex items-center gap-1.5 text-[10.5px] font-black uppercase italic leading-3.5 text-white">
-                <span className="text-base leading-none text-lime-400">+</span>
+                <span className="text-base leading-none text-[#10C988]">+</span>
                 <span>{bullet}</span>
               </div>
             ))}
@@ -239,12 +239,12 @@ export const ServiceThumbnail: React.FC<ServiceThumbnailProps> = ({ visual = 'au
         </div>
 
         <div className="relative flex flex-col items-center justify-end">
-          <div className="absolute right-0 top-8 h-14 w-20 rotate-[-18deg] rounded-full border-t-4 border-lime-400" />
+          <div className="absolute right-0 top-8 h-14 w-20 rotate-[-18deg] rounded-full border-t-4 border-[#10C988]" />
           <div className="mb-1 flex items-end gap-1.5">
             {data.bars.map((height, index) => (
               <span
                 key={`${title}-${height}`}
-                className={`w-4 rounded-t-sm bg-lime-400 ${index === 0 ? 'opacity-70' : ''}`}
+                className={`w-4 rounded-t-sm bg-[#10C988] ${index === 0 ? 'opacity-70' : ''}`}
                 style={{ height: `${height}px` }}
               />
             ))}

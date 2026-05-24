@@ -65,6 +65,11 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <aside className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-6">
+              <img
+                src="/images/redesign-hero.png"
+                alt="Search visibility growth illustration"
+                className="mb-5 h-32 w-full rounded-xl border border-slate-200 object-cover"
+              />
               <div className="flex items-center gap-4 border-b border-slate-200 pb-5">
                 <ProfileAvatar size="lg" />
                 <div>

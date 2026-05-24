@@ -12,6 +12,22 @@ interface SpokeServicePageProps {
   content: SpokeService;
 }
 
+const visualBySlug: Record<string, string> = {
+  'shopify-seo': 'shopify',
+  'google-merchant-center-seo': 'merchant',
+  'google-business-profile-seo': 'local',
+  'local-citations-directories': 'citations',
+  'reddit-seo': 'reddit',
+  'reddit-marketing-services': 'redditMarketing',
+  'reddit-marketing-expert': 'redditExpert',
+  'reddit-posting-service': 'redditPosting',
+  'youtube-seo': 'youtube',
+  'programmatic-seo': 'programmatic',
+  'seo-consult': 'consulting',
+  'press-release-seo': 'pr',
+  'blog-content-seo': 'writing',
+};
+
 export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) => {
   const relatedPathByLabel: Record<string, string> = {
     'AI SEO / GEO': '/ai-seo-consultant-israel',
@@ -83,7 +99,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             </div>
 
             <aside className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-6">
-              <ServiceThumbnail visual={content.visual || 'reddit'} title={content.eyebrow} />
+              <ServiceThumbnail visual={visualBySlug[content.slug] || content.visual || 'audit'} title={content.eyebrow} />
               <div className="mt-5 flex items-center gap-3 border-b border-slate-200 pb-5">
                 <ProfileAvatar size="md" />
                 <div>
