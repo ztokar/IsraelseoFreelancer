@@ -84,7 +84,7 @@ export const Layout: React.FC = () => {
       {/* Footer */}
       <footer className="gpfoot">
         <div className="wrap">
-          <div className="top">
+          <div className="brandrow">
             <div className="brand">
               <div className="logo"><span className="dot" />Zechariah Tokar</div>
               <p>Search visibility consultant for companies targeting the US and English-speaking markets. SEO, AI search, and Reddit.</p>
@@ -103,6 +103,8 @@ export const Layout: React.FC = () => {
                 </a>
               </div>
             </div>
+          </div>
+          <div className="top">
             {FOOTER_COLUMNS.map((col) => (
               <div className="col" key={col.heading}>
                 <h4>{col.heading}</h4>
