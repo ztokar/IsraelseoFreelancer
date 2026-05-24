@@ -72,6 +72,12 @@ const steps = [
   { h: 'Build the next pages that deserve to rank', p: 'New service, content, and proof pages that win the search and convert the click.' },
 ];
 
+const caseSlug: Record<string, string> = {
+  'ZStander': 'zstander-shopify-seo',
+  'The Behfar Team': 'behfar-team-real-estate-seo',
+  'North Star Ranch': 'north-star-ranch-micro-wedding-seo',
+};
+
 const blog = [
   { cat: 'AI Search', read: '8 min read', title: 'GEO: how to get cited by ChatGPT and Perplexity', path: '/blog/geo-ai-generative-engine-optimization' },
   { cat: 'B2B SEO', read: '7 min read', title: 'Why Israeli B2B companies struggle with SEO', path: '/blog/why-israeli-b2b-fail-seo' },
@@ -152,14 +158,26 @@ export const HomePage: React.FC = () => {
               <p>Not polished claims. Here is the situation, what I actually did, and what happened.</p>
             </div>
             <div className="case-grid">
-              {cases.map((c) => (
-                <div className="case" key={c.client}>
-                  <div className="tag">{c.industry} · {c.market}</div>
-                  <div className="metric">{c.metric}</div>
-                  <div className="ctx">{c.context}</div>
-                  <p className="story">{c.description}</p>
-                </div>
-              ))}
+              {cases.map((c) => {
+                const slug = caseSlug[c.client];
+                const inner = (
+                  <>
+                    <div className="tag">{c.industry} · {c.market}</div>
+                    <div className="metric">{c.metric}</div>
+                    <div className="ctx">{c.context}</div>
+                    <p className="story">{c.description}</p>
+                    {slug && <span className="read">Read the case <span>↗</span></span>}
+                  </>
+                );
+                return slug ? (
+                  <NavLink className="case" to={`/case-studies/${slug}`} key={c.client} style={{ textDecoration: 'none' }}>{inner}</NavLink>
+                ) : (
+                  <div className="case" key={c.client}>{inner}</div>
+                );
+              })}
+            </div>
+            <div style={{ marginTop: '24px' }}>
+              <NavLink to="/case-studies" className="btn btn-ghost" style={{ background: 'transparent', color: '#fff', borderColor: 'var(--hair-light)' }}>View all case studies <span className="arrow">↗</span></NavLink>
             </div>
           </div>
         </section>

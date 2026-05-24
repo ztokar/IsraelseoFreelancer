@@ -20,7 +20,10 @@ import BlogArticle11 from './components/BlogArticle11';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
 import { AboutPage } from './components/AboutPage';
+import { CaseStudiesHub } from './components/CaseStudiesHub';
+import { CaseStudyPage } from './components/CaseStudyPage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
+import { CASE_STUDY_PAGES } from './constants-casestudies';
 import type { RouteRecord } from 'vite-react-ssg';
 
 export const routes: RouteRecord[] = [
@@ -55,6 +58,13 @@ export const routes: RouteRecord[] = [
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'videos', element: <VideosPage /> },
+
+      // Case studies
+      { path: 'case-studies', element: <CaseStudiesHub /> },
+      ...CASE_STUDY_PAGES.map((cs) => ({
+        path: `case-studies/${cs.slug}`,
+        element: <CaseStudyPage content={cs} />,
+      })),
 
       // Blog
       { path: 'blog', element: <BlogPage /> },
