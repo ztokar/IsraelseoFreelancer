@@ -1,284 +1,132 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { NAV_ITEMS, SOCIAL_LINKS } from '../constants';
+import { NAV_MENU, SOCIAL_LINKS } from '../constants';
 
 export const Layout: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Skip mouse tracking on touch devices / small screens
-    const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
-    if (isMobile) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        setMousePos({ x: e.clientX, y: e.clientY });
-      }
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
     window.scrollTo(0, 0);
   }, [location]);
 
-  // Scroll animation observer - adds js-ready class so content is visible without JS
+  // Scroll animation observer (kept for blog/other pages that use .scroll-trigger)
   useEffect(() => {
     const elements = document.querySelectorAll('.scroll-trigger');
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('active');
         });
       },
       { threshold: 0.1 }
     );
-
     elements.forEach((el) => {
       el.classList.add('js-ready');
       observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, [location]);
 
   return (
-    <div
-      ref={containerRef}
-      className="min-h-screen bg-bg-dark font-sans text-slate-800 selection:bg-primary/20 selection:text-slate-900 flex flex-col relative overflow-x-hidden"
-    >
-      {/* Interactive Background - subtle for light theme */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        {/* Mouse Spotlight */}
-        <div
-          className="absolute inset-0 transition-opacity duration-500"
-          style={{
-            background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(5, 150, 105, 0.03), transparent 40%)`,
-          }}
-        />
-
-        {/* Ambient Glows - very subtle for light theme */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/[0.02] rounded-full blur-[150px] translate-x-1/2 translate-y-1/2" />
-      </div>
-
-      {/* Navbar */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-panel py-4' : 'bg-white/90 backdrop-blur-sm py-5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <NavLink
-              to="/"
-              className="flex items-center gap-3 group cursor-pointer"
-            >
-              <div className="relative w-10 h-10 flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 rounded-lg transition-colors">
-                <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform duration-300">
-                  north_east
-                </span>
-              </div>
-              <div>
-                <span className="font-sans font-bold text-lg tracking-tight text-slate-900 block">
-                  Zechariah Tokar
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-secondary group-hover:text-primary transition-colors">
-                  AI SEO Strategist
-                </span>
-              </div>
-            </NavLink>
-
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
-              {NAV_ITEMS.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `text-base font-medium transition-all hover:text-primary hover:scale-105 ${
-                      isActive ? 'text-primary' : 'text-slate-600'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <a
-                href="#audit"
-                className="relative overflow-hidden group bg-primary px-6 py-2.5 rounded-full text-base font-semibold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg"
-              >
-                <span className="relative z-10 text-white">
-                  Find Quick Wins
-                </span>
-              </a>
-            </div>
-
-            {/* Mobile Toggle */}
-            <button
-              className="md:hidden text-slate-700 p-2"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <span className="material-symbols-outlined text-2xl">
-                {isMobileMenuOpen ? 'close' : 'menu'}
-              </span>
+    <div className="min-h-screen bg-white font-sans text-slate-800 flex flex-col">
+      {/* Header */}
+      <header className={`gpnav ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="bar">
+          <NavLink to="/" className="logo"><span className="dot" />Zechariah Tokar</NavLink>
+          <ul className="menu">
+            {NAV_MENU.map((group) => (
+              <li key={group.label}>
+                {group.children ? (
+                  <>
+                    <span>{group.label} <i className="caret" /></span>
+                    <div className="dropdown">
+                      {group.children.map((child) => (
+                        <NavLink key={child.path} to={child.path}>
+                          {child.label}<span>{child.desc}</span>
+                        </NavLink>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <NavLink to={group.path || '/'}>{group.label}</NavLink>
+                )}
+              </li>
+            ))}
+          </ul>
+          <div className="ncta">
+            <a className="pill" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">
+              Let's talk <span aria-hidden="true">↗</span>
+            </a>
+            <button className="burger" aria-label="Toggle menu" onClick={() => setIsMobileMenuOpen((v) => !v)}>
+              <span /><span /><span />
             </button>
           </div>
         </div>
+        <div className="mobile">
+          {NAV_MENU.flatMap((group) =>
+            group.children
+              ? group.children.map((c) => (
+                  <NavLink key={c.path} to={c.path}>{c.label}</NavLink>
+                ))
+              : [<NavLink key={group.path} to={group.path || '/'}>{group.label}</NavLink>]
+          )}
+          <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Let's talk</a>
+        </div>
+      </header>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-slate-200 p-6 flex flex-col gap-4 shadow-xl">
-            {NAV_ITEMS.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-lg font-medium py-2 transition-colors ${
-                    isActive ? 'text-primary' : 'text-slate-600 hover:text-primary'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <a
-              href="#audit"
-              className="bg-primary text-white px-6 py-4 text-center font-bold mt-4 rounded-lg shadow-md"
-            >
-              Get Free Audit
-            </a>
-          </div>
-        )}
-      </nav>
-
-      {/* Main Content */}
-      <main className="flex-grow z-10 pt-24">
+      {/* Main */}
+      <main className="flex-grow">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-16 z-10 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
-                  <span className="material-symbols-outlined text-primary text-xl">
-                    north_east
-                  </span>
-                </div>
-                <div>
-                  <span className="font-display font-bold text-xl text-slate-900 block">
-                    Zechariah Tokar
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-slate-500">
-                    SEO Consultant
-                  </span>
-                </div>
-              </div>
-              <p className="text-slate-600 text-base max-w-sm leading-relaxed">
-                English-native SEO consultant based in Israel, providing strategic SEO services for US and international businesses.
-              </p>
-            </div>
-
-            {/* Right */}
-            <div className="flex flex-col md:items-end gap-6">
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href={SOCIAL_LINKS.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-[#0A66C2] border border-slate-200 hover:border-[#0A66C2] rounded-lg transition-all"
-                  title="LinkedIn"
-                >
-                  <svg className="w-4 h-4 fill-[#0A66C2] group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors">LinkedIn</span>
+      <footer className="gpfoot">
+        <div className="wrap">
+          <div className="top">
+            <div className="brand">
+              <div className="logo"><span className="dot" />Zechariah Tokar</div>
+              <p>Search visibility consultant for companies targeting the US and English-speaking markets. SEO, AI search, and Reddit.</p>
+              <div className="soc">
+                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H20v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg>
                 </a>
-                <a
-                  href={SOCIAL_LINKS.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-black border border-slate-200 hover:border-black rounded-lg transition-all"
-                  title="X (Twitter)"
-                >
-                  <svg className="w-4 h-4 fill-slate-800 group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                  <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors">X</span>
+                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X">
+                  <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5-6.5L5.3 22H2l7.7-8.8L1.6 2h6.9l4.5 6 5.9-6z"/></svg>
                 </a>
-                <a
-                  href={SOCIAL_LINKS.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-[#FF0000] border border-slate-200 hover:border-[#FF0000] rounded-lg transition-all"
-                  title="YouTube"
-                >
-                  <svg className="w-4 h-4 fill-[#FF0000] group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                  <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors">YouTube</span>
+                <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.4-5a2.7 2.7 0 00-1.9-1.9C18.9 4.7 12 4.7 12 4.7s-6.9 0-8.7.4A2.7 2.7 0 001.4 7C1 8.6 1 12 1 12s0 3.4.4 5a2.7 2.7 0 001.9 1.9c1.8.4 8.7.4 8.7.4s6.9 0 8.7-.4a2.7 2.7 0 001.9-1.9c.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3z"/></svg>
                 </a>
-                <a
-                  href={SOCIAL_LINKS.reddit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-[#FF4500] border border-slate-200 hover:border-[#FF4500] rounded-lg transition-all"
-                  title="Reddit"
-                >
-                  <svg className="w-4 h-4 fill-[#FF4500] group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-                  </svg>
-                  <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors">Reddit</span>
-                </a>
-                <a
-                  href={`mailto:${SOCIAL_LINKS.email}`}
-                  className="group flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-primary border border-slate-200 hover:border-primary rounded-lg transition-all"
-                  title="Email"
-                >
-                  <span className="material-symbols-outlined text-primary group-hover:text-white text-lg transition-colors">
-                    mail
-                  </span>
-                  <span className="text-slate-600 group-hover:text-white text-sm font-medium transition-colors">Email</span>
+                <a href={SOCIAL_LINKS.reddit} target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                  <svg viewBox="0 0 24 24"><path d="M22 12a2.1 2.1 0 00-3.6-1.5 10.3 10.3 0 00-5.4-1.7l.9-4.1 2.9.6a1.5 1.5 0 101.5-1.6 1.5 1.5 0 00-1.3.8l-3.3-.7-1.1 5.1a10.3 10.3 0 00-5.5 1.7A2.1 2.1 0 102 13.8a4 4 0 00-.1.9c0 3.3 3.9 6 8.7 6s8.7-2.7 8.7-6a4 4 0 00-.1-.9A2.1 2.1 0 0022 12zM7.5 13.5a1.4 1.4 0 112.8 0 1.4 1.4 0 01-2.8 0zm7.9 3.6c-1 1-3.2 1-3.8 1s-2.8 0-3.8-1a.4.4 0 01.6-.6c.6.6 2 .8 3.2.8s2.6-.2 3.2-.8a.4.4 0 01.6.6zm-.3-2.2a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8z"/></svg>
                 </a>
               </div>
-              <p className="text-slate-400 text-sm">
-                © {new Date().getFullYear()} All Rights Reserved.
-                ISRAELSEOFREELANCER.COM
-              </p>
-              <p className="text-slate-400 text-sm">
-                Part of{' '}
-                <a
-                  href="https://seocompanyisrael.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  SEO Company Israel
-                </a>
-              </p>
             </div>
+            <div className="col">
+              <h4>SEO Services</h4>
+              <NavLink to="/freelance-seo-israel">Freelance SEO</NavLink>
+              <NavLink to="/seoconsulting">SEO Consulting</NavLink>
+              <NavLink to="/content-marketing-for-seo">SEO Content Writing</NavLink>
+            </div>
+            <div className="col">
+              <h4>B2B &amp; Industries</h4>
+              <NavLink to="/b2b-seo-israel">B2B SEO</NavLink>
+              <NavLink to="/seo-for-lawyers">SEO for Lawyers</NavLink>
+              <NavLink to="/seo-freelancer-vs-agency">Freelancer vs Agency</NavLink>
+            </div>
+            <div className="col">
+              <h4>More</h4>
+              <NavLink to="/israel-seo-specialist">Israel SEO Specialist</NavLink>
+              <NavLink to="/blog">Blog</NavLink>
+              <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book a consultation</a>
+            </div>
+          </div>
+          <div className="bot">
+            <span>© {new Date().getFullYear()} Zechariah Tokar · israelseofreelancer.com</span>
+            <span>
+              Part of <a href="https://seocompanyisrael.com" target="_blank" rel="noopener noreferrer">SEO Company Israel</a>
+            </span>
           </div>
         </div>
       </footer>

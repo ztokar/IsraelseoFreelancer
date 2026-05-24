@@ -1,4 +1,4 @@
-import { ServiceContent, NavItem, CaseStudy } from './types';
+import { ServiceContent, NavItem, NavGroup, CaseStudy } from './types';
 import React from 'react';
 
 export const SOCIAL_LINKS = {
@@ -18,6 +18,48 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
   { label: 'Israel SEO Specialist', path: '/israel-seo-specialist' },
   { label: 'Blog', path: '/blog' },
+];
+
+// Grouped nav for the redesigned header. Every link points to an existing page.
+export const NAV_MENU: NavGroup[] = [
+  {
+    label: 'SEO Services',
+    children: [
+      { label: 'Freelance SEO', desc: 'Hands-on SEO, senior level', path: '/freelance-seo-israel' },
+      { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seoconsulting' },
+      { label: 'SEO Content Writing', desc: 'Pages that rank and convert', path: '/content-marketing-for-seo' },
+    ],
+  },
+  {
+    label: 'B2B & Industries',
+    children: [
+      { label: 'B2B SEO', desc: 'Reach decision-makers', path: '/b2b-seo-israel' },
+      { label: 'SEO for Lawyers', desc: 'More qualified case leads', path: '/seo-for-lawyers' },
+    ],
+  },
+  {
+    label: 'Markets',
+    children: [
+      { label: 'Israel SEO Specialist', desc: 'Ranking in English-speaking markets', path: '/israel-seo-specialist' },
+      { label: 'Freelancer vs Agency', desc: 'Which is right for you', path: '/seo-freelancer-vs-agency' },
+    ],
+  },
+  { label: 'Blog', path: '/blog' },
+];
+
+// Real screenshots posted publicly (sourced from LinkedIn). Used in the homepage proof strip.
+export const PROOF_ITEMS = [
+  { img: '/images/proof-reddit-405k.jpg', alt: 'Reddit post stats showing 405,000 views', caption_pre: 'A single Reddit post to ', caption_b: '405K views', caption_post: ' and real brand traffic.' },
+  { img: '/images/proof-reddit-12k.jpg', alt: 'Reach dashboard showing 12,000 views', caption_pre: 'A client Reddit post hitting ', caption_b: '12K views', caption_post: ' in its first days.' },
+  { img: '/images/proof-google-lead.jpg', alt: 'Inbound lead message that found the client on Google', caption_pre: 'An inbound lead that ', caption_b: 'found the client on Google', caption_post: '.' },
+  { img: '/images/proof-client-praise.jpg', alt: 'Client message praising an SEO deliverable', caption_pre: 'A client reaction to a recent ', caption_b: 'SEO deliverable', caption_post: '.' },
+];
+
+// Metric-forward testimonials for the homepage (verbatim, from /reviews-results).
+export const HOME_TESTIMONIALS = [
+  { result: 'Nearly 7 figures in revenue', quote: 'Zechariah was one of the best people I ever contracted. His out of the box thinking and attention to detail really helped.', name: 'Sean Littman', title: 'Founder, GiveSuite' },
+  { result: '#1 on Google Maps in one week', quote: 'Within one week, our business was showing #1 on Google Maps for every target search term we cared about. I was blown away.', name: 'Yonatan Vinnik, LSW', title: 'Child & Family Therapist' },
+  { result: 'Saved thousands, ranked fast', quote: 'Within a couple of months I was ranking at the top for my key searches, which honestly shocked me. Talk to Zechariah.', name: 'Brett Sheldon, LCSW', title: 'CEO, Launch Point Network' },
 ];
 
 export const TOOLS_LIST = [
@@ -164,7 +206,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     faqs: [
       { question: 'How long does it take to see SEO results?', answer: 'Most clients see measurable ranking improvements within 60-90 days. Zechariah Tokar prioritizes quick wins first, targeting keywords where small optimizations produce fast gains, then builds toward competitive terms over 3-6 months.' },
       { question: 'What does a freelance SEO consultant do differently than an agency?', answer: 'Zechariah Tokar personally handles strategy and execution. No account managers, no junior team members rotating through your project. You get direct access to 10+ years of senior SEO experience on every decision.' },
-      { question: 'How much does freelance SEO cost?', answer: 'A deep dive audit starts at $250. Monthly SEO management ranges from $1,500 to $3,500 depending on site size and competition level. Every dollar goes to actual work, not agency overhead.' },
+      { question: 'How does pricing work?', answer: 'It depends on your site, your goals, and how much you want handled for you. The simplest way to find out is a quick consultation. You bring your site and main problem, and you leave with a clear plan and a scope that fits. Book a consultation or send your site for a free quick-wins audit and we will take it from there.' },
       { question: 'Do you work with international companies?', answer: 'Yes. Zechariah Tokar works with US companies, Israeli startups, European businesses, and international brands targeting English-speaking markets. He specializes in US market SEO strategy.' },
     ]
   },

@@ -38,7 +38,7 @@ export interface ServiceContent {
     steps: string[];
   };
   tools: string[];
-  pricing: {
+  pricing?: {
     audit: string;
     management: string;
   };
@@ -51,4 +51,16 @@ export interface ServiceContent {
 export interface NavItem {
   label: string;
   path: string;
+}
+
+export interface NavChild {
+  label: string;
+  desc: string;
+  path: string;
+}
+
+export interface NavGroup {
+  label: string;
+  path?: string;
+  children?: NavChild[];
 }

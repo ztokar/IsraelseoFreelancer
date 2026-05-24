@@ -1,651 +1,300 @@
 import React, { useEffect } from 'react';
-import { SERVICES_LIST, CASE_STUDIES, CLIENT_LOGOS } from '../constants';
 import { NavLink } from 'react-router-dom';
-import { TestimonialsCarousel } from './TestimonialsCarousel';
+import { CASE_STUDIES, PROOF_ITEMS, HOME_TESTIMONIALS, SOCIAL_LINKS } from '../constants';
 import { ProtectedForm } from './ProtectedForm';
-import { updatePageSEO, HeadSEO } from '../utils/seo';
+import { HeadSEO, updatePageSEO } from '../utils/seo';
+
+const TITLE = 'Zechariah Tokar | Search Visibility Consultant for US & English-Speaking Markets';
+const DESC = 'Zechariah Tokar is a search visibility consultant for companies targeting US and English-speaking markets. SEO, AI search visibility, and Reddit, done by a senior operator directly.';
+
+const services = [
+  {
+    title: 'SEO Services',
+    body: 'Technical fixes, audits, monthly campaigns, and content built to rank and convert.',
+    links: [
+      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
+      { label: 'Consulting', path: '/seoconsulting' },
+      { label: 'Content', path: '/content-marketing-for-seo' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>,
+  },
+  {
+    title: 'B2B & SaaS SEO',
+    body: 'Reach decision-makers while they compare vendors, with pages built around buyer intent.',
+    links: [
+      { label: 'B2B SEO', path: '/b2b-seo-israel' },
+      { label: 'SEO Consulting', path: '/seoconsulting' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>,
+  },
+  {
+    title: 'Local & Service SEO',
+    body: 'Win the local map pack and show up when nearby buyers search for help, including lawyers and clinics.',
+    links: [
+      { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
+      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>,
+  },
+  {
+    title: 'AI Search Visibility',
+    body: 'Show up and get recommended inside ChatGPT, Perplexity, Gemini, and Google AI Overviews.',
+    links: [
+      { label: 'Content Marketing', path: '/content-marketing-for-seo' },
+      { label: 'Consulting', path: '/seoconsulting' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg>,
+  },
+  {
+    title: 'Reddit & Community',
+    body: 'Be the brand real people recommend in the threads that rank in Google and feed AI answers.',
+    links: [
+      { label: 'Content Marketing', path: '/content-marketing-for-seo' },
+      { label: 'Consulting', path: '/seoconsulting' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1121 11.5z"/></svg>,
+  },
+  {
+    title: 'For International Brands',
+    body: 'Israeli startups and global companies entering the US, served by a native US-English operator.',
+    links: [
+      { label: 'Israel SEO Specialist', path: '/israel-seo-specialist' },
+      { label: 'B2B SEO', path: '/b2b-seo-israel' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>,
+  },
+];
+
+const steps = [
+  { h: 'Audit what already exists', p: 'Find the pages closest to revenue and what is holding them back.' },
+  { h: 'Find the terms closest to buyers', p: 'The searches people make when they are ready to act, on Google and in AI answers.' },
+  { h: 'Fix the weak pages first', p: 'Structure, copy, and technical blockers before publishing anything new.' },
+  { h: 'Build the next pages that deserve to rank', p: 'New service, content, and proof pages that win the search and convert the click.' },
+];
+
+const blog = [
+  { cat: 'AI Search', read: '8 min read', title: 'GEO: how to get cited by ChatGPT and Perplexity', path: '/blog/geo-ai-generative-engine-optimization' },
+  { cat: 'B2B SEO', read: '7 min read', title: 'Why Israeli B2B companies struggle with SEO', path: '/blog/why-israeli-b2b-fail-seo' },
+  { cat: 'AI Search', read: '6 min read', title: 'What changed in AI search in 2026', path: '/blog/ai-search-2026-updates' },
+];
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
-    updatePageSEO({
-      title: 'Israel SEO Freelancer | +300% Sales for US Clients | Free Audit',
-      description: 'Senior SEO consultant Zechariah Tokar drove +300% Google sales for e-commerce and B2B clients. 10+ years experience. Based in Israel, serving US and international markets. Book your free audit.',
-      path: '/',
-    });
+    updatePageSEO({ title: TITLE, description: DESC, path: '/' });
   }, []);
+
+  const cases = CASE_STUDIES.slice(0, 3);
 
   return (
     <>
-      <HeadSEO title="Israel SEO Freelancer | +300% Sales for US Clients | Free Audit" description="Senior SEO consultant Zechariah Tokar drove +300% Google sales for e-commerce and B2B clients. 10+ years experience. Based in Israel, serving US and international markets. Book your free audit." path="/" />
-      <div className="animate-fade-in-up">
-      {/* Hero Section - Clean & Focused */}
-      <header className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
-        {/* Subtle background accent */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* Left: Content */}
-            <div className="text-center lg:text-left space-y-8">
-
-              {/* Overline */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 backdrop-blur-sm">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm font-medium text-primary">US & International SEO</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                Stop Losing Customers
-                <br />
-                <span className="text-primary">to Page 1 Competitors.</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Work directly with Zechariah Tokar, a senior SEO consultant with 10+ years optimizing sites for US and international markets. No agency teams, no overhead.
-              </p>
-
-              {/* Single Primary CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                <a
-                  href="#audit"
-                  className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                >
-                  Find Your Quick Wins
-                  <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </a>
-                <a
-                  href="#results"
-                  className="inline-flex items-center justify-center gap-2 text-slate-700 hover:text-primary font-medium px-8 py-4 border border-slate-200 hover:border-primary/30 rounded-lg transition-all hover:shadow-sm"
-                >
-                  <span className="material-symbols-outlined">monitoring</span>
-                  View Results
-                </a>
-              </div>
-
-              {/* Compact Trust Signals */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 text-sm text-slate-500">
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-base text-primary">verified</span>
-                  <span>Semrush Certified</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-base text-primary">school</span>
-                  <span>Wharton MBA</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-base text-primary">workspace_premium</span>
-                  <span>10+ Years</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Hero Image */}
-            <div className="hidden lg:block">
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
-                  <img
-                    src="/images/hero-seo-growth.jpg"
-                    alt="SEO Growth Visualization"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Subtle glow accent */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl -z-10" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </header>
-
-      {/* Entity Definition - Front-loaded for AI citation */}
-      <section className="border-b border-slate-200 bg-white py-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Zechariah Tokar is a freelance SEO consultant based in Israel, specializing in US and international organic search strategy. He works with B2B companies, SaaS startups, ecommerce brands, and local service businesses to drive qualified leads through Google and AI search engines like ChatGPT and Perplexity.
-          </p>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="border-y border-slate-200 bg-white py-16 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Stat 1 */}
-            <div className="text-center scroll-trigger">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="material-symbols-outlined text-primary text-4xl">
-                  trending_up
-                </span>
-                <div className="text-5xl font-bold text-slate-900">+300%</div>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
-                <span className="material-symbols-outlined text-lg">arrow_upward</span>
-                <span>Average Client Gain</span>
-              </div>
-              <div className="text-slate-500 text-sm mt-1">Organic Growth</div>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="text-center scroll-trigger" style={{ transitionDelay: '100ms' }}>
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="material-symbols-outlined text-primary text-4xl">
-                  monetization_on
-                </span>
-                <div className="text-5xl font-bold text-slate-900">10x</div>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
-                <span className="material-symbols-outlined text-lg">arrow_upward</span>
-                <span>Return on Investment</span>
-              </div>
-              <div className="text-slate-500 text-sm mt-1">Client ROI</div>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="text-center scroll-trigger" style={{ transitionDelay: '200ms' }}>
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="material-symbols-outlined text-primary text-4xl">
-                  workspace_premium
-                </span>
-                <div className="text-5xl font-bold text-slate-900">500+</div>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-secondary font-medium">
-                <span className="material-symbols-outlined text-lg">arrow_upward</span>
-                <span>Secured This Quarter</span>
-              </div>
-              <div className="text-slate-500 text-sm mt-1">Rank 1 Keywords</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who I Work With */}
-      <section className="py-24 relative bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 scroll-trigger">
-            <span className="text-primary font-bold tracking-wide uppercase text-sm mb-4 block">
-              Who I Work With
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
-              Is This <span className="text-primary">You?</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 scroll-trigger">
-            {[
-              { icon: 'public', label: 'US & International Companies', desc: 'English-speaking markets' },
-              { icon: 'store', label: 'Local Service Businesses', desc: 'Dentists, lawyers, contractors' },
-              { icon: 'business', label: 'B2B & SaaS Companies', desc: 'High-value leads' },
-              { icon: 'shopping_cart', label: 'E-commerce Brands', desc: 'Product page SEO' },
-              { icon: 'rocket_launch', label: 'Growth-Focused Founders', desc: 'Strategy-first approach' },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="group bg-white border border-slate-200 rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <span className="material-symbols-outlined text-3xl text-primary mb-3 block group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </span>
-                <p className="text-slate-900 font-bold text-base mb-2">{item.label}</p>
-                <p className="text-slate-500 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology Section */}
-      <section className="py-24 relative overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 scroll-trigger">
-            <span className="text-secondary font-bold tracking-wide uppercase text-sm mb-4 block">
-              My Process
-            </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              How Does Zechariah Tokar{' '}
-              <span className="text-primary">Rank Your Site?</span>
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-              Zechariah Tokar uses a five-step SEO process: technical audit, keyword gap analysis, content optimization, authority link building, and ongoing technical implementation. Each step targets measurable ranking improvements and qualified lead generation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                image: '/images/methodology-audit.jpg',
-                number: '01',
-                title: 'Technical SEO Audit',
-                description:
-                  'Deep dive into site structure, crawlability, broken links, page speed, mobile responsiveness, and indexing issues.',
-              },
-              {
-                image: '/images/methodology-keyword-research.jpg',
-                number: '02',
-                title: 'Keyword & Competitor Research',
-                description:
-                  'Identify high-intent keywords competitors missed. Analyze gaps in their content strategy to find quick wins.',
-              },
-              {
-                image: '/images/methodology-content-optimization.jpg',
-                number: '03',
-                title: 'Content Optimization',
-                description:
-                  'Optimize existing pages and create new content targeting bottom-of-funnel queries that convert.',
-              },
-              {
-                image: '/images/methodology-link-building.jpg',
-                number: '04',
-                title: 'Authority Link Building',
-                description:
-                  'Earn quality backlinks through digital PR, expert quotes, and strategic outreach. No spam, no PBNs.',
-              },
-              {
-                image: '/images/methodology-technical-seo.jpg',
-                number: '05',
-                title: 'Technical Implementation',
-                description:
-                  'Schema markup, XML sitemaps, robots.txt optimization, Core Web Vitals improvement, and ongoing monitoring.',
-              },
-            ].map((step, idx) => (
-              <div
-                key={idx}
-                className="scroll-trigger group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden bg-slate-50">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-lg">
-                    {step.number}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col gap-3">
-                  <h3 className="text-slate-900 text-xl font-bold leading-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-600 text-base leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section id="results" className="py-24 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 scroll-trigger">
+      <HeadSEO title={TITLE} description={DESC} path="/" />
+      <div className="gp">
+        {/* HERO */}
+        <section className="gp-hero">
+          <div className="wrap">
             <div>
-              <span className="text-primary font-bold text-sm uppercase tracking-wide mb-3 block">
-                Client Results
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900">
-                What Results Has Zechariah Tokar Delivered?
-              </h2>
-            </div>
-            <p className="text-slate-600 max-w-md text-lg leading-relaxed md:text-right">
-              Zechariah Tokar has driven +300% organic revenue for ecommerce clients, #1 rankings against Zillow in local real estate, and consistent monthly leads for hospitality businesses. All through organic search, zero ad spend.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {CASE_STUDIES.slice(0, 3).map((study, idx) => (
-              <div
-                key={idx}
-                className="scroll-trigger group bg-white border border-slate-200 p-8 rounded-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="bg-primary/10 p-3 rounded-xl">
-                      <span className="material-symbols-outlined text-primary text-2xl">
-                        {study.icon}
-                      </span>
-                    </div>
-                    <span className="text-4xl font-display font-bold text-primary">
-                      {study.metric}
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-slate-900">
-                    {study.client}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {study.industry && (
-                      <span className="text-xs font-semibold text-secondary uppercase tracking-wide bg-secondary/10 px-3 py-1 rounded-full">
-                        {study.industry}
-                      </span>
-                    )}
-                    {study.market && (
-                      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-3 py-1 rounded-full">
-                        {study.market}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm font-semibold text-primary mb-4">
-                    {study.context}
-                  </p>
-                  <p className="text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
-                    {study.description}
-                  </p>
-                </div>
+              <div className="hero-badge"><span className="pulse" />Based in Israel · working with US &amp; English-speaking markets</div>
+              <h1>Get found where buyers are <em>already searching.</em></h1>
+              <p className="lede">I am a search visibility consultant. I help companies turn underperforming pages into rankings, leads, and presence in AI answers and Reddit. You work with me directly, not a rotating agency team.</p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow">↗</span></a>
+                <a className="btn btn-ghost" href="#cases">View case studies</a>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quote / Problem Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-            {/* Quote */}
-            <div className="w-full lg:w-1/2 scroll-trigger">
-              <div className="relative bg-slate-50 border border-slate-200 p-10 md:p-12 rounded-2xl shadow-sm">
-                <span className="material-symbols-outlined text-6xl text-slate-200 absolute top-6 right-8">
-                  format_quote
-                </span>
-                <p className="font-display italic text-2xl md:text-3xl text-slate-700 leading-relaxed mb-10 relative z-10">
-                  "Your site went from invisible to front page. That's what{' '}
-                  <span className="text-primary font-bold">strategic SEO</span>{' '}
-                  does."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="material-symbols-outlined text-primary text-2xl">
-                      person
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-lg">
-                      Zechariah Tokar
-                    </p>
-                    <p className="text-sm text-primary font-semibold">
-                      Israel SEO Freelancer
-                    </p>
-                  </div>
-                </div>
+              <div className="hero-trust">
+                <span><strong>40+</strong> companies</span><span className="sep" />
+                <span><strong>405k</strong> views on one Reddit post</span><span className="sep" />
+                <span><strong>5.0</strong> client rating</span>
               </div>
             </div>
-
-            {/* Problem */}
-            <div
-              className="w-full lg:w-1/2 space-y-6 scroll-trigger"
-              style={{ transitionDelay: '200ms' }}
-            >
-              <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight">
-                  The "Invisible Site"
-                  <br />
-                  <span className="text-slate-400">Problem</span>
-                </h2>
-                <div className="h-1.5 w-24 bg-primary mt-6 rounded-full" />
-              </div>
-              <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  Beautiful website. Zero traffic. Sound familiar?
-                </p>
-                <p>
-                  Without SEO, your site is invisible to the people searching for what you offer.
-                </p>
-              </div>
-              <ul className="space-y-4 pt-4">
-                <li className="flex items-center gap-4 text-slate-800 text-lg font-medium">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined text-lg">
-                      check
-                    </span>
-                  </span>
-                  <span>
-                    <strong className="text-primary">Relevance</strong>: Content matching search intent
-                  </span>
-                </li>
-                <li className="flex items-center gap-4 text-slate-800 text-lg font-medium">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/10 text-secondary">
-                    <span className="material-symbols-outlined text-lg">
-                      check
-                    </span>
-                  </span>
-                  <span>
-                    <strong className="text-secondary">Authority</strong>: Trust signals Google values
-                  </span>
-                </li>
-              </ul>
+            <div className="hero-art">
+              <img src="/images/redesign-hero.png" alt="Abstract visualization of search rankings rising with connected data nodes" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Grid */}
-      <section className="py-24 relative bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 scroll-trigger">
-            <span className="text-primary font-bold text-sm uppercase tracking-wide mb-3 block">
-              Services
-            </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-              What SEO Services Does Zechariah Tokar Offer?
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-xl">
-              Zechariah Tokar offers freelance SEO, SEO consulting, B2B SEO for SaaS and tech companies, and content marketing. Each service targets US and international markets with a focus on revenue, not vanity metrics.
-            </p>
+        {/* AUTHORITY */}
+        <section className="authority">
+          <div className="wrap">
+            <div><span className="eyebrow">Why this works</span></div>
+            <p className="big">Most SEO stops at traffic. I start with the searches people make <b>when they have money in hand</b>, then build the page that wins that search and turns the click into a lead.</p>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {SERVICES_LIST.map((service, idx) => {
-              const serviceImage = service.key === 'freelance'
-                ? '/images/service-freelance-seo.jpg'
-                : service.key === 'consultant'
-                ? '/images/service-seo-consulting.jpg'
-                : service.key === 'b2b'
-                ? '/images/service-b2b-seo.jpg'
-                : service.key === 'content'
-                ? '/images/service-content-marketing.jpg'
-                : service.key === 'israelSpecialist'
-                ? '/images/service-seo-consulting.jpg'
-                : service.key === 'lawyers'
-                ? '/images/service-freelance-seo.jpg'
-                : '/images/service-freelance-seo.jpg';
-
-              return (
-              <NavLink
-                key={service.key}
-                to={`/${service.slug}`}
-                className="scroll-trigger group flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                {/* Service Image */}
-                <div className="relative h-48 overflow-hidden bg-slate-50">
-                  <img
-                    src={serviceImage}
-                    alt={service.key === 'freelance'
-                      ? 'Freelance SEO Services'
-                      : service.key === 'consultant'
-                      ? 'SEO Consulting'
-                      : service.key === 'b2b'
-                      ? 'B2B SEO Services'
-                      : service.key === 'content'
-                      ? 'Content Marketing for SEO'
-                      : service.key === 'israelSpecialist'
-                      ? 'Israel SEO Specialist'
-                      : service.key === 'lawyers'
-                      ? 'SEO for Lawyers'
-                      : 'SEO Services'}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col gap-3 flex-grow">
-                  <h3 className="text-xl font-bold text-slate-900 leading-tight">
-                    {service.key === 'freelance'
-                      ? 'Freelance SEO'
-                      : service.key === 'consultant'
-                      ? 'SEO Consulting'
-                      : service.key === 'b2b'
-                      ? 'B2B SEO'
-                      : 'Content Marketing'}
-                  </h3>
-                  <p className="text-sm font-medium text-primary">
-                    {service.subtitle}
-                  </p>
-                  <p className="text-slate-600 text-base leading-relaxed flex-grow">
-                    {service.description.slice(0, 100)}...
-                  </p>
-                  <div className="flex items-center text-sm font-semibold text-primary mt-2">
-                    Learn More
-                    <span className="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </div>
-                </div>
-              </NavLink>
-            );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Logos */}
-      <section className="py-16 border-y border-slate-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold uppercase tracking-wide text-slate-500 mb-10">
-            Trusted by Growing Brands
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            {CLIENT_LOGOS.map((logo, idx) => (
-              <div
-                key={idx}
-                className="flex justify-center group opacity-50 hover:opacity-100 transition-all duration-500"
-              >
-                <span
-                  className={`${logo.style} text-slate-600 group-hover:text-primary transition-colors cursor-default`}
-                >
-                  {logo.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How I'm Different */}
-      <section className="py-24 relative bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="scroll-trigger">
-              <span className="text-primary font-bold tracking-wide uppercase text-sm mb-4 block">
-                Why Work With Me
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-                Why Choose Zechariah Tokar <span className="text-primary">Over an Agency?</span>
-              </h2>
-              <p className="text-slate-600 text-xl leading-relaxed">
-                Zechariah Tokar provides direct senior-level SEO execution. No account managers, no junior team members, no agency overhead. You work with the person doing the work.{' '}
-                <NavLink to="/seo-freelancer-vs-agency" className="text-primary hover:underline font-medium">
-                  See the full freelancer vs agency comparison
-                </NavLink>.
-              </p>
+        {/* SERVICES */}
+        <section className="divider">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">What I do</span>
+              <h2>Full-stack search visibility, one senior operator.</h2>
+              <p className="lede">SEO is no longer just Google. I cover the whole path a buyer takes: classic search, AI answers, and community results like Reddit.</p>
             </div>
-            <div className="scroll-trigger space-y-5" style={{ transitionDelay: '200ms' }}>
-              {[
-                {
-                  icon: 'person',
-                  title: 'Direct Senior Access',
-                  desc: 'Work directly with me on every decision.',
-                },
-                {
-                  icon: 'public',
-                  title: 'Global SEO Reach',
-                  desc: 'Native English speaker serving US & international markets.',
-                },
-                {
-                  icon: 'psychology',
-                  title: 'Strategy Over Busywork',
-                  desc: 'Focus on rankings and revenue, not vanity metrics.',
-                },
-                {
-                  icon: 'handshake',
-                  title: 'Transparent Partnership',
-                  desc: 'No lock-in contracts. You own all the work.',
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="group flex gap-5 p-5 rounded-xl border border-slate-200 bg-white hover:border-primary/50 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                    <span className="material-symbols-outlined text-primary group-hover:text-white text-xl">
-                      {item.icon}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h3>
-                    <p className="text-slate-600 text-base leading-relaxed">{item.desc}</p>
+            <div className="svc-grid">
+              {services.map((s) => (
+                <div className="svc" key={s.title}>
+                  <div className="ic">{s.icon}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
+                  <div className="links">
+                    {s.links.map((l) => <NavLink key={l.path + l.label} to={l.path}>{l.label}</NavLink>)}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <TestimonialsCarousel />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="audit" className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 scroll-trigger">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-              Get Your Free{' '}
-              <span className="text-primary">SEO Audit</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-xl mx-auto">
-              See exactly how to improve your rankings. No commitment required.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <p className="text-primary font-semibold text-sm uppercase tracking-wide mb-2">
-                  Request Your Free Analysis
-                </p>
-                <div className="h-px w-20 bg-slate-200 mx-auto" />
-              </div>
-
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject="New SEO Audit Request from Homepage"
-                submitButtonText="Get My Quick Wins Audit"
-                showMessage={true}
-              />
-              <p className="text-center text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                Free strategy session. No commitment.
-              </p>
+        {/* CASE STUDIES */}
+        <section className="cases" id="cases">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Selected work</span>
+              <h2>Real campaigns. Real results.</h2>
+              <p>Not polished claims. Here is the situation, what I actually did, and what happened.</p>
+            </div>
+            <div className="case-grid">
+              {cases.map((c) => (
+                <div className="case" key={c.client}>
+                  <div className="tag">{c.industry} · {c.market}</div>
+                  <div className="metric">{c.metric}</div>
+                  <div className="ctx">{c.context}</div>
+                  <p className="story">{c.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </>
+        </section>
+
+        {/* PROCESS */}
+        <section className="process divider">
+          <div className="wrap">
+            <div>
+              <span className="eyebrow">How I work</span>
+              <h2 style={{ fontSize: '38px', marginTop: '14px' }}>A straight process with clear priorities.</h2>
+              <p className="lede" style={{ marginTop: '16px' }}>I find what actually moves rankings and leads, and do that first. Less guessing, faster wins.</p>
+            </div>
+            <div className="steps">
+              {steps.map((st, i) => (
+                <div className="step" key={st.h}>
+                  <div className="n">0{i + 1}</div>
+                  <div><h3>{st.h}</h3><p>{st.p}</p></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="tst">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">What clients say</span>
+              <h2>Trusted by 40+ growth-focused companies.</h2>
+            </div>
+            <div className="tst-grid">
+              {HOME_TESTIMONIALS.map((t) => (
+                <div className="quote" key={t.name}>
+                  <div className="stars">★★★★★</div>
+                  <div className="result">{t.result}</div>
+                  <blockquote>“{t.quote}”</blockquote>
+                  <div className="who"><b>{t.name}</b><span>{t.title}</span></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROOF STRIP */}
+        <section className="proof divider">
+          <div className="wrap">
+            <div className="sec-head" style={{ marginBottom: '32px' }}>
+              <span className="eyebrow">Receipts, not promises</span>
+              <h2>Things I have actually posted.</h2>
+              <p className="lede">Real screenshots from real campaigns. Not stock dashboards.</p>
+            </div>
+            <div className="proof-grid">
+              {PROOF_ITEMS.map((p) => (
+                <figure className="pf" key={p.img}>
+                  <img src={p.img} alt={p.alt} />
+                  <figcaption>{p.caption_pre}<b>{p.caption_b}</b>{p.caption_post}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DIFFERENTIATOR */}
+        <section className="diff divider">
+          <div className="wrap">
+            <div>
+              <span className="eyebrow">What sets the work apart</span>
+              <h2 style={{ fontSize: '38px', marginTop: '14px' }}>Built for how people search in 2026.</h2>
+              <p className="lede" style={{ marginTop: '16px' }}>Generic SEO still chases ten blue links. Buyers now ask AI and check Reddit before they ever reach your site. I make sure you show up across that whole path, and that the page converts when they land.</p>
+              <a className="btn btn-primary" href="#contact" style={{ marginTop: '26px' }}>See if we are a fit <span className="arrow">↗</span></a>
+            </div>
+            <div className="diff-card">
+              <h3>You get a senior operator who:</h3>
+              <ul className="diff-list">
+                {[
+                  'Does the strategy and the execution directly. No junior handoff.',
+                  'Works across Google, AI answers, and Reddit, not just rankings.',
+                  'Uses AI automations to ship fast and build real pages.',
+                  'Writes US-natural copy and focuses on leads, not vanity traffic.',
+                ].map((t) => (
+                  <li key={t}><svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>{t}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* BLOG */}
+        <section>
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">From the blog</span>
+              <h2>Notes on modern search.</h2>
+            </div>
+            <div className="blog-grid">
+              {blog.map((b) => (
+                <NavLink className="post" to={b.path} key={b.path}>
+                  <div className="pimg"><div className="grad" /></div>
+                  <div className="pbody">
+                    <div className="meta"><span className="cat">{b.cat}</span><span>· {b.read}</span></div>
+                    <h3>{b.title}</h3>
+                  </div>
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="gp-cta" id="contact">
+          <div className="wrap">
+            <span className="eyebrow">Let's talk</span>
+            <h2 style={{ marginTop: '14px' }}>Ready to get found and get leads?</h2>
+            <p>Book a consultation and walk away with a clear plan today, or send your site for a free quick-wins audit. Either way, you hear from me directly.</p>
+            <div className="cta-cols">
+              <div className="cta-card book">
+                <h3>Book a consultation</h3>
+                <p>A focused strategy session on your site, your competitors, and the fastest path to rankings and leads. You leave with a plan you can act on right away.</p>
+                <div className="price-note">Paid session · booked instantly</div>
+                <a className="btn" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
+              </div>
+              <div className="cta-card">
+                <span className="tag2">Or get a free audit</span>
+                <h3 style={{ marginTop: '8px', marginBottom: '6px' }}>Send me your site</h3>
+                <ProtectedForm
+                  formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
+                  subject="New SEO Audit Request from Homepage"
+                  submitButtonText="Get my quick-wins audit"
+                  showMessage={true}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
