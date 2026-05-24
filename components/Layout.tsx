@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { NAV_MENU, SOCIAL_LINKS } from '../constants';
+import { NAV_MENU, FOOTER_COLUMNS, SOCIAL_LINKS } from '../constants';
 
 export const Layout: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -103,24 +103,12 @@ export const Layout: React.FC = () => {
                 </a>
               </div>
             </div>
-            <div className="col">
-              <h4>SEO Services</h4>
-              <NavLink to="/freelance-seo-israel">Freelance SEO</NavLink>
-              <NavLink to="/seoconsulting">SEO Consulting</NavLink>
-              <NavLink to="/content-marketing-for-seo">SEO Content Writing</NavLink>
-            </div>
-            <div className="col">
-              <h4>B2B &amp; Industries</h4>
-              <NavLink to="/b2b-seo-israel">B2B SEO</NavLink>
-              <NavLink to="/seo-for-lawyers">SEO for Lawyers</NavLink>
-              <NavLink to="/seo-freelancer-vs-agency">Freelancer vs Agency</NavLink>
-            </div>
-            <div className="col">
-              <h4>More</h4>
-              <NavLink to="/israel-seo-specialist">Israel SEO Specialist</NavLink>
-              <NavLink to="/blog">Blog</NavLink>
-              <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book a consultation</a>
-            </div>
+            {FOOTER_COLUMNS.map((col) => (
+              <div className="col" key={col.heading}>
+                <h4>{col.heading}</h4>
+                {col.links.map((l) => <NavLink key={l.path} to={l.path}>{l.label}</NavLink>)}
+              </div>
+            ))}
           </div>
           <div className="bot">
             <span>© {new Date().getFullYear()} Zechariah Tokar · israelseofreelancer.com</span>

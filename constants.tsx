@@ -21,19 +21,40 @@ export const NAV_MENU: NavGroup[] = [
   {
     label: 'SEO Services',
     children: [
+      { label: 'All SEO Services', desc: 'See the full menu', path: '/seo-services-israel' },
       { label: 'Freelance SEO', desc: 'Hands-on SEO, senior level', path: '/freelance-seo-israel' },
       { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seoconsulting' },
       { label: 'Technical SEO Audit', desc: 'Find what to fix first', path: '/technical-seo-audit' },
       { label: 'SEO Content Writing', desc: 'Pages that rank and convert', path: '/content-marketing-for-seo' },
-      { label: 'All SEO Services', desc: 'See the full menu', path: '/seo-services-israel' },
+      { label: 'Programmatic SEO', desc: 'Useful pages at scale', path: '/programmatic-seo' },
     ],
   },
   {
-    label: 'B2B & AI',
+    label: 'Ecommerce & Local',
+    children: [
+      { label: 'Shopify SEO', desc: 'Collections and products that rank', path: '/shopify-seo' },
+      { label: 'Google Merchant Center', desc: 'Fix the Shopping feed', path: '/google-merchant-center-seo' },
+      { label: 'Google Business Profile', desc: 'Show up in Maps and local', path: '/google-business-profile-seo' },
+      { label: 'Local Citations', desc: 'Consistent listings everywhere', path: '/local-citations-directories' },
+    ],
+  },
+  {
+    label: 'AI & Reddit',
+    children: [
+      { label: 'AI Search Visibility', desc: 'Get found in AI answers', path: '/ai-seo-consultant-israel' },
+      { label: 'Reddit SEO', desc: 'Rank in discussions and AI', path: '/reddit-seo' },
+      { label: 'Reddit Marketing', desc: 'Be recommended by real people', path: '/reddit-marketing-services' },
+      { label: 'Reddit Posting Service', desc: 'Posting done the right way', path: '/reddit-posting-service' },
+      { label: 'YouTube SEO', desc: 'Make videos findable', path: '/youtube-seo' },
+    ],
+  },
+  {
+    label: 'B2B & Authority',
     children: [
       { label: 'B2B SEO', desc: 'Reach decision-makers', path: '/b2b-seo-israel' },
-      { label: 'AI Search Visibility', desc: 'Get found in AI answers', path: '/ai-seo-consultant-israel' },
       { label: 'Link Building', desc: 'Authority that ranks', path: '/link-building-services' },
+      { label: 'Press Release SEO', desc: 'Support brand search', path: '/press-release-seo' },
+      { label: 'Blog Content SEO', desc: 'Content that supports leads', path: '/blog-content-seo' },
     ],
   },
   {
@@ -42,9 +63,65 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
       { label: 'Videos', desc: 'Watch the work', path: '/videos' },
+      { label: 'Blog', desc: 'Notes on modern search', path: '/blog' },
     ],
   },
-  { label: 'Blog', path: '/blog' },
+];
+
+// Full link map for the footer so every page is reachable (recovers internal-link authority).
+export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: string }[] }[] = [
+  {
+    heading: 'SEO Services',
+    links: [
+      { label: 'All SEO Services', path: '/seo-services-israel' },
+      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
+      { label: 'SEO Consulting', path: '/seoconsulting' },
+      { label: 'Technical SEO Audit', path: '/technical-seo-audit' },
+      { label: 'SEO Content Writing', path: '/content-marketing-for-seo' },
+      { label: 'Programmatic SEO', path: '/programmatic-seo' },
+    ],
+  },
+  {
+    heading: 'Ecommerce & Local',
+    links: [
+      { label: 'Shopify SEO', path: '/shopify-seo' },
+      { label: 'Google Merchant Center', path: '/google-merchant-center-seo' },
+      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
+      { label: 'Local Citations', path: '/local-citations-directories' },
+    ],
+  },
+  {
+    heading: 'AI, Reddit & Video',
+    links: [
+      { label: 'AI Search Visibility', path: '/ai-seo-consultant-israel' },
+      { label: 'Reddit SEO', path: '/reddit-seo' },
+      { label: 'Reddit Marketing', path: '/reddit-marketing-services' },
+      { label: 'Reddit Posting Service', path: '/reddit-posting-service' },
+      { label: 'YouTube SEO', path: '/youtube-seo' },
+    ],
+  },
+  {
+    heading: 'B2B & Authority',
+    links: [
+      { label: 'B2B SEO', path: '/b2b-seo-israel' },
+      { label: 'Link Building', path: '/link-building-services' },
+      { label: 'Press Release SEO', path: '/press-release-seo' },
+      { label: 'Blog Content SEO', path: '/blog-content-seo' },
+      { label: 'SEO Consult', path: '/seo-consult' },
+    ],
+  },
+  {
+    heading: 'Company & Guides',
+    links: [
+      { label: 'About', path: '/about' },
+      { label: 'Reviews & Results', path: '/reviews-results' },
+      { label: 'Videos', path: '/videos' },
+      { label: 'Freelancer vs Agency', path: '/seo-freelancer-vs-agency' },
+      { label: 'Market on Reddit Safely', path: '/how-to-market-on-reddit-without-getting-banned' },
+      { label: 'Find Subreddits', path: '/how-to-find-subreddits-for-marketing' },
+      { label: 'Why Posts Get Removed', path: '/why-reddit-posts-get-removed' },
+    ],
+  },
 ];
 
 // Real screenshots posted publicly (sourced from LinkedIn). Used in the homepage proof strip.

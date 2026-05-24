@@ -492,8 +492,24 @@
       .gp .faq h3{font-size:18px;}
       .gp .faq p{margin-top:10px;color:var(--ink-soft);font-size:15.5px;}
       .gp .block{font-size:30px;margin-bottom:8px;}
-      /* form (uses ProtectedForm; light styling wrapper) */
-      .gp .cta-card .pf-form label{font-family:'Outfit';font-size:12.5px;font-weight:600;color:var(--ink);}
+      /* ProtectedForm restyled to match the design (keeps Formspree + reCAPTCHA wiring) */
+      .gp .cta-card form{display:flex;flex-direction:column;gap:15px;}
+      .gp .cta-card form>div{margin:0;}
+      .gp .cta-card form .grid{display:flex;flex-direction:column;gap:15px;}
+      .gp .cta-card form label{display:block;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:0;}
+      .gp .cta-card form input,
+      .gp .cta-card form select,
+      .gp .cta-card form textarea{width:100%;background:#fff;border:1px solid var(--hair);border-radius:11px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);line-height:1.4;transition:border-color .18s,box-shadow .18s;}
+      .gp .cta-card form input::placeholder,
+      .gp .cta-card form textarea::placeholder{color:#9aa0a6;}
+      .gp .cta-card form input:focus,
+      .gp .cta-card form select:focus,
+      .gp .cta-card form textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(11,166,108,0.16);}
+      .gp .cta-card form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23646A72' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer;}
+      .gp .cta-card form textarea{min-height:92px;height:92px;resize:vertical;}
+      .gp .cta-card form button[type=submit]{width:100%;justify-content:center;margin-top:2px;background:linear-gradient(135deg,var(--green-bright),var(--green));color:#fff;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;border:none;box-shadow:var(--gshadow);transition:transform .25s cubic-bezier(.16,1,.3,1),filter .2s;cursor:pointer;text-transform:none;letter-spacing:0;}
+      .gp .cta-card form button[type=submit]:hover{transform:translateY(-2px);filter:brightness(1.06);}
+      .gp .cta-card form p{font-size:13px;margin-top:4px;}
       /* ===== shared chrome: nav + footer ===== */
       .gpnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(15,17,21,0.12);font-family:'Outfit',sans-serif;}
       .gpnav .bar{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:74px;}
@@ -519,7 +535,7 @@
       .gpnav.open .mobile{display:flex;}
       .gpfoot{background:#0A0C0F;color:rgba(255,255,255,0.7);padding:62px 0 28px;font-family:'Inter',sans-serif;}
       .gpfoot .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-      .gpfoot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.14);}
+      .gpfoot .top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:26px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.14);}
       .gpfoot .logo{font-family:'Outfit';font-weight:800;font-size:20px;color:#fff;display:flex;align-items:center;gap:9px;margin-bottom:16px;}
       .gpfoot .logo .dot{width:11px;height:11px;border-radius:50%;background:#0BA66C;}
       .gpfoot .brand p{font-size:14px;color:rgba(255,255,255,0.55);max-width:34ch;}
@@ -541,9 +557,11 @@
         .gp .gp-cta h2,.gp .sec-head h2{font-size:30px;}
         .gp .shero h1{font-size:34px;}
         .gp .chl{grid-template-columns:1fr;}
+        .gpfoot .top{grid-template-columns:1fr 1fr;}
+      }
+      @media(max-width:1060px){
         .gpnav .menu{display:none;}
         .gpnav .burger{display:flex;}
-        .gpfoot .top{grid-template-columns:1fr 1fr;}
       }
       </style>
     <script type="importmap">
