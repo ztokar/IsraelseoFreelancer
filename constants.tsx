@@ -1,4 +1,4 @@
-import { ServiceContent, NavItem, CaseStudy, ReviewItem, SpokeService, SupportPage } from './types';
+import { ServiceContent, NavItem, NavGroup, CaseStudy, ReviewItem, SpokeService, SupportPage } from './types';
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/zechariah-tokar-167b7672/',
@@ -16,11 +16,51 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Blog', path: '/blog' },
 ];
 
-export const PRICING_SUMMARY = {
-  hourly: '$75-$100/hr',
-  consult: '$75-$100/hr',
-  services: 'After site review',
-};
+// Grouped nav for the redesigned header. Every link points to an existing route.
+export const NAV_MENU: NavGroup[] = [
+  {
+    label: 'SEO Services',
+    children: [
+      { label: 'Freelance SEO', desc: 'Hands-on SEO, senior level', path: '/freelance-seo-israel' },
+      { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seoconsulting' },
+      { label: 'Technical SEO Audit', desc: 'Find what to fix first', path: '/technical-seo-audit' },
+      { label: 'SEO Content Writing', desc: 'Pages that rank and convert', path: '/content-marketing-for-seo' },
+      { label: 'All SEO Services', desc: 'See the full menu', path: '/seo-services-israel' },
+    ],
+  },
+  {
+    label: 'B2B & AI',
+    children: [
+      { label: 'B2B SEO', desc: 'Reach decision-makers', path: '/b2b-seo-israel' },
+      { label: 'AI Search Visibility', desc: 'Get found in AI answers', path: '/ai-seo-consultant-israel' },
+      { label: 'Link Building', desc: 'Authority that ranks', path: '/link-building-services' },
+    ],
+  },
+  {
+    label: 'Company',
+    children: [
+      { label: 'About', desc: 'Who you work with', path: '/about' },
+      { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
+      { label: 'Videos', desc: 'Watch the work', path: '/videos' },
+    ],
+  },
+  { label: 'Blog', path: '/blog' },
+];
+
+// Real screenshots posted publicly (sourced from LinkedIn). Used in the homepage proof strip.
+export const PROOF_ITEMS = [
+  { img: '/images/proof-reddit-405k.jpg', alt: 'Reddit post stats showing 405,000 views', caption_pre: 'A single Reddit post to ', caption_b: '405K views', caption_post: ' and real brand traffic.' },
+  { img: '/images/proof-reddit-12k.jpg', alt: 'Reach dashboard showing 12,000 views', caption_pre: 'A client Reddit post hitting ', caption_b: '12K views', caption_post: ' in its first days.' },
+  { img: '/images/proof-google-lead.jpg', alt: 'Inbound lead message that found the client on Google', caption_pre: 'An inbound lead that ', caption_b: 'found the client on Google', caption_post: '.' },
+  { img: '/images/proof-client-praise.jpg', alt: 'Client message praising an SEO deliverable', caption_pre: 'A client reaction to a recent ', caption_b: 'SEO deliverable', caption_post: '.' },
+];
+
+// Metric-forward testimonials for the homepage (verbatim, from /reviews-results).
+export const HOME_TESTIMONIALS = [
+  { result: 'Nearly 7 figures in revenue', quote: 'Zechariah was one of the best people I ever contracted. His out of the box thinking and attention to detail really helped.', name: 'Sean Littman', title: 'Founder, GiveSuite' },
+  { result: '#1 on Google Maps in one week', quote: 'Within one week, our business was showing #1 on Google Maps for every target search term we cared about. I was blown away.', name: 'Yonatan Vinnik, LSW', title: 'Child & Family Therapist' },
+  { result: 'Saved thousands, ranked fast', quote: 'Within a couple of months I was ranking at the top for my key searches, which honestly shocked me. Talk to Zechariah.', name: 'Brett Sheldon, LCSW', title: 'CEO, Launch Point Network' },
+];
 
 export const PROFILE_IMAGE: string | null = null;
 
@@ -28,7 +68,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'SEO writing',
     path: '/blog-content-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Content and authority',
     tag: 'Pages and content',
     description: 'Service pages, BOFU content, refreshes, and SEO writing that has a clear job.',
@@ -38,7 +78,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'SEO audit',
     path: '/technical-seo-audit',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Core SEO',
     tag: 'Fast diagnosis',
     description: 'A practical audit of technical issues, Search Console data, indexation, and quick wins.',
@@ -48,7 +88,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'SEO consult',
     path: '/seo-consult',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Core SEO',
     tag: 'Quick advice',
     description: 'A focused SEO consult for questions, priorities, second opinions, and next-step clarity.',
@@ -58,7 +98,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Monthly SEO',
     path: '/seo-services-israel',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Core SEO',
     tag: 'Ongoing help',
     description: 'Monthly SEO support for writing, technical fixes, authority, or strategy.',
@@ -68,7 +108,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'B2B SEO',
     path: '/b2b-seo-israel',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Core SEO',
     tag: 'Pipeline pages',
     description: 'SEO for B2B, SaaS, and service companies that need buyer-intent traffic.',
@@ -78,7 +118,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Shopify SEO',
     path: '/shopify-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Ecommerce',
     tag: 'Store visibility',
     description: 'Collection pages, product SEO, technical cleanup, and search visibility for Shopify stores.',
@@ -88,7 +128,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Google Merchant Center',
     path: '/google-merchant-center-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Ecommerce',
     tag: 'Feed cleanup',
     description: 'Merchant Center and product feed checks for ecommerce stores that depend on Google surfaces.',
@@ -98,7 +138,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Google Business Profile',
     path: '/google-business-profile-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Local SEO',
     tag: 'Maps and local',
     description: 'GBP cleanup, local page priorities, and Google Maps visibility for local service businesses.',
@@ -108,7 +148,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Citations and directories',
     path: '/local-citations-directories',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Local SEO',
     tag: 'Trust signals',
     description: 'Local citations, directories, profiles, and NAP consistency work that supports local rankings.',
@@ -118,7 +158,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'AI SEO / GEO',
     path: '/ai-seo-consultant-israel',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'AI visibility',
     description: 'Get clearer visibility in Google, AI answers, Reddit, and brand recommendation surfaces.',
@@ -128,7 +168,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Reddit SEO',
     path: '/reddit-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Forum visibility',
     description: 'Reddit posting and visibility work for communities that influence search and AI answers.',
@@ -138,7 +178,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Reddit marketing services',
     path: '/reddit-marketing-services',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Reddit strategy',
     description: 'Subreddit research, buyer-objection mapping, and practical Reddit campaigns that support search visibility.',
@@ -148,7 +188,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Reddit marketing expert',
     path: '/reddit-marketing-expert',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Specialist review',
     description: 'Focused Reddit strategy for brands that need sharper community, search, and AI visibility judgment.',
@@ -158,7 +198,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Reddit posting service',
     path: '/reddit-posting-service',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Careful posting',
     description: 'Reddit post planning, writing, review, and controlled publishing without fake engagement or spam tactics.',
@@ -168,7 +208,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'SEO social posting',
     path: '/content-marketing-for-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Distribution',
     description: 'Search-aware social posts that support visibility, trust, and content distribution.',
@@ -178,7 +218,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'YouTube SEO',
     path: '/youtube-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'AI and social search',
     tag: 'Video search',
     description: 'YouTube titles, descriptions, topic strategy, and search-friendly video packaging.',
@@ -188,7 +228,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Backlinks',
     path: '/link-building-services',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Content and authority',
     tag: 'Authority',
     description: 'Authority building through relevant mentions, links, profiles, and third-party surfaces.',
@@ -198,7 +238,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Programmatic SEO',
     path: '/programmatic-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Core SEO',
     tag: 'Scale pages',
     description: 'Template-led SEO for useful location, comparison, directory, or use-case pages.',
@@ -208,7 +248,7 @@ export const MARKETPLACE_SERVICES = [
   {
     title: 'Press release SEO',
     path: '/press-release-seo',
-    price: '$75-$100/hr',
+    price: 'By consultation',
     category: 'Content and authority',
     tag: 'PR visibility',
     description: 'Press releases and third-party mentions that support authority, brand search, and AI visibility.',
@@ -669,7 +709,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 const baseFaqs = [
   {
     question: 'What is the starting price?',
-    answer: 'SEO work is quoted by expected hours at $75-$100/hr. Final pricing depends on service type, site size, competition, and whether the work is writing, audits, backlinks, automation, consulting, or ongoing SEO.',
+    answer: 'It depends on the service, your site, and how much you want handled. The simplest way to find out is a quick consultation, or send your site for a free quick-wins audit and I will reply with a clear scope and first step.',
   },
   {
     question: 'Do you work only with Israeli companies?',
@@ -686,7 +726,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'Hire Zechariah Tokar for SEO writing, audits, AI SEO, backlinks, technical SEO, B2B SEO, and monthly SEO services by hourly quote.',
     subtitle: 'SEO Services Israel',
     primaryKeyword: 'SEO services Israel',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: '1 week to monthly',
     bestFor: 'Businesses that know the SEO service they need and want a clear starting point.',
     description: 'Choose the SEO help that can move the business first: technical cleanup, service pages, local search, Shopify SEO, content, AI visibility, backlinks, or ongoing support.',
@@ -698,7 +738,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'You send the site and goal. I tell you the best service fit, price range, and first practical step.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Currency', value: 'USD' },
       { label: 'Work model', value: 'Direct' },
     ],
@@ -719,10 +759,10 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     slug: 'freelance-seo-israel',
     title: 'Freelance SEO in Israel for companies that need leads, not reports.',
     seoTitle: 'Freelance SEO Israel | Hire Direct SEO Help for Service Pages, Technical Fixes, Content, Local Search, AI Visibility and Lead Growth | Zechariah Tokar',
-    metaDescription: 'Hire Zechariah Tokar for freelance SEO in Israel. SEO work quoted at $75-$100/hr after a quick project review.',
+    metaDescription: 'Hire Zechariah Tokar for freelance SEO in Israel. Senior SEO done directly, scoped after a quick review of your site.',
     subtitle: 'Freelance SEO Israel',
     primaryKeyword: 'freelance SEO Israel',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Project or monthly',
     bestFor: 'Founders, marketers, and service businesses that want one accountable SEO operator.',
     description: 'Hire me for practical SEO work without agency layers. I help with writing, audits, technical cleanup, content planning, AI visibility, backlinks, and monthly SEO.',
@@ -734,7 +774,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I look at the site, rankings, search intent, and offer, then start with the pages closest to money.',
     },
     results: [
-      { label: 'Hourly rate', value: '$75-$100/hr' },
+      { label: 'Hourly rate', value: 'By consultation' },
       { label: 'Work style', value: 'Direct' },
       { label: 'Market focus', value: 'US/global' },
     ],
@@ -768,7 +808,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'B2B SEO in Israel for SaaS, service, and international companies targeting US and English-speaking buyers.',
     subtitle: 'B2B SEO Israel',
     primaryKeyword: 'B2B SEO Israel',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Monthly or project',
     bestFor: 'B2B, SaaS, service, and tech companies that need buyer-intent pages.',
     description: 'B2B SEO works when it gets close to pipeline: service pages, use cases, comparisons, pricing intent, and content buyers read before they contact you.',
@@ -782,7 +822,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     results: [
       { label: 'B2B page impressions', value: '1,688' },
       { label: 'Keyword cluster', value: 'B2B SEO Israel' },
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
     ],
     caseStudyHighlight: CASE_STUDIES[2],
     process: {
@@ -814,7 +854,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'SEO consultant in Israel for audits, strategy, roadmaps, technical SEO, content planning, and AI visibility.',
     subtitle: 'SEO Consultant Israel',
     primaryKeyword: 'SEO consultant Israel',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Audit or advisory',
     bestFor: 'Teams that can execute but need sharper SEO direction.',
     description: 'Use consulting when you need the strategy, diagnosis, and roadmap, but your team will handle some or all execution.',
@@ -826,7 +866,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I review the site, GSC, competitors, and current pages, then give clear priorities your team can act on.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Format', value: 'Roadmap' },
       { label: 'Best use', value: 'Clarity' },
     ],
@@ -860,7 +900,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'SEO writing services for BOFU pages, service pages, content refreshes, SEO briefs, and search-focused content by hourly quote.',
     subtitle: 'SEO Writing Services',
     primaryKeyword: 'SEO writing services',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Per page or batch',
     bestFor: 'Companies that need pages with search intent, proof, and a conversion path.',
     description: 'SEO writing is not blog volume. I write or rebuild pages around buyer intent, search language, proof, and a clear next step.',
@@ -872,7 +912,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I map the search intent, compare the SERP, add useful information gain, and write the page around the decision.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Format', value: 'Page work' },
       { label: 'Focus', value: 'BOFU' },
     ],
@@ -906,7 +946,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'AI SEO consultant in Israel for GEO, AI visibility, ChatGPT and Perplexity recommendation checks, and automation-assisted SEO.',
     subtitle: 'AI SEO Consultant Israel',
     primaryKeyword: 'AI SEO freelancer',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Audit or monthly',
     bestFor: 'Brands that want to understand how AI search changes discovery.',
     description: 'AI SEO is not mass-producing generic content. It is making the brand clearer across Google, AI answers, Reddit, reviews, and third-party surfaces.',
@@ -918,7 +958,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I test visibility, find weak entity signals, and build pages or third-party mentions that make the brand easier to retrieve.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Surfaces', value: 'Google + AI' },
       { label: 'Focus', value: 'Retrieval' },
     ],
@@ -952,7 +992,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'Technical SEO audit for Google Search Console, indexing, crawl issues, site structure, metadata, schema, and practical quick wins by hourly quote.',
     subtitle: 'Technical SEO Audit',
     primaryKeyword: 'technical SEO audit',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Usually 1 week',
     bestFor: 'Sites with ranking, indexing, traffic, or messy technical issues.',
     description: 'A technical audit should tell you what to fix first, not bury you in a giant PDF. I focus on crawlability, indexation, metadata, page structure, and quick wins.',
@@ -964,7 +1004,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I check GSC, crawl the site, review priority templates, and return a short fix list in the right order.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Output', value: 'Fix list' },
       { label: 'Focus', value: 'GSC' },
     ],
@@ -988,7 +1028,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'Link building services for SEO backlinks, authority building, mentions, citations, and third-party visibility by hourly quote.',
     subtitle: 'Link Building Services',
     primaryKeyword: 'SEO backlinks',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Monthly or project',
     bestFor: 'Sites that already have decent pages but need more authority and trust signals.',
     description: 'Backlinks should support a real search strategy. I focus on relevant mentions, credible profiles, citations, and surfaces that help buyers and search engines understand the brand.',
@@ -1000,7 +1040,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       how: 'I review the current link profile, find relevant opportunities, and prioritize quality over volume.',
     },
     results: [
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
       { label: 'Focus', value: 'Authority' },
       { label: 'Approach', value: 'Relevant' },
     ],
@@ -1024,7 +1064,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     metaDescription: 'Read selected SEO freelancer reviews and results for Zechariah Tokar, including SEO wins across ecommerce, local services, and B2B.',
     subtitle: 'Reviews and Results',
     primaryKeyword: 'SEO freelancer reviews',
-    priceFrom: '$75-$100/hr',
+    priceFrom: 'By consultation',
     timeline: 'Proof hub',
     bestFor: 'People who want to vet Zechariah before hiring.',
     description: 'Before you hire anyone for SEO, check what clients say and what kind of results the work has produced.',
@@ -1038,7 +1078,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     results: [
       { label: 'Ecommerce', value: '+300%' },
       { label: 'Local SEO', value: '#1' },
-      { label: 'Pricing', value: '$75-$100/hr' },
+      { label: 'Pricing', value: 'By consultation' },
     ],
     caseStudyHighlight: CASE_STUDIES[2],
     process: {

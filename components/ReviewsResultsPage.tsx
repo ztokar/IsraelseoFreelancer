@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CASE_STUDIES, PRICING_SUMMARY, REVIEWS, SOCIAL_LINKS } from '../constants';
+import { CASE_STUDIES, REVIEWS, SOCIAL_LINKS } from '../constants';
 import { ProtectedForm } from './ProtectedForm';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProfileAvatar } from './ProfileAvatar';
@@ -65,8 +65,8 @@ export const ReviewsResultsPage: React.FC = () => {
               </div>
               <div className="mt-6 text-center">
                 <div className="rounded-lg bg-slate-50 p-3">
-                  <p className="text-xs text-slate-500">Rate</p>
-                  <p className="font-bold text-slate-950">{PRICING_SUMMARY.hourly}</p>
+                  <p className="text-xs text-slate-500">How to start</p>
+                  <p className="font-bold text-slate-950">Book a consultation</p>
                 </div>
               </div>
               <p className="mt-5 rounded-lg bg-emerald-50 p-4 text-sm leading-6 text-emerald-900">
@@ -159,8 +159,8 @@ export const ReviewsResultsPage: React.FC = () => {
               </p>
               <div className="mt-6 text-sm text-slate-700">
                 <div className="rounded-lg bg-slate-50 p-4">
-                  <span className="block font-bold text-slate-950">{PRICING_SUMMARY.hourly}</span>
-                  Send the site and I will quote the likely hours.
+                  <span className="block font-bold text-slate-950">Book a consultation or send your site</span>
+                  Tell me what you want SEO to fix first and I will reply with a clear scope.
                 </div>
               </div>
             </div>

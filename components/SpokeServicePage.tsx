@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CheckCircle, Clock3, XCircle } from 'lucide-react';
-import { PRICING_SUMMARY } from '../constants';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProtectedForm } from './ProtectedForm';
@@ -98,10 +97,10 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               <div className="mt-5 rounded-xl bg-white p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
                   <Clock3 className="h-4 w-4 text-[#108a00]" />
-                  Hourly range
+                  How to start
                 </div>
-                <p className="mt-1 text-2xl font-bold text-slate-950">{PRICING_SUMMARY.hourly}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Send the site and I will quote the likely hours.</p>
+                <p className="mt-1 text-lg font-bold text-slate-950">Book a consultation</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Send the site and I will reply with a clear scope and first step.</p>
               </div>
               <p className="mt-5 text-sm leading-6 text-slate-600">{content.bestFor}</p>
               <div className="mt-5">
@@ -175,7 +174,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">Request a quote</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">{content.cta}</h2>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
-                I quote SEO work by expected hours at {PRICING_SUMMARY.hourly}. Send the site and I will reply with a practical next step.
+                Send the site and tell me what you want SEO to fix first. I will reply with a practical next step.
               </p>
             </div>
             <div className="mt-9 rounded-2xl bg-white p-6 shadow-2xl md:p-8">

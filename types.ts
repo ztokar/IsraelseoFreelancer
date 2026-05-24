@@ -72,6 +72,18 @@ export interface NavItem {
   path: string;
 }
 
+export interface NavChild {
+  label: string;
+  desc: string;
+  path: string;
+}
+
+export interface NavGroup {
+  label: string;
+  path?: string;
+  children?: NavChild[];
+}
+
 export interface SpokeService {
   slug: string;
   title: string;

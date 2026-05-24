@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { PRICING_SUMMARY, REVIEWS } from '../constants';
+import { REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProfileAvatar } from './ProfileAvatar';
 import { SocialIconLinks } from './SocialIconLinks';
@@ -43,8 +43,8 @@ export const AboutPage: React.FC = () => {
                   that too.
                 </p>
                 <p>
-                  Work is usually quoted by expected hours at {PRICING_SUMMARY.hourly}. Send the site, tell me what you
-                  need help with, and I will reply with the likely scope.
+                  The simplest way to start is a quick consultation. Send the site, tell me what you
+                  need help with, and I will reply with the likely scope and a clear first step.
                 </p>
               </div>
 

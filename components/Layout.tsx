@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { NAV_ITEMS } from '../constants';
-import { SocialIconLinks } from './SocialIconLinks';
+import { NAV_MENU, SOCIAL_LINKS } from '../constants';
 
 export const Layout: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,96 +11,123 @@ export const Layout: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  // Scroll animation observer (kept for blog/other pages that use .scroll-trigger)
+  useEffect(() => {
+    const elements = document.querySelectorAll('.scroll-trigger');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach((el) => {
+      el.classList.add('js-ready');
+      observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [location]);
+
   return (
-    <div className="min-h-screen bg-[#f6f7f2] font-sans text-slate-900 selection:bg-emerald-100 selection:text-slate-950">
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:font-bold">
-        Skip to content
-      </a>
-
-      <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between gap-6">
-            <NavLink to="/" className="flex min-w-0 items-center gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-sm font-bold text-white">
-                ZT
-              </div>
-              <div className="min-w-0">
-                <span className="block truncate text-lg font-bold tracking-tight text-slate-950">Zechariah Tokar</span>
-                <span className="block truncate text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                  SEO freelancer Israel
-                </span>
-              </div>
-            </NavLink>
-
-            <div className="hidden items-center gap-7 md:flex">
-              {NAV_ITEMS.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `text-sm font-bold transition-colors hover:text-[#108a00] ${
-                      isActive ? 'text-[#108a00]' : 'text-slate-600'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <a
-                href="/#hire"
-                className="rounded-lg bg-[#108a00] px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-[#0b6f00]"
-              >
-                Hire Zechariah
-              </a>
-            </div>
-
-            <button
-              className="rounded-lg border border-slate-200 bg-white p-2 md:hidden"
-              onClick={() => setIsMobileMenuOpen((open) => !open)}
-              aria-label="Toggle navigation"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span className="material-symbols-outlined text-2xl">{isMobileMenuOpen ? 'close' : 'menu'}</span>
+    <div className="min-h-screen bg-white font-sans text-slate-800 flex flex-col">
+      {/* Header */}
+      <header className={`gpnav ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="bar">
+          <NavLink to="/" className="logo"><span className="dot" />Zechariah Tokar</NavLink>
+          <ul className="menu">
+            {NAV_MENU.map((group) => (
+              <li key={group.label}>
+                {group.children ? (
+                  <>
+                    <span>{group.label} <i className="caret" /></span>
+                    <div className="dropdown">
+                      {group.children.map((child) => (
+                        <NavLink key={child.path} to={child.path}>
+                          {child.label}<span>{child.desc}</span>
+                        </NavLink>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <NavLink to={group.path || '/'}>{group.label}</NavLink>
+                )}
+              </li>
+            ))}
+          </ul>
+          <div className="ncta">
+            <a className="pill" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">
+              Let's talk <span aria-hidden="true">↗</span>
+            </a>
+            <button className="burger" aria-label="Toggle menu" onClick={() => setIsMobileMenuOpen((v) => !v)}>
+              <span /><span /><span />
             </button>
           </div>
         </div>
+        <div className="mobile">
+          {NAV_MENU.flatMap((group) =>
+            group.children
+              ? group.children.map((c) => (
+                  <NavLink key={c.path} to={c.path}>{c.label}</NavLink>
+                ))
+              : [<NavLink key={group.path} to={group.path || '/'}>{group.label}</NavLink>]
+          )}
+          <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Let's talk</a>
+        </div>
+      </header>
 
-        {isMobileMenuOpen && (
-          <div className="border-t border-slate-200 bg-white p-4 md:hidden">
-            <div className="flex flex-col gap-2">
-              {NAV_ITEMS.map((item) => (
-                <NavLink key={item.path} to={item.path} className="rounded-lg px-3 py-3 font-bold text-slate-700 hover:bg-emerald-50 hover:text-[#108a00]">
-                  {item.label}
-                </NavLink>
-              ))}
-              <a href="/#hire" className="mt-2 rounded-lg bg-[#108a00] px-3 py-3 text-center font-bold text-white">
-                Hire Zechariah
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-
-      <main id="main">
+      {/* Main */}
+      <main className="flex-grow">
         <Outlet />
       </main>
 
-      <footer className="border-t border-slate-200 bg-white py-10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div>
-            <p className="text-lg font-bold text-slate-950">Zechariah Tokar</p>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
-              Freelance SEO services from Israel for companies targeting English-speaking markets. Work is quoted by expected hours at $75-$100/hr.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-              <NavLink to="/about" className="text-slate-600 hover:text-[#108a00]">About</NavLink>
-              <NavLink to="/seo-services-israel" className="text-slate-600 hover:text-[#108a00]">Services</NavLink>
-              <NavLink to="/videos" className="text-slate-600 hover:text-[#108a00]">Videos</NavLink>
-              <NavLink to="/blog" className="text-slate-600 hover:text-[#108a00]">Blog</NavLink>
-              <NavLink to="/reviews-results" className="text-slate-600 hover:text-[#108a00]">Reviews</NavLink>
+      {/* Footer */}
+      <footer className="gpfoot">
+        <div className="wrap">
+          <div className="top">
+            <div className="brand">
+              <div className="logo"><span className="dot" />Zechariah Tokar</div>
+              <p>Search visibility consultant for companies targeting the US and English-speaking markets. SEO, AI search, and Reddit.</p>
+              <div className="soc">
+                <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H20v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg>
+                </a>
+                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X">
+                  <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5-6.5L5.3 22H2l7.7-8.8L1.6 2h6.9l4.5 6 5.9-6z"/></svg>
+                </a>
+                <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.4-5a2.7 2.7 0 00-1.9-1.9C18.9 4.7 12 4.7 12 4.7s-6.9 0-8.7.4A2.7 2.7 0 001.4 7C1 8.6 1 12 1 12s0 3.4.4 5a2.7 2.7 0 001.9 1.9c1.8.4 8.7.4 8.7.4s6.9 0 8.7-.4a2.7 2.7 0 001.9-1.9c.4-1.6.4-5 .4-5zM9.8 15.3V8.7l5.7 3.3z"/></svg>
+                </a>
+                <a href={SOCIAL_LINKS.reddit} target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                  <svg viewBox="0 0 24 24"><path d="M22 12a2.1 2.1 0 00-3.6-1.5 10.3 10.3 0 00-5.4-1.7l.9-4.1 2.9.6a1.5 1.5 0 101.5-1.6 1.5 1.5 0 00-1.3.8l-3.3-.7-1.1 5.1a10.3 10.3 0 00-5.5 1.7A2.1 2.1 0 102 13.8a4 4 0 00-.1.9c0 3.3 3.9 6 8.7 6s8.7-2.7 8.7-6a4 4 0 00-.1-.9A2.1 2.1 0 0022 12zM7.5 13.5a1.4 1.4 0 112.8 0 1.4 1.4 0 01-2.8 0zm7.9 3.6c-1 1-3.2 1-3.8 1s-2.8 0-3.8-1a.4.4 0 01.6-.6c.6.6 2 .8 3.2.8s2.6-.2 3.2-.8a.4.4 0 01.6.6zm-.3-2.2a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div className="col">
+              <h4>SEO Services</h4>
+              <NavLink to="/freelance-seo-israel">Freelance SEO</NavLink>
+              <NavLink to="/seoconsulting">SEO Consulting</NavLink>
+              <NavLink to="/content-marketing-for-seo">SEO Content Writing</NavLink>
+            </div>
+            <div className="col">
+              <h4>B2B &amp; Industries</h4>
+              <NavLink to="/b2b-seo-israel">B2B SEO</NavLink>
+              <NavLink to="/seo-for-lawyers">SEO for Lawyers</NavLink>
+              <NavLink to="/seo-freelancer-vs-agency">Freelancer vs Agency</NavLink>
+            </div>
+            <div className="col">
+              <h4>More</h4>
+              <NavLink to="/israel-seo-specialist">Israel SEO Specialist</NavLink>
+              <NavLink to="/blog">Blog</NavLink>
+              <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book a consultation</a>
             </div>
           </div>
-          <SocialIconLinks />
+          <div className="bot">
+            <span>© {new Date().getFullYear()} Zechariah Tokar · israelseofreelancer.com</span>
+            <span>
+              Part of <a href="https://seocompanyisrael.com" target="_blank" rel="noopener noreferrer">SEO Company Israel</a>
+            </span>
+          </div>
         </div>
       </footer>
     </div>

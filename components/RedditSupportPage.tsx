@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ArrowRight, CheckCircle, MessageSquareText } from 'lucide-react';
-import { PRICING_SUMMARY } from '../constants';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProtectedForm } from './ProtectedForm';
@@ -78,8 +77,8 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
                 A short guide for a specific Reddit problem, with a clear path if you want help before posting.
               </p>
               <div className="mt-5 rounded-xl bg-white p-4">
-                <p className="text-sm font-semibold text-slate-500">Work quoted by hours</p>
-                <p className="mt-1 text-2xl font-bold text-slate-950">{PRICING_SUMMARY.hourly}</p>
+                <p className="text-sm font-semibold text-slate-500">Want help before you post?</p>
+                <p className="mt-1 text-base font-semibold text-slate-950">Book a consultation and I will map the play.</p>
               </div>
             </aside>
           </div>
