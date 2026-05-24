@@ -55,11 +55,8 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_380px] lg:px-8 lg:py-14">
             <div>
               <div className="mb-5 flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-[#108a00]">
+                <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-[#0BA66C]">
                   {content.eyebrow}
-                </span>
-                <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600">
-                  Quoted by hours
                 </span>
               </div>
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
@@ -72,13 +69,13 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#hire"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#108a00] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(16,138,0,0.18)] hover:bg-[#0b6f00]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
                 </a>
                 <NavLink
                   to={content.parentPath}
-                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#108a00] hover:text-[#108a00]"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#0BA66C] hover:text-[#0BA66C]"
                 >
                   View {content.parentLabel}
                 </NavLink>
@@ -96,7 +93,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               </div>
               <div className="mt-5 rounded-xl bg-white p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
-                  <Clock3 className="h-4 w-4 text-[#108a00]" />
+                  <Clock3 className="h-4 w-4 text-[#0BA66C]" />
                   How to start
                 </div>
                 <p className="mt-1 text-lg font-bold text-slate-950">Book a consultation</p>
@@ -113,7 +110,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
         <section className="border-b border-slate-200 py-12">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">What I handle</p>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#0BA66C]">What I handle</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
                 {content.handleTitle || 'Clear scope before work starts.'}
               </h2>
@@ -124,7 +121,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             <div className="grid gap-3 sm:grid-cols-2">
               {content.handles.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
-                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#108a00]" />
+                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0BA66C]" />
                   <span className="font-semibold leading-6 text-slate-800">{item}</span>
                 </div>
               ))}
@@ -137,7 +134,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
               {content.avoids?.length ? (
                 <div className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-6">
-                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">What I avoid</p>
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#0BA66C]">What I avoid</p>
                   <div className="mt-5 grid gap-3">
                     {content.avoids.map((item) => (
                       <div key={item} className="flex items-start gap-3 rounded-xl bg-white p-4">

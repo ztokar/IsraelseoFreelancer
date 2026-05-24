@@ -27,7 +27,7 @@ const linkify = (text: string) => {
     if (!path) return <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>;
 
     return (
-      <NavLink key={`${part}-${index}`} to={path} className="font-bold text-[#108a00] underline decoration-emerald-200 underline-offset-4 hover:text-[#0b6f00]">
+      <NavLink key={`${part}-${index}`} to={path} className="font-bold text-[#0BA66C] underline decoration-emerald-200 underline-offset-4 hover:text-[#0A7B55]">
         {part}
       </NavLink>
     );
@@ -52,12 +52,12 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8 lg:py-14">
             <div>
               <div className="mb-5 flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-[#108a00]">
+                <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-[#0BA66C]">
                   {content.eyebrow}
                 </span>
                 <NavLink
                   to={content.parentPath}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 hover:border-[#108a00] hover:text-[#108a00]"
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 hover:border-[#0BA66C] hover:text-[#0BA66C]"
                 >
                   {content.parentLabel}
                 </NavLink>
@@ -69,7 +69,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
             </div>
 
             <aside className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#108a00] text-white">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0BA66C] text-white">
                 <MessageSquareText className="h-6 w-6" />
               </div>
               <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">Before you post</h2>
@@ -99,7 +99,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
                     <div className="mt-5 grid gap-3 sm:grid-cols-2">
                       {section.bullets.map((bullet) => (
                         <div key={bullet} className="flex items-start gap-3 rounded-xl bg-[#f6f7f2] p-4">
-                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#108a00]" />
+                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0BA66C]" />
                           <span className="text-sm font-semibold leading-6 text-slate-800">{linkify(bullet)}</span>
                         </div>
                       ))}

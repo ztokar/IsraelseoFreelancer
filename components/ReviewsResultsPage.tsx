@@ -40,7 +40,7 @@ export const ReviewsResultsPage: React.FC = () => {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#hire"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#108a00] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(16,138,0,0.18)] hover:bg-[#0b6f00]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
                 </a>
@@ -48,7 +48,7 @@ export const ReviewsResultsPage: React.FC = () => {
                   href={SOCIAL_LINKS.calendly}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#108a00] hover:text-[#108a00]"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#0BA66C] hover:text-[#0BA66C]"
                 >
                   Book a call
                 </a>
@@ -82,7 +82,7 @@ export const ReviewsResultsPage: React.FC = () => {
               <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Client reviews</p>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">What people say after working with me</h2>
             </div>
-            <NavLink className="text-sm font-bold text-[#108a00] hover:text-[#0b6f00]" to="/seo-services-israel">
+            <NavLink className="text-sm font-bold text-[#0BA66C] hover:text-[#0A7B55]" to="/seo-services-israel">
               View SEO services
             </NavLink>
           </div>

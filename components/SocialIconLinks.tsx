@@ -24,7 +24,7 @@ export const SocialIconLinks: React.FC<SocialIconLinksProps> = ({ compact = fals
         rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
         aria-label={label}
         title={label}
-        className={`inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white font-bold text-slate-700 transition hover:border-[#108a00] hover:text-[#108a00] ${
+        className={`inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white font-bold text-slate-700 transition hover:border-[#0BA66C] hover:text-[#0BA66C] ${
           compact ? 'h-9 w-9' : 'gap-2 px-3 py-2 text-sm'
         }`}
       >

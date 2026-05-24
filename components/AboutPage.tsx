@@ -27,7 +27,7 @@ export const AboutPage: React.FC = () => {
         <header className="border-b border-slate-200 bg-white">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8 lg:py-16">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#108a00]">About</p>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#0BA66C]">About</p>
               <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
                 I'm Zechariah Tokar, a freelance SEO consultant in Israel.
               </h1>
@@ -51,13 +51,13 @@ export const AboutPage: React.FC = () => {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/#hire"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#108a00] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(16,138,0,0.18)] hover:bg-[#0b6f00]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
                 </a>
                 <NavLink
                   to="/seo-services-israel"
-                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#108a00] hover:text-[#108a00]"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#0BA66C] hover:text-[#0BA66C]"
                 >
                   Browse services
                 </NavLink>
@@ -73,7 +73,7 @@ export const AboutPage: React.FC = () => {
                 </div>
               </div>
               <div className="mt-5">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#108a00]">Find me online</p>
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#0BA66C]">Find me online</p>
                 <div className="mt-4">
                   <SocialIconLinks />
                 </div>
