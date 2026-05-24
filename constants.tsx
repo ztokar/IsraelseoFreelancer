@@ -112,7 +112,29 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
     ],
   },
   {
-    heading: 'Company & Guides',
+    heading: 'AI Search Guides',
+    links: [
+      { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'Rank in AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
+      { label: 'Is GEO the new SEO?', path: '/is-geo-the-new-seo' },
+      { label: 'What is GEO?', path: '/what-is-generative-engine-optimization' },
+      { label: 'Brand mentioned in ChatGPT', path: '/how-to-get-your-brand-mentioned-in-chatgpt' },
+      { label: 'What is AEO?', path: '/what-is-answer-engine-optimization' },
+      { label: 'Track AI visibility', path: '/how-to-track-ai-search-visibility' },
+    ],
+  },
+  {
+    heading: 'Reddit Guides',
+    links: [
+      { label: 'Promote without getting banned', path: '/how-to-promote-on-reddit-without-getting-banned' },
+      { label: 'Use Reddit for SEO', path: '/how-to-use-reddit-for-seo' },
+      { label: 'Why Reddit ranks so high', path: '/why-does-reddit-rank-so-high-on-google' },
+      { label: 'Rank a Reddit post on Google', path: '/how-to-rank-a-reddit-post-on-google' },
+      { label: 'How to market on Reddit', path: '/how-to-market-on-reddit' },
+    ],
+  },
+  {
+    heading: 'Company',
     links: [
       { label: 'Case Studies', path: '/case-studies' },
       { label: 'About', path: '/about' },

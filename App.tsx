@@ -22,8 +22,10 @@ import { VideosPage } from './components/VideosPage';
 import { AboutPage } from './components/AboutPage';
 import { CaseStudiesHub } from './components/CaseStudiesHub';
 import { CaseStudyPage } from './components/CaseStudyPage';
+import { GuidePage } from './components/GuidePage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
+import { GUIDE_PAGES } from './constants-guides';
 import type { RouteRecord } from 'vite-react-ssg';
 
 export const routes: RouteRecord[] = [
@@ -64,6 +66,12 @@ export const routes: RouteRecord[] = [
       ...CASE_STUDY_PAGES.map((cs) => ({
         path: `case-studies/${cs.slug}`,
         element: <CaseStudyPage content={cs} />,
+      })),
+
+      // AI-SEO + Reddit guide silo pages (validated-demand, exact-match URLs)
+      ...GUIDE_PAGES.map((g) => ({
+        path: g.slug,
+        element: <GuidePage content={g} />,
       })),
 
       // Blog
