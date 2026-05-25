@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ServiceContent } from '../types';
-import { SOCIAL_LINKS, SERVICES_LIST } from '../constants';
+import { SERVICES_LIST } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
-import { ProtectedForm } from './ProtectedForm';
+import { ContactCTA } from './ContactCTA';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -15,8 +15,9 @@ const Check = () => (
 
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
+    const pageTitle = content.seoTitle?.includes('Zechariah') ? content.seoTitle : `${content.seoTitle || content.title} | Zechariah Tokar`;
     updatePageSEO({
-      title: `${content.seoTitle || content.title} | Zechariah Tokar`,
+      title: pageTitle,
       description: content.metaDescription || content.description,
       path: `/${content.slug}`,
     });
@@ -29,7 +30,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   return (
     <>
       <HeadSEO
-        title={`${content.seoTitle || content.title} | Zechariah Tokar`}
+        title={content.seoTitle?.includes('Zechariah') ? content.seoTitle : `${content.seoTitle || content.title} | Zechariah Tokar`}
         description={content.metaDescription || content.description}
         path={`/${content.slug}`}
       />
@@ -37,7 +38,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         {/* Breadcrumb */}
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to="/#cases">Services</NavLink><span>/</span>{content.subtitle}
+          <NavLink to="/seo-services-israel">Services</NavLink><span>/</span>{content.subtitle}
         </div>
 
         {/* Hero */}
@@ -57,7 +58,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         <section>
           <div className="narrow">
             <h2 className="block">Who this is for</h2>
-            <p>{content.marketFit || content.entityDefinition}</p>
+            <p>{content.marketFit || content.entityDefinition || content.bestFor}</p>
             {content.industries && (
               <div className="pills">
                 {content.industries.map((i) => <span key={i}>{i}</span>)}
@@ -163,32 +164,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           </>
         )}
 
-        {/* CTA */}
-        <section className="gp-cta" id="contact">
-          <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2 style={{ marginTop: '12px' }}>{content.cta || 'Ready to get found and get leads?'}</h2>
-            <p>Book a consultation and leave with a plan today, or send your site for a free quick-wins audit. You hear from me directly either way.</p>
-            <div className="cta-cols">
-              <div className="cta-card book">
-                <h3>Book a consultation</h3>
-                <p>A focused session on your site, your competitors, and the fastest path to rankings and leads. You leave with a plan you can act on right away.</p>
-                <div className="price-note">Paid session · booked instantly</div>
-                <a className="btn" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
-              </div>
-              <div className="cta-card">
-                <span className="tag2">Or get a free audit</span>
-                <h3 style={{ marginTop: '8px', marginBottom: '6px' }}>Send me your site</h3>
-                <ProtectedForm
-                  formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                  subject={`New Inquiry: ${content.title}`}
-                  submitButtonText="Get my quick-wins audit"
-                  showMessage={true}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject={`New Inquiry: ${content.title}`}
+          title={content.cta || 'Tell me what you want SEO to fix first.'}
+          body="Send the site, your email, and the issue you want solved. I will review it and reply with the practical next step."
+          submitButtonText="Send my site"
+        />
       </div>
     </>
   );

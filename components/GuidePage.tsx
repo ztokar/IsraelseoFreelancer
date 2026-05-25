@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { GuidePageData } from '../constants-guides';
-import { SOCIAL_LINKS } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
-import { ProtectedForm } from './ProtectedForm';
+import { ContactCTA } from './ContactCTA';
 
 // Render text with [label](/path) internal links and [label](https://..) external links.
 const renderText = (text: string): React.ReactNode[] => {
@@ -124,32 +123,12 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
           </>
         )}
 
-        {/* CTA */}
-        <section className="gp-cta" id="contact">
-          <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2 style={{ marginTop: '12px' }}>Want this done for your brand?</h2>
-            <p>Book a consultation and leave with a plan today, or send your site for a free quick-wins audit. You hear from me directly either way.</p>
-            <div className="cta-cols">
-              <div className="cta-card book">
-                <h3>Book a consultation</h3>
-                <p>A focused session on your site, your competitors, and the fastest path to rankings, leads, and AI visibility. You leave with a plan you can act on right away.</p>
-                <div className="price-note">Paid session · booked instantly</div>
-                <a className="btn" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
-              </div>
-              <div className="cta-card">
-                <span className="tag2">Or get a free audit</span>
-                <h3 style={{ marginTop: '8px', marginBottom: '6px' }}>Send me your site</h3>
-                <ProtectedForm
-                  formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                  subject={`New Inquiry from guide: ${content.h1}`}
-                  submitButtonText="Get my quick-wins audit"
-                  showMessage={true}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject={`New Inquiry from guide: ${content.h1}`}
+          title="Want this done for your brand?"
+          body="Send the site and the issue you want solved. I will review it and reply with the practical next step."
+          submitButtonText="Send my site"
+        />
       </div>
     </>
   );

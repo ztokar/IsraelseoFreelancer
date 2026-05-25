@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CaseStudyPageData } from '../constants-casestudies';
-import { SOCIAL_LINKS } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
-import { ProtectedForm } from './ProtectedForm';
+import { ContactCTA } from './ContactCTA';
 
 const Check = () => (
   <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
@@ -92,32 +91,12 @@ export const CaseStudyPage: React.FC<{ content: CaseStudyPageData }> = ({ conten
           </>
         )}
 
-        {/* CTA */}
-        <section className="gp-cta" id="contact">
-          <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2 style={{ marginTop: '12px' }}>Want results like this for your site?</h2>
-            <p>Book a consultation and leave with a plan today, or send your site for a free quick-wins audit. You hear from me directly either way.</p>
-            <div className="cta-cols">
-              <div className="cta-card book">
-                <h3>Book a consultation</h3>
-                <p>A focused session on your site, your competitors, and the fastest path to rankings and leads. You leave with a plan you can act on right away.</p>
-                <div className="price-note">Paid session · booked instantly</div>
-                <a className="btn" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
-              </div>
-              <div className="cta-card">
-                <span className="tag2">Or get a free audit</span>
-                <h3 style={{ marginTop: '8px', marginBottom: '6px' }}>Send me your site</h3>
-                <ProtectedForm
-                  formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                  subject={`New Inquiry from ${content.client} case study`}
-                  submitButtonText="Get my quick-wins audit"
-                  showMessage={true}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject={`New Inquiry from ${content.client} case study`}
+          title="Want results like this for your site?"
+          body="Send the site and what you want SEO to fix first. I will review it and reply with a practical next step."
+          submitButtonText="Send my site"
+        />
       </div>
     </>
   );

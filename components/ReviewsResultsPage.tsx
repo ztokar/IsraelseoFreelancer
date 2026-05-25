@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CASE_STUDIES, REVIEWS, SOCIAL_LINKS } from '../constants';
-import { ProtectedForm } from './ProtectedForm';
+import { CASE_STUDIES, REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProfileAvatar } from './ProfileAvatar';
 import { SocialIconLinks } from './SocialIconLinks';
+import { ContactCTA } from './ContactCTA';
 
 export const ReviewsResultsPage: React.FC = () => {
   useEffect(() => {
@@ -39,19 +39,17 @@ export const ReviewsResultsPage: React.FC = () => {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#hire"
+                  href="#contact"
                   className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
                 </a>
-                <a
-                  href={SOCIAL_LINKS.calendly}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NavLink
+                  to="/seo-services-israel"
                   className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#0BA66C] hover:text-[#0BA66C]"
                 >
-                  Book a call
-                </a>
+                  Browse services
+                </NavLink>
               </div>
             </div>
 
@@ -66,7 +64,7 @@ export const ReviewsResultsPage: React.FC = () => {
               <div className="mt-6 text-center">
                 <div className="rounded-lg bg-slate-50 p-3">
                   <p className="text-xs text-slate-500">How to start</p>
-                  <p className="font-bold text-slate-950">Book a consultation</p>
+                  <p className="font-bold text-slate-950">Send your site</p>
                 </div>
               </div>
               <p className="mt-5 rounded-lg bg-emerald-50 p-4 text-sm leading-6 text-emerald-900">
@@ -149,31 +147,13 @@ export const ReviewsResultsPage: React.FC = () => {
           </div>
         </section>
 
-        <section id="hire" className="border-t border-slate-200 bg-white">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Hire Zechariah</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Send the site and what you want SEO to fix first.</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                You do not need a long brief. Send the URL, choose the service area, and I will quote the likely hours.
-              </p>
-              <div className="mt-6 text-sm text-slate-700">
-                <div className="rounded-lg bg-slate-50 p-4">
-                  <span className="block font-bold text-slate-950">Book a consultation or send your site</span>
-                  Tell me what you want SEO to fix first and I will reply with a clear scope.
-                </div>
-              </div>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-[#f6f7f2] p-5 sm:p-6">
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject="New Hire Request: Reviews Results Page"
-                submitButtonText="Request SEO quote"
-                showMessage={true}
-              />
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject="New Hire Request: Reviews Results Page"
+          eyebrow="Hire Zechariah"
+          title="Send the site and what you want SEO to fix first."
+          body="You do not need a long brief. Send the URL and the issue you want solved, and I will reply with a clear next step."
+          submitButtonText="Request SEO quote"
+        />
       </main>
     </>
   );

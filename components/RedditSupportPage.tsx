@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ArrowRight, CheckCircle, MessageSquareText } from 'lucide-react';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import { ProtectedForm } from './ProtectedForm';
+import { ContactCTA } from './ContactCTA';
 
 interface RedditSupportPageProps {
   content: SupportPage;
@@ -78,7 +78,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
               </p>
               <div className="mt-5 rounded-xl bg-white p-4">
                 <p className="text-sm font-semibold text-slate-500">Want help before you post?</p>
-                <p className="mt-1 text-base font-semibold text-slate-950">Book a consultation and I will map the play.</p>
+                <p className="mt-1 text-base font-semibold text-slate-950">Send the site and I will map the play.</p>
               </div>
             </aside>
           </div>
@@ -127,25 +127,13 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
           </div>
         </section>
 
-        <section id="hire" className="bg-slate-950 py-16">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">Request a review</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">{content.cta}</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
-                Send the site, subreddit, or post idea. I will reply with the practical next step and likely hours.
-              </p>
-            </div>
-            <div className="mt-9 rounded-2xl bg-white p-6 shadow-2xl md:p-8">
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject={`New Reddit Support Request: ${content.title}`}
-                submitButtonText="Request Reddit review"
-                showMessage={true}
-              />
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject={`New Reddit Support Request: ${content.title}`}
+          eyebrow="Request a review"
+          title={content.cta}
+          body="Send the site, subreddit, or post idea. I will reply with the practical next step and likely scope."
+          submitButtonText="Request Reddit review"
+        />
       </main>
     </>
   );

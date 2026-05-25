@@ -16,23 +16,6 @@ interface ProtectedFormProps {
   submitButtonText: string;
 }
 
-const serviceOptions = [
-  'SEO consult',
-  'Technical SEO audit',
-  'Shopify SEO',
-  'Google Merchant Center SEO',
-  'Google Business Profile / Local SEO',
-  'Local citations / directories',
-  'SEO writing / blog content',
-  'B2B SEO',
-  'AI SEO / GEO',
-  'Backlinks / PR / authority',
-  'YouTube SEO',
-  'Reddit / social SEO',
-  'Programmatic SEO',
-  'Other',
-];
-
 const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
 const clickIdFields = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'] as const;
 
@@ -210,6 +193,24 @@ const FormContent: React.FC<ProtectedFormProps> = ({
         <div className="group">
           <label
             className="block text-sm font-semibold text-slate-700 mb-2"
+            htmlFor="name"
+          >
+            Name
+          </label>
+          <input
+            className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
+            id="name"
+            name="name"
+            placeholder="Your name"
+            type="text"
+            required
+            disabled={isSubmitting}
+          />
+        </div>
+
+        <div className="group">
+          <label
+            className="block text-sm font-semibold text-slate-700 mb-2"
             htmlFor="url"
           >
             Website URL
@@ -230,7 +231,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             className="block text-sm font-semibold text-slate-700 mb-2"
             htmlFor="email"
           >
-            Business Email
+            Email
           </label>
           <input
             className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
@@ -242,32 +243,6 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             disabled={isSubmitting}
           />
         </div>
-      </div>
-
-      <div className="group">
-        <label
-          className="block text-sm font-semibold text-slate-700 mb-2"
-          htmlFor="service"
-        >
-          What do you need help with?
-        </label>
-        <select
-          className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all text-base`}
-          id="service"
-          name="service"
-          required
-          disabled={isSubmitting}
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Choose a service
-          </option>
-          {serviceOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
       </div>
 
       {showMessage && (

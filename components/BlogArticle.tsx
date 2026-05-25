@@ -526,7 +526,7 @@ export const BlogArticle: React.FC = () => {
 
             <p><strong>Request a strategic second opinion.</strong></p>
             <p>
-              If you're working with an agency or contractor and pipeline results aren't materializing, bring in an outside perspective. <a href="#audit" className="text-primary hover:underline font-semibold">Get a free audit</a> to identify what's actually blocking pipeline generation from organic.
+              If you're working with an agency or contractor and pipeline results aren't materializing, bring in an outside perspective. <a href="/#contact" className="text-primary hover:underline font-semibold">Send your site</a> to identify what's actually blocking pipeline generation from organic.
             </p>
 
             <p className="text-lg font-semibold text-slate-900 mt-8">B2B SEO works. But only when it's built for buyers, not search volume.</p>

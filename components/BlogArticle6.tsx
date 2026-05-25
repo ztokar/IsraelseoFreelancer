@@ -253,7 +253,7 @@ export const BlogArticle6: React.FC = () => {
 
             <hr className="my-12 border-slate-200" />
 
-            <p>If you're an Israeli SaaS company targeting US buyers and your SEO strategy is "publish more blog posts," you're burning budget. <a href="/#contact" className="text-primary hover:underline font-medium">Book a strategy call</a> and I'll show you exactly which comparison pages, alternative pages, and feature pages you should be ranking for right now.</p>
+            <p>If you're an Israeli SaaS company targeting US buyers and your SEO strategy is "publish more blog posts," you're burning budget. <a href="/#contact" className="text-primary hover:underline font-medium">Send your site</a> and I'll show you exactly which comparison pages, alternative pages, and feature pages you should be ranking for right now.</p>
           </div>
         </div>
       </article>

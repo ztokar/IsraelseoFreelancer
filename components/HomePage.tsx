@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CASE_STUDIES, PROOF_ITEMS, HOME_TESTIMONIALS, SOCIAL_LINKS } from '../constants';
-import { ProtectedForm } from './ProtectedForm';
+import { CASE_STUDIES, PROOF_ITEMS, HOME_TESTIMONIALS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
+import { ContactCTA } from './ContactCTA';
 
 const TITLE = 'Zechariah Tokar | Search Visibility Consultant for US & English-Speaking Markets';
 const DESC = 'Zechariah Tokar is a search visibility consultant for companies targeting US and English-speaking markets. SEO, AI search visibility, and Reddit, done by a senior operator directly.';
@@ -286,32 +286,12 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="gp-cta" id="contact">
-          <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2 style={{ marginTop: '14px' }}>Ready to get found and get leads?</h2>
-            <p>Book a consultation and walk away with a clear plan today, or send your site for a free quick-wins audit. Either way, you hear from me directly.</p>
-            <div className="cta-cols">
-              <div className="cta-card book">
-                <h3>Book a consultation</h3>
-                <p>A focused strategy session on your site, your competitors, and the fastest path to rankings and leads. You leave with a plan you can act on right away.</p>
-                <div className="price-note">Paid session · booked instantly</div>
-                <a className="btn" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
-              </div>
-              <div className="cta-card">
-                <span className="tag2">Or get a free audit</span>
-                <h3 style={{ marginTop: '8px', marginBottom: '6px' }}>Send me your site</h3>
-                <ProtectedForm
-                  formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                  subject="New SEO Audit Request from Homepage"
-                  submitButtonText="Get my quick-wins audit"
-                  showMessage={true}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject="New SEO Audit Request from Homepage"
+          title="Ready to get found and get leads?"
+          body="Send the site, your email, and the issue you want SEO to fix first. I will review it and reply with the practical next step."
+          submitButtonText="Send my site"
+        />
       </div>
     </>
   );

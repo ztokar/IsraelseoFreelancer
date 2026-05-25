@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
 import { ServicePage } from './components/ServicePage';
+import { ServicesHubPage } from './components/ServicesHubPage';
 import { ReviewsResultsPage } from './components/ReviewsResultsPage';
 import { SpokeServicePage } from './components/SpokeServicePage';
 import { RedditSupportPage } from './components/RedditSupportPage';
@@ -23,6 +24,7 @@ import { AboutPage } from './components/AboutPage';
 import { CaseStudiesHub } from './components/CaseStudiesHub';
 import { CaseStudyPage } from './components/CaseStudyPage';
 import { GuidePage } from './components/GuidePage';
+import { DataIsBeautifulSkillPage } from './components/DataIsBeautifulSkillPage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -37,7 +39,7 @@ export const routes: RouteRecord[] = [
 
       // 10-page authority map
       { path: 'freelance-seo-israel', element: <ServicePage content={SERVICE_DATA.freelance} /> },
-      { path: 'seo-services-israel', element: <ServicePage content={SERVICE_DATA.services} /> },
+      { path: 'seo-services-israel', element: <ServicesHubPage /> },
       { path: 'seoconsulting', element: <ServicePage content={SERVICE_DATA.consultant} /> },
       { path: 'b2b-seo-israel', element: <ServicePage content={SERVICE_DATA.b2b} /> },
       { path: 'content-marketing-for-seo', element: <ServicePage content={SERVICE_DATA.content} /> },
@@ -60,6 +62,7 @@ export const routes: RouteRecord[] = [
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'videos', element: <VideosPage /> },
+      { path: 'resources/dataisbeautiful-claude-skill', element: <DataIsBeautifulSkillPage /> },
 
       // Case studies
       { path: 'case-studies', element: <CaseStudiesHub /> },

@@ -5,7 +5,6 @@ export const SOCIAL_LINKS = {
   twitter: 'https://x.com/ZackTokar',
   youtube: 'https://www.youtube.com/@Zechariah_T',
   reddit: 'https://www.reddit.com/r/SEO_Israel/',
-  calendly: 'https://calendly.com/zack-tokar/consultation',
   email: 'zechariah@israelseofreelancer.com',
 };
 
@@ -64,6 +63,7 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
       { label: 'Videos', desc: 'Watch the work', path: '/videos' },
+      { label: 'Claude Skill', desc: 'Free DataIsBeautiful prompt', path: '/resources/dataisbeautiful-claude-skill' },
       { label: 'Blog', desc: 'Notes on modern search', path: '/blog' },
     ],
   },
@@ -109,6 +109,15 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
       { label: 'Press Release SEO', path: '/press-release-seo' },
       { label: 'Blog Content SEO', path: '/blog-content-seo' },
       { label: 'SEO Consult', path: '/seo-consult' },
+    ],
+  },
+  {
+    heading: 'Resources',
+    links: [
+      { label: 'DataIsBeautiful Claude Skill', path: '/resources/dataisbeautiful-claude-skill' },
+      { label: 'Case Studies', path: '/case-studies' },
+      { label: 'Reviews & Results', path: '/reviews-results' },
+      { label: 'Blog', path: '/blog' },
     ],
   },
   {
@@ -810,7 +819,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 const baseFaqs = [
   {
     question: 'What is the starting price?',
-    answer: 'It depends on the service, your site, and how much you want handled. The simplest way to find out is a quick consultation, or send your site for a free quick-wins audit and I will reply with a clear scope and first step.',
+    answer: 'It depends on the service, your site, and how much you want handled. Send your site for a free quick-wins audit and I will reply with a clear scope and first step.',
   },
   {
     question: 'Do you work only with Israeli companies?',
@@ -1189,7 +1198,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     tools: ['LinkedIn', 'YouTube', 'Reddit', 'Google Search Console'],
     pricing: { audit: 'Quoted hourly', management: 'Quoted hourly' },
     features: ['Reviews', 'Selected results', 'Public profiles', 'Direct hire CTA'],
-    whyMe: ['You can judge the proof before booking', 'The site gives you the service menu and pricing upfront'],
+    whyMe: ['You can judge the proof before reaching out', 'The site gives you the service menu and pricing upfront'],
     cta: 'If the proof fits what you need, send the site and service area.',
     faqs: baseFaqs,
   },

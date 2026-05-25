@@ -340,7 +340,7 @@ export const BlogArticle7: React.FC = () => {
 
             <hr className="my-12 border-slate-200" />
 
-            <p>If you're an Israeli cybersecurity company competing in US enterprise markets and your SEO strategy is "write blog posts and hope," you're leaving pipeline on the table. <a href="/#contact" className="text-primary hover:underline font-medium">Book a strategy call</a> and I'll show you exactly which technical searches, integration pages, and compliance content you should be ranking for right now.</p>
+            <p>If you're an Israeli cybersecurity company competing in US enterprise markets and your SEO strategy is "write blog posts and hope," you're leaving pipeline on the table. <a href="/#contact" className="text-primary hover:underline font-medium">Send your site</a> and I'll show you exactly which technical searches, integration pages, and compliance content you should be ranking for right now.</p>
           </div>
         </div>
       </article>

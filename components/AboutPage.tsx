@@ -4,6 +4,7 @@ import { REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ProfileAvatar } from './ProfileAvatar';
 import { SocialIconLinks } from './SocialIconLinks';
+import { ContactCTA } from './ContactCTA';
 
 export const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -43,14 +44,14 @@ export const AboutPage: React.FC = () => {
                   that too.
                 </p>
                 <p>
-                  The simplest way to start is a quick consultation. Send the site, tell me what you
+                  The simplest way to start is to send the site, tell me what you
                   need help with, and I will reply with the likely scope and a clear first step.
                 </p>
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="/#hire"
+                  href="#contact"
                   className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
@@ -105,6 +106,12 @@ export const AboutPage: React.FC = () => {
             ))}
           </div>
         </section>
+        <ContactCTA
+          subject="New Inquiry from About Page"
+          title="Send the site and what you want SEO to fix first."
+          body="Tell me the site, the issue, and what a good result would look like. I will reply with the likely scope and first step."
+          submitButtonText="Request SEO quote"
+        />
       </div>
     </>
   );

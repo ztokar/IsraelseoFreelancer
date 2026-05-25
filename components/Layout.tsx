@@ -56,8 +56,8 @@ export const Layout: React.FC = () => {
             ))}
           </ul>
           <div className="ncta">
-            <a className="pill" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">
-              Let's talk <span aria-hidden="true">↗</span>
+            <a className="pill" href="#contact">
+              Send your site <span aria-hidden="true">↗</span>
             </a>
             <button className="burger" aria-label="Toggle menu" onClick={() => setIsMobileMenuOpen((v) => !v)}>
               <span /><span /><span />
@@ -72,7 +72,7 @@ export const Layout: React.FC = () => {
                 ))
               : [<NavLink key={group.path} to={group.path || '/'}>{group.label}</NavLink>]
           )}
-          <a href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Let's talk</a>
+          <a href="#contact">Send your site</a>
         </div>
       </header>
 

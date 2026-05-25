@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CASE_STUDY_PAGES } from '../constants-casestudies';
-import { SOCIAL_LINKS } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
+import { ContactCTA } from './ContactCTA';
 
 const TITLE = 'SEO Case Studies: Real Results in Ecommerce, Local, AI Search & Reddit | Zechariah Tokar';
 const DESC = 'Real SEO case studies from Zechariah Tokar: +300% Shopify sales, #1 Brooklyn real estate, AI-search venue ranking, ABA therapy AI recommendations, and a 405K-view Reddit post.';
@@ -43,17 +43,12 @@ export const CaseStudiesHub: React.FC = () => {
           </div>
         </section>
 
-        <section className="gp-cta" id="contact">
-          <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2 style={{ marginTop: '12px' }}>Want to be the next case study?</h2>
-            <p>Book a consultation or send your site for a free quick-wins audit. You hear from me directly either way.</p>
-            <div className="hero-actions" style={{ justifyContent: 'center', display: 'flex', gap: '14px', marginTop: '26px' }}>
-              <a className="btn btn-primary" href={SOCIAL_LINKS.calendly} target="_blank" rel="noopener noreferrer">Book your consultation <span className="arrow">↗</span></a>
-              <NavLink className="btn btn-ghost" to="/seo-services-israel" style={{ background: 'transparent', color: '#fff', borderColor: 'var(--hair-light)' }}>Browse services</NavLink>
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject="New Inquiry from Case Studies Hub"
+          title="Want to be the next case study?"
+          body="Send the site and what you want SEO to fix first. I will review it and reply with a practical next step."
+          submitButtonText="Send my site"
+        />
       </div>
     </>
   );

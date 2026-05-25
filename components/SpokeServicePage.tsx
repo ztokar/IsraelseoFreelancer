@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { CheckCircle, Clock3, XCircle } from 'lucide-react';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import { ProtectedForm } from './ProtectedForm';
 import { ProfileAvatar } from './ProfileAvatar';
 import { ServiceThumbnail } from './ServiceThumbnail';
 import { SocialIconLinks } from './SocialIconLinks';
+import { ContactCTA } from './ContactCTA';
 
 interface SpokeServicePageProps {
   content: SpokeService;
@@ -84,7 +84,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               )}
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#hire"
+                  href="#contact"
                   className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
                 >
                   Request SEO quote
@@ -112,7 +112,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
                   <Clock3 className="h-4 w-4 text-[#0BA66C]" />
                   How to start
                 </div>
-                <p className="mt-1 text-lg font-bold text-slate-950">Book a consultation</p>
+                <p className="mt-1 text-lg font-bold text-slate-950">Send your site</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">Send the site and I will reply with a clear scope and first step.</p>
               </div>
               <p className="mt-5 text-sm leading-6 text-slate-600">{content.bestFor}</p>
@@ -181,25 +181,13 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
           </section>
         )}
 
-        <section id="hire" className="bg-slate-950 py-16">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">Request a quote</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">{content.cta}</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
-                Send the site and tell me what you want SEO to fix first. I will reply with a practical next step.
-              </p>
-            </div>
-            <div className="mt-9 rounded-2xl bg-white p-6 shadow-2xl md:p-8">
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject={`New SEO Quote Request: ${content.title}`}
-                submitButtonText="Request SEO quote"
-                showMessage={true}
-              />
-            </div>
-          </div>
-        </section>
+        <ContactCTA
+          subject={`New SEO Quote Request: ${content.title}`}
+          eyebrow="Request a quote"
+          title={content.cta}
+          body="Send the site and tell me what you want SEO to fix first. I will reply with a practical next step."
+          submitButtonText="Request SEO quote"
+        />
       </main>
     </>
   );

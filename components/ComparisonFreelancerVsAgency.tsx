@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ProtectedForm } from './ProtectedForm';
-import { SOCIAL_LINKS } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
+import { ContactCTA } from './ContactCTA';
 
 export const ComparisonFreelancerVsAgency: React.FC = () => {
   useEffect(() => {
@@ -160,47 +159,12 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="audit" className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Ready to Work with <span className="text-primary">Zechariah Tokar?</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-xl mx-auto">
-              Get a free SEO audit and see exactly where your site can improve.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <p className="text-primary font-semibold text-sm uppercase tracking-wide mb-2">
-                  Request Your Free Audit
-                </p>
-                <div className="h-px w-20 bg-slate-200 mx-auto" />
-              </div>
-              <ProtectedForm
-                formspreeEndpoint="https://formspree.io/f/mpwvyzbr"
-                subject="New Inquiry: Freelancer vs Agency Comparison"
-                submitButtonText="Get My Free SEO Audit"
-                showMessage={true}
-              />
-              <p className="text-center text-sm text-slate-500 mt-4">
-                Or{' '}
-                <a
-                  href={SOCIAL_LINKS.calendly}
-                  className="text-primary underline hover:no-underline font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  book directly via Calendly
-                </a>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactCTA
+        subject="New Inquiry: Freelancer vs Agency Comparison"
+        title="Ready to work directly with an SEO freelancer?"
+        body="Send the site and what you want SEO to fix first. I will review it and reply with the practical next step."
+        submitButtonText="Get my free SEO audit"
+      />
     </div>
   </>
   );
