@@ -63,6 +63,27 @@ export const DataIsBeautifulSkillPage: React.FC = () => {
           </div>
         </section>
 
+        <section className="divider">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Watch the walkthrough</span>
+              <h2>See how the skill works before you download it.</h2>
+              <p className="lede">
+                I recorded a short Loom walkthrough so you can see the workflow in context without leaving the page.
+              </p>
+            </div>
+            <div className="loom-wrap">
+              <iframe
+                src="https://www.loom.com/embed/58f3079ae92d46748763d3781b9bbb7c"
+                title="DataIsBeautiful Claude skill walkthrough"
+                frameBorder="0"
+                allow="fullscreen; picture-in-picture; clipboard-write"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="divider" id="how-it-works">
           <div className="narrow">
             <h2 className="block">How to use it</h2>
