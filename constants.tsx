@@ -444,10 +444,10 @@ export const LINKEDIN_FEATURED_RESULTS = [
   },
   {
     title: 'Ecommerce SEO and Shopping',
-    metric: '$9K+ sales, 45 customers',
-    description: 'Collection-page SEO, product-page cleanup, foundational backlinks, and focused Google Shopping work helped drive ecommerce sales.',
-    image: '/images/proof-linkedin-shopify.jpg',
-    alt: 'LinkedIn featured image for Shopify SEO and Google Ads result',
+    metric: 'Collection-page SEO',
+    description: 'Collection-page SEO, product-page cleanup, foundational backlinks, and focused Shopping support helped improve ecommerce visibility.',
+    image: '/images/proof-client-praise.jpg',
+    alt: 'Client message praising an SEO deliverable',
     path: '/case-studies/zstander-shopify-seo',
   },
   {
@@ -875,7 +875,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 const baseFaqs = [
   {
     question: 'What is the starting price?',
-    answer: 'It depends on the service, your site, and how much you want handled. Send your site for a free quick-wins audit and I will reply with a clear scope and first step.',
+    answer: 'It depends on the service, your site, and how much you want handled. Send your site and I will reply with a clear scope and first step.',
   },
   {
     question: 'Do you work only with Israeli companies?',
@@ -1007,8 +1007,8 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
         body: "B2B SEO is not just blog publishing. I look for the searches that happen before someone books a demo, asks for pricing, compares vendors, or tries to understand whether your company fits their market. That usually means service pages, use cases, comparison pages, integrations, and content that sales can actually use.",
       },
       {
-        title: 'Where the information gain comes from',
-        body: "Most B2B SEO pages talk about traffic. I care more about retrieval and buyer memory. If Google or an AI answer needs to understand what you do, the page has to name the buyer, the use case, the market, and the proof. That is why I use GSC data, SERP checks, Reddit language, LinkedIn positioning, and internal links together.",
+        title: 'Where the useful detail comes from',
+        body: "Most B2B SEO pages talk about traffic. I care more about whether buyers remember and understand the offer. If Google or an AI answer needs to understand what you do, the page has to name the buyer, the use case, the market, and the proof. That is why I use Search Console data, SERP checks, Reddit language, LinkedIn positioning, and clear related pages together.",
       },
     ],
   },

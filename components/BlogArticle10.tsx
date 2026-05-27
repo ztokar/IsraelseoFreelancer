@@ -153,7 +153,7 @@ export const BlogArticle10: React.FC = () => {
 
             <hr className="my-12 border-slate-200" />
 
-            <p>If you're an Israeli startup targeting US markets and wondering why your product doesn't show up when buyers search, the problem isn't your product. It's that you're treating US SEO like Israeli SEO. <NavLink to="/services/b2b-seo-consulting" className="text-primary hover:underline font-medium">Work with someone who understands international SEO</NavLink> for Israeli companies expanding globally.</p>
+            <p>If you're an Israeli startup targeting US markets and wondering why your product doesn't show up when buyers search, the problem isn't your product. It's that you're treating US SEO like Israeli SEO. <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-medium">Work with someone who understands international SEO</NavLink> for Israeli companies expanding globally.</p>
           </div>
         </div>
       </article>

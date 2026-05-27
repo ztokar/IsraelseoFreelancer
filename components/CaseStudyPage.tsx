@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { CaseStudyPageData } from '../constants-casestudies';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
+import { RelatedPages } from './ConversionSections';
 
 const Check = () => (
   <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
@@ -29,7 +30,7 @@ export const CaseStudyPage: React.FC<{ content: CaseStudyPageData }> = ({ conten
             <h1>{content.h1}</h1>
             <p className="answer">{content.intro}</p>
             <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow">↗</span></a>
+              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow">↗</span></a>
               <NavLink className="btn btn-ghost" to={content.relatedPath}>{content.relatedLabel}</NavLink>
             </div>
           </div>
@@ -91,10 +92,20 @@ export const CaseStudyPage: React.FC<{ content: CaseStudyPageData }> = ({ conten
           </>
         )}
 
+        <RelatedPages
+          title="Related service and proof."
+          lede="If this case matches your problem, the connected service page is the cleanest next step."
+          links={[
+            { label: content.relatedLabel, path: content.relatedPath, type: 'Related service', body: 'The service page connected to this result.' },
+            { label: 'Reviews and results', path: '/reviews-results', type: 'Proof', body: 'More recommendations, public results, and places to vet the work.' },
+            { label: 'All case studies', path: '/case-studies', type: 'Case studies', body: 'More examples across ecommerce, local, AI search, and Reddit.' },
+          ]}
+        />
+
         <ContactCTA
           subject={`New Inquiry from ${content.client} case study`}
           title="Want results like this for your site?"
-          body="Send the site and what you want SEO to fix first. I will review it and reply with a practical next step."
+          body="Send the site, I review the issue, then I reply with the practical first step."
           submitButtonText="Send my site"
         />
       </div>

@@ -99,7 +99,7 @@ export const BlogArticle7: React.FC = () => {
 
             <p>The keywords that actually convert — "EDR with behavioral analysis for Linux containers," "SIEM integration with ServiceNow ITSM," "CASB with DLP for Google Workspace" — have 20-40 searches per month.</p>
 
-            <p>Most <NavLink to="/services/israel-b2b-seo" className="text-primary hover:underline">Israel B2B SEO services</NavLink> see those numbers and say "not worth targeting." But those 20 searches represent CISOs with budget actively researching a specific capability.</p>
+            <p>Most <NavLink to="/b2b-seo-israel" className="text-primary hover:underline">Israel B2B SEO services</NavLink> see those numbers and say "not worth targeting." But those 20 searches represent CISOs with budget actively researching a specific capability.</p>
 
             <h3>They Write for Marketers, Not Technical Buyers</h3>
 

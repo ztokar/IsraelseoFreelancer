@@ -31,7 +31,7 @@ const services = [
     title: 'Local & Service SEO',
     body: 'Win the local map pack and show up when nearby buyers search for help, including lawyers and clinics.',
     links: [
-      { label: 'SEO for Lawyers', path: '/seo-for-lawyers' },
+      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
       { label: 'Freelance SEO', path: '/freelance-seo-israel' },
     ],
     icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>,
@@ -60,7 +60,7 @@ const services = [
     title: 'For International Brands',
     body: 'Israeli startups and global companies entering the US, served by a native US-English operator.',
     links: [
-      { label: 'Israel SEO Specialist', path: '/israel-seo-specialist' },
+      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
       { label: 'B2B SEO', path: '/b2b-seo-israel' },
     ],
     icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>,
@@ -105,7 +105,7 @@ export const HomePage: React.FC = () => {
               <h1>Get found where buyers are <em>already searching.</em></h1>
               <p className="lede">I am a search visibility consultant. I help companies turn underperforming pages into rankings, leads, and presence in AI answers and Reddit. You work with me directly, not a rotating agency team.</p>
               <div className="hero-actions">
-                <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow">↗</span></a>
+                <a className="btn btn-primary" href="#contact">Send your site <span className="arrow">↗</span></a>
                 <a className="btn btn-ghost" href="#cases">View case studies</a>
               </div>
               <div className="hero-trust">
@@ -125,6 +125,34 @@ export const HomePage: React.FC = () => {
           <div className="wrap">
             <div><span className="eyebrow">Why this works</span></div>
             <p className="big">Most SEO stops at traffic. I start with the searches people make <b>when they have money in hand</b>, then build the page that wins that search and turns the click into a lead.</p>
+          </div>
+        </section>
+
+        <section className="fit-section divider">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Best fit</span>
+              <h2>For teams that need the next SEO move to be obvious.</h2>
+              <p className="lede">Most buyers are not deciding between ten SEO tasks. They are deciding whether they can trust the site, the brand, and the next step. That is the job I build around.</p>
+            </div>
+            <div className="fit-grid">
+              <article className="fit-card yes">
+                <h3>Good fit</h3>
+                <ul>
+                  <li>Companies targeting US or English-speaking buyers.</li>
+                  <li>Teams with pages that rank, but do not bring enough leads.</li>
+                  <li>Brands that need Google, AI answers, and Reddit to tell the same story.</li>
+                </ul>
+              </article>
+              <article className="fit-card no">
+                <h3>Not the right fit</h3>
+                <ul>
+                  <li>Teams looking for bulk content with no sales path.</li>
+                  <li>Projects that want a big report but no execution.</li>
+                  <li>Brands that cannot support the claims the page needs to make.</li>
+                </ul>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -249,7 +277,7 @@ export const HomePage: React.FC = () => {
               <span className="eyebrow">What sets the work apart</span>
               <h2 style={{ fontSize: '38px', marginTop: '14px' }}>Built for how people search in 2026.</h2>
               <p className="lede" style={{ marginTop: '16px' }}>Generic SEO still chases ten blue links. Buyers now ask AI and check Reddit before they ever reach your site. I make sure you show up across that whole path, and that the page converts when they land.</p>
-              <a className="btn btn-primary" href="#contact" style={{ marginTop: '26px' }}>See if we are a fit <span className="arrow">↗</span></a>
+              <a className="btn btn-primary" href="#contact" style={{ marginTop: '26px' }}>Send your site <span className="arrow">↗</span></a>
             </div>
             <div className="diff-card">
               <h3>You get a senior operator who:</h3>

@@ -22,7 +22,7 @@ export const CaseStudiesHub: React.FC = () => {
             <h1>Real campaigns. Real results.</h1>
             <p className="answer">Not polished claims. Each case study is the situation, what I actually did, and what happened, across ecommerce, local, AI search, and Reddit.</p>
             <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow">↗</span></a>
+              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow">↗</span></a>
             </div>
           </div>
         </section>

@@ -18,6 +18,7 @@ import { BlogArticle8 } from './components/BlogArticle8';
 import { BlogArticle9 } from './components/BlogArticle9';
 import { BlogArticle10 } from './components/BlogArticle10';
 import BlogArticle11 from './components/BlogArticle11';
+import { BlogArticleConversion } from './components/BlogArticleConversion';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
 import { AboutPage } from './components/AboutPage';
@@ -29,6 +30,13 @@ import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants'
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
 import type { RouteRecord } from 'vite-react-ssg';
+
+const withBlogConversion = (element: React.ReactNode, title: string) => (
+  <>
+    {element}
+    <BlogArticleConversion title={title} />
+  </>
+);
 
 export const routes: RouteRecord[] = [
   {
@@ -79,17 +87,17 @@ export const routes: RouteRecord[] = [
 
       // Blog
       { path: 'blog', element: <BlogPage /> },
-      { path: 'blog/claude-code-content-marketing-startups', element: <BlogArticle11 /> },
-      { path: 'blog/israeli-tech-seo-gap', element: <BlogArticle10 /> },
-      { path: 'blog/seo-drives-pipeline-b2b', element: <BlogArticle9 /> },
-      { path: 'blog/why-israeli-b2b-fail-seo', element: <BlogArticle8 /> },
-      { path: 'blog/seo-israeli-cybersecurity-companies', element: <BlogArticle7 /> },
-      { path: 'blog/seo-israeli-saas-companies-us-markets', element: <BlogArticle6 /> },
-      { path: 'blog/israel-b2b-seo-pipeline', element: <BlogArticle /> },
-      { path: 'blog/geo-ai-generative-engine-optimization', element: <BlogArticle2 /> },
-      { path: 'blog/seo-reputation-management', element: <BlogArticle3 /> },
-      { path: 'blog/ai-search-2026-updates', element: <BlogArticle4 /> },
-      { path: 'blog/hebrew-seo-checkers-free-tools', element: <BlogArticle5 /> },
+      { path: 'blog/claude-code-content-marketing-startups', element: withBlogConversion(<BlogArticle11 />, 'Using Claude Code For Content Marketing For Startups') },
+      { path: 'blog/israeli-tech-seo-gap', element: withBlogConversion(<BlogArticle10 />, 'The Israeli Tech SEO Gap') },
+      { path: 'blog/seo-drives-pipeline-b2b', element: withBlogConversion(<BlogArticle9 />, 'How SEO Drives Pipeline for B2B Companies') },
+      { path: 'blog/why-israeli-b2b-fail-seo', element: withBlogConversion(<BlogArticle8 />, 'Why Most Israeli B2B Companies Fail at SEO') },
+      { path: 'blog/seo-israeli-cybersecurity-companies', element: withBlogConversion(<BlogArticle7 />, 'SEO for Israeli Cybersecurity Companies') },
+      { path: 'blog/seo-israeli-saas-companies-us-markets', element: withBlogConversion(<BlogArticle6 />, 'SEO for Israeli SaaS Companies Targeting US Markets') },
+      { path: 'blog/israel-b2b-seo-pipeline', element: withBlogConversion(<BlogArticle />, 'Israel B2B SEO Services') },
+      { path: 'blog/geo-ai-generative-engine-optimization', element: withBlogConversion(<BlogArticle2 />, 'Geo AI and Generative Engine Optimization') },
+      { path: 'blog/seo-reputation-management', element: withBlogConversion(<BlogArticle3 />, 'SEO Reputation Management') },
+      { path: 'blog/ai-search-2026-updates', element: withBlogConversion(<BlogArticle4 />, 'AI Search 2026 Updates') },
+      { path: 'blog/hebrew-seo-checkers-free-tools', element: withBlogConversion(<BlogArticle5 />, 'Hebrew SEO Checkers and Free Tools') },
     ],
   },
 ];

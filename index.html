@@ -599,6 +599,8 @@
       .gp .service-card-links span{font-family:'Outfit';font-size:12px;font-weight:700;color:var(--green-dark);background:var(--green-tint);border:1px solid rgba(11,166,108,0.18);border-radius:999px;padding:6px 10px;}
       .gp .section-tabs{position:sticky;top:74px;z-index:20;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair);}
       .gp .section-tabs .wrap{display:flex;align-items:center;gap:34px;overflow-x:auto;padding-top:18px;padding-bottom:18px;}
+      .gp .section-tabs .wrap::-webkit-scrollbar{height:0;}
+      .gp .section-tabs .wrap{scrollbar-width:none;}
       .gp .section-tabs a{font-family:'Outfit';font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;position:relative;}
       .gp .section-tabs a:after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:3px;background:transparent;transition:background .2s;}
       .gp .section-tabs a:hover{color:var(--green-dark);}
@@ -661,11 +663,26 @@
       .gp .resource-card span{font-family:'Outfit';font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);}
       .gp .resource-card h3{font-size:20px;margin-top:14px;max-width:15ch;}
       .gp .resource-card svg{width:25px;height:25px;stroke:var(--green-dark);align-self:flex-end;}
+      .gp .fit-section{background:linear-gradient(180deg,#fff,var(--offwhite));}
+      .gp .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+      .gp .fit-card{border:1px solid var(--hair);border-radius:18px;background:#fff;padding:26px;box-shadow:0 20px 42px -34px rgba(15,17,21,.32);}
+      .gp .fit-card h3{font-size:22px;margin-bottom:16px;}
+      .gp .fit-card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+      .gp .fit-card li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink-soft);}
+      .gp .fit-card li:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:999px;background:var(--green);}
+      .gp .fit-card.no{background:#fbfbf8;}
+      .gp .fit-card.no li:before{background:#9aa0a6;}
+      .gp .guide-body{display:grid;gap:42px;}
+      .gp .guide-block{border-bottom:1px solid var(--hair);padding-bottom:38px;}
+      .gp .guide-block:last-child{border-bottom:0;padding-bottom:0;}
+      .gp .guide-block p{font-size:17px;color:var(--ink-soft);margin-top:14px;}
+      .gp .guide-block a{color:var(--green-dark);font-weight:600;border-bottom:1px solid rgba(11,166,108,0.3);}
+      .gp .post .pbody p{font-size:14.5px;color:var(--muted);line-height:1.55;margin-top:10px;}
       @media(max-width:920px){
         .gp .gp-hero .wrap,.gp .authority .wrap,.gp .process .wrap,.gp .diff .wrap,.gp .shero-grid,.gp .split-copy,.gp .proof-layout,.gp .person-grid{grid-template-columns:1fr;}
         .gp .gp-hero h1{font-size:40px;}
-        .gp .gp-hero .hero-art{order:-1;}
-        .gp .svc-grid,.gp .case-grid,.gp .tst-grid,.gp .blog-grid,.gp .inc,.gp .pmini,.gp .slink-grid,.gp .cta-cols,.gp .proof-grid,.gp .contact-panel,.gp .approach-grid,.gp .mini-case-grid,.gp .resource-grid,.gp .featured-result-grid{grid-template-columns:1fr;}
+        .gp .gp-hero .hero-art{order:0;}
+        .gp .svc-grid,.gp .case-grid,.gp .tst-grid,.gp .blog-grid,.gp .inc,.gp .pmini,.gp .slink-grid,.gp .cta-cols,.gp .proof-grid,.gp .contact-panel,.gp .approach-grid,.gp .mini-case-grid,.gp .resource-grid,.gp .featured-result-grid,.gp .fit-grid{grid-template-columns:1fr;}
         .gp .featured-result img{height:auto;max-height:220px;}
         .gp .pf img{height:auto;max-height:none;}
         .gp .gp-cta h2,.gp .sec-head h2{font-size:30px;}
@@ -673,7 +690,8 @@
         .gp .chl{grid-template-columns:1fr;}
         .gp .service-card{padding:22px;}
         .gp .section-tabs{top:64px;}
-        .gp .section-tabs .wrap{gap:24px;padding-top:14px;padding-bottom:14px;}
+        .gp .section-tabs .wrap{gap:18px;padding-top:12px;padding-bottom:12px;}
+        .gp .section-tabs a{font-size:14px;}
         .gp .section-tabs a:after{bottom:-14px;}
         .gp .split-copy h2,.gp .approach-head h2,.gp .person-grid h2{font-size:30px;max-width:none;}
         .gp .review-wall{columns:1;}

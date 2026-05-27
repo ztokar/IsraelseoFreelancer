@@ -142,7 +142,7 @@ export const BlogArticle8: React.FC = () => {
 
             <hr className="my-12 border-slate-200" />
 
-            <p>If you're an Israeli B2B company with strong organic traffic but weak pipeline contribution, you're optimizing for the wrong outcomes. <NavLink to="/services/israel-b2b-seo" className="text-primary hover:underline font-medium">Work with someone who understands B2B SEO for Israeli companies</NavLink> targeting enterprise buyers — someone who tracks pipeline, not pageviews.</p>
+            <p>If you're an Israeli B2B company with strong organic traffic but weak pipeline contribution, you're optimizing for the wrong outcomes. <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-medium">Work with someone who understands B2B SEO for Israeli companies</NavLink> targeting enterprise buyers, someone who tracks pipeline, not pageviews.</p>
           </div>
         </div>
       </article>

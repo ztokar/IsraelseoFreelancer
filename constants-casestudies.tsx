@@ -38,9 +38,6 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
       'Cleaned up Google Shopping so the store showed up during the Purim and Pesach demand spikes.',
     ],
     result: 'A 300% increase in sales from Google. Same products, same store. The difference was structure: pages Google could finally read, and a catalog that worked together instead of in pieces.',
-    proofImg: '/images/proof-linkedin-shopify.jpg',
-    proofAlt: 'LinkedIn featured proof image for Shopify SEO and Google Ads work',
-    proofCaption: 'Featured proof from the ecommerce campaign: SEO cleanup, Google Shopping support, and new customer growth.',
     relatedLabel: 'Shopify SEO',
     relatedPath: '/shopify-seo',
     faqs: [

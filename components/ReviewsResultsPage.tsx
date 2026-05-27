@@ -34,7 +34,7 @@ export const ReviewsResultsPage: React.FC = () => {
             <h1>Reviews, selected results, and public places to vet my work.</h1>
             <p className="answer">SEO is easy to oversell. This page keeps the proof simple: client recommendations, selected outcomes, and links where you can judge my thinking before you hire me.</p>
             <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Request SEO quote <span className="arrow-icon">↗</span></a>
+              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon">↗</span></a>
               <NavLink className="btn btn-ghost" to="/seo-services-israel">Browse services</NavLink>
             </div>
           </div>
@@ -104,7 +104,7 @@ export const ReviewsResultsPage: React.FC = () => {
           eyebrow="Hire Zechariah"
           title="Send the site and what you want SEO to fix first."
           body="You do not need a long brief. Send the URL and the issue you want solved, and I will reply with a clear next step."
-          submitButtonText="Request SEO quote"
+          submitButtonText="Send my site"
         />
       </main>
     </>

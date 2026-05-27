@@ -1,13 +1,21 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ArrowRight, CheckCircle, MessageSquareText } from 'lucide-react';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
+import { ProofWall, RelatedPages, ResultsGrid, cleanPublicCopy } from './ConversionSections';
 
 interface RedditSupportPageProps {
   content: SupportPage;
 }
+
+const Check = () => (
+  <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+);
+
+const Arrow = () => (
+  <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" /></svg>
+);
 
 const relatedPathByLabel: Record<string, string> = {
   'Reddit marketing services': '/reddit-marketing-services',
@@ -24,13 +32,9 @@ const linkify = (text: string) => {
 
   return text.split(pattern).map((part, index) => {
     const path = relatedPathByLabel[part];
-    if (!path) return <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>;
+    if (!path) return <React.Fragment key={`${part}-${index}`}>{cleanPublicCopy(part)}</React.Fragment>;
 
-    return (
-      <NavLink key={`${part}-${index}`} to={path} className="font-bold text-[#0BA66C] underline decoration-emerald-200 underline-offset-4 hover:text-[#0A7B55]">
-        {part}
-      </NavLink>
-    );
+    return <NavLink key={`${part}-${index}`} to={path}>{part}</NavLink>;
   });
 };
 
@@ -43,98 +47,107 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
     });
   }, [content]);
 
+  const relatedLinks = content.related.map((item) => ({
+    label: item,
+    path: relatedPathByLabel[item] || content.parentPath,
+    type: item.includes('How') || item.includes('Why') ? 'Reddit guide' : 'Reddit service',
+    body: 'A connected page if you want the safer path before posting or using Reddit for search visibility.',
+  }));
+
   return (
     <>
       <HeadSEO title={content.seoTitle} description={content.metaDescription} path={`/${content.slug}`} />
 
-      <main className="bg-[#f6f7f2] text-slate-900">
-        <section className="border-b border-slate-200 bg-white">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_360px] lg:px-8 lg:py-14">
+      <div className="gp">
+        <div className="wrap crumb">
+          <NavLink to="/">Home</NavLink><span>/</span>
+          <NavLink to={content.parentPath}>{content.parentLabel}</NavLink><span>/</span>{content.eyebrow}
+        </div>
+
+        <section className="shero">
+          <div className="wrap shero-grid">
             <div>
-              <div className="mb-5 flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-bold text-[#0BA66C]">
-                  {content.eyebrow}
-                </span>
-                <NavLink
-                  to={content.parentPath}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 hover:border-[#0BA66C] hover:text-[#0BA66C]"
-                >
-                  {content.parentLabel}
-                </NavLink>
+              <span className="eyebrow">{content.eyebrow}</span>
+              <h1>{content.title}</h1>
+              <p className="answer">{linkify(content.intro)}</p>
+              <div className="shero-actions">
+                <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
+                <NavLink className="btn btn-ghost" to={content.parentPath}>View {content.parentLabel}</NavLink>
               </div>
-              <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 md:text-5xl">
-                {content.title}
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">{linkify(content.intro)}</p>
             </div>
-
-            <aside className="rounded-2xl border border-slate-200 bg-[#fbfbf8] p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0BA66C] text-white">
-                <MessageSquareText className="h-6 w-6" />
+            <aside className="service-card">
+              <div className="service-card-top">
+                <span>Before you post</span>
+                <b>Check the fit</b>
               </div>
-              <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">Before you post</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                A short guide for a specific Reddit problem, with a clear path if you want help before posting.
-              </p>
-              <div className="mt-5 rounded-xl bg-white p-4">
-                <p className="text-sm font-semibold text-slate-500">Want help before you post?</p>
-                <p className="mt-1 text-base font-semibold text-slate-950">Send the site and I will map the play.</p>
+              <div className="zt-mini">
+                <div className="zt-mark">R</div>
+                <div>
+                  <strong>Reddit is unforgiving</strong>
+                  <span>Community fit comes first</span>
+                </div>
+              </div>
+              <p>A useful Reddit plan starts with the subreddit, the buyer objection, and whether posting is even the right move.</p>
+              <div className="service-card-links">
+                <span>Subreddit fit</span>
+                <span>Post risk</span>
+                <span>Buyer language</span>
               </div>
             </aside>
           </div>
         </section>
 
-        <section className="py-12">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_330px] lg:px-8">
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-              {content.sections.map((section) => (
-                <section key={section.heading} className="border-b border-slate-200 py-7 first:pt-0 last:border-0 last:pb-0">
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{section.heading}</h2>
-                  <div className="mt-4 space-y-4 text-base leading-7 text-slate-600">
-                    {section.body.map((paragraph) => (
-                      <p key={paragraph}>{linkify(paragraph)}</p>
-                    ))}
-                  </div>
-                  {section.bullets?.length ? (
-                    <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                      {section.bullets.map((bullet) => (
-                        <div key={bullet} className="flex items-start gap-3 rounded-xl bg-[#f6f7f2] p-4">
-                          <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0BA66C]" />
-                          <span className="text-sm font-semibold leading-6 text-slate-800">{linkify(bullet)}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
-                </section>
+        <section className="divider">
+          <div className="narrow guide-body">
+            {content.sections.map((section, index) => (
+              <div key={section.heading} className="guide-block">
+                <span className="eyebrow">0{index + 1}</span>
+                <h2 className="block">{section.heading}</h2>
+                {section.body.map((paragraph) => <p key={paragraph}>{linkify(paragraph)}</p>)}
+                {section.bullets?.length ? (
+                  <ul className="guide-list">
+                    {section.bullets.map((bullet) => <li key={bullet}>{linkify(bullet)}</li>)}
+                  </ul>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="service-approach">
+          <div className="wrap">
+            <div className="approach-head">
+              <span className="eyebrow">Safe path</span>
+              <h2>Reddit works when the post fits the community before it tries to help the brand.</h2>
+            </div>
+            <div className="approach-grid">
+              {['Read the community first', 'Use real buyer language', 'Post only when the answer is useful'].map((item) => (
+                <article key={item}>
+                  <div className="approach-dot full" />
+                  <h3>{item}</h3>
+                  <p>{item === 'Read the community first' ? 'Rules, moderator patterns, and past removals decide the plan.' : item === 'Use real buyer language' ? 'The best posts come from objections and questions already visible in the subreddit.' : 'Sometimes the right move is a page fix or comment strategy before a post.'}</p>
+                </article>
               ))}
-            </article>
-
-            <aside className="h-fit rounded-2xl border border-slate-200 bg-slate-950 p-6 text-white">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">Related Reddit pages</p>
-              <div className="mt-5 grid gap-3">
-                {content.related.map((item) => (
-                  <NavLink
-                    key={item}
-                    to={relatedPathByLabel[item] || content.parentPath}
-                    className="group flex items-center justify-between rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-bold text-white hover:border-emerald-300 hover:text-emerald-200"
-                  >
-                    <span>{item}</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </NavLink>
-                ))}
-              </div>
-            </aside>
+            </div>
           </div>
         </section>
+
+        <ProofWall topic="reddit" limit={4} title="Proof that community visibility can turn into real reach." />
+        <ResultsGrid topic="reddit" title="Selected Reddit and community-search results." />
+
+        <RelatedPages
+          title="Related Reddit pages."
+          lede="These pages help you move from one Reddit problem to the next practical decision."
+          links={relatedLinks}
+        />
 
         <ContactCTA
           subject={`New Reddit Support Request: ${content.title}`}
-          eyebrow="Request a review"
           title={content.cta}
-          body="Send the site, subreddit, or post idea. I will reply with the practical next step and likely scope."
-          submitButtonText="Request Reddit review"
+          body="Send the site, subreddit, or post idea. I will review the risk and reply with the practical first step."
+          submitButtonText="Send my site"
         />
-      </main>
+      </div>
     </>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ServiceContent } from '../types';
-import { LINKEDIN_FEATURED_RESULTS, REVIEWS, SERVICES_LIST } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
+import { cleanPublicCopy, FitSection, ProofWall, RelatedPages, ResultsGrid, relatedServiceLinks, topicFromSlug } from './ConversionSections';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -23,11 +23,6 @@ const resourceLinks = [
   { label: 'Using Claude Code for content marketing', path: '/blog/claude-code-content-marketing-startups', type: 'Blog' },
 ];
 
-const publicCopy = (text?: string) => (text || '')
-  .replace(/information gain/gi, 'specific detail')
-  .replace(/retrieval/gi, 'visibility')
-  .replace(/retrieve the brand/gi, 'understand the brand');
-
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
     const pageTitle = content.seoTitle?.includes('Zechariah') ? content.seoTitle : `${content.seoTitle || content.title} | Zechariah Tokar`;
@@ -39,19 +34,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   }, [content]);
 
   const heroTitle = content.title.replace(/\s*\.\s*$/, '');
-  const relatedNames = content.relatedServices || [];
-  const supportingFromContent = relatedNames
-    .map((name) => SERVICES_LIST.find((service) => {
-      const haystack = `${service.title} ${service.subtitle} ${service.primaryKeyword || ''}`.toLowerCase();
-      return haystack.includes(name.toLowerCase());
-    }))
-    .filter(Boolean) as typeof SERVICES_LIST;
-  const supporting = (supportingFromContent.length ? supportingFromContent : SERVICES_LIST.filter((service) => service.slug !== content.slug)).slice(0, 3);
   const cs = content.caseStudyHighlight;
-  const pageReviews = REVIEWS.slice(0, 9);
-  const featuredResults = LINKEDIN_FEATURED_RESULTS.slice(0, 4);
+  const topic = topicFromSlug(content.slug);
+  const supporting = relatedServiceLinks(content.relatedServices, content.slug);
   const navItems = [
     { label: 'Overview', href: '#overview' },
+    { label: 'Fit', href: '#fit' },
     { label: 'Approach', href: '#approach' },
     { label: 'Proof', href: '#proof' },
     { label: 'Resources', href: '#resources' },
@@ -77,7 +65,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             <h1>{heroTitle}</h1>
             <p className="answer">{content.description}</p>
             <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow-icon"><Arrow /></span></a>
+              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
               {cs && <a className="btn btn-ghost" href="#proof">See proof</a>}
             </div>
           </div>
@@ -96,9 +84,9 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
               <h2>Clear scope before work starts.</h2>
             </div>
             <div className="copy-stack">
-              <p className="lead-copy">{publicCopy(content.marketFit || content.entityDefinition || content.bestFor)}</p>
-              <p>{publicCopy(content.ugcIntro?.what)}</p>
-              <p>{publicCopy(content.ugcIntro?.why)}</p>
+              <p className="lead-copy">{cleanPublicCopy(content.marketFit || content.entityDefinition || content.bestFor)}</p>
+              <p>{cleanPublicCopy(content.ugcIntro?.what)}</p>
+              <p>{cleanPublicCopy(content.ugcIntro?.why)}</p>
               {content.industries && (
                 <div className="pills">
                   {content.industries.map((industry) => <span key={industry}>{industry}</span>)}
@@ -107,6 +95,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             </div>
           </div>
         </section>
+
+        <div id="fit">
+          <FitSection topic={topic} bestFor={content.bestFor || content.marketFit} />
+        </div>
 
         {content.features && content.features.length > 0 && (
           <section className="divider service-included">
@@ -127,7 +119,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           <div className="wrap">
             <div className="approach-head">
               <span className="eyebrow">Approach</span>
-              <h2>{publicCopy(content.ugcIntro?.how || 'I start with the pages closest to leads and fix the work in the right order.')}</h2>
+              <h2>{cleanPublicCopy(content.ugcIntro?.how || 'I start with the pages closest to leads and fix the work in the right order.')}</h2>
             </div>
             <div className="approach-grid">
               {(content.deepDive && content.deepDive.length > 0 ? content.deepDive : [
@@ -137,7 +129,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <article key={item.title}>
                   <div className="approach-dot" />
                   <h3>{item.title}</h3>
-                  <p>{publicCopy(item.body)}</p>
+                  <p>{cleanPublicCopy(item.body)}</p>
                 </article>
               ))}
               <article>
@@ -151,50 +143,14 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           </div>
         </section>
 
-        <section className="proof-cases" id="proof">
-          <div className="wrap">
-            <div className="sec-head">
-              <span className="eyebrow">LinkedIn recommendations</span>
-              <h2>What clients say after working with me.</h2>
-              <p className="lede">Real recommendations from people who hired me for SEO, content, local search, and growth work.</p>
-            </div>
-            <div className="review-wall">
-              {pageReviews.map((review) => (
-                <article className="review-card" key={review.name}>
-                  <div className="review-head">
-                    <div className="review-initial">{review.initial}</div>
-                    <div>
-                      <h3>{review.name}</h3>
-                      <p>{review.role}</p>
-                    </div>
-                  </div>
-                  <blockquote>"{review.quote}"</blockquote>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProofWall
+          topic={topic}
+          title="What clients say after working with me."
+          lede="Relevant recommendations from companies and founders who hired me for SEO, content, local search, growth, and execution."
+          limit={6}
+        />
 
-        <section className="result-strip divider">
-          <div className="wrap">
-            <div className="sec-head">
-              <span className="eyebrow">Selected results</span>
-              <h2>Selected wins from SEO, local search, ecommerce, and AI visibility.</h2>
-            </div>
-            <div className="featured-result-grid">
-              {featuredResults.map((item) => (
-                <NavLink className="featured-result" to={item.path} key={item.title}>
-                  <img src={item.image} alt={item.alt} />
-                  <div>
-                    <span>{item.title}</span>
-                    <strong>{item.metric}</strong>
-                    <p>{item.description}</p>
-                  </div>
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ResultsGrid topic={topic} title="Selected wins from similar search problems." />
 
         <section className="person-section divider">
           <div className="wrap person-grid">
@@ -208,34 +164,11 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           </div>
         </section>
 
-        <section className="support divider" id="resources">
-          <div className="wrap">
-            <div className="sec-head">
-              <span className="eyebrow">Keep exploring</span>
-              <h2>Related services and guides.</h2>
-              <p className="lede">Helpful next pages should be easy to find without making the visitor hunt through the menu.</p>
-            </div>
-            <div className="slink-grid">
-              {supporting.map((service) => (
-                <NavLink className="slink" to={`/${service.slug}`} key={service.slug}>
-                  <div className="k">{service.subtitle}</div>
-                  <h3>{service.title.replace(/\s*\.\s*$/, '')}</h3>
-                  <p>{service.marketFit || service.description}</p>
-                  <span className="card-arrow"><Arrow /></span>
-                </NavLink>
-              ))}
-            </div>
-            <div className="resource-grid">
-              {resourceLinks.map((item) => (
-                <NavLink className="resource-card" to={item.path} key={item.path}>
-                  <span>{item.type}</span>
-                  <h3>{item.label}</h3>
-                  <Arrow />
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </section>
+        <RelatedPages
+          title="Related services and guides."
+          lede="Helpful next pages should be easy to find without making the visitor hunt through the menu."
+          links={[...supporting, ...resourceLinks.map((item) => ({ label: item.label, path: item.path, type: item.type }))]}
+        />
 
         {content.faqs && content.faqs.length > 0 && (
           <>

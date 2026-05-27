@@ -154,7 +154,7 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
             <NavLink to="/seoconsulting" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">SEO Consulting</NavLink>
             <NavLink to="/b2b-seo-israel" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">B2B SEO</NavLink>
             <NavLink to="/content-marketing-for-seo" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">Content Marketing</NavLink>
-            <NavLink to="/seo-for-lawyers" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">SEO for Lawyers</NavLink>
+            <NavLink to="/google-business-profile-seo" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">Google Business Profile SEO</NavLink>
           </div>
         </div>
       </section>

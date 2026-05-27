@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { GuidePageData } from '../constants-guides';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
+import { ProofWall, RelatedPages, ResultsGrid, topicFromSlug } from './ConversionSections';
 
 // Render text with [label](/path) internal links and [label](https://..) external links.
 const renderText = (text: string): React.ReactNode[] => {
@@ -30,6 +31,12 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
     updatePageSEO({ title: content.seoTitle, description: content.metaDescription, path: `/${content.slug}` });
   }, [content]);
 
+  const topic = topicFromSlug(content.slug);
+  const relatedLinks = [
+    { label: content.moneyLabel, path: content.moneyPath, type: 'Service', body: 'Use this if you want the work handled for your own brand.' },
+    ...content.related.map((r) => ({ label: r.label, path: r.path, type: r.path.includes('reddit') ? 'Reddit guide' : 'AI guide' })),
+  ];
+
   return (
     <>
       <HeadSEO title={content.seoTitle} description={content.metaDescription} path={`/${content.slug}`} />
@@ -47,7 +54,7 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
             <p className="answer">{renderText(content.quickAnswer)}</p>
             <div className="shero-actions">
               <NavLink className="btn btn-primary" to={content.moneyPath}>{content.moneyLabel} <span className="arrow">↗</span></NavLink>
-              <a className="btn btn-ghost" href="#contact">Get a free audit</a>
+              <a className="btn btn-ghost" href="#contact">Send your site</a>
             </div>
           </div>
         </section>
@@ -87,16 +94,17 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
               </div>
             ))}
 
-            {content.related && content.related.length > 0 && (
-              <div className="guide-related">
-                <p className="toc-label">Related</p>
-                <div className="pills">
-                  {content.related.map((r) => <NavLink key={r.path} to={r.path}>{r.label}</NavLink>)}
-                </div>
-              </div>
-            )}
           </div>
         </section>
+
+        <ProofWall topic={topic} limit={4} title="Proof behind the search visibility work." />
+        <ResultsGrid topic={topic} title="Selected results connected to this topic." />
+
+        <RelatedPages
+          title="Next pages to read or hire from."
+          lede="If this guide matches the problem you are seeing, the service page is the next practical step."
+          links={relatedLinks}
+        />
 
         {/* FAQ */}
         {content.faqs.length > 0 && (
@@ -125,8 +133,8 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
 
         <ContactCTA
           subject={`New Inquiry from guide: ${content.h1}`}
-          title="Want this done for your brand?"
-          body="Send the site and the issue you want solved. I will review it and reply with the practical next step."
+          title="Want this handled for your brand?"
+          body="Send the site, I review the issue, then I reply with the practical first step."
           submitButtonText="Send my site"
         />
       </div>

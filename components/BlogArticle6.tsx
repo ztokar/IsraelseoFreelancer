@@ -68,7 +68,7 @@ export const BlogArticle6: React.FC = () => {
 
             <p>That's not a winnable game.</p>
 
-            <p>The real problem isn't your content quality or technical SEO. It's that you're treating SaaS SEO like <NavLink to="/services/b2b-seo" className="text-primary hover:underline">B2B SEO for Israeli companies</NavLink> when SaaS buying behavior is fundamentally different.</p>
+            <p>The real problem isn't your content quality or technical SEO. It's that you're treating SaaS SEO like <NavLink to="/b2b-seo-israel" className="text-primary hover:underline">B2B SEO for Israeli companies</NavLink> when SaaS buying behavior is fundamentally different.</p>
 
             <p><strong>Key differences:</strong></p>
             <ul>
@@ -83,7 +83,7 @@ export const BlogArticle6: React.FC = () => {
 
             <h2 id="not-local-seo">SaaS SEO Is Not Local SEO (Or Content Marketing)</h2>
 
-            <p>Here's what most <NavLink to="/services/israel-b2b-seo" className="text-primary hover:underline">Israel B2B SEO services</NavLink> get wrong about SaaS.</p>
+            <p>Here's what most <NavLink to="/b2b-seo-israel" className="text-primary hover:underline">Israel B2B SEO services</NavLink> get wrong about SaaS.</p>
 
             <p>They treat it like any other B2B vertical — build some service pages, write educational blog posts, earn some backlinks, wait for leads. But SaaS buyers don't search like enterprise buyers looking for consulting services or agencies.</p>
 
@@ -147,7 +147,7 @@ export const BlogArticle6: React.FC = () => {
             <h3>Sales-Led Growth (SLS)</h3>
             <p>Your SEO goal: generate qualified demo requests from ICP accounts.</p>
 
-            <p>Prospects need to talk to sales before they can evaluate the product. That means your SEO strategy looks more like traditional <NavLink to="/services/b2b-seo-israel" className="text-primary hover:underline">B2B SEO in Israel</NavLink> — focused on intent-rich keywords that indicate budget, authority, and need.</p>
+            <p>Prospects need to talk to sales before they can evaluate the product. That means your SEO strategy looks more like traditional <NavLink to="/b2b-seo-israel" className="text-primary hover:underline">B2B SEO in Israel</NavLink> — focused on intent-rich keywords that indicate budget, authority, and need.</p>
 
             <p><strong>What to build:</strong></p>
             <ul>
