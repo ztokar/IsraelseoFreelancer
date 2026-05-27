@@ -38,6 +38,9 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
       'Cleaned up Google Shopping so the store showed up during the Purim and Pesach demand spikes.',
     ],
     result: 'A 300% increase in sales from Google. Same products, same store. The difference was structure: pages Google could finally read, and a catalog that worked together instead of in pieces.',
+    proofImg: '/images/proof-linkedin-shopify.jpg',
+    proofAlt: 'LinkedIn featured proof image for Shopify SEO and Google Ads work',
+    proofCaption: 'Featured proof from the ecommerce campaign: SEO cleanup, Google Shopping support, and new customer growth.',
     relatedLabel: 'Shopify SEO',
     relatedPath: '/shopify-seo',
     faqs: [
@@ -63,6 +66,9 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
       'Added the community details bigger national sites ignore.',
     ],
     result: '#1 for Midwood Brooklyn real estate, outranking national portals on their own turf. The team also holds a 4.9 rating across 133 Google reviews, which keeps the local results strong.',
+    proofImg: '/images/proof-linkedin-morristown.jpg',
+    proofAlt: 'LinkedIn featured proof image showing a local SEO ranking result',
+    proofCaption: 'A local SEO proof example from the same local-search playbook: landing page updates, schema, citations, and competitor-led content.',
     relatedLabel: 'Google Business Profile SEO',
     relatedPath: '/google-business-profile-seo',
     faqs: [

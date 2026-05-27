@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CASE_STUDIES, REVIEWS } from '../constants';
+import { LINKEDIN_FEATURED_RESULTS, REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import { ProfileAvatar } from './ProfileAvatar';
 import { SocialIconLinks } from './SocialIconLinks';
 import { ContactCTA } from './ContactCTA';
 
@@ -24,125 +23,78 @@ export const ReviewsResultsPage: React.FC = () => {
         path="/reviews-results"
       />
 
-      <main className="bg-[#f6f7f2] text-slate-900">
-        <section className="border-b border-slate-200 bg-[#f6f7f2]">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_380px] lg:px-8 lg:py-14">
-            <div>
-              <span className="inline-flex rounded-full border border-emerald-200 bg-white px-4 py-2 text-sm font-semibold text-emerald-700">
-                SEO freelancer proof hub
-              </span>
-              <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl">
-                Reviews, selected results, and public places to vet my SEO work.
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-                SEO is easy to oversell. This page keeps the proof simple: client review snippets, a few selected outcomes, and links where you can judge my thinking before you hire me.
-              </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#0BA66C] px-7 py-4 text-base font-bold text-white shadow-[0_16px_34px_rgba(11,166,108,0.18)] hover:bg-[#0A7B55]"
-                >
-                  Request SEO quote
-                </a>
-                <NavLink
-                  to="/seo-services-israel"
-                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-4 text-base font-bold text-slate-800 hover:border-[#0BA66C] hover:text-[#0BA66C]"
-                >
-                  Browse services
-                </NavLink>
-              </div>
-            </div>
+      <main className="gp">
+        <div className="wrap crumb">
+          <NavLink to="/">Home</NavLink><span>/</span>Reviews and results
+        </div>
 
-            <aside className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_18px_44px_rgba(15,23,42,0.08)]">
-              <div className="flex items-center gap-4">
-                <ProfileAvatar size="md" />
-                <div>
-                  <p className="text-lg font-bold text-slate-950">Zechariah Tokar</p>
-                  <p className="text-sm text-slate-500">Freelance SEO consultant</p>
-                </div>
-              </div>
-              <div className="mt-6 text-center">
-                <div className="rounded-lg bg-slate-50 p-3">
-                  <p className="text-xs text-slate-500">How to start</p>
-                  <p className="font-bold text-slate-950">Send your site</p>
-                </div>
-              </div>
-              <p className="mt-5 rounded-lg bg-emerald-50 p-4 text-sm leading-6 text-emerald-900">
-                Best fit: founders, marketers, local businesses, ecommerce stores, and B2B teams that want direct SEO help without an agency layer.
-              </p>
-            </aside>
+        <section className="shero">
+          <div className="wrap">
+            <span className="eyebrow">SEO proof</span>
+            <h1>Reviews, selected results, and public places to vet my work.</h1>
+            <p className="answer">SEO is easy to oversell. This page keeps the proof simple: client recommendations, selected outcomes, and links where you can judge my thinking before you hire me.</p>
+            <div className="shero-actions">
+              <a className="btn btn-primary" href="#contact">Request SEO quote <span className="arrow-icon">↗</span></a>
+              <NavLink className="btn btn-ghost" to="/seo-services-israel">Browse services</NavLink>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Client reviews</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">What people say after working with me</h2>
+        <section className="proof-cases">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Client recommendations</span>
+              <h2>What people say after working with me.</h2>
             </div>
-            <NavLink className="text-sm font-bold text-[#0BA66C] hover:text-[#0A7B55]" to="/seo-services-israel">
-              View SEO services
-            </NavLink>
-          </div>
-
-          <div className="mt-7 grid gap-4 md:grid-cols-2">
-            {REVIEWS.map((review) => (
-              <article key={review.name} className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-base font-bold text-white">
-                    {review.initial}
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-bold text-slate-950">{review.name}</h3>
-                      {review.linkedinVerified && (
-                        <span className="rounded-md bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-700">LinkedIn proof</span>
-                      )}
-                    </div>
-                    <p className="mt-1 text-sm text-slate-500">{review.role}</p>
-                  </div>
-                </div>
-                <p className="mt-5 text-base leading-7 text-slate-700">"{review.quote}"</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="border-y border-slate-200 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Selected results</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Selected SEO results</h2>
-            <div className="mt-7 grid gap-4 md:grid-cols-3">
-              {CASE_STUDIES.map((study) => (
-                <article key={study.client} className="rounded-xl bg-[#f6f7f2] p-6">
-                  <div className="flex items-start justify-between gap-4">
+            <div className="review-wall">
+              {REVIEWS.map((review) => (
+                <article className="review-card" key={review.name}>
+                  <div className="review-head">
+                    <div className="review-initial">{review.initial}</div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-500">{study.client}</p>
-                      <p className="mt-2 text-4xl font-bold tracking-tight text-slate-950">{study.metric}</p>
+                      <h3>{review.name}</h3>
+                      <p>{review.role}</p>
                     </div>
-                    <span className="rounded-md border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
-                      {study.industry}
-                    </span>
                   </div>
-                  <p className="mt-3 font-semibold text-slate-800">{study.context}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{study.description}</p>
+                  <blockquote>"{review.quote}"</blockquote>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Find me online</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Check my public profiles</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                You can see my LinkedIn, YouTube, Reddit, X, and email before you decide whether to reach out.
-              </p>
+        <section className="result-strip divider">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Selected results</span>
+              <h2>SEO, local search, ecommerce, and AI visibility wins.</h2>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5">
-              <SocialIconLinks />
+            <div className="featured-result-grid">
+              {LINKEDIN_FEATURED_RESULTS.map((item) => (
+                <NavLink className="featured-result" to={item.path} key={item.title}>
+                  <img src={item.image} alt={item.alt} />
+                  <div>
+                    <span>{item.title}</span>
+                    <strong>{item.metric}</strong>
+                    <p>{item.description}</p>
+                  </div>
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="divider">
+          <div className="wrap split-copy">
+            <div>
+              <span className="eyebrow">Find me online</span>
+              <h2>Check my public profiles.</h2>
+            </div>
+            <div className="copy-stack">
+              <p className="lead-copy">You can see LinkedIn, YouTube, Reddit, X, and email before you decide whether to reach out.</p>
+              <div className="profile-links-box">
+                <SocialIconLinks />
+              </div>
             </div>
           </div>
         </section>

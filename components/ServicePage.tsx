@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ServiceContent } from '../types';
-import { SERVICES_LIST } from '../constants';
+import { LINKEDIN_FEATURED_RESULTS, REVIEWS, SERVICES_LIST } from '../constants';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 
@@ -12,6 +12,21 @@ interface ServicePageProps {
 const Check = () => (
   <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
 );
+
+const Arrow = () => (
+  <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" /></svg>
+);
+
+const resourceLinks = [
+  { label: 'How to get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt', type: 'AI guide' },
+  { label: 'How to market on Reddit', path: '/how-to-market-on-reddit', type: 'Reddit guide' },
+  { label: 'Using Claude Code for content marketing', path: '/blog/claude-code-content-marketing-startups', type: 'Blog' },
+];
+
+const publicCopy = (text?: string) => (text || '')
+  .replace(/information gain/gi, 'specific detail')
+  .replace(/retrieval/gi, 'visibility')
+  .replace(/retrieve the brand/gi, 'understand the brand');
 
 export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   useEffect(() => {
@@ -24,8 +39,24 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
   }, [content]);
 
   const heroTitle = content.title.replace(/\s*\.\s*$/, '');
-  const supporting = SERVICES_LIST.filter((s) => s.slug !== content.slug).slice(0, 3);
+  const relatedNames = content.relatedServices || [];
+  const supportingFromContent = relatedNames
+    .map((name) => SERVICES_LIST.find((service) => {
+      const haystack = `${service.title} ${service.subtitle} ${service.primaryKeyword || ''}`.toLowerCase();
+      return haystack.includes(name.toLowerCase());
+    }))
+    .filter(Boolean) as typeof SERVICES_LIST;
+  const supporting = (supportingFromContent.length ? supportingFromContent : SERVICES_LIST.filter((service) => service.slug !== content.slug)).slice(0, 3);
   const cs = content.caseStudyHighlight;
+  const pageReviews = REVIEWS.slice(0, 9);
+  const featuredResults = LINKEDIN_FEATURED_RESULTS.slice(0, 4);
+  const navItems = [
+    { label: 'Overview', href: '#overview' },
+    { label: 'Approach', href: '#approach' },
+    { label: 'Proof', href: '#proof' },
+    { label: 'Resources', href: '#resources' },
+    { label: 'FAQs', href: '#faqs' },
+  ];
 
   return (
     <>
@@ -35,102 +66,177 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         path={`/${content.slug}`}
       />
       <div className="gp">
-        {/* Breadcrumb */}
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           <NavLink to="/seo-services-israel">Services</NavLink><span>/</span>{content.subtitle}
         </div>
 
-        {/* Hero */}
         <section className="shero">
           <div className="wrap">
             <span className="eyebrow">{content.subtitle}</span>
             <h1>{heroTitle}</h1>
             <p className="answer">{content.description}</p>
             <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow">↗</span></a>
-              {cs && <a className="btn btn-ghost" href="#case">See a real result</a>}
+              <a className="btn btn-primary" href="#contact">Get my quick-wins audit <span className="arrow-icon"><Arrow /></span></a>
+              {cs && <a className="btn btn-ghost" href="#proof">See proof</a>}
             </div>
           </div>
         </section>
 
-        {/* Who it's for */}
-        <section>
-          <div className="narrow">
-            <h2 className="block">Who this is for</h2>
-            <p>{content.marketFit || content.entityDefinition || content.bestFor}</p>
-            {content.industries && (
-              <div className="pills">
-                {content.industries.map((i) => <span key={i}>{i}</span>)}
-              </div>
-            )}
+        <nav className="section-tabs" aria-label={`${content.subtitle} page sections`}>
+          <div className="wrap">
+            {navItems.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          </div>
+        </nav>
+
+        <section id="overview">
+          <div className="wrap split-copy">
+            <div>
+              <span className="eyebrow">Overview</span>
+              <h2>Clear scope before work starts.</h2>
+            </div>
+            <div className="copy-stack">
+              <p className="lead-copy">{publicCopy(content.marketFit || content.entityDefinition || content.bestFor)}</p>
+              <p>{publicCopy(content.ugcIntro?.what)}</p>
+              <p>{publicCopy(content.ugcIntro?.why)}</p>
+              {content.industries && (
+                <div className="pills">
+                  {content.industries.map((industry) => <span key={industry}>{industry}</span>)}
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
-        {/* What's included */}
         {content.features && content.features.length > 0 && (
-          <section className="divider">
+          <section className="divider service-included">
             <div className="wrap">
-              <h2 className="block">What is included</h2>
-              <p className="lede" style={{ fontSize: '17px' }}>The work that actually moves rankings and revenue, done for you.</p>
+              <div className="sec-head">
+                <span className="eyebrow">What is included</span>
+                <h2>The work stays practical and tied to the page, search problem, or channel.</h2>
+                <p className="lede">You get the pieces needed to make the service useful, not a bloated checklist.</p>
+              </div>
               <ul className="inc">
-                {content.features.map((f) => <li key={f}><Check />{f}</li>)}
+                {content.features.map((feature) => <li key={feature}><Check />{feature}</li>)}
               </ul>
             </div>
           </section>
         )}
 
-        {/* Mini process */}
-        {content.process && content.process.steps.length > 0 && (
-          <section className="divider">
-            <div className="wrap">
-              <h2 className="block">{content.process.title}</h2>
-              <div className="pmini">
-                {content.process.steps.slice(0, 4).map((step, i) => (
-                  <div className="c" key={i}>
-                    <div className="n">0{i + 1}</div>
-                    <p style={{ marginTop: '6px', color: 'var(--ink-soft)', fontSize: '14.5px' }}>{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Case highlight */}
-        {cs && (
-          <section className="divider" id="case">
-            <div className="wrap">
-              <div className="chl">
-                <div><div className="metric">{cs.metric}</div></div>
-                <div>
-                  <div className="eyebrow">{cs.client}{cs.industry ? ` · ${cs.industry}` : ''}</div>
-                  <h3>{cs.context}</h3>
-                  <p>{cs.description}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Supporting links */}
-        <section className="support divider">
+        <section className="service-approach" id="approach">
           <div className="wrap">
-            <h2 className="block">Related services</h2>
-            <p className="lede" style={{ fontSize: '17px' }}>This works best alongside these.</p>
-            <div className="slink-grid">
-              {supporting.map((s) => (
-                <NavLink className="slink" to={`/${s.slug}`} key={s.slug}>
-                  <div className="k">{s.subtitle}</div>
-                  <h3>{s.title.replace(/\s*\.\s*$/, '')}</h3>
-                  <p>{s.marketFit || s.description}</p>
+            <div className="approach-head">
+              <span className="eyebrow">Approach</span>
+              <h2>{publicCopy(content.ugcIntro?.how || 'I start with the pages closest to leads and fix the work in the right order.')}</h2>
+            </div>
+            <div className="approach-grid">
+              {(content.deepDive && content.deepDive.length > 0 ? content.deepDive : [
+                { title: 'What I check first', body: content.ugcIntro?.what || content.description },
+                { title: 'Why it matters', body: content.ugcIntro?.why || content.bestFor || content.description },
+              ]).slice(0, 2).map((item) => (
+                <article key={item.title}>
+                  <div className="approach-dot" />
+                  <h3>{item.title}</h3>
+                  <p>{publicCopy(item.body)}</p>
+                </article>
+              ))}
+              <article>
+                <div className="approach-dot full" />
+                <h3>{content.process?.title || 'Process'}</h3>
+                <ol>
+                  {content.process.steps.slice(0, 4).map((step) => <li key={step}>{step}</li>)}
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="proof-cases" id="proof">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">LinkedIn recommendations</span>
+              <h2>What clients say after working with me.</h2>
+              <p className="lede">Real recommendations from people who hired me for SEO, content, local search, and growth work.</p>
+            </div>
+            <div className="review-wall">
+              {pageReviews.map((review) => (
+                <article className="review-card" key={review.name}>
+                  <div className="review-head">
+                    <div className="review-initial">{review.initial}</div>
+                    <div>
+                      <h3>{review.name}</h3>
+                      <p>{review.role}</p>
+                    </div>
+                  </div>
+                  <blockquote>"{review.quote}"</blockquote>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="result-strip divider">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Selected results</span>
+              <h2>Selected wins from SEO, local search, ecommerce, and AI visibility.</h2>
+            </div>
+            <div className="featured-result-grid">
+              {featuredResults.map((item) => (
+                <NavLink className="featured-result" to={item.path} key={item.title}>
+                  <img src={item.image} alt={item.alt} />
+                  <div>
+                    <span>{item.title}</span>
+                    <strong>{item.metric}</strong>
+                    <p>{item.description}</p>
+                  </div>
                 </NavLink>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQs + schema */}
+        <section className="person-section divider">
+          <div className="wrap person-grid">
+            <div className="person-mark">ZT</div>
+            <div>
+              <span className="eyebrow">Who you work with</span>
+              <h2>You work directly with Zechariah.</h2>
+              <p className="lede">The strategy and execution do not get handed to a junior team. I look at the site, decide what should be fixed first, and keep the next step clear enough to act on.</p>
+            </div>
+            <NavLink className="btn btn-ghost" to="/about">About Zechariah <span className="arrow-icon"><Arrow /></span></NavLink>
+          </div>
+        </section>
+
+        <section className="support divider" id="resources">
+          <div className="wrap">
+            <div className="sec-head">
+              <span className="eyebrow">Keep exploring</span>
+              <h2>Related services and guides.</h2>
+              <p className="lede">Helpful next pages should be easy to find without making the visitor hunt through the menu.</p>
+            </div>
+            <div className="slink-grid">
+              {supporting.map((service) => (
+                <NavLink className="slink" to={`/${service.slug}`} key={service.slug}>
+                  <div className="k">{service.subtitle}</div>
+                  <h3>{service.title.replace(/\s*\.\s*$/, '')}</h3>
+                  <p>{service.marketFit || service.description}</p>
+                  <span className="card-arrow"><Arrow /></span>
+                </NavLink>
+              ))}
+            </div>
+            <div className="resource-grid">
+              {resourceLinks.map((item) => (
+                <NavLink className="resource-card" to={item.path} key={item.path}>
+                  <span>{item.type}</span>
+                  <h3>{item.label}</h3>
+                  <Arrow />
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {content.faqs && content.faqs.length > 0 && (
           <>
             <script
@@ -147,7 +253,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 }),
               }}
             />
-            <section className="divider">
+            <section className="divider" id="faqs">
               <div className="narrow">
                 <span className="eyebrow">Common questions</span>
                 <h2 className="block" style={{ marginTop: '12px' }}>Frequently asked questions</h2>

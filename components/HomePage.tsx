@@ -40,8 +40,9 @@ const services = [
     title: 'AI Search Visibility',
     body: 'Show up and get recommended inside ChatGPT, Perplexity, Gemini, and Google AI Overviews.',
     links: [
-      { label: 'Content Marketing', path: '/content-marketing-for-seo' },
-      { label: 'Consulting', path: '/seoconsulting' },
+      { label: 'AI SEO', path: '/ai-seo-consultant-israel' },
+      { label: 'ChatGPT citations', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
     ],
     icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg>,
   },
@@ -49,8 +50,9 @@ const services = [
     title: 'Reddit & Community',
     body: 'Be the brand real people recommend in the threads that rank in Google and feed AI answers.',
     links: [
-      { label: 'Content Marketing', path: '/content-marketing-for-seo' },
-      { label: 'Consulting', path: '/seoconsulting' },
+      { label: 'Reddit Marketing', path: '/reddit-marketing-services' },
+      { label: 'Reddit SEO', path: '/reddit-seo' },
+      { label: 'Posting Service', path: '/reddit-posting-service' },
     ],
     icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1121 11.5z"/></svg>,
   },
