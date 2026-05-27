@@ -12,6 +12,13 @@ Updated: May 28, 2026
 - Submitted the homepage to RalfyIndex in regular mode.
 - RalfyIndex response: `status: ok`, `creditsUsed: 1`, remaining balance `2732`.
 
+## Follow-Up Image Polish
+
+- Added real thumbnails to the homepage blog cards.
+- Reworked the homepage proof strip so each card is text-first and readable.
+- Kept the original proof screenshots as small supporting receipt images instead of making them carry the whole section.
+- Rebuilt and visually checked the updated homepage proof and blog sections on desktop and mobile.
+
 ## What Changed
 
 We moved the site closer to one consistent conversion system using the newer GoUp-inspired style already started on the service pages.

@@ -81,9 +81,9 @@ const caseSlug: Record<string, string> = {
 };
 
 const blog = [
-  { cat: 'AI Search', read: '8 min read', title: 'GEO: how to get cited by ChatGPT and Perplexity', path: '/blog/geo-ai-generative-engine-optimization' },
-  { cat: 'B2B SEO', read: '7 min read', title: 'Why Israeli B2B companies struggle with SEO', path: '/blog/why-israeli-b2b-fail-seo' },
-  { cat: 'AI Search', read: '6 min read', title: 'What changed in AI search in 2026', path: '/blog/ai-search-2026-updates' },
+  { cat: 'AI Search', read: '8 min read', title: 'GEO: how to get cited by ChatGPT and Perplexity', path: '/blog/geo-ai-generative-engine-optimization', image: '/images/blog-ai-search-2026.jpg' },
+  { cat: 'B2B SEO', read: '7 min read', title: 'Why Israeli B2B companies struggle with SEO', path: '/blog/why-israeli-b2b-fail-seo', image: '/images/blog-why-israeli-b2b-fail-seo.jpg' },
+  { cat: 'AI Search', read: '6 min read', title: 'What changed in AI search in 2026', path: '/blog/ai-search-2026-updates', image: '/images/blog-ai-search-2026.jpg' },
 ];
 
 export const HomePage: React.FC = () => {
@@ -262,8 +262,14 @@ export const HomePage: React.FC = () => {
             <div className="proof-grid">
               {PROOF_ITEMS.map((p) => (
                 <figure className="pf" key={p.img}>
-                  <img src={p.img} alt={p.alt} />
+                  <div className="proof-card-top">
+                    <span>{p.label}</span>
+                    <strong>{p.caption_b}</strong>
+                  </div>
                   <figcaption>{p.caption_pre}<b>{p.caption_b}</b>{p.caption_post}</figcaption>
+                  <div className="proof-thumb">
+                    <img src={p.img} alt={p.alt} />
+                  </div>
                 </figure>
               ))}
             </div>
@@ -305,7 +311,10 @@ export const HomePage: React.FC = () => {
             <div className="blog-grid">
               {blog.map((b) => (
                 <NavLink className="post" to={b.path} key={b.path}>
-                  <div className="pimg"><div className="grad" /></div>
+                  <div className="pimg">
+                    <img src={b.image} alt={b.title} />
+                    <div className="grad" />
+                  </div>
                   <div className="pbody">
                     <div className="meta"><span className="cat">{b.cat}</span><span>· {b.read}</span></div>
                     <h3>{b.title}</h3>

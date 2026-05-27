@@ -159,10 +159,10 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
 
 // Real screenshots posted publicly (sourced from LinkedIn). Used in the homepage proof strip.
 export const PROOF_ITEMS = [
-  { img: '/images/proof-reddit-405k.jpg', alt: 'Reddit post stats showing 405,000 views', caption_pre: 'A single Reddit post to ', caption_b: '405K views', caption_post: ' and real brand traffic.' },
-  { img: '/images/proof-reddit-12k.jpg', alt: 'Reach dashboard showing 12,000 views', caption_pre: 'A client Reddit post hitting ', caption_b: '12K views', caption_post: ' in its first days.' },
-  { img: '/images/proof-google-lead.jpg', alt: 'Inbound lead message that found the client on Google', caption_pre: 'An inbound lead that ', caption_b: 'found the client on Google', caption_post: '.' },
-  { img: '/images/proof-client-praise.jpg', alt: 'Client message praising an SEO deliverable', caption_pre: 'A client reaction to a recent ', caption_b: 'SEO deliverable', caption_post: '.' },
+  { label: 'Reddit reach', img: '/images/proof-reddit-405k.jpg', alt: 'Reddit post stats showing 405,000 views', caption_pre: 'A single Reddit post to ', caption_b: '405K views', caption_post: ' and real brand traffic.' },
+  { label: 'Client post', img: '/images/proof-reddit-12k.jpg', alt: 'Reach dashboard showing 12,000 views', caption_pre: 'A client Reddit post hitting ', caption_b: '12K views', caption_post: ' in its first days.' },
+  { label: 'Google lead', img: '/images/proof-google-lead.jpg', alt: 'Inbound lead message that found the client on Google', caption_pre: 'An inbound lead that ', caption_b: 'found the client on Google', caption_post: '.' },
+  { label: 'Client feedback', img: '/images/proof-client-praise.jpg', alt: 'Client message praising an SEO deliverable', caption_pre: 'A client reaction to a recent ', caption_b: 'SEO deliverable', caption_post: '.' },
 ];
 
 // Metric-forward testimonials for the homepage (verbatim, from /reviews-results).
