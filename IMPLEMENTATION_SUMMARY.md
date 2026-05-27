@@ -2,6 +2,16 @@
 
 Updated: May 28, 2026
 
+## Publish and Index Status
+
+- Published to `main` on May 28, 2026.
+- Netlify live deploy was verified on `https://israelseofreelancer.com/`.
+- Live homepage contains the new CRO section copy.
+- Live content marketing page and ZStander case study return 200.
+- Live pages no longer reference `proof-linkedin-shopify.jpg`.
+- Submitted the homepage to RalfyIndex in regular mode.
+- RalfyIndex response: `status: ok`, `creditsUsed: 1`, remaining balance `2732`.
+
 ## What Changed
 
 We moved the site closer to one consistent conversion system using the newer GoUp-inspired style already started on the service pages.
