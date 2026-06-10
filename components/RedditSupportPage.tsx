@@ -24,6 +24,17 @@ const relatedPathByLabel: Record<string, string> = {
   'How to market on Reddit without getting banned': '/how-to-market-on-reddit-without-getting-banned',
   'How to find subreddits for marketing': '/how-to-find-subreddits-for-marketing',
   'Why Reddit posts get removed': '/why-reddit-posts-get-removed',
+  'Reddit SEO': '/reddit-seo',
+  'How to use Reddit for SEO': '/how-to-use-reddit-for-seo',
+  'Why does Reddit rank so high on Google': '/why-does-reddit-rank-so-high-on-google',
+  'How Reddit gets cited by AI': '/reddit-ai-citations',
+  'Reddit for B2B SaaS lead generation': '/reddit-b2b-saas-lead-generation',
+  'Reddit vs LinkedIn for B2B leads': '/reddit-vs-linkedin-b2b-leads',
+  'Reddit karma and account age': '/reddit-karma-account-age',
+  "How Reddit's Google deal changed SEO": '/reddit-google-deal-seo',
+  'Monitor brand mentions on Reddit': '/monitor-brand-mentions-on-reddit',
+  'Reddit ads vs organic': '/reddit-ads-vs-organic',
+  'B2B SEO': '/b2b-seo-israel',
 };
 
 const linkify = (text: string) => {

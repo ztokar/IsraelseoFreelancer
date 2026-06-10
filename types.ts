@@ -102,6 +102,7 @@ export interface SpokeService {
   avoids?: string[];
   proof: string;
   related: string[];
+  faqs?: { q: string; a: string }[];
   cta: string;
 }
 

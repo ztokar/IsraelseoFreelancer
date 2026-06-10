@@ -25,12 +25,20 @@ const relatedPathByLabel: Record<string, string> = {
   'Reddit marketing services': '/reddit-marketing-services',
   'Reddit marketing expert': '/reddit-marketing-expert',
   'Reddit posting service': '/reddit-posting-service',
+  'How Reddit gets cited by AI': '/reddit-ai-citations',
+  'Reddit for B2B SaaS lead generation': '/reddit-b2b-saas-lead-generation',
+  'Reddit vs LinkedIn for B2B leads': '/reddit-vs-linkedin-b2b-leads',
+  'Reddit ads vs organic': '/reddit-ads-vs-organic',
+  'Monitor brand mentions on Reddit': '/monitor-brand-mentions-on-reddit',
   'How to market on Reddit without getting banned': '/how-to-market-on-reddit-without-getting-banned',
   'How to find subreddits for marketing': '/how-to-find-subreddits-for-marketing',
   'Why Reddit posts get removed': '/why-reddit-posts-get-removed',
   'SEO services': '/seo-services-israel',
   'SEO consulting': '/seoconsulting',
   'B2B SEO': '/b2b-seo-israel',
+  'SaaS SEO': '/saas-seo',
+  'Cybersecurity SEO': '/cybersecurity-seo',
+  'Fintech SEO': '/fintech-seo',
   'SEO writing': '/blog-content-seo',
   'Technical SEO audit': '/technical-seo-audit',
   'Backlinks': '/link-building-services',
@@ -151,6 +159,30 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
           lede="Use these if the real problem sits next to this service, not only inside it."
           links={relatedLinks}
         />
+
+        {content.faqs && content.faqs.length > 0 && (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: content.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+                }),
+              }}
+            />
+            <section className="divider">
+              <div className="narrow">
+                <span className="eyebrow">More questions</span>
+                <h2 className="block" style={{ marginTop: '12px' }}>FAQs</h2>
+                <div style={{ marginTop: '24px' }}>
+                  {content.faqs.map((f) => <div className="faq" key={f.q}><h3>{f.q}</h3><p>{cleanPublicCopy(f.a)}</p></div>)}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
 
         <ContactCTA
           subject={`New SEO Quote Request: ${content.title}`}
