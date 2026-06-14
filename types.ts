@@ -101,6 +101,11 @@ export interface SpokeService {
   handles: string[];
   avoids?: string[];
   proof: string;
+  sections?: {
+    heading: string;
+    body: string[];
+    bullets?: string[];
+  }[];
   related: string[];
   faqs?: { q: string; a: string }[];
   cta: string;

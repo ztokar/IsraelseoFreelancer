@@ -4,8 +4,8 @@ import { CASE_STUDIES, PROOF_ITEMS, HOME_TESTIMONIALS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 
-const TITLE = 'Zechariah Tokar | Search Visibility Consultant for US & English-Speaking Markets';
-const DESC = 'Zechariah Tokar is a search visibility consultant for companies targeting US and English-speaking markets. SEO, AI search visibility, and Reddit, done by a senior operator directly.';
+const TITLE = 'SEO Expert in Israel for US Markets | Google, AI Search and Reddit | Zechariah Tokar';
+const DESC = 'Work directly with Zechariah Tokar, an SEO expert in Israel helping companies targeting US and English-speaking markets get found across Google, AI answers, and Reddit.';
 
 const services = [
   {
@@ -125,6 +125,20 @@ export const HomePage: React.FC = () => {
           <div className="wrap">
             <div><span className="eyebrow">Why this works</span></div>
             <p className="big">Most SEO stops at traffic. I start with the searches people make <b>when they have money in hand</b>, then build the page that wins that search and turns the click into a lead.</p>
+          </div>
+        </section>
+
+        <section className="divider">
+          <div className="wrap split-copy">
+            <div>
+              <span className="eyebrow">SEO expert in Israel</span>
+              <h2>Direct senior SEO for companies selling into English-speaking markets.</h2>
+            </div>
+            <div className="copy-stack">
+              <p className="lead-copy">The first SEO decision should make the next move clearer. I work directly with founders and marketing teams on the pages, technical fixes, and search questions closest to revenue.</p>
+              <p>Being based in Israel is useful for companies that want direct access and US-natural copy without a large agency team. My work is built for English-speaking buyers. It is not Hebrew SEO or local Israeli consumer marketing.</p>
+              <p>Search now stretches beyond Google. I help the website explain the offer clearly, then connect that story to AI answers, Reddit discussions, case studies, reviews, and the other places buyers use to check whether a company is worth trusting.</p>
+            </div>
           </div>
         </section>
 

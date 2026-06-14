@@ -151,6 +151,25 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
           </div>
         </section>
 
+        {content.sections && content.sections.length > 0 && (
+          <section className="divider">
+            <div className="narrow guide-body">
+              {content.sections.map((section, index) => (
+                <div className="guide-block" key={section.heading}>
+                  <span className="eyebrow">0{index + 1}</span>
+                  <h2 className="block">{section.heading}</h2>
+                  {section.body.map((paragraph) => <p key={paragraph}>{cleanPublicCopy(paragraph)}</p>)}
+                  {section.bullets?.length ? (
+                    <ul className="guide-list">
+                      {section.bullets.map((bullet) => <li key={bullet}>{cleanPublicCopy(bullet)}</li>)}
+                    </ul>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <ProofWall topic={topic} limit={6} />
         <ResultsGrid topic={topic} title="Selected results from related search visibility work." />
 

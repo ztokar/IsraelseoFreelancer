@@ -641,22 +641,74 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'reddit-marketing-services',
     title: 'Reddit marketing services for brands that need trust, not spam.',
-    seoTitle: 'Reddit Marketing Services | Reddit Strategy, Subreddit Research, Buyer Objection Mapping and Search Visibility Support | Zechariah Tokar',
-    metaDescription: 'Reddit marketing services for brands that need subreddit research, useful posting ideas, buyer-objection mapping, and search visibility support.',
+    seoTitle: 'Reddit Marketing Services | Organic Reddit Strategy, Subreddit Research, Brand Trust and Search Visibility | Zechariah Tokar',
+    metaDescription: 'Reddit marketing services for organic community research, subreddit strategy, useful posts, brand trust, search visibility, and safer campaign planning.',
     eyebrow: 'Reddit marketing services',
     visual: 'redditMarketing',
     parentPath: '/reddit-seo',
     parentLabel: 'Reddit SEO',
     bestFor: 'Brands where buyers already use Reddit to compare options, check trust, or look for real user language.',
-    intro: 'This work starts with the community, not the post. I look for the threads where buyers already ask hard questions, compare options, complain about bad advice, or ask strangers for proof. If the topic fits, I turn that research into useful post angles, comment guidance, and website improvements that make the next click more useful.',
-    fit: 'This is a good fit when prospects already mention Reddit during sales calls, when a search result includes forum threads, or when your team needs cleaner buyer language before building another service page. Sometimes the right answer is to publish. Sometimes the right answer is to fix the page first and wait.',
+    intro: 'Good Reddit marketing starts with the community, not a brand mention. I study the threads where buyers compare options, challenge claims, complain about bad advice, or ask strangers for proof. From there, I turn the useful patterns into safer post ideas, comment guidance, and stronger pages for people who click through.',
+    fit: 'This is a good fit when Reddit already shapes how prospects judge the category, when forum threads appear in Google, or when your marketing team needs real buyer language before it publishes another page. Sometimes the right answer is an organic Reddit post. Sometimes it is a useful comment, a paid Reddit ad, or a website fix before the brand says anything.',
     handleTitle: 'Find the conversations worth acting on.',
-    handleIntro: 'I turn Reddit threads into a practical plan: what people are asking, what they distrust, what can be answered on-site, and what is safe to say in the community.',
-    handles: ['Thread research and repeated objections', 'Post ideas that fit the community', 'Comment guidance before anyone replies', 'Landing-page alignment', 'Search result review'],
+    handleIntro: 'I turn Reddit threads into a practical marketing plan: what people ask, what they distrust, which subreddits fit, what the website should answer, and what the brand can safely say in the community.',
+    handles: ['Relevant subreddit and thread research', 'Organic post and comment planning', 'Moderator and community-risk review', 'Landing-page and search-result alignment', 'Campaign measurement and next-step review'],
     avoids: ['Fake upvote packages', 'Spammy brand mentions', 'Posting in communities that do not fit', 'Volume campaigns that look automated'],
-    proof: 'The goal is simple: use Reddit to learn what buyers actually need, then send them to a page that answers it better than the thread did.',
+    proof: 'The work is built around real community behavior. Zechariah has used the method on posts that reached 405,000 views and uses Reddit research to improve the pages buyers reach after a discussion.',
+    sections: [
+      {
+        heading: 'Organic Reddit marketing and Reddit ads solve different problems.',
+        body: [
+          'Before I recommend a post, I decide whether the company needs to earn attention or buy it. Reddit ads are often the cleaner way to test an offer quickly because the targeting and reporting are clear. I will not disguise an ad as an independent recommendation.',
+          'Organic work takes more patience. It makes sense when buyers already ask detailed questions and the brand has something useful to add. I may recommend a helpful reply, an original post, or simply reading the discussion and fixing the website first.',
+        ],
+      },
+      {
+        heading: 'The biggest Reddit marketing risk is losing the community before earning attention.',
+        body: [
+          'Before anyone writes, I read the subreddit. I want to see what moderators remove, how regular members respond to promotion, and whether the topic belongs there at all. A careless campaign can get the account banned and make the domain harder to mention later.',
+          'Karma and account age help, but neither one rescues a weak contribution. The post still has to help the people in the thread. I will tell you when the smart move is to stay quiet.',
+        ],
+      },
+      {
+        heading: 'Reddit can support search, AI answers, and the next click.',
+        body: [
+          'A Reddit thread can keep appearing in Google long after the original conversation ends. It may also shape what ChatGPT, Perplexity, or Google AI Overviews show a buyer. Since the brand does not control the thread, one useful contribution is worth more than a pile of forced mentions.',
+          'I also check the page people reach after the thread. It should answer the same concern, show proof, and give the buyer a sensible next step. Otherwise the Reddit campaign creates attention and wastes the click.',
+        ],
+      },
+      {
+        heading: 'Measurement starts with the business question, not upvotes.',
+        body: [
+          'Views and upvotes tell me whether the contribution earned attention. I also check the replies, referral visits, branded searches, and any assisted leads we can see. Just as important, I save the objections that should change the website or the next campaign.',
+          'The review has to end with a decision. We keep participating, try an ad, improve the page, monitor the topic, or stop. Reddit is useful when it teaches the brand something and helps the right buyer trust the next step.',
+        ],
+      },
+    ],
     related: ['Reddit SEO', 'Reddit marketing expert', 'Reddit posting service', 'How Reddit gets cited by AI', 'Reddit for B2B SaaS lead generation', 'Reddit ads vs organic'],
     cta: 'Send the brand, site, and the Reddit topic you want to test first.',
+    faqs: [
+      {
+        q: 'What do Reddit marketing services include?',
+        a: 'The scope can include subreddit research, thread and objection analysis, organic post planning, comment guidance, moderator-risk review, landing-page improvements, Reddit ad recommendations, and campaign measurement. I recommend only the pieces that fit the brand and the community.',
+      },
+      {
+        q: 'Do you create fake Reddit recommendations or buy upvotes?',
+        a: 'No. Fake conversations, automated comments, and paid upvotes can damage the brand and get accounts or domains banned. The work focuses on useful participation, honest research, and safer ways to earn attention.',
+      },
+      {
+        q: 'Should we use organic Reddit marketing or Reddit ads?',
+        a: 'Use paid ads when you need controlled reach, clear targeting, and faster testing. Organic participation makes more sense when the brand has something genuinely useful to add to active discussions. Many brands need research first, then a mix based on the topic.',
+      },
+      {
+        q: 'Can Reddit marketing help SEO and AI search visibility?',
+        a: 'It can help when Reddit threads already rank in Google or shape how buyers and AI assistants understand the category. The strongest approach connects useful community participation with a website that gives buyers clearer proof after they click.',
+      },
+      {
+        q: 'How do you measure Reddit marketing?',
+        a: 'I look beyond karma and upvotes. Useful signals include thread reach, quality replies, referral visits, branded searches, assisted conversions, recurring buyer objections, and whether the work improves the next marketing decision.',
+      },
+    ],
   },
   {
     slug: 'reddit-marketing-expert',
@@ -1166,14 +1218,14 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
     title: 'Freelance SEO in Israel for companies that need leads, not reports.',
-    seoTitle: 'Freelance SEO Israel | Hire Direct SEO Help for Service Pages, Technical Fixes, Content, Local Search, AI Visibility and Lead Growth | Zechariah Tokar',
-    metaDescription: 'Hire Zechariah Tokar for freelance SEO in Israel. Senior SEO done directly, scoped after a quick review of your site.',
+    seoTitle: 'Freelance SEO Israel | Direct Senior SEO for US Markets, Technical Fixes, Content and Search Visibility | Zechariah Tokar',
+    metaDescription: 'Hire a freelance SEO in Israel for direct senior work on technical SEO, service pages, content, local search, AI visibility, and organic growth in English-speaking markets.',
     subtitle: 'Freelance SEO Israel',
     primaryKeyword: 'freelance SEO Israel',
     priceFrom: 'By consultation',
     timeline: 'Project or monthly',
     bestFor: 'Founders, marketers, and service businesses that want one accountable SEO operator.',
-    description: 'Hire me for practical SEO work without agency layers. I help with writing, audits, technical cleanup, content planning, AI visibility, backlinks, and monthly SEO.',
+    description: 'Hire me for direct freelance SEO work without agency layers. I fix the pages and search problems closest to leads, then handle the writing, technical SEO, content, local search, and authority work needed to move them.',
     deliverables: ['SEO audit', 'Keyword and GSC review', 'Service page rewrites', 'Technical fixes', 'Content strategy', 'Monthly SEO support'],
     relatedServices: ['SEO services', 'B2B SEO', 'Technical SEO', 'AI SEO'],
     ugcIntro: {
@@ -1205,6 +1257,18 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       {
         title: 'Why direct freelance SEO can work better',
         body: "A lot of SEO slows down because strategy and execution get separated. I keep the first pass direct. If the page needs writing, I write. If the problem is indexing or internal links, I map the fix. If the site needs authority, I point the effort at the pages most likely to bring leads.",
+      },
+      {
+        title: 'What you can hire me to handle',
+        body: "Sometimes the job is one page that is losing good buyers. Sometimes an audit is the right place to start before committing to anything larger. I also handle technical cleanup, local search, ecommerce work, and ongoing monthly support when the site needs it. The first recommendation depends on what the site can turn into revenue now.",
+      },
+      {
+        title: 'Freelancer or SEO agency?',
+        body: "A freelancer is usually the better fit when you want the person making the recommendation to do the work and explain the tradeoffs. An SEO agency can make sense when a large company needs several specialists available at once. I stay useful by keeping the scope clear, showing the work, and telling you when a project does not need a long retainer.",
+      },
+      {
+        title: 'How I measure useful progress',
+        body: "Rankings matter, but I also want to know who clicked and whether the page helped create an inquiry. Google Search Console and analytics show where the gap is. When impressions rise without useful visits, I go back to the offer page and find out why buyers are passing it.",
       },
     ],
   },
@@ -1257,15 +1321,15 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   consultant: {
     id: 'seo-consulting',
     slug: 'seoconsulting',
-    title: 'SEO consulting in Israel for clearer priorities and faster wins.',
-    seoTitle: 'SEO Consultant Israel | Strategy, Technical Audits, SEO Roadmaps, Content Priorities, AI Visibility and Execution Guidance | Zechariah Tokar',
-    metaDescription: 'SEO consultant in Israel for audits, strategy, roadmaps, technical SEO, content planning, and AI visibility.',
+    title: 'SEO consultant in Israel for clearer priorities and faster wins.',
+    seoTitle: 'SEO Consultant Israel | Audits, SEO Strategy, Technical Priorities and Clear Execution Roadmaps | Zechariah Tokar',
+    metaDescription: 'Work with an SEO consultant in Israel for a practical audit, SEO strategy, technical priorities, content planning, AI search guidance, and a clear execution roadmap.',
     subtitle: 'SEO Consultant Israel',
     primaryKeyword: 'SEO consultant Israel',
     priceFrom: 'By consultation',
     timeline: 'Audit or advisory',
     bestFor: 'Teams that can execute but need sharper SEO direction.',
-    description: 'Use consulting when you need the strategy, diagnosis, and roadmap, but your team will handle some or all execution.',
+    description: 'Use SEO consulting when your team needs a clear diagnosis, the right order of work, and direct guidance before it spends more time or budget on search.',
     deliverables: ['SEO audit', '90-day roadmap', 'Keyword priorities', 'Content brief review', 'Technical review', 'Monthly advisory'],
     relatedServices: ['Technical SEO audit', 'B2B SEO', 'Content SEO'],
     ugcIntro: {
@@ -1297,6 +1361,30 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       {
         title: 'What you leave with',
         body: "The output should be practical. I do not want you stuck with a giant audit nobody opens again. You should know the first few pages to fix, what to write next, what not to waste money on, and whether you need ongoing SEO or just a small focused scope.",
+      },
+      {
+        title: 'SEO strategy tied to the business',
+        body: "I start the SEO strategy with the offer and the pages that can create revenue. Then I compare the site with Google Search Console, search results, competitors, and the way the company is described online. The roadmap puts the highest-value work first instead of treating every SEO task as equally urgent.",
+      },
+      {
+        title: 'When an audit is worth paying for',
+        body: "An audit is worth it when the findings change what the team will do next. I check whether Google can index the right pages, whether buyers can understand them, and where the site is missing real demand. I also call out work that can wait, because a long list of problems is not the same as a useful plan.",
+      },
+      {
+        title: 'Advice, execution, or both',
+        body: "Some teams need a consultant to review work, set priorities, and guide an in-house marketer or developer. Others want me to write the page, fix the site, or build the next search asset after the roadmap is clear. I can stay advisory or handle the work directly, without an account-manager relay.",
+      },
+      {
+        title: 'How progress gets reviewed',
+        body: "I use rankings, Search Console, analytics, leads, and page-level changes to judge whether the strategy is working. The review stays tied to the original business goal. If the data says the plan is wrong, we change the plan instead of defending a report.",
+      },
+      {
+        title: 'Where SEO consulting fits',
+        body: "I advise B2B, SaaS, ecommerce, local-service, and international companies targeting English-speaking markets. The work can connect technical search engine optimization, content marketing, local SEO, link building, analytics, and conversion decisions. It can also help a team decide where SEO fits beside PPC and its wider digital marketing plan.",
+      },
+      {
+        title: 'Choosing the right SEO consultant',
+        body: "Look for someone who can explain the first recommendation in plain language, show relevant experience, and connect the SEO work to a business goal. A professional SEO consultant should be willing to narrow the scope, question a weak assumption, and say when the team should spend its budget somewhere else.",
       },
     ],
   },
@@ -1349,21 +1437,21 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
   ai: {
     id: 'ai-seo',
     slug: 'ai-seo-consultant-israel',
-    title: 'AI SEO consulting for brands that want to be found and recommended.',
-    seoTitle: 'AI SEO Consultant Israel | GEO, AI Search Visibility, ChatGPT and Perplexity Retrieval, Reddit Signals and Brand Clarity | Zechariah Tokar',
-    metaDescription: 'AI SEO consultant in Israel for GEO, AI visibility, ChatGPT and Perplexity recommendation checks, and automation-assisted SEO.',
+    title: 'AI SEO consultant in Israel for brands that want to be found and recommended.',
+    seoTitle: 'AI SEO Consultant Israel | ChatGPT, Perplexity, Google AI Overviews and Brand Search Visibility | Zechariah Tokar',
+    metaDescription: 'Work with an AI SEO consultant in Israel to improve brand visibility across ChatGPT, Perplexity, Google AI Overviews, Reddit, and traditional search.',
     subtitle: 'AI SEO Consultant Israel',
     primaryKeyword: 'AI SEO freelancer',
     priceFrom: 'By consultation',
     timeline: 'Audit or monthly',
     bestFor: 'Brands that want to understand how AI search changes discovery.',
-    description: 'AI SEO is not mass-producing generic content. It is making the brand clearer across Google, AI answers, Reddit, reviews, and third-party surfaces.',
-    deliverables: ['AI visibility check', 'Brand retrieval review', 'GEO content plan', 'Reddit and forum surface review', 'Automation workflow ideas', 'Entity cleanup'],
+    description: 'AI SEO is not a pile of generated articles. It is the work of making your brand easier to understand, verify, cite, and recommend across Google, AI assistants, Reddit, reviews, and trusted third-party pages.',
+    deliverables: ['AI visibility check', 'Brand understanding review', 'AI search content plan', 'Reddit and forum surface review', 'Automation workflow ideas', 'Public brand cleanup'],
     relatedServices: ['SEO consulting', 'Content SEO', 'Backlinks'],
     ugcIntro: {
       what: 'A practical look at how your brand appears in AI-assisted search and recommendation journeys.',
       why: 'Buyers increasingly ask AI who to hire, then Google the names they get back.',
-      how: 'I test visibility, find weak entity signals, and build pages or third-party mentions that make the brand easier to retrieve.',
+      how: 'I test visibility, find weak public signals, and build pages or third-party mentions that make the brand easier to understand and recommend.',
     },
     results: [
       { label: 'Pricing', value: 'By consultation' },
@@ -1373,12 +1461,12 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     caseStudyHighlight: CASE_STUDIES[0],
     process: {
       title: 'AI SEO process',
-      steps: ['Check current AI visibility', 'Map missing entity signals', 'Find trusted surfaces', 'Build content and mentions that clarify the brand'],
+      steps: ['Check current AI visibility', 'Map missing public proof', 'Find trusted surfaces', 'Build content and mentions that clarify the brand'],
     },
     tools: ['ChatGPT checks', 'Perplexity checks', 'Google Search Console', 'Reddit research', 'Automation tools'],
     pricing: { audit: 'Quoted hourly', management: 'Quoted hourly' },
-    features: ['GEO visibility', 'AI recommendation checks', 'Brand/entity clarity', 'Automation-assisted SEO'],
-    whyMe: ['I treat AI SEO as brand retrieval, not spam content', 'I connect AI visibility with regular Google visibility'],
+    features: ['AI search visibility', 'AI recommendation checks', 'Clear brand positioning', 'Automation-assisted SEO'],
+    whyMe: ['I treat AI SEO as a brand and reputation problem, not spam content', 'I connect AI visibility with regular Google visibility'],
     cta: 'Send the brand and site. I will check what AI and Google understand about it.',
     faqs: baseFaqs,
     deepDive: [
@@ -1388,7 +1476,31 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
       },
       {
         title: 'What I check',
-        body: "I test what AI systems say about the company, then compare that with Google results, Search Console data, internal pages, and outside mentions. The work can include better service pages, clearer entity signals, Reddit research, YouTube packaging, backlinks, or simple cleanup of confusing brand language.",
+        body: "I test what AI systems say about the company, then compare that with Google results, Search Console data, internal pages, and outside mentions. The work can include better service pages, clearer public proof, Reddit research, YouTube packaging, backlinks, or simple cleanup of confusing brand language.",
+      },
+      {
+        title: 'What AI search can actually change',
+        body: "ChatGPT, Perplexity, Gemini, and Google AI Overviews can introduce a buyer to a brand before the buyer visits its website. That makes brand visibility and reputation part of search work. The practical goal is to give AI systems and people consistent, useful evidence about who the company helps, what it does, and why it is credible.",
+      },
+      {
+        title: 'Traditional SEO still does most of the heavy lifting',
+        body: "AI search still depends on the same things buyers check: a clear offer, useful pages, links, and public proof. I start by fixing what search engines and buyers can verify. From there, I look at Reddit discussions, reviews, profiles, and other sources that may shape an AI answer.",
+      },
+      {
+        title: 'How I measure AI search visibility',
+        body: "There is no honest single ranking for AI assistants. I test important buyer questions, record which brands and sources appear, watch branded search and Search Console, and check whether the company is described correctly. The useful signal is repeated visibility across a topic, not one flattering ChatGPT answer.",
+      },
+      {
+        title: 'Where automation helps and where judgment matters',
+        body: "AI tools can speed up research, comparison, monitoring, and content production. They cannot decide whether a claim is true, whether a page deserves to exist, or whether a Reddit mention will help or hurt the brand. I use automation for speed and keep the final decisions tied to the buyer and the evidence.",
+      },
+      {
+        title: 'AI SEO for companies selling beyond Israel',
+        body: "I work with B2B, SaaS, ecommerce, and service companies that want stronger visibility in US and English-speaking markets. That can involve technical SEO, content strategy, reputation management, international SEO, and clearer brand proof across the website and outside sources. The work stays tied to real search behavior and the questions buyers ask before they choose.",
+      },
+      {
+        title: 'Choosing an AI SEO partner',
+        body: "Be careful with any marketing agency promising a guaranteed place in ChatGPT or an AI Overview. Generative AI systems change, and no consultant controls their answers. A useful AI SEO partner should strengthen the same foundations that help with organic search, brand visibility, and buyer trust even when a specific AI answer changes.",
       },
     ],
   },

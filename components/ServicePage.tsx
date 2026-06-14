@@ -143,6 +143,20 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           </div>
         </section>
 
+        {content.deepDive && content.deepDive.length > 2 && (
+          <section className="divider">
+            <div className="narrow guide-body">
+              {content.deepDive.slice(2).map((item, index) => (
+                <div className="guide-block" key={item.title}>
+                  <span className="eyebrow">0{index + 1}</span>
+                  <h2 className="block">{item.title}</h2>
+                  <p>{cleanPublicCopy(item.body)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <ProofWall
           topic={topic}
           title="What clients say after working with me."
