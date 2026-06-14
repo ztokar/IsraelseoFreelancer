@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 
-const TITLE = 'SEO Services Israel | Freelance SEO, AI Search, Reddit, Local and Ecommerce SEO | Zechariah Tokar';
-const DESC = 'Choose the SEO service that fits the next business problem: technical cleanup, service pages, local search, Shopify SEO, AI visibility, Reddit, or ongoing support.';
+const TITLE = 'SEO Services Israel | Direct Senior SEO for US Markets, Technical Audits, Content, Local Search and AI Search | Zechariah Tokar';
+const DESC = 'SEO services in Israel for companies targeting US and English-speaking markets. Work directly with Zechariah on audits, content, local search, B2B SEO, ecommerce, and AI search.';
 
 const serviceGroups = [
   {
@@ -21,7 +21,7 @@ const serviceGroups = [
     title: 'Growth channels',
     body: 'Use these when buyers are searching beyond normal Google results.',
     links: [
-      { label: 'AI search visibility', path: '/ai-seo-consultant-israel' },
+      { label: 'AI search', path: '/ai-seo-consultant-israel' },
       { label: 'Reddit SEO', path: '/reddit-seo' },
       { label: 'Reddit marketing', path: '/reddit-marketing-services' },
       { label: 'YouTube SEO', path: '/youtube-seo' },
@@ -55,9 +55,9 @@ export const ServicesHubPage: React.FC = () => {
         <section className="shero">
           <div className="wrap">
             <span className="eyebrow">SEO services</span>
-            <h1>SEO help for the page, channel, or search problem in front of you.</h1>
+            <h1>SEO services in Israel from the person doing the work.</h1>
             <p className="answer">
-              I work directly on SEO strategy and execution for companies targeting US and English-speaking markets. Pick the service that matches the problem: weak service pages, technical blockers, local visibility, ecommerce search, AI answers, Reddit, backlinks, or a monthly SEO plan.
+              I work directly on search engine optimization for companies targeting US and English-speaking markets. Pick the service that matches the problem: weak service pages, technical blockers, local search, ecommerce, AI answers, Reddit, backlinks, or an ongoing SEO plan.
             </p>
             <div className="shero-actions">
               <a className="btn btn-primary" href="#contact">Send your site</a>
@@ -95,8 +95,38 @@ export const ServicesHubPage: React.FC = () => {
           <div className="narrow">
             <h2 className="block">How to choose</h2>
             <p>
-              If you already know the issue, choose the matching service page. If you are not sure, send the site. I will look at the pages closest to leads or sales first, then tell you whether the first move should be writing, technical cleanup, links, local work, AI visibility, or a smaller consult.
+              If you already know the issue, choose the matching service page. If you are not sure, send the site. I will look at the pages closest to leads or sales first, then tell you whether the first move should be writing, technical cleanup, links, local work, AI search, or a smaller consult.
             </p>
+          </div>
+        </section>
+
+        <section className="divider">
+          <div className="narrow guide-body">
+            <div className="guide-block">
+              <span className="eyebrow">01</span>
+              <h2 className="block">Start with the search problem, not an SEO package.</h2>
+              <p>You may need a technical SEO audit, a stronger service page, better local search visibility, or help earning trust around a page that already ranks. I review the site and the business goal first, then recommend the smallest useful scope. That keeps you from paying for a broad package when one clear problem is holding the site back.</p>
+            </div>
+            <div className="guide-block">
+              <span className="eyebrow">02</span>
+              <h2 className="block">One senior operator handles strategy and execution.</h2>
+              <p>You work directly with me from the first review through the actual work. I can use Google Search Console, analytics, crawl data, search results, and buyer language to find the gap, then write the page or help fix the site. There is no account-manager relay between the recommendation and the person responsible for it.</p>
+            </div>
+            <div className="guide-block">
+              <span className="eyebrow">03</span>
+              <h2 className="block">Built for companies targeting English-speaking markets.</h2>
+              <p>I am based in Israel and work mainly with companies selling to the United States and other English-speaking markets. That is useful for Israeli startups and international companies that need US-natural copy, clear positioning, and direct access. I do not position this as Hebrew SEO or local Israeli consumer marketing.</p>
+            </div>
+            <div className="guide-block">
+              <span className="eyebrow">04</span>
+              <h2 className="block">Project work or ongoing SEO support.</h2>
+              <p>When the site has one known problem, I keep the job focused. That could mean rebuilding a page, auditing a technical problem, or cleaning up local search. If several parts of the site need attention month after month, ongoing support is usually more sensible. I explain the tradeoff before you commit.</p>
+            </div>
+            <div className="guide-block">
+              <span className="eyebrow">05</span>
+              <h2 className="block">Useful SEO services include knowing what not to do.</h2>
+              <p>More content is not always the answer. Sometimes buyers do not understand the offer. Sometimes the strongest page is broken or the public proof is weak. I would rather fix that first than hand you a longer list of work.</p>
+            </div>
           </div>
         </section>
       </div>
