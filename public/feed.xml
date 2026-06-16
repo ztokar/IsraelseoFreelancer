@@ -5,8 +5,24 @@
     <link>https://israelseofreelancer.com</link>
     <description>Freelance SEO consultant for Israeli and international companies targeting English-speaking markets. B2B SEO, content strategy, and AI search optimization.</description>
     <language>en-us</language>
-    <lastBuildDate>2026-03-30</lastBuildDate>
+    <lastBuildDate>2026-06-16</lastBuildDate>
     <atom:link href="https://israelseofreelancer.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Recommended Partners</title>
+      <link>https://israelseofreelancer.com/recommendations</link>
+      <description>Partners Zechariah recommends for website design, branding, copywriting, social media, and related work that supports SEO.</description>
+      <category>Recommendations</category>
+      <pubDate>2026-06-16</pubDate>
+      <guid isPermaLink="true">https://israelseofreelancer.com/recommendations</guid>
+    </item>
+    <item>
+      <title>The Web Designer I Recommend for Websites That Support Strong SEO</title>
+      <link>https://israelseofreelancer.com/recommendations/web-designer-seo-web-of-creativity</link>
+      <description>Why Zechariah recommends Rivka Neumann from Web of Creativity for strategic websites that support SEO.</description>
+      <category>Recommendations</category>
+      <pubDate>2026-06-16</pubDate>
+      <guid isPermaLink="true">https://israelseofreelancer.com/recommendations/web-designer-seo-web-of-creativity</guid>
+    </item>
     <item>
       <title>Israel SEO Freelancer - Zechariah Tokar</title>
       <link>https://israelseofreelancer.com/</link>

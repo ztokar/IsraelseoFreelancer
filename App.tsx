@@ -26,6 +26,8 @@ import { CaseStudiesHub } from './components/CaseStudiesHub';
 import { CaseStudyPage } from './components/CaseStudyPage';
 import { GuidePage } from './components/GuidePage';
 import { DataIsBeautifulSkillPage } from './components/DataIsBeautifulSkillPage';
+import { RecommendationsPage } from './components/RecommendationsPage';
+import { RecommendedWebDesignerPage } from './components/RecommendedWebDesignerPage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -71,6 +73,8 @@ export const routes: RouteRecord[] = [
       { path: 'about', element: <AboutPage /> },
       { path: 'videos', element: <VideosPage /> },
       { path: 'resources/dataisbeautiful-claude-skill', element: <DataIsBeautifulSkillPage /> },
+      { path: 'recommendations', element: <RecommendationsPage /> },
+      { path: 'recommendations/web-designer-seo-web-of-creativity', element: <RecommendedWebDesignerPage /> },
 
       // Case studies
       { path: 'case-studies', element: <CaseStudiesHub /> },

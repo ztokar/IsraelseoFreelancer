@@ -66,6 +66,7 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'Case Studies', desc: 'Real campaigns and results', path: '/case-studies' },
       { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
+      { label: 'Recommendations', desc: 'Partners I trust', path: '/recommendations' },
       { label: 'Videos', desc: 'Watch the work', path: '/videos' },
       { label: 'Claude Skill', desc: 'Free DataIsBeautiful prompt', path: '/resources/dataisbeautiful-claude-skill' },
       { label: 'Blog', desc: 'Notes on modern search', path: '/blog' },
@@ -122,6 +123,7 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
     heading: 'Resources',
     links: [
       { label: 'DataIsBeautiful Claude Skill', path: '/resources/dataisbeautiful-claude-skill' },
+      { label: 'Recommended Partners', path: '/recommendations' },
       { label: 'Case Studies', path: '/case-studies' },
       { label: 'Reviews & Results', path: '/reviews-results' },
       { label: 'Blog', path: '/blog' },
@@ -167,6 +169,7 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
       { label: 'Case Studies', path: '/case-studies' },
       { label: 'About', path: '/about' },
       { label: 'Reviews & Results', path: '/reviews-results' },
+      { label: 'Recommendations', path: '/recommendations' },
       { label: 'Videos', path: '/videos' },
       { label: 'Freelancer vs Agency', path: '/seo-freelancer-vs-agency' },
       { label: 'Market on Reddit Safely', path: '/how-to-market-on-reddit-without-getting-banned' },
