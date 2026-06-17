@@ -41,6 +41,7 @@ export const NAV_MENU: NavGroup[] = [
     label: 'AI & Reddit',
     children: [
       { label: 'AI Search Visibility', desc: 'Get found in AI answers', path: '/ai-seo-consultant-israel' },
+      { label: 'ChatGPT Recommendations', desc: 'Get your brand recommended', path: '/how-to-get-chatgpt-to-recommend-your-brand' },
       { label: 'Reddit SEO', desc: 'Rank in discussions and AI', path: '/reddit-seo' },
       { label: 'Reddit Marketing', desc: 'Be recommended by real people', path: '/reddit-marketing-services' },
       { label: 'Reddit Posting Service', desc: 'Posting done the right way', path: '/reddit-posting-service' },
@@ -133,6 +134,7 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
     heading: 'AI Search Guides',
     links: [
       { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'ChatGPT recommend your brand', path: '/how-to-get-chatgpt-to-recommend-your-brand' },
       { label: 'Rank in AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
       { label: 'Is GEO the new SEO?', path: '/is-geo-the-new-seo' },
       { label: 'What is GEO?', path: '/what-is-generative-engine-optimization' },

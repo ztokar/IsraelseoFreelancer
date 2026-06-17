@@ -21,6 +21,7 @@ import BlogArticle11 from './components/BlogArticle11';
 import { BlogArticleConversion } from './components/BlogArticleConversion';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
+import { ChatGPTRecommendBrandPage } from './components/ChatGPTRecommendBrandPage';
 import { AboutPage } from './components/AboutPage';
 import { CaseStudiesHub } from './components/CaseStudiesHub';
 import { CaseStudyPage } from './components/CaseStudyPage';
@@ -72,6 +73,7 @@ export const routes: RouteRecord[] = [
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'videos', element: <VideosPage /> },
+      { path: 'how-to-get-chatgpt-to-recommend-your-brand', element: <ChatGPTRecommendBrandPage /> },
       { path: 'resources/dataisbeautiful-claude-skill', element: <DataIsBeautifulSkillPage /> },
       { path: 'recommendations', element: <RecommendationsPage /> },
       { path: 'recommendations/web-designer-seo-web-of-creativity', element: <RecommendedWebDesignerPage /> },

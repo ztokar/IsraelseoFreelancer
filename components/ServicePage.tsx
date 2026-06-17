@@ -18,6 +18,7 @@ const Arrow = () => (
 );
 
 const resourceLinks = [
+  { label: 'How to get ChatGPT to recommend your brand', path: '/how-to-get-chatgpt-to-recommend-your-brand', type: 'AI guide' },
   { label: 'How to get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt', type: 'AI guide' },
   { label: 'How to market on Reddit', path: '/how-to-market-on-reddit', type: 'Reddit guide' },
   { label: 'Using Claude Code for content marketing', path: '/blog/claude-code-content-marketing-startups', type: 'Blog' },
