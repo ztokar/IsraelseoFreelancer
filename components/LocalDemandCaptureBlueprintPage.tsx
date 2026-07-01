@@ -13,7 +13,6 @@ import {
   Video,
 } from 'lucide-react';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import { CASE_STUDY_PAGES } from '../constants-casestudies';
 import { REVIEWS } from '../constants';
 import { ContactCTA } from './ContactCTA';
 
@@ -177,10 +176,6 @@ const proofScreenshots = [
 
 const selectedReviews = REVIEWS.filter((review) =>
   ['Brett Sheldon, LCSW', 'Yonatan Vinnik, LSW', 'Menachem Encaoua', 'Sean Littman', 'Raffi Bilek', 'Yehudah Kreitenberg'].includes(review.name)
-);
-
-const selectedCaseStudies = CASE_STUDY_PAGES.filter((study) =>
-  ['behfar-team-real-estate-seo', 'achieving-stars-aba-therapy-seo', 'reddit-405k-views'].includes(study.slug)
 );
 
 export const LocalDemandCaptureBlueprintPage: React.FC = () => {
@@ -377,27 +372,6 @@ export const LocalDemandCaptureBlueprintPage: React.FC = () => {
                   </div>
                   <figcaption><b>{proof.label}</b><span>{proof.body}</span></figcaption>
                 </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bp-case-band divider">
-          <div className="wrap">
-            <div className="sec-head">
-              <span className="eyebrow">Selected outcomes</span>
-              <h2>Related work that matches this offer.</h2>
-            </div>
-            <div className="bp-case-grid">
-              {selectedCaseStudies.map((study) => (
-                <NavLink className="bp-case-card" to={`/case-studies/${study.slug}`} key={study.slug}>
-                  <div className="bp-case-metric">{study.metric}</div>
-                  <div>
-                    <span>{study.eyebrow}</span>
-                    <h3>{study.h1}</h3>
-                    <p>{study.result}</p>
-                  </div>
-                </NavLink>
               ))}
             </div>
           </div>
