@@ -13,6 +13,9 @@ interface ProtectedFormProps {
   subject: string;
   colorClass?: string;
   showMessage?: boolean;
+  messageLabel?: string;
+  messagePlaceholder?: string;
+  extraFields?: React.ReactNode;
   submitButtonText: string;
 }
 
@@ -90,6 +93,9 @@ const FormContent: React.FC<ProtectedFormProps> = ({
   subject,
   colorClass = 'primary',
   showMessage = false,
+  messageLabel = 'Biggest Challenge',
+  messagePlaceholder = "What's your biggest SEO challenge right now?",
+  extraFields,
   submitButtonText
 }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -245,19 +251,21 @@ const FormContent: React.FC<ProtectedFormProps> = ({
         </div>
       </div>
 
+      {extraFields}
+
       {showMessage && (
         <div className="group">
           <label
             className="block text-sm font-semibold text-slate-700 mb-2"
             htmlFor="message"
           >
-            Biggest Challenge
+            {messageLabel}
           </label>
           <textarea
             className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 h-28 resize-none text-base`}
             id="message"
             name="message"
-            placeholder="What's your biggest SEO challenge right now?"
+            placeholder={messagePlaceholder}
             required
             disabled={isSubmitting}
           />
