@@ -31,6 +31,9 @@ import { RecommendationsPage } from './components/RecommendationsPage';
 import { RecommendedWebDesignerPage } from './components/RecommendedWebDesignerPage';
 import { LocalDemandCaptureBlueprintPage } from './components/LocalDemandCaptureBlueprintPage';
 import { BlueprintIntakePage } from './components/BlueprintIntakePage';
+import { TargetFinderPage } from './components/TargetFinderPage';
+import { TargetIntakePage } from './components/TargetIntakePage';
+import { LocalAuthoritySystemPage } from './components/LocalAuthoritySystemPage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -81,6 +84,9 @@ export const routes: RouteRecord[] = [
       { path: 'recommendations/web-designer-seo-web-of-creativity', element: <RecommendedWebDesignerPage /> },
       { path: 'local-demand-capture-blueprint', element: <LocalDemandCaptureBlueprintPage /> },
       { path: 'blueprint-intake', element: <BlueprintIntakePage /> },
+      { path: 'find-my-target', element: <TargetFinderPage /> },
+      { path: 'target-intake', element: <TargetIntakePage /> },
+      { path: 'local-authority-system', element: <LocalAuthoritySystemPage /> },
 
       // Case studies
       { path: 'case-studies', element: <CaseStudiesHub /> },

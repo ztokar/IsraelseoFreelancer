@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { REVIEWS } from '../constants';
+import { OfferLadder } from './OfferLadder';
 import { ContactCTA } from './ContactCTA';
 
 declare global {
@@ -395,6 +396,8 @@ export const LocalDemandCaptureBlueprintPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        <OfferLadder current="blueprint" />
 
         <section className="bp-faq divider">
           <div className="wrap split-copy">

@@ -64,6 +64,7 @@ export const NAV_MENU: NavGroup[] = [
   {
     label: 'Company',
     children: [
+      { label: 'Work With Me ($20 to done-for-you)', desc: 'Start small or go all in', path: '/find-my-target' },
       { label: 'Case Studies', desc: 'Real campaigns and results', path: '/case-studies' },
       { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
@@ -77,6 +78,14 @@ export const NAV_MENU: NavGroup[] = [
 
 // Full link map for the footer so every page is reachable (recovers internal-link authority).
 export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: string }[] }[] = [
+  {
+    heading: 'Work with me',
+    links: [
+      { label: 'Target Finder ($20)', path: '/find-my-target' },
+      { label: 'Demand Capture Blueprint ($250)', path: '/local-demand-capture-blueprint' },
+      { label: 'Done-For-You System', path: '/local-authority-system' },
+    ],
+  },
   {
     heading: 'SEO Services',
     links: [

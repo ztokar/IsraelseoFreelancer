@@ -802,6 +802,39 @@
       .gp .bp-intake-steps svg{stroke:var(--green-dark);}
       .gp .bp-intake-card{box-shadow:0 26px 64px -46px rgba(15,17,21,.45);}
       .gp .bp-intake-fields{display:grid;grid-template-columns:1fr;gap:15px;}
+
+      /* Offer ladder (shared across the 3 funnel tiers) */
+      .gp .offer-ladder{background:var(--offwhite);padding:64px 0;}
+      .gp .ladder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+      .gp .ladder-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:#fff;border:1px solid var(--hair);border-radius:18px;padding:26px 24px;text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s;}
+      a.ladder-card:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 24px 44px -30px rgba(11,166,108,.55);}
+      .gp .ladder-card.is-active{border-color:var(--green);background:var(--green-tint);}
+      .gp .ladder-tag{display:inline-flex;align-items:center;gap:6px;font-family:'Outfit';font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+      .gp .ladder-tag.is-here{color:var(--green-dark);}
+      .gp .ladder-card h3{font-size:20px;margin:2px 0 0;}
+      .gp .ladder-price{font-family:'Outfit';font-weight:700;font-size:30px;color:var(--ink);letter-spacing:-0.02em;}
+      .gp .ladder-card p{font-size:14.5px;color:var(--muted);margin:0;flex:1;}
+      .gp .ladder-link{display:inline-flex;align-items:center;gap:6px;font-family:'Outfit';font-weight:600;font-size:14px;color:var(--green-dark);margin-top:4px;}
+
+      /* Results strip (done-for-you tier) */
+      .gp .bp-results-strip{background:var(--ink);color:#fff;padding:44px 0;}
+      .gp .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+      .gp .result-cell{display:flex;flex-direction:column;gap:6px;}
+      .gp .result-metric{font-family:'Outfit';font-weight:700;font-size:40px;line-height:1;color:var(--green-bright);letter-spacing:-0.02em;}
+      .gp .result-label{font-size:14px;color:rgba(255,255,255,.72);line-height:1.5;}
+
+      /* Case cards (done-for-you tier) */
+      .gp .las-case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+      .gp .las-case-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:#fff;border:1px solid var(--hair);border-radius:18px;padding:28px 26px;text-decoration:none;transition:transform .18s,border-color .18s,box-shadow .18s;}
+      .gp .las-case-card:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 24px 44px -30px rgba(11,166,108,.55);}
+      .gp .las-case-metric{font-family:'Outfit';font-weight:700;font-size:32px;color:var(--green-dark);letter-spacing:-0.02em;}
+      .gp .las-case-card h3{font-size:19px;margin:0;}
+      .gp .las-case-card p{font-size:14.5px;color:var(--muted);margin:0;flex:1;}
+      @media(max-width:920px){
+        .gp .ladder-grid,.gp .las-case-grid{grid-template-columns:1fr;}
+        .gp .results-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+        .gp .result-metric{font-size:32px;}
+      }
       .gp .bp-cancel-note{margin-top:18px;background:#fff7e6;border:1px solid #e8c56f;border-radius:14px;padding:14px 16px;color:#6d5412;font-size:15px;}
       @media(max-width:920px){
         .gp .gp-hero .wrap,.gp .authority .wrap,.gp .process .wrap,.gp .diff .wrap,.gp .shero-grid,.gp .split-copy,.gp .proof-layout,.gp .person-grid,.gp .llm-hero-grid,.gp .llm-video-block,.gp .bp-hero-grid,.gp .bp-fit-strip .wrap,.gp .bp-offer-grid,.gp .bp-why-grid,.gp .bp-pricing-grid,.gp .bp-intake-grid{grid-template-columns:1fr;}
