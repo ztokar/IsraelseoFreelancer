@@ -803,6 +803,25 @@
       .gp .bp-intake-card{box-shadow:0 26px 64px -46px rgba(15,17,21,.45);}
       .gp .bp-intake-fields{display:grid;grid-template-columns:1fr;gap:15px;}
 
+      /* Target Finder hero proof (crisp, natural-size screenshots) */
+      .gp .tf-hero-proof{display:grid;gap:12px;}
+      .gp .tf-proof{display:grid;gap:14px;}
+      .gp .tf-proof figure{margin:0;background:#fff;border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:0 26px 64px -46px rgba(15,17,21,.45);}
+      .gp .tf-proof img{display:block;width:100%;height:auto;background:var(--offwhite);}
+      .gp .tf-proof figcaption{font-size:13px;color:var(--muted);padding:11px 14px;border-top:1px solid var(--hair);}
+
+      /* Target Finder "why broad fails" contrast */
+      .gp .tf-contrast{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+      .gp .tf-contrast article{background:#fff;border:1px solid var(--hair);border-radius:18px;padding:26px 26px;}
+      .gp .tf-contrast .tf-tag{font-family:'Outfit';font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+      .gp .tf-lose .tf-tag{color:#b4443a;}
+      .gp .tf-win{border-color:var(--green);background:var(--green-tint);}
+      .gp .tf-win .tf-tag{color:var(--green-dark);}
+      .gp .tf-contrast h3{font-size:22px;margin:9px 0 9px;}
+      .gp .tf-contrast p{font-size:15px;color:var(--ink-soft);margin:0;line-height:1.6;}
+      .gp .tf-note{max-width:62ch;margin:26px 0 0;font-size:16.5px;color:var(--ink-soft);}
+      @media(max-width:920px){ .gp .tf-contrast{grid-template-columns:1fr;} }
+
       /* Offer ladder (shared across the 3 funnel tiers) */
       .gp .offer-ladder{background:var(--offwhite);padding:64px 0;}
       .gp .ladder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}

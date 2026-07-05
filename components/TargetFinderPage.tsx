@@ -110,30 +110,46 @@ export const TargetFinderPage: React.FC = () => {
               </div>
               <p className="bp-cta-note">Delivered in about 2 business days. No tax. Honest refund if it is not a fit.</p>
             </div>
-            <div className="bp-proof-stack" aria-label="Real proof screenshot">
-              <figure className="bp-proof-main">
-                <img src="/images/proof-google-lead.jpg" alt="Inbound lead message from a client who found a provider on Google" />
-                <figcaption>A real inbound lead that found the business on Google.</figcaption>
-              </figure>
+            <div className="tf-hero-proof" aria-label="Real proof screenshots">
+              <div className="tf-proof">
+                <figure>
+                  <img src="/images/proof-google-lead.jpg" alt="Inbound lead message from a client who found a provider on Google" />
+                  <figcaption>A real inbound lead that found the business on Google.</figcaption>
+                </figure>
+                <figure>
+                  <img src="/images/proof-client-praise.jpg" alt="Client message praising a recent SEO result" />
+                  <figcaption>A real client reaction to a recent result.</figcaption>
+                </figure>
+              </div>
               <div className="bp-proof-notes">
                 <span><CheckCircle2 size={16} strokeWidth={2.2} />One clear target</span>
                 <span><CheckCircle2 size={16} strokeWidth={2.2} />Plain English</span>
-                <span><CheckCircle2 size={16} strokeWidth={2.2} />No jargon, no fluff</span>
+                <span><CheckCircle2 size={16} strokeWidth={2.2} />No jargon</span>
               </div>
             </div>
           </div>
         </section>
 
         <section className="divider">
-          <div className="wrap split-copy">
-            <div>
+          <div className="wrap">
+            <div className="sec-head">
               <span className="eyebrow">Why broad targeting fails</span>
-              <h2>"ABA therapy" is a fight you lose. "In-home ABA in Denver for toddlers" is one you win.</h2>
+              <h2>Stop fighting for "ABA therapy." Win "in-home ABA in Denver for toddlers" instead.</h2>
+              <p>Broad searches are crowded, expensive, and full of people who are not ready to buy. The leads never come, and the money feels wasted.</p>
             </div>
-            <div className="copy-stack">
-              <p className="lead-copy">Broad searches are crowded, expensive, and full of people who are not ready to buy. So the leads never come, and the money feels wasted.</p>
-              <p>A specific, bottom-of-funnel search has less competition and reaches people who already want your exact service in your exact area. That is the search worth building around. This $20 finds it for you before you spend a cent on pages or ads.</p>
+            <div className="tf-contrast">
+              <article className="tf-lose">
+                <span className="tf-tag">Too broad</span>
+                <h3>"ABA therapy"</h3>
+                <p>Crowded, expensive, and mostly people who are not ready to buy.</p>
+              </article>
+              <article className="tf-win">
+                <span className="tf-tag">Just right</span>
+                <h3>"In-home ABA in Denver for toddlers"</h3>
+                <p>Less competition, and it reaches people who already want your exact service in your area.</p>
+              </article>
             </div>
+            <p className="tf-note">This $20 finds that one search for you, before you spend a cent on pages or ads.</p>
           </div>
         </section>
 
