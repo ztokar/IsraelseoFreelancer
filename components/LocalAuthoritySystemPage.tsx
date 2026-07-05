@@ -21,23 +21,30 @@ const DESC =
   'Done-for-you local lead generation: I find the targets, build the money pages, add the supporting content, and grow your brand across Google, Reddit, YouTube, and AI search so ready-to-buy clients find and pick you.';
 
 const CALENDLY = 'https://calendly.com/zack-tokar/consultation';
+const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U';
 
-const trackBookIntent = (source: string) => {
+const track = (event: string, source: string) => {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'authority_system_book_click',
-    offer: 'Local Authority System',
-    source,
-  });
+  window.dataLayer.push({ event, offer: 'Local Authority System', value: 2000, currency: 'USD', source });
 };
+
+const StartButton: React.FC<{ source: string; children?: React.ReactNode; className?: string }> = ({
+  source,
+  children = 'Get started - $2,000',
+  className = 'btn btn-primary',
+}) => (
+  <a className={className} href={STRIPE_PAYMENT_LINK} target="_blank" rel="noopener noreferrer" onClick={() => track('authority_system_checkout_click', source)}>
+    {children} <ArrowUpRight size={17} strokeWidth={2} />
+  </a>
+);
 
 const BookButton: React.FC<{ source: string; children?: React.ReactNode; className?: string }> = ({
   source,
-  children = 'Book a fit call',
-  className = 'btn btn-primary',
+  children = 'Questions first? Book a call',
+  className = 'btn btn-ghost',
 }) => (
-  <a className={className} href={CALENDLY} target="_blank" rel="noopener noreferrer" onClick={() => trackBookIntent(source)}>
+  <a className={className} href={CALENDLY} target="_blank" rel="noopener noreferrer" onClick={() => track('authority_system_book_click', source)}>
     {children} <ArrowUpRight size={17} strokeWidth={2} />
   </a>
 );
@@ -81,7 +88,7 @@ const fits = [
 ];
 
 const faqs = [
-  { q: 'How much does it cost?', a: 'It depends on your market and how much you want built. We scope it on a short call and I quote a flat, honest number. No monthly fluff, no long contracts.' },
+  { q: 'How much does it cost?', a: 'A flat $2,000 to start the full build, with no monthly retainer and no long contract. Larger multi-location builds are quoted up from there. If you want to talk it through first, book a quick call.' },
   { q: 'Do you guarantee rankings?', a: 'No. Nobody honest can. What I promise is specific, bottom-of-funnel work aimed at real leads, and clear proof of what I did and why.' },
   { q: 'Is this another agency retainer?', a: 'No. I am a one-person, AI-powered operation. That means lower cost, direct communication, and work built around your actual business, not a pile of Fiverr blog posts.' },
   { q: 'Will this create a lot of work for me?', a: 'No. I pull what I need on one short call, then I execute. You should not get marketing homework.' },
@@ -123,10 +130,10 @@ export const LocalAuthoritySystemPage: React.FC = () => {
                 <span>ChatGPT & AI search</span>
               </div>
               <div className="hero-actions">
-                <BookButton source="hero" />
+                <StartButton source="hero" />
                 <NavLink className="btn btn-ghost" to="/case-studies">See the results</NavLink>
               </div>
-              <p className="bp-cta-note">A short, no-pressure call. If it is not a fit, I will say so.</p>
+              <p className="bp-cta-note">$2,000 flat to start. No monthly retainer, no long contract. <a href={CALENDLY} target="_blank" rel="noopener noreferrer">Questions first? Book a call.</a></p>
             </div>
             <div className="bp-proof-stack" aria-label="Real proof screenshot">
               <figure className="bp-proof-main">
@@ -260,9 +267,9 @@ export const LocalAuthoritySystemPage: React.FC = () => {
         <section className="bp-pricing" id="book">
           <div className="wrap bp-pricing-grid">
             <div>
-              <span className="eyebrow">Custom scope</span>
-              <h2>Priced on a call.</h2>
-              <p>Every business needs a different build, so I quote a flat, honest number after a short call. No monthly retainer trap, no long contract.</p>
+              <span className="eyebrow">One flat price</span>
+              <h2>$2,000 to start</h2>
+              <p>A flat, honest price for the full build. No monthly retainer trap, no long contract. Larger multi-location builds are quoted up from there.</p>
             </div>
             <div className="bp-price-card">
               <ul>
@@ -270,7 +277,7 @@ export const LocalAuthoritySystemPage: React.FC = () => {
                   <li key={item}><CheckCircle2 size={17} strokeWidth={2.2} />{item}</li>
                 ))}
               </ul>
-              <BookButton source="pricing" />
+              <StartButton source="pricing" />
               <p className="bp-cta-note">Not ready for the full build? Start with the <NavLink to="/find-my-target">$20 Target Finder</NavLink>.</p>
             </div>
           </div>
@@ -297,10 +304,11 @@ export const LocalAuthoritySystemPage: React.FC = () => {
 
         <section className="gp-cta contact-cta" id="contact">
           <div className="wrap">
-            <span className="eyebrow">Let's talk</span>
-            <h2>Book a short, no-pressure fit call.</h2>
-            <p>Tell me about your business and I will tell you honestly whether I can help, and what it would take.</p>
+            <span className="eyebrow">Ready when you are</span>
+            <h2>Let's build your local lead system.</h2>
+            <p>Get started for a flat $2,000, or book a quick call first if you want to talk it through. Either way, I will be honest about what will actually help.</p>
             <div className="hero-actions" style={{ justifyContent: 'center', marginTop: '26px' }}>
+              <StartButton source="footer-cta" />
               <BookButton source="footer-cta" />
             </div>
           </div>

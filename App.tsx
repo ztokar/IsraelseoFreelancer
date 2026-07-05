@@ -34,6 +34,7 @@ import { BlueprintIntakePage } from './components/BlueprintIntakePage';
 import { TargetFinderPage } from './components/TargetFinderPage';
 import { TargetIntakePage } from './components/TargetIntakePage';
 import { LocalAuthoritySystemPage } from './components/LocalAuthoritySystemPage';
+import { SystemIntakePage } from './components/SystemIntakePage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -87,6 +88,7 @@ export const routes: RouteRecord[] = [
       { path: 'find-my-target', element: <TargetFinderPage /> },
       { path: 'target-intake', element: <TargetIntakePage /> },
       { path: 'local-authority-system', element: <LocalAuthoritySystemPage /> },
+      { path: 'system-intake', element: <SystemIntakePage /> },
 
       // Case studies
       { path: 'case-studies', element: <CaseStudiesHub /> },

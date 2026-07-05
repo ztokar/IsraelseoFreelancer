@@ -34,7 +34,7 @@ const RUNGS: Rung[] = [
     key: 'system',
     tag: 'Done for you',
     name: 'Local Authority System',
-    price: "Let's talk",
+    price: '$2,000',
     line: 'I build the whole lead system for you.',
     path: '/local-authority-system',
   },
