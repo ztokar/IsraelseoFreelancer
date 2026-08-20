@@ -54,7 +54,7 @@ const thumbnailData: Record<string, {
   writing: {
     headline: 'SEO CONTENT',
     main: 'WRITING',
-    bullets: ['Service pages', 'BOFU content', 'Content refreshes', 'Search intent'],
+    bullets: ['Service pages', 'Buyer-intent content', 'Content refreshes', 'Search intent'],
     color: 'text-sky-300',
     glow: 'bg-sky-400/20',
     bars: [28, 42, 58],

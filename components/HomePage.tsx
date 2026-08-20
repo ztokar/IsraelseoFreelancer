@@ -4,43 +4,18 @@ import { CASE_STUDIES, PROOF_ITEMS, HOME_TESTIMONIALS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 
-const TITLE = 'SEO Expert in Israel for US Markets | Google, AI Search and Reddit | Zechariah Tokar';
-const DESC = 'Work directly with Zechariah Tokar, an SEO expert in Israel helping companies targeting US and English-speaking markets get found across Google, AI answers, and Reddit.';
+const TITLE = 'SEO Expert in Israel for Google, AI Search and Reddit';
+const DESC = 'Work directly with Zechariah Tokar to get found across Google, AI answers and Reddit. Senior SEO for companies selling into English-speaking markets.';
 
+// Ordered by where buyers actually decide now: AI answers and Reddit first,
+// then classic search, then the audience-specific pages.
 const services = [
   {
-    title: 'SEO Services',
-    body: 'Technical fixes, audits, monthly campaigns, and content built to rank and convert.',
-    links: [
-      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
-      { label: 'Consulting', path: '/seoconsulting' },
-      { label: 'Content', path: '/content-marketing-for-seo' },
-    ],
-    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>,
-  },
-  {
-    title: 'B2B & SaaS SEO',
-    body: 'Reach decision-makers while they compare vendors, with pages built around buyer intent.',
-    links: [
-      { label: 'B2B SEO', path: '/b2b-seo-israel' },
-      { label: 'SEO Consulting', path: '/seoconsulting' },
-    ],
-    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>,
-  },
-  {
-    title: 'Local & Service SEO',
-    body: 'Win the local map pack and show up when nearby buyers search for help, including lawyers and clinics.',
-    links: [
-      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
-      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
-    ],
-    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>,
-  },
-  {
     title: 'AI Search Visibility',
-    body: 'Show up and get recommended inside ChatGPT, Perplexity, Gemini, and Google AI Overviews.',
+    body: 'Get named and recommended inside ChatGPT, Perplexity, Gemini, and Google AI Overviews.',
     links: [
       { label: 'AI SEO', path: '/ai-seo-consultant-israel' },
+      { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services' },
       { label: 'ChatGPT citations', path: '/how-to-get-cited-by-chatgpt' },
       { label: 'AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
     ],
@@ -53,17 +28,48 @@ const services = [
       { label: 'Reddit Marketing', path: '/reddit-marketing-services' },
       { label: 'Reddit SEO', path: '/reddit-seo' },
       { label: 'Posting Service', path: '/reddit-posting-service' },
+      { label: 'Get recommended', path: '/how-to-get-recommended-on-reddit' },
     ],
     icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1121 11.5z"/></svg>,
   },
   {
-    title: 'For International Brands',
-    body: 'Israeli startups and global companies entering the US, served by a native US-English operator.',
+    title: 'SEO Services',
+    body: 'Technical fixes, audits, monthly campaigns, and content built to rank and convert.',
     links: [
       { label: 'Freelance SEO', path: '/freelance-seo-israel' },
-      { label: 'B2B SEO', path: '/b2b-seo-israel' },
+      { label: 'Consulting', path: '/seoconsulting' },
+      { label: 'Technical audit', path: '/technical-seo-audit' },
+      { label: 'Content', path: '/content-marketing-for-seo' },
     ],
-    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>,
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>,
+  },
+  {
+    title: 'B2B & SaaS SEO',
+    body: 'Reach decision-makers while they compare vendors, with pages built around buyer intent.',
+    links: [
+      { label: 'B2B SEO', path: '/b2b-seo-israel' },
+      { label: 'SaaS SEO', path: '/saas-seo' },
+      { label: 'Cybersecurity SEO', path: '/cybersecurity-seo' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>,
+  },
+  {
+    title: 'Local & Service SEO',
+    body: 'Win the local map pack and show up when nearby buyers search for help, including clinics and practices.',
+    links: [
+      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
+      { label: 'Local citations', path: '/local-citations-directories' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>,
+  },
+  {
+    title: 'Ecommerce & Shopping',
+    body: 'Collection and product pages that rank, plus a Shopping feed that does not quietly break.',
+    links: [
+      { label: 'Shopify SEO', path: '/shopify-seo' },
+      { label: 'Merchant Center', path: '/google-merchant-center-seo' },
+    ],
+    icon: <svg fill="none" strokeWidth={1.8} viewBox="0 0 24 24"><path d="M3 6h18l-1.6 11.2a2 2 0 01-2 1.8H6.6a2 2 0 01-2-1.8L3 6z"/><path d="M8 6V4.5a4 4 0 018 0V6"/></svg>,
   },
 ];
 
@@ -82,8 +88,8 @@ const caseSlug: Record<string, string> = {
 
 const blog = [
   { cat: 'AI Search', read: '8 min read', title: 'GEO: how to get cited by ChatGPT and Perplexity', path: '/blog/geo-ai-generative-engine-optimization', image: '/images/blog-ai-search-2026.jpg' },
+  { cat: 'AI Search', read: '6 min read', title: 'What changed in AI search in 2026', path: '/blog/ai-search-2026-updates', image: '/images/blog-saas-seo.jpg' },
   { cat: 'B2B SEO', read: '7 min read', title: 'Why Israeli B2B companies struggle with SEO', path: '/blog/why-israeli-b2b-fail-seo', image: '/images/blog-why-israeli-b2b-fail-seo.jpg' },
-  { cat: 'AI Search', read: '6 min read', title: 'What changed in AI search in 2026', path: '/blog/ai-search-2026-updates', image: '/images/blog-ai-search-2026.jpg' },
 ];
 
 export const HomePage: React.FC = () => {
@@ -111,11 +117,11 @@ export const HomePage: React.FC = () => {
               <div className="hero-trust">
                 <span><strong>40+</strong> companies</span><span className="sep" />
                 <span><strong>405k</strong> views on one Reddit post</span><span className="sep" />
-                <span><strong>5.0</strong> client rating</span>
+                <span><strong>9</strong> LinkedIn recommendations</span>
               </div>
             </div>
             <div className="hero-art">
-              <img src="/images/redesign-hero.png" alt="Abstract visualization of search rankings rising with connected data nodes" />
+              <img src="/images/redesign-hero.jpg" alt="Abstract visualization of search rankings rising with connected data nodes" />
             </div>
           </div>
         </section>
@@ -278,12 +284,15 @@ export const HomePage: React.FC = () => {
                 <figure className="pf" key={p.img}>
                   <div className="proof-card-top">
                     <span>{p.label}</span>
-                    <strong>{p.caption_b}</strong>
+                    <strong>{p.metric}</strong>
                   </div>
-                  <figcaption>{p.caption_pre}<b>{p.caption_b}</b>{p.caption_post}</figcaption>
                   <div className="proof-thumb">
-                    <img src={p.img} alt={p.alt} />
+                    <img src={p.img} alt={p.alt} loading="lazy" />
                   </div>
+                  <figcaption>
+                    {p.caption_pre}<b>{p.caption_b}</b>{p.caption_post}
+                    <span className="pf-src">{p.source}</span>
+                  </figcaption>
                 </figure>
               ))}
             </div>

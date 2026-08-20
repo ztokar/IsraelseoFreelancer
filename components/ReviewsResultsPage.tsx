@@ -4,6 +4,8 @@ import { LINKEDIN_FEATURED_RESULTS, REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { SocialIconLinks } from './SocialIconLinks';
 import { ContactCTA } from './ContactCTA';
+import { LinkedInBadge } from './LinkedInBadge';
+import { VerifiedOnLinkedIn } from './VerifiedOnLinkedIn';
 
 export const ReviewsResultsPage: React.FC = () => {
   useEffect(() => {
@@ -57,6 +59,7 @@ export const ReviewsResultsPage: React.FC = () => {
                     </div>
                   </div>
                   <blockquote>"{review.quote}"</blockquote>
+                  {review.linkedinVerified && <VerifiedOnLinkedIn />}
                 </article>
               ))}
             </div>
@@ -91,10 +94,11 @@ export const ReviewsResultsPage: React.FC = () => {
               <h2>Check my public profiles.</h2>
             </div>
             <div className="copy-stack">
-              <p className="lead-copy">You can see LinkedIn, YouTube, Reddit, X, and email before you decide whether to reach out.</p>
+              <p className="lead-copy">You can see LinkedIn, YouTube, Reddit, X, and email before you decide whether to reach out. The recommendations above are public on my LinkedIn profile, so you can read them there in full rather than taking my word for it.</p>
               <div className="profile-links-box">
                 <SocialIconLinks />
               </div>
+              <LinkedInBadge />
             </div>
           </div>
         </section>

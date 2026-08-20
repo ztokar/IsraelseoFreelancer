@@ -26,7 +26,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   // ===== AI-SEO SILO =====
   {
     slug: 'how-to-get-cited-by-chatgpt',
-    seoTitle: 'How to Get Cited by ChatGPT: The Content Patterns LLMs Quote Most, Why Your Pages Get Ignored, and How to Earn AI Citations | AI Search Visibility',
+    seoTitle: 'How to Get Cited by ChatGPT: What It Actually Quotes',
     metaDescription: 'To get cited by ChatGPT, become a clear, well-cited source that answers the exact question. Here is what AI models quote, why pages get ignored, and how to earn citations.',
     eyebrow: 'AI Search Visibility',
     h1: 'How to Get Cited by ChatGPT',
@@ -68,7 +68,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-rank-in-google-ai-overviews',
-    seoTitle: 'How to Rank in Google AI Overviews: What Triggers AI Overview Inclusion, the SEO Signals That Carry Over, and How to Earn Placement | AI Visibility',
+    seoTitle: 'How to Rank in Google AI Overviews (It Is Mostly Normal SEO)',
     metaDescription: 'To rank in Google AI Overviews, win the normal organic results and answer the question clearly. Here is what triggers inclusion and the signals that carry over from SEO.',
     eyebrow: 'AI Search Visibility',
     h1: "How to Rank in Google's AI Overviews",
@@ -112,7 +112,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'is-geo-the-new-seo',
-    seoTitle: 'Is GEO the New SEO? Generative Engine Optimization vs Traditional SEO, What Actually Changed, What Is Hype, and Whether You Need a GEO Specialist | AI Search',
+    seoTitle: 'Is GEO the New SEO? An Honest Answer',
     metaDescription: 'Is GEO the new SEO? Mostly no. GEO is SEO pointed at AI answers. Here is what actually changed, what is hype, and whether you need a separate GEO specialist.',
     eyebrow: 'AI Search Visibility',
     h1: 'Is GEO the New SEO?',
@@ -160,7 +160,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'what-is-generative-engine-optimization',
-    seoTitle: 'What Is Generative Engine Optimization (GEO)? A Plain-English Definition, How GEO Differs From SEO and AEO, and How Brands Get Surfaced by AI | GEO Explained',
+    seoTitle: 'What Is Generative Engine Optimization (GEO)?',
     metaDescription: 'Generative engine optimization (GEO) is the work of getting your brand surfaced and cited by AI tools like ChatGPT and Google AI Overviews. Here is a plain-English definition.',
     eyebrow: 'AI Search Visibility',
     h1: 'What Is Generative Engine Optimization (GEO)?',
@@ -205,7 +205,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-get-your-brand-mentioned-in-chatgpt',
-    seoTitle: 'How to Get Your Brand Mentioned in ChatGPT: Why Some Brands Get Recommended and Others Get Ignored, Plus the Signals That Make AI Name You | AI Visibility',
+    seoTitle: 'How to Get Your Brand Mentioned in ChatGPT',
     metaDescription: 'To get your brand mentioned in ChatGPT, you need to be talked about and trusted across the web, not just on your own site. Here is why some brands get named and others get ignored.',
     eyebrow: 'AI Search Visibility',
     h1: 'How to Get Your Brand Mentioned in ChatGPT',
@@ -249,7 +249,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'what-is-answer-engine-optimization',
-    seoTitle: 'What Is Answer Engine Optimization (AEO)? How AEO Works, How It Differs From GEO and SEO, and What It Takes to Win Answer-Box and AI Citations | AEO Guide',
+    seoTitle: 'What Is Answer Engine Optimization (AEO)? A Plain Explanation',
     metaDescription: 'Answer engine optimization (AEO) is optimizing to win direct answers, like featured snippets and AI answers. Here is how it works and how it differs from GEO and SEO.',
     eyebrow: 'AI Search Visibility',
     h1: 'What Is Answer Engine Optimization (AEO)?',
@@ -289,7 +289,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-track-ai-search-visibility',
-    seoTitle: 'How to Track AI Search Visibility: Measuring Whether ChatGPT, Perplexity, and Google AI Overviews Cite Your Brand, Plus What the Tools Miss | AI SEO Consultant',
+    seoTitle: 'How to Track AI Search Visibility (Without Guessing)',
     metaDescription: 'To track AI search visibility, test the prompts your buyers use and log how often each AI tool names you. Here is a simple method plus what the tracking tools miss.',
     eyebrow: 'AI Search Visibility',
     h1: "How to Track Your Brand's Visibility in AI Search",
@@ -329,7 +329,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   // ===== REDDIT SILO =====
   {
     slug: 'how-to-promote-on-reddit-without-getting-banned',
-    seoTitle: 'How to Promote on Reddit Without Getting Banned: The Rules Mods Actually Enforce, How to Build Karma and Credibility, and What Gets Posts Removed | Reddit Marketing',
+    seoTitle: 'How to Promote on Reddit Without Getting Banned',
     metaDescription: 'To promote on Reddit without getting banned, help first and follow each subreddit\'s rules. Here is what mods actually enforce, how to build credibility, and what gets posts removed.',
     eyebrow: 'Reddit Marketing',
     h1: 'How to Promote on Reddit Without Getting Banned',
@@ -367,7 +367,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-use-reddit-for-seo',
-    seoTitle: 'How to Use Reddit for SEO: Whether Reddit Links Help Rankings, How Reddit Threads Win Google Visibility, and How to Use It Without Getting Flagged | Reddit SEO',
+    seoTitle: 'How to Use Reddit for SEO (Do the Links Even Help?)',
     metaDescription: 'Reddit helps SEO mainly by ranking in Google and feeding AI answers, not through links. Here is how to use Reddit threads for visibility without getting flagged.',
     eyebrow: 'Reddit SEO',
     h1: 'How to Use Reddit for SEO',
@@ -405,7 +405,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'why-does-reddit-rank-so-high-on-google',
-    seoTitle: 'Why Does Reddit Rank So High on Google? The Partnership, the Algorithm Signals, and What It Means If You Want Your Brand Surfaced in Reddit Results | Reddit SEO',
+    seoTitle: 'Why Does Reddit Rank So High on Google?',
     metaDescription: 'Reddit ranks so high on Google because of a content partnership plus strong user signals and real human answers. Here is why, and what it means for your brand.',
     eyebrow: 'Reddit SEO',
     h1: 'Why Does Reddit Rank So High on Google?',
@@ -439,6 +439,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
     related: [
       { label: 'How to use Reddit for SEO', path: '/how-to-use-reddit-for-seo' },
       { label: 'How to rank a Reddit post on Google', path: '/how-to-rank-a-reddit-post-on-google' },
+      { label: "How Reddit's Google deal changed SEO", path: '/reddit-google-deal-seo' },
       { label: 'Reddit SEO services', path: '/reddit-seo' },
     ],
     moneyPath: '/reddit-seo',
@@ -446,7 +447,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-rank-a-reddit-post-on-google',
-    seoTitle: 'How to Rank a Reddit Post on Google: Title and Subreddit Choices That Win the Discussions Results, How Upvotes Factor In, and What Gets Threads Buried | Reddit SEO',
+    seoTitle: 'How to Rank a Reddit Post on Google',
     metaDescription: 'To rank a Reddit post on Google, match the title to the exact search, post in an active relevant subreddit, and earn real engagement. Here is what wins and what buries a thread.',
     eyebrow: 'Reddit SEO',
     h1: 'How to Rank a Reddit Post on Google',
@@ -484,7 +485,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
   },
   {
     slug: 'how-to-market-on-reddit',
-    seoTitle: 'How to Market on Reddit: Building Trust Before You Promote, Picking the Right Subreddits, and the Mistakes That Get Brands Banned or Downvoted | Reddit Marketing',
+    seoTitle: 'How to Market on Reddit Without Getting Downvoted',
     metaDescription: 'To market on Reddit, build trust before you promote, pick the right subreddits, and lead with help. Here is a simple approach and the mistakes that get brands banned.',
     eyebrow: 'Reddit Marketing',
     h1: 'How to Market on Reddit',
@@ -516,6 +517,388 @@ export const GUIDE_PAGES: GuidePageData[] = [
       { label: 'Promote on Reddit without getting banned', path: '/how-to-promote-on-reddit-without-getting-banned' },
       { label: 'How to use Reddit for SEO', path: '/how-to-use-reddit-for-seo' },
       { label: 'Reddit marketing services', path: '/reddit-marketing-services' },
+    ],
+    moneyPath: '/reddit-marketing-services',
+    moneyLabel: 'Reddit Marketing',
+  },
+
+  // ===== AI-SEO SILO, BATCH 2 (built from Search Console demand, Aug 2026) =====
+  {
+    slug: 'track-brand-mentions-in-chatgpt',
+    seoTitle: 'How to Track Brand Mentions in ChatGPT (Free Method and Tools)',
+    metaDescription: 'Run the same buyer questions every month and log when ChatGPT names you. The free method, what paid tools add, and the one thing none of them tell you.',
+    eyebrow: 'AI Search Visibility',
+    h1: 'How to Track Brand Mentions in ChatGPT',
+    quickAnswer: 'You track brand mentions in ChatGPT by running the same buyer questions every month and writing down when it names you. The method matters more than the tool. Same prompts, same schedule, or the numbers drift and tell you nothing.',
+    toc: [
+      { id: 'free', label: 'The free method' },
+      { id: 'once', label: 'Why one check proves nothing' },
+      { id: 'tools', label: 'What paid tools add' },
+      { id: 'miss', label: 'What none of them tell you' },
+    ],
+    sections: [
+      {
+        id: 'free',
+        h2: 'The free method takes about 20 minutes a month',
+        body: [
+          'Write down the ten questions a buyer would actually type before choosing someone in your category. Not your brand name. The questions people ask when they do not know you yet.',
+          'Ask ChatGPT each one in a fresh chat with memory off. Log what comes back in a simple sheet.',
+        ],
+        table: {
+          head: ['Column', 'What you record', 'Why it matters'],
+          rows: [
+            ['Prompt', 'The exact question, word for word', 'Changing the wording changes the answer, so freeze it'],
+            ['Named?', 'Yes or no for your brand', 'This is your real visibility number'],
+            ['Position', 'First, middle, or last in the list', 'Being named third is not the same as being named first'],
+            ['Competitors named', 'Every other brand it lists', 'Tells you who the model already trusts'],
+            ['Sources cited', 'Any links the answer shows', 'This is where the answer actually came from'],
+            ['Date', 'The day you ran it', 'Lets you see movement instead of guessing'],
+          ],
+        },
+      },
+      {
+        id: 'once',
+        h2: 'Why checking once proves nothing',
+        body: [
+          'ChatGPT does not give everyone the same answer. The same prompt can name you one time and skip you the next.',
+          'So run each prompt three times and record how many times out of three you got named. A brand named twice out of three is in a very different position from one named once out of nine.',
+          'Turn off chat memory and personalization before you test. Otherwise you are measuring what ChatGPT knows about you, not what it tells a stranger.',
+        ],
+      },
+      {
+        id: 'tools',
+        h2: 'What the paid tools add',
+        body: [
+          'Tools like Profound, Peec AI, Otterly, Ahrefs Brand Radar, and the AI tracking now built into Semrush and SE Ranking run those prompts for you, across several assistants, on a schedule.',
+          'What you are paying for is scale and consistency. They run hundreds of prompts across ChatGPT, Perplexity, Gemini and Google AI Overviews without you sitting there.',
+        ],
+        bullets: [
+          'Worth it when you track dozens of prompts or several markets.',
+          'Worth it when someone else needs to see the reporting.',
+          'Not worth it yet if you have ten prompts and no one has fixed the pages.',
+        ],
+      },
+      {
+        id: 'miss',
+        h2: 'What none of the tools tell you',
+        body: [
+          'Every one of these tools measures the symptom. They tell you that you are missing. They do not tell you why.',
+          'The why is almost always the same. The model has not seen your brand described by other people in the words buyers use. That is a job you do off your own site, and it is covered in [why ChatGPT does not mention your brand](/why-chatgpt-doesnt-mention-your-brand).',
+          'Be careful with the traffic numbers some of these dashboards report too. Assistant referral data is thin and often estimated. Treat the mention rate as the real signal and the traffic figure as a rough guide.',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'How often should I check?', a: 'Monthly is enough for most brands. Weekly only if you are actively working on the problem and want to see whether the work moved anything.' },
+      { q: 'Does ChatGPT show everyone the same answer?', a: 'No. Answers vary between runs and between users, and memory and personalization change them further. That is why you run each prompt several times and record how often you were named.' },
+      { q: 'Do I need a paid tool to start?', a: 'No. A sheet and twenty minutes gives you a real baseline. Move to a tool when the prompt list gets too long to run by hand, not before.' },
+      { q: 'What is a good mention rate?', a: 'There is no published benchmark worth trusting, so compare against yourself and against the competitors your log keeps naming. Movement over months is the number that means something.' },
+      { q: 'Can you run this tracking for me?', a: 'Yes. I set up the prompt list, run the baseline, and then work on the reason your brand is missing. See [AI search visibility](/ai-seo-consultant-israel).' },
+    ],
+    related: [
+      { label: 'AI search visibility tools', path: '/ai-search-visibility-tools' },
+      { label: 'Why ChatGPT does not mention your brand', path: '/why-chatgpt-doesnt-mention-your-brand' },
+      { label: 'How to get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'Track AI search visibility', path: '/how-to-track-ai-search-visibility' },
+    ],
+    moneyPath: '/ai-seo-consultant-israel',
+    moneyLabel: 'AI Search Visibility',
+  },
+  {
+    slug: 'ai-search-visibility-tools',
+    seoTitle: 'AI Search Visibility Tools: What They Track and What They Miss',
+    metaDescription: 'What AI visibility tools measure, which ones people actually use, and when a free spreadsheet does the same job just as well.',
+    eyebrow: 'AI Search Visibility',
+    h1: 'AI Search Visibility Tools',
+    quickAnswer: 'AI search visibility tools tell you whether ChatGPT, Perplexity, Gemini and Google AI Overviews name your brand. They are good at measuring. None of them fix the reason you are missing, and for a short prompt list a free spreadsheet gives you the same answer.',
+    toc: [
+      { id: 'measure', label: 'What they measure' },
+      { id: 'which', label: 'Which tools people use' },
+      { id: 'vs', label: 'Tool vs free sheet' },
+      { id: 'gap', label: 'The gap every tool has' },
+    ],
+    sections: [
+      {
+        id: 'measure',
+        h2: 'What these tools actually measure',
+        body: [
+          'They ask AI assistants a list of questions on repeat, then count what comes back. Underneath the dashboards it is the same five numbers.',
+        ],
+        bullets: [
+          'Mention rate: how often your brand gets named at all.',
+          'Share of voice: how often you get named compared with competitors.',
+          'Citations: which pages the answer linked to or leaned on.',
+          'Sentiment: whether you were described well or badly.',
+          'Prompt coverage: which buyer questions you show up for and which you never do.',
+        ],
+      },
+      {
+        id: 'which',
+        h2: 'Which tools people actually use',
+        body: [
+          'Two groups. Dedicated platforms built only for this, and established SEO suites that added AI tracking to what they already do.',
+          'The dedicated ones include Profound, Peec AI and Otterly. The suites include Ahrefs Brand Radar, Semrush and SE Ranking.',
+          'I am not going to rank them for you, because the pricing and features move every few weeks and any list I publish today is stale by the time you read it. Run a trial against your own prompt list and see which one reports the assistants your buyers actually use.',
+        ],
+      },
+      {
+        id: 'vs',
+        h2: 'Tool or free sheet',
+        table: {
+          head: ['', 'Free prompt sheet', 'Paid tool'],
+          rows: [
+            ['Setup time', 'About an hour', 'An afternoon'],
+            ['Cost', 'Nothing', 'A monthly subscription'],
+            ['Prompts you can track', 'Ten to twenty before it hurts', 'Hundreds'],
+            ['Assistants covered', 'Whichever you open yourself', 'Several at once, automatically'],
+            ['Repeat runs', 'You have to remember', 'Scheduled'],
+            ['Tells you why you are missing', 'No', 'No'],
+          ],
+        },
+        body: [
+          'The last row is the one that matters. Both options measure. Neither fixes.',
+        ],
+      },
+      {
+        id: 'gap',
+        h2: 'The gap every one of these tools has',
+        body: [
+          'A tool can tell you that ChatGPT names three competitors and not you. It cannot tell you that the reason is a category page nobody links to and a brand nobody discusses.',
+          'That diagnosis comes from looking at where the cited sources came from. When the same review sites, roundups and Reddit threads keep showing up in the citations, those are the places deciding the answer.',
+          'That is the work I do on [AI search visibility](/ai-seo-consultant-israel): find who the model is listening to, then get the brand properly represented there. For ZStander, that meant ChatGPT naming them first when asked where to buy lucite shtenders in the US.',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Are these tools accurate?', a: 'They are directionally accurate on mention rate, which is the number worth watching. Be more careful with the referral-traffic figures, which are often estimated from thin data.' },
+      { q: 'Which assistant should I track first?', a: 'The one your buyers use. For most businesses selling to consumers or small teams that is ChatGPT, and Google AI Overviews matter because they sit on searches you may already rank for.' },
+      { q: 'Do I need a tool before doing any work?', a: 'You need a baseline, not a subscription. Run the prompts by hand once, write down where you stand, then start fixing. See [how to track brand mentions in ChatGPT](/track-brand-mentions-in-chatgpt).' },
+      { q: 'Will a tool improve my visibility?', a: 'No. A tool reports. Visibility changes when your pages answer the question cleanly and other trusted sites describe your brand in the language buyers use.' },
+    ],
+    related: [
+      { label: 'How to track brand mentions in ChatGPT', path: '/track-brand-mentions-in-chatgpt' },
+      { label: 'Why ChatGPT does not mention your brand', path: '/why-chatgpt-doesnt-mention-your-brand' },
+      { label: 'Track AI search visibility', path: '/how-to-track-ai-search-visibility' },
+    ],
+    moneyPath: '/ai-seo-consultant-israel',
+    moneyLabel: 'AI Search Visibility',
+  },
+  {
+    slug: 'why-chatgpt-doesnt-mention-your-brand',
+    seoTitle: "Why ChatGPT Doesn't Mention Your Brand (And How to Fix It)",
+    metaDescription: 'ChatGPT skips your brand because almost nobody else on the web names it. The four usual reasons, and what actually changes the answer.',
+    eyebrow: 'AI Search Visibility',
+    h1: "Why ChatGPT Doesn't Mention Your Brand",
+    quickAnswer: 'ChatGPT does not mention your brand because almost nobody else on the web does. The model repeats how the internet already describes your category. If your name is missing from the reviews, roundups, comparisons and forum threads where buyers compare options, the model has nothing to repeat.',
+    toc: [
+      { id: 'repeat', label: 'The model repeats the web' },
+      { id: 'reasons', label: 'The four reasons brands get skipped' },
+      { id: 'site', label: 'Your site is the floor, not the fix' },
+      { id: 'moves', label: 'What actually moves the answer' },
+    ],
+    sections: [
+      {
+        id: 'repeat',
+        h2: 'The model repeats the web, it does not read your website',
+        body: [
+          'When someone asks ChatGPT for the best option in your category, it is not browsing your homepage and forming an opinion. It is reproducing a pattern it has already seen many times.',
+          'That pattern comes from other people writing about brands like yours. Review sites, comparison articles, roundups, forum threads, directories, news coverage.',
+          'A brand that only ever describes itself has one voice in the pile. A brand described by fifty other sources has fifty.',
+        ],
+      },
+      {
+        id: 'reasons',
+        h2: 'The four reasons brands get skipped',
+        table: {
+          head: ['Reason', 'What it looks like', 'What fixes it'],
+          rows: [
+            ['Nobody else names you', 'You rank fine on Google but never appear in AI answers', 'Get named where buyers already compare options'],
+            ['You are described in the wrong words', 'You get named for the wrong category or use case', 'Match how buyers describe the problem, not your internal product language'],
+            ['Your pages bury the answer', 'Long intros, the useful part halfway down', 'Answer the exact question in the first sentence'],
+            ['Your name is ambiguous', 'The model confuses you with a bigger company with a similar name', 'Tie the brand consistently to its category and location everywhere it appears'],
+          ],
+        },
+        body: [
+          'Most brands I look at have the first problem. Some have the fourth and never notice it, because the answer names something that is not them.',
+        ],
+      },
+      {
+        id: 'site',
+        h2: 'Your own site is the floor, not the fix',
+        body: [
+          'Clean pages still matter. If a model does reach your site and finds a wall of marketing language with no plain answer, it has nothing quotable to lift.',
+          'So fix the pages. Just do not expect that alone to change the answer, because the answer is being decided somewhere else.',
+        ],
+      },
+      {
+        id: 'moves',
+        h2: 'What actually moves the answer',
+        body: [
+          'Look at the sources the answer cites, then work on those sources. When the same three review sites and one Reddit thread keep appearing, those four places are writing the answer.',
+          'Reddit carries unusual weight here, because discussion threads rank well in Google and get pulled into AI answers. Being named honestly in a thread where someone asked for a recommendation is worth more than another blog post on your own site. That is the method behind [how to get recommended on Reddit](/how-to-get-recommended-on-reddit).',
+          'This takes months, not days. For ZStander it ended with ChatGPT naming them first when asked where to buy lucite shtenders in the US, off the back of indexing work, foundational links, clearer page structure and real mentions.',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Can I pay to be mentioned in ChatGPT?', a: 'No. There is no placement to buy inside the answer. Anyone selling you a guaranteed mention is selling something they cannot control.' },
+      { q: 'Why does it name my competitor and not me?', a: 'Usually because more independent sources describe them. Check who the answer cites. Those sources are the gap, and they are usually reachable.' },
+      { q: 'Will adding schema fix this?', a: 'Schema helps machines read your pages correctly and it is worth having. It will not create mentions that do not exist off your site.' },
+      { q: 'How long does it take to change?', a: 'Expect months. Clear pages can get picked up quickly, but building the outside mentions that make a model trust you is slow work with no shortcut.' },
+      { q: 'Can you fix this for my brand?', a: 'That is the job. See [AI search visibility](/ai-seo-consultant-israel) or [answer engine optimization services](/answer-engine-optimization-services).' },
+    ],
+    related: [
+      { label: 'How to get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'How to track brand mentions in ChatGPT', path: '/track-brand-mentions-in-chatgpt' },
+      { label: 'Get your brand mentioned in ChatGPT', path: '/how-to-get-your-brand-mentioned-in-chatgpt' },
+      { label: 'How to get recommended on Reddit', path: '/how-to-get-recommended-on-reddit' },
+    ],
+    moneyPath: '/answer-engine-optimization-services',
+    moneyLabel: 'Answer Engine Optimization',
+  },
+  {
+    slug: 'aeo-vs-geo-vs-seo',
+    seoTitle: 'AEO vs GEO vs SEO: What Is Actually Different',
+    metaDescription: 'AEO, GEO and SEO are mostly one job under three labels. What each term means, what genuinely differs, and which one you should actually pay for.',
+    eyebrow: 'AI Search Visibility',
+    h1: 'AEO vs GEO vs SEO',
+    quickAnswer: 'AEO, GEO and SEO are mostly the same job with three different labels. The work overlaps far more than the marketing around it suggests. What genuinely differs is where the answer is shown and how much of your reputation lives off your own website.',
+    toc: [
+      { id: 'terms', label: 'What each term means' },
+      { id: 'why', label: 'Why the labels multiplied' },
+      { id: 'differs', label: 'What genuinely differs' },
+      { id: 'buy', label: 'Which one to buy' },
+    ],
+    sections: [
+      {
+        id: 'terms',
+        h2: 'What each term means',
+        table: {
+          head: ['Term', 'Stands for', 'Points at', 'How different from SEO'],
+          rows: [
+            ['SEO', 'Search engine optimization', 'Ranking pages in search results', 'The original job'],
+            ['AEO', 'Answer engine optimization', 'Winning the direct answer: snippets, answer boxes, AI answers', 'Mostly a subset of SEO with sharper answer structure'],
+            ['GEO', 'Generative engine optimization', 'Being named inside AI-generated answers', 'Same fundamentals, more weight on off-site mentions'],
+          ],
+        },
+        body: [
+          'Read that table again and the overlap is obvious. All three want the same thing: be the source a search system trusts enough to show.',
+        ],
+      },
+      {
+        id: 'why',
+        h2: 'Why three labels exist for one job',
+        body: [
+          'New labels sell. When AI answers arrived, the industry needed a word that sounded like a new service, and two arrived at once.',
+          'Some of it is genuine. Answers really did move from a list of links to a paragraph that names a few brands, and that changes what a page has to do.',
+          'Most of it is repackaging. Be careful with anyone charging a premium for a term rather than for the work behind it.',
+        ],
+      },
+      {
+        id: 'differs',
+        h2: 'What genuinely differs in the work',
+        body: [
+          'Three things change once you are optimizing for answers rather than a list of links.',
+        ],
+        bullets: [
+          'Answer position. The useful sentence has to be at the top of the page, not buried under an introduction.',
+          'Off-site weight. Rankings can be earned largely on your own site. Being named in an AI answer usually cannot, because the model is repeating other people.',
+          'Measurement. There is no rank tracker for an answer that changes between runs, so you sample prompts instead. See [how to track brand mentions in ChatGPT](/track-brand-mentions-in-chatgpt).',
+        ],
+      },
+      {
+        id: 'buy',
+        h2: 'Which one should you actually pay for',
+        body: [
+          'Pay for the work, not the acronym. A good page that answers the question clearly, on a site people can crawl, from a brand other sites talk about, wins in all three places at once.',
+          'If a proposal separates AEO and GEO into two line items with two price tags and no different deliverables, ask what is actually different between them.',
+          'I handle it as one job across Google, AI answers and Reddit, because splitting it into three invoices helps the seller and not the buyer. See [answer engine optimization services](/answer-engine-optimization-services).',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Is AEO the same as GEO?', a: 'They are close enough that most people use them interchangeably. AEO leans toward direct answers including featured snippets, GEO leans toward AI-generated answers. The work behind them is largely shared.' },
+      { q: 'Does SEO still matter if AI answers take over?', a: 'Yes, and more than the hype suggests. Google draws AI Overview sources from pages that already rank, so ranking remains the way in. See [how to rank in Google AI Overviews](/how-to-rank-in-google-ai-overviews).' },
+      { q: 'Do I need a separate specialist for each?', a: 'No. Hiring three people to do one overlapping job creates coordination work and duplicate spend.' },
+      { q: 'What is answer engine optimization in plain words?', a: 'Making your page the clearest, best-supported answer to a specific question, so search engines and AI assistants use it. See [what is answer engine optimization](/what-is-answer-engine-optimization).' },
+    ],
+    related: [
+      { label: 'What is answer engine optimization?', path: '/what-is-answer-engine-optimization' },
+      { label: 'Is GEO the new SEO?', path: '/is-geo-the-new-seo' },
+      { label: 'What is generative engine optimization?', path: '/what-is-generative-engine-optimization' },
+    ],
+    moneyPath: '/answer-engine-optimization-services',
+    moneyLabel: 'Answer Engine Optimization',
+  },
+
+  // ===== REDDIT SILO, BATCH 2 =====
+  {
+    slug: 'how-to-get-recommended-on-reddit',
+    seoTitle: 'How to Get Recommended on Reddit Without Getting Banned',
+    metaDescription: 'Build a real account first, then only answer threads where somebody asked for a recommendation. The four-step method I use for client campaigns.',
+    eyebrow: 'Reddit Marketing',
+    h1: 'How to Get Recommended on Reddit',
+    quickAnswer: 'To get recommended on Reddit, spend a few weeks being useful in the subreddit first, then only answer threads where somebody actually asked for a recommendation. Brands that skip the waiting and post into unrelated threads get removed, and the account stops being worth anything.',
+    toc: [
+      { id: 'method', label: 'The four-step method' },
+      { id: 'rule', label: 'The rule most brands break' },
+      { id: 'links', label: 'Why you leave the link out' },
+      { id: 'why', label: 'Why these threads are worth the wait' },
+    ],
+    sections: [
+      {
+        id: 'method',
+        h2: 'The four-step method',
+        body: [
+          'This is the process I use for client accounts. It is slow on purpose.',
+        ],
+        bullets: [
+          'Scope the subreddit first. Read what language people use and which topics come up before you post anything.',
+          'Engage helpfully for a few weeks. Let the moderators and regulars see a real person, not a new account with a link. Verify the account and give it some history.',
+          'Once there is some trust, start watching for posts where people ask for recommendations.',
+          'Answer honestly, in the same style other people in that thread are writing. Include the trade-offs, not just the pitch.',
+        ],
+      },
+      {
+        id: 'rule',
+        h2: 'The rule most brands break',
+        body: [
+          'Only post recommendations on posts asking for recommendations. That is the whole rule and it is where nearly every brand goes wrong.',
+          'Forcing your brand into an unrelated thread is the fastest way to get removed by a moderator, and removals follow the account around.',
+          'Buying upvotes is the other shortcut people ask me about. It exists. I do not do it, and the accounts that lean on it tend to get caught and lose everything they built.',
+        ],
+      },
+      {
+        id: 'links',
+        h2: 'Why you leave the link out',
+        body: [
+          'Do not drop a link. Name the brand and let people search for it.',
+          'A comment with a link reads like an advert and gets filtered. A comment that names two or three real options, with honest pros and cons, reads like a person and survives.',
+          'Adding the trade-offs of other providers is what makes the recommendation believable. It also tends to be what gets quoted later.',
+        ],
+      },
+      {
+        id: 'why',
+        h2: 'Why these threads are worth the wait',
+        body: [
+          'Recommendation threads rank. Google surfaces Reddit discussions on exactly the searches where somebody is choosing between options, which is the moment you want to be present.',
+          'They also feed AI answers. When an assistant is asked who to use, it often leans on the same threads, which is covered in [why ChatGPT does not mention your brand](/why-chatgpt-doesnt-mention-your-brand).',
+          'The reach can be real. One post I ran reached 405,000 views with 518 upvotes and 217 comments. That is not typical and I am not promising it, but it shows what a thread can do when the community accepts it.',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'How long before I can post a recommendation?', a: 'Plan on a few weeks of genuine participation. Some subreddits are stricter and enforce account age or karma rules, which is covered in [Reddit karma and account age](/reddit-karma-account-age).' },
+      { q: 'Should I say I work for the brand?', a: 'Yes when you are recommending your own. Undisclosed self-promotion is the thing communities punish hardest, and being upfront often gets a better reception than people expect.' },
+      { q: 'Can I use a brand account?', a: 'You can, but a real person with history usually does better in recommendation threads. Brand accounts get read as advertising.' },
+      { q: 'What if my post gets removed?', a: 'Read the subreddit rules, do not repost the same thing, and give it time. See [why Reddit posts get removed](/why-reddit-posts-get-removed).' },
+      { q: 'Can you run this for my brand?', a: 'Yes. See [Reddit marketing services](/reddit-marketing-services) for how it works, or [Reddit posting service](/reddit-posting-service) if you want the posts written and handled.' },
+    ],
+    related: [
+      { label: 'Promote on Reddit without getting banned', path: '/how-to-promote-on-reddit-without-getting-banned' },
+      { label: 'Reddit karma and account age', path: '/reddit-karma-account-age' },
+      { label: 'Monitor brand mentions on Reddit', path: '/monitor-brand-mentions-on-reddit' },
+      { label: 'Why Reddit posts get removed', path: '/why-reddit-posts-get-removed' },
     ],
     moneyPath: '/reddit-marketing-services',
     moneyLabel: 'Reddit Marketing',

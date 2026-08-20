@@ -114,7 +114,7 @@ export const BlogArticle10: React.FC = () => {
             <p><strong>3. Target niches, not broad categories</strong> — Don't compete for "CRM software." Own "CRM for Israeli companies expanding to US" or "CRM with Hebrew support."</p>
             <p><strong>4. Leverage Israeli reputation strategically</strong> — Position Israeli origin as advantage: "Built by Unit 8200 veterans," "Israeli cybersecurity expertise," "Startup Nation innovation."</p>
             <p><strong>5. Build US presence signals</strong> — US office address, US phone number, US case studies, US customer logos.</p>
-            <p><strong>6. Focus on BOFU content</strong> — Comparison pages, alternative pages, integration docs — content that captures demand vs creates it.</p>
+            <p><strong>6. Focus on buyer-intent content</strong> — Comparison pages, alternative pages, integration docs — content that captures demand vs creates it.</p>
 
             <hr className="my-12 border-slate-200" />
 

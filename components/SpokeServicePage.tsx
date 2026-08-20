@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
-import { FitSection, ProofWall, RelatedPages, ResultsGrid, cleanPublicCopy, topicFromSlug } from './ConversionSections';
+import { FitSection, ProofWall, RelatedPages, ResultsGrid, cleanPublicCopy, renderCopy, topicFromSlug } from './ConversionSections';
 
 interface SpokeServicePageProps {
   content: SpokeService;
@@ -18,6 +18,7 @@ const Arrow = () => (
 );
 
 const relatedPathByLabel: Record<string, string> = {
+  'Answer engine optimization': '/answer-engine-optimization-services',
   'AI SEO / GEO': '/ai-seo-consultant-israel',
   'SEO social posting': '/content-marketing-for-seo',
   'Content marketing for SEO': '/content-marketing-for-seo',
@@ -80,7 +81,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             <div>
               <span className="eyebrow">{content.eyebrow}</span>
               <h1>{content.title}</h1>
-              <p className="answer">{cleanPublicCopy(content.intro)}</p>
+              <p className="answer">{renderCopy(content.intro)}</p>
               {content.fit && <p className="lede" style={{ marginTop: '18px' }}>{cleanPublicCopy(content.fit)}</p>}
               <div className="shero-actions">
                 <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
@@ -120,7 +121,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               <p className="lede">{cleanPublicCopy(content.handleIntro || 'Use this page to see whether the service fits what you need, then send the site for a practical next step.')}</p>
             </div>
             <ul className="inc">
-              {content.handles.map((item) => <li key={item}><Check />{cleanPublicCopy(item)}</li>)}
+              {content.handles.map((item) => <li key={item}><Check />{renderCopy(item)}</li>)}
             </ul>
           </div>
         </section>
@@ -140,7 +141,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               <article>
                 <div className="approach-dot" />
                 <h3>Why that stalls</h3>
-                <p>{cleanPublicCopy(content.proof)}</p>
+                <p>{renderCopy(content.proof)}</p>
               </article>
               <article>
                 <div className="approach-dot full" />
@@ -158,10 +159,10 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
                 <div className="guide-block" key={section.heading}>
                   <span className="eyebrow">0{index + 1}</span>
                   <h2 className="block">{section.heading}</h2>
-                  {section.body.map((paragraph) => <p key={paragraph}>{cleanPublicCopy(paragraph)}</p>)}
+                  {section.body.map((paragraph) => <p key={paragraph}>{renderCopy(paragraph)}</p>)}
                   {section.bullets?.length ? (
                     <ul className="guide-list">
-                      {section.bullets.map((bullet) => <li key={bullet}>{cleanPublicCopy(bullet)}</li>)}
+                      {section.bullets.map((bullet) => <li key={bullet}>{renderCopy(bullet)}</li>)}
                     </ul>
                   ) : null}
                 </div>
@@ -196,7 +197,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
                 <span className="eyebrow">More questions</span>
                 <h2 className="block" style={{ marginTop: '12px' }}>FAQs</h2>
                 <div style={{ marginTop: '24px' }}>
-                  {content.faqs.map((f) => <div className="faq" key={f.q}><h3>{f.q}</h3><p>{cleanPublicCopy(f.a)}</p></div>)}
+                  {content.faqs.map((f) => <div className="faq" key={f.q}><h3>{f.q}</h3><p>{renderCopy(f.a)}</p></div>)}
                 </div>
               </div>
             </section>

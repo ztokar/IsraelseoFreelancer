@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 
-const TITLE = 'SEO Services Israel | Direct Senior SEO for US Markets, Technical Audits, Content, Local Search and AI Search | Zechariah Tokar';
-const DESC = 'SEO services in Israel for companies targeting US and English-speaking markets. Work directly with Zechariah on audits, content, local search, B2B SEO, ecommerce, and AI search.';
+const TITLE = 'SEO Services in Israel for US and English-Speaking Markets';
+const DESC = 'SEO for companies selling into US and English-speaking markets. Audits, content, local search, B2B, ecommerce, AI search and Reddit, handled directly.';
 
+// This hub owns the full service list. The header and footer stay hub-led and short,
+// so every service still has a clear route in from here.
 const serviceGroups = [
   {
     title: 'Core SEO work',
@@ -15,15 +17,32 @@ const serviceGroups = [
       { label: 'SEO consulting', path: '/seoconsulting' },
       { label: 'Technical SEO audit', path: '/technical-seo-audit' },
       { label: 'SEO writing', path: '/content-marketing-for-seo' },
+      { label: 'Blog content SEO', path: '/blog-content-seo' },
+      { label: 'Programmatic SEO', path: '/programmatic-seo' },
+      { label: 'Freelancer vs agency', path: '/seo-freelancer-vs-agency' },
     ],
   },
   {
-    title: 'Growth channels',
-    body: 'Use these when buyers are searching beyond normal Google results.',
+    title: 'AI search visibility',
+    body: 'Use these when buyers ask an assistant who to use before they ever reach Google.',
     links: [
-      { label: 'AI search', path: '/ai-seo-consultant-israel' },
-      { label: 'Reddit SEO', path: '/reddit-seo' },
+      { label: 'AI search visibility', path: '/ai-seo-consultant-israel' },
+      { label: 'Answer engine optimization', path: '/answer-engine-optimization-services' },
+      { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'Track brand mentions', path: '/track-brand-mentions-in-chatgpt' },
+      { label: 'AI visibility tools', path: '/ai-search-visibility-tools' },
+      { label: 'Rank in AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
+    ],
+  },
+  {
+    title: 'Reddit and community',
+    body: 'Use these when the threads people trust already rank ahead of your own pages.',
+    links: [
       { label: 'Reddit marketing', path: '/reddit-marketing-services' },
+      { label: 'Reddit SEO', path: '/reddit-seo' },
+      { label: 'Reddit posting service', path: '/reddit-posting-service' },
+      { label: 'Reddit marketing expert', path: '/reddit-marketing-expert' },
+      { label: 'Get recommended on Reddit', path: '/how-to-get-recommended-on-reddit' },
       { label: 'YouTube SEO', path: '/youtube-seo' },
     ],
   },
@@ -32,9 +51,22 @@ const serviceGroups = [
     body: 'Choose the page that matches how your customers find and compare you.',
     links: [
       { label: 'B2B SEO', path: '/b2b-seo-israel' },
+      { label: 'SaaS SEO', path: '/saas-seo' },
+      { label: 'Cybersecurity SEO', path: '/cybersecurity-seo' },
+      { label: 'Fintech SEO', path: '/fintech-seo' },
       { label: 'Shopify SEO', path: '/shopify-seo' },
+      { label: 'Google Merchant Center', path: '/google-merchant-center-seo' },
+    ],
+  },
+  {
+    title: 'Local and authority',
+    body: 'Use these when nearby buyers need to find you, or when the brand needs more weight behind it.',
+    links: [
       { label: 'Google Business Profile', path: '/google-business-profile-seo' },
+      { label: 'Local citations and directories', path: '/local-citations-directories' },
       { label: 'Link building', path: '/link-building-services' },
+      { label: 'Press release SEO', path: '/press-release-seo' },
+      { label: 'SEO consult', path: '/seo-consult' },
     ],
   },
 ];

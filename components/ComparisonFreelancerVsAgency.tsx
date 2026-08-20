@@ -2,170 +2,188 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
+import { ProofWall, RelatedPages } from './ConversionSections';
+
+const TITLE = 'SEO Freelancer vs Agency: How to Choose | Zechariah Tokar';
+const DESC = 'Who actually does the work, how decisions get made, and where each option wins. An honest comparison from someone on one side of it.';
+
+const FAQS = [
+  {
+    q: 'Should I hire an SEO freelancer or an agency?',
+    a: 'Hire a freelancer when you want the person doing the strategy to also do the work, and when SEO is the main channel you are trying to fix. Hire an agency when you need several channels running at once and you have someone internally to manage them.',
+  },
+  {
+    q: 'Is a freelancer risky compared to an agency?',
+    a: 'There is a real single-person risk, and it is fair to ask about it. The trade is that you always know who is doing the work. With an agency the team is bigger but you rarely control who is actually assigned to your account.',
+  },
+  {
+    q: 'Can one person handle technical SEO, content and links?',
+    a: 'For most small and mid-sized sites, yes. Very large sites with multiple product lines and a publishing team usually need more hands than one person has.',
+  },
+  {
+    q: 'What happens if a freelancer becomes unavailable?',
+    a: 'Ask for the work to be documented as it goes, and keep ownership of your own accounts and files. I set up client work so everything lives in your accounts, not mine.',
+  },
+  {
+    q: 'How do I compare proposals fairly?',
+    a: 'Ask each one who personally does the work, what they will do in the first month, and how they will show it worked. The answers separate the two options faster than a price list does.',
+  },
+];
+
+const TABLE: [string, string, string][] = [
+  ['Who does the work', 'The person you hired', 'Often a junior or rotating team'],
+  ['Who you talk to', 'The same person every time', 'Usually an account manager'],
+  ['Speed of decisions', 'One conversation', 'Passed between strategy and delivery'],
+  ['Strategy', 'Built around your business', 'Often a shared playbook across clients'],
+  ['Channel coverage', 'Deep in search', 'Search plus ads, social, email'],
+  ['Capacity', 'Limited by one schedule', 'Scales with headcount'],
+  ['Continuity risk', 'One person can become unavailable', 'Team covers, but staff turn over'],
+  ['Best when', 'Search is the problem you need solved', 'You need a full marketing function'],
+];
 
 export const ComparisonFreelancerVsAgency: React.FC = () => {
   useEffect(() => {
-    updatePageSEO({
-      title: 'SEO Freelancer vs Agency: Which Is Right for Your Business? | Zechariah Tokar',
-      description: 'Comparing SEO freelancers vs agencies for Israeli and international businesses. Costs, response times, expertise, and which delivers better ROI.',
-      path: '/seo-freelancer-vs-agency',
-    });
+    updatePageSEO({ title: TITLE, description: DESC, path: '/seo-freelancer-vs-agency' });
   }, []);
 
   return (
     <>
-      <HeadSEO title="SEO Freelancer vs Agency: Which Is Right for Your Business? | Zechariah Tokar" description="Comparing SEO freelancers vs agencies for Israeli and international businesses. Costs, response times, expertise, and which delivers better ROI." path="/seo-freelancer-vs-agency" />
-      <div className="animate-fade-in-up">
-      {/* Schema */}
+      <HeadSEO title={TITLE} description={DESC} path="/seo-freelancer-vs-agency" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'Should I hire an SEO freelancer or an agency?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Hire a freelance SEO consultant like Zechariah Tokar when you want direct senior-level execution, transparent pricing, and faster decision-making. Choose an agency when you need a full marketing department across multiple channels simultaneously.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'How much does a freelance SEO consultant cost vs an agency?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Freelance SEO consultants typically charge $1,500-$3,500/month for full management. Agencies charge $3,000-$10,000+/month for comparable work, with much of that covering account managers, office overhead, and profit margins rather than actual SEO execution.',
-                },
-              },
-            ],
+            mainEntity: FAQS.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
           }),
         }}
       />
 
-      {/* Hero */}
-      <header className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-white/80 mb-8">
-            <span className="text-sm font-medium text-primary">Comparison Guide</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-            <span className="text-primary">SEO Freelancer vs Agency:</span>
-            <br />
-            Which Is Right for Your Business?
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Zechariah Tokar is a freelance SEO consultant who has worked with 50+ businesses across ecommerce, B2B SaaS, real estate, hospitality, and legal. Here is an honest breakdown of when a freelancer makes sense and when an agency does.
-          </p>
+      <div className="gp gp-guide">
+        <div className="wrap crumb">
+          <NavLink to="/">Home</NavLink><span>/</span>
+          <NavLink to="/seo-services-israel">SEO Services</NavLink><span>/</span>SEO freelancer vs agency
         </div>
-      </header>
 
-      {/* Comparison Table */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-8 text-center">
-            How Does a Freelance SEO Consultant Compare to an Agency?
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-slate-200 rounded-xl overflow-hidden">
-              <thead>
-                <tr className="bg-slate-50">
-                  <th className="text-left p-4 font-bold text-slate-900 border-b border-slate-200">Factor</th>
-                  <th className="text-left p-4 font-bold text-primary border-b border-slate-200">Freelancer (Zechariah Tokar)</th>
-                  <th className="text-left p-4 font-bold text-slate-500 border-b border-slate-200">Typical Agency</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Who does the work', 'Zechariah Tokar personally', 'Junior staff, rotating team members'],
-                  ['Monthly cost', '$1,500 - $3,500', '$3,000 - $10,000+'],
-                  ['Communication', 'Direct access, same-day responses', 'Through account manager'],
-                  ['Strategy', 'Senior-level, tailored to your business', 'Templated playbooks across clients'],
-                  ['Contracts', 'No lock-in, month-to-month', '6-12 month minimum commitments'],
-                  ['Reporting', 'Revenue-focused metrics', 'Traffic and impression reports'],
-                  ['Scalability', 'Best for focused, high-impact SEO', 'Better for multi-channel campaigns'],
-                ].map(([factor, freelancer, agency], idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                    <td className="p-4 font-medium text-slate-900 border-b border-slate-100">{factor}</td>
-                    <td className="p-4 text-slate-700 border-b border-slate-100">{freelancer}</td>
-                    <td className="p-4 text-slate-500 border-b border-slate-100">{agency}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* When to Choose */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white border border-primary/30 rounded-xl p-8">
-              <h3 className="text-xl font-bold text-primary mb-4">Choose Zechariah Tokar When:</h3>
-              <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-primary text-lg mt-0.5">check</span>
-                  <span>You want the strategist doing the actual work</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-primary text-lg mt-0.5">check</span>
-                  <span>Budget is $1,500-$3,500/month</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-primary text-lg mt-0.5">check</span>
-                  <span>You need SEO tied directly to revenue</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-primary text-lg mt-0.5">check</span>
-                  <span>You target US or English-speaking markets</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-8">
-              <h3 className="text-xl font-bold text-slate-500 mb-4">Choose an Agency When:</h3>
-              <ul className="space-y-3 text-slate-500">
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-slate-400 text-lg mt-0.5">check</span>
-                  <span>You need SEO + PPC + social + email simultaneously</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-slate-400 text-lg mt-0.5">check</span>
-                  <span>Budget exceeds $10,000/month for marketing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-slate-400 text-lg mt-0.5">check</span>
-                  <span>You need a full team across multiple channels</span>
-                </li>
-              </ul>
+        <section className="shero">
+          <div className="wrap">
+            <span className="eyebrow">Comparison</span>
+            <h1>SEO Freelancer vs Agency</h1>
+            <p className="answer">
+              Hire a freelancer when you want the person planning the work to also do it. Hire an agency
+              when you need several marketing channels running at once and someone internally to steer them.
+              Most of the other differences people argue about follow from that one.
+            </p>
+            <div className="shero-actions">
+              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow">↗</span></a>
+              <NavLink className="btn btn-ghost" to="/case-studies">View case studies</NavLink>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Internal Links */}
-      <section className="py-12 bg-white border-y border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-600 mb-6">Explore Zechariah Tokar's SEO services:</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <NavLink to="/freelance-seo-israel" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">Freelance SEO</NavLink>
-            <NavLink to="/seoconsulting" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">SEO Consulting</NavLink>
-            <NavLink to="/b2b-seo-israel" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">B2B SEO</NavLink>
-            <NavLink to="/content-marketing-for-seo" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">Content Marketing</NavLink>
-            <NavLink to="/google-business-profile-seo" className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">Google Business Profile SEO</NavLink>
+        <section>
+          <div className="narrow">
+            <h2 className="block">The honest comparison</h2>
+            <p style={{ marginTop: '12px' }}>
+              I am a freelancer, so treat this as a view from one side. I have tried to write the row
+              about capacity and continuity the way an agency would argue it, because those points are real.
+            </p>
+            <div className="tbl-wrap">
+              <table className="gtbl">
+                <thead>
+                  <tr><th>What you are comparing</th><th>Freelancer</th><th>Agency</th></tr>
+                </thead>
+                <tbody>
+                  {TABLE.map(([factor, freelancer, agency]) => (
+                    <tr key={factor}>
+                      <td><strong>{factor}</strong></td>
+                      <td>{freelancer}</td>
+                      <td>{agency}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h2 className="block" style={{ marginTop: '38px' }}>Where a freelancer is the better call</h2>
+            <p style={{ marginTop: '12px' }}>
+              Search is your main gap and you want it fixed rather than reported on. You would rather
+              explain the business once, to the person who will act on it.
+            </p>
+            <ul className="guide-list">
+              <li>You want the strategist doing the actual work.</li>
+              <li>SEO is the channel you need moving, not five channels at once.</li>
+              <li>You want decisions made in one conversation instead of three.</li>
+              <li>You sell to US or English-speaking buyers and want copy that reads naturally to them.</li>
+            </ul>
+
+            <h2 className="block" style={{ marginTop: '38px' }}>Where an agency is the better call</h2>
+            <p style={{ marginTop: '12px' }}>
+              You need a marketing function, not a search specialist. That is a genuinely different job
+              and one person is the wrong shape for it.
+            </p>
+            <ul className="guide-list">
+              <li>You need SEO, paid ads, social and email running together.</li>
+              <li>You have a large site and a publishing schedule that needs several people.</li>
+              <li>You need guaranteed coverage when someone is away.</li>
+              <li>You have someone internally who can manage an external team well.</li>
+            </ul>
+
+            <h2 className="block" style={{ marginTop: '38px' }}>The question that settles it</h2>
+            <p style={{ marginTop: '12px' }}>
+              Ask whoever you are speaking to who will personally do the work, and what they will do in
+              the first month. Vague answers to that question tell you more than any comparison table.
+            </p>
+            <p style={{ marginTop: '12px' }}>
+              With me the answer is short. I do the work, you deal with me, and everything lives in your
+              own accounts. If you want to see how I scope a project before committing to anything,
+              start with <NavLink to="/find-my-target">Find My Target</NavLink> or read the{' '}
+              <NavLink to="/case-studies">case studies</NavLink>.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ContactCTA
-        subject="New Inquiry: Freelancer vs Agency Comparison"
-        title="Ready to work directly with an SEO freelancer?"
-        body="Send the site and what you want SEO to fix first. I will review it and reply with the practical next step."
-        submitButtonText="Get my free SEO audit"
-      />
-    </div>
-  </>
+        <ProofWall topic="general" limit={4} title="What the work has actually produced." />
+
+        <RelatedPages
+          title="Related pages"
+          lede="If a freelancer is the direction you are leaning, these explain the specific services."
+          links={[
+            { label: 'Freelance SEO', path: '/freelance-seo-israel', type: 'Service', body: 'Hands-on SEO delivered directly.' },
+            { label: 'SEO Consulting', path: '/seoconsulting', type: 'Service', body: 'Strategy and a prioritized roadmap.' },
+            { label: 'Technical SEO Audit', path: '/technical-seo-audit', type: 'Service', body: 'Find what to fix first.' },
+            { label: 'B2B SEO', path: '/b2b-seo-israel', type: 'Service', body: 'Pages built around buyer intent.' },
+            { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services', type: 'Service', body: 'Get named in AI answers.' },
+          ]}
+        />
+
+        <section className="divider">
+          <div className="narrow">
+            <span className="eyebrow">More questions</span>
+            <h2 className="block" style={{ marginTop: '12px' }}>FAQs</h2>
+            <div style={{ marginTop: '24px' }}>
+              {FAQS.map((f) => (
+                <div className="faq" key={f.q}>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ContactCTA
+          subject="New Inquiry: Freelancer vs Agency Comparison"
+          title="Want a straight answer on your site?"
+          body="Send the site and what you want SEO to fix first. I will review it and reply with the practical next step."
+          submitButtonText="Send my site"
+        />
+      </div>
+    </>
   );
 };

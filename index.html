@@ -43,7 +43,7 @@
           "name": "Zechariah Tokar",
           "jobTitle": "Senior SEO Consultant",
           "url": "https://israelseofreelancer.com/",
-          "image": "https://israelseofreelancer.com/images/hero-seo-growth.jpg",
+          "image": "https://israelseofreelancer.com/images/redesign-hero.jpg",
           "sameAs": [
             "https://www.linkedin.com/in/zechariah-tokar-167b7672/",
             "https://x.com/ZackTokar",
@@ -423,16 +423,24 @@
       .gp .quote .who b{color:var(--ink);display:block;font-weight:700;}
       .gp .quote .who span{color:var(--muted);font-size:13px;}
       /* proof */
-      .gp .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-      .gp .pf{margin:0;background:#fff;border:1px solid var(--hair);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;padding:18px;gap:16px;}
+      .gp .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+      .gp .pf{margin:0;background:#fff;border:1px solid var(--hair);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
       .gp .pf:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(15,17,21,0.28);}
-      .gp .proof-card-top{min-height:126px;border-radius:13px;background:radial-gradient(120% 120% at 90% 10%,rgba(16,201,136,.42),transparent 45%),linear-gradient(145deg,#0A0C0F,#133f2a);color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:space-between;}
-      .gp .proof-card-top span{font-family:'Outfit';font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);}
-      .gp .proof-card-top strong{font-family:'Outfit';font-size:30px;line-height:1.04;letter-spacing:-.03em;color:#fff;}
-      .gp .proof-thumb{border:1px solid var(--hair);border-radius:12px;background:var(--offwhite);height:76px;overflow:hidden;display:flex;align-items:flex-start;}
-      .gp .pf img{width:100%;height:100%;object-fit:cover;object-position:left top;opacity:.72;}
-      .gp .pf figcaption{padding:0;font-size:15px;line-height:1.55;color:var(--muted);}
+      /* label row: small, quiet. The screenshot is the hero, not the gradient. */
+      .gp .proof-card-top{display:flex;align-items:baseline;gap:10px;padding:18px 20px 14px;border-bottom:1px solid var(--hair);}
+      .gp .proof-card-top span{font-family:'Outfit';font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+      .gp .proof-card-top strong{font-family:'Outfit';font-size:19px;line-height:1.1;letter-spacing:-.02em;color:var(--green-dark);margin-left:auto;}
+      /* the actual screenshot: full opacity, natural aspect ratio, readable */
+      .gp .proof-thumb{background:var(--offwhite);padding:16px 20px;display:block;}
+      .gp .pf img{width:100%;height:auto;display:block;object-fit:contain;opacity:1;border:1px solid var(--hair);border-radius:8px;background:#fff;}
+      .gp .pf figcaption{padding:16px 20px 20px;font-size:14.5px;line-height:1.55;color:var(--muted);border-top:1px solid var(--hair);}
       .gp .pf figcaption b{color:var(--ink);font-weight:700;}
+      .gp .pf .pf-src{display:block;margin-top:7px;font-family:'Outfit';font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--green-dark);}
+      /* LinkedIn trust markers */
+      .gp .li-verified{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:5px 10px;border:1px solid var(--hair);border-radius:999px;background:var(--offwhite);font-family:'Outfit';font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--muted);}
+      .gp .li-verified svg{width:13px;height:13px;fill:#0A66C2;flex:none;}
+      .gp .li-badge-holder{margin-top:22px;min-height:1px;}
+      .gp .li-badge-holder .badge-base__link{font-family:'Outfit';font-size:14px;font-weight:600;color:var(--green-dark);}
       /* differentiator */
       .gp .diff .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
       .gp .diff-card{background:linear-gradient(135deg,var(--green-tint),#fff);border:1px solid var(--hair);border-radius:20px;padding:34px;}
@@ -628,8 +636,10 @@
       .gp .approach-grid p,.gp .approach-grid li{color:rgba(255,255,255,0.78);font-size:17px;line-height:1.65;}
       .gp .approach-grid ol{margin:0;padding-left:20px;display:grid;gap:11px;}
       .gp .proof-cases{background:#fff;}
-      .gp .review-wall{columns:3 280px;column-gap:16px;}
-      .gp .review-card{break-inside:avoid;background:#fff;border:1px solid var(--hair);border-radius:18px;padding:24px;margin:0 0 16px;box-shadow:0 20px 42px -34px rgba(15,17,21,.32);}
+      /* grid, not CSS columns: masonry columns go ragged and unbalanced with few cards */
+      .gp .review-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;}
+      .gp .review-card{background:#fff;border:1px solid var(--hair);border-radius:18px;padding:24px;margin:0;box-shadow:0 20px 42px -34px rgba(15,17,21,.32);display:flex;flex-direction:column;}
+      .gp .review-card blockquote{flex:1;}
       .gp .review-head{display:grid;grid-template-columns:52px 1fr auto;gap:13px;align-items:start;margin-bottom:18px;}
       .gp .review-initial{width:52px;height:52px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:'Outfit';font-weight:800;font-size:19px;}
       .gp .review-head h3{font-size:17px;margin:1px 0 0;}
@@ -877,7 +887,7 @@
         .gp .section-tabs a{font-size:14px;}
         .gp .section-tabs a:after{bottom:-14px;}
         .gp .split-copy h2,.gp .approach-head h2,.gp .person-grid h2{font-size:30px;max-width:none;}
-        .gp .review-wall{columns:1;}
+        .gp .review-wall{grid-template-columns:1fr;}
         .gp .review-head{grid-template-columns:48px 1fr;}
         .gp .review-head span{grid-column:2;justify-self:start;}
         .gp .copy-stack .lead-copy{font-size:21px;}

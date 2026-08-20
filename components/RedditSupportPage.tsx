@@ -18,6 +18,7 @@ const Arrow = () => (
 );
 
 const relatedPathByLabel: Record<string, string> = {
+  'Answer engine optimization': '/answer-engine-optimization-services',
   'Reddit marketing services': '/reddit-marketing-services',
   'Reddit marketing expert': '/reddit-marketing-expert',
   'Reddit posting service': '/reddit-posting-service',
