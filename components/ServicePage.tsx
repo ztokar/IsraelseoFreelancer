@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ServiceContent } from '../types';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
-import { cleanPublicCopy, FitSection, ProofWall, RelatedPages, ResultsGrid, relatedServiceLinks, topicFromSlug } from './ConversionSections';
+import { cleanPublicCopy, FitSection, ProofWall, RelatedPages, ResultsGrid, relatedServiceLinks, renderCopy, topicFromSlug } from './ConversionSections';
 
 interface ServicePageProps {
   content: ServiceContent;
@@ -86,8 +86,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             </div>
             <div className="copy-stack">
               <p className="lead-copy">{cleanPublicCopy(content.marketFit || content.entityDefinition || content.bestFor)}</p>
-              <p>{cleanPublicCopy(content.ugcIntro?.what)}</p>
-              <p>{cleanPublicCopy(content.ugcIntro?.why)}</p>
+              <p>{renderCopy(content.ugcIntro?.what)}</p>
+              <p>{renderCopy(content.ugcIntro?.why)}</p>
               {content.industries && (
                 <div className="pills">
                   {content.industries.map((industry) => <span key={industry}>{industry}</span>)}
@@ -130,7 +130,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <article key={item.title}>
                   <div className="approach-dot" />
                   <h3>{item.title}</h3>
-                  <p>{cleanPublicCopy(item.body)}</p>
+                  <p>{renderCopy(item.body)}</p>
                 </article>
               ))}
               <article>
@@ -151,7 +151,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
                 <div className="guide-block" key={item.title}>
                   <span className="eyebrow">0{index + 1}</span>
                   <h2 className="block">{item.title}</h2>
-                  <p>{cleanPublicCopy(item.body)}</p>
+                  <p>{renderCopy(item.body)}</p>
                 </div>
               ))}
             </div>

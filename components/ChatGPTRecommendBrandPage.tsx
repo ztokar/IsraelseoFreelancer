@@ -4,7 +4,7 @@ import { ContactCTA } from './ContactCTA';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 
 const pagePath = '/how-to-get-chatgpt-to-recommend-your-brand';
-const pageTitle = 'How to Get ChatGPT to Recommend Your Brand | AI Recommendation Pages, Fan-Out Queries and Proof Signals | Zechariah Tokar';
+const pageTitle = 'How to Get ChatGPT to Recommend Your Brand | Zechariah Tokar';
 const pageDescription = 'Learn how to get ChatGPT to recommend your brand by finding the searches AI tools run, creating the right pages, and adding proof that supports the recommendation.';
 
 const videoLessons = [
@@ -41,7 +41,7 @@ const steps = [
   {
     label: 'Step 2',
     title: 'Find the background searches',
-    body: 'Use ChatGPT, Perplexity, Google, and a fan-out tool to see which related searches keep coming up. A free option is QueryFanout.ai. Look for repeated searches, not one random output.',
+    body: 'Use ChatGPT, Perplexity, Google, and a related-question tool to see which follow-up searches keep coming up. A free option is QueryFanout.ai. Look for repeated searches, not one random output.',
     link: { href: 'https://queryfanout.ai/', label: 'QueryFanout.ai' },
   },
   {

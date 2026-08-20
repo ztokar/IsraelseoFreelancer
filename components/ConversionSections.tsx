@@ -13,6 +13,29 @@ export const cleanPublicCopy = (text?: string) => (text || '')
   .replace(/retrieve the brand/gi, 'understand the brand')
   .replace(/\bBOFU\b/gi, 'buyer-intent');
 
+// Same copy cleaning, but also renders [label](/path) as a real in-content link.
+// Lets service pages link DOWN into their support pages inside the body copy.
+export const renderCopy = (text?: string): React.ReactNode[] => {
+  const src = cleanPublicCopy(text);
+  const parts: React.ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(src)) !== null) {
+    if (m.index > last) parts.push(src.slice(last, m.index));
+    const [, label, url] = m;
+    if (url.startsWith('http')) {
+      parts.push(<a key={i++} href={url} target="_blank" rel="noopener noreferrer">{label}</a>);
+    } else {
+      parts.push(<NavLink key={i++} to={url}>{label}</NavLink>);
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < src.length) parts.push(src.slice(last));
+  return parts;
+};
+
 export const topicFromSlug = (slug = '') => {
   const s = slug.toLowerCase();
   if (s.includes('shopify') || s.includes('merchant') || s.includes('ecommerce')) return 'ecommerce';

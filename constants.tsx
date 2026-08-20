@@ -15,8 +15,31 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Blog', path: '/blog' },
 ];
 
-// Grouped nav for the redesigned header. Every link points to an existing route.
+// Grouped nav for the header. Hub-led: each group opens with its hub page, then the
+// three to five flagships under it. Ordered by where the site actually earns demand
+// (AI search first, then Reddit), not by service-list convention.
 export const NAV_MENU: NavGroup[] = [
+  {
+    label: 'AI Search',
+    children: [
+      { label: 'AI Search Visibility', desc: 'Get found and recommended in AI answers', path: '/ai-seo-consultant-israel' },
+      { label: 'Answer Engine Optimization', desc: 'Get named when buyers ask an assistant', path: '/answer-engine-optimization-services' },
+      { label: 'Get Cited by ChatGPT', desc: 'What AI models actually quote', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'Track Brand Mentions', desc: 'Measure where you stand today', path: '/track-brand-mentions-in-chatgpt' },
+      { label: 'Rank in AI Overviews', desc: 'Show up in Google AI answers', path: '/how-to-rank-in-google-ai-overviews' },
+      { label: 'Why AI Ignores Your Brand', desc: 'The four usual reasons', path: '/why-chatgpt-doesnt-mention-your-brand' },
+    ],
+  },
+  {
+    label: 'Reddit',
+    children: [
+      { label: 'Reddit Marketing', desc: 'Be the brand real people recommend', path: '/reddit-marketing-services' },
+      { label: 'Reddit SEO', desc: 'Rank in discussions and feed AI answers', path: '/reddit-seo' },
+      { label: 'Reddit Posting Service', desc: 'Posts written and handled properly', path: '/reddit-posting-service' },
+      { label: 'Get Recommended on Reddit', desc: 'The method, step by step', path: '/how-to-get-recommended-on-reddit' },
+      { label: 'Monitor Brand Mentions', desc: 'Catch the threads that matter', path: '/monitor-brand-mentions-on-reddit' },
+    ],
+  },
   {
     label: 'SEO Services',
     children: [
@@ -25,65 +48,53 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seoconsulting' },
       { label: 'Technical SEO Audit', desc: 'Find what to fix first', path: '/technical-seo-audit' },
       { label: 'SEO Content Writing', desc: 'Pages that rank and convert', path: '/content-marketing-for-seo' },
-      { label: 'Programmatic SEO', desc: 'Useful pages at scale', path: '/programmatic-seo' },
     ],
   },
   {
-    label: 'Ecommerce & Local',
-    children: [
-      { label: 'Shopify SEO', desc: 'Collections and products that rank', path: '/shopify-seo' },
-      { label: 'Google Merchant Center', desc: 'Fix the Shopping feed', path: '/google-merchant-center-seo' },
-      { label: 'Google Business Profile', desc: 'Show up in Maps and local', path: '/google-business-profile-seo' },
-      { label: 'Local Citations', desc: 'Consistent listings everywhere', path: '/local-citations-directories' },
-    ],
-  },
-  {
-    label: 'AI & Reddit',
-    children: [
-      { label: 'AI Search Visibility', desc: 'Get found in AI answers', path: '/ai-seo-consultant-israel' },
-      { label: 'ChatGPT Recommendations', desc: 'Get your brand recommended', path: '/how-to-get-chatgpt-to-recommend-your-brand' },
-      { label: 'Reddit SEO', desc: 'Rank in discussions and AI', path: '/reddit-seo' },
-      { label: 'Reddit Marketing', desc: 'Be recommended by real people', path: '/reddit-marketing-services' },
-      { label: 'Reddit Posting Service', desc: 'Posting done the right way', path: '/reddit-posting-service' },
-      { label: 'Reddit and AI Citations', desc: 'Get named in ChatGPT answers', path: '/reddit-ai-citations' },
-      { label: 'YouTube SEO', desc: 'Make videos findable', path: '/youtube-seo' },
-    ],
-  },
-  {
-    label: 'B2B & Authority',
+    label: 'B2B & Ecommerce',
     children: [
       { label: 'B2B SEO', desc: 'Reach decision-makers', path: '/b2b-seo-israel' },
       { label: 'SaaS SEO', desc: 'Pipeline from software search', path: '/saas-seo' },
       { label: 'Cybersecurity SEO', desc: 'Reach security buyers and CISOs', path: '/cybersecurity-seo' },
-      { label: 'Fintech SEO', desc: 'Trust-first finance search', path: '/fintech-seo' },
-      { label: 'Link Building', desc: 'Authority that ranks', path: '/link-building-services' },
-      { label: 'Press Release SEO', desc: 'Support brand search', path: '/press-release-seo' },
-      { label: 'Blog Content SEO', desc: 'Content that supports leads', path: '/blog-content-seo' },
+      { label: 'Shopify SEO', desc: 'Collections and products that rank', path: '/shopify-seo' },
+      { label: 'Google Business Profile', desc: 'Show up in Maps and local', path: '/google-business-profile-seo' },
     ],
   },
   {
     label: 'Company',
     children: [
-      { label: 'Work With Me ($20 to done-for-you)', desc: 'Start small or go all in', path: '/find-my-target' },
+      { label: 'Work With Me', desc: 'Start small or go all in', path: '/find-my-target' },
       { label: 'Case Studies', desc: 'Real campaigns and results', path: '/case-studies' },
-      { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
-      { label: 'Recommendations', desc: 'Partners I trust', path: '/recommendations' },
-      { label: 'Videos', desc: 'Watch the work', path: '/videos' },
-      { label: 'Claude Skill', desc: 'Free DataIsBeautiful prompt', path: '/resources/dataisbeautiful-claude-skill' },
+      { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Blog', desc: 'Notes on modern search', path: '/blog' },
     ],
   },
 ];
 
-// Full link map for the footer so every page is reachable (recovers internal-link authority).
+// Footer: hub-led, not a sitemap. Each column opens with the hub for that topic and
+// carries the flagships under it. The long tail stays reachable through the hub pages
+// and the in-content links on each money page, which is where that authority belongs.
 export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: string }[] }[] = [
   {
-    heading: 'Work with me',
+    heading: 'AI Search',
     links: [
-      { label: 'Target Finder ($20)', path: '/find-my-target' },
-      { label: 'Demand Capture Blueprint ($250)', path: '/local-demand-capture-blueprint' },
-      { label: 'Done-For-You System', path: '/local-authority-system' },
+      { label: 'AI Search Visibility', path: '/ai-seo-consultant-israel' },
+      { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services' },
+      { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
+      { label: 'Track brand mentions in ChatGPT', path: '/track-brand-mentions-in-chatgpt' },
+      { label: 'Why ChatGPT ignores your brand', path: '/why-chatgpt-doesnt-mention-your-brand' },
+      { label: 'AEO vs GEO vs SEO', path: '/aeo-vs-geo-vs-seo' },
+    ],
+  },
+  {
+    heading: 'Reddit',
+    links: [
+      { label: 'Reddit Marketing', path: '/reddit-marketing-services' },
+      { label: 'Reddit SEO', path: '/reddit-seo' },
+      { label: 'Reddit Posting Service', path: '/reddit-posting-service' },
+      { label: 'Get recommended on Reddit', path: '/how-to-get-recommended-on-reddit' },
+      { label: 'Monitor brand mentions', path: '/monitor-brand-mentions-on-reddit' },
     ],
   },
   {
@@ -94,115 +105,95 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
       { label: 'SEO Consulting', path: '/seoconsulting' },
       { label: 'Technical SEO Audit', path: '/technical-seo-audit' },
       { label: 'SEO Content Writing', path: '/content-marketing-for-seo' },
-      { label: 'Programmatic SEO', path: '/programmatic-seo' },
+      { label: 'Freelancer vs Agency', path: '/seo-freelancer-vs-agency' },
     ],
   },
   {
-    heading: 'Ecommerce & Local',
-    links: [
-      { label: 'Shopify SEO', path: '/shopify-seo' },
-      { label: 'Google Merchant Center', path: '/google-merchant-center-seo' },
-      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
-      { label: 'Local Citations', path: '/local-citations-directories' },
-    ],
-  },
-  {
-    heading: 'AI, Reddit & Video',
-    links: [
-      { label: 'AI Search Visibility', path: '/ai-seo-consultant-israel' },
-      { label: 'Reddit SEO', path: '/reddit-seo' },
-      { label: 'Reddit Marketing', path: '/reddit-marketing-services' },
-      { label: 'Reddit Posting Service', path: '/reddit-posting-service' },
-      { label: 'YouTube SEO', path: '/youtube-seo' },
-    ],
-  },
-  {
-    heading: 'B2B & Authority',
+    heading: 'B2B & Ecommerce',
     links: [
       { label: 'B2B SEO', path: '/b2b-seo-israel' },
       { label: 'SaaS SEO', path: '/saas-seo' },
       { label: 'Cybersecurity SEO', path: '/cybersecurity-seo' },
-      { label: 'Fintech SEO', path: '/fintech-seo' },
+      { label: 'Shopify SEO', path: '/shopify-seo' },
+      { label: 'Google Business Profile', path: '/google-business-profile-seo' },
       { label: 'Link Building', path: '/link-building-services' },
-      { label: 'Press Release SEO', path: '/press-release-seo' },
-      { label: 'Blog Content SEO', path: '/blog-content-seo' },
-      { label: 'SEO Consult', path: '/seo-consult' },
     ],
   },
   {
-    heading: 'Resources',
+    heading: 'Work with me',
     links: [
-      { label: 'DataIsBeautiful Claude Skill', path: '/resources/dataisbeautiful-claude-skill' },
-      { label: 'Recommended Partners', path: '/recommendations' },
+      { label: 'Target Finder', path: '/find-my-target' },
+      { label: 'Demand Capture Blueprint', path: '/local-demand-capture-blueprint' },
+      { label: 'Done-For-You System', path: '/local-authority-system' },
       { label: 'Case Studies', path: '/case-studies' },
       { label: 'Reviews & Results', path: '/reviews-results' },
-      { label: 'Blog', path: '/blog' },
-    ],
-  },
-  {
-    heading: 'AI Search Guides',
-    links: [
-      { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
-      { label: 'ChatGPT recommend your brand', path: '/how-to-get-chatgpt-to-recommend-your-brand' },
-      { label: 'Rank in AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
-      { label: 'Is GEO the new SEO?', path: '/is-geo-the-new-seo' },
-      { label: 'What is GEO?', path: '/what-is-generative-engine-optimization' },
-      { label: 'Brand mentioned in ChatGPT', path: '/how-to-get-your-brand-mentioned-in-chatgpt' },
-      { label: 'What is AEO?', path: '/what-is-answer-engine-optimization' },
-      { label: 'Track AI search presence', path: '/how-to-track-ai-search-visibility' },
-    ],
-  },
-  {
-    heading: 'Reddit Guides',
-    links: [
-      { label: 'Promote without getting banned', path: '/how-to-promote-on-reddit-without-getting-banned' },
-      { label: 'Use Reddit for SEO', path: '/how-to-use-reddit-for-seo' },
-      { label: 'Why Reddit ranks so high', path: '/why-does-reddit-rank-so-high-on-google' },
-      { label: 'Rank a Reddit post on Google', path: '/how-to-rank-a-reddit-post-on-google' },
-      { label: 'How to market on Reddit', path: '/how-to-market-on-reddit' },
-    ],
-  },
-  {
-    heading: 'Reddit & AI Strategy',
-    links: [
-      { label: 'Get cited by AI via Reddit', path: '/reddit-ai-citations' },
-      { label: 'Reddit for B2B SaaS leads', path: '/reddit-b2b-saas-lead-generation' },
-      { label: 'Reddit vs LinkedIn for leads', path: '/reddit-vs-linkedin-b2b-leads' },
-      { label: 'Reddit karma and account age', path: '/reddit-karma-account-age' },
-      { label: 'Reddit and Google deal', path: '/reddit-google-deal-seo' },
-      { label: 'Monitor brand mentions', path: '/monitor-brand-mentions-on-reddit' },
-      { label: 'Reddit ads vs organic', path: '/reddit-ads-vs-organic' },
     ],
   },
   {
     heading: 'Company',
     links: [
-      { label: 'Case Studies', path: '/case-studies' },
       { label: 'About', path: '/about' },
-      { label: 'Reviews & Results', path: '/reviews-results' },
-      { label: 'Recommendations', path: '/recommendations' },
+      { label: 'Blog', path: '/blog' },
       { label: 'Videos', path: '/videos' },
-      { label: 'Freelancer vs Agency', path: '/seo-freelancer-vs-agency' },
-      { label: 'Market on Reddit Safely', path: '/how-to-market-on-reddit-without-getting-banned' },
-      { label: 'Find Subreddits', path: '/how-to-find-subreddits-for-marketing' },
-      { label: 'Why Posts Get Removed', path: '/why-reddit-posts-get-removed' },
+      { label: 'Recommended Partners', path: '/recommendations' },
+      { label: 'Free Claude Skill', path: '/resources/dataisbeautiful-claude-skill' },
     ],
   },
 ];
 
-// Real screenshots posted publicly (sourced from LinkedIn). Used in the homepage proof strip.
+// Real screenshots from real client campaigns. Shown at readable size, full opacity.
+// Order = strongest first: AI recommendation, map pack, Reddit reach, inbound lead.
 export const PROOF_ITEMS = [
-  { label: 'Reddit reach', img: '/images/proof-reddit-405k.jpg', alt: 'Reddit post stats showing 405,000 views', caption_pre: 'A single Reddit post to ', caption_b: '405K views', caption_post: ' and real brand traffic.' },
-  { label: 'Client post', img: '/images/proof-reddit-12k.jpg', alt: 'Reach dashboard showing 12,000 views', caption_pre: 'A client Reddit post hitting ', caption_b: '12K views', caption_post: ' in its first days.' },
-  { label: 'Google lead', img: '/images/proof-google-lead.jpg', alt: 'Inbound lead message that found the client on Google', caption_pre: 'An inbound lead that ', caption_b: 'found the client on Google', caption_post: '.' },
-  { label: 'Client feedback', img: '/images/proof-client-praise.jpg', alt: 'Client message praising an SEO deliverable', caption_pre: 'A client reaction to a recent ', caption_b: 'SEO deliverable', caption_post: '.' },
+  {
+    label: 'AI recommendation',
+    metric: 'Named first in ChatGPT',
+    img: '/images/proof-linkedin-chatgpt.jpg',
+    alt: 'ChatGPT answering a question about buying lucite shtenders in the US and listing ZStander first',
+    caption_pre: 'Asked where to buy lucite shtenders in the US, ChatGPT ',
+    caption_b: 'names ZStander first',
+    caption_post: '.',
+    source: 'Client: ZStander',
+  },
+  {
+    label: 'Local map pack',
+    metric: 'Top of the map pack',
+    img: '/images/proof-linkedin-morristown.jpg',
+    alt: 'Google results for eating disorder treatment in Morristown NJ showing the client at the top of the map pack',
+    caption_pre: 'A client practice sitting ',
+    caption_b: 'at the top of the Google map pack',
+    caption_post: ' for eating disorder treatment in Morristown, NJ.',
+    source: 'Client: Embracing Uncertainty',
+  },
+  {
+    label: 'Reddit reach',
+    metric: '405K views',
+    img: '/images/proof-reddit-405k.jpg',
+    alt: 'Reddit post statistics showing 405,000 views, 518 upvotes and 217 comments',
+    caption_pre: 'One Reddit post reaching ',
+    caption_b: '405,000 views',
+    caption_post: ', with 518 upvotes and 217 comments.',
+    source: 'Organic Reddit campaign',
+  },
+  {
+    label: 'Inbound lead',
+    metric: 'Found on Google',
+    img: '/images/proof-google-lead.jpg',
+    alt: 'Message from a parent asking about in-home ABA therapy who found the client on Google',
+    caption_pre: 'A parent asking about in-home ABA therapy who ',
+    caption_b: 'found the client on Google',
+    caption_post: '.',
+    source: 'Client: ABA therapy practice',
+  },
 ];
 
-// Metric-forward testimonials for the homepage (verbatim, from /reviews-results).
+// Verbatim LinkedIn-verified client reviews. Quotes are quoted exactly as written.
 export const HOME_TESTIMONIALS = [
-  { result: 'Nearly 7 figures in revenue', quote: 'Zechariah was one of the best people I ever contracted. His out of the box thinking and attention to detail really helped.', name: 'Sean Littman', title: 'Founder, GiveSuite' },
-  { result: '#1 on Google Maps in one week', quote: 'Within one week, our business was showing #1 on Google Maps for every target search term we cared about. I was blown away.', name: 'Yonatan Vinnik, LSW', title: 'Child & Family Therapist' },
-  { result: 'Saved thousands, ranked fast', quote: 'Within a couple of months I was ranking at the top for my key searches, which honestly shocked me. Talk to Zechariah.', name: 'Brett Sheldon, LCSW', title: 'CEO, Launch Point Network' },
+  { result: 'Nearly 7 figures in revenue', quote: 'Where do I even begin. Zechariah was one of the best people I had ever contracted out. He was able to help us yield nearly 7 figures in revenue. His out of the box thinking and attention for detail really helped.', name: 'Sean Littman', title: 'Founder, GiveSuite.com' },
+  { result: '#1 on Google Maps in one week', quote: 'Within one week, our business was showing #1 on Google Maps for every target search term we cared about. I was honestly blown away by how fast and effective the results were. He truly understands SEO and local search.', name: 'Yonatan Vinnik, LSW', title: 'Child & Family Therapist' },
+  { result: 'Saved thousands, ranked fast', quote: 'Within a couple of months, I was ranking at the top for my key searches, which honestly shocked me. I have saved a ridiculous amount of money, easily thousands of dollars! Talk to Zechariah.', name: 'Brett Sheldon, LCSW', title: 'CEO of Launch Point Network' },
+  { result: 'Creative and analytical', quote: 'Extremely talented, sharp, and genuinely passionate. He is both creative and analytical, a rare combination, and quickly understands how to deliver real results.', name: 'Yehudah Kreitenberg', title: 'CBDO @ PayIP' },
+  { result: 'Brings the right people in', quote: "He doesn't just tick boxes, he cares. Deeply. SEO isn't about doing all the right things, it's about bringing the right people to your site. That's exactly what he does.", name: 'Rivka Neumann', title: 'Founder @ Flyhost.me' },
+  { result: 'Clear, practical strategy', quote: 'I really appreciated how clear and thoughtful he was. He took the time to understand my business and explained strategy in a way that was practical and easy to follow. Very knowledgeable and honest.', name: 'Menachem Encaoua', title: 'Turning ideas into businesses' },
 ];
 
 export const PROFILE_IMAGE: string | null = null;
@@ -476,12 +467,12 @@ export const LINKEDIN_FEATURED_RESULTS = [
     path: '/ai-seo-consultant-israel',
   },
   {
-    title: 'Ecommerce SEO and Shopping',
-    metric: 'Collection-page SEO',
-    description: 'Collection-page SEO, product-page cleanup, foundational backlinks, and focused Shopping support helped improve ecommerce visibility.',
-    image: '/images/proof-client-praise.jpg',
-    alt: 'Client message praising an SEO deliverable',
-    path: '/case-studies/zstander-shopify-seo',
+    title: 'Reddit reach',
+    metric: '405K views',
+    description: 'One organic Reddit post reached 405,000 views with 518 upvotes and 217 comments, using the recommendation method rather than paid promotion.',
+    image: '/images/proof-reddit-405k.jpg',
+    alt: 'Reddit post statistics showing 405,000 views, 518 upvotes and 217 comments',
+    path: '/case-studies/reddit-405k-views',
   },
   {
     title: 'Local mental health SEO',
@@ -503,9 +494,47 @@ export const LINKEDIN_FEATURED_RESULTS = [
 
 export const SERVICE_SPOKES: SpokeService[] = [
   {
+    slug: 'answer-engine-optimization-services',
+    title: 'Answer Engine Optimization Services',
+    seoTitle: 'Answer Engine Optimization Services: Get Named in AI Answers',
+    metaDescription: 'Get your brand named in ChatGPT, Perplexity and Google AI Overviews. One senior consultant working on your pages and the sources those answers are built from.',
+    eyebrow: 'Answer engine optimization',
+    parentPath: '/ai-seo-consultant-israel',
+    parentLabel: 'AI Search Visibility',
+    bestFor: 'Brands that rank fine on Google but never get named when someone asks an AI assistant who to use.',
+    intro: 'Answer engine optimization gets your brand named when a buyer asks ChatGPT, Perplexity or Google which option to pick. Most sites are invisible in those answers even when they rank well, because the answer is built from what other people say about you, not from your homepage. I work on both halves: pages clear enough to be quoted, and real mentions in the places those answers pull from.',
+    fit: 'This fits brands where buyers now open an assistant before they open Google. If you are already ranking and still never get named, the gap is off your site, and that is fixable.',
+    handleTitle: 'What the work actually covers.',
+    handleIntro: 'It starts with measuring where you stand, then fixing the reason you are missing rather than guessing.',
+    handles: [
+      'A baseline: the questions your buyers ask, run across the assistants, logged so you can see movement',
+      'Page work so the answer sits in the first sentence and can be lifted cleanly',
+      'Source analysis: finding which sites and threads the current answers are actually built from',
+      'Getting the brand honestly represented in those sources, including Reddit discussions',
+      'Structured data and clean crawling so machines read the pages correctly',
+      'Brand clarity work when an assistant confuses you with a similarly named company',
+    ],
+    avoids: [
+      'Promising a guaranteed mention, which nobody can control.',
+      'Charging separately for AEO, GEO and SEO when the work overlaps.',
+      'Bulk AI content published to look active.',
+    ],
+    proof: 'For ZStander, indexing work, foundational links, schema and clearer page structure ended with ChatGPT naming them first when asked where to buy lucite shtenders in the US. The same approach put a client practice at the top of the Google map pack in Morristown, NJ.',
+    related: ['AI SEO / GEO', 'Reddit SEO', 'Technical SEO audit', 'SEO consulting'],
+    faqs: [
+      { q: 'What is answer engine optimization?', a: 'It is making your page the clearest, best-supported answer to a specific question, so search engines and AI assistants use it. See [what is answer engine optimization](/what-is-answer-engine-optimization) for the longer explanation.' },
+      { q: 'How is this different from SEO?', a: 'Most of it is not different, and I will not pretend otherwise. The real differences are answer position, off-site mentions carrying more weight, and measuring by sampling prompts instead of tracking a rank. See [AEO vs GEO vs SEO](/aeo-vs-geo-vs-seo).' },
+      { q: 'Can you guarantee ChatGPT will mention my brand?', a: 'No. There is no placement to buy and no lever anyone controls. What I can do is make your pages the clearest answer and build the outside mentions that make an assistant trust you.' },
+      { q: 'How do we know if it is working?', a: 'We set a baseline before starting, then re-run the same prompts on a schedule and compare how often you get named. The method is written up in [how to track brand mentions in ChatGPT](/track-brand-mentions-in-chatgpt).' },
+      { q: 'How long does it take?', a: 'Page fixes can get picked up within weeks. Building the off-site mentions that change an answer usually takes a few months, and I would rather say that up front than sell a faster timeline I cannot hold.' },
+      { q: 'Do you work with brands outside Israel?', a: 'Yes. Most of my clients sell into the US and other English-speaking markets. I write in native US English and work directly with you, not through an account manager.' },
+    ],
+    cta: 'Send your site and the question you want an AI assistant to name you for.',
+  },
+  {
     slug: 'saas-seo',
     title: 'SaaS SEO',
-    seoTitle: 'SaaS SEO for B2B Software Companies | Buyer-Intent Pages, Comparison and Use-Case SEO, AI Search Visibility and Pipeline-Focused Growth for US Markets | Zechariah Tokar',
+    seoTitle: 'SaaS SEO: Turn Software Searches Into Demos',
     metaDescription: 'SaaS SEO that turns search into pipeline. Buyer-intent pages, comparison and use-case content, and AI search visibility for B2B software targeting the US.',
     eyebrow: 'B2B SEO',
     parentPath: '/b2b-seo-israel',
@@ -530,7 +559,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'cybersecurity-seo',
     title: 'Cybersecurity SEO',
-    seoTitle: 'Cybersecurity SEO for Security Companies | Buyer-Intent and Comparison Pages, Technical Authority, AI Search Visibility and Pipeline Growth in US Markets | Zechariah Tokar',
+    seoTitle: 'Cybersecurity SEO: Reach Security Buyers and CISOs',
     metaDescription: 'Cybersecurity SEO that reaches security buyers and CISOs. Buyer-intent pages, comparison content, and AI search visibility for security companies selling into the US.',
     eyebrow: 'B2B SEO',
     parentPath: '/b2b-seo-israel',
@@ -555,7 +584,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'fintech-seo',
     title: 'Fintech SEO',
-    seoTitle: 'Fintech SEO for Financial Technology Companies | Buyer-Intent and Comparison Pages, Compliance-Aware Content, AI Search Visibility and US Market Growth | Zechariah Tokar',
+    seoTitle: 'Fintech SEO: Win Trust-First Finance Searches',
     metaDescription: 'Fintech SEO that reaches financial buyers with trust. Buyer-intent pages, comparison content, compliance-aware copy, and AI search visibility for fintech selling into the US.',
     eyebrow: 'B2B SEO',
     parentPath: '/b2b-seo-israel',
@@ -580,7 +609,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'shopify-seo',
     title: 'Get more Shopify traffic from collection and product pages.',
-    seoTitle: 'Shopify SEO Consultant | Improve Collection Pages, Product SEO, Technical Cleanup, Merchant Center Visibility and Ecommerce Search Traffic | Zechariah Tokar',
+    seoTitle: 'Shopify SEO Consultant: Collections and Products That Rank',
     metaDescription: 'Shopify SEO help for collections, product pages, technical cleanup, Google Search Console, and ecommerce search visibility.',
     eyebrow: 'Shopify SEO',
     parentPath: '/seo-services-israel',
@@ -595,7 +624,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'google-merchant-center-seo',
     title: 'Fix Merchant Center issues that hold back product visibility.',
-    seoTitle: 'Google Merchant Center SEO | Product Feed Cleanup, Shopping Visibility, Ecommerce Indexing, Feed Titles and Technical SEO Help | Zechariah Tokar',
+    seoTitle: 'Google Merchant Center SEO: Fix the Shopping Feed',
     metaDescription: 'Google Merchant Center SEO and product feed cleanup for ecommerce stores that depend on Google Shopping and organic product visibility.',
     eyebrow: 'Google Merchant Center SEO',
     parentPath: '/seo-services-israel',
@@ -610,7 +639,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'google-business-profile-seo',
     title: 'Get found in Maps and local search by better-fit customers.',
-    seoTitle: 'Google Business Profile SEO | Local SEO Consultant for Maps Visibility, Service Area Pages, Reviews, Citations and Lead Growth | Zechariah Tokar',
+    seoTitle: 'Google Business Profile SEO: Win the Local Map Pack',
     metaDescription: 'Google Business Profile SEO for local service businesses, Maps visibility, local pages, reviews, and search consistency.',
     eyebrow: 'Google Business Profile SEO',
     parentPath: '/seo-services-israel',
@@ -625,7 +654,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'local-citations-directories',
     title: 'Clean up local citations so Google can trust the business.',
-    seoTitle: 'Local Citations and Directory SEO | NAP Cleanup, Business Listings, Local Authority Signals and Google Maps Support | Zechariah Tokar',
+    seoTitle: 'Local Citations and Directory SEO: Consistent Listings',
     metaDescription: 'Local citation and directory SEO for NAP consistency, business profiles, authority signals, and local search visibility.',
     eyebrow: 'Citations and directories',
     parentPath: '/link-building-services',
@@ -640,7 +669,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'reddit-seo',
     title: 'Use Reddit to support brand discovery and AI search visibility.',
-    seoTitle: 'Reddit SEO Consultant | Brand Visibility, Reddit Research, Forum Mentions, AI Search and Search Demand Support | Zechariah Tokar',
+    seoTitle: 'Reddit SEO: Rank in Discussions and Feed AI Answers',
     metaDescription: 'Reddit SEO help for search visibility, brand mentions, buyer research, AI search presence, and useful discussion-led content.',
     eyebrow: 'Reddit SEO',
     parentPath: '/ai-seo-consultant-israel',
@@ -655,7 +684,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'reddit-marketing-services',
     title: 'Reddit marketing services for brands that need trust, not spam.',
-    seoTitle: 'Reddit Marketing Services | Organic Reddit Strategy, Subreddit Research, Brand Trust and Search Visibility | Zechariah Tokar',
+    seoTitle: 'Reddit Marketing Services: Trust, Not Spam',
     metaDescription: 'Reddit marketing services for organic community research, subreddit strategy, useful posts, brand trust, search visibility, and safer campaign planning.',
     eyebrow: 'Reddit marketing services',
     visual: 'redditMarketing',
@@ -668,8 +697,22 @@ export const SERVICE_SPOKES: SpokeService[] = [
     handleIntro: 'I turn Reddit threads into a practical marketing plan: what people ask, what they distrust, which subreddits fit, what the website should answer, and what the brand can safely say in the community.',
     handles: ['Relevant subreddit and thread research', 'Organic post and comment planning', 'Moderator and community-risk review', 'Landing-page and search-result alignment', 'Campaign measurement and next-step review'],
     avoids: ['Fake upvote packages', 'Spammy brand mentions', 'Posting in communities that do not fit', 'Volume campaigns that look automated'],
-    proof: 'The work is built around real community behavior. Zechariah has used the method on posts that reached 405,000 views and uses Reddit research to improve the pages buyers reach after a discussion.',
+    proof: 'The work is built around real community behavior. I have used this method on posts that reached 405,000 views, with 518 upvotes and 217 comments, and I use the same Reddit research to improve the pages buyers land on after a discussion. See the [Reddit case study](/case-studies/reddit-405k-views).',
     sections: [
+      {
+        heading: 'The method I use to get recommendation posts to stick.',
+        body: [
+          'This is the actual process, and it is slow on purpose. Brands that skip the waiting get removed, and a removed account is worth nothing afterwards.',
+          'The rule that matters most is the third one. Only post a recommendation where somebody actually asked for one. Forcing a brand into an unrelated thread is the fastest way to lose the account.',
+          'People sometimes ask me about buying upvotes. It exists, I do not do it, and the accounts that lean on it tend to get caught. Full walkthrough in [how to get recommended on Reddit](/how-to-get-recommended-on-reddit).',
+        ],
+        bullets: [
+          'Scope the subreddit first: the language people use, the topics that come up, what moderators remove.',
+          'Engage helpfully for a few weeks so the community sees a real person, not a new account with a link.',
+          'Once there is trust, watch for posts where people ask for recommendations, and answer only those.',
+          'Describe the options honestly in the style of that thread, including trade-offs, and leave the link out so it reads like a person.',
+        ],
+      },
       {
         heading: 'Organic Reddit marketing and Reddit ads solve different problems.',
         body: [
@@ -727,7 +770,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'reddit-marketing-expert',
     title: 'Hire a Reddit marketing expert before you post in the wrong place.',
-    seoTitle: 'Reddit Marketing Expert | Reddit Consultant for Subreddit Strategy, Risk Review, Search Visibility and Brand Trust | Zechariah Tokar',
+    seoTitle: 'Reddit Marketing Expert: Subreddit Strategy and Risk Review',
     metaDescription: 'Hire a Reddit marketing expert for subreddit strategy, risk review, buyer research, search visibility, and practical Reddit campaign planning.',
     eyebrow: 'Reddit marketing expert',
     visual: 'redditExpert',
@@ -747,7 +790,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'reddit-posting-service',
     title: 'A Reddit posting service that starts with whether posting is smart.',
-    seoTitle: 'Reddit Posting Service | Reddit Post Writing, Review, Publishing Support and Search-Aware Community Content | Zechariah Tokar',
+    seoTitle: 'Reddit Posting Service: Posts That Do Not Get Removed',
     metaDescription: 'Reddit posting service for careful post planning, native writing, review, publishing support, and search-aware community content.',
     eyebrow: 'Reddit posting service',
     visual: 'redditPosting',
@@ -767,7 +810,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'youtube-seo',
     title: 'Turn videos into searchable assets buyers can actually find.',
-    seoTitle: 'YouTube SEO Consultant | Video Titles, Topic Strategy, Descriptions, Search Packaging and AI Search Support | Zechariah Tokar',
+    seoTitle: 'YouTube SEO Consultant: Make Your Videos Findable',
     metaDescription: 'YouTube SEO help for video topics, titles, descriptions, search intent, internal links, and Google video visibility.',
     eyebrow: 'YouTube SEO',
     parentPath: '/content-marketing-for-seo',
@@ -782,7 +825,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'programmatic-seo',
     title: 'Build scalable SEO pages that are useful enough to rank.',
-    seoTitle: 'Programmatic SEO Consultant | Useful Template Pages, Internal Linking, Indexation Control, Location Pages and Scalable SEO Systems | Zechariah Tokar',
+    seoTitle: 'Programmatic SEO: Useful Pages at Scale, Not Doorway Spam',
     metaDescription: 'Programmatic SEO consulting for useful template pages, internal linking, indexation, data structure, and scalable search pages.',
     eyebrow: 'Programmatic SEO',
     parentPath: '/ai-seo-consultant-israel',
@@ -797,7 +840,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'seo-consult',
     title: 'Get a clear SEO plan before spending more time or budget.',
-    seoTitle: 'SEO Consult | Freelance SEO Consultant for Site Reviews, Priority Roadmaps, Technical Direction and Content Decisions | Zechariah Tokar',
+    seoTitle: 'SEO Consult: Site Review and a Priority Roadmap',
     metaDescription: 'SEO consults for audits, strategy, second opinions, content plans, technical questions, and clear SEO priorities.',
     eyebrow: 'SEO consult',
     parentPath: '/seoconsulting',
@@ -812,7 +855,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'press-release-seo',
     title: 'Use press releases to support brand search and authority.',
-    seoTitle: 'Press Release SEO | PR Mentions, Brand Search Visibility, Authority Building, Third-Party Signals and AI Search Support | Zechariah Tokar',
+    seoTitle: 'Press Release SEO: Brand Mentions That Support Search',
     metaDescription: 'Press release SEO help for brand search, authority building, third-party mentions, AI answers, and reputation support.',
     eyebrow: 'Press release SEO',
     parentPath: '/link-building-services',
@@ -827,7 +870,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
   {
     slug: 'blog-content-seo',
     title: 'Publish blog content that supports rankings, trust, and leads.',
-    seoTitle: 'Blog Content SEO | SEO Writing, Content Refreshes, Buyer-Focused Articles, Internal Links and Search-Led Topic Planning | Zechariah Tokar',
+    seoTitle: 'Blog Content SEO: Articles That Support Real Leads',
     metaDescription: 'Blog content SEO help for article strategy, content refreshes, buyer-focused posts, internal links, and search-focused writing.',
     eyebrow: 'Blog content SEO',
     parentPath: '/content-marketing-for-seo',
@@ -845,7 +888,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-ai-citations',
     title: 'How Reddit gets your brand cited by ChatGPT and AI Overviews.',
-    seoTitle: 'How Reddit Gets Your Brand Cited by ChatGPT and AI Overviews | Brand Mentions and Getting Recommended in AI Answers',
+    seoTitle: 'How Reddit Gets Your Brand Cited by ChatGPT',
     metaDescription: 'AI tools quote Reddit often. Here is how real Reddit discussions get your brand named in ChatGPT and Google AI Overviews when buyers ask for recommendations.',
     eyebrow: 'Reddit and AI search',
     parentPath: '/reddit-marketing-services',
@@ -867,7 +910,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-b2b-saas-lead-generation',
     title: 'Reddit for B2B SaaS lead generation.',
-    seoTitle: 'Reddit for B2B SaaS Lead Generation | How to Get Warm, High-Intent Software Leads From Reddit Without Getting Banned',
+    seoTitle: 'Reddit for B2B SaaS Lead Generation',
     metaDescription: 'Reddit can bring warm B2B SaaS leads when you help before you sell. Here is where the leads come from and how to earn them without getting removed.',
     eyebrow: 'Reddit for B2B SaaS',
     parentPath: '/reddit-marketing-services',
@@ -888,7 +931,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-vs-linkedin-b2b-leads',
     title: 'Reddit vs LinkedIn for B2B leads.',
-    seoTitle: 'Reddit vs LinkedIn for B2B Leads | Which Channel Brings Warmer, Lower-Cost Pipeline in 2026 and How to Use Both',
+    seoTitle: 'Reddit vs LinkedIn for B2B Leads',
     metaDescription: 'LinkedIn reaches named decision-makers. Reddit brings warm, honest demand. Here is how to choose between Reddit and LinkedIn for B2B leads, with the tradeoffs.',
     eyebrow: 'Reddit vs LinkedIn',
     parentPath: '/reddit-marketing-services',
@@ -909,7 +952,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-karma-account-age',
     title: 'Reddit karma and account age for marketing.',
-    seoTitle: 'Reddit Karma and Account Age for Marketing | How Much Karma and History You Need Before You Promote, and How to Build Trust Safely',
+    seoTitle: 'Reddit Karma and Account Age: How Much You Need',
     metaDescription: 'Reddit trusts older accounts with real karma. Here is how karma and account age affect marketing, and the safe way to build trust before you post.',
     eyebrow: 'Reddit account trust',
     parentPath: '/reddit-marketing-services',
@@ -930,7 +973,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-google-deal-seo',
     title: 'How Reddit’s Google deal changed SEO.',
-    seoTitle: 'How Reddit’s Google Deal Changed SEO | Why Reddit Threads Now Rank and Feed AI Answers, and What It Means for Your Brand',
+    seoTitle: 'How Reddit’s Google Deal Changed SEO',
     metaDescription: 'Google pays Reddit for its content. Here is how the reported 60 million dollar deal made Reddit rank and feed AI answers, and what it means for your brand.',
     eyebrow: 'Reddit and Google',
     parentPath: '/reddit-marketing-services',
@@ -951,7 +994,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'monitor-brand-mentions-on-reddit',
     title: 'How to monitor brand mentions on Reddit.',
-    seoTitle: 'How to Monitor Brand Mentions on Reddit | Track What Reddit Says About Your Brand Before Google and AI Repeat It',
+    seoTitle: 'Reddit Brand Monitoring: Track What People Say About You',
     metaDescription: 'Watch what Reddit says about your brand, because Google and AI now repeat it. Here is a simple weekly way to monitor brand mentions on Reddit and act on them.',
     eyebrow: 'Reddit brand reputation',
     parentPath: '/reddit-marketing-services',
@@ -972,7 +1015,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'reddit-ads-vs-organic',
     title: 'Reddit ads vs organic Reddit marketing.',
-    seoTitle: 'Reddit Ads vs Organic Reddit Marketing | Which One Builds Lasting Search Visibility and Trust, and the Best Mix for Your Goal',
+    seoTitle: 'Reddit Ads vs Organic: Which Builds Lasting Trust',
     metaDescription: 'Reddit ads buy fast reach. Organic Reddit marketing builds trust and search visibility that lasts. Here is how to choose, and the best mix for your goal.',
     eyebrow: 'Reddit ads vs organic',
     parentPath: '/reddit-marketing-services',
@@ -993,7 +1036,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'how-to-market-on-reddit-without-getting-banned',
     title: 'How to market on Reddit without getting banned.',
-    seoTitle: 'How to Market on Reddit Without Getting Banned | Safer Reddit Marketing, Subreddit Rules, Account Trust and Post Planning',
+    seoTitle: 'How to Market on Reddit Without Getting Banned',
     metaDescription: 'Learn how to market on Reddit without getting banned by checking subreddit fit, account trust, post format, link use, and community expectations first.',
     eyebrow: 'Reddit marketing guide',
     parentPath: '/reddit-marketing-services',
@@ -1035,7 +1078,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'how-to-find-subreddits-for-marketing',
     title: 'How to find subreddits for marketing.',
-    seoTitle: 'How to Find Subreddits for Marketing | Reddit Community Research, Buyer Language, Search Visibility and Posting Fit',
+    seoTitle: 'How to Find the Right Subreddits for Marketing',
     metaDescription: 'Find better subreddits for marketing by looking at active problem threads, rules, moderation patterns, buyer language, and search visibility.',
     eyebrow: 'Reddit audience research',
     parentPath: '/reddit-marketing-services',
@@ -1078,7 +1121,7 @@ export const REDDIT_SUPPORT_PAGES: SupportPage[] = [
   {
     slug: 'why-reddit-posts-get-removed',
     title: 'Why Reddit posts get removed.',
-    seoTitle: 'Why Reddit Posts Get Removed | AutoModerator, Karma, Subreddit Rules, Promotional Tone and Safer Post Review',
+    seoTitle: 'Why Reddit Posts Get Removed (And How to Avoid It)',
     metaDescription: 'Learn why Reddit posts get removed, including AutoModerator filters, account age, karma, missing flair, self-promotion rules, direct links, and poor subreddit fit.',
     eyebrow: 'Reddit posting guide',
     parentPath: '/reddit-posting-service',
@@ -1196,7 +1239,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'seo-services',
     slug: 'seo-services-israel',
     title: 'SEO services in Israel from the person doing the work.',
-    seoTitle: 'SEO Services Israel | Direct Senior SEO for US Markets, Technical Audits, Content, Local Search and AI Search | Zechariah Tokar',
+    seoTitle: 'SEO Services in Israel for US Markets | Zechariah Tokar',
     metaDescription: 'SEO services in Israel for companies targeting US and English-speaking markets. Work directly with Zechariah on audits, content, local search, B2B SEO, ecommerce, and AI search.',
     subtitle: 'SEO Services Israel',
     primaryKeyword: 'SEO services Israel',
@@ -1258,7 +1301,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'freelance-seo',
     slug: 'freelance-seo-israel',
     title: 'Freelance SEO in Israel for companies that need leads, not reports.',
-    seoTitle: 'Freelance SEO Israel | Direct Senior SEO for US Markets, Technical Fixes, Content and Search Visibility | Zechariah Tokar',
+    seoTitle: 'Freelance SEO in Israel, Done Directly',
     metaDescription: 'Hire a freelance SEO in Israel for direct senior work on technical SEO, service pages, content, local search, AI search, and organic growth in English-speaking markets.',
     subtitle: 'Freelance SEO Israel',
     primaryKeyword: 'freelance SEO Israel',
@@ -1316,7 +1359,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'b2b-seo',
     slug: 'b2b-seo-israel',
     title: 'B2B SEO in Israel that helps buyers find and trust you.',
-    seoTitle: 'B2B SEO Israel | Direct SEO for SaaS, Tech and Service Companies Targeting US Buyers | Zechariah Tokar',
+    seoTitle: 'B2B SEO in Israel for SaaS and Tech',
     metaDescription: 'B2B SEO in Israel for SaaS, tech, service, fintech, and cybersecurity companies targeting US and English-speaking buyers. Build pages that support pipeline and trust.',
     subtitle: 'B2B SEO Israel',
     primaryKeyword: 'B2B SEO Israel',
@@ -1382,7 +1425,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'seo-consulting',
     slug: 'seoconsulting',
     title: 'SEO consultant in Israel for clearer priorities and faster wins.',
-    seoTitle: 'SEO Consultant Israel | Audits, SEO Strategy, Technical Priorities and Clear Execution Roadmaps | Zechariah Tokar',
+    seoTitle: 'SEO Consultant in Israel: Clear Priorities',
     metaDescription: 'Work with an SEO consultant in Israel for a practical audit, SEO strategy, technical priorities, content planning, AI search guidance, and a clear execution roadmap.',
     subtitle: 'SEO Consultant Israel',
     primaryKeyword: 'SEO consultant Israel',
@@ -1452,7 +1495,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'content-seo',
     slug: 'content-marketing-for-seo',
     title: 'SEO writing services for pages that rank, explain, and convert.',
-    seoTitle: 'SEO Writing Services | Service Pages, Buyer-Focused Content, Refreshes and Search Copy That Supports Leads | Zechariah Tokar',
+    seoTitle: 'SEO Writing Services: Pages That Rank and Convert',
     metaDescription: 'SEO writing services for service pages, buyer-focused articles, content refreshes, briefs, and search copy built around proof, clear positioning, and a useful next step.',
     subtitle: 'SEO Writing Services',
     primaryKeyword: 'SEO writing services',
@@ -1518,7 +1561,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'ai-seo',
     slug: 'ai-seo-consultant-israel',
     title: 'AI SEO consultant in Israel for brands that want to be found and recommended.',
-    seoTitle: 'AI SEO Consultant Israel | ChatGPT, Perplexity, Google AI Overviews and Brand Search Visibility | Zechariah Tokar',
+    seoTitle: 'AI SEO Consultant for ChatGPT and AI Answers',
     metaDescription: 'Work with an AI SEO consultant in Israel to improve brand visibility across ChatGPT, Perplexity, Google AI Overviews, Reddit, and traditional search.',
     subtitle: 'AI SEO Consultant Israel',
     primaryKeyword: 'AI SEO freelancer',
@@ -1552,7 +1595,11 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     deepDive: [
       {
         title: 'What I mean by AI SEO',
-        body: "AI SEO is not publishing a pile of generated posts. I look at whether Google, ChatGPT, Perplexity, Reddit, YouTube, and third-party pages describe the brand clearly. If the brand is hard to understand, it is hard to recommend. That is the problem I try to fix.",
+        body: "AI SEO is not publishing a pile of generated posts. I look at whether Google, ChatGPT, Perplexity, Reddit, YouTube, and third-party pages describe the brand clearly. If the brand is hard to understand, it is hard to recommend. That is the problem I try to fix. If you want the full service scope, see [answer engine optimization services](/answer-engine-optimization-services).",
+      },
+      {
+        title: 'Start by finding out where you actually stand',
+        body: 'Before any work, we measure. I run the questions your buyers ask and log how often an assistant names you, which is written up in [how to track brand mentions in ChatGPT](/track-brand-mentions-in-chatgpt). If the answer is never, the usual causes are covered in [why ChatGPT does not mention your brand](/why-chatgpt-doesnt-mention-your-brand). For the tools people ask me about, see [AI search visibility tools](/ai-search-visibility-tools).',
       },
       {
         title: 'What I check',
@@ -1588,7 +1635,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'technical-seo-audit',
     slug: 'technical-seo-audit',
     title: 'Technical SEO audit that shows what to fix first.',
-    seoTitle: 'Technical SEO Audit | Crawl, Indexing, Google Search Console, Core Web Vitals and a Prioritized Fix Plan | Zechariah Tokar',
+    seoTitle: 'Technical SEO Audit That Shows What to Fix First',
     metaDescription: 'Get a technical SEO audit covering crawl issues, indexing, Google Search Console, site structure, metadata, schema, Core Web Vitals, and a prioritized fix plan.',
     subtitle: 'Technical SEO Audit',
     primaryKeyword: 'technical SEO audit',
@@ -1650,7 +1697,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'link-building',
     slug: 'link-building-services',
     title: 'Link building services that support pages worth ranking.',
-    seoTitle: 'Link Building Services | Relevant Backlinks, Digital PR, Brand Mentions, Citations and Authority for Priority Pages | Zechariah Tokar',
+    seoTitle: 'Link Building Services: Relevant Links, No Spam',
     metaDescription: 'Link building services focused on relevant backlinks, digital PR, brand mentions, citations, and authority for pages worth ranking. No bulk link packages or spam.',
     subtitle: 'Link Building Services',
     primaryKeyword: 'link building services',
@@ -1712,7 +1759,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     id: 'reviews-results',
     slug: 'reviews-results',
     title: 'SEO freelancer reviews, results, and proof before you hire.',
-    seoTitle: 'SEO Freelancer Reviews | Zechariah Tokar Results, Client Feedback, SEO Outcomes, Local SEO Wins and Public Profile Proof | Zechariah Tokar',
+    seoTitle: 'SEO Freelancer Reviews and Real Client Results | Zechariah Tokar',
     metaDescription: 'Read selected SEO freelancer reviews and results for Zechariah Tokar, including SEO wins across ecommerce, local services, and B2B.',
     subtitle: 'Reviews and Results',
     primaryKeyword: 'SEO freelancer reviews',

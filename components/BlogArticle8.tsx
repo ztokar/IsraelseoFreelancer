@@ -106,7 +106,7 @@ export const BlogArticle8: React.FC = () => {
             <h2 id="weak-bofu">Weak Bottom-of-Funnel Content</h2>
             <p>Israeli B2B companies publish dozens of blog posts about industry trends. Then they wonder why content marketing generates traffic but not demos.</p>
             <p>The problem: they're building top-of-funnel content when B2B buyers make decisions at the bottom of the funnel.</p>
-            <p><strong>Instead of more blog posts, build BOFU content:</strong></p>
+            <p><strong>Instead of more blog posts, build buyer-intent content:</strong></p>
             <ul>
               <li>Comparison pages for every major competitor</li>
               <li>Alternative pages targeting switching intent</li>

@@ -53,7 +53,7 @@ export const BlogArticle9: React.FC = () => {
                 <li><a href="#vanity-metric" className="text-primary hover:underline">Why Traffic Is a Vanity Metric in B2B</a></li>
                 <li><a href="#sales-funnel" className="text-primary hover:underline">Mapping SEO to the Sales Funnel</a></li>
                 <li><a href="#high-intent" className="text-primary hover:underline">High-Intent vs Research Keywords</a></li>
-                <li><a href="#bofu-strategy" className="text-primary hover:underline">BOFU Content Strategy</a></li>
+                <li><a href="#bofu-strategy" className="text-primary hover:underline">Buyer-Intent Content Strategy</a></li>
                 <li><a href="#attribution" className="text-primary hover:underline">Attribution & CRM Tracking</a></li>
                 <li><a href="#example" className="text-primary hover:underline">Real Pipeline Generation Example</a></li>
               </ul>
@@ -86,8 +86,8 @@ export const BlogArticle9: React.FC = () => {
 
             <hr className="my-12 border-slate-200" />
 
-            <h2 id="bofu-strategy">BOFU Content Strategy</h2>
-            <p><strong>Build these BOFU pages first:</strong></p>
+            <h2 id="bofu-strategy">Buyer-Intent Content Strategy</h2>
+            <p><strong>Build these buyer-intent pages first:</strong></p>
             <ul>
               <li>Comparison pages for each competitor</li>
               <li>Alternative pages targeting switchers</li>

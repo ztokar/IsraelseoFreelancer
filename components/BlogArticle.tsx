@@ -114,7 +114,7 @@ export const BlogArticle: React.FC = () => {
 
             <p>TOFU content generates vanity metrics.</p>
 
-            <p>BOFU content generates pipeline.</p>
+            <p>Buyer-intent content generates pipeline.</p>
 
             <h2 id="what-b2b-seo-should-deliver">What B2B SEO Services Should Actually Deliver</h2>
 
@@ -144,7 +144,7 @@ export const BlogArticle: React.FC = () => {
               They make it after comparing vendors, checking pricing, reading reviews, and confirming your solution addresses their exact requirements.
             </p>
 
-            <h3>The BOFU Priority</h3>
+            <h3>The Buyer-Intent Priority</h3>
 
             <p>Bottom-of-funnel SEO targets decision-stage queries.</p>
 
