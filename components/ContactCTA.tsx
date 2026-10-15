@@ -8,6 +8,10 @@ interface ContactCTAProps {
   subject: string;
   submitButtonText?: string;
   id?: string;
+  service?: string;
+  issueLabel?: string;
+  messageLabel?: string;
+  messagePlaceholder?: string;
 }
 
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpwvyzbr';
@@ -19,6 +23,10 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
   subject,
   submitButtonText = 'Send my site',
   id = 'contact',
+  service,
+  issueLabel = 'The main SEO issue',
+  messageLabel,
+  messagePlaceholder,
 }) => (
   <div className="gp">
     <section className="gp-cta contact-cta" id={id}>
@@ -32,7 +40,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
             <h3>What to send</h3>
             <ul>
               <li>Your website</li>
-              <li>The main SEO issue</li>
+              <li>{issueLabel}</li>
               <li>What a good lead or sale looks like</li>
             </ul>
           </div>
@@ -42,6 +50,9 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
               subject={subject}
               submitButtonText={submitButtonText}
               showMessage={true}
+              messageLabel={messageLabel}
+              messagePlaceholder={messagePlaceholder}
+              extraFields={service ? <input type="hidden" name="service" value={service} /> : undefined}
             />
           </div>
         </div>

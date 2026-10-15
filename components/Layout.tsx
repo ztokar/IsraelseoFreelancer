@@ -59,12 +59,12 @@ export const Layout: React.FC = () => {
             <a className="pill" href="#contact">
               Send your site <span aria-hidden="true">↗</span>
             </a>
-            <button className="burger" aria-label="Toggle menu" onClick={() => setIsMobileMenuOpen((v) => !v)}>
+            <button className="burger" aria-label="Toggle menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation" onClick={() => setIsMobileMenuOpen((v) => !v)}>
               <span /><span /><span />
             </button>
           </div>
         </div>
-        <div className="mobile">
+        <div className="mobile" id="mobile-navigation">
           {NAV_MENU.flatMap((group) =>
             group.children
               ? group.children.map((c) => (

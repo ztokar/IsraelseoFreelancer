@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useEffect, useRef, useState, FormEvent } from 'react';
 import { ClientOnly } from 'vite-react-ssg';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
@@ -50,23 +50,27 @@ const readAttribution = () => {
   const firstLandingPageKey = 'isf_first_landing_page';
   const firstReferrerKey = 'isf_first_referrer';
 
-  if (!window.sessionStorage.getItem(firstLandingPageKey)) {
-    window.sessionStorage.setItem(firstLandingPageKey, window.location.href);
+  let firstLandingPage = window.location.href;
+  let firstReferrer = document.referrer || '';
+  try {
+    firstLandingPage = window.sessionStorage.getItem(firstLandingPageKey) || firstLandingPage;
+    firstReferrer = window.sessionStorage.getItem(firstReferrerKey) ?? firstReferrer;
+    window.sessionStorage.setItem(firstLandingPageKey, firstLandingPage);
+    window.sessionStorage.setItem(firstReferrerKey, firstReferrer);
+  } catch {
+    // Restricted storage must not stop someone from sending an enquiry.
   }
-
-  if (!window.sessionStorage.getItem(firstReferrerKey)) {
-    window.sessionStorage.setItem(firstReferrerKey, document.referrer || '');
-  }
+  const landingParams = new URL(firstLandingPage).searchParams;
 
   const attribution: Record<string, string> = {
     form_page: window.location.pathname,
-    landing_page: window.sessionStorage.getItem(firstLandingPageKey) || window.location.href,
-    referrer: window.sessionStorage.getItem(firstReferrerKey) || document.referrer || '',
+    landing_page: firstLandingPage,
+    referrer: firstReferrer,
     current_url: window.location.href,
   };
 
   [...utmFields, ...clickIdFields].forEach((field) => {
-    attribution[field] = params.get(field) || '';
+    attribution[field] = params.get(field) || landingParams.get(field) || '';
   });
 
   attribution.search_channel_hint = classifyReferrer(attribution.referrer);
@@ -225,8 +229,15 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             className={`w-full bg-slate-50 border border-slate-300 rounded-lg px-5 py-4 text-slate-900 focus:ring-2 focus:ring-${colorClass} focus:border-${colorClass} outline-none transition-all placeholder-slate-400 text-base`}
             id="url"
             name="website"
-            placeholder="mysite.com"
+            placeholder="https://mysite.com"
             type="url"
+            autoComplete="url"
+            onBlur={(event) => {
+              const value = event.currentTarget.value.trim();
+              if (value && !/^[a-z][a-z\d+.-]*:/i.test(value)) {
+                event.currentTarget.value = `https://${value}`;
+              }
+            }}
             required
             disabled={isSubmitting}
           />
@@ -245,6 +256,7 @@ const FormContent: React.FC<ProtectedFormProps> = ({
             name="email"
             placeholder="you@company.com"
             type="email"
+            autoComplete="email"
             required
             disabled={isSubmitting}
           />
@@ -283,13 +295,13 @@ const FormContent: React.FC<ProtectedFormProps> = ({
       </button>
 
       {submitStatus === 'success' && (
-        <p className="text-center text-green-600 font-medium">
+        <p role="status" className="text-center text-green-600 font-medium">
           Thank you. I will review it and reply with next steps.
         </p>
       )}
 
       {submitStatus === 'error' && (
-        <p className="text-center text-red-600 font-medium">
+        <p role="alert" className="text-center text-red-600 font-medium">
           {errorMessage}
         </p>
       )}
@@ -297,16 +309,35 @@ const FormContent: React.FC<ProtectedFormProps> = ({
   );
 };
 
-export const ProtectedForm: React.FC<ProtectedFormProps> = (props) => {
+const NearbyForm: React.FC<ProtectedFormProps> = (props) => {
+  const container = useRef<HTMLDivElement>(null);
+  const [nearby, setNearby] = useState(false);
   const recaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LdUym4sAAAAAH7-MgGMCadlrdecy7COFvsMgBxx';
+  useEffect(() => {
+    if (!container.current) return;
+    if (!('IntersectionObserver' in window)) {
+      setNearby(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNearby(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '800px' });
+    observer.observe(container.current);
+    return () => observer.disconnect();
+  }, []);
 
-  return (
-    <ClientOnly>
-      {() => (
-        <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
-          <FormContent {...props} />
-        </GoogleReCaptchaProvider>
-      )}
-    </ClientOnly>
-  );
+  return <div ref={container} style={{ minHeight: props.showMessage ? 570 : 380 }}>
+    {nearby ? <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey} scriptProps={{ async: true, defer: true }}>
+      <FormContent {...props} />
+    </GoogleReCaptchaProvider> : <p role="status">Loading contact form...</p>}
+  </div>;
 };
+
+export const ProtectedForm: React.FC<ProtectedFormProps> = (props) => (
+    <ClientOnly>
+      {() => <NearbyForm {...props} />}
+    </ClientOnly>
+);

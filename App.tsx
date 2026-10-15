@@ -7,17 +7,6 @@ import { ReviewsResultsPage } from './components/ReviewsResultsPage';
 import { SpokeServicePage } from './components/SpokeServicePage';
 import { RedditSupportPage } from './components/RedditSupportPage';
 import { BlogPage } from './components/BlogPage';
-import { BlogArticle } from './components/BlogArticle';
-import { BlogArticle2 } from './components/BlogArticle2';
-import { BlogArticle3 } from './components/BlogArticle3';
-import { BlogArticle4 } from './components/BlogArticle4';
-import { BlogArticle5 } from './components/BlogArticle5';
-import { BlogArticle6 } from './components/BlogArticle6';
-import { BlogArticle7 } from './components/BlogArticle7';
-import { BlogArticle8 } from './components/BlogArticle8';
-import { BlogArticle9 } from './components/BlogArticle9';
-import { BlogArticle10 } from './components/BlogArticle10';
-import BlogArticle11 from './components/BlogArticle11';
 import { BlogArticleConversion } from './components/BlogArticleConversion';
 import { ComparisonFreelancerVsAgency } from './components/ComparisonFreelancerVsAgency';
 import { VideosPage } from './components/VideosPage';
@@ -64,6 +53,18 @@ export const routes: RouteRecord[] = [
       { path: 'technical-seo-audit', element: <ServicePage content={SERVICE_DATA.technical} /> },
       { path: 'link-building-services', element: <ServicePage content={SERVICE_DATA.links} /> },
       { path: 'reviews-results', element: <ReviewsResultsPage /> },
+      ...['ai-visibility-audit', 'geo-content-optimization', 'ai-visibility-tracking-services', 'chatgpt-ads-management'].map((slug) => ({
+        path: slug,
+        lazy: async () => {
+          const [{ ServiceOfferPage }, { SERVICE_OFFERS }] = await Promise.all([
+            import('./components/ServiceOfferPage'),
+            import('./service-offers'),
+          ]);
+          const offer = SERVICE_OFFERS.find((item) => item.slug === slug);
+          if (!offer) throw new Error(`Unknown service: ${slug}`);
+          return { Component: () => <ServiceOfferPage offer={offer} /> };
+        },
+      })),
 
       // First-batch service spokes
       ...SERVICE_SPOKES.map((spoke) => ({
@@ -105,17 +106,17 @@ export const routes: RouteRecord[] = [
 
       // Blog
       { path: 'blog', element: <BlogPage /> },
-      { path: 'blog/claude-code-content-marketing-startups', element: withBlogConversion(<BlogArticle11 />, 'Using Claude Code For Content Marketing For Startups') },
-      { path: 'blog/israeli-tech-seo-gap', element: withBlogConversion(<BlogArticle10 />, 'The Israeli Tech SEO Gap') },
-      { path: 'blog/seo-drives-pipeline-b2b', element: withBlogConversion(<BlogArticle9 />, 'How SEO Drives Pipeline for B2B Companies') },
-      { path: 'blog/why-israeli-b2b-fail-seo', element: withBlogConversion(<BlogArticle8 />, 'Why Most Israeli B2B Companies Fail at SEO') },
-      { path: 'blog/seo-israeli-cybersecurity-companies', element: withBlogConversion(<BlogArticle7 />, 'SEO for Israeli Cybersecurity Companies') },
-      { path: 'blog/seo-israeli-saas-companies-us-markets', element: withBlogConversion(<BlogArticle6 />, 'SEO for Israeli SaaS Companies Targeting US Markets') },
-      { path: 'blog/israel-b2b-seo-pipeline', element: withBlogConversion(<BlogArticle />, 'Israel B2B SEO Services') },
-      { path: 'blog/geo-ai-generative-engine-optimization', element: withBlogConversion(<BlogArticle2 />, 'Geo AI and Generative Engine Optimization') },
-      { path: 'blog/seo-reputation-management', element: withBlogConversion(<BlogArticle3 />, 'SEO Reputation Management') },
-      { path: 'blog/ai-search-2026-updates', element: withBlogConversion(<BlogArticle4 />, 'AI Search 2026 Updates') },
-      { path: 'blog/hebrew-seo-checkers-free-tools', element: withBlogConversion(<BlogArticle5 />, 'Hebrew SEO Checkers and Free Tools') },
+      { path: 'blog/claude-code-content-marketing-startups', lazy: async () => { const { default: BlogArticle11 } = await import('./components/BlogArticle11'); return { Component: () => withBlogConversion(<BlogArticle11 />, 'Using Claude Code For Content Marketing For Startups') }; } },
+      { path: 'blog/israeli-tech-seo-gap', lazy: async () => { const { BlogArticle10 } = await import('./components/BlogArticle10'); return { Component: () => withBlogConversion(<BlogArticle10 />, 'The Israeli Tech SEO Gap') }; } },
+      { path: 'blog/seo-drives-pipeline-b2b', lazy: async () => { const { BlogArticle9 } = await import('./components/BlogArticle9'); return { Component: () => withBlogConversion(<BlogArticle9 />, 'How SEO Drives Pipeline for B2B Companies') }; } },
+      { path: 'blog/why-israeli-b2b-fail-seo', lazy: async () => { const { BlogArticle8 } = await import('./components/BlogArticle8'); return { Component: () => withBlogConversion(<BlogArticle8 />, 'Why Most Israeli B2B Companies Fail at SEO') }; } },
+      { path: 'blog/seo-israeli-cybersecurity-companies', lazy: async () => { const { BlogArticle7 } = await import('./components/BlogArticle7'); return { Component: () => withBlogConversion(<BlogArticle7 />, 'SEO for Israeli Cybersecurity Companies') }; } },
+      { path: 'blog/seo-israeli-saas-companies-us-markets', lazy: async () => { const { BlogArticle6 } = await import('./components/BlogArticle6'); return { Component: () => withBlogConversion(<BlogArticle6 />, 'SEO for Israeli SaaS Companies Targeting US Markets') }; } },
+      { path: 'blog/israel-b2b-seo-pipeline', lazy: async () => { const { BlogArticle } = await import('./components/BlogArticle'); return { Component: () => withBlogConversion(<BlogArticle />, 'Israel B2B SEO Services') }; } },
+      { path: 'blog/geo-ai-generative-engine-optimization', lazy: async () => { const { BlogArticle2 } = await import('./components/BlogArticle2'); return { Component: () => withBlogConversion(<BlogArticle2 />, 'Geo AI and Generative Engine Optimization') }; } },
+      { path: 'blog/seo-reputation-management', lazy: async () => { const { BlogArticle3 } = await import('./components/BlogArticle3'); return { Component: () => withBlogConversion(<BlogArticle3 />, 'SEO Reputation Management') }; } },
+      { path: 'blog/ai-search-2026-updates', lazy: async () => { const { BlogArticle4 } = await import('./components/BlogArticle4'); return { Component: () => withBlogConversion(<BlogArticle4 />, 'AI Search 2026 Updates') }; } },
+      { path: 'blog/hebrew-seo-checkers-free-tools', lazy: async () => { const { BlogArticle5 } = await import('./components/BlogArticle5'); return { Component: () => withBlogConversion(<BlogArticle5 />, 'Hebrew SEO Checkers and Free Tools') }; } },
     ],
   },
 ];

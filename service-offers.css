@@ -1,0 +1,43 @@
+.gp.service-offer .offer-hero{padding:48px 0 56px;background:linear-gradient(135deg,#fff 30%,#eef9f4)}
+.offer-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr);gap:64px;align-items:center}
+.gp.service-offer h1{font-size:clamp(2.25rem,4.2vw,3.7rem);line-height:1.08;letter-spacing:-.035em;margin:16px 0 24px;max-width:20ch}
+.gp.service-offer .answer{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.5;margin-bottom:18px;color:#162820}
+.offer-intro{font-size:17px;line-height:1.75;color:#47524e;max-width:65ch}
+.offer-portrait{margin:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.offer-portrait img{width:100%;height:340px;object-fit:cover;object-position:center 30%;border-radius:16px}
+.offer-portrait img[src*="service-audit-zechariah"]{object-position:left 30%}
+.offer-portrait figcaption{font-size:13px;line-height:1.5;color:#52645a;margin-top:12px}
+.gp.service-offer .offer-worksheet{padding:56px 0;background:#f5f8f6;border-top:1px solid #dce6df;border-bottom:1px solid #dce6df}
+.gp.service-offer h2{font-size:clamp(1.6rem,2.5vw,2.25rem);line-height:1.2;letter-spacing:-.025em}
+.offer-note{font-size:14px;color:#55635b;margin:12px 0 24px}
+.offer-table{width:100%;border-collapse:collapse;text-align:left;font-size:16px;line-height:1.6;background:#fff}
+.offer-table th,.offer-table td{padding:19px 22px;border-bottom:1px solid #dce6df;vertical-align:top;width:33.333%}
+.offer-table thead th{background:#143e30;color:#fff;font-family:Outfit,sans-serif;font-weight:600}
+.offer-table tbody th{font-weight:600;color:#193f30}
+.offer-takeaway{margin:24px 0 0;font-weight:600;color:#19543b;max-width:80ch}
+.gp.service-offer .offer-detail-section{padding:72px 0}
+.offer-content-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);gap:80px;align-items:start}
+.offer-aside{position:sticky;top:104px}
+.offer-aside p{font-size:17px;line-height:1.7;color:#526159;margin:20px 0}
+.offer-details{border-bottom:1px solid #d7e1da;padding:22px 0}
+.offer-details:first-child{border-top:1px solid #d7e1da}
+.offer-details summary{list-style:none;cursor:pointer;display:flex;align-items:start;gap:24px;justify-content:space-between;color:#17231c}
+.offer-details summary::-webkit-details-marker{display:none}
+.gp.service-offer .offer-details summary h2,.gp.service-offer .offer-details summary h3{font-family:Outfit,sans-serif;font-size:22px;font-weight:600;line-height:1.4;letter-spacing:-.01em;margin:0}
+.offer-toggle{font-size:26px;line-height:1.1;color:#16704e;flex-shrink:0;transition:transform .18s ease}
+.offer-details[open] .offer-toggle{transform:rotate(45deg)}
+.offer-prose{padding-top:18px}
+.offer-prose p{font-size:17px;line-height:1.8;color:#47524e;max-width:70ch;margin:0 0 16px}
+.offer-prose p:last-child{margin-bottom:2px}
+.offer-prose a,.offer-proof a{color:#0a714d;text-decoration:underline;text-underline-offset:3px}
+.offer-proof{margin:40px 0;background:#f4f8f5;padding:22px;border-radius:12px}
+.offer-proof img{width:100%;height:auto;max-height:640px;object-fit:contain;border-radius:5px}
+.offer-proof figcaption{font-size:14px;line-height:1.65;color:#526159;margin-top:18px}
+.gp.service-offer .offer-faq-section{background:#f6f9f7;padding:64px 0}
+.gp.service-offer .offer-resources{padding:60px 0}
+.offer-resource-links{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+.offer-resource-links a{padding:24px 0;border-top:1px solid #cadbd0;border-bottom:1px solid #cadbd0;font-family:Outfit,sans-serif;font-size:21px;display:flex;justify-content:space-between;gap:24px}
+.service-offer a:focus-visible,.offer-details summary:focus-visible{outline:3px solid #0a7b55;outline-offset:5px}
+@media(max-width:900px){.offer-hero-grid{gap:32px;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr)}.offer-content-grid{gap:36px;grid-template-columns:1fr 2fr}.offer-portrait img{height:300px}}
+@media(max-width:640px){.gp.service-offer .offer-hero{padding:28px 0 36px}.offer-hero-grid,.offer-content-grid{grid-template-columns:1fr;gap:28px}.offer-portrait img{height:260px;object-position:center 27%}.offer-portrait{max-width:100%}.offer-aside{position:static}.gp.service-offer .offer-worksheet,.gp.service-offer .offer-detail-section,.gp.service-offer .offer-faq-section{padding:36px 0}.offer-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.offer-table tbody,.offer-table tr,.offer-table td,.offer-table tbody th{display:block;width:100%}.offer-table tr{border-bottom:2px solid #bad0c2;padding:8px 0}.offer-table td,.offer-table tbody th{border:0;padding:10px 16px}.offer-table td::before{content:attr(data-label);display:block;color:#1b5c40;font-size:12px;font-weight:700;margin-bottom:3px}.offer-table tbody th{font-size:18px}.offer-resource-links{grid-template-columns:1fr;gap:0}.offer-details summary{gap:15px}.gp.service-offer .offer-details summary h2,.gp.service-offer .offer-details summary h3{font-size:20px}.offer-proof{padding:14px}.offer-hero .shero-actions{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.offer-toggle{transition:none}}

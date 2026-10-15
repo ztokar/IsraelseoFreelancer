@@ -40,6 +40,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
         ],
         bullets: [
           'A direct answer in the first sentence, not a warm-up.',
+          'If you want hands-on help improving an existing page, see my [GEO content optimization service](/geo-content-optimization).',
           'Specifics: numbers, named steps, real examples.',
           'A clear author or brand the model can attribute.',
           'Mentions of your brand on other trusted sites.',
@@ -571,6 +572,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
         body: [
           'Tools like Profound, Peec AI, Otterly, Ahrefs Brand Radar, and the AI tracking now built into Semrush and SE Ranking run those prompts for you, across several assistants, on a schedule.',
           'What you are paying for is scale and consistency. They run hundreds of prompts across ChatGPT, Perplexity, Gemini and Google AI Overviews without you sitting there.',
+          'If you want someone to set up the questions and interpret the results, my [AI visibility tracking services](/ai-visibility-tracking-services) cover that managed work.',
         ],
         bullets: [
           'Worth it when you track dozens of prompts or several markets.',
@@ -727,6 +729,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
         h2: 'Your own site is the floor, not the fix',
         body: [
           'Clean pages still matter. If a model does reach your site and finds a wall of marketing language with no plain answer, it has nothing quotable to lift.',
+          'An [AI visibility audit](/ai-visibility-audit) can help separate a page problem from brand confusion or a gap in the sources behind the answer.',
           'So fix the pages. Just do not expect that alone to change the answer, because the answer is being decided somewhere else.',
         ],
       },

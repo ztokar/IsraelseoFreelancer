@@ -508,6 +508,9 @@ export const SERVICE_SPOKES: SpokeService[] = [
     handleIntro: 'It starts with measuring where you stand, then fixing the reason you are missing rather than guessing.',
     handles: [
       'A baseline: the questions your buyers ask, run across the assistants, logged so you can see movement',
+      'A focused [AI visibility audit](/ai-visibility-audit) when you need the diagnosis before implementation',
+      '[GEO content optimization](/geo-content-optimization) for existing service and product pages that need clearer answers and proof',
+      'Managed [AI visibility tracking](/ai-visibility-tracking-services) when you want repeat checks and an explanation of the changes',
       'Page work so the answer sits in the first sentence and can be lifted cleanly',
       'Source analysis: finding which sites and threads the current answers are actually built from',
       'Getting the brand honestly represented in those sources, including Reddit discussions',
@@ -524,7 +527,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     faqs: [
       { q: 'What is answer engine optimization?', a: 'It is making your page the clearest, best-supported answer to a specific question, so search engines and AI assistants use it. See [what is answer engine optimization](/what-is-answer-engine-optimization) for the longer explanation.' },
       { q: 'How is this different from SEO?', a: 'Most of it is not different, and I will not pretend otherwise. The real differences are answer position, off-site mentions carrying more weight, and measuring by sampling prompts instead of tracking a rank. See [AEO vs GEO vs SEO](/aeo-vs-geo-vs-seo).' },
-      { q: 'Can you guarantee ChatGPT will mention my brand?', a: 'No. There is no placement to buy and no lever anyone controls. What I can do is make your pages the clearest answer and build the outside mentions that make an assistant trust you.' },
+      { q: 'Can you guarantee ChatGPT will mention my brand?', a: 'No. Organic recommendations are not placements you can buy. I work on your pages and the evidence around the brand. Paid campaigns are a separate service, covered in [ChatGPT ads management](/chatgpt-ads-management).' },
       { q: 'How do we know if it is working?', a: 'We set a baseline before starting, then re-run the same prompts on a schedule and compare how often you get named. The method is written up in [how to track brand mentions in ChatGPT](/track-brand-mentions-in-chatgpt).' },
       { q: 'How long does it take?', a: 'Page fixes can get picked up within weeks. Building the off-site mentions that change an answer usually takes a few months, and I would rather say that up front than sell a faster timeline I cannot hold.' },
       { q: 'Do you work with brands outside Israel?', a: 'Yes. Most of my clients sell into the US and other English-speaking markets. I write in native US English and work directly with you, not through an account manager.' },

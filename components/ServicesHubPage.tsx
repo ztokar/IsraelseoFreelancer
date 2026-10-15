@@ -28,6 +28,10 @@ const serviceGroups = [
     links: [
       { label: 'AI search visibility', path: '/ai-seo-consultant-israel' },
       { label: 'Answer engine optimization', path: '/answer-engine-optimization-services' },
+      { label: 'AI visibility audit', path: '/ai-visibility-audit' },
+      { label: 'GEO content optimization', path: '/geo-content-optimization' },
+      { label: 'Managed AI visibility tracking', path: '/ai-visibility-tracking-services' },
+      { label: 'ChatGPT ads / PPC management', path: '/chatgpt-ads-management' },
       { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
       { label: 'Track brand mentions', path: '/track-brand-mentions-in-chatgpt' },
       { label: 'AI visibility tools', path: '/ai-search-visibility-tools' },

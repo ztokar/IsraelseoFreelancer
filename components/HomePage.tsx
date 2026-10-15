@@ -16,6 +16,8 @@ const services = [
     links: [
       { label: 'AI SEO', path: '/ai-seo-consultant-israel' },
       { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services' },
+      { label: 'AI visibility audit', path: '/ai-visibility-audit' },
+      { label: 'ChatGPT ads / PPC', path: '/chatgpt-ads-management' },
       { label: 'ChatGPT citations', path: '/how-to-get-cited-by-chatgpt' },
       { label: 'AI Overviews', path: '/how-to-rank-in-google-ai-overviews' },
     ],
@@ -121,7 +123,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
             <div className="hero-art">
-              <img src="/images/redesign-hero.jpg" alt="Abstract visualization of search rankings rising with connected data nodes" />
+              <img src="/images/service-chatgpt-ads.webp" width="800" height="447" {...{ fetchpriority: 'high' }} alt="Abstract visualization of search rankings rising with connected data nodes" />
             </div>
           </div>
         </section>
@@ -335,7 +337,7 @@ export const HomePage: React.FC = () => {
               {blog.map((b) => (
                 <NavLink className="post" to={b.path} key={b.path}>
                   <div className="pimg">
-                    <img src={b.image} alt={b.title} />
+                    <img src={b.image} alt={b.title} loading="lazy" decoding="async" />
                     <div className="grad" />
                   </div>
                   <div className="pbody">
