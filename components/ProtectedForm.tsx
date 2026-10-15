@@ -286,12 +286,12 @@ const FormContent: React.FC<ProtectedFormProps> = ({
 
       <button
         className={`w-full bg-primary text-white font-bold text-lg py-5 rounded-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
-          isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+          isSubmitting || !executeRecaptcha ? 'opacity-70 cursor-not-allowed' : ''
         }`}
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !executeRecaptcha}
       >
-        {isSubmitting ? 'Sending...' : submitButtonText}
+        {isSubmitting ? 'Sending...' : !executeRecaptcha ? 'Preparing secure form...' : submitButtonText}
       </button>
 
       {submitStatus === 'success' && (
