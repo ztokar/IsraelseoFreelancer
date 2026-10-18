@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import './booking.css';
@@ -34,8 +34,33 @@ export const BookingPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
   const [slow, setSlow] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const frame = useRef<HTMLIFrameElement>(null);
+  const [frameHeight, setFrameHeight] = useState(820);
   const details = MEETINGS[meeting];
   const bookingUrl = `https://book.israelseofreelancer.com/zechariah/${details.slug}`;
+
+  useEffect(() => {
+    // Cal.diy keeps embedded pages hidden until its parent acknowledges readiness.
+    // Accept only messages from our own frame and exact scheduler origin.
+    const receive = (event: MessageEvent) => {
+      if (event.origin !== 'https://book.israelseofreelancer.com' || event.source !== frame.current?.contentWindow) return;
+      const message = event.data;
+      if (!message || message.originator !== 'CAL') return;
+      if (message.type === '__iframeReady') {
+        frame.current?.contentWindow?.postMessage({ originator: 'CAL', method: 'parentKnowsIframeReady' }, event.origin);
+      } else if (message.type === 'linkReady') {
+        setLoaded(true);
+      } else if (message.type === '__dimensionChanged') {
+        const height = message.data?.iframeHeight;
+        if (typeof height === 'number' && Number.isFinite(height)) setFrameHeight(Math.max(300, Math.min(3000, Math.ceil(height))));
+      } else if (message.type === '__routeChanged') {
+        const top = frame.current?.getBoundingClientRect().top;
+        if (typeof top === 'number' && top < 0) frame.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    window.addEventListener('message', receive);
+    return () => window.removeEventListener('message', receive);
+  }, []);
 
   useEffect(() => {
     const requested = new URLSearchParams(search).get('meeting');
@@ -70,7 +95,6 @@ export const BookingPage: React.FC = () => {
             <h1>{details.heading}</h1>
             <p className="booking-lead">{details.lead}</p>
             <div className="booking-person">
-              <img src="/images/service-audit-zechariah.webp" width="72" height="72" alt="Zechariah Tokar" />
               <div><strong>Zechariah Tokar</strong><span>SEO, AI search &amp; Reddit</span></div>
             </div>
           </div>
@@ -94,7 +118,7 @@ export const BookingPage: React.FC = () => {
               <p>{slow ? 'Taking longer than expected. You can open the calendar above or try again.' : 'Loading available times…'}</p>
               {slow && <button type="button" onClick={retry}>Try again</button>}
             </div>}
-            <iframe key={`${meeting}-${attempt}`} src={`${bookingUrl}/embed?embed=&theme=light&layout=month_view`} title="Choose a meeting time with Zechariah Tokar" className="booking-frame" onLoad={() => setLoaded(true)} onError={() => setSlow(true)} allow="payment" />
+            <iframe ref={frame} key={`${meeting}-${attempt}`} src={`${bookingUrl}/embed?embed=&theme=light&layout=month_view`} title="Choose a meeting time with Zechariah Tokar" className="booking-frame" style={{ height: frameHeight }} onError={() => setSlow(true)} />
           </div>
           <p className="booking-help">Have a question before booking? <a href="mailto:zack.tokar@gmail.com">Email me</a>.</p>
         </div>
