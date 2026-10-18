@@ -42,6 +42,13 @@ export const routes: RouteRecord[] = [
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
+      {
+        path: 'book',
+        lazy: async () => {
+          const { BookingPage } = await import('./components/BookingPage');
+          return { Component: BookingPage };
+        },
+      },
 
       // 10-page authority map
       { path: 'freelance-seo-israel', element: <ServicePage content={SERVICE_DATA.freelance} /> },

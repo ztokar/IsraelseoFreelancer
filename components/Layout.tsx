@@ -5,6 +5,7 @@ import { NAV_MENU, FOOTER_COLUMNS, SOCIAL_LINKS } from '../constants';
 export const Layout: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const contactHref = location.pathname === '/book' ? '/#contact' : '#contact';
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -56,7 +57,7 @@ export const Layout: React.FC = () => {
             ))}
           </ul>
           <div className="ncta">
-            <a className="pill" href="#contact">
+            <a className="pill" href={contactHref}>
               Send your site <span aria-hidden="true">↗</span>
             </a>
             <button className="burger" aria-label="Toggle menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation" onClick={() => setIsMobileMenuOpen((v) => !v)}>
@@ -72,7 +73,7 @@ export const Layout: React.FC = () => {
                 ))
               : [<NavLink key={group.path} to={group.path || '/'}>{group.label}</NavLink>]
           )}
-          <a href="#contact">Send your site</a>
+          <a href={contactHref}>Send your site</a>
         </div>
       </header>
 

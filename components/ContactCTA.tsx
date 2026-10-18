@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { ProtectedForm } from './ProtectedForm';
 
 interface ContactCTAProps {
@@ -43,6 +44,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
               <li>{issueLabel}</li>
               <li>What a good lead or sale looks like</li>
             </ul>
+            <p className="contact-book-link">Prefer to talk? <NavLink to="/book">Book a 30-minute call.</NavLink></p>
           </div>
           <div className="cta-card form-card">
             <ProtectedForm

@@ -292,6 +292,8 @@
       .gp .contact-copy ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:12px;}
       .gp .contact-copy li{position:relative;padding-left:24px;color:rgba(255,255,255,0.86);font-size:15px;}
       .gp .contact-copy li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:999px;background:#fff;}
+      .gp .contact-copy .contact-book-link{margin-top:26px;font-size:15px;color:rgba(255,255,255,.9);}
+      .gp .contact-copy .contact-book-link a{color:#fff;text-decoration:underline;text-underline-offset:4px;font-weight:600;}
       .gp .form-card{padding:28px;}
       .gp .loom-wrap{position:relative;width:100%;max-width:980px;margin:28px auto 0;border-radius:18px;overflow:hidden;border:1px solid var(--hair);box-shadow:var(--gshadow);background:#0A0C0F;aspect-ratio:2.406;}
       .gp .loom-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}

@@ -20,7 +20,7 @@ const TITLE = 'Done-For-You Local Authority System | Zechariah Tokar';
 const DESC =
   'Done-for-you local lead generation: I find the targets, build the money pages, add the supporting content, and grow your brand across Google, Reddit, YouTube, and AI search so ready-to-buy clients find and pick you.';
 
-const CALENDLY = 'https://calendly.com/zack-tokar/consultation';
+const CALENDLY = '/book';
 const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U';
 
 const track = (event: string, source: string) => {
