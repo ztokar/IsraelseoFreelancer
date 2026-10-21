@@ -7,9 +7,12 @@ export const Layout: React.FC = () => {
   const location = useLocation();
   const contactHref = location.pathname === '/book' ? '/#contact' : '#contact';
 
+  // New page: start at the top. Same page with a hash (the "Send your site" buttons): go to that section.
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
+    const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [location]);
 
   // Scroll animation observer (kept for blog/other pages that use .scroll-trigger)
@@ -73,7 +76,7 @@ export const Layout: React.FC = () => {
                 ))
               : [<NavLink key={group.path} to={group.path || '/'}>{group.label}</NavLink>]
           )}
-          <a href={contactHref}>Send your site</a>
+          <a href={contactHref} onClick={() => setIsMobileMenuOpen(false)}>Send your site</a>
         </div>
       </header>
 

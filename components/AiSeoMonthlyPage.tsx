@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { REVIEWS } from '../constants';
+import { ContactCTA } from './ContactCTA';
 
 const PATH = '/ai-seo-monthly';
 const CANONICAL = `https://israelseofreelancer.com${PATH}`;
@@ -27,8 +28,6 @@ const DESC =
 
 const PRICE = 750;
 const CALENDLY = '/book';
-const PHONE_DISPLAY = '+972 53-848-4641';
-const WHATSAPP = `https://wa.me/972538484641?text=${encodeURIComponent('Hi Zechariah, I saw your monthly AI SEO page. My website is: ')}`;
 
 const track = (event: string, source: string) => {
   if (typeof window === 'undefined') return;
@@ -36,13 +35,13 @@ const track = (event: string, source: string) => {
   window.dataLayer.push({ event, offer: 'Monthly AI SEO', value: PRICE, currency: 'USD', source });
 };
 
-const WhatsAppButton: React.FC<{ source: string; children?: React.ReactNode; className?: string }> = ({
+const FormButton: React.FC<{ source: string; children?: React.ReactNode; className?: string }> = ({
   source,
-  children = 'WhatsApp me',
+  children = 'Send your site',
   className = 'btn btn-primary',
 }) => (
-  <a className={className} href={WHATSAPP} target="_blank" rel="noopener noreferrer" onClick={() => track('ai_seo_monthly_whatsapp_click', source)}>
-    <MessageCircle size={17} strokeWidth={2} /> {children}
+  <a className={className} href="#contact" onClick={() => track('ai_seo_monthly_form_click', source)}>
+    {children} <span className="arrow">↗</span>
   </a>
 );
 
@@ -164,14 +163,14 @@ const fits = [
 ];
 
 const steps = [
-  { title: 'Send me your website on WhatsApp.', body: 'One line is enough. Tell me what you sell and where.' },
+  { title: 'Send me your website.', body: 'Use the form below. One line is enough: what you sell and where.' },
   { title: 'I look at your site first.', body: 'If I can help, I tell you how. If I can not, I tell you that too.' },
   { title: 'You give me access and I start.', body: 'Your website, Search Console and Google Business Profile. My AI connects from there.' },
 ];
 
 const faqs = [
   { q: 'How much does it cost?', a: '$750 a month. That is the price for the first 5 businesses I take on.' },
-  { q: 'Who do I talk to?', a: `Me, Zechariah, directly. WhatsApp is fastest: ${PHONE_DISPLAY}. You can also book a call.` },
+  { q: 'Who do I talk to?', a: 'Me, Zechariah, directly. Send your site through the form on this page, or book a call.' },
   { q: 'What do you need from me?', a: 'Access to your website (Shopify, WordPress, Wix, Webflow or whatever you use), your Google Search Console and your Google Business Profile. After that, you should not get marketing homework.' },
   { q: 'Do you guarantee rankings or AI mentions?', a: 'No. Nobody honest can. What I promise is work aimed at the searches that bring you customers, and a clear monthly report on what I did and what moved.' },
   { q: 'What if you can not help my business?', a: 'Then I will tell you up front. I only take businesses I am sure I can help. If I have a doubt, I will refer you to someone else or tell you to skip marketing for now.' },
@@ -246,18 +245,18 @@ export const AiSeoMonthlyPage: React.FC = () => {
                 <span>YouTube</span>
               </div>
               <div className="hero-actions">
-                <WhatsAppButton source="hero" />
+                <FormButton source="hero" />
                 <BookButton source="hero" />
               </div>
               <p className="bp-cta-note">$750 a month for the first 5 businesses. You work with me directly.</p>
             </div>
             <figure className="aim-hero-photo">
               <img src="/images/service-audit-zechariah.webp" width={800} height={450} alt="Zechariah Tokar working on client SEO at his desk" fetchPriority="high" />
-              <a className="aim-text-card" href={WHATSAPP} target="_blank" rel="noopener noreferrer" onClick={() => track('ai_seo_monthly_whatsapp_click', 'hero-card')}>
+              <a className="aim-text-card" href="#contact" onClick={() => track('ai_seo_monthly_form_click', 'hero-card')}>
                 <span className="aim-text-icon"><MessageCircle size={20} strokeWidth={2} /></span>
                 <span>
-                  <b>Text Zechariah, the one doing the work</b>
-                  <span>{PHONE_DISPLAY} on WhatsApp</span>
+                  <b>Send your site to Zechariah, the one doing the work</b>
+                  <span>Your message comes straight to me</span>
                 </span>
               </a>
             </figure>
@@ -447,7 +446,7 @@ export const AiSeoMonthlyPage: React.FC = () => {
                   <li key={item}><CheckCircle2 size={17} strokeWidth={2.2} />{item}</li>
                 ))}
               </ul>
-              <WhatsAppButton source="pricing" children="WhatsApp me for a spot" />
+              <FormButton source="pricing" children="Ask for a spot" />
               <p className="bp-cta-note">Rather talk first? <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onClick={() => track('ai_seo_monthly_book_click', 'pricing')}>Book a call.</a></p>
             </div>
           </div>
@@ -487,18 +486,17 @@ export const AiSeoMonthlyPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="gp-cta contact-cta" id="contact">
-          <div className="wrap">
-            <img className="aim-cta-photo" src="/images/service-tracking-zechariah.webp" width={562} height={1000} alt="Zechariah Tokar" loading="lazy" />
-            <h2>Want one of the 5 spots?</h2>
-            <p>Send me your website on WhatsApp. I will look at it first and tell you honestly if I can help.</p>
-            <div className="hero-actions" style={{ justifyContent: 'center', marginTop: '26px' }}>
-              <WhatsAppButton source="footer-cta" />
-              <BookButton source="footer-cta" />
-            </div>
-            <p className="aim-cta-phone">{PHONE_DISPLAY} on WhatsApp</p>
-          </div>
-        </section>
+        <ContactCTA
+          eyebrow="5 spots at $750 a month"
+          title="Want one of the 5 spots?"
+          body="Send me your website. I will look at it first and tell you honestly if I can help."
+          subject="New Inquiry: Monthly AI SEO ($750 a month)"
+          service="Monthly AI SEO"
+          issueLabel="What you sell and where"
+          messageLabel="What you sell and where"
+          messagePlaceholder="For example: kitchen remodeling in Austin, or a Shopify store selling kids shoes."
+          submitButtonText="Send my site"
+        />
       </main>
     </>
   );

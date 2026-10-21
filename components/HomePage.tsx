@@ -289,7 +289,7 @@ export const HomePage: React.FC = () => {
                     <strong>{p.metric}</strong>
                   </div>
                   <div className="proof-thumb">
-                    <img src={p.img} alt={p.alt} loading="lazy" />
+                    <img src={p.img} alt={p.alt} width={p.w} height={p.h} loading="lazy" />
                   </div>
                   <figcaption>
                     {p.caption_pre}<b>{p.caption_b}</b>{p.caption_post}
