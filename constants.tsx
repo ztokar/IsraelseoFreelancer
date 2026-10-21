@@ -126,6 +126,7 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
       { label: 'Target Finder', path: '/find-my-target' },
       { label: 'Demand Capture Blueprint', path: '/local-demand-capture-blueprint' },
       { label: 'Done-For-You System', path: '/local-authority-system' },
+      { label: 'Monthly AI SEO', path: '/ai-seo-monthly' },
       { label: 'Case Studies', path: '/case-studies' },
       { label: 'Reviews & Results', path: '/reviews-results' },
     ],

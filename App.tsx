@@ -23,6 +23,7 @@ import { BlueprintIntakePage } from './components/BlueprintIntakePage';
 import { TargetFinderPage } from './components/TargetFinderPage';
 import { TargetIntakePage } from './components/TargetIntakePage';
 import { LocalAuthoritySystemPage } from './components/LocalAuthoritySystemPage';
+import { AiSeoMonthlyPage } from './components/AiSeoMonthlyPage';
 import { SystemIntakePage } from './components/SystemIntakePage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
@@ -96,6 +97,7 @@ export const routes: RouteRecord[] = [
       { path: 'find-my-target', element: <TargetFinderPage /> },
       { path: 'target-intake', element: <TargetIntakePage /> },
       { path: 'local-authority-system', element: <LocalAuthoritySystemPage /> },
+      { path: 'ai-seo-monthly', element: <AiSeoMonthlyPage /> },
       { path: 'system-intake', element: <SystemIntakePage /> },
 
       // Case studies

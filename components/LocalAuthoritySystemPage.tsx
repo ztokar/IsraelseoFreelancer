@@ -51,7 +51,7 @@ const BookButton: React.FC<{ source: string; children?: React.ReactNode; classNa
 
 const results = [
   { metric: '10+', label: 'leads a month for North Star Ranch through Google and paid search' },
-  { metric: '#1', label: 'for "Morristown eating disorder therapist" (Embracing Certainty)' },
+  { metric: '#1', label: 'for "Morristown eating disorder therapist" (Embracing Uncertainty)' },
   { metric: '+300%', label: 'increase in Google sales for ZStander' },
   { metric: '#1', label: 'for "Midwood Brooklyn real estate agent" (The Behfar Team)' },
 ];
@@ -88,7 +88,7 @@ const fits = [
 ];
 
 const faqs = [
-  { q: 'How much does it cost?', a: 'A flat $2,000 to start the full build, with no monthly retainer and no long contract. Larger multi-location builds are quoted up from there. If you want to talk it through first, book a quick call.' },
+  { q: 'How much does it cost?', a: 'A flat $2,000 to start the full build, as a one-time project with no long contract. Larger multi-location builds are quoted up from there. If you want to talk it through first, book a quick call.' },
   { q: 'Do you guarantee rankings?', a: 'No. Nobody honest can. What I promise is specific, bottom-of-funnel work aimed at real leads, and clear proof of what I did and why.' },
   { q: 'Is this another agency retainer?', a: 'No. I am a one-person, AI-powered operation. That means lower cost, direct communication, and work built around your actual business, not a pile of Fiverr blog posts.' },
   { q: 'Will this create a lot of work for me?', a: 'No. I pull what I need on one short call, then I execute. You should not get marketing homework.' },
@@ -133,7 +133,7 @@ export const LocalAuthoritySystemPage: React.FC = () => {
                 <StartButton source="hero" />
                 <NavLink className="btn btn-ghost" to="/case-studies">See the results</NavLink>
               </div>
-              <p className="bp-cta-note">$2,000 flat to start. No monthly retainer, no long contract. <a href={CALENDLY} target="_blank" rel="noopener noreferrer">Questions first? Book a call.</a></p>
+              <p className="bp-cta-note">$2,000 flat to start. One-time build, no long contract. <a href={CALENDLY} target="_blank" rel="noopener noreferrer">Questions first? Book a call.</a></p>
             </div>
             <div className="bp-proof-stack" aria-label="Real proof screenshot">
               <figure className="bp-proof-main">
@@ -142,7 +142,7 @@ export const LocalAuthoritySystemPage: React.FC = () => {
               </figure>
               <div className="bp-proof-notes">
                 <span><CheckCircle2 size={16} strokeWidth={2.2} />Built around your business</span>
-                <span><CheckCircle2 size={16} strokeWidth={2.2} />No monthly fluff</span>
+                <span><CheckCircle2 size={16} strokeWidth={2.2} />No filler work</span>
                 <span><CheckCircle2 size={16} strokeWidth={2.2} />Honest, plain English</span>
               </div>
             </div>
@@ -269,11 +269,11 @@ export const LocalAuthoritySystemPage: React.FC = () => {
             <div>
               <span className="eyebrow">One flat price</span>
               <h2>$2,000 to start</h2>
-              <p>A flat, honest price for the full build. No monthly retainer trap, no long contract. Larger multi-location builds are quoted up from there.</p>
+              <p>A flat, honest price for the full build. One-time project, no long contract. Larger multi-location builds are quoted up from there.</p>
             </div>
             <div className="bp-price-card">
               <ul>
-                {['Target research and money pages', 'Supporting content and internal links', 'Reddit, YouTube, and brand reputation', 'AI search visibility setup', 'One flat price, no monthly fluff'].map((item) => (
+                {['Target research and money pages', 'Supporting content and internal links', 'Reddit, YouTube, and brand reputation', 'AI search visibility setup', 'One flat price for the build'].map((item) => (
                   <li key={item}><CheckCircle2 size={17} strokeWidth={2.2} />{item}</li>
                 ))}
               </ul>
