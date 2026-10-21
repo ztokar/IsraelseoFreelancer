@@ -191,7 +191,7 @@ const schema = {
       serviceType: 'SEO and AI search visibility',
       description: DESC,
       url: CANONICAL,
-      image: 'https://israelseofreelancer.com/images/service-audit-zechariah.webp',
+      image: 'https://israelseofreelancer.com/images/ai-seo-monthly-share.jpg',
       provider: { '@id': 'https://israelseofreelancer.com/#person' },
       offers: {
         '@type': 'Offer',
@@ -218,12 +218,12 @@ const schema = {
 
 export const AiSeoMonthlyPage: React.FC = () => {
   useEffect(() => {
-    updatePageSEO({ title: TITLE, description: DESC, path: PATH, image: '/images/service-audit-zechariah.webp' });
+    updatePageSEO({ title: TITLE, description: DESC, path: PATH, image: '/images/ai-seo-monthly-share.jpg' });
   }, []);
 
   return (
     <>
-      <HeadSEO title={TITLE} description={DESC} path={PATH} image="/images/service-audit-zechariah.webp" />
+      <HeadSEO title={TITLE} description={DESC} path={PATH} image="/images/ai-seo-monthly-share.jpg" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
 
       <main className="gp blueprint aim">
@@ -251,7 +251,7 @@ export const AiSeoMonthlyPage: React.FC = () => {
               <p className="bp-cta-note">$750 a month for the first 5 businesses. You work with me directly.</p>
             </div>
             <figure className="aim-hero-photo">
-              <img src="/images/service-audit-zechariah.webp" width={800} height={450} alt="Zechariah Tokar working on client SEO at his desk" fetchPriority="high" />
+              <img src="/images/zechariah-tokar-outdoors.webp" width={800} height={692} alt="Zechariah Tokar smiling outdoors in a white cap and shirt" fetchPriority="high" />
               <a className="aim-text-card" href="#contact" onClick={() => track('ai_seo_monthly_form_click', 'hero-card')}>
                 <span className="aim-text-icon"><MessageCircle size={20} strokeWidth={2} /></span>
                 <span>
@@ -372,7 +372,7 @@ export const AiSeoMonthlyPage: React.FC = () => {
         <section className="aim-work divider">
           <div className="wrap aim-work-grid">
             <figure className="aim-work-photo">
-              <img src="/images/service-content-zechariah.webp" width={562} height={1000} alt="Zechariah Tokar at his desk planning a client's monthly SEO work" loading="lazy" />
+              <img src="/images/zechariah-tokar-hat-suit.webp" width={600} height={876} alt="Zechariah Tokar outdoors in a black hat and suit" loading="lazy" />
             </figure>
             <div className="copy-stack">
               <span className="eyebrow">How I work</span>
