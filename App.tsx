@@ -25,6 +25,7 @@ import { TargetIntakePage } from './components/TargetIntakePage';
 import { LocalAuthoritySystemPage } from './components/LocalAuthoritySystemPage';
 import { AiSeoMonthlyPage } from './components/AiSeoMonthlyPage';
 import { SystemIntakePage } from './components/SystemIntakePage';
+import { PrivacyPage } from './components/PrivacyPage';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -87,6 +88,7 @@ export const routes: RouteRecord[] = [
       // Comparison pages
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
       { path: 'about', element: <AboutPage /> },
+      { path: 'privacy', element: <PrivacyPage /> },
       { path: 'videos', element: <VideosPage /> },
       { path: 'how-to-get-chatgpt-to-recommend-your-brand', element: <ChatGPTRecommendBrandPage /> },
       { path: 'resources/dataisbeautiful-claude-skill', element: <DataIsBeautifulSkillPage /> },
