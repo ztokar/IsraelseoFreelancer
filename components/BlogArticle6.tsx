@@ -7,7 +7,7 @@ export const BlogArticle6: React.FC = () => {
     updatePageSEO({
       title: 'SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar',
       description: 'How Israeli SaaS companies can rank in US search results. Covers domain strategy, content localization, and building topical authority for American buyers.',
-      path: '/blog/seo-israeli-saas-companies-us-markets',
+      path: '/saas-seo#israeli-saas',
       image: '/images/blog-saas-seo.jpg',
       type: 'article',
     });
@@ -16,7 +16,7 @@ export const BlogArticle6: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar" description="How Israeli SaaS companies can rank in US search results. Covers domain strategy, content localization, and building topical authority for American buyers." path="/blog/seo-israeli-saas-companies-us-markets" image="/images/blog-saas-seo.jpg" type="article" />
+      <HeadSEO title="SEO for Israeli SaaS Companies Targeting US Markets | Zechariah Tokar" description="How Israeli SaaS companies can rank in US search results. Covers domain strategy, content localization, and building topical authority for American buyers." path="/saas-seo#israeli-saas" image="/images/blog-saas-seo.jpg" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">

@@ -154,11 +154,11 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
           title="Related pages"
           lede="If a freelancer is the direction you are leaning, these explain the specific services."
           links={[
-            { label: 'Freelance SEO', path: '/freelance-seo-israel', type: 'Service', body: 'Hands-on SEO delivered directly.' },
-            { label: 'SEO Consulting', path: '/seoconsulting', type: 'Service', body: 'Strategy and a prioritized roadmap.' },
+            { label: 'Freelance SEO', path: '/seo-services-israel#how-hiring-works', type: 'Service', body: 'Hands-on SEO delivered directly.' },
+            { label: 'SEO Consulting', path: '/seo-services-israel#consulting', type: 'Service', body: 'Strategy and a prioritized roadmap.' },
             { label: 'Technical SEO Audit', path: '/technical-seo-audit', type: 'Service', body: 'Find what to fix first.' },
             { label: 'B2B SEO', path: '/b2b-seo-israel', type: 'Service', body: 'Pages built around buyer intent.' },
-            { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services', type: 'Service', body: 'Get named in AI answers.' },
+            { label: 'Answer Engine Optimization', path: '/ai-seo-services#answer-engine-optimization', type: 'Service', body: 'Get named in AI answers.' },
           ]}
         />
 

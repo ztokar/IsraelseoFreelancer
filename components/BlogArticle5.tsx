@@ -218,7 +218,7 @@ export const BlogArticle5: React.FC = () => {
                 I work with Israeli startups and businesses to improve Hebrew SEO performance, fix technical issues, and build sustainable organic traffic.
               </p>
               <p className="text-slate-700 mt-4">
-                <NavLink to="/freelance-seo-israel" className="text-primary hover:underline font-semibold">Learn about my freelance SEO services</NavLink> or <NavLink to="/seoconsulting" className="text-primary hover:underline font-semibold">explore SEO consulting options</NavLink>.
+                <NavLink to="/seo-services-israel#how-hiring-works" className="text-primary hover:underline font-semibold">Learn about my freelance SEO services</NavLink> or <NavLink to="/seo-services-israel#consulting" className="text-primary hover:underline font-semibold">explore SEO consulting options</NavLink>.
               </p>
             </div>
           </div>
@@ -235,14 +235,14 @@ export const BlogArticle5: React.FC = () => {
                 <p className="text-slate-600 text-sm">Generate qualified leads through strategic B2B SEO for international markets.</p>
               </NavLink>
               <NavLink
-                to="/freelance-seo-israel"
+                to="/seo-services-israel#how-hiring-works"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">Freelance SEO Services</h4>
                 <p className="text-slate-600 text-sm">Hands-on SEO execution for Hebrew and English websites.</p>
               </NavLink>
               <NavLink
-                to="/seoconsulting"
+                to="/seo-services-israel#consulting"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">SEO Consulting</h4>

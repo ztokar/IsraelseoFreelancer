@@ -6,7 +6,7 @@ import { ContactCTA } from './ContactCTA';
 
 const TITLE = 'The Web Designer I Recommend for Websites That Support Strong SEO | Zechariah Tokar';
 const DESC = 'Zechariah Tokar recommends Rivka Neumann from Web of Creativity for strategic websites, branding, copywriting, and web design that supports SEO.';
-const PATH = '/recommendations/web-designer-seo-web-of-creativity';
+const PATH = '/about#recommendations';
 
 const fitItems = [
   'Are planning to launch a new website and want it built with SEO in mind',
@@ -39,7 +39,7 @@ export const RecommendedWebDesignerPage: React.FC = () => {
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to="/recommendations">Recommendations</NavLink><span>/</span>Web of Creativity
+          <NavLink to="/about#recommendations">Recommendations</NavLink><span>/</span>Web of Creativity
         </div>
 
         <section className="shero">
@@ -54,7 +54,7 @@ export const RecommendedWebDesignerPage: React.FC = () => {
                 <a className="btn btn-primary" href="https://webofcreativity.com/" target="_blank" rel="noopener noreferrer">
                   Visit Web of Creativity <ExternalLink size={17} />
                 </a>
-                <NavLink className="btn btn-ghost" to="/recommendations">More recommendations</NavLink>
+                <NavLink className="btn btn-ghost" to="/about#recommendations">More recommendations</NavLink>
               </div>
             </div>
             <div className="service-card" style={{ padding: 0, overflow: 'hidden' }}>

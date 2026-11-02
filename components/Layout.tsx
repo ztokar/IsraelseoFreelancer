@@ -5,6 +5,7 @@ import { SOCIAL_LINKS } from '../constants';
 import { CLAIMS, HUBS, PAGE_BY_PATH, SENTENCE, SENTENCE_2, SITE_URL } from '../site-map';
 import { PageEnd } from './lean/PageEnd';
 import { Arrow } from './lean/Arrow';
+import { FoldCards } from './lean/FoldCards';
 
 // Header: seven items that say the sentence. Four claims, Results, About, one call to action.
 const NAV = [
@@ -144,6 +145,7 @@ export const Layout: React.FC = () => {
 
       <main className="flex-grow">
         <Outlet />
+        <FoldCards path={path} />
         <PageEnd path={path} />
       </main>
 

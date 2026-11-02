@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ContactCTA } from './ContactCTA';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 
-const pagePath = '/how-to-get-chatgpt-to-recommend-your-brand';
+const pagePath = '/how-to-get-cited-by-chatgpt#recommend';
 const pageTitle = 'How to Get ChatGPT to Recommend Your Brand | Zechariah Tokar';
 const pageDescription = 'Learn how to get ChatGPT to recommend your brand by finding the searches AI tools run, creating the right pages, and adding proof that supports the recommendation.';
 
@@ -102,7 +102,7 @@ export const ChatGPTRecommendBrandPage: React.FC = () => {
       <div className="gp llm-resource">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to="/ai-seo-consultant-israel">AI Search Visibility</NavLink><span>/</span>
+          <NavLink to="/ai-seo-services#consultant">AI Search Visibility</NavLink><span>/</span>
           How to Get ChatGPT to Recommend Your Brand
         </div>
 
@@ -252,7 +252,7 @@ export const ChatGPTRecommendBrandPage: React.FC = () => {
               <p className="lede">If you want to apply this to your own site, these are the two most relevant next pages.</p>
             </div>
             <div className="resource-grid">
-              <NavLink className="resource-card" to="/ai-seo-consultant-israel">
+              <NavLink className="resource-card" to="/ai-seo-services#consultant">
                 <span>Service</span>
                 <h3>AI Search Visibility</h3>
                 <svg fill="none" strokeWidth={2} viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" /></svg>

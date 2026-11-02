@@ -7,7 +7,7 @@ export const BlogArticle8: React.FC = () => {
     updatePageSEO({
       title: 'Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar',
       description: 'Most Israeli B2B companies make the same SEO mistakes: wrong keywords, thin content, no internal linking. Here is a practical fix for each one.',
-      path: '/blog/why-israeli-b2b-fail-seo',
+      path: '/b2b-seo-israel#why-b2b-seo-fails',
       image: '/images/blog-why-israeli-b2b-fail-seo.jpg',
       type: 'article',
     });
@@ -16,7 +16,7 @@ export const BlogArticle8: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar" description="Most Israeli B2B companies make the same SEO mistakes: wrong keywords, thin content, no internal linking. Here is a practical fix for each one." path="/blog/why-israeli-b2b-fail-seo" image="/images/blog-why-israeli-b2b-fail-seo.jpg" type="article" />
+      <HeadSEO title="Why Most Israeli B2B Companies Fail at SEO (And How to Fix It) | Zechariah Tokar" description="Most Israeli B2B companies make the same SEO mistakes: wrong keywords, thin content, no internal linking. Here is a practical fix for each one." path="/b2b-seo-israel#why-b2b-seo-fails" image="/images/blog-why-israeli-b2b-fail-seo.jpg" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -85,7 +85,7 @@ export const BlogArticle8: React.FC = () => {
               <li>Build content around integrations, deployment models, technical specs</li>
               <li>Leverage Israeli tech reputation strategically</li>
             </ul>
-            <p>For <NavLink to="/blog/seo-israeli-saas-companies-us-markets" className="text-primary hover:underline">Israeli SaaS companies</NavLink> especially, this gap is critical.</p>
+            <p>For <NavLink to="/saas-seo#israeli-saas" className="text-primary hover:underline">Israeli SaaS companies</NavLink> especially, this gap is critical.</p>
 
             <hr className="my-12 border-slate-200" />
 
@@ -99,7 +99,7 @@ export const BlogArticle8: React.FC = () => {
               <li>Write content addressing industry-specific regulations and workflows</li>
               <li>Target searches that include industry keywords</li>
             </ul>
-            <p>For <NavLink to="/blog/seo-israeli-cybersecurity-companies" className="text-primary hover:underline">Israeli cybersecurity companies</NavLink>, vertical positioning is especially critical.</p>
+            <p>For <NavLink to="/cybersecurity-seo#israeli-cybersecurity" className="text-primary hover:underline">Israeli cybersecurity companies</NavLink>, vertical positioning is especially critical.</p>
 
             <hr className="my-12 border-slate-200" />
 

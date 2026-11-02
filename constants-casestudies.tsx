@@ -92,7 +92,7 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
     ],
     result: 'A site engineered for how people search now: Google, plus ChatGPT, Perplexity, and Google’s AI answers. It targets the exact questions couples ask when they are ready to book, not generic wedding traffic.',
     relatedLabel: 'AI Search Visibility',
-    relatedPath: '/ai-seo-consultant-israel',
+    relatedPath: '/ai-seo-services#consultant',
     faqs: [
       { q: 'Why optimize a venue site for AI assistants?', a: 'Because couples increasingly ask ChatGPT, Perplexity, and Google’s AI answers for venue recommendations. If your site is built to be quoted, you show up at the exact moment someone is deciding.' },
       { q: 'Why use an exact-match domain?', a: 'For a single, specific service in one place, an exact-match domain makes the site’s purpose obvious to both people and search engines, and it is easy to point a brand toward.' },
@@ -120,7 +120,7 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
     proofAlt: 'Inbound ABA therapy lead message that found the provider on Google',
     proofCaption: 'A real inbound lead: a parent who found the provider on Google.',
     relatedLabel: 'AI Search Visibility',
-    relatedPath: '/ai-seo-consultant-israel',
+    relatedPath: '/ai-seo-services#consultant',
     faqs: [
       { q: 'What does it mean to optimize for AI recommendations?', a: 'It means writing pages around the exact way someone asks an AI assistant to recommend a provider, naming the brand clearly, and answering the real question, so the assistant can quote and recommend you.' },
       { q: 'Does local SEO still matter for therapy providers?', a: 'Yes. Parents search by city and ask "who is best near me." Pages built for those local, decision-stage searches reach families who are ready to start, not just browsing.' },

@@ -84,7 +84,7 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { title: 'Direct work with Zechariah Tokar', paragraphs: [
         'I handle the research and the recommendations myself. The existing audit feedback below describes work on brand-name confusion, category wording and missing evidence. It is relevant to this service because those are concrete problems an audit can uncover.',
         'I work with businesses selling into US and English-speaking markets. Your actual customers, offer and sales process shape the audit. Being based in Israel does not mean the work is limited to Israeli searches.',
-        'After the report, you can ask me to quote implementation, use your own team or stop with the findings. A useful diagnosis should stand on its own. Broader work is available through my [answer engine optimization services](/answer-engine-optimization-services).',
+        'After the report, you can ask me to quote implementation, use your own team or stop with the findings. A useful diagnosis should stand on its own. Broader work is available through my [answer engine optimization services](/ai-seo-services#answer-engine-optimization).',
       ] },
       { title: 'What I need to quote the audit', paragraphs: [
         'Send your website, the service or product you want buyers to find, the market you sell into and a few competitors you hear about on sales calls. If you have an example of an inaccurate AI answer, include the question and screenshot.',
@@ -98,8 +98,8 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { question: 'Can you work with our existing SEO team?', answer: 'Yes. The report can go to your team, with the evidence and the order of fixes. We can agree on who handles the page changes, source corrections and measurement so the same job is not bought twice.' },
       { question: 'What happens after the audit?', answer: 'We review the findings and choose the next step. That might be a page rewrite, a technical fix, correcting business information or repeat tracking. If the evidence does not justify more work, I will say so.' },
     ],
-    proof: { image: '/images/proof-linkedin-ai-audit.jpg', alt: 'Published client feedback about Zechariah’s AI SEO audit', caption: 'Existing audit feedback: identifying brand confusion, unclear category language and gaps in the site. This is feedback on the deliverable, not a promise of future results.', path: '/ai-seo-consultant-israel', link: 'Read about my AI search work' },
-    resources: [{ label: 'Why ChatGPT does not mention your brand', path: '/why-chatgpt-doesnt-mention-your-brand' }, { label: 'My broader AEO service', path: '/answer-engine-optimization-services' }],
+    proof: { image: '/images/proof-linkedin-ai-audit.jpg', alt: 'Published client feedback about Zechariah’s AI SEO audit', caption: 'Existing audit feedback: identifying brand confusion, unclear category language and gaps in the site. This is feedback on the deliverable, not a promise of future results.', path: '/ai-seo-services#consultant', link: 'Read about my AI search work' },
+    resources: [{ label: 'Why ChatGPT does not mention your brand', path: '/why-chatgpt-doesnt-mention-your-brand' }, { label: 'My broader AEO service', path: '/ai-seo-services#answer-engine-optimization' }],
     cta: 'Find out what is keeping your business out of the answer.',
   },
   {
@@ -172,7 +172,7 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { title: 'What this service does not include by default', paragraphs: [
         'Writing and implementing agreed pages is different from ongoing promotion, paid advertising or a broad technical rebuild. If the page needs those things, I explain the extra scope. You should know which part of the job you are buying.',
         'A missing mention can come from the sources outside your website. If your pages are already clear, more editing may not be the priority. An [AI visibility audit](/ai-visibility-audit) can help separate a page problem from a wider reputation or discovery problem.',
-        'For a combined program, see my [answer engine optimization services](/answer-engine-optimization-services). For repeat measurement after a rewrite, choose [AI visibility tracking services](/ai-visibility-tracking-services). Each has a different purpose.',
+        'For a combined program, see my [answer engine optimization services](/ai-seo-services#answer-engine-optimization). For repeat measurement after a rewrite, choose [AI visibility tracking services](/ai-visibility-tracking-services). Each has a different purpose.',
       ] },
       { title: 'Why work directly with Zechariah Tokar?', paragraphs: [
         'I do the research and the page work myself. My published ZStander example shows work across indexing, page clarity and supporting search foundations. It is an organic search example, not proof that a particular rewrite guarantees a citation.',
@@ -231,7 +231,7 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { title: 'A report should end with a decision', paragraphs: [
         'If the assistant keeps naming a service you do not sell, I put that mistake near the top of the report. One missing mention on a broad question may just need another check. Those findings should not come back as equally urgent jobs.',
         'The recommended action names the page or source involved. It might be correcting a business detail, strengthening a comparison, checking access or improving the proof next to a service claim. I explain what we expect that change to help.',
-        'Implementation is separately agreed. Tracking is not a hidden promise to rewrite the whole site every month. If you need page work, [GEO content optimization](/geo-content-optimization) covers that. A wider program sits under [answer engine optimization](/answer-engine-optimization-services).',
+        'Implementation is separately agreed. Tracking is not a hidden promise to rewrite the whole site every month. If you need page work, [GEO content optimization](/geo-content-optimization) covers that. A wider program sits under [answer engine optimization](/ai-seo-services#answer-engine-optimization).',
       ] },
       { title: 'AI referral traffic and visibility are different measurements', paragraphs: [
         'Your company can appear in an answer without getting a visit. And a visit from an assistant does not usually tell us which question the person asked. I keep those two records separate unless a tracked link gives us a reason to join them.',
@@ -314,7 +314,7 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { title: 'ChatGPT advertising services with a defined scope', paragraphs: [
         'I can help with campaign planning, account setup, ad copy, destination pages, tracking and ongoing management. We agree on what is included after reviewing your account, offer and market. A readiness review can come before a launch commitment.',
         'This is paid advertising in ChatGPT. It is separate from getting the brand mentioned in an organic AI answer. Buying an ad does not buy editorial trust or a guaranteed recommendation in the assistant’s response.',
-        'If you want organic work, start with my [AI visibility audit](/ai-visibility-audit) or [answer engine optimization services](/answer-engine-optimization-services). If you want paid traffic, this page explains how I approach the campaign and the conversion path.',
+        'If you want organic work, start with my [AI visibility audit](/ai-visibility-audit) or [answer engine optimization services](/ai-seo-services#answer-engine-optimization). If you want paid traffic, this page explains how I approach the campaign and the conversion path.',
       ] },
       { title: 'Check account access and advertising eligibility first', paragraphs: [
         'Availability depends on the advertiser account, market, category and campaign features. I check the options actually available to your business before recommending a plan. I do not promise access based on a competitor’s country list or an old launch announcement.',
@@ -375,6 +375,6 @@ export const SERVICE_OFFERS: ServiceOffer[] = [
       { question: 'Can this run alongside Google Ads and SEO?', answer: 'Yes, when the offer, budget and measurement justify a separate test. I keep the channels distinguishable in reporting. ChatGPT advertising should be judged on its own useful outcomes, not assumed to replace a working campaign.' },
     ],
     proof: { image: '/images/proof-linkedin-ai-audit.jpg', alt: 'Client feedback about Zechariah’s search audit work', caption: 'Background in search diagnosis and page work. This feedback concerns an AI SEO audit and is not a paid ChatGPT advertising case study.', path: '/reviews-results', link: 'See my published client feedback' },
-    resources: [{ label: 'Organic AI search services', path: '/answer-engine-optimization-services' }, { label: 'My approach and background', path: '/about' }], cta: 'Check whether ChatGPT ads fit your offer and budget.',
+    resources: [{ label: 'Organic AI search services', path: '/ai-seo-services#answer-engine-optimization' }, { label: 'My approach and background', path: '/about' }], cta: 'Check whether ChatGPT ads fit your offer and budget.',
   },
 ];

@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Services', path: '/seo-services-israel' },
   { label: 'Reviews', path: '/reviews-results' },
   { label: 'About', path: '/about' },
-  { label: 'Blog', path: '/blog' },
+  { label: 'Blog', path: '/seo-guides' },
 ];
 
 // Grouped nav for the header. Hub-led: each group opens with its hub page, then the
@@ -22,8 +22,8 @@ export const NAV_MENU: NavGroup[] = [
   {
     label: 'AI Search',
     children: [
-      { label: 'AI Search Visibility', desc: 'Get found and recommended in AI answers', path: '/ai-seo-consultant-israel' },
-      { label: 'Answer Engine Optimization', desc: 'Get named when buyers ask an assistant', path: '/answer-engine-optimization-services' },
+      { label: 'AI Search Visibility', desc: 'Get found and recommended in AI answers', path: '/ai-seo-services#consultant' },
+      { label: 'Answer Engine Optimization', desc: 'Get named when buyers ask an assistant', path: '/ai-seo-services#answer-engine-optimization' },
       { label: 'Get Cited by ChatGPT', desc: 'What AI models actually quote', path: '/how-to-get-cited-by-chatgpt' },
       { label: 'Track Brand Mentions', desc: 'Measure where you stand today', path: '/track-brand-mentions-in-chatgpt' },
       { label: 'Rank in AI Overviews', desc: 'Show up in Google AI answers', path: '/how-to-rank-in-google-ai-overviews' },
@@ -44,8 +44,8 @@ export const NAV_MENU: NavGroup[] = [
     label: 'SEO Services',
     children: [
       { label: 'All SEO Services', desc: 'See the full menu', path: '/seo-services-israel' },
-      { label: 'Freelance SEO', desc: 'Hands-on SEO, senior level', path: '/freelance-seo-israel' },
-      { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seoconsulting' },
+      { label: 'Freelance SEO', desc: 'Hands-on SEO, senior level', path: '/seo-services-israel#how-hiring-works' },
+      { label: 'SEO Consulting', desc: 'Strategy and a clear roadmap', path: '/seo-services-israel#consulting' },
       { label: 'Technical SEO Audit', desc: 'Find what to fix first', path: '/technical-seo-audit' },
       { label: 'SEO Content Writing', desc: 'Pages that rank and convert', path: '/content-marketing-for-seo' },
     ],
@@ -68,7 +68,7 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
       { label: 'About', desc: 'Who you work with', path: '/about' },
       { label: 'Book a meeting', desc: 'Choose a time to talk', path: '/book' },
-      { label: 'Blog', desc: 'Notes on modern search', path: '/blog' },
+      { label: 'Blog', desc: 'Notes on modern search', path: '/seo-guides' },
     ],
   },
 ];
@@ -80,8 +80,8 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
   {
     heading: 'AI Search',
     links: [
-      { label: 'AI Search Visibility', path: '/ai-seo-consultant-israel' },
-      { label: 'Answer Engine Optimization', path: '/answer-engine-optimization-services' },
+      { label: 'AI Search Visibility', path: '/ai-seo-services#consultant' },
+      { label: 'Answer Engine Optimization', path: '/ai-seo-services#answer-engine-optimization' },
       { label: 'Get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt' },
       { label: 'Track brand mentions in ChatGPT', path: '/track-brand-mentions-in-chatgpt' },
       { label: 'Why ChatGPT ignores your brand', path: '/why-chatgpt-doesnt-mention-your-brand' },
@@ -102,8 +102,8 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
     heading: 'SEO Services',
     links: [
       { label: 'All SEO Services', path: '/seo-services-israel' },
-      { label: 'Freelance SEO', path: '/freelance-seo-israel' },
-      { label: 'SEO Consulting', path: '/seoconsulting' },
+      { label: 'Freelance SEO', path: '/seo-services-israel#how-hiring-works' },
+      { label: 'SEO Consulting', path: '/seo-services-israel#consulting' },
       { label: 'Technical SEO Audit', path: '/technical-seo-audit' },
       { label: 'SEO Content Writing', path: '/content-marketing-for-seo' },
       { label: 'Freelancer vs Agency', path: '/seo-freelancer-vs-agency' },
@@ -117,7 +117,7 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
       { label: 'Cybersecurity SEO', path: '/cybersecurity-seo' },
       { label: 'Shopify SEO', path: '/shopify-seo' },
       { label: 'Google Business Profile', path: '/google-business-profile-seo' },
-      { label: 'Link Building', path: '/link-building-services' },
+      { label: 'Link Building', path: '/seo-services-israel#link-building' },
     ],
   },
   {
@@ -136,9 +136,9 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
     links: [
       { label: 'Book a meeting', path: '/book' },
       { label: 'About', path: '/about' },
-      { label: 'Blog', path: '/blog' },
-      { label: 'Videos', path: '/videos' },
-      { label: 'Recommended Partners', path: '/recommendations' },
+      { label: 'Blog', path: '/seo-guides' },
+      { label: 'Videos', path: '/about#videos' },
+      { label: 'Recommended Partners', path: '/about#recommendations' },
       { label: 'Free Claude Skill', path: '/resources/dataisbeautiful-claude-skill' },
     ],
   },
@@ -212,7 +212,7 @@ export const PROFILE_IMAGE: string | null = null;
 export const MARKETPLACE_SERVICES = [
   {
     title: 'SEO writing',
-    path: '/blog-content-seo',
+    path: '/content-marketing-for-seo#blog-content',
     price: 'By consultation',
     category: 'Content and authority',
     tag: 'Pages and content',
@@ -232,7 +232,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'SEO consult',
-    path: '/seo-consult',
+    path: '/seo-services-israel#consulting',
     price: 'By consultation',
     category: 'Core SEO',
     tag: 'Quick advice',
@@ -292,7 +292,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'Citations and directories',
-    path: '/local-citations-directories',
+    path: '/google-business-profile-seo#citations',
     price: 'By consultation',
     category: 'Local SEO',
     tag: 'Trust signals',
@@ -302,7 +302,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'AI SEO / GEO',
-    path: '/ai-seo-consultant-israel',
+    path: '/ai-seo-services#consultant',
     price: 'By consultation',
     category: 'AI and social search',
     tag: 'AI search',
@@ -332,7 +332,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'Reddit marketing expert',
-    path: '/reddit-marketing-expert',
+    path: '/reddit-marketing-services#risk-review',
     price: 'By consultation',
     category: 'AI and social search',
     tag: 'Specialist review',
@@ -372,7 +372,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'Backlinks',
-    path: '/link-building-services',
+    path: '/seo-services-israel#link-building',
     price: 'By consultation',
     category: 'Content and authority',
     tag: 'Authority',
@@ -392,7 +392,7 @@ export const MARKETPLACE_SERVICES = [
   },
   {
     title: 'Press release SEO',
-    path: '/press-release-seo',
+    path: '/seo-services-israel#press-releases',
     price: 'By consultation',
     category: 'Content and authority',
     tag: 'PR visibility',
@@ -475,7 +475,7 @@ export const LINKEDIN_FEATURED_RESULTS = [
     description: 'A SaaS founder found brand-name confusion, category language issues, citation gaps, and site architecture problems from an AI SEO audit.',
     image: '/images/proof-linkedin-ai-audit.jpg',
     alt: 'LinkedIn featured image showing a client message praising an AI SEO audit deliverable',
-    path: '/ai-seo-consultant-israel',
+    path: '/ai-seo-services#consultant',
   },
   {
     title: 'Reddit reach',
@@ -510,7 +510,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'Answer Engine Optimization Services: Get Named in AI Answers',
     metaDescription: 'Get your brand named in ChatGPT, Perplexity and Google AI Overviews. One senior consultant working on your pages and the sources those answers are built from.',
     eyebrow: 'Answer engine optimization',
-    parentPath: '/ai-seo-consultant-israel',
+    parentPath: '/ai-seo-services#consultant',
     parentLabel: 'AI Search Visibility',
     bestFor: 'Brands that rank fine on Google but never get named when someone asks an AI assistant who to use.',
     intro: 'Answer engine optimization gets your brand named when a buyer asks ChatGPT, Perplexity or Google which option to pick. Most sites are invisible in those answers even when they rank well, because the answer is built from what other people say about you, not from your homepage. I work on both halves: pages clear enough to be quoted, and real mentions in the places those answers pull from.',
@@ -671,7 +671,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'Local Citations and Directory SEO: Consistent Listings',
     metaDescription: 'Local citation and directory SEO for NAP consistency, business profiles, authority signals, and local search visibility.',
     eyebrow: 'Citations and directories',
-    parentPath: '/link-building-services',
+    parentPath: '/seo-services-israel#link-building',
     parentLabel: 'Link building services',
     bestFor: 'Local businesses with messy listings, weak local authority, or inconsistent business details.',
     intro: 'Citations are not glamorous, but bad listings confuse local search. The goal is not to submit to every directory. The goal is to clean the important ones and build signals that make the business easier to trust.',
@@ -686,7 +686,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'Reddit SEO: Rank in Discussions and Feed AI Answers',
     metaDescription: 'Reddit SEO help for search visibility, brand mentions, buyer research, AI search presence, and useful discussion-led content.',
     eyebrow: 'Reddit SEO',
-    parentPath: '/ai-seo-consultant-israel',
+    parentPath: '/ai-seo-services#consultant',
     parentLabel: 'AI SEO',
     bestFor: 'Brands where Reddit threads influence Google results, AI answers, or buyer trust.',
     intro: 'Reddit now shows up in Google results and AI research paths. The useful play is not spam. It is finding the right discussions, understanding objections, and building content or participation that answers real buyer questions.',
@@ -842,7 +842,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'Programmatic SEO: Useful Pages at Scale, Not Doorway Spam',
     metaDescription: 'Programmatic SEO consulting for useful template pages, internal linking, indexation, data structure, and scalable search pages.',
     eyebrow: 'Programmatic SEO',
-    parentPath: '/ai-seo-consultant-israel',
+    parentPath: '/ai-seo-services#consultant',
     parentLabel: 'AI SEO',
     bestFor: 'Companies with real data, locations, categories, products, integrations, or use cases that can support useful page templates.',
     intro: 'Programmatic SEO only works when the page type deserves to exist. Thin generated pages create risk. Useful templates answer a repeated buyer question with specific data, internal links, and a clear next step.',
@@ -857,7 +857,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'SEO Consult: Site Review and a Priority Roadmap',
     metaDescription: 'SEO consults for audits, strategy, second opinions, content plans, technical questions, and clear SEO priorities.',
     eyebrow: 'SEO consult',
-    parentPath: '/seoconsulting',
+    parentPath: '/seo-services-israel#consulting',
     parentLabel: 'SEO consulting',
     bestFor: 'Founders and marketers who need direction before committing to a bigger SEO project.',
     intro: 'A consult is useful when you are stuck between too many SEO tasks. The goal is to decide what matters first, what can wait, and what is probably not worth paying for right now.',
@@ -872,7 +872,7 @@ export const SERVICE_SPOKES: SpokeService[] = [
     seoTitle: 'Press Release SEO: Brand Mentions That Support Search',
     metaDescription: 'Press release SEO help for brand search, authority building, third-party mentions, AI answers, and reputation support.',
     eyebrow: 'Press release SEO',
-    parentPath: '/link-building-services',
+    parentPath: '/seo-services-israel#link-building',
     parentLabel: 'Link building services',
     bestFor: 'Brands that need credible third-party surfaces to support search, reputation, and AI answers.',
     intro: 'A press release should not be random noise. It should support a real entity signal: who you are, what you do, why the update matters, and where buyers or AI systems can verify the brand.',
@@ -1609,7 +1609,7 @@ export const SERVICE_DATA: Record<string, ServiceContent> = {
     deepDive: [
       {
         title: 'What I mean by AI SEO',
-        body: "AI SEO is not publishing a pile of generated posts. I look at whether Google, ChatGPT, Perplexity, Reddit, YouTube, and third-party pages describe the brand clearly. If the brand is hard to understand, it is hard to recommend. That is the problem I try to fix. If you want the full service scope, see [answer engine optimization services](/answer-engine-optimization-services).",
+        body: "AI SEO is not publishing a pile of generated posts. I look at whether Google, ChatGPT, Perplexity, Reddit, YouTube, and third-party pages describe the brand clearly. If the brand is hard to understand, it is hard to recommend. That is the problem I try to fix. If you want the full service scope, see [answer engine optimization services](/ai-seo-services#answer-engine-optimization).",
       },
       {
         title: 'Start by finding out where you actually stand',

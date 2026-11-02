@@ -7,7 +7,7 @@ export const BlogArticle: React.FC = () => {
     updatePageSEO({
       title: 'Israel B2B SEO Services: Choose a Partner That Drives Pipeline | Zechariah Tokar',
       description: 'Compare Israel B2B SEO service providers. Learn what separates pipeline-focused SEO from traffic-only strategies for Israeli tech companies.',
-      path: '/blog/israel-b2b-seo-pipeline',
+      path: '/b2b-seo-israel#pipeline',
       image: '/images/blog-b2b-seo-pipeline.jpg',
       type: 'article',
     });
@@ -16,7 +16,7 @@ export const BlogArticle: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="Israel B2B SEO Services: Choose a Partner That Drives Pipeline | Zechariah Tokar" description="Compare Israel B2B SEO service providers. Learn what separates pipeline-focused SEO from traffic-only strategies for Israeli tech companies." path="/blog/israel-b2b-seo-pipeline" image="/images/blog-b2b-seo-pipeline.jpg" type="article" />
+      <HeadSEO title="Israel B2B SEO Services: Choose a Partner That Drives Pipeline | Zechariah Tokar" description="Compare Israel B2B SEO service providers. Learn what separates pipeline-focused SEO from traffic-only strategies for Israeli tech companies." path="/b2b-seo-israel#pipeline" image="/images/blog-b2b-seo-pipeline.jpg" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -341,7 +341,7 @@ export const BlogArticle: React.FC = () => {
 
             <p><strong>Not a fit for:</strong></p>
             <p>
-              Companies needing strategic direction or comprehensive <NavLink to="/seoconsulting" className="text-primary hover:underline">SEO consulting</NavLink>.
+              Companies needing strategic direction or comprehensive <NavLink to="/seo-services-israel#consulting" className="text-primary hover:underline">SEO consulting</NavLink>.
             </p>
 
             <h3>Technical SEO Consultants</h3>
@@ -544,14 +544,14 @@ export const BlogArticle: React.FC = () => {
                 <p className="text-slate-600 text-sm">Generate qualified leads through bottom-of-funnel SEO strategy.</p>
               </NavLink>
               <NavLink
-                to="/seoconsulting"
+                to="/seo-services-israel#consulting"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">SEO Consulting</h4>
                 <p className="text-slate-600 text-sm">Expert strategy and guidance for in-house execution.</p>
               </NavLink>
               <NavLink
-                to="/freelance-seo-israel"
+                to="/seo-services-israel#how-hiring-works"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">Freelance SEO</h4>
