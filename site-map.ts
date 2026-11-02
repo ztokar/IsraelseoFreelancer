@@ -77,57 +77,57 @@ export const SITE_PAGES: SitePage[] = [
 
   // AI answers hub
   { path: '/what-is-answer-engine-optimization', label: 'What is answer engine optimization?', type: 'term', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'Answer engine optimization means shaping your pages so ChatGPT, Perplexity, Gemini and Google AI Overviews quote you when a buyer asks a question. This page defines it, shows how it differs from classic SEO, and lists the signals answer engines read first.' },
+    summary: 'The definition of answer engine optimization: writing the clearest, most liftable answer to one question, so a featured snippet or an AI answer uses your page instead of only listing it. It covers how the work runs and how it lines up against generative engine optimization and classic SEO.' },
   { path: '/what-is-generative-engine-optimization', label: 'What is generative engine optimization?', type: 'term', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'Generative engine optimization is the work of getting a brand cited inside answers written by AI models. The page explains where the name came from, how it overlaps with answer engine optimization, and which page changes tend to move citations.' },
+    summary: 'The definition of generative engine optimization: getting a brand surfaced and cited by ChatGPT, Perplexity and Google AI Overviews, so the AI gives your name instead of ignoring it. A plain-English explanation, how it compares with classic SEO, and how brands actually get surfaced.' },
   { path: '/aeo-vs-geo-vs-seo', label: 'AEO vs GEO vs SEO', type: 'guide', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'Three names for overlapping work. This comparison puts answer engine optimization, generative engine optimization and classic SEO side by side: what each one targets, what it measures, and whether a company needs all three or one plan that covers them.' },
+    summary: 'Three labels for mostly the same job, side by side. What each name covers, why three names exist, what truly differs (where the answer shows and how much of your reputation lives off your own site), and which one is worth paying for.' },
   { path: '/how-to-rank-in-google-ai-overviews', label: 'How to rank in Google AI Overviews', type: 'term', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'Google AI Overviews are the AI summaries at the top of many Google results. This guide defines them, shows which pages Google tends to cite in them, and lists the changes that give a page a better chance of being one of the sources.' },
+    summary: 'How to show up in Google AI Overviews: mostly by winning the normal results for the question and answering it clearly, because Google pulls its sources from pages that already rank. What helps a page get pulled in, and the honest limits most guides skip.' },
   { path: '/how-to-get-cited-by-chatgpt', label: 'How to get cited by ChatGPT', type: 'guide', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'ChatGPT cites pages it finds through search and pages other sites keep naming. This guide covers how ChatGPT picks its sources, how to get recommended rather than only mentioned, and the page and off-site steps that raise the odds of a citation.' },
+    summary: 'ChatGPT quotes the clearest, most trusted source that answers the question up front, backs it with specifics, and is talked about elsewhere on the web. What ChatGPT actually quotes, why pages get ignored, and how to get recommended rather than only cited.' },
   { path: '/track-brand-mentions-in-chatgpt', label: 'Track brand mentions in ChatGPT', type: 'term', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'A ChatGPT brand mention is any answer that names your company. This page defines what counts, how to check mentions by hand and with tools, and how to get mentioned more often once you know where you stand.' },
+    summary: 'A free monthly method for tracking when ChatGPT names your brand: the same buyer questions, on the same schedule, written down every time. Why one check proves nothing, what paid tools add, what no tool tells you, and how to get mentioned more often.' },
   { path: '/how-to-track-ai-search-visibility', label: 'How to track AI search visibility', type: 'term', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'AI search visibility is how often AI answers name, cite or recommend your brand for the questions your buyers ask. The page defines the measure, lists the prompts worth tracking, and shows a simple monthly tracking routine.' },
+    summary: 'How to measure how often ChatGPT, Perplexity and Google AI Overviews name your brand: list the 10 to 20 prompts buyers really ask, run each a few times because answers change, and record the result. Plus what the tracking tools miss.' },
   { path: '/ai-search-visibility-tools', label: 'AI search visibility tools', type: 'guide', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'A buyer\'s list of tools that report how often ChatGPT, Perplexity, Gemini and AI Overviews mention a brand. It covers what each kind of tool measures, where the numbers fall short, and when a manual prompt check is enough.' },
+    summary: 'What AI search visibility tools measure, which ones people use, and when a free spreadsheet gives the same answer for a short prompt list. The tools are good at measuring whether ChatGPT, Perplexity, Gemini and AI Overviews name you; none of them fix the reason you are missing.' },
   { path: '/why-chatgpt-doesnt-mention-your-brand', label: 'Why ChatGPT does not mention your brand', type: 'guide', claim: 'ai', hub: '/ai-answers', updated: D,
-    summary: 'A diagnostic for brands ChatGPT leaves out. It walks through the usual causes, from pages AI search cannot read to too few third-party mentions, and gives the fix for each one in the order that usually matters most.' },
+    summary: 'ChatGPT repeats how the web already describes your category, so a brand missing from reviews, roundups, comparisons and forum threads gets skipped. The four reasons brands get left out, why your own site is the floor and not the fix, and what moves the answer.' },
 
   // Reddit guides hub
   { path: '/reddit-seo', label: 'Reddit SEO', type: 'term', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'Reddit SEO is getting Reddit threads that mention your brand to rank in Google and feed AI answers. This guide defines it, explains why Reddit threads rank, and covers how Reddit content ends up cited by ChatGPT and Google AI Overviews.' },
+    summary: 'The definition of Reddit SEO: getting the Reddit threads that mention your brand to rank in Google and feed AI answers. Why those threads rank, how to use them without getting flagged, and how Reddit content ends up cited by ChatGPT and Google AI Overviews.' },
   { path: '/reddit-karma-account-age', label: 'Reddit karma and account age', type: 'term', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'Karma is the score Reddit gives an account from upvotes on its posts and comments. This page explains how karma and account age decide whether a post survives, the thresholds many subreddits use, and how to build both honestly.' },
+    summary: 'Why Reddit trusts older accounts with real karma, and why a brand-new account that drops a link usually gets filtered. The posting history many subreddits expect before any promotion, and how to build karma and account age the safe way.' },
   { path: '/how-to-market-on-reddit', label: 'How to market on Reddit', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'A step-by-step plan for marketing on Reddit without getting banned: finding the subreddits your buyers read, reading the rules, building an account, and posting things people upvote. Includes the ban rules that catch most brands first.' },
+    summary: 'To market on Reddit, earn trust before you promote: pick a few relevant subreddits, learn their rules and culture, and lead with helpful answers. A simple approach, the mistakes that get brands banned, and how to find the subreddits where your buyers already are.' },
   { path: '/how-to-get-recommended-on-reddit', label: 'How to get recommended on Reddit', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'The method behind a Reddit post that passed 405,000 views: how to earn real recommendations in threads where buyers ask for one, what moderators remove, and why helpful answers outlast promotional posts.' },
+    summary: 'The four-step method behind a Reddit post that passed 405,000 views: be useful in the subreddit first, then answer only threads where someone asked for a recommendation. The rule most brands break, why the link stays out, and why these threads are worth the wait.' },
   { path: '/how-to-rank-a-reddit-post-on-google', label: 'How to rank a Reddit post on Google', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'Which Reddit posts Google shows in its Discussions and forums results, and how to write one that has a chance: the title, the subreddit, the first comment and the replies that keep a thread alive.' },
+    summary: 'How to get a Reddit post into Google: match the title to the exact phrase people search, post in an active and relevant subreddit, and earn real upvotes and comments. What helps a thread rank and what gets it buried.' },
   { path: '/why-does-reddit-rank-so-high-on-google', label: 'Why does Reddit rank so high on Google?', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'Reddit ranks because Google rewards first-hand discussion and because of the data deal between Google and Reddit. This page explains both reasons and what they mean for brands that want to show up in those threads.' },
+    summary: 'Reddit ranks high on Google because of a paid content partnership plus strong human signals: real discussion, upvotes and answers that match what searchers want. The main reasons, the data deal behind them, and what it all means for your brand.' },
   { path: '/why-reddit-posts-get-removed', label: 'Why Reddit posts get removed', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'The common reasons a Reddit post disappears: subreddit rules, karma and account-age filters, spam filters and moderator calls. Each reason comes with how to spot it and what to change before posting again.' },
+    summary: 'A useful Reddit post can still get removed. The usual causes are the account, the format, subreddit rules, the link pattern or a promotional tone. How filters remove posts first, how to spot the wrong subreddit, and what to review before reposting.' },
   { path: '/monitor-brand-mentions-on-reddit', label: 'Reddit brand monitoring', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'How to watch what Reddit says about your brand and your competitors: the searches to save, the free and paid tools, and how to reply to a thread without making it worse.' },
+    summary: 'Watch what Reddit says about your brand, because Google and AI tools repeat it. A quick brand search on Reddit plus a couple of alerts surfaces the threads that already rank, so you know what buyers and AI find first.' },
   { path: '/reddit-ads-vs-organic', label: 'Reddit ads vs organic', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'When paid Reddit ads make sense and when organic posts and comments do more, compared on cost, trust, targeting and how long the results last.' },
+    summary: 'Reddit ads buy fast reach; organic Reddit marketing builds trust and search visibility that lasts. When the budget stops, the ads go quiet, while a strong organic thread can keep ranking in Google and feeding AI answers. Which one fits your goal.' },
   { path: '/reddit-b2b-saas-lead-generation', label: 'Reddit lead generation for B2B SaaS', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'How B2B SaaS companies find buyers on Reddit: the subreddits where software gets compared, the posts that start conversations, and how to move a conversation to a demo without breaking subreddit rules.' },
+    summary: 'Reddit can bring B2B SaaS leads if you help before you sell. Founders and operators ask real buying questions in subreddits every day, and useful answers that fit the thread can send warm, high-intent visitors to your site. Where those leads come from.' },
   { path: '/reddit-vs-linkedin-b2b-leads', label: 'Reddit vs LinkedIn for B2B leads', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: D,
-    summary: 'A side-by-side look at Reddit and LinkedIn for B2B lead generation: who reads each one, what kind of post works, how trust is built, and which one to start with.' },
+    summary: 'LinkedIn reaches named decision-makers; Reddit reaches buyers already researching a solution. Most B2B brands need both, and Reddit often brings lower-cost, higher-intent leads because people there are mid-problem, not mid-scroll. How to choose between them for your goal, and how the two can work together in one plan.' },
   { path: '/resources/dataisbeautiful-claude-skill', label: 'Data is Beautiful Claude skill', type: 'guide', claim: 'reddit', hub: '/reddit-guides', updated: '2026-05-25',
-    summary: 'A free Claude skill Zechariah Tokar built to turn your own data into a chart that fits the r/dataisbeautiful rules. It explains what the skill does, how to install it, and what makes a data post do well on Reddit.' },
+    summary: 'A free Claude skill Zechariah Tokar built to plan better Reddit data visualizations. It pushes Claude to find the human angle, pick a simple chart format, write source notes and check the final package before you post to r/dataisbeautiful. What it does, how to install it, and how to use it.' },
 
   // SEO guides hub
   { path: '/seo-freelancer-vs-agency', label: 'SEO freelancer vs agency', type: 'guide', claim: 'seo', hub: '/seo-guides', updated: D,
-    summary: 'Hiring a freelancer or an agency for SEO, compared on who does the work, how fast things ship, what you pay for, and where each option fits. Written by a freelancer, so it also says when an agency is the better call.' },
+    summary: 'Hire a freelancer when you want the person planning the work to also do it; hire an agency when you need several channels running at once and someone inside to steer them. An honest comparison from a freelancer, including where an agency is the better call.' },
   { path: '/blog/claude-code-content-marketing-startups', label: 'Claude Code for startup content marketing', type: 'guide', claim: 'seo', hub: '/seo-guides', updated: D,
-    summary: 'How a startup can use Claude Code to research, write and publish content that ranks, with the exact workflow, where the AI helps, and where a person still has to check the work.' },
+    summary: 'How a startup can use Claude Code to build a content system instead of outsourcing posts: what Claude Code is, why startup content usually fails, the four content types worth building with it, the practical workflow, and the SEO checks along the way.' },
   { path: '/blog/hebrew-seo-checkers-free-tools', label: 'Hebrew SEO checkers and free tools', type: 'noindex', hub: '/seo-guides', updated: '2026-05-06',
-    summary: 'A list of free tools for checking Hebrew-language pages. It stays available for readers who find it, outside the services on this site.' },
+    summary: 'A tested list of free SEO checkers for Hebrew, right-to-left websites, from Google Search Console and Screaming Frog to browser extensions, with what each one catches. It stays available for readers who find it, but it sits outside the services on this site, which serve English-speaking markets.' },
 
   // Results hub
   { path: '/reviews-results', label: 'Reviews and results', type: 'proof', hub: '/case-studies', updated: D },
@@ -150,3 +150,12 @@ export const SITE_URL = 'https://israelseofreelancer.com';
 // The sentence. Same words in the footer brand line and the Person schema.
 export const SENTENCE = 'Zechariah Tokar is a search visibility consultant who gets companies in the US and other English-speaking markets found in Google, AI answers and Reddit.';
 export const SENTENCE_2 = 'One senior operator does the work. Results published for named clients.';
+
+// Where a page sits: its claim (service variants), its hub (guides and terms) or the results hub (proof).
+export const parentOf = (path: string): { label: string; path: string } | null => {
+  const p = PAGE_BY_PATH[path];
+  if (!p) return null;
+  if (p.type === 'leaf' && p.claim) return { label: CLAIMS[p.claim].label, path: CLAIMS[p.claim].path };
+  if (p.hub && HUBS[p.hub]) return { label: HUBS[p.hub].label, path: p.hub };
+  return null;
+};

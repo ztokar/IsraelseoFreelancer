@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { parentOf } from '../site-map';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
@@ -59,7 +60,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
   const topic = topicFromSlug(content.slug);
   const relatedLinks = content.related.map((item) => ({
     label: item,
-    path: relatedPathByLabel[item] || content.parentPath,
+    path: relatedPathByLabel[item] || (parentOf(`/${content.slug}`)?.path || content.parentPath),
     type: item.includes('How') || item.includes('Why') ? 'Guide' : 'Related service',
     body: item.includes('Reddit')
       ? 'Useful if buyers compare you in community threads before they trust the main site.'
@@ -73,7 +74,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to={content.parentPath}>{content.parentLabel}</NavLink><span>/</span>{content.eyebrow}
+          <NavLink to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>{(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink><span>/</span>{content.eyebrow}
         </div>
 
         <section className="shero">
@@ -85,7 +86,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               {content.fit && <p className="lede" style={{ marginTop: '18px' }}>{cleanPublicCopy(content.fit)}</p>}
               <div className="shero-actions">
                 <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
-                <NavLink className="btn btn-ghost" to={content.parentPath}>View {content.parentLabel}</NavLink>
+                <NavLink className="btn btn-ghost" to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>View {(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink>
               </div>
             </div>
 
@@ -116,7 +117,6 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
         <section className="divider service-included">
           <div className="wrap">
             <div className="sec-head">
-              <span className="eyebrow">What I handle</span>
               <h2>{content.handleTitle || 'Clear scope before work starts.'}</h2>
               <p className="lede">{cleanPublicCopy(content.handleIntro || 'Use this page to see whether the service fits what you need, then send the site for a practical next step.')}</p>
             </div>
@@ -129,7 +129,6 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
         <section className="service-approach">
           <div className="wrap">
             <div className="approach-head">
-              <span className="eyebrow">Positioning</span>
               <h2>Most teams do not need more SEO activity. They need the right search problem fixed first.</h2>
             </div>
             <div className="approach-grid">
@@ -194,7 +193,6 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
             />
             <section className="divider">
               <div className="narrow">
-                <span className="eyebrow">More questions</span>
                 <h2 className="block" style={{ marginTop: '12px' }}>FAQs</h2>
                 <div style={{ marginTop: '24px' }}>
                   {content.faqs.map((f) => <div className="faq" key={f.q}><h3>{f.q}</h3><p>{renderCopy(f.a)}</p></div>)}

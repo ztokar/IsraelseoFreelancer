@@ -27,7 +27,7 @@ export const FOLD_CARDS: Record<string, FoldCard[]> = {
   ],
   '/aeo-vs-geo-vs-seo': [
     { id: 'new-seo', from: ['/is-geo-the-new-seo'], h: 'Is GEO the new SEO?', p: [
-      'No. Most of the work that gets a page quoted by ChatGPT, Perplexity and Google AI Overviews is the same work that ranks it: clear, trusted, relevant pages. Google has said normal SEO is how pages get into AI Overviews.',
+      'No. The work that ranks a page (clear, trusted, relevant pages) also gets it quoted by ChatGPT, Perplexity and Google AI Overviews. Google has said normal SEO is how pages get into AI Overviews.',
       'What really changed is smaller: answers need to be more direct and quotable, and brand mentions across the web, including Reddit and roundups, count for more.',
     ] },
   ],
@@ -87,7 +87,7 @@ export const FOLD_CARDS: Record<string, FoldCard[]> = {
   ],
   '/ai-answers': [
     { id: 'ai-search-changes', from: ['/blog/ai-search-2026-updates'], dated: 'February 2026', h: 'Six AI search changes to prepare for (February 2026)', p: [
-      '1. Google AI Overviews sit above the organic results for many searches. 2. ChatGPT search is changing how B2B buyers discover vendors. 3. Perplexity is taking high-intent searches. 4. Generative engine optimization is more than a new name for SEO. 5. Voice search is turning into AI search. 6. Brand authority matters more than ever.',
+      '1. Google AI Overviews sit above the organic results for many searches. 2. ChatGPT search is changing how B2B buyers discover vendors. 3. Perplexity is taking high-intent searches. 4. Generative engine optimization: more than a new name for SEO. 5. Voice search is turning into AI search. 6. Brand authority matters more than ever.',
     ] },
   ],
   '/seo-guides': [

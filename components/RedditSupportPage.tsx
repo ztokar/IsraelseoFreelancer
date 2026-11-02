@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { parentOf } from '../site-map';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
@@ -61,7 +62,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
 
   const relatedLinks = content.related.map((item) => ({
     label: item,
-    path: relatedPathByLabel[item] || content.parentPath,
+    path: relatedPathByLabel[item] || (parentOf(`/${content.slug}`)?.path || content.parentPath),
     type: item.includes('How') || item.includes('Why') ? 'Reddit guide' : 'Reddit service',
     body: 'A connected page if you want the safer path before posting or using Reddit for search visibility.',
   }));
@@ -73,7 +74,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to={content.parentPath}>{content.parentLabel}</NavLink><span>/</span>{content.eyebrow}
+          <NavLink to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>{(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink><span>/</span>{content.eyebrow}
         </div>
 
         <section className="shero">
@@ -84,7 +85,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
               <p className="answer">{linkify(content.intro)}</p>
               <div className="shero-actions">
                 <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
-                <NavLink className="btn btn-ghost" to={content.parentPath}>View {content.parentLabel}</NavLink>
+                <NavLink className="btn btn-ghost" to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>View {(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink>
               </div>
             </div>
             <aside className="service-card">
@@ -129,7 +130,6 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
         <section className="service-approach">
           <div className="wrap">
             <div className="approach-head">
-              <span className="eyebrow">Safe path</span>
               <h2>Reddit works when the post fits the community before it tries to help the brand.</h2>
             </div>
             <div className="approach-grid">
