@@ -52,7 +52,7 @@ const geo: ClaimContent = {
   title: 'Generative Engine Optimization Services | Rewrite the Pages You Have',
   description: 'Generative engine optimization services from Zechariah Tokar: your service, product and comparison pages rewritten so ChatGPT and Google AI Overviews can quote them.',
   h1: 'Generative Engine Optimization Services for the Pages You Already Have',
-  photo: { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a person writing at a desk in a bright office', caption: 'Illustration.' },
+  photo: { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a person writing at a desk in a bright office', caption: 'Illustration: rewriting a page so it can be quoted.' },
   glance: [
     ['What you get', 'Your key pages rewritten so buyers and AI answers understand the offer'],
     ['Built from', 'Your offer, your proof and the buyer\'s decision, not filler'],
@@ -125,13 +125,13 @@ const tracking: ClaimContent = {
 const ads: ClaimContent = {
   claim: 'ai', path: '/chatgpt-ads-management',
   title: 'ChatGPT Ads Management | Setup, Tracking and First Campaign',
-  description: 'ChatGPT ads setup from Zechariah Tokar: eligibility check, landing page, tracking and the first paid campaign in ChatGPT. A setup service; no client result on file yet.',
+  description: 'ChatGPT ads setup from Zechariah Tokar: eligibility check, landing page, tracking and the first paid campaign in ChatGPT. A setup service; no client result yet.',
   h1: 'ChatGPT Ads Management: Setup and First Campaign',
-  photo: { src: '/images/service-chatgpt-ads.webp', w: 800, h: 447, alt: 'Illustration of rising search results and connected data points', caption: 'Illustration.' },
+  photo: { src: '/images/service-chatgpt-ads.webp', w: 800, h: 447, alt: 'Illustration of rising search results and connected data points', caption: 'Illustration: paid placements next to AI answers.' },
   glance: [
     ['What it is', 'A setup service for paid placements in ChatGPT'],
     ['What you get', 'Eligibility check, landing page review, tracking, the first campaign'],
-    ['Proof', 'No client ads result is on file yet. This page will show the first one.'],
+    ['Proof', 'No client result for ChatGPT ads yet. This page will show the first one.'],
     ['Price', 'Quoted per campaign; ad spend is paid to the platform'],
   ],
   serviceType: 'ChatGPT advertising setup',
@@ -139,7 +139,7 @@ const ads: ClaimContent = {
   formTitle: 'Send your site and the offer you want to advertise.', formBody: 'You will get a reply on whether the offer fits and what a first test needs.',
   pick: 'A',
   versions: one({
-    answer: 'Zechariah Tokar sets up paid ChatGPT ad campaigns for eligible businesses: the account check, the landing page, the tracking and the first campaign. It is a setup service, and no client ads result is on file yet.',
+    answer: 'Zechariah Tokar sets up paid ChatGPT ad campaigns for eligible businesses: the account check, the landing page, the tracking and the first campaign. It is a setup service, and there is no client result for ChatGPT ads yet.',
     blocks: [
       { kind: 'table', id: 'checks', h2: 'Checked before any money is spent', answer: 'A campaign stays paused until all four are ready.', head: ['Check', 'Ready means', 'If it is missing'], rows: [
         ['Advertiser access', 'Your account and category can run the campaign', 'Confirm eligibility before promising a launch'],
@@ -161,11 +161,11 @@ const ads: ClaimContent = {
 const las: ClaimContent = {
   claim: 'local', path: '/local-authority-system',
   title: 'Done-For-You Local SEO System | $2,000 Flat',
-  description: 'The Local Authority System: Zechariah Tokar builds your money pages, supporting content, reputation and AI search setup for $2,000 flat. One-time build, no long contract.',
+  description: 'The Local Authority System: Zechariah Tokar builds your money pages, supporting content, reputation and AI search setup for $2,000 flat to start.',
   h1: 'Done-for-You Local SEO System for $2,000',
   photo: { src: '/images/proof-google-lead.jpg', w: 441, h: 123, alt: 'A parent asking about in-home ABA therapy who found the client on Google', caption: 'A lead that found a client on Google.' },
   glance: [
-    ['Price', '$2,000 flat to start. One-time build, no long contract.'],
+    ['Price', '$2,000 flat to start.'],
     ['What gets built', 'Money pages, supporting content, Reddit, YouTube and Maps presence, AI search setup'],
     ['Who does it', 'Zechariah Tokar, after one short call'],
     ['Larger builds', 'Multi-location builds are quoted up from $2,000'],
@@ -201,9 +201,9 @@ const las: ClaimContent = {
 const b2b: ClaimContent = {
   claim: 'seo', path: '/b2b-seo-israel',
   title: 'B2B SEO Services in Israel | For Companies Selling to US Buyers',
-  description: 'B2B SEO from Zechariah Tokar for Israeli and global SaaS, fintech and tech companies selling into the US: buyer-intent pages that bring pipeline, not traffic.',
-  h1: 'B2B SEO Services for Israeli and Global Companies Selling to US Buyers',
-  photo: { src: '/images/blog-b2b-seo-pipeline.jpg', w: 1200, h: 896, alt: 'Illustration of a funnel turning search into leads and conversions', caption: 'Illustration.' },
+  description: 'B2B SEO from Zechariah Tokar, based in Israel, for SaaS, fintech and tech companies selling into the US: buyer-intent pages that bring pipeline, not traffic.',
+  h1: 'B2B SEO Services for Companies Selling to US Buyers',
+  photo: { src: '/images/blog-b2b-seo-pipeline.jpg', w: 1200, h: 896, alt: 'Illustration of a funnel turning search into leads and conversions', caption: 'Illustration: search turning into leads.' },
   glance: [
     ['Who it is for', 'B2B, SaaS, fintech and cybersecurity companies selling into the US and other English-speaking markets'],
     ['What gets built', 'Service, use-case, comparison and pricing pages buyers read before contacting sales'],
@@ -216,7 +216,7 @@ const b2b: ClaimContent = {
   formTitle: 'Send your site and the buyer search you most want to win.', formBody: 'You will get a reply with the first pages to fix.',
   pick: 'A',
   versions: one({
-    answer: 'Zechariah Tokar provides B2B SEO for Israeli and global companies selling to buyers in the US and other English-speaking markets. The work starts with the pages buyers read right before they contact sales.',
+    answer: 'Zechariah Tokar provides B2B SEO for companies selling to buyers in the US and other English-speaking markets. The work starts with the pages buyers read right before they contact sales.',
     blocks: [
       { kind: 'text', id: 'included', h2: 'What B2B SEO services include', check: true, list: [
         'A map of the searches buyers run while comparing vendors.',
@@ -229,10 +229,10 @@ const b2b: ClaimContent = {
       { kind: 'cards', id: 'questions', h2: 'Why B2B SEO often fails, and what works', cards: [
         { id: 'pipeline', h: 'Pipeline, not traffic', p: ['B2B searches have low volume, and that is normal. A few buyers searching for the exact service are worth more than thousands of readers of a general blog.', 'So the first pages to build answer the searches closest to a sales call: the service, the use case, the comparison, the price question. Content marketing comes after demand capture, not before.'] },
         { id: 'why-b2b-seo-fails', h: 'The common mistakes', p: ['Chasing traffic instead of pipeline. Copying US content without the authority to rank it. No clear vertical. Weak pages for buyers who are ready. Ignoring that several people at the buyer\'s company research before a deal.'] },
-        { id: 'us-market', h: 'Selling from Israel into the US market', p: ['US search results are more crowded, so they take more authority and sharper pages. Messaging has to match how US buyers describe the problem, in native US English, not a translation of the home-market pitch.'] },
-        { id: 'attribution', h: 'Tying SEO to revenue', p: ['High-intent searches and research searches need different pages. Leads from search are tagged and followed into the CRM, so the report shows pipeline, not only visits.'] },
-        { id: 'fintech', h: 'Fintech SEO', p: ['Money topics are held to Google\'s highest trust bar. Fintech pages need accurate, supportable claims, clear security and compliance language, and comparison and use-case pages buyers read before they choose.'] },
-        { id: 'evaluate', h: 'How to judge a B2B SEO provider', p: ['Ask for a buyer-intent keyword plan rather than volume, real bottom-of-funnel pages, a plan for AI answers, links earned rather than bought, and a way to report revenue.'] },
+        { id: 'us-market', h: 'Winning US search results', p: ['US search results are crowded, so they take more authority and sharper pages. The copy has to match how US buyers describe the problem. Zechariah Tokar is based in Israel and writes in native US English.'] },
+        { id: 'attribution', h: 'Tying SEO to revenue', p: ['High-intent searches and research searches need different pages. The pages closest to a sales call come first, and leads from them are counted, not only visits.'] },
+        { id: 'fintech', h: 'Fintech SEO', p: ['Google holds money topics to a higher trust bar, so fintech pages need accurate, supportable claims and the comparison and use-case pages buyers read before they choose.'] },
+        { id: 'evaluate', h: 'How to judge a B2B SEO provider', p: ['Ask for a buyer-intent keyword plan rather than volume, pages for buyers who are ready to contact sales, a plan for AI answers, links earned rather than bought, and a way to report revenue.'] },
       ] },
       { kind: 'quotes', id: 'proof', h2: 'What B2B clients say', items: [Q.sean, Q.yehudah] },
       { kind: 'text', id: 'more', h2: 'Related reading', after: 'Hiring help for SEO: [SEO guides](/seo-guides). How AI answers choose vendors: [answer engine optimization](/what-is-answer-engine-optimization).' },

@@ -44,7 +44,7 @@ const ai = {
     ['[Monthly AI SEO plan](/ai-seo-monthly)', 'Pages, links, Reddit, press releases, your Google profile and AI answer checks, with a monthly report', '$750 a month for the first 5 businesses'],
     ['[Generative engine optimization](/geo-content-optimization)', 'Your key pages rewritten to be quoted', 'Quoted per page set'],
     ['[AI visibility tracking](/ai-visibility-tracking-services)', 'Monthly re-runs of your buyer questions', 'Quoted after a look at your site'],
-    ['[ChatGPT ads setup](/chatgpt-ads-management)', 'A setup service for paid placements in ChatGPT. No client ads result is on file yet.', 'Quoted per campaign'],
+    ['[ChatGPT ads setup](/chatgpt-ads-management)', 'A setup service for paid placements in ChatGPT. No client result for ChatGPT ads yet.', 'Quoted per campaign'],
   ] },
   cards: { kind: 'cards', id: 'questions', h2: 'Answer engine optimization or an AI SEO consultant?', answer: 'Both names describe the same work here, done by one person.', cards: [
     { id: 'answer-engine-optimization', h: 'Answer engine optimization services', p: ['Buyers searching for answer engine optimization (AEO) services want the same result: to be the answer an assistant gives. The work above covers it, priced once. You are not billed separately for AEO, AI SEO and classic SEO when the work overlaps.'] },

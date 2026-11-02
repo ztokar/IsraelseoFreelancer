@@ -270,13 +270,13 @@ export const GUIDE_PAGES: GuidePageData[] = [
           rows: [
             ['SEO', 'A ranked link', 'Be relevant and trusted'],
             ['AEO', 'The answer box', 'Be the clearest liftable answer'],
-            ['GEO', 'The AI recommendation', 'Be cited and named by AI tools'],
+            ['Generative engine optimization', 'The AI recommendation', 'Be cited and named by AI tools'],
           ],
         },
       },
     ],
     faqs: [
-      { q: 'Is AEO the same as GEO?', a: 'They overlap. AEO targets answer boxes and direct answers; GEO targets being named inside AI tools. Both reward clear, quotable, trusted content. See [what is GEO](/what-is-generative-engine-optimization).' },
+      { q: 'Is AEO the same as generative engine optimization?', a: 'They overlap. AEO targets answer boxes and direct answers; generative engine optimization targets being named inside AI tools. Both reward clear, quotable, trusted content. See [what is generative engine optimization](/what-is-generative-engine-optimization).' },
       { q: 'Does AEO replace SEO?', a: 'No. AEO sits on top of solid SEO. You still need to be relevant and trusted to win the answer in the first place.' },
       { q: 'What content wins answers fastest?', a: 'Pages that answer one clear question up front, then cover the natural follow-ups, with real specifics. That is the format I write in.' },
     ],
@@ -511,7 +511,7 @@ export const GUIDE_PAGES: GuidePageData[] = [
     ],
     faqs: [
       { q: 'Is Reddit worth it for marketing?', a: 'Yes, when done right. Reddit threads rank in Google and feed AI answers, so being present and trusted there pays off well beyond Reddit itself.' },
-      { q: 'How long before Reddit marketing works?', a: 'Trust builds over weeks, not days. The brands that rush it get banned. A steady, helpful presence compounds.' },
+      { q: 'How long before Reddit marketing works?', a: 'Trust builds slowly, and the brands that rush it get banned. A steady, helpful presence compounds.' },
       { q: 'Can you run Reddit marketing for me?', a: 'Yes. See [Reddit marketing services](/reddit-marketing-services) and [how to promote on Reddit without getting banned](/how-to-market-on-reddit#without-getting-banned).' },
     ],
     related: [

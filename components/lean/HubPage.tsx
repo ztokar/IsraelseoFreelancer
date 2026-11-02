@@ -41,7 +41,7 @@ const HUB_TEXT: Record<string, HubText> = {
     title: 'AI Answers Guides | ChatGPT, Gemini and Google AI Overviews',
     description: 'Plain guides on how ChatGPT, Gemini, Perplexity and Google AI Overviews choose the brands they name, and how to track and change it. By Zechariah Tokar.',
     answer: 'These guides explain how ChatGPT, Gemini, Perplexity and Google AI Overviews choose which brands to name, and what a company in the US or another English-speaking market can do about it. Each one answers one question.',
-    photo: { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers shown above classic search results', caption: 'Illustration.' },
+    photo: { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers shown above classic search results', caption: 'Illustration: AI answers above the classic results.' },
     next: 'The newest questions to add here: which AI answers cite which sources, and how AI Mode differs from AI Overviews.',
   },
   '/reddit-guides': {
@@ -56,7 +56,7 @@ const HUB_TEXT: Record<string, HubText> = {
     title: 'SEO Guides | Hiring, Content and Reputation',
     description: 'SEO guides from Zechariah Tokar for companies in the US and English-speaking markets: hiring a freelancer or an agency, content with Claude Code, reputation.',
     answer: 'These guides answer the questions companies ask before they spend on Google SEO: who to hire, how to produce content, and what shows when buyers search your name.',
-    photo: { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic flowing into revenue', caption: 'Illustration.' },
+    photo: { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic flowing into revenue', caption: 'Illustration: search traffic turning into revenue.' },
     next: 'Coming next: how to hire an SEO freelancer, what a technical SEO audit checks, and what SEO content writing should deliver.',
   },
 };
