@@ -48,7 +48,7 @@ export const BlogArticle5: React.FC = () => {
 
             <p>RTL layout breaks half the tools. UTF-8 encoding causes weird character issues. And most international SEO checkers completely miss Hebrew-specific problems.</p>
 
-            <p>Last week I audited eight free SEO checkers on actual Hebrew sites—from a Tel Aviv SaaS company to a Jerusalem e-commerce store.</p>
+            <p>Last week I audited eight free SEO checkers on actual Hebrew sites, from a Tel Aviv SaaS company to a Jerusalem e-commerce store.</p>
 
             <p>Here's what actually works.</p>
 
@@ -64,7 +64,7 @@ export const BlogArticle5: React.FC = () => {
 
             <p>I use GSC for every Hebrew site I audit. It's the only tool that shows you exactly which Hebrew search queries are bringing users to your site. Last month it caught a mobile usability issue on a Hebrew site that was costing them 40% of their traffic.</p>
 
-            <p>The Performance report is gold—you can filter by Hebrew queries, compare CTR across different pages, and identify which content needs optimization.</p>
+            <p>The Performance report is gold, you can filter by Hebrew queries, compare CTR across different pages, and identify which content needs optimization.</p>
 
             <h2 id="yoast-seo">2. Yoast SEO (WordPress Hebrew Sites)</h2>
 
@@ -114,7 +114,7 @@ export const BlogArticle5: React.FC = () => {
 
             <p><strong>What it does:</strong> Israeli-built SEO tool (seoitis.com) with dedicated Hebrew and RTL support. Includes keyword research, rank tracking, and on-page optimization checks.</p>
 
-            <p><strong>Hebrew/RTL compatibility:</strong> Perfect—it's literally designed for Hebrew sites. Native RTL interface, Hebrew keyword suggestions, and local Israel search data.</p>
+            <p><strong>Hebrew/RTL compatibility:</strong> Perfect, it's literally designed for Hebrew sites. Native RTL interface, Hebrew keyword suggestions, and local Israel search data.</p>
 
             <p><strong>Best for:</strong> Israeli businesses targeting Hebrew-speaking users. Great for local SEO and Hebrew keyword research.</p>
 
@@ -122,7 +122,7 @@ export const BlogArticle5: React.FC = () => {
 
             <p>Honestly? This is the only SEO tool built specifically for the Israeli market. If your primary audience is Hebrew speakers in Israel, SEO It Is understands local search behavior better than global tools.</p>
 
-            <p>The keyword research pulls data from Israeli Google, not US Google. That matters—Hebrew search patterns are different, and this tool reflects actual user behavior.</p>
+            <p>The keyword research pulls data from Israeli Google, not US Google. That matters, Hebrew search patterns are different, and this tool reflects actual user behavior.</p>
 
             <h2 id="semrush-free">6. SEMrush Free Tools (Limited but Useful)</h2>
 
@@ -150,7 +150,7 @@ export const BlogArticle5: React.FC = () => {
 
             <p>I run Lighthouse on every Hebrew site, especially mobile. Core Web Vitals matter for Google rankings, and Hebrew sites often have RTL-related performance issues (extra CSS, font loading problems).</p>
 
-            <p>Real case: a Hebrew news site was scoring 40/100 on mobile performance. Lighthouse identified the issue—Hebrew web fonts loading synchronously and blocking render. Fixed it, and LCP dropped from 4.2s to 1.8s.</p>
+            <p>Real case: a Hebrew news site was scoring 40/100 on mobile performance. Lighthouse identified the issue, Hebrew web fonts loading synchronously and blocking render. Fixed it, and LCP dropped from 4.2s to 1.8s.</p>
 
             <h2 id="meta-seo-inspector">8. META SEO Inspector (Chrome Extension)</h2>
 
@@ -192,7 +192,7 @@ export const BlogArticle5: React.FC = () => {
 
             <h3>4. Mobile RTL Layout Issues</h3>
 
-            <p>RTL sites sometimes have CSS conflicts on mobile—especially with third-party plugins. Test your Hebrew site on actual mobile devices, not just browser dev tools.</p>
+            <p>RTL sites sometimes have CSS conflicts on mobile, especially with third-party plugins. Test your Hebrew site on actual mobile devices, not just browser dev tools.</p>
 
             <p>I've seen Hebrew navigation menus break, forms misalign, and CTAs get cut off on mobile because of RTL-specific CSS bugs.</p>
 
