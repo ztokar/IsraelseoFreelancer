@@ -63,9 +63,6 @@ export const CASE_STUDY_PAGES: CaseStudyPageData[] = [
       'Added the community details bigger national sites ignore.',
     ],
     result: '#1 for Midwood Brooklyn real estate, outranking national portals on their own turf. The team also holds a 4.9 rating across 133 Google reviews, which keeps the local results strong.',
-    proofImg: '/images/proof-linkedin-morristown.jpg',
-    proofAlt: 'LinkedIn featured proof image showing a local SEO ranking result',
-    proofCaption: 'A local SEO proof example from the same local-search playbook: landing page updates, schema, citations, and competitor-led content.',
     relatedLabel: 'Google Business Profile SEO',
     relatedPath: '/google-business-profile-seo',
     faqs: [

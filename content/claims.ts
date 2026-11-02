@@ -157,7 +157,8 @@ const seo = {
   included: { kind: 'text', id: 'included', h2: 'What an SEO freelancer does for you', answer: 'The pages closest to revenue get fixed first, then the next pages that deserve to rank get built.', check: true, list: [
     '[Technical SEO audit](/technical-seo-audit): crawling, indexing, speed and structured data problems, fixed in order of impact.',
     '[SEO content writing](/content-marketing-for-seo): service, product and comparison pages written for buyers.',
-    '[B2B SEO](/b2b-seo-israel) and [SaaS SEO](/saas-seo): pages for buyers comparing vendors.',
+    '[B2B SEO](/b2b-seo-israel), [SaaS SEO](/saas-seo) and [cybersecurity SEO](/cybersecurity-seo): pages for buyers comparing vendors.',
+    '[YouTube SEO](/youtube-seo): videos that rank in YouTube and Google search.',
     '[Shopify SEO](/shopify-seo) and [Google Merchant Center](/google-merchant-center-seo) for online stores.',
     '[Programmatic SEO](/programmatic-seo): many useful pages built from one template and real data.',
   ] },

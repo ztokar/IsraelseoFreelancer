@@ -237,3 +237,7 @@ html { accent-color: var(--l-acc); }
 
 .gp .contact-cta .contact-book-link a { color: #fff; text-decoration: underline; }
 .lh-photo.is-shot img { aspect-ratio: 16 / 10; } .lh-photo.is-shot figcaption { position: static; margin-top: 10px; box-shadow: none; background: none; padding: 0; color: var(--l-muted); }
+
+/* No eyebrow labels above headings (design rule); headings carry their own weight. */
+.gp .eyebrow { display: none; }
+.gp .sec-head h2, .gp h2.block { margin-top: 0; }

@@ -29,6 +29,8 @@ import { PrivacyPage } from './components/PrivacyPage';
 import { ClaimPage } from './components/lean/ClaimPage';
 import { CLAIM_PAGES } from './content/claims';
 import { LEAF_PAGES } from './content/leaves';
+import { HubPage } from './components/lean/HubPage';
+import { RedditSeoPage } from './components/lean/RedditSeoPage';
 import { REDIRECTS } from './content/folds';
 
 // Pages merged into a better home (their address now redirects in one hop).
@@ -73,7 +75,7 @@ export const routes: RouteRecord[] = [
       ...LEAF_PAGES.map((c) => ({ path: c.path.slice(1), element: <ClaimPage content={c} leaf /> })),
 
       // First-batch service spokes
-      ...SERVICE_SPOKES.filter((s) => s.slug !== 'reddit-marketing-services' && !FOLDED.has(s.slug)).map((spoke) => ({
+      ...SERVICE_SPOKES.filter((s) => !['reddit-marketing-services', 'reddit-seo'].includes(s.slug) && !FOLDED.has(s.slug)).map((spoke) => ({
         path: spoke.slug,
         element: <SpokeServicePage content={spoke} />,
       })),
@@ -86,6 +88,7 @@ export const routes: RouteRecord[] = [
       { path: 'seo-freelancer-vs-agency', element: <ComparisonFreelancerVsAgency /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'privacy', element: <PrivacyPage /> },
+      { path: 'reddit-seo', element: <RedditSeoPage /> },
       { path: 'resources/dataisbeautiful-claude-skill', element: <DataIsBeautifulSkillPage /> },
       { path: 'local-demand-capture-blueprint', element: <LocalDemandCaptureBlueprintPage /> },
       { path: 'blueprint-intake', element: <BlueprintIntakePage /> },
@@ -96,6 +99,7 @@ export const routes: RouteRecord[] = [
 
       // Case studies
       { path: 'case-studies', element: <CaseStudiesHub /> },
+      ...['/ai-answers', '/reddit-guides', '/seo-guides'].map((h) => ({ path: h.slice(1), element: <HubPage path={h} /> })),
       ...CASE_STUDY_PAGES.map((cs) => ({
         path: `case-studies/${cs.slug}`,
         element: <CaseStudyPage content={cs} />,

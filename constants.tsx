@@ -494,7 +494,7 @@ export const LINKEDIN_FEATURED_RESULTS = [
     path: '/google-business-profile-seo',
   },
   {
-    title: 'AI search visibility',
+    title: 'ChatGPT recommendation',
     metric: '#1 on ChatGPT',
     description: 'Bing indexing, foundational links, schema, and clearer page structure helped ZStander show for a product search in ChatGPT.',
     image: '/images/proof-linkedin-chatgpt.jpg',
