@@ -36,6 +36,13 @@ export const PageEnd: React.FC<{ path: string }> = ({ path }) => {
       ...(term ? { about: { '@id': `${url}#term` } } : {}),
     });
   }
+  if (page.type === 'leaf') {
+    schema.push({
+      '@context': 'https://schema.org', '@type': 'Service', '@id': `${url}#service`, name: page.label, url,
+      serviceType: page.label, provider: { '@id': `${SITE_URL}/#organization` },
+      areaServed: ['United States', 'United Kingdom', 'Canada', 'Australia'].map((name) => ({ '@type': 'Country', name })),
+    });
+  }
   if (term) {
     schema.push({
       '@context': 'https://schema.org', '@type': 'DefinedTerm', '@id': `${url}#term`, name: term, url,

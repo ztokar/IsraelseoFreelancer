@@ -241,3 +241,23 @@ html { accent-color: var(--l-acc); }
 /* No eyebrow labels above headings (design rule); headings carry their own weight. */
 .gp .eyebrow { display: none; }
 .gp .sec-head h2, .gp h2.block { margin-top: 0; }
+
+/* Contrast fixes from the measured QC pass */
+.gpnav .menu > li > a.active, .gpnav .menu > li > a:hover { color: #075E41; }
+.gpnav .pill { background: #075E41; }
+.gp .contact-copy { background: linear-gradient(150deg, #065A3D, #03301F); }
+.gp .contact-copy li { color: #fff; }
+.gp form button[type="submit"] { background: #075E41 !important; background-image: none !important; color: #fff !important; }
+.gp form button[type="submit"]:hover:not(:disabled) { background: #053823 !important; }
+.gpfoot, .gpfoot .wrap, .gpfoot .top, .gpfoot .col { background-color: #0A0C0F; }
+.lp p, .lp li, .lp td { color: var(--l-ink-soft); }
+.lp .lfaq details p { color: var(--l-ink-soft); }
+.ltable td a, .glance td a { display: inline-block; padding: 6px 0; }
+.lh-photo figcaption, .mh-shot figcaption { color: #0F1115; background: #fff; }
+@media (max-width: 760px) { .gpnav .pill { font-size: 13px; } }
+ul.pcards { list-style: none; padding: 0; margin: 0; }
+ul.pcards > li { display: flex; }
+ul.pcards > li > .pcard { flex: 1; }
+.gp .guide-photo { margin: 0; }
+.gp .guide-photo img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; border-radius: 20px; box-shadow: var(--l-shadow); background: #fff; display: block; }
+@media (max-width: 900px) { .gp .guide-photo { max-width: 520px; margin-top: 8px; } }

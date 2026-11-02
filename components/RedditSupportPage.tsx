@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { parentOf } from '../site-map';
+import { imageFor } from './lean/HubPage';
+import { fit } from './lean/Blocks';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
@@ -88,25 +90,9 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
                 <NavLink className="btn btn-ghost" to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>View {(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink>
               </div>
             </div>
-            <aside className="service-card">
-              <div className="service-card-top">
-                <span>Before you post</span>
-                <b>Check the fit</b>
-              </div>
-              <div className="zt-mini">
-                <div className="zt-mark">R</div>
-                <div>
-                  <strong>Reddit is unforgiving</strong>
-                  <span>Community fit comes first</span>
-                </div>
-              </div>
-              <p>A useful Reddit plan starts with the subreddit, the buyer objection, and whether posting is even the right move.</p>
-              <div className="service-card-links">
-                <span>Subreddit fit</span>
-                <span>Post risk</span>
-                <span>Buyer language</span>
-              </div>
-            </aside>
+            <figure className="guide-photo">
+              <img src={imageFor(`/${content.slug}`).src} alt={imageFor(`/${content.slug}`).alt} width={imageFor(`/${content.slug}`).w} height={imageFor(`/${content.slug}`).h} style={fit(imageFor(`/${content.slug}`))} {...{ fetchpriority: 'high' }} decoding="async" />
+            </figure>
           </div>
         </section>
 

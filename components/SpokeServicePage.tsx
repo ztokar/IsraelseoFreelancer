@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { parentOf } from '../site-map';
+import { imageFor } from './lean/HubPage';
+import { fit } from './lean/Blocks';
 import { SpokeService } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
@@ -90,25 +92,9 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
               </div>
             </div>
 
-            <aside className="service-card">
-              <div className="service-card-top">
-                <span>Best starting point</span>
-                <b>By consultation</b>
-              </div>
-              <div className="zt-mini">
-                <div className="zt-mark">ZT</div>
-                <div>
-                  <strong>Zechariah Tokar</strong>
-                  <span>Freelance SEO consultant</span>
-                </div>
-              </div>
-              <p>{cleanPublicCopy(content.bestFor)}</p>
-              <div className="service-card-links">
-                <span>Scope first</span>
-                <span>Proof-led pages</span>
-                <span>Clear next step</span>
-              </div>
-            </aside>
+            <figure className="guide-photo">
+              <img src={imageFor(`/${content.slug}`).src} alt={imageFor(`/${content.slug}`).alt} width={imageFor(`/${content.slug}`).w} height={imageFor(`/${content.slug}`).h} style={fit(imageFor(`/${content.slug}`))} {...{ fetchpriority: 'high' }} decoding="async" />
+            </figure>
           </div>
         </section>
 

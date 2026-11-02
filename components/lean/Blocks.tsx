@@ -5,7 +5,7 @@ import { Arrow } from './Arrow';
 export interface Photo { src: string; alt: string; w: number; h: number; caption?: string; pos?: string }
 
 // Small screenshots are shown whole on white; photos fill their frame.
-export const fit = (p: Photo): React.CSSProperties => (p.w < 900 && p.w / p.h > 1.6
+export const fit = (p: Photo): React.CSSProperties => (!p.pos && p.w < 900 && p.w / p.h > 1.6
   ? { objectFit: 'contain', background: '#fff', padding: '4%' }
   : p.pos ? { objectPosition: p.pos } : {});
 
@@ -218,18 +218,18 @@ export const DemandChart: React.FC<{ title: string; rows: [string, number][]; so
 
 export interface CardItem { path: string; title: string; text: string; image?: Photo; meta?: string }
 export const PhotoCards: React.FC<{ items: CardItem[] }> = ({ items }) => (
-  <div className="pcards">
+  <ul className="pcards">
     {items.map((c) => (
-      <NavLink key={c.path} to={c.path} className="pcard">
+      <li key={c.path}><NavLink to={c.path} className="pcard">
         {c.image && <div className="pcard-img"><img src={c.image.src} alt={c.image.alt} width={c.image.w} height={c.image.h} loading="lazy" decoding="async" style={fit(c.image)} /></div>}
         <div className="pcard-body">
           {c.meta && <span className="pcard-meta">{c.meta}</span>}
           <h3>{c.title}</h3>
           <p>{c.text}</p>
         </div>
-      </NavLink>
+      </NavLink></li>
     ))}
-  </div>
+  </ul>
 );
 
 // Answer card: the home for a question that used to have its own page (kept on the receiving page, anchored).

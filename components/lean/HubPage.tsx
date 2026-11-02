@@ -17,6 +17,7 @@ const IMG: Record<string, Photo> = {
   saas: { src: '/images/blog-saas-seo.jpg', w: 1600, h: 893, alt: 'Illustration of a SaaS company expanding into the US market' },
   cyber: { src: '/images/blog-cybersecurity-seo.jpg', w: 1600, h: 893, alt: 'Illustration of global security networks' },
   hebrew: { src: '/images/blog-hebrew-seo-checkers.jpg', w: 1600, h: 893, alt: 'Illustration of SEO checking tools' },
+  morristown: { src: '/images/proof-linkedin-morristown.jpg', w: 480, h: 217, alt: 'A client practice at the top of a Google map pack' },
   me: { src: '/images/zechariah-tokar-outdoors.webp', w: 800, h: 692, alt: 'Zechariah Tokar', pos: 'center 30%' },
 };
 const CARD_IMG: Record<string, keyof typeof IMG> = {
@@ -27,8 +28,11 @@ const CARD_IMG: Record<string, keyof typeof IMG> = {
   '/how-to-rank-a-reddit-post-on-google': 'r12', '/why-does-reddit-rank-so-high-on-google': 'aiSearch', '/why-reddit-posts-get-removed': 'cyber',
   '/monitor-brand-mentions-on-reddit': 'audit', '/reddit-ads-vs-organic': 'pipeline', '/reddit-b2b-saas-lead-generation': 'saas',
   '/reddit-vs-linkedin-b2b-leads': 'funnel', '/resources/dataisbeautiful-claude-skill': 'me',
-  '/seo-freelancer-vs-agency': 'me', '/blog/claude-code-content-marketing-startups': 'office', '/blog/hebrew-seo-checkers-free-tools': 'hebrew',
+  '/seo-freelancer-vs-agency': 'me',
+  '/google-business-profile-seo': 'morristown', '/saas-seo': 'saas', '/cybersecurity-seo': 'cyber', '/shopify-seo': 'chatgpt', '/google-merchant-center-seo': 'pipeline', '/programmatic-seo': 'funnel', '/youtube-seo': 'aiSearch', '/reddit-posting-service': 'r12', '/blog/claude-code-content-marketing-startups': 'office', '/blog/hebrew-seo-checkers-free-tools': 'hebrew',
 };
+
+export const imageFor = (path: string): Photo => IMG[CARD_IMG[path] || 'office'];
 
 interface HubText { h1: string; title: string; description: string; answer: string; photo: Photo; next?: string }
 const HUB_TEXT: Record<string, HubText> = {

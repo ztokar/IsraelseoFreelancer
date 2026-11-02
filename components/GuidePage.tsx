@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { GuidePageData } from '../constants-guides';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
 import { parentOf } from '../site-map';
+import { imageFor } from './lean/HubPage';
+import { fit } from './lean/Blocks';
 import { ContactCTA } from './ContactCTA';
 import { ProofWall, RelatedPages, ResultsGrid, topicFromSlug } from './ConversionSections';
 
@@ -49,12 +51,17 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
 
         {/* Hero / quick answer */}
         <section className="shero">
-          <div className="wrap">
+          <div className="wrap shero-grid">
+            <div>
             <h1>{content.h1}</h1>
             <p className="answer">{renderText(content.quickAnswer)}</p>
             <div className="shero-actions">
               <a className="btn btn-primary" href="#contact">Send your site</a>
             </div>
+            </div>
+            <figure className="guide-photo">
+              <img src={imageFor(`/${content.slug}`).src} alt={imageFor(`/${content.slug}`).alt} width={imageFor(`/${content.slug}`).w} height={imageFor(`/${content.slug}`).h} style={fit(imageFor(`/${content.slug}`))} {...{ fetchpriority: 'high' }} decoding="async" />
+            </figure>
           </div>
         </section>
 
