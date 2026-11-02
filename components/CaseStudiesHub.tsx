@@ -1,55 +1,53 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { CASE_STUDY_PAGES } from '../constants-casestudies';
-import { updatePageSEO, HeadSEO } from '../utils/seo';
-import { ContactCTA } from './ContactCTA';
+import { HUBS, SITE_URL } from '../site-map';
+import { JsonLd, LeanHero, PhotoCards, Quote, Receipts, Section } from './lean/Blocks';
+import { Q, R } from '../content/claims';
 
-const TITLE = 'SEO Case Studies: Real Results in Ecommerce, Local, AI Search & Reddit | Zechariah Tokar';
-const DESC = 'Real SEO case studies from Zechariah Tokar: +300% Shopify sales, #1 Brooklyn real estate, AI-search venue ranking, ABA therapy AI recommendations, and a 405K-view Reddit post.';
+const TITLE = 'Results | Named Clients in Google, ChatGPT and Reddit';
+const DESC = 'Results Zechariah Tokar published for named clients: ZStander named first in ChatGPT, a 405K-view Reddit post, the top of a Morristown map pack, and the reviews behind them.';
+
+const CARD_IMG: Record<string, { src: string; w: number; h: number; alt: string; pos?: string }> = {
+  'zstander-shopify-seo': { src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, alt: 'ChatGPT naming ZStander first' },
+  'behfar-team-real-estate-seo': { src: '/images/zechariah-tokar-hat-suit.webp', w: 600, h: 876, alt: 'Zechariah Tokar', pos: 'center 20%' },
+  'north-star-ranch-micro-wedding-seo': { src: '/images/service-tracking-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar at his desk', pos: 'center 22%' },
+  'achieving-stars-aba-therapy-seo': { src: '/images/proof-google-lead.jpg', w: 441, h: 123, alt: 'A parent who found the client on Google' },
+  'reddit-405k-views': { src: '/images/proof-reddit-405k.jpg', w: 471, h: 159, alt: 'A Reddit post with 405,000 views' },
+};
 
 export const CaseStudiesHub: React.FC = () => {
-  useEffect(() => {
-    updatePageSEO({ title: TITLE, description: DESC, path: '/case-studies' });
-  }, []);
-
+  useEffect(() => { updatePageSEO({ title: TITLE, description: DESC, path: '/case-studies' }); }, []);
+  const schema = {
+    '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${SITE_URL}/case-studies#hub`, name: 'Results for named clients', url: `${SITE_URL}/case-studies`,
+    hasPart: CASE_STUDY_PAGES.map((c) => ({ '@type': 'Article', name: c.h1, url: `${SITE_URL}/case-studies/${c.slug}` })),
+  };
   return (
-    <>
-      <HeadSEO title={TITLE} description={DESC} path="/case-studies" />
-      <div className="gp">
-        <section className="shero">
-          <div className="wrap">
-            <span className="eyebrow">Selected work</span>
-            <h1>Real campaigns. Real results.</h1>
-            <p className="answer">Not polished claims. Each case study is the situation, what I actually did, and what happened, across ecommerce, local, AI search, and Reddit.</p>
-            <div className="shero-actions">
-              <a className="btn btn-primary" href="#contact">Send your site <span className="arrow">↗</span></a>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="wrap">
-            <div className="svc-grid">
-              {CASE_STUDY_PAGES.map((c) => (
-                <NavLink className="svc" to={`/case-studies/${c.slug}`} key={c.slug} style={{ textDecoration: 'none' }}>
-                  <div className="tag" style={{ fontFamily: 'Outfit', fontSize: '11px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--green)' }}>{c.eyebrow}</div>
-                  <div style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '40px', color: 'var(--ink)', letterSpacing: '-0.03em', margin: '8px 0 2px' }}>{c.metric}</div>
-                  <div style={{ fontFamily: 'Outfit', fontWeight: 600, fontSize: '15px', color: 'var(--ink)' }}>{c.metricLabel}</div>
-                  <p style={{ flex: 1 }}>{c.intro}</p>
-                  <div style={{ marginTop: '14px', fontFamily: 'Outfit', fontWeight: 600, fontSize: '13.5px', color: 'var(--green-dark)' }}>Read the {c.client} case →</div>
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <ContactCTA
-          subject="New Inquiry from Case Studies Hub"
-          title="Want to be the next case study?"
-          body="Send the site and what you want SEO to fix first. I will review it and reply with a practical next step."
-          submitButtonText="Send my site"
-        />
-      </div>
-    </>
+    <div className="lp">
+      <HeadSEO title={TITLE} description={DESC} path="/case-studies" image="/images/proof-linkedin-chatgpt.jpg" />
+      <LeanHero
+        h1="Results for Named Clients"
+        answer="Every result here names the client and shows the screenshot. Zechariah Tokar does the work himself, for companies in the US and other English-speaking markets."
+        photo={{ src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, alt: 'ChatGPT answering where to buy lucite shtenders in the US and naming ZStander first', caption: 'ChatGPT names ZStander first.' }}
+        primary={{ label: 'Read the case studies', href: '#cases' }}
+        secondary={{ label: 'All reviews', href: '/reviews-results' }}
+      />
+      <Section id="cases" h2="Case studies">
+        <PhotoCards items={CASE_STUDY_PAGES.map((c) => ({ path: `/case-studies/${c.slug}`, title: c.client, meta: `${c.metric} ${c.metricLabel}`, text: c.intro, image: CARD_IMG[c.slug] }))} />
+      </Section>
+      <Section id="screenshots" h2="The screenshots" answer="Real screens from real campaigns, at full size." tone="tint">
+        <Receipts items={[R.chatgpt, R.morristown, R.r405, R.r12, R.lead, R.aiAudit]} />
+      </Section>
+      <Section id="reviews" h2="What clients say" answer="Word for word, with the client's real name. More on the [reviews page](/reviews-results).">
+        <div className="lquotes">{[Q.sean, Q.yonatan, Q.brett, Q.rivka].map((q) => <Quote key={q.name} {...q} />)}</div>
+      </Section>
+      <Section h2="Guides" tone="tint">
+        <div className="siblings">
+          {Object.entries(HUBS).filter(([p]) => p !== '/case-studies').map(([p, o]) => <NavLink key={p} to={p} className="sibling"><strong>{o.label}</strong><span>{o.line}</span></NavLink>)}
+        </div>
+      </Section>
+      <JsonLd data={schema} />
+    </div>
   );
 };

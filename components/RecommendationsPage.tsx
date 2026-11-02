@@ -11,7 +11,7 @@ const recommendations = [
   {
     category: 'Website design',
     title: 'Web of Creativity',
-    path: '/recommendations/web-designer-seo-web-of-creativity',
+    path: '/about#recommendations',
     image: '/images/blog-web-designer-seo-recommendation.jpg',
     description: 'The web designer I recommend when a client needs a new website or redesign that can support strong SEO from the start.',
   },
@@ -19,12 +19,12 @@ const recommendations = [
 
 export const RecommendationsPage: React.FC = () => {
   useEffect(() => {
-    updatePageSEO({ title: TITLE, description: DESC, path: '/recommendations' });
+    updatePageSEO({ title: TITLE, description: DESC, path: '/about#recommendations' });
   }, []);
 
   return (
     <>
-      <HeadSEO title={TITLE} description={DESC} path="/recommendations" />
+      <HeadSEO title={TITLE} description={DESC} path="/about#recommendations" />
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Recommendations

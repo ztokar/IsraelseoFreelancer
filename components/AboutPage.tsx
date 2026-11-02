@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { REVIEWS } from '../constants';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
 import { ProofWall, RelatedPages } from './ConversionSections';
+import { LeanHero } from './lean/Blocks';
 
 export const AboutPage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'About Zechariah Tokar | SEO Freelancer Israel',
+      title: 'About Zechariah Tokar | Search Visibility Consultant',
       description:
-        'About Zechariah Tokar, a freelance SEO consultant in Israel helping companies with SEO strategy, content, technical SEO, local SEO, ecommerce SEO, and AI search visibility.',
+        'Zechariah Tokar is a search visibility consultant who gets companies in the US and English-speaking markets found in Google, AI answers and Reddit. Results for named clients.',
       path: '/about',
     });
   }, []);
@@ -18,51 +18,28 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       <HeadSEO
-        title="About Zechariah Tokar | SEO Freelancer Israel"
-        description="About Zechariah Tokar, a freelance SEO consultant in Israel helping companies with SEO strategy, content, technical SEO, local SEO, ecommerce SEO, and AI search visibility."
+        title="About Zechariah Tokar | Search Visibility Consultant"
+        description="Zechariah Tokar is a search visibility consultant who gets companies in the US and English-speaking markets found in Google, AI answers and Reddit. Results for named clients."
         path="/about"
       />
 
       <div className="gp">
-        <div className="wrap crumb">
-          <NavLink to="/">Home</NavLink><span>/</span>About
-        </div>
-
-        <section className="shero">
-          <div className="wrap shero-grid">
-            <div>
-              <span className="eyebrow">About</span>
-              <h1>I am Zechariah Tokar, a freelance SEO consultant in Israel.</h1>
-              <p className="answer">
-                I help companies that want practical SEO work without an agency layer. Most of my work is hands-on: service pages, SEO writing, technical audits, local SEO, Shopify and ecommerce SEO, B2B SEO, AI search visibility, Reddit, YouTube, and authority work.
-              </p>
-              <div className="shero-actions">
-                <a href="#contact" className="btn btn-primary">Send your site <span className="arrow">↗</span></a>
-                <NavLink to="/seo-services-israel" className="btn btn-ghost">Browse services</NavLink>
-              </div>
-            </div>
-
-            <aside className="service-card">
-              <div className="service-card-top">
-                <span>Who you work with</span>
-                <b>Directly</b>
-              </div>
-              <div className="zt-mini">
-                <div className="zt-mark">ZT</div>
-                <div>
-                  <strong>Zechariah Tokar</strong>
-                  <span>Freelance SEO consultant</span>
-                </div>
-              </div>
-              <p>"{REVIEWS[0].quote}"</p>
-              <div className="service-card-links">
-                <span>Strategy</span>
-                <span>Execution</span>
-                <span>Clear scope</span>
-              </div>
-            </aside>
-          </div>
-        </section>
+      </div>
+      <div className="lp">
+        <LeanHero
+          h1="About Zechariah Tokar"
+          answer="Zechariah Tokar is a search visibility consultant who gets companies in the US and other English-speaking markets found in Google, AI answers and Reddit. He is based in Israel, writes in native US English, and does the strategy and the work himself."
+          photo={{ src: '/images/zechariah-tokar-hat-suit.webp', w: 600, h: 876, alt: 'Zechariah Tokar in a black hat and suit, outdoors', pos: 'center 20%', caption: 'Zechariah Tokar' }}
+          glance={[
+            ['Works on', '[AI SEO](/ai-seo-services), [Reddit marketing](/reddit-marketing-services), [local SEO](/local-seo-services) and [SEO consulting](/seo-services-israel)'],
+            ['Results', 'ZStander named first in ChatGPT and +300% Google sales; a 405,000-view Reddit post; a client at the top of the Morristown, NJ map pack'],
+            ['Trusted by', '40+ growth-focused companies; reviews from named clients on [the reviews page](/reviews-results)'],
+            ['Find him on', '[LinkedIn](https://www.linkedin.com/in/zechariah-tokar-167b7672/), [YouTube](https://www.youtube.com/@Zechariah_T) and [X](https://x.com/ZackTokar)'],
+          ]}
+          secondary={{ label: 'See the results', href: '/case-studies' }}
+        />
+      </div>
+      <div className="gp">
 
         <section className="authority">
           <div className="wrap">

@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { parentOf } from '../site-map';
+import { imageFor } from './lean/HubPage';
+import { fit } from './lean/Blocks';
 import { SupportPage } from '../types';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { ContactCTA } from './ContactCTA';
@@ -18,21 +21,21 @@ const Arrow = () => (
 );
 
 const relatedPathByLabel: Record<string, string> = {
-  'Answer engine optimization': '/answer-engine-optimization-services',
+  'Answer engine optimization': '/ai-seo-services#answer-engine-optimization',
   'Reddit marketing services': '/reddit-marketing-services',
-  'Reddit marketing expert': '/reddit-marketing-expert',
+  'Reddit marketing expert': '/reddit-marketing-services#risk-review',
   'Reddit posting service': '/reddit-posting-service',
-  'How to market on Reddit without getting banned': '/how-to-market-on-reddit-without-getting-banned',
-  'How to find subreddits for marketing': '/how-to-find-subreddits-for-marketing',
+  'How to market on Reddit without getting banned': '/how-to-market-on-reddit#without-getting-banned',
+  'How to find subreddits for marketing': '/how-to-market-on-reddit#find-subreddits',
   'Why Reddit posts get removed': '/why-reddit-posts-get-removed',
   'Reddit SEO': '/reddit-seo',
-  'How to use Reddit for SEO': '/how-to-use-reddit-for-seo',
+  'How to use Reddit for SEO': '/reddit-seo#use-reddit-for-seo',
   'Why does Reddit rank so high on Google': '/why-does-reddit-rank-so-high-on-google',
-  'How Reddit gets cited by AI': '/reddit-ai-citations',
+  'How Reddit gets cited by AI': '/reddit-seo#ai-citations',
   'Reddit for B2B SaaS lead generation': '/reddit-b2b-saas-lead-generation',
   'Reddit vs LinkedIn for B2B leads': '/reddit-vs-linkedin-b2b-leads',
   'Reddit karma and account age': '/reddit-karma-account-age',
-  "How Reddit's Google deal changed SEO": '/reddit-google-deal-seo',
+  "How Reddit's Google deal changed SEO": '/why-does-reddit-rank-so-high-on-google#google-deal',
   'Monitor brand mentions on Reddit': '/monitor-brand-mentions-on-reddit',
   'Reddit ads vs organic': '/reddit-ads-vs-organic',
   'B2B SEO': '/b2b-seo-israel',
@@ -61,7 +64,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
 
   const relatedLinks = content.related.map((item) => ({
     label: item,
-    path: relatedPathByLabel[item] || content.parentPath,
+    path: relatedPathByLabel[item] || (parentOf(`/${content.slug}`)?.path || content.parentPath),
     type: item.includes('How') || item.includes('Why') ? 'Reddit guide' : 'Reddit service',
     body: 'A connected page if you want the safer path before posting or using Reddit for search visibility.',
   }));
@@ -73,7 +76,7 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to={content.parentPath}>{content.parentLabel}</NavLink><span>/</span>{content.eyebrow}
+          <NavLink to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>{(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink><span>/</span>{content.eyebrow}
         </div>
 
         <section className="shero">
@@ -84,28 +87,12 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
               <p className="answer">{linkify(content.intro)}</p>
               <div className="shero-actions">
                 <a className="btn btn-primary" href="#contact">Send your site <span className="arrow-icon"><Arrow /></span></a>
-                <NavLink className="btn btn-ghost" to={content.parentPath}>View {content.parentLabel}</NavLink>
+                <NavLink className="btn btn-ghost" to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>View {(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink>
               </div>
             </div>
-            <aside className="service-card">
-              <div className="service-card-top">
-                <span>Before you post</span>
-                <b>Check the fit</b>
-              </div>
-              <div className="zt-mini">
-                <div className="zt-mark">R</div>
-                <div>
-                  <strong>Reddit is unforgiving</strong>
-                  <span>Community fit comes first</span>
-                </div>
-              </div>
-              <p>A useful Reddit plan starts with the subreddit, the buyer objection, and whether posting is even the right move.</p>
-              <div className="service-card-links">
-                <span>Subreddit fit</span>
-                <span>Post risk</span>
-                <span>Buyer language</span>
-              </div>
-            </aside>
+            <figure className="guide-photo">
+              <img src={imageFor(`/${content.slug}`).src} alt={imageFor(`/${content.slug}`).alt} width={imageFor(`/${content.slug}`).w} height={imageFor(`/${content.slug}`).h} style={fit(imageFor(`/${content.slug}`))} {...{ fetchpriority: 'high' }} decoding="async" />
+            </figure>
           </div>
         </section>
 
@@ -129,7 +116,6 @@ export const RedditSupportPage: React.FC<RedditSupportPageProps> = ({ content })
         <section className="service-approach">
           <div className="wrap">
             <div className="approach-head">
-              <span className="eyebrow">Safe path</span>
               <h2>Reddit works when the post fits the community before it tries to help the brand.</h2>
             </div>
             <div className="approach-grid">

@@ -18,7 +18,7 @@ const Arrow = () => (
 );
 
 const resourceLinks = [
-  { label: 'How to get ChatGPT to recommend your brand', path: '/how-to-get-chatgpt-to-recommend-your-brand', type: 'AI guide' },
+  { label: 'How to get ChatGPT to recommend your brand', path: '/how-to-get-cited-by-chatgpt#recommend', type: 'AI guide' },
   { label: 'How to get cited by ChatGPT', path: '/how-to-get-cited-by-chatgpt', type: 'AI guide' },
   { label: 'How to market on Reddit', path: '/how-to-market-on-reddit', type: 'Reddit guide' },
   { label: 'Using Claude Code for content marketing', path: '/blog/claude-code-content-marketing-startups', type: 'Blog' },
@@ -57,7 +57,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to="/seo-services-israel">Services</NavLink><span>/</span>{content.subtitle}
+          <NavLink to="/seo-services-israel">SEO freelancer services</NavLink><span>/</span>{content.subtitle}
         </div>
 
         <section className="shero">
@@ -81,7 +81,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         <section id="overview">
           <div className="wrap split-copy">
             <div>
-              <span className="eyebrow">Overview</span>
               <h2>Clear scope before work starts.</h2>
             </div>
             <div className="copy-stack">
@@ -105,7 +104,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           <section className="divider service-included">
             <div className="wrap">
               <div className="sec-head">
-                <span className="eyebrow">What is included</span>
                 <h2>The work stays practical and tied to the page, search problem, or channel.</h2>
                 <p className="lede">You get the pieces needed to make the service useful, not a bloated checklist.</p>
               </div>
@@ -119,7 +117,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
         <section className="service-approach" id="approach">
           <div className="wrap">
             <div className="approach-head">
-              <span className="eyebrow">Approach</span>
               <h2>{cleanPublicCopy(content.ugcIntro?.how || 'I start with the pages closest to leads and fix the work in the right order.')}</h2>
             </div>
             <div className="approach-grid">
@@ -171,7 +168,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
           <div className="wrap person-grid">
             <div className="person-mark">ZT</div>
             <div>
-              <span className="eyebrow">Who you work with</span>
               <h2>You work directly with Zechariah.</h2>
               <p className="lede">The strategy and execution do not get handed to a junior team. I look at the site, decide what should be fixed first, and keep the next step clear enough to act on.</p>
             </div>
@@ -203,7 +199,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({ content }) => {
             />
             <section className="divider" id="faqs">
               <div className="narrow">
-                <span className="eyebrow">Common questions</span>
                 <h2 className="block" style={{ marginTop: '12px' }}>Frequently asked questions</h2>
                 <div style={{ marginTop: '24px' }}>
                   {content.faqs.map((faq) => (

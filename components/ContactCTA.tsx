@@ -18,7 +18,7 @@ interface ContactCTAProps {
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpwvyzbr';
 
 export const ContactCTA: React.FC<ContactCTAProps> = ({
-  eyebrow = 'Send your site',
+  eyebrow = '',
   title = 'Tell me what you want SEO to fix first.',
   body = 'Share your site, your email, and the issue you want solved. I will review it and reply with the practical next step.',
   subject,
@@ -32,7 +32,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
   <div className="gp">
     <section className="gp-cta contact-cta" id={id}>
       <div className="wrap">
-        <span className="eyebrow">{eyebrow}</span>
+        {eyebrow && <span className="eyebrow">{eyebrow}</span>}
         <h2>{title}</h2>
         <p>{body}</p>
         <div className="contact-panel">

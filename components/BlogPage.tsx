@@ -22,13 +22,13 @@ export const BlogPage: React.FC = () => {
     updatePageSEO({
       title: 'B2B SEO Insights | Israel SEO Freelancer Blog',
       description: 'SEO strategies for B2B companies, Israeli tech startups, and businesses targeting US markets. Practical guides on technical SEO, content marketing, and AI search.',
-      path: '/blog',
+      path: '/seo-guides',
     });
   }, []);
 
   return (
     <>
-      <HeadSEO title="B2B SEO Insights | Israel SEO Freelancer Blog" description="SEO strategies for B2B companies, Israeli tech startups, and businesses targeting US markets. Practical guides on technical SEO, content marketing, and AI search." path="/blog" />
+      <HeadSEO title="B2B SEO Insights | Israel SEO Freelancer Blog" description="SEO strategies for B2B companies, Israeli tech startups, and businesses targeting US markets. Practical guides on technical SEO, content marketing, and AI search." path="/seo-guides" />
       <div className="gp">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Blog

@@ -7,7 +7,7 @@ export const BlogArticle3: React.FC = () => {
     updatePageSEO({
       title: 'SEO Reputation Management: Control What Google Shows About You | Zechariah Tokar',
       description: 'Take control of your Google search results. Practical SEO reputation management strategies for businesses and executives who want to own page 1.',
-      path: '/blog/seo-reputation-management',
+      path: '/seo-guides#reputation',
       type: 'article',
     });
     window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ export const BlogArticle3: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="SEO Reputation Management: Control What Google Shows About You | Zechariah Tokar" description="Take control of your Google search results. Practical SEO reputation management strategies for businesses and executives who want to own page 1." path="/blog/seo-reputation-management" type="article" />
+      <HeadSEO title="SEO Reputation Management: Control What Google Shows About You | Zechariah Tokar" description="Take control of your Google search results. Practical SEO reputation management strategies for businesses and executives who want to own page 1." path="/seo-guides#reputation" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -240,7 +240,7 @@ export const BlogArticle3: React.FC = () => {
                 I help Israeli B2B companies and executives control their search presence through strategic content creation, SEO optimization, and authority building.
               </p>
               <p className="text-slate-700 mt-4">
-                <NavLink to="/seoconsulting" className="text-primary hover:underline font-semibold">Learn about my SEO consulting services</NavLink> or <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">explore my B2B SEO approach</NavLink>.
+                <NavLink to="/seo-services-israel#consulting" className="text-primary hover:underline font-semibold">Learn about my SEO consulting services</NavLink> or <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">explore my B2B SEO approach</NavLink>.
               </p>
               <p className="text-slate-700 mt-4">
                 Let's make sure page 1 tells your story—not your competitors' version of it.
@@ -260,14 +260,14 @@ export const BlogArticle3: React.FC = () => {
                 <p className="text-slate-600 text-sm">Generate qualified leads through bottom-of-funnel SEO strategy.</p>
               </NavLink>
               <NavLink
-                to="/seoconsulting"
+                to="/seo-services-israel#consulting"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">SEO Consulting</h4>
                 <p className="text-slate-600 text-sm">Expert strategy and guidance for in-house execution.</p>
               </NavLink>
               <NavLink
-                to="/freelance-seo-israel"
+                to="/seo-services-israel#how-hiring-works"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">Freelance SEO</h4>

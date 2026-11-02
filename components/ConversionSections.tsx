@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import { PAGE_BY_PATH } from '../site-map';
 import { LINKEDIN_FEATURED_RESULTS, REVIEWS, SERVICES_LIST } from '../constants';
 import type { ReviewItem } from '../types';
 
@@ -139,14 +140,14 @@ export const ResultsGrid: React.FC<{ topic?: string; title?: string; limit?: num
       </div>
       <div className="featured-result-grid">
         {resultsForTopic(topic, limit).map((item) => (
-          <NavLink className="featured-result" to={item.path} key={item.title}>
-            <img src={item.image} alt={item.alt} />
+          <div className="featured-result" key={item.title}>
+            <img src={item.image} alt={item.alt} loading="lazy" />
             <div>
               <span>{item.title}</span>
               <strong>{item.metric}</strong>
               <p>{item.description}</p>
             </div>
-          </NavLink>
+          </div>
         ))}
       </div>
     </div>
@@ -212,35 +213,54 @@ export const FitSection: React.FC<{ topic?: string; bestFor?: string; notFor?: s
   );
 };
 
+// Related links follow the site's link rules: a guide or term page links only to guides in its own hub,
+// a service variant links only to term pages, a case study only to other case studies. Max 3.
+const allowedRelated = (current: string, target: string) => {
+  const here = PAGE_BY_PATH[current]; const there = PAGE_BY_PATH[target.split('#')[0]];
+  if (!here || !there || target.split('#')[0] === current) return false;
+  if (here.type === 'guide' || here.type === 'term' || here.type === 'noindex') return (there.type === 'guide' || there.type === 'term') && there.hub === here.hub;
+  if (here.type === 'leaf') return there.type === 'term';
+  if (here.type === 'proof') return there.type === 'proof';
+  return true;
+};
+
 export const RelatedPages: React.FC<{
   title?: string;
   lede?: string;
   links: { label: string; path: string; type?: string; body?: string }[];
 }> = ({
-  title = 'Helpful next pages.',
-  lede = 'The next page should match the problem the buyer is trying to solve.',
+  title = 'Related guides',
+  lede,
   links,
-}) => (
-  <section className="support divider" id="resources">
-    <div className="wrap">
-      <div className="sec-head">
-        <span className="eyebrow">Keep exploring</span>
-        <h2>{title}</h2>
-        <p className="lede">{lede}</p>
+}) => {
+  const { pathname } = useLocation();
+  const current = pathname.replace(/\/+$/, '') || '/';
+  const seen = new Set<string>();
+  const kept = links.filter((l) => {
+    const key = l.path.split('#')[0];
+    if (seen.has(key) || !allowedRelated(current, l.path)) return false;
+    seen.add(key); return true;
+  }).slice(0, 3);
+  if (!kept.length) return null;
+  return (
+    <section className="support divider" id="resources">
+      <div className="wrap">
+        <div className="sec-head">
+          <h2>{title}</h2>
+          {lede && <p className="lede">{lede}</p>}
+        </div>
+        <div className="slink-grid">
+          {kept.map((link) => (
+            <NavLink className="slink" to={link.path} key={`${link.path}-${link.label}`}>
+              <h3>{PAGE_BY_PATH[link.path.split('#')[0]]?.label || link.label}</h3>
+              <span className="card-arrow"><Arrow /></span>
+            </NavLink>
+          ))}
+        </div>
       </div>
-      <div className="slink-grid">
-        {links.slice(0, 6).map((link) => (
-          <NavLink className="slink" to={link.path} key={`${link.path}-${link.label}`}>
-            <div className="k">{link.type || 'Related page'}</div>
-            <h3>{link.label}</h3>
-            {link.body && <p>{cleanPublicCopy(link.body)}</p>}
-            <span className="card-arrow"><Arrow /></span>
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export const relatedServiceLinks = (labels: string[] = [], currentSlug?: string) => {
   const matched = labels

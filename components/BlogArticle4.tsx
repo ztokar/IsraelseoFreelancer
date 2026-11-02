@@ -7,7 +7,7 @@ export const BlogArticle4: React.FC = () => {
     updatePageSEO({
       title: 'AI Search 2026: The 6 Updates Israeli Companies Must Prepare For | Zechariah Tokar',
       description: 'Google AI Overviews, Perplexity citations, and ChatGPT search are changing SEO in 2026. Here are the 6 updates Israeli companies need to act on now.',
-      path: '/blog/ai-search-2026-updates',
+      path: '/ai-answers#ai-search-changes',
       type: 'article',
     });
     window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ export const BlogArticle4: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="AI Search 2026: The 6 Updates Israeli Companies Must Prepare For | Zechariah Tokar" description="Google AI Overviews, Perplexity citations, and ChatGPT search are changing SEO in 2026. Here are the 6 updates Israeli companies need to act on now." path="/blog/ai-search-2026-updates" type="article" />
+      <HeadSEO title="AI Search 2026: The 6 Updates Israeli Companies Must Prepare For | Zechariah Tokar" description="Google AI Overviews, Perplexity citations, and ChatGPT search are changing SEO in 2026. Here are the 6 updates Israeli companies need to act on now." path="/ai-answers#ai-search-changes" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -199,7 +199,7 @@ export const BlogArticle4: React.FC = () => {
                 I work with Israeli B2B companies to build content strategies that rank in both traditional search and AI-generated results.
               </p>
               <p className="text-slate-700 mt-4">
-                <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">Learn about my B2B SEO approach</NavLink> or <NavLink to="/seoconsulting" className="text-primary hover:underline font-semibold">explore SEO consulting services</NavLink>.
+                <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">Learn about my B2B SEO approach</NavLink> or <NavLink to="/seo-services-israel#consulting" className="text-primary hover:underline font-semibold">explore SEO consulting services</NavLink>.
               </p>
             </div>
           </div>
@@ -209,14 +209,14 @@ export const BlogArticle4: React.FC = () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Related Articles</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <NavLink
-                to="/blog/israel-b2b-seo-pipeline"
+                to="/b2b-seo-israel#pipeline"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">B2B SEO Pipeline Guide</h4>
                 <p className="text-slate-600 text-sm">Build a qualified lead pipeline through bottom-of-funnel SEO.</p>
               </NavLink>
               <NavLink
-                to="/blog/geo-ai-generative-engine-optimization"
+                to="/what-is-generative-engine-optimization"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">GEO Guide for Israeli SaaS</h4>

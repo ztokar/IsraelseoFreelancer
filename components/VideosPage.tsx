@@ -12,7 +12,7 @@ export const VideosPage: React.FC = () => {
     updatePageSEO({
       title: 'SEO Videos | Zechariah Tokar',
       description: 'Watch Zechariah Tokar SEO videos about AI SEO, B2B SEO, SaaS SEO, Google AI Overviews, and search visibility.',
-      path: '/videos',
+      path: '/about#videos',
     });
   }, []);
 
@@ -21,7 +21,7 @@ export const VideosPage: React.FC = () => {
       <HeadSEO
         title="SEO Videos | Zechariah Tokar"
         description="Watch Zechariah Tokar SEO videos about AI SEO, B2B SEO, SaaS SEO, Google AI Overviews, and search visibility."
-        path="/videos"
+        path="/about#videos"
       />
 
       <div className="gp">
@@ -64,7 +64,7 @@ export const VideosPage: React.FC = () => {
           title="Related pages after watching."
           lede="These pages connect the video topics to the services and proof."
           links={[
-            { label: 'AI Search Visibility', path: '/ai-seo-consultant-israel', type: 'Service', body: 'For brands that need to show up in AI answers.' },
+            { label: 'AI Search Visibility', path: '/ai-seo-services#consultant', type: 'Service', body: 'For brands that need to show up in AI answers.' },
             { label: 'B2B SEO', path: '/b2b-seo-israel', type: 'Service', body: 'For companies that need buyer-intent pages, not just content volume.' },
             { label: 'Reviews and results', path: '/reviews-results', type: 'Proof', body: 'Recommendations and public results to vet the work.' },
           ]}

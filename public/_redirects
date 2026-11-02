@@ -1,11 +1,44 @@
-# Don't redirect static files
+# Static files
 /sitemap.xml  /sitemap.xml  200
 /robots.txt   /robots.txt   200
 
-# B2B SEO page redirect (301 permanent)
+# Pages merged into a better home: one hop, no chains
+/ai-seo-consultant-israel  /ai-seo-services  301
+/answer-engine-optimization-services  /ai-seo-services  301
+/blog/ai-search-2026-updates  /ai-answers  301
+/blog/geo-ai-generative-engine-optimization  /what-is-generative-engine-optimization  301
+/how-to-get-chatgpt-to-recommend-your-brand  /how-to-get-cited-by-chatgpt  301
+/how-to-get-your-brand-mentioned-in-chatgpt  /track-brand-mentions-in-chatgpt  301
+/is-geo-the-new-seo  /aeo-vs-geo-vs-seo  301
+/recommendations  /about  301
+/recommendations/web-designer-seo-web-of-creativity  /about  301
+/videos  /about  301
+/local-citations-directories  /google-business-profile-seo  301
+/blog/seo-reputation-management  /seo-guides  301
+/how-to-find-subreddits-for-marketing  /how-to-market-on-reddit  301
+/how-to-market-on-reddit-without-getting-banned  /how-to-market-on-reddit  301
+/how-to-promote-on-reddit-without-getting-banned  /how-to-market-on-reddit  301
+/how-to-use-reddit-for-seo  /reddit-seo  301
+/reddit-ai-citations  /reddit-seo  301
+/reddit-google-deal-seo  /why-does-reddit-rank-so-high-on-google  301
+/reddit-marketing-expert  /reddit-marketing-services  301
+/blog  /seo-guides  301
+/blog-content-seo  /content-marketing-for-seo  301
+/blog/israel-b2b-seo-pipeline  /b2b-seo-israel  301
+/blog/israeli-tech-seo-gap  /b2b-seo-israel  301
+/blog/seo-drives-pipeline-b2b  /b2b-seo-israel  301
+/blog/seo-israeli-cybersecurity-companies  /cybersecurity-seo  301
+/blog/seo-israeli-saas-companies-us-markets  /saas-seo  301
+/blog/why-israeli-b2b-fail-seo  /b2b-seo-israel  301
+/fintech-seo  /b2b-seo-israel  301
+/freelance-seo-israel  /seo-services-israel  301
+/link-building-services  /seo-services-israel  301
+/press-release-seo  /seo-services-israel  301
+/seo-consult  /seo-services-israel  301
+/seoconsulting  /seo-services-israel  301
+/israel-seo-specialist  /seo-services-israel  301
 /b2b-seo-company  /b2b-seo-israel  301
-/israel-seo-specialist  /freelance-seo-israel  301
 /seo-for-lawyers  /seo-services-israel  301
 
-# Redirect all other requests to index.html for SPA
+# Everything else to the app
 /*  /index.html  200

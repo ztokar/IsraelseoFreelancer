@@ -1,6 +1,12 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 
+// One name string in every title: "<page> | Zechariah Tokar".
+export function brandTitle(title: string): string {
+  const base = title.replace(/\s+[|\-–—]\s+(Zechariah Tokar[^|]*|Israel SEO Freelancer[^|]*|SEO Freelancer Israel)$/i, '').trim();
+  return /zechariah tokar/i.test(base) ? base : `${base} | Zechariah Tokar`;
+}
+
 /**
  * SSG-compatible Head component for per-page meta tags.
  * Renders into the HTML at build time (unlike updatePageSEO which only works client-side).
@@ -18,9 +24,10 @@ export function HeadSEO({
   image?: string;
   type?: 'website' | 'article';
 }) {
+  title = brandTitle(title);
   const baseUrl = 'https://israelseofreelancer.com';
   const fullUrl = `${baseUrl}${path}`;
-  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/images/hero-seo-growth.jpg`;
+  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/images/ai-seo-monthly-share.jpg`;
 
   return React.createElement(Head, null,
     React.createElement('title', null, title),
@@ -54,9 +61,10 @@ export function updatePageSEO({
   image?: string;
   type?: 'website' | 'article';
 }) {
+  title = brandTitle(title);
   const baseUrl = 'https://israelseofreelancer.com';
   const fullUrl = `${baseUrl}${path}`;
-  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/images/hero-seo-growth.jpg`;
+  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/images/ai-seo-monthly-share.jpg`;
 
   document.title = title;
 

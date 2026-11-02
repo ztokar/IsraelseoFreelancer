@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { GuidePageData } from '../constants-guides';
 import { updatePageSEO, HeadSEO } from '../utils/seo';
+import { parentOf } from '../site-map';
+import { imageFor } from './lean/HubPage';
+import { fit } from './lean/Blocks';
 import { ContactCTA } from './ContactCTA';
 import { ProofWall, RelatedPages, ResultsGrid, topicFromSlug } from './ConversionSections';
 
@@ -43,19 +46,22 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
       <div className="gp gp-guide">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
-          <NavLink to={content.moneyPath}>{content.moneyLabel}</NavLink><span>/</span>{content.h1}
+          {parentOf(`/${content.slug}`) && <><NavLink to={parentOf(`/${content.slug}`)!.path}>{parentOf(`/${content.slug}`)!.label}</NavLink><span>/</span></>}{content.h1}
         </div>
 
         {/* Hero / quick answer */}
         <section className="shero">
-          <div className="wrap">
-            <span className="eyebrow">{content.eyebrow}</span>
+          <div className="wrap shero-grid">
+            <div>
             <h1>{content.h1}</h1>
             <p className="answer">{renderText(content.quickAnswer)}</p>
             <div className="shero-actions">
-              <NavLink className="btn btn-primary" to={content.moneyPath}>{content.moneyLabel} <span className="arrow">↗</span></NavLink>
-              <a className="btn btn-ghost" href="#contact">Send your site</a>
+              <a className="btn btn-primary" href="#contact">Send your site</a>
             </div>
+            </div>
+            <figure className="guide-photo">
+              <img src={imageFor(`/${content.slug}`).src} alt={imageFor(`/${content.slug}`).alt} width={imageFor(`/${content.slug}`).w} height={imageFor(`/${content.slug}`).h} style={fit(imageFor(`/${content.slug}`))} {...{ fetchpriority: 'high' }} decoding="async" />
+            </figure>
           </div>
         </section>
 
@@ -101,8 +107,6 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
         <ResultsGrid topic={topic} title="Selected results connected to this topic." />
 
         <RelatedPages
-          title="Next pages to read or hire from."
-          lede="If this guide matches the problem you are seeing, the service page is the next practical step."
           links={relatedLinks}
         />
 
@@ -121,7 +125,6 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
             />
             <section className="divider">
               <div className="narrow">
-                <span className="eyebrow">More questions</span>
                 <h2 className="block" style={{ marginTop: '12px' }}>FAQs</h2>
                 <div style={{ marginTop: '24px' }}>
                   {content.faqs.map((f) => <div className="faq" key={f.q}><h3>{f.q}</h3><p>{renderText(f.a)}</p></div>)}

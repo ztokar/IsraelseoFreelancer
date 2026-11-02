@@ -7,7 +7,7 @@ export const BlogArticle2: React.FC = () => {
     updatePageSEO({
       title: 'Geo AI: The New SEO Israeli Companies Can\'t Ignore | Zechariah Tokar',
       description: 'Generative Engine Optimization (GEO) is reshaping how Israeli companies get found in AI search. Learn how to optimize for ChatGPT, Perplexity, and Google AI Overviews.',
-      path: '/blog/geo-ai-generative-engine-optimization',
+      path: '/what-is-generative-engine-optimization',
       type: 'article',
     });
     window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ export const BlogArticle2: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="Geo AI: The New SEO Israeli Companies Can\" description="Generative Engine Optimization (GEO) is reshaping how Israeli companies get found in AI search. Learn how to optimize for ChatGPT, Perplexity, and Google AI Overviews." path="/blog/geo-ai-generative-engine-optimization" type="article" />
+      <HeadSEO title="Geo AI: The New SEO Israeli Companies Can\" description="Generative Engine Optimization (GEO) is reshaping how Israeli companies get found in AI search. Learn how to optimize for ChatGPT, Perplexity, and Google AI Overviews." path="/what-is-generative-engine-optimization" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -112,7 +112,7 @@ export const BlogArticle2: React.FC = () => {
                 Want to make sure your content shows up in AI search results? I help Israeli B2B companies optimize for both traditional SEO and AI citations.
               </p>
               <p className="text-slate-700 mt-4">
-                <NavLink to="/seoconsulting" className="text-primary hover:underline font-semibold">Learn about my SEO consulting services</NavLink> or <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">B2B SEO strategy</NavLink>.
+                <NavLink to="/seo-services-israel#consulting" className="text-primary hover:underline font-semibold">Learn about my SEO consulting services</NavLink> or <NavLink to="/b2b-seo-israel" className="text-primary hover:underline font-semibold">B2B SEO strategy</NavLink>.
               </p>
             </div>
           </div>
@@ -129,14 +129,14 @@ export const BlogArticle2: React.FC = () => {
                 <p className="text-slate-600 text-sm">Generate qualified leads through bottom-of-funnel SEO strategy.</p>
               </NavLink>
               <NavLink
-                to="/seoconsulting"
+                to="/seo-services-israel#consulting"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">SEO Consulting</h4>
                 <p className="text-slate-600 text-sm">Expert strategy and guidance for in-house execution.</p>
               </NavLink>
               <NavLink
-                to="/freelance-seo-israel"
+                to="/seo-services-israel#how-hiring-works"
                 className="group p-6 border border-slate-200 rounded-lg hover:border-primary/50 transition-all hover:shadow-lg"
               >
                 <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary">Freelance SEO</h4>

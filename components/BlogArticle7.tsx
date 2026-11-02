@@ -7,7 +7,7 @@ export const BlogArticle7: React.FC = () => {
     updatePageSEO({
       title: 'SEO for Israeli Cybersecurity Companies Competing Globally | Zechariah Tokar',
       description: 'Israeli cybersecurity companies have world-class products but struggle to rank in US search. Here is how to fix that with targeted SEO strategies.',
-      path: '/blog/seo-israeli-cybersecurity-companies',
+      path: '/cybersecurity-seo#israeli-cybersecurity',
       image: '/images/blog-cybersecurity-seo.jpg',
       type: 'article',
     });
@@ -16,7 +16,7 @@ export const BlogArticle7: React.FC = () => {
 
   return (
     <>
-      <HeadSEO title="SEO for Israeli Cybersecurity Companies Competing Globally | Zechariah Tokar" description="Israeli cybersecurity companies have world-class products but struggle to rank in US search. Here is how to fix that with targeted SEO strategies." path="/blog/seo-israeli-cybersecurity-companies" image="/images/blog-cybersecurity-seo.jpg" type="article" />
+      <HeadSEO title="SEO for Israeli Cybersecurity Companies Competing Globally | Zechariah Tokar" description="Israeli cybersecurity companies have world-class products but struggle to rank in US search. Here is how to fix that with targeted SEO strategies." path="/cybersecurity-seo#israeli-cybersecurity" image="/images/blog-cybersecurity-seo.jpg" type="article" />
       <div className="animate-fade-in-up">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
@@ -63,7 +63,7 @@ export const BlogArticle7: React.FC = () => {
 
             <h2 id="unique-challenge">The Unique SEO Challenge in Cybersecurity</h2>
 
-            <p>Cybersecurity SEO is fundamentally different from <NavLink to="/blog/seo-israeli-saas-companies-us-markets" className="text-primary hover:underline">SEO for Israeli SaaS companies</NavLink> or general B2B.</p>
+            <p>Cybersecurity SEO is fundamentally different from <NavLink to="/saas-seo#israeli-saas" className="text-primary hover:underline">SEO for Israeli SaaS companies</NavLink> or general B2B.</p>
 
             <p>You're not competing for "project management software" or "CRM platform." You're competing for "zero-trust network access solution" and "SIEM with threat intelligence correlation" — searches where every result on page 1 is a company with 10+ years of domain authority, millions in PR budget, and analyst relations teams getting them cited in every Gartner report.</p>
 

@@ -1,187 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>Israel SEO Freelancer - Zechariah Tokar</title>
+    <title>Zechariah Tokar: guides on Google, AI answers and Reddit</title>
     <link>https://israelseofreelancer.com</link>
-    <description>Freelance SEO consultant for Israeli and international companies targeting English-speaking markets. B2B SEO, content strategy, and AI search optimization.</description>
+    <description>Guides by Zechariah Tokar, search visibility consultant.</description>
     <language>en-us</language>
-    <lastBuildDate>2026-06-16</lastBuildDate>
-    <atom:link href="https://israelseofreelancer.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>Recommended Partners</title>
-      <link>https://israelseofreelancer.com/recommendations</link>
-      <description>Partners Zechariah recommends for website design, branding, copywriting, social media, and related work that supports SEO.</description>
-      <category>Recommendations</category>
-      <pubDate>2026-06-16</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/recommendations</guid>
-    </item>
-    <item>
-      <title>The Web Designer I Recommend for Websites That Support Strong SEO</title>
-      <link>https://israelseofreelancer.com/recommendations/web-designer-seo-web-of-creativity</link>
-      <description>Why Zechariah recommends Rivka Neumann from Web of Creativity for strategic websites that support SEO.</description>
-      <category>Recommendations</category>
-      <pubDate>2026-06-16</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/recommendations/web-designer-seo-web-of-creativity</guid>
-    </item>
-    <item>
-      <title>Israel SEO Freelancer - Zechariah Tokar</title>
-      <link>https://israelseofreelancer.com/</link>
-      <description>Freelance SEO consultant for Israeli and international companies targeting English-speaking markets.</description>
-      <category>Home</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/</guid>
-    </item>
-    <item>
-      <title>Freelance SEO in Israel</title>
-      <link>https://israelseofreelancer.com/freelance-seo-israel</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/freelance-seo-israel</guid>
-    </item>
-    <item>
-      <title>SEO Consulting</title>
-      <link>https://israelseofreelancer.com/seoconsulting</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/seoconsulting</guid>
-    </item>
-    <item>
-      <title>B2B SEO Israel</title>
-      <link>https://israelseofreelancer.com/b2b-seo-israel</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/b2b-seo-israel</guid>
-    </item>
-    <item>
-      <title>Content Marketing for SEO</title>
-      <link>https://israelseofreelancer.com/content-marketing-for-seo</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/content-marketing-for-seo</guid>
-    </item>
-    <item>
-      <title>SEO for Lawyers</title>
-      <link>https://israelseofreelancer.com/seo-for-lawyers</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/seo-for-lawyers</guid>
-    </item>
-    <item>
-      <title>Israel SEO Specialist</title>
-      <link>https://israelseofreelancer.com/israel-seo-specialist</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/israel-seo-specialist</guid>
-    </item>
-    <item>
-      <title>SEO Freelancer vs Agency</title>
-      <link>https://israelseofreelancer.com/seo-freelancer-vs-agency</link>
-      <description></description>
-      <category>Services</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/seo-freelancer-vs-agency</guid>
-    </item>
-    <item>
-      <title>Blog</title>
-      <link>https://israelseofreelancer.com/blog</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog</guid>
-    </item>
-    <item>
-      <title>Israel B2B SEO Pipeline</title>
-      <link>https://israelseofreelancer.com/blog/israel-b2b-seo-pipeline</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/israel-b2b-seo-pipeline</guid>
-    </item>
-    <item>
-      <title>GEO AI Generative Engine Optimization</title>
-      <link>https://israelseofreelancer.com/blog/geo-ai-generative-engine-optimization</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/geo-ai-generative-engine-optimization</guid>
-    </item>
-    <item>
-      <title>SEO Reputation Management</title>
-      <link>https://israelseofreelancer.com/blog/seo-reputation-management</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/seo-reputation-management</guid>
-    </item>
-    <item>
-      <title>AI Search 2026 Updates</title>
-      <link>https://israelseofreelancer.com/blog/ai-search-2026-updates</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/ai-search-2026-updates</guid>
-    </item>
-    <item>
-      <title>Hebrew SEO Checkers Free Tools</title>
-      <link>https://israelseofreelancer.com/blog/hebrew-seo-checkers-free-tools</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/hebrew-seo-checkers-free-tools</guid>
-    </item>
-    <item>
-      <title>SEO for Israeli SaaS Companies Targeting US Markets</title>
-      <link>https://israelseofreelancer.com/blog/seo-israeli-saas-companies-us-markets</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/seo-israeli-saas-companies-us-markets</guid>
-    </item>
-    <item>
-      <title>SEO for Israeli Cybersecurity Companies</title>
-      <link>https://israelseofreelancer.com/blog/seo-israeli-cybersecurity-companies</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/seo-israeli-cybersecurity-companies</guid>
-    </item>
-    <item>
-      <title>Why Israeli B2B Companies Fail at SEO</title>
-      <link>https://israelseofreelancer.com/blog/why-israeli-b2b-fail-seo</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/why-israeli-b2b-fail-seo</guid>
-    </item>
-    <item>
-      <title>SEO Drives Pipeline for B2B</title>
-      <link>https://israelseofreelancer.com/blog/seo-drives-pipeline-b2b</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/seo-drives-pipeline-b2b</guid>
-    </item>
-    <item>
-      <title>Israeli Tech SEO Gap</title>
-      <link>https://israelseofreelancer.com/blog/israeli-tech-seo-gap</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/israeli-tech-seo-gap</guid>
-    </item>
-    <item>
-      <title>Claude Code for Content Marketing at Startups</title>
-      <link>https://israelseofreelancer.com/blog/claude-code-content-marketing-startups</link>
-      <description></description>
-      <category>Blog</category>
-      <pubDate>2026-03-30</pubDate>
-      <guid isPermaLink="true">https://israelseofreelancer.com/blog/claude-code-content-marketing-startups</guid>
-    </item>
+    <item><title>What is answer engine optimization?</title><link>https://israelseofreelancer.com/what-is-answer-engine-optimization</link><guid>https://israelseofreelancer.com/what-is-answer-engine-optimization</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>The definition of answer engine optimization: writing the clearest, most liftable answer to one question, so a featured snippet or an AI answer uses your page instead of only listing it. It covers how the work runs and how it lines up against generative engine optimization and classic SEO.</description></item>
+    <item><title>What is generative engine optimization?</title><link>https://israelseofreelancer.com/what-is-generative-engine-optimization</link><guid>https://israelseofreelancer.com/what-is-generative-engine-optimization</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>The definition of generative engine optimization: getting a brand surfaced and cited by ChatGPT, Perplexity and Google AI Overviews, so the AI gives your name instead of ignoring it. A plain-English explanation, how it compares with classic SEO, and how brands actually get surfaced.</description></item>
+    <item><title>AEO vs GEO vs SEO</title><link>https://israelseofreelancer.com/aeo-vs-geo-vs-seo</link><guid>https://israelseofreelancer.com/aeo-vs-geo-vs-seo</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>Three labels for mostly the same job, side by side. What each name covers, why three names exist, what truly differs (where the answer shows and how much of your reputation lives off your own site), and which one is worth paying for.</description></item>
+    <item><title>How to rank in Google AI Overviews</title><link>https://israelseofreelancer.com/how-to-rank-in-google-ai-overviews</link><guid>https://israelseofreelancer.com/how-to-rank-in-google-ai-overviews</guid><pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate><description>How to show up in Google AI Overviews: mostly by winning the normal results for the question and answering it clearly, because Google pulls its sources from pages that already rank. What helps a page get pulled in, and the honest limits most guides skip.</description></item>
+    <item><title>How to get cited by ChatGPT</title><link>https://israelseofreelancer.com/how-to-get-cited-by-chatgpt</link><guid>https://israelseofreelancer.com/how-to-get-cited-by-chatgpt</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>ChatGPT quotes the clearest, most trusted source that answers the question up front, backs it with specifics, and is talked about elsewhere on the web. What ChatGPT actually quotes, why pages get ignored, and how to get recommended rather than only cited.</description></item>
+    <item><title>Track brand mentions in ChatGPT</title><link>https://israelseofreelancer.com/track-brand-mentions-in-chatgpt</link><guid>https://israelseofreelancer.com/track-brand-mentions-in-chatgpt</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>A free monthly method for tracking when ChatGPT names your brand: the same buyer questions, on the same schedule, written down every time. Why one check proves nothing, what paid tools add, what no tool tells you, and how to get mentioned more often.</description></item>
+    <item><title>How to track AI search visibility</title><link>https://israelseofreelancer.com/how-to-track-ai-search-visibility</link><guid>https://israelseofreelancer.com/how-to-track-ai-search-visibility</guid><pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate><description>How to measure how often ChatGPT, Perplexity and Google AI Overviews name your brand: list the 10 to 20 prompts buyers really ask, run each a few times because answers change, and record the result. Plus what the tracking tools miss.</description></item>
+    <item><title>AI search visibility tools</title><link>https://israelseofreelancer.com/ai-search-visibility-tools</link><guid>https://israelseofreelancer.com/ai-search-visibility-tools</guid><pubDate>Thu, 20 Aug 2026 12:00:00 +0000</pubDate><description>What AI search visibility tools measure, which ones people use, and when a free spreadsheet gives the same answer for a short prompt list. The tools are good at measuring whether ChatGPT, Perplexity, Gemini and AI Overviews name you; none of them fix the reason you are missing.</description></item>
+    <item><title>Why ChatGPT does not mention your brand</title><link>https://israelseofreelancer.com/why-chatgpt-doesnt-mention-your-brand</link><guid>https://israelseofreelancer.com/why-chatgpt-doesnt-mention-your-brand</guid><pubDate>Thu, 20 Aug 2026 12:00:00 +0000</pubDate><description>ChatGPT repeats how the web already describes your category, so a brand missing from reviews, roundups, comparisons and forum threads gets skipped. The four reasons brands get left out, why your own site is the floor and not the fix, and what moves the answer.</description></item>
+    <item><title>Reddit SEO</title><link>https://israelseofreelancer.com/reddit-seo</link><guid>https://israelseofreelancer.com/reddit-seo</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>The definition of Reddit SEO: getting the Reddit threads that mention your brand to rank in Google and feed AI answers. Why those threads rank, how to use them without getting flagged, and how Reddit content ends up cited by ChatGPT and Google AI Overviews.</description></item>
+    <item><title>Reddit karma and account age</title><link>https://israelseofreelancer.com/reddit-karma-account-age</link><guid>https://israelseofreelancer.com/reddit-karma-account-age</guid><pubDate>Thu, 11 Jun 2026 12:00:00 +0000</pubDate><description>Why Reddit trusts older accounts with real karma, and why a brand-new account that drops a link usually gets filtered. The posting history many subreddits expect before any promotion, and how to build karma and account age the safe way.</description></item>
+    <item><title>How to market on Reddit</title><link>https://israelseofreelancer.com/how-to-market-on-reddit</link><guid>https://israelseofreelancer.com/how-to-market-on-reddit</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>To market on Reddit, earn trust before you promote: pick a few relevant subreddits, learn their rules and culture, and lead with helpful answers. A simple approach, the mistakes that get brands banned, and how to find the subreddits where your buyers already are.</description></item>
+    <item><title>How to get recommended on Reddit</title><link>https://israelseofreelancer.com/how-to-get-recommended-on-reddit</link><guid>https://israelseofreelancer.com/how-to-get-recommended-on-reddit</guid><pubDate>Thu, 20 Aug 2026 12:00:00 +0000</pubDate><description>The four-step method behind a Reddit post that passed 405,000 views: be useful in the subreddit first, then answer only threads where someone asked for a recommendation. The rule most brands break, why the link stays out, and why these threads are worth the wait.</description></item>
+    <item><title>How to rank a Reddit post on Google</title><link>https://israelseofreelancer.com/how-to-rank-a-reddit-post-on-google</link><guid>https://israelseofreelancer.com/how-to-rank-a-reddit-post-on-google</guid><pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate><description>How to get a Reddit post into Google: match the title to the exact phrase people search, post in an active and relevant subreddit, and earn real upvotes and comments. What helps a thread rank and what gets it buried.</description></item>
+    <item><title>Why does Reddit rank so high on Google?</title><link>https://israelseofreelancer.com/why-does-reddit-rank-so-high-on-google</link><guid>https://israelseofreelancer.com/why-does-reddit-rank-so-high-on-google</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>Reddit ranks high on Google because of a paid content partnership plus strong human signals: real discussion, upvotes and answers that match what searchers want. The main reasons, the data deal behind them, and what it all means for your brand.</description></item>
+    <item><title>Why Reddit posts get removed</title><link>https://israelseofreelancer.com/why-reddit-posts-get-removed</link><guid>https://israelseofreelancer.com/why-reddit-posts-get-removed</guid><pubDate>Mon, 11 May 2026 12:00:00 +0000</pubDate><description>A useful Reddit post can still get removed. The usual causes are the account, the format, subreddit rules, the link pattern or a promotional tone. How filters remove posts first, how to spot the wrong subreddit, and what to review before reposting.</description></item>
+    <item><title>Reddit brand monitoring</title><link>https://israelseofreelancer.com/monitor-brand-mentions-on-reddit</link><guid>https://israelseofreelancer.com/monitor-brand-mentions-on-reddit</guid><pubDate>Thu, 11 Jun 2026 12:00:00 +0000</pubDate><description>Watch what Reddit says about your brand, because Google and AI tools repeat it. A quick brand search on Reddit plus a couple of alerts surfaces the threads that already rank, so you know what buyers and AI find first.</description></item>
+    <item><title>Reddit ads vs organic</title><link>https://israelseofreelancer.com/reddit-ads-vs-organic</link><guid>https://israelseofreelancer.com/reddit-ads-vs-organic</guid><pubDate>Thu, 11 Jun 2026 12:00:00 +0000</pubDate><description>Reddit ads buy fast reach; organic Reddit marketing builds trust and search visibility that lasts. When the budget stops, the ads go quiet, while a strong organic thread can keep ranking in Google and feeding AI answers. Which one fits your goal.</description></item>
+    <item><title>Reddit lead generation for B2B SaaS</title><link>https://israelseofreelancer.com/reddit-b2b-saas-lead-generation</link><guid>https://israelseofreelancer.com/reddit-b2b-saas-lead-generation</guid><pubDate>Thu, 11 Jun 2026 12:00:00 +0000</pubDate><description>Reddit can bring B2B SaaS leads if you help before you sell. Founders and operators ask real buying questions in subreddits every day, and useful answers that fit the thread can send warm, high-intent visitors to your site. Where those leads come from.</description></item>
+    <item><title>Reddit vs LinkedIn for B2B leads</title><link>https://israelseofreelancer.com/reddit-vs-linkedin-b2b-leads</link><guid>https://israelseofreelancer.com/reddit-vs-linkedin-b2b-leads</guid><pubDate>Thu, 11 Jun 2026 12:00:00 +0000</pubDate><description>LinkedIn reaches named decision-makers; Reddit reaches buyers already researching a solution. Most B2B brands need both, and Reddit often brings lower-cost, higher-intent leads because people there are mid-problem, not mid-scroll. How to choose between them for your goal, and how the two can work together in one plan.</description></item>
+    <item><title>Data is Beautiful Claude skill</title><link>https://israelseofreelancer.com/resources/dataisbeautiful-claude-skill</link><guid>https://israelseofreelancer.com/resources/dataisbeautiful-claude-skill</guid><pubDate>Mon, 25 May 2026 12:00:00 +0000</pubDate><description>A free Claude skill Zechariah Tokar built to plan better Reddit data visualizations. It pushes Claude to find the human angle, pick a simple chart format, write source notes and check the final package before you post to r/dataisbeautiful. What it does, how to install it, and how to use it.</description></item>
+    <item><title>SEO freelancer vs agency</title><link>https://israelseofreelancer.com/seo-freelancer-vs-agency</link><guid>https://israelseofreelancer.com/seo-freelancer-vs-agency</guid><pubDate>Wed, 06 May 2026 12:00:00 +0000</pubDate><description>Hire a freelancer when you want the person planning the work to also do it; hire an agency when you need several channels running at once and someone inside to steer them. An honest comparison from a freelancer, including where an agency is the better call.</description></item>
+    <item><title>Claude Code for startup content marketing</title><link>https://israelseofreelancer.com/blog/claude-code-content-marketing-startups</link><guid>https://israelseofreelancer.com/blog/claude-code-content-marketing-startups</guid><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate><description>How a startup can use Claude Code to build a content system instead of outsourcing posts: what Claude Code is, why startup content usually fails, the four content types worth building with it, the practical workflow, and the SEO checks along the way.</description></item>
   </channel>
 </rss>
