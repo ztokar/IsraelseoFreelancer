@@ -186,7 +186,7 @@ html { accent-color: var(--l-acc); }
 .dchart figcaption { font-size: 14px; color: var(--l-muted); margin-top: 8px; }
 .dchart figcaption b { color: var(--l-ink); }
 
-.pcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+.pcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
 .pcard { display: flex; flex-direction: column; text-decoration: none; background: var(--l-surface); border: 1px solid var(--l-hair); border-radius: 18px; overflow: hidden; color: inherit; transition: transform .16s var(--l-ease), box-shadow .16s var(--l-ease), border-color .16s var(--l-ease); }
 .pcard:hover { transform: translateY(-2px); border-color: #9FD3B9; box-shadow: 0 18px 34px -24px rgba(7, 62, 43, 0.45); }
 .pcard-img { aspect-ratio: 16 / 9; background: #EEF2EF; overflow: hidden; }
@@ -223,3 +223,17 @@ html { accent-color: var(--l-acc); }
   .glance td { border-top: 0; padding-bottom: 12px; }
   .lbtn { width: 100%; justify-content: center; }
 }
+
+.siblings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 22px; }
+.lp a.sibling { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; min-height: 44px; border: 1px solid var(--l-hair); border-radius: 16px; background: var(--l-canvas); text-decoration: none; color: var(--l-ink-soft); transition: border-color .16s var(--l-ease), transform .16s var(--l-ease); }
+.lp a.sibling:hover { border-color: var(--l-acc); transform: translateY(-2px); }
+.sibling strong { font-family: 'Outfit', sans-serif; font-size: 19px; color: var(--l-ink); }
+.sibling span { font-size: 15.5px; }
+.lsec .lh-actions { margin-top: 22px; }
+.home-proofline { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.home-proofline li { background: var(--l-surface); border: 1px solid var(--l-hair); border-radius: 999px; padding: 7px 14px; font-size: 15px; color: var(--l-ink-soft); }
+.home-proofline b { color: var(--l-acc-deep); font-family: 'Outfit', sans-serif; }
+.mh-fx3 img, .mh-fx4 img { object-fit: cover; padding: 0; }
+
+.gp .contact-cta .contact-book-link a { color: #fff; text-decoration: underline; }
+.lh-photo.is-shot img { aspect-ratio: 16 / 10; } .lh-photo.is-shot figcaption { position: static; margin-top: 10px; box-shadow: none; background: none; padding: 0; color: var(--l-muted); }

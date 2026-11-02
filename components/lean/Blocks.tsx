@@ -4,6 +4,11 @@ import { Arrow } from './Arrow';
 
 export interface Photo { src: string; alt: string; w: number; h: number; caption?: string; pos?: string }
 
+// Small screenshots are shown whole on white; photos fill their frame.
+export const fit = (p: Photo): React.CSSProperties => (p.w < 900 && p.w / p.h > 1.6
+  ? { objectFit: 'contain', background: '#fff', padding: '4%' }
+  : p.pos ? { objectPosition: p.pos } : {});
+
 // Inline links inside copy: [label](/path) becomes a router link, **x** becomes bold.
 export const rich = (text: string): React.ReactNode[] => {
   const out: React.ReactNode[] = [];
@@ -21,10 +26,24 @@ export const rich = (text: string): React.ReactNode[] => {
   return out;
 };
 
+// The checkout events the offer pages already send (kept so Stripe clicks stay countable as leads).
+const CHECKOUT: Record<string, { event: string; offer: string; value: number }> = {
+  'https://buy.stripe.com/6oUdR25vn32v00r7Eb6c00T': { event: 'target_finder_checkout_click', offer: 'Local Lead Target Finder', value: 20 },
+  'https://buy.stripe.com/8x2aEQ1f7auX00rcYv6c00S': { event: 'blueprint_checkout_click', offer: 'Local Demand Capture Blueprint', value: 250 },
+  'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U': { event: 'authority_system_checkout_click', offer: 'Local Authority System', value: 2000 },
+};
+const trackCheckout = (href: string) => {
+  const c = CHECKOUT[href];
+  if (!c || typeof window === 'undefined') return;
+  const w = window as unknown as { dataLayer?: Record<string, unknown>[]; location: Location };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: c.event, offer: c.offer, value: c.value, currency: 'USD', source: w.location.pathname });
+};
+
 export const Btn: React.FC<{ href: string; children: React.ReactNode; ghost?: boolean; external?: boolean }> = ({ href, children, ghost, external }) => {
   const cls = `lbtn ${ghost ? 'lbtn-ghost' : 'lbtn-primary'}`;
   if (href.startsWith('/') && !href.includes('#')) return <NavLink className={cls} to={href}>{children} <Arrow /></NavLink>;
-  return <a className={cls} href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{children} <Arrow /></a>;
+  return <a className={cls} href={href} onClick={() => trackCheckout(href)} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{children} <Arrow /></a>;
 };
 
 // Page opening: H1 (the search), one answer line, the at-a-glance table, the page's own photo.
@@ -46,8 +65,8 @@ export const LeanHero: React.FC<{
           {secondary && <Btn href={secondary.href} ghost>{secondary.label}</Btn>}
         </div>
       </div>
-      <figure className="lh-photo">
-        <img src={photo.src} alt={photo.alt} width={photo.w} height={photo.h} style={photo.pos ? { objectPosition: photo.pos } : undefined} {...{ fetchpriority: 'high' }} decoding="async" />
+      <figure className={`lh-photo ${fit(photo).objectFit ? 'is-shot' : ''}`}>
+        <img src={photo.src} alt={photo.alt} width={photo.w} height={photo.h} style={fit(photo)} {...{ fetchpriority: 'high' }} decoding="async" />
         {photo.caption && <figcaption>{photo.caption}</figcaption>}
       </figure>
     </div>
@@ -85,7 +104,7 @@ export const MovingHero: React.FC<{ shots: Photo[] }> = ({ shots }) => {
       {shots.map((s, n) => (
         (n === 0 || live) && (
           <figure key={s.src} className={`mh-shot mh-fx${n % 6} ${n === i ? 'on' : ''}`} aria-hidden={n !== i}>
-            <img src={s.src} alt={s.alt} width={s.w} height={s.h} style={s.pos ? { objectPosition: s.pos } : undefined} {...(n === 0 ? { fetchpriority: 'high' } : { loading: 'lazy' })} decoding="async" />
+            <img src={s.src} alt={s.alt} width={s.w} height={s.h} style={fit(s)} {...(n === 0 ? { fetchpriority: 'high' } : { loading: 'lazy' })} decoding="async" />
             {s.caption && <figcaption>{s.caption}</figcaption>}
           </figure>
         )
@@ -202,7 +221,7 @@ export const PhotoCards: React.FC<{ items: CardItem[] }> = ({ items }) => (
   <div className="pcards">
     {items.map((c) => (
       <NavLink key={c.path} to={c.path} className="pcard">
-        {c.image && <div className="pcard-img"><img src={c.image.src} alt={c.image.alt} width={c.image.w} height={c.image.h} loading="lazy" decoding="async" style={c.image.pos ? { objectPosition: c.image.pos } : undefined} /></div>}
+        {c.image && <div className="pcard-img"><img src={c.image.src} alt={c.image.alt} width={c.image.w} height={c.image.h} loading="lazy" decoding="async" style={fit(c.image)} /></div>}
         <div className="pcard-body">
           {c.meta && <span className="pcard-meta">{c.meta}</span>}
           <h3>{c.title}</h3>

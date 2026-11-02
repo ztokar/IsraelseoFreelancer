@@ -26,6 +26,9 @@ import { LocalAuthoritySystemPage } from './components/LocalAuthoritySystemPage'
 import { AiSeoMonthlyPage } from './components/AiSeoMonthlyPage';
 import { SystemIntakePage } from './components/SystemIntakePage';
 import { PrivacyPage } from './components/PrivacyPage';
+import { ClaimPage } from './components/lean/ClaimPage';
+import { CLAIM_PAGES } from './content/claims';
+import { LEAF_PAGES } from './content/leaves';
 import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
@@ -54,29 +57,23 @@ export const routes: RouteRecord[] = [
 
       // 10-page authority map
       { path: 'freelance-seo-israel', element: <ServicePage content={SERVICE_DATA.freelance} /> },
-      { path: 'seo-services-israel', element: <ServicesHubPage /> },
+      { path: 'seo-services-israel', element: <ClaimPage content={CLAIM_PAGES.seo} /> },
+      { path: 'ai-seo-services', element: <ClaimPage content={CLAIM_PAGES.ai} /> },
+      { path: 'local-seo-services', element: <ClaimPage content={CLAIM_PAGES.local} /> },
+      { path: 'reddit-marketing-services', element: <ClaimPage content={CLAIM_PAGES.reddit} /> },
+      // Second text version of home and the four service pages, for his review (noindex, not in the sitemap).
+      { path: 'preview/version-c/home', element: <HomePage version="C" /> },
+      ...Object.values(CLAIM_PAGES).map((c) => ({ path: `preview/version-c${c.path}`, element: <ClaimPage content={c} version="C" /> })),
       { path: 'seoconsulting', element: <ServicePage content={SERVICE_DATA.consultant} /> },
-      { path: 'b2b-seo-israel', element: <ServicePage content={SERVICE_DATA.b2b} /> },
       { path: 'content-marketing-for-seo', element: <ServicePage content={SERVICE_DATA.content} /> },
       { path: 'ai-seo-consultant-israel', element: <ServicePage content={SERVICE_DATA.ai} /> },
       { path: 'technical-seo-audit', element: <ServicePage content={SERVICE_DATA.technical} /> },
       { path: 'link-building-services', element: <ServicePage content={SERVICE_DATA.links} /> },
       { path: 'reviews-results', element: <ReviewsResultsPage /> },
-      ...['ai-visibility-audit', 'geo-content-optimization', 'ai-visibility-tracking-services', 'chatgpt-ads-management'].map((slug) => ({
-        path: slug,
-        lazy: async () => {
-          const [{ ServiceOfferPage }, { SERVICE_OFFERS }] = await Promise.all([
-            import('./components/ServiceOfferPage'),
-            import('./service-offers'),
-          ]);
-          const offer = SERVICE_OFFERS.find((item) => item.slug === slug);
-          if (!offer) throw new Error(`Unknown service: ${slug}`);
-          return { Component: () => <ServiceOfferPage offer={offer} /> };
-        },
-      })),
+      ...LEAF_PAGES.map((c) => ({ path: c.path.slice(1), element: <ClaimPage content={c} leaf /> })),
 
       // First-batch service spokes
-      ...SERVICE_SPOKES.map((spoke) => ({
+      ...SERVICE_SPOKES.filter((s) => s.slug !== 'reddit-marketing-services').map((spoke) => ({
         path: spoke.slug,
         element: <SpokeServicePage content={spoke} />,
       })),
@@ -98,7 +95,6 @@ export const routes: RouteRecord[] = [
       { path: 'blueprint-intake', element: <BlueprintIntakePage /> },
       { path: 'find-my-target', element: <TargetFinderPage /> },
       { path: 'target-intake', element: <TargetIntakePage /> },
-      { path: 'local-authority-system', element: <LocalAuthoritySystemPage /> },
       { path: 'ai-seo-monthly', element: <AiSeoMonthlyPage /> },
       { path: 'system-intake', element: <SystemIntakePage /> },
 

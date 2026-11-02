@@ -22,7 +22,7 @@ const FOOTER = [
     { label: 'AI SEO services', path: '/ai-seo-services' },
     { label: 'What is included', path: '/ai-seo-services#included' },
     { label: 'AI visibility audit', path: '/ai-visibility-audit' },
-    { label: 'GEO content', path: '/geo-content-optimization' },
+    { label: 'Generative engine optimization', path: '/geo-content-optimization' },
     { label: 'AI visibility tracking', path: '/ai-visibility-tracking-services' },
     { label: 'Monthly AI SEO plan', path: '/ai-seo-monthly' },
     { label: 'ChatGPT ads setup', path: '/chatgpt-ads-management' },
@@ -113,7 +113,7 @@ export const Layout: React.FC = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800 flex flex-col">
       <Head>
-        {page?.type === 'noindex' && <meta name="robots" content="noindex, follow" />}
+        {(page?.type === 'noindex' || path.startsWith('/preview/')) && <meta name="robots" content="noindex, follow" />}
         {crumbs && <script type="application/ld+json">{JSON.stringify(crumbs)}</script>}
       </Head>
 
