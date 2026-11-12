@@ -22,7 +22,7 @@ const CLAIM_CARDS = [
   { path: CLAIMS.ai.path, title: CLAIMS.ai.label, text: CLAIMS.ai.line + ' ZStander was named first in ChatGPT.', image: { src: '/images/service-tracking-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar wearing a headset at his desk', pos: 'center 22%' } },
   { path: CLAIMS.reddit.path, title: CLAIMS.reddit.label, text: CLAIMS.reddit.line + ' One post passed 405,000 views.', image: { src: '/images/proof-reddit-405k.jpg', w: 471, h: 159, alt: 'Reddit post with 405,000 views' } },
   { path: CLAIMS.local.path, title: CLAIMS.local.label, text: CLAIMS.local.line + ' $20, $250 or $2,000.', image: { src: '/images/proof-linkedin-morristown.jpg', w: 480, h: 217, alt: 'Client practice at the top of a Google map pack', pos: 'left top' } },
-  { path: CLAIMS.seo.path, title: CLAIMS.seo.label, text: CLAIMS.seo.line + ' ZStander grew Google sales 300%.', image: { src: '/images/service-content-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar working at his desk', pos: 'center 22%' } },
+  { path: CLAIMS.seo.path, title: CLAIMS.seo.label, text: CLAIMS.seo.line + ' ZStander grew Google sales 300% (client figure).', image: { src: '/images/service-content-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar working at his desk', pos: 'center 22%' } },
 ];
 
 const HUB_IMG: Record<string, Photo> = {
