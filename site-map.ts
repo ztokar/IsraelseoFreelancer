@@ -51,6 +51,7 @@ export const SITE_PAGES: SitePage[] = [
   { path: '/ai-visibility-tracking-services', label: 'AI visibility tracking', type: 'leaf', claim: 'ai', updated: D },
   { path: '/ai-seo-monthly', label: 'Monthly AI SEO plan', type: 'leaf', claim: 'ai', updated: '2026-10-22' },
   { path: '/chatgpt-ads-management', label: 'ChatGPT ads setup', type: 'leaf', claim: 'ai', updated: D },
+  { path: '/chatgpt-seo-services', label: 'ChatGPT SEO services', type: 'leaf', claim: 'ai', updated: '2026-11-12' },
   // leaves: Reddit
   { path: '/reddit-posting-service', label: 'Reddit posting service', type: 'leaf', claim: 'reddit', updated: D },
   // leaves: local
@@ -63,6 +64,8 @@ export const SITE_PAGES: SitePage[] = [
   { path: '/saas-seo', label: 'SaaS SEO', type: 'leaf', claim: 'seo', updated: D },
   { path: '/cybersecurity-seo', label: 'Cybersecurity SEO', type: 'leaf', claim: 'seo', updated: D },
   { path: '/shopify-seo', label: 'Shopify SEO', type: 'leaf', claim: 'seo', updated: D },
+  { path: '/ecommerce-seo-services', label: 'Ecommerce SEO services', type: 'leaf', claim: 'seo', updated: '2026-11-12' },
+  { path: '/wordpress-seo-services', label: 'WordPress SEO services', type: 'leaf', claim: 'seo', updated: '2026-11-12' },
   { path: '/google-merchant-center-seo', label: 'Google Merchant Center', type: 'leaf', claim: 'seo', updated: D },
   { path: '/technical-seo-audit', label: 'Technical SEO audit', type: 'leaf', claim: 'seo', updated: D },
   { path: '/content-marketing-for-seo', label: 'SEO content writing', type: 'leaf', claim: 'seo', updated: D },

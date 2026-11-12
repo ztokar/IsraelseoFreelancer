@@ -42,6 +42,7 @@ const ai = {
   plans: { kind: 'table', id: 'plans', h2: 'Ways to start and what they cost', answer: 'Start with a diagnosis or go straight to the monthly plan. The only fixed price is the monthly plan.', head: ['Option', 'What you get', 'Price'], rows: [
     ['[AI visibility audit](/ai-visibility-audit)', 'Where AI answers name you, where they skip you, and why', 'Quoted after a look at your site'],
     ['[Monthly AI SEO plan](/ai-seo-monthly)', 'Pages, links, Reddit, press releases, your Google profile and AI answer checks, with a monthly report', '$750 a month for the first 5 businesses'],
+    ['[ChatGPT SEO](/chatgpt-seo-services)', 'The ChatGPT part alone: buyer prompts, sources, page fixes and a monthly re-check', 'Quoted after a look at your site'],
     ['[Generative engine optimization](/geo-content-optimization)', 'Your key pages rewritten to be quoted', 'Quoted per page set'],
     ['[AI visibility tracking](/ai-visibility-tracking-services)', 'Monthly re-runs of your buyer questions', 'Quoted after a look at your site'],
     ['[ChatGPT ads setup](/chatgpt-ads-management)', 'A setup service for paid placements in ChatGPT. No client result for ChatGPT ads yet.', 'Quoted per campaign'],
@@ -159,7 +160,8 @@ const seo = {
     '[SEO content writing](/content-marketing-for-seo): service, product and comparison pages written for buyers.',
     '[B2B SEO](/b2b-seo-israel), [SaaS SEO](/saas-seo) and [cybersecurity SEO](/cybersecurity-seo): pages for buyers comparing vendors.',
     '[YouTube SEO](/youtube-seo): videos that rank in YouTube and Google search.',
-    '[Shopify SEO](/shopify-seo) and [Google Merchant Center](/google-merchant-center-seo) for online stores.',
+    '[Ecommerce SEO](/ecommerce-seo-services), [Shopify SEO](/shopify-seo) and [Google Merchant Center](/google-merchant-center-seo) for online stores.',
+    '[WordPress SEO](/wordpress-seo-services): the audit and the fixes made inside your WordPress site.',
     '[Programmatic SEO](/programmatic-seo): many useful pages built from one template and real data.',
   ] },
   proof: { kind: 'quotes', id: 'proof', h2: 'Proof from named clients', answer: 'ZStander grew Google sales 300% after collection-page and Google Shopping work (client figure). Zechariah Tokar is trusted by 40+ growth-focused companies.', items: [Q.sean, Q.rivka] },
@@ -212,7 +214,7 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
     pick: 'A',
     versions: {
       A: { answer: 'Zechariah Tokar provides AI SEO services that get companies in the US and other English-speaking markets named in ChatGPT, Gemini, Perplexity and Google AI Overviews. For ZStander, ChatGPT named the store first when asked where to buy lucite shtenders in the US.',
-        blocks: [ai.included, ai.plans, { kind: 'photo', photo: { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers shown above classic search results', caption: 'Illustration: AI answers now sit above the classic results.' } }, ai.proof, ai.measure, ai.cards, ai.demand, ai.fit, ai.faq] },
+        blocks: [ai.included, ai.proof, ai.plans, ai.fit, ai.cards, ai.faq] },
       C: { answer: 'Zechariah Tokar got ZStander named first in ChatGPT for lucite shtenders in the US, and offers the same AI SEO services to companies in the US and other English-speaking markets.',
         blocks: [ai.proof, ai.included, { kind: 'photo', photo: { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers shown above classic search results', caption: 'Illustration: AI answers now sit above the classic results.' } }, ai.plans, ai.measure, ai.fit, ai.cards, ai.faq] },
     },
@@ -237,7 +239,7 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
     pick: 'A',
     versions: {
       A: { answer: 'Zechariah Tokar provides Reddit marketing services that get real people recommending brands from the US and other English-speaking markets, without bans. The same method got one post to 405,000 views.',
-        blocks: [reddit.included, reddit.how, { kind: 'photo', photo: { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a marketer working at a desk in a bright office', caption: 'Illustration: every post is read against the subreddit rules before it goes live.' } }, reddit.proof, reddit.rules, reddit.organic, reddit.search, reddit.cards, reddit.fit, reddit.faq] },
+        blocks: [reddit.included, reddit.proof, reddit.how, reddit.rules, reddit.fit, reddit.cards, reddit.faq] },
       C: { answer: 'Zechariah Tokar wrote a Reddit post that reached 405,000 views and runs Reddit marketing services for companies in the US and other English-speaking markets that want real recommendations without bans.',
         blocks: [reddit.proof, reddit.how, reddit.search, { kind: 'photo', photo: { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a marketer working at a desk in a bright office', caption: 'Illustration: every post is read against the subreddit rules before it goes live.' } }, reddit.included, reddit.rules, reddit.organic, reddit.fit, reddit.faq] },
     },
@@ -263,7 +265,7 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
     pick: 'A',
     versions: {
       A: { answer: 'Zechariah Tokar provides local SEO services for small businesses in the US and other English-speaking markets at three fixed prices, from $20. One client practice sits at the top of the Google map pack in Morristown, NJ.',
-        blocks: [local.ladder, local.included, { kind: 'photo', photo: { src: '/images/blog-web-designer-seo-recommendation.jpg', w: 1200, h: 669, alt: 'Illustration of site structure, mobile speed, brand and search visibility linked together', caption: 'Illustration: pages, speed and trust signals work as one system.' } }, local.proof, local.how, local.quote, local.ai, local.demand, local.fit, local.faq] },
+        blocks: [local.ladder, local.included, local.proof, local.quote, local.fit, local.faq] },
       C: { answer: 'Zechariah Tokar put a client practice at the top of the Google map pack in Morristown, NJ, and sells the same local SEO services to US small businesses at three fixed prices, from $20.',
         blocks: [local.proof, local.quote, local.ai, { kind: 'photo', photo: { src: '/images/blog-web-designer-seo-recommendation.jpg', w: 1200, h: 669, alt: 'Illustration of site structure, mobile speed, brand and search visibility linked together', caption: 'Illustration: pages, speed and trust signals work as one system.' } }, local.ladder, local.included, local.how, local.fit, local.faq] },
     },
@@ -288,7 +290,7 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
     pick: 'A',
     versions: {
       A: { answer: 'Zechariah Tokar is an SEO freelancer who works directly with companies in the US and other English-speaking markets. One senior person does the strategy and the work; ZStander grew Google sales 300% (client figure).',
-        blocks: [seo.included, seo.proof, { kind: 'photo', photo: { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic flowing through a pipeline into revenue', caption: 'Illustration: the pages closest to revenue come first.' } }, seo.vs, seo.hiring, seo.cards, seo.where, seo.demand, seo.faq] },
+        blocks: [seo.included, seo.proof, seo.vs, seo.hiring, seo.cards, seo.faq] },
       C: { answer: 'Zechariah Tokar helped ZStander grow Google sales 300% (client figure) and works as a senior SEO freelancer for companies in the US and other English-speaking markets.',
         blocks: [seo.proof, seo.included, { kind: 'photo', photo: { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic flowing through a pipeline into revenue', caption: 'Illustration: the pages closest to revenue come first.' } }, seo.hiring, seo.vs, seo.cards, seo.where, seo.faq] },
     },

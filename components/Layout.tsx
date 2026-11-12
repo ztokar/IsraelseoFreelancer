@@ -26,6 +26,7 @@ const FOOTER = [
     { label: 'Generative engine optimization', path: '/geo-content-optimization' },
     { label: 'AI visibility tracking', path: '/ai-visibility-tracking-services' },
     { label: 'Monthly AI SEO plan', path: '/ai-seo-monthly' },
+    { label: 'ChatGPT SEO', path: '/chatgpt-seo-services' },
     { label: 'ChatGPT ads setup', path: '/chatgpt-ads-management' },
   ] },
   { heading: 'Reddit', links: [
@@ -46,6 +47,8 @@ const FOOTER = [
     { label: 'B2B SEO', path: '/b2b-seo-israel' },
     { label: 'SaaS SEO', path: '/saas-seo' },
     { label: 'Shopify SEO', path: '/shopify-seo' },
+    { label: 'Ecommerce SEO', path: '/ecommerce-seo-services' },
+    { label: 'WordPress SEO', path: '/wordpress-seo-services' },
     { label: 'Technical SEO audit', path: '/technical-seo-audit' },
     { label: 'SEO content writing', path: '/content-marketing-for-seo' },
   ] },

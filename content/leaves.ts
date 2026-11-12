@@ -240,5 +240,153 @@ const b2b: ClaimContent = {
   }),
 };
 
-export const LEAF_PAGES: ClaimContent[] = [audit, geo, tracking, ads, las, b2b];
+/* ------------------------------------------------------------------ ChatGPT SEO services (added 2026-11-12) */
+const chatgptSeo: ClaimContent = {
+  claim: 'ai', path: '/chatgpt-seo-services',
+  title: 'ChatGPT SEO Services | Get Your Brand Named in ChatGPT Answers',
+  description: 'ChatGPT SEO services from Zechariah Tokar: get your company named when buyers ask ChatGPT who to hire or where to buy. ZStander was named first. $750 monthly plan.',
+  h1: 'ChatGPT SEO Services That Get Your Brand Named in the Answer',
+  photo: { src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, alt: 'ChatGPT answering where to buy lucite shtenders in the US and listing ZStander first', caption: 'ChatGPT naming a client, ZStander, first.' },
+  glance: [
+    ['What you get', 'Your brand named, and linked as a source, when buyers ask ChatGPT about your service'],
+    ['The work', 'Clearer pages, the outside sources ChatGPT reads, and a monthly check of the same buyer prompts'],
+    ['Proof', 'ChatGPT named ZStander first for lucite shtenders in the US'],
+    ['Price', '$750 a month for the first 5 businesses on the [monthly plan](/ai-seo-monthly), or a quoted [audit](/ai-visibility-audit)'],
+    ['Guarantee', 'None. Nobody controls a ChatGPT answer.'],
+  ],
+  serviceType: 'ChatGPT search optimization',
+  formSubject: 'New Inquiry: ChatGPT SEO services', formService: 'ChatGPT SEO services',
+  formTitle: 'Send your site and the question you want ChatGPT to name you for.', formBody: 'You will get a reply with who ChatGPT names today and the first fix.',
+  pick: 'A',
+  versions: one({
+    answer: 'Zechariah Tokar provides ChatGPT SEO services: the work that gets a company named when a buyer asks ChatGPT who to hire or where to buy. For ZStander, ChatGPT named the store first when asked where to buy lucite shtenders in the US.',
+    blocks: [
+      { kind: 'text', id: 'included', h2: 'What ChatGPT SEO services include', answer: 'The work covers your own pages and the outside sources ChatGPT builds its answer from.', check: true, list: [
+        '**Buyer prompts:** the questions your buyers type into ChatGPT, run and logged, with which brands get named.',
+        '**Sources:** the pages, reviews, directories and Reddit threads each answer cites.',
+        '**Your pages:** the offer, the fit and the proof stated in the first lines, with structured data (schema markup), so the answer can quote them.',
+        '**Crawler access:** a check that OpenAI\'s search crawler (OAI-SearchBot) is not blocked in robots.txt and that the pages are indexed.',
+        '**Brand mentions:** getting the company honestly named on the sites those answers lean on.',
+        '**Monthly re-check:** the same prompts run again, with what changed and why.',
+      ] },
+      { kind: 'receipts', id: 'proof', h2: 'Proof: a brand named first in ChatGPT', answer: 'ZStander is the clearest case: indexing fixes, foundational links, schema and clearer pages, then ChatGPT named the store first.', items: [R.chatgpt, R.aiAudit], after: 'More named results are on the [results page](/case-studies).' },
+      { kind: 'table', id: 'vs-google', h2: 'ChatGPT SEO or Google SEO?', answer: 'Most of the work overlaps, and Google rankings still matter: ChatGPT search leans on pages that already rank. The difference is how much of your reputation has to live off your own site.', head: ['', 'Google SEO', 'ChatGPT SEO'], rows: [
+        ['Where you show', 'A list of links', 'A short answer that names a few brands'],
+        ['What it leans on', 'Your page, its links and how well it matches the search', 'Your page, plus what reviews, listings and threads say about you'],
+        ['How it is measured', 'Rankings, clicks and leads', 'The same buyer prompts re-run each month, plus referral visits and leads'],
+      ] },
+      { kind: 'text', id: 'fit', h2: 'Who this fits', answer: 'Companies whose buyers now ask AI search tools such as ChatGPT for a recommendation before they search Google.', list: [
+        'You work with one senior consultant on your search visibility, not an SEO agency team.',
+        'Fits: SaaS, ecommerce, B2B and local service companies selling into English-speaking markets.',
+        'Not a fit: bulk AI content, or anyone who needs a guaranteed mention.',
+      ] },
+      { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
+        { q: 'Can you guarantee ChatGPT will recommend my company?', a: 'No. Nobody controls a ChatGPT answer. The work improves your pages and the evidence about your brand, and the monthly re-checks show whether it is working.' },
+        { q: 'Is ChatGPT SEO the same as GEO, AEO or LLM SEO?', a: 'Mostly yes. Generative engine optimization (GEO), answer engine optimization (AEO) and LLM SEO are names for the same job. This page is the ChatGPT part of it.' },
+        { q: 'Does the work also help with Gemini, Perplexity and Google AI Overviews?', a: 'Yes. They lean on similar sources. The full [AI SEO services](/ai-seo-services) cover all four.' },
+      ] },
+    ],
+  }),
+};
+
+/* ------------------------------------------------------------------ Ecommerce SEO services (added 2026-11-12) */
+const ecommerceSeo: ClaimContent = {
+  claim: 'seo', path: '/ecommerce-seo-services',
+  title: 'Ecommerce SEO Services | More Google Sales From the Store You Have',
+  description: 'Ecommerce SEO services from Zechariah Tokar: category pages, product pages and Google Shopping fixed so your store sells more from Google. ZStander: +300% Google sales.',
+  h1: 'Ecommerce SEO Services for Online Stores',
+  photo: { src: '/images/service-content-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar working at his desk', pos: 'center 25%', caption: 'Zechariah Tokar does the store work himself.' },
+  glance: [
+    ['What you get', 'Category and product pages that rank and sell, plus Google Shopping fixes'],
+    ['Platform', 'Shopify first. Ask about other platforms.'],
+    ['Proof', 'ZStander grew sales from Google 300% (client figure)'],
+    ['Who does the work', 'Zechariah Tokar, one senior consultant'],
+    ['Price', 'Scoped after a look at your store'],
+  ],
+  serviceType: 'Ecommerce SEO',
+  formSubject: 'New SEO Audit Request: Ecommerce SEO', formService: 'Ecommerce SEO',
+  formTitle: 'Send your store and the products you most want to sell.', formBody: 'You will get a reply with the first pages to fix.',
+  pick: 'A',
+  versions: one({
+    answer: 'Zechariah Tokar provides ecommerce SEO services for online stores selling in the US and other English-speaking markets. For ZStander, a Shopify store, the work grew sales from Google by 300% (client figure).',
+    blocks: [
+      { kind: 'text', id: 'included', h2: 'What ecommerce SEO services include', answer: 'The ecommerce SEO strategy is simple. The pages closest to a sale get fixed first: category pages, then product pages, then the product feed.', check: true, list: [
+        '**Category pages:** real copy, FAQs and internal linking on pages that had only a title and a product grid.',
+        '**New category pages:** one for each search your products already fit, by use, feature, audience or occasion.',
+        '**Product pages:** titles, descriptions and product schema so price, stock and reviews can show in the search results.',
+        '**Google Shopping:** product feed fixes and disapproved products in [Google Merchant Center](/google-merchant-center-seo).',
+        '**Technical SEO:** an SEO audit of the store first, then duplicate URLs, canonical tags, Core Web Vitals and indexing.',
+        '**Link building:** relevant links and mentions for the categories that deserve to rank.',
+        '**AI search:** product facts clear enough for Google AI Overviews and ChatGPT to name the store.',
+        '**Keyword research:** the searches shoppers make when they are ready to buy.',
+        '**Reporting:** sales and revenue from search engines, not only organic traffic.',
+      ] },
+      { kind: 'receipts', id: 'proof', h2: 'Proof: ZStander grew Google sales 300%', answer: 'ZStander sells lucite Judaica on Shopify. Most collection pages had only a title and a product grid. After the collection pages, internal links and Google Shopping were fixed, sales from Google grew 300% (client figure).', items: [R.chatgpt], after: 'The full story: [ZStander case study](/case-studies/zstander-shopify-seo). Shopify setup details: [Shopify SEO](/shopify-seo).' },
+      { kind: 'table', id: 'problems', h2: 'What usually holds an online store back', answer: 'Most stores have the products. The pages give Google nothing to rank.', head: ['The problem', 'What it costs', 'The fix'], rows: [
+        ['Category pages with only a product grid', 'Google has nothing to rank', 'Copy, FAQs and links on each category page'],
+        ['One category for many searches', 'Shoppers searching by use or feature never find you', 'A page for each search your products fit'],
+        ['Feed errors in Merchant Center', 'Products missing from Google Shopping', 'Feed and product data fixes'],
+        ['Duplicate and thin URLs', 'Ranking strength split across copies', 'Canonical tags and cleanup'],
+      ] },
+      { kind: 'text', id: 'fit', h2: 'Who this fits', answer: 'Stores with real products people search for, and category pages that are mostly empty.', list: [
+        'Not a fit: guaranteed rankings, or bulk AI-written product pages.',
+      ] },
+      { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
+        { q: 'How much do ecommerce SEO services cost?', a: 'It depends on how many categories and products need work. Send the store for a scope.' },
+        { q: 'Which ecommerce platforms do you work on?', a: 'Mostly Shopify. Ask about other platforms when you send the store.' },
+        { q: 'Can you guarantee rankings or sales?', a: 'No. Nobody controls Google\'s ranking. The work targets the pages that sell, and the report shows sales from Google.' },
+      ] },
+    ],
+  }),
+};
+
+/* ------------------------------------------------------------------ WordPress SEO services (added 2026-11-12) */
+const wordpressSeo: ClaimContent = {
+  claim: 'seo', path: '/wordpress-seo-services',
+  title: 'WordPress SEO Services | One Senior Consultant Fixes and Builds It',
+  description: 'WordPress SEO services from Zechariah Tokar: a technical audit, the fixes made inside your site, and new pages that bring leads. The Behfar Team reached #1 locally.',
+  h1: 'WordPress SEO Services From One Senior Consultant',
+  photo: { src: '/images/service-audit-zechariah.webp', w: 800, h: 450, alt: 'Zechariah Tokar at his laptop', pos: 'center 30%', caption: 'Zechariah Tokar makes the fixes inside your site himself.' },
+  glance: [
+    ['What you get', 'An audit, the fixes made inside your WordPress site, and new pages'],
+    ['Works with', 'Your theme and your SEO plugin, such as Yoast SEO or Rank Math'],
+    ['Proof', 'The Behfar Team: #1 for Midwood Brooklyn real estate (client figure)'],
+    ['Who does the work', 'Zechariah Tokar, one senior WordPress SEO consultant, not an SEO agency team'],
+    ['Price', 'Scoped after a review of your site'],
+  ],
+  serviceType: 'WordPress SEO',
+  formSubject: 'New SEO Audit Request: WordPress SEO', formService: 'WordPress SEO',
+  formTitle: 'Send your WordPress site and the issue you want fixed first.', formBody: 'You will get a reply with the practical next step.',
+  pick: 'A',
+  versions: one({
+    answer: 'Zechariah Tokar provides WordPress SEO services: he finds what holds a WordPress site back in Google, fixes it inside the site, and builds the pages that bring leads. The Behfar Team, a Brooklyn brokerage, reached #1 for Midwood Brooklyn real estate (client figure).',
+    blocks: [
+      { kind: 'text', id: 'included', h2: 'What WordPress SEO services include', answer: 'The work is done in your site, not handed over as a list.', check: true, list: [
+        '**Technical SEO audit:** indexing, crawl errors, redirects, broken links, page speed and Core Web Vitals.',
+        '**Cleanup:** thin, duplicate and leftover pages removed or merged, so Google sees the pages that matter.',
+        '**On-page SEO:** keyword research, title tags, meta descriptions, headings and internal linking on the pages that sell.',
+        '**Schema markup:** structured data for the business, its services, reviews and FAQs.',
+        '**Plugin setup:** your SEO plugin, XML sitemap and robots.txt set correctly.',
+        '**New pages:** service and location pages written for buyers.',
+        '**Link building:** relevant links and local citations for pages that already deserve to rank.',
+        '**Reporting:** Google Search Console results and leads, in plain words.',
+      ] },
+      { kind: 'text', id: 'proof', h2: 'Proof: #1 for Midwood Brooklyn real estate', answer: 'The Behfar Team\'s WordPress site carried years of buildup that held it back. After a technical cleanup, schema and local content, it reached #1 for Midwood Brooklyn real estate (client figure).', after: 'The full story: [The Behfar Team case study](/case-studies/behfar-team-real-estate-seo).' },
+      { kind: 'quotes', id: 'reviews', h2: 'What clients say', items: [Q.brett, Q.menachem] },
+      { kind: 'table', id: 'plugin-or-person', h2: 'An SEO plugin, or a person?', answer: 'A plugin gives you fields and warnings. It cannot decide what to fix or write the page.', head: ['', 'SEO plugin alone', 'With Zechariah Tokar'], rows: [
+        ['Picks the searches worth winning', 'No', 'Yes, by buying intent'],
+        ['Cleans up old and duplicate pages', 'No', 'Yes'],
+        ['Writes titles, pages and schema', 'Gives you the fields', 'Does the writing'],
+      ] },
+      { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
+        { q: 'Do I need a new theme or a rebuild?', a: 'Usually not. Most fixes happen in the site you already have.' },
+        { q: 'What access do you need?', a: 'An admin login to WordPress and access to Google Search Console.' },
+        { q: 'Do I need a WordPress developer as well?', a: 'Usually not. Most search engine fixes on a WordPress site need no custom code.' },
+        { q: 'How much do WordPress SEO services cost?', a: 'It depends on the size of the site and how much you want handled. Send the site for a scope.' },
+      ] },
+    ],
+  }),
+};
+
+export const LEAF_PAGES: ClaimContent[] = [audit, geo, tracking, ads, las, b2b, chatgptSeo, ecommerceSeo, wordpressSeo];
 export type { Block };
