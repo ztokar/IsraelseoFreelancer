@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
-import { ServicePage } from './components/ServicePage';
 import { ServicesHubPage } from './components/ServicesHubPage';
 import { ReviewsResultsPage } from './components/ReviewsResultsPage';
 import { SpokeServicePage } from './components/SpokeServicePage';
@@ -35,7 +34,9 @@ import { REDIRECTS } from './content/folds';
 
 // Pages merged into a better home (their address now redirects in one hop).
 const FOLDED = new Set(REDIRECTS.map(([from]) => from.slice(1)));
-import { SERVICE_DATA, SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
+import { SERVICE_SPOKES, REDDIT_SUPPORT_PAGES } from './constants';
+// Service pages that now use the new template (content/leaves.ts).
+const LEAN = new Set(LEAF_PAGES.map((c) => c.path.slice(1)));
 import { CASE_STUDY_PAGES } from './constants-casestudies';
 import { GUIDE_PAGES } from './constants-guides';
 import type { RouteRecord } from 'vite-react-ssg';
@@ -69,13 +70,11 @@ export const routes: RouteRecord[] = [
       // Second text version of home and the four service pages, for his review (noindex, not in the sitemap).
       { path: 'preview/version-c/home', element: <HomePage version="C" /> },
       ...Object.values(CLAIM_PAGES).map((c) => ({ path: `preview/version-c${c.path}`, element: <ClaimPage content={c} version="C" /> })),
-      { path: 'content-marketing-for-seo', element: <ServicePage content={SERVICE_DATA.content} /> },
-      { path: 'technical-seo-audit', element: <ServicePage content={SERVICE_DATA.technical} /> },
       { path: 'reviews-results', element: <ReviewsResultsPage /> },
       ...LEAF_PAGES.map((c) => ({ path: c.path.slice(1), element: <ClaimPage content={c} leaf /> })),
 
       // First-batch service spokes
-      ...SERVICE_SPOKES.filter((s) => !['reddit-marketing-services', 'reddit-seo'].includes(s.slug) && !FOLDED.has(s.slug)).map((spoke) => ({
+      ...SERVICE_SPOKES.filter((s) => !['reddit-marketing-services', 'reddit-seo'].includes(s.slug) && !FOLDED.has(s.slug) && !LEAN.has(s.slug)).map((spoke) => ({
         path: spoke.slug,
         element: <SpokeServicePage content={spoke} />,
       })),

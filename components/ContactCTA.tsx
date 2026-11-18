@@ -44,7 +44,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
               <li>{issueLabel}</li>
               <li>What a good lead or sale looks like</li>
             </ul>
-            <p className="contact-book-link">Prefer to talk? <NavLink to="/book">Book a 30-minute call.</NavLink></p>
+            <p className="contact-book-link">Want to talk? Message me first. If it is a fit, I will set up a quick call.</p>
           </div>
           <div className="cta-card form-card">
             <ProtectedForm

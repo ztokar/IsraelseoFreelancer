@@ -67,7 +67,6 @@ export const NAV_MENU: NavGroup[] = [
       { label: 'Case Studies', desc: 'Real campaigns and results', path: '/case-studies' },
       { label: 'Reviews & Results', desc: 'Proof and case results', path: '/reviews-results' },
       { label: 'About', desc: 'Who you work with', path: '/about' },
-      { label: 'Book a meeting', desc: 'Choose a time to talk', path: '/book' },
       { label: 'Blog', desc: 'Notes on modern search', path: '/seo-guides' },
     ],
   },
@@ -134,7 +133,6 @@ export const FOOTER_COLUMNS: { heading: string; links: { label: string; path: st
   {
     heading: 'Company',
     links: [
-      { label: 'Book a meeting', path: '/book' },
       { label: 'About', path: '/about' },
       { label: 'Blog', path: '/seo-guides' },
       { label: 'Videos', path: '/about#videos' },

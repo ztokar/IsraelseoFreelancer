@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../../utils/seo';
-import { ContactCTA } from '../ContactCTA';
+import { FORMSPREE_ENDPOINT } from '../ContactCTA';
+import { ProtectedForm } from '../ProtectedForm';
 import { CLAIMS, ClaimKey, SITE_URL } from '../../site-map';
-import {
-  AnswerCard, Btn, DemandChart, Faq, JsonLd, LeanHero, List, Photo, PhotoBreak, Quote, Receipt, Receipts, Section, Steps, Table, rich,
-} from './Blocks';
+import { JsonLd, Photo, rich, trackCheckout } from './Blocks';
 
-// One block of a page. A version is an ordered list of blocks; versions share the same facts.
+// A client result card: who, the result in big type, a line or a quote, and their photo when we have one.
+export interface Result { who: string; role: string; win: string; say?: string; img?: string; logo?: string }
+
+// One block of a service page. Headings are the questions buyers ask; `answer` is the one bold line under it.
 export type Block =
-  | { kind: 'text'; id?: string; h2: string; answer?: string; list?: string[]; check?: boolean; after?: string; tint?: boolean }
-  | { kind: 'steps'; id?: string; h2: string; answer?: string; steps: { h: string; p: string }[]; tint?: boolean }
-  | { kind: 'table'; id?: string; h2: string; answer?: string; head: string[]; rows: string[][]; buy?: { label: string; href: string }[]; after?: string; tint?: boolean }
-  | { kind: 'receipts'; id?: string; h2: string; answer?: string; items: Receipt[]; after?: string; tint?: boolean }
-  | { kind: 'quotes'; id?: string; h2: string; answer?: string; items: { text: string; name: string; role: string }[]; tint?: boolean }
-  | { kind: 'cards'; id?: string; h2: string; answer?: string; cards: { id: string; h: string; p: string[] }[]; tint?: boolean }
-  | { kind: 'demand'; id?: string; h2: string; answer?: string; title: string; rows: [string, number][]; source: string; tint?: boolean }
-  | { kind: 'faq'; id?: string; h2: string; items: { q: string; a: string }[]; tint?: boolean }
-  | { kind: 'photo'; photo: Photo };
+  | { kind: 'results'; id?: string; h2: string; answer?: string; items: Result[]; after?: string }
+  | { kind: 'text'; id?: string; h2: string; answer?: string; list?: string[]; lines?: string[]; after?: string }
+  | { kind: 'steps'; id?: string; h2: string; answer?: string; steps: { h: string; p: string }[] }
+  | { kind: 'table'; id?: string; h2: string; answer?: string; head: string[]; rows: string[][]; buy?: { label: string; href: string }[]; after?: string }
+  | { kind: 'about'; id?: string; h2: string; answer: string; lines: string[] }
+  | { kind: 'faq'; id?: string; h2: string; items: { q: string; a: string; id?: string }[] };
 
 export interface PageVersion {
-  answer: string; // first sentence(s) under the H1: names Zechariah Tokar as the provider and the proof
-  sub?: string;
+  answer: string; // the one line under the H1, first person
   blocks: Block[];
 }
 
@@ -31,8 +29,8 @@ export interface ClaimContent {
   title: string; // keyword | benefit (brand suffix is added centrally)
   description: string;
   h1: string;
-  photo: Photo;
-  glance: [string, string][];
+  photo: Photo; // share image
+  glance: [string, string][]; // four facts under the hero
   serviceType: string;
   primary?: { label: string; href: string; external?: boolean };
   formSubject: string;
@@ -43,70 +41,138 @@ export interface ClaimContent {
   pick: 'A' | 'C';
 }
 
+const FACES = ['yonatan', 'brett', 'sean', 'behfar'];
+const ME: Photo = { src: '/images/zechariah-tokar-outdoors.webp', alt: 'Zechariah Tokar', w: 640, h: 800 };
+
+const RbBtn: React.FC<{ href: string; children: React.ReactNode; ghost?: boolean; external?: boolean }> = ({ href, children, ghost, external }) => {
+  const cls = `btn ${ghost ? 'ghost' : 'fill'}`;
+  if (href.startsWith('/')) return <NavLink className={cls} to={href}>{children}</NavLink>;
+  return <a className={cls} href={href} onClick={() => trackCheckout(href)} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{children}</a>;
+};
+
+const Head2: React.FC<{ h2: string; answer?: string; wide?: boolean }> = ({ h2, answer, wide }) => (
+  <>
+    <h2>{h2}</h2>
+    {answer && <p className={`ans ${wide ? 'widea' : ''}`}>{rich(answer)}</p>}
+  </>
+);
+
 export const renderBlock = (b: Block, i: number) => {
-  const tone = 'tint' in b && b.tint ? 'tint' : 'plain';
   switch (b.kind) {
-    case 'photo':
-      return <PhotoBreak key={i} photo={b.photo} />;
+    case 'results':
+      return (
+        <section key={i} id={b.id} className="sec"><div className="wrap">
+          <Head2 h2={b.h2} answer={b.answer} wide />
+          <div className="cards">
+            {b.items.map((r, n) => (
+              <article key={r.who + r.win} className={`card ${n === 0 ? 'wide' : ''} ${r.img || r.logo ? '' : 'noimg'}`}>
+                <div className="txt">
+                  <p className="who"><b>{r.who}</b> {r.role}</p>
+                  <p className="win">{r.win}</p>
+                  {r.say && <p className="say">{r.say}</p>}
+                </div>
+                {r.img && <img src={r.img} alt={r.who} width={360} height={450} loading="lazy" decoding="async" />}
+                {r.logo && <img className="logo" src={r.logo} alt={r.who} width={392} height={120} loading="lazy" decoding="async" />}
+              </article>
+            ))}
+          </div>
+          {b.after && <p className="after">{rich(b.after)}</p>}
+        </div></section>
+      );
     case 'text':
       return (
-        <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}>
-          {b.list && <List items={b.list} check={b.check} />}
-          {b.after && <p>{rich(b.after)}</p>}
-        </Section>
+        <section key={i} id={b.id} className="sec"><div className="wrap cols">
+          <div><Head2 h2={b.h2} answer={b.answer} /></div>
+          <div>
+            {b.list && <ul className="ticks">{b.list.map((t) => <li key={t}>{rich(t)}</li>)}</ul>}
+            {b.lines && <div className="plain">{b.lines.map((t) => <p key={t}>{rich(t)}</p>)}</div>}
+            {b.after && <p className="after">{rich(b.after)}</p>}
+          </div>
+        </div></section>
       );
     case 'steps':
-      return <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}><Steps items={b.steps} /></Section>;
+      return (
+        <section key={i} id={b.id} className="sec"><div className="wrap cols">
+          <div><Head2 h2={b.h2} answer={b.answer} /></div>
+          <ol className="steps">{b.steps.map((s) => <li key={s.h}><h3>{s.h}</h3><p>{rich(s.p)}</p></li>)}</ol>
+        </div></section>
+      );
     case 'table':
       return (
-        <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}>
-          <Table head={b.head} rows={b.rows} />
-          {b.buy && <div className="lh-actions">{b.buy.map((x, n) => <Btn key={x.href} href={x.href} ghost={n > 0} external={x.href.startsWith('http')}>{x.label}</Btn>)}</div>}
-          {b.after && <p>{rich(b.after)}</p>}
-        </Section>
+        <section key={i} id={b.id} className="sec"><div className="wrap">
+          <Head2 h2={b.h2} answer={b.answer} wide />
+          <div className="tbl"><table>
+            <thead><tr>{b.head.map((h, n) => <th key={n} scope="col">{h}</th>)}</tr></thead>
+            <tbody>{b.rows.map((r, n) => <tr key={n}>{r.map((c, j) => (j === 0 ? <th key={j} scope="row">{rich(c)}</th> : <td key={j}>{rich(c)}</td>))}</tr>)}</tbody>
+          </table></div>
+          {b.buy && <div className="actions left">{b.buy.map((x, n) => <RbBtn key={x.href} href={x.href} ghost={n > 0} external>{x.label}</RbBtn>)}</div>}
+          {b.after && <p className="after">{rich(b.after)}</p>}
+        </div></section>
       );
-    case 'receipts':
+    case 'about':
       return (
-        <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}>
-          <Receipts items={b.items} />
-          {b.after && <p>{rich(b.after)}</p>}
-        </Section>
+        <section key={i} id={b.id} className="photo"><div className="wrap photo-grid">
+          <img src={ME.src} alt={ME.alt} width={ME.w} height={ME.h} loading="lazy" decoding="async" />
+          <div><Head2 h2={b.h2} answer={b.answer} />{b.lines.map((t) => <p key={t}>{rich(t)}</p>)}</div>
+        </div></section>
       );
-    case 'quotes':
-      return <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}><div className="lquotes">{b.items.map((q) => <Quote key={q.name} {...q} />)}</div></Section>;
-    case 'cards':
-      return (
-        <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}>
-          <div className="acards">{b.cards.map((c) => <AnswerCard key={c.id} id={c.id} h={c.h}>{c.p.map((p) => <p key={p}>{rich(p)}</p>)}</AnswerCard>)}</div>
-        </Section>
-      );
-    case 'demand':
-      return <Section key={i} id={b.id} h2={b.h2} answer={b.answer} tone={tone}><DemandChart title={b.title} rows={b.rows} source={b.source} /></Section>;
     case 'faq':
-      return <Section key={i} id={b.id} h2={b.h2} tone={tone}><Faq items={b.items} /></Section>;
+      return (
+        <section key={i} id={b.id} className="sec"><div className="wrap">
+          <h2>{b.h2}</h2>
+          <div className="faq">{b.items.map((f) => <div key={f.q} id={f.id}><h3>{f.q}</h3><p>{rich(f.a)}</p></div>)}</div>
+        </div></section>
+      );
     default:
       return null;
   }
 };
 
-// The other claim pages, one line each (the only sideways links a claim page carries).
+// The other main service pages, one line each (the only sideways links a main page carries).
 const Siblings: React.FC<{ current: ClaimKey }> = ({ current }) => (
-  <Section h2="Other ways to get found" tone="tint">
-    <div className="siblings">
+  <section className="sec"><div className="wrap">
+    <h2>Other ways I get you found</h2>
+    <div className="sibs">
       {(Object.keys(CLAIMS) as ClaimKey[]).filter((k) => k !== current).map((k) => (
-        <NavLink key={k} to={CLAIMS[k].path} className="sibling">
-          <strong>{CLAIMS[k].label}</strong>
-          <span>{CLAIMS[k].line}</span>
-        </NavLink>
+        <NavLink key={k} to={CLAIMS[k].path} className="sib"><b>{CLAIMS[k].label}</b><span>{CLAIMS[k].line}</span></NavLink>
       ))}
     </div>
-  </Section>
+  </div></section>
 );
 
 export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
   const v = c.versions[version || c.pick];
   useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
+  // Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+  const root = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = root.current;
+    if (!el || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.classList.add('anim');
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.classList.add('in');
+      const win = e.target.querySelector('.win');
+      const text = win?.textContent || '';
+      const m = text.match(/\d[\d,]*/);
+      const to = m ? Number(m[0].replace(/,/g, '')) : 0;
+      if (!win || !m || to < 10) return;
+      const t0 = performance.now();
+      const tick = (t: number) => {
+        const k = Math.min(1, (t - t0) / 1300);
+        win.textContent = text.replace(m[0], Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString('en-US'));
+        if (k < 1) requestAnimationFrame(tick); else win.textContent = text;
+      };
+      requestAnimationFrame(tick);
+    }), { threshold: 0.25 });
+    el.querySelectorAll('.card').forEach((n) => io.observe(n));
+    return () => { io.disconnect(); el.classList.remove('anim'); };
+  }, [c]);
   const faq = v.blocks.find((b) => b.kind === 'faq') as Extract<Block, { kind: 'faq' }> | undefined;
+  const results = v.blocks.find((b) => b.kind === 'results');
+  const primary = c.primary || { label: 'Send your site', href: '#contact' };
+  const plain = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\*\*/g, '');
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -121,15 +187,43 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
   const faqSchema = faq && {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\*\*/g, '') } })),
+    mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: plain(f.a) } })),
   };
   return (
-    <div className="lp">
+    <div className="rb" ref={root}>
       <HeadSEO title={c.title} description={c.description} path={c.path} image={c.photo.src} />
-      <LeanHero h1={c.h1} answer={v.answer} sub={v.sub} photo={c.photo} glance={c.glance} primary={c.primary} secondary={{ label: 'Book a call', href: '/book' }} crumb={leaf ? { label: CLAIMS[c.claim].label, path: CLAIMS[c.claim].path } : undefined} />
+      <section className="hero"><div className="wrap">
+        {leaf && <nav className="crumb" aria-label="Breadcrumb"><NavLink to="/">Home</NavLink><span aria-hidden="true">/</span><NavLink to={CLAIMS[c.claim].path}>{CLAIMS[c.claim].label}</NavLink></nav>}
+        <h1 className={c.h1.length > 22 ? 'long' : undefined}>{c.h1}</h1>
+        <p className="lead">{rich(v.answer)}</p>
+        <div className="actions">
+          <RbBtn href={primary.href} external={primary.external}>{primary.label}</RbBtn>
+          {results?.id ? <RbBtn href={`#${results.id}`} ghost>See results</RbBtn> : <RbBtn href="#included" ghost>See what you get</RbBtn>}
+        </div>
+        <p className="faces"><span>{FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
+        <dl className="glance">{c.glance.slice(0, 4).map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
+        <div className="cue" aria-hidden="true"><i /></div>
+      </div></section>
       {v.blocks.map(renderBlock)}
       {!leaf && <Siblings current={c.claim} />}
-      <ContactCTA subject={c.formSubject} service={c.formService} title={c.formTitle} body={c.formBody} submitButtonText="Send my site" />
+      <section id="contact" className="sec"><div className="wrap cols">
+        <div>
+          <h2>How do I start?</h2>
+          <p className="ans">{c.formTitle}</p>
+          <p className="sub">{c.formBody} Want to talk? Message me first. If it’s a fit, I’ll set up a quick call.</p>
+        </div>
+        <div className="rbform">
+          <ProtectedForm
+            formspreeEndpoint={FORMSPREE_ENDPOINT}
+            subject={c.formSubject}
+            submitButtonText="Send your site"
+            showMessage
+            messageLabel="What do you want to be found for?"
+            messagePlaceholder="The search or question you want to show up for"
+            extraFields={<input type="hidden" name="service" value={c.formService} />}
+          />
+        </div>
+      </div></section>
       <JsonLd data={schema} />
       {faqSchema && <JsonLd data={faqSchema} />}
     </div>

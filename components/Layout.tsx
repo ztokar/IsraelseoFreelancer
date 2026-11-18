@@ -61,7 +61,6 @@ const FOOTER = [
   { heading: 'Zechariah Tokar', links: [
     { label: 'About', path: '/about' },
     { label: 'Reviews', path: '/reviews-results' },
-    { label: 'Book a call', path: '/book' },
   ] },
 ];
 

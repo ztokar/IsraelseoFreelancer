@@ -32,7 +32,7 @@ const CHECKOUT: Record<string, { event: string; offer: string; value: number }> 
   'https://buy.stripe.com/8x2aEQ1f7auX00rcYv6c00S': { event: 'blueprint_checkout_click', offer: 'Local Demand Capture Blueprint', value: 250 },
   'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U': { event: 'authority_system_checkout_click', offer: 'Local Authority System', value: 2000 },
 };
-const trackCheckout = (href: string) => {
+export const trackCheckout = (href: string) => {
   const c = CHECKOUT[href];
   if (!c || typeof window === 'undefined') return;
   const w = window as unknown as { dataLayer?: Record<string, unknown>[]; location: Location };
