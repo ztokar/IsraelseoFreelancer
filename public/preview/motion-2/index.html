@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Motion and graphics ideas, round 2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;600&display=swap">
+<style>
+:root{--canvas:#06110b;--surface:#0c1d14;--ink:#f3f8f5;--soft:#a9bdb2;--line:#1d3a2a;--accent:#1ce480;--display:'Sora',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:var(--display);letter-spacing:-.03em;margin:0;line-height:1.05}
+h1{font-size:clamp(38px,6.4vw,72px)}
+h2{font-size:clamp(26px,3.6vw,40px)}
+p{margin:0;color:var(--soft)}
+.note{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:16px 20px;margin:0 0 20px}
+.note b{color:var(--accent);font-family:var(--display)}
+.idea{padding:64px 0;border-top:1px solid var(--line)}
+.stage{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--canvas);min-height:340px;display:grid;place-items:center;text-align:center;padding:40px 20px}
+
+/* 1. typing search */
+.ask{width:min(560px,100%);text-align:left}
+.ask .tag{display:inline-block;font:600 13px/1 var(--display);color:var(--canvas);background:var(--accent);border-radius:999px;padding:7px 12px;margin-bottom:12px}
+.ask .box{display:flex;align-items:center;gap:12px;border:1px solid var(--accent);border-radius:999px;padding:0 20px;min-height:60px;background:var(--surface);font-size:clamp(16px,2.2vw,20px);color:var(--ink)}
+.ask .box svg{flex:none}
+.ask .q{white-space:nowrap;overflow:hidden}
+.ask .q::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:2px;vertical-align:-.18em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.ask .ans{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:16px 20px;background:linear-gradient(180deg,var(--surface),var(--canvas));opacity:0;transform:translateY(10px);transition:opacity .45s,transform .45s cubic-bezier(.23,1,.32,1)}
+.ask .ans.on{opacity:1;transform:none}
+.ask .ans small{display:block;color:var(--soft);font-size:14px}
+.ask .ans b{font:700 clamp(22px,3.2vw,30px)/1.2 var(--display)}
+.ask .ans b em{font-style:normal;color:var(--accent)}
+
+/* 2. buyer map */
+.hub{width:min(520px,100%);height:auto;display:block}
+.hub .wire{fill:none;stroke:var(--line);stroke-width:2}
+.hub .pill{fill:var(--surface);stroke:var(--line)}
+.hub text{font:600 19px var(--display);fill:var(--ink);text-anchor:middle}
+.hub .core{fill:var(--canvas);stroke:var(--accent);stroke-width:2}
+.hub .ring{fill:none;stroke:var(--accent);stroke-width:2;transform-origin:210px 180px;animation:ring 2.6s ease-out infinite}
+.hub .me{fill:var(--accent)}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+
+/* 3. words light up */
+.lit{font:700 clamp(30px,5.4vw,60px)/1.12 var(--display);letter-spacing:-.03em;max-width:15ch;text-align:left;margin:0}
+.lit span{color:#27402f;transition:color .25s}
+.lit span.on{color:var(--ink)}
+.lit span.on.g{color:var(--accent)}
+
+/* 4. light cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%;perspective:900px}
+.lc{--mx:50%;--my:0%;position:relative;border:1px solid var(--line);border-radius:20px;padding:22px 16px;background:var(--surface);overflow:hidden;transition:transform .2s ease-out,border-color .2s;transform-style:preserve-3d}
+.lc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(28,228,128,.28),transparent 65%);opacity:0;transition:opacity .25s}
+.lc:hover{border-color:var(--accent)}
+.lc:hover::before{opacity:1}
+.lc>*{position:relative}
+.lc img{width:96px;aspect-ratio:4/5;border-radius:999px 999px 14px 14px;border:1px solid var(--accent);object-fit:cover;display:block;margin:0 auto 14px}
+.lc b{display:block;font:700 clamp(18px,2.2vw,22px)/1.2 var(--display)}
+.lc span{display:block;color:var(--soft);font-size:15px;margin-top:6px}
+@media (hover:none){.lc::after{content:"";position:absolute;top:0;bottom:0;width:60%;left:-70%;background:linear-gradient(100deg,transparent,rgba(28,228,128,.2),transparent);animation:sheen 4.5s ease-in-out infinite}.lc:nth-child(2)::after{animation-delay:.5s}.lc:nth-child(3)::after{animation-delay:1s}}
+@keyframes sheen{0%,55%{left:-70%}100%{left:120%}}
+
+/* 5. climb */
+.climb{position:relative;width:min(460px,100%);height:296px}
+.climb .n{position:absolute;left:0;width:34px;height:48px;display:grid;place-items:center;font:700 18px var(--display);color:var(--soft)}
+.climb .r{position:absolute;left:44px;right:0;top:0;height:48px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:flex;align-items:center;padding:0 16px;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.climb .r i{display:block;height:10px;border-radius:6px;background:#1d3a2a}
+.climb .r.you{border-color:var(--accent);background:linear-gradient(90deg,rgba(28,228,128,.18),var(--surface));font:700 17px var(--display);color:var(--ink);z-index:2}
+
+/* 6. route */
+.route{display:block;width:min(340px,100%);height:auto;overflow:visible}
+.route .track{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}
+.route .done{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.route .stop{fill:var(--canvas);stroke:var(--line);stroke-width:2;transition:fill .3s,stroke .3s}
+.route .stop.on{fill:var(--accent);stroke:var(--accent)}
+.route text{font:600 16px var(--display);fill:var(--soft);transition:fill .3s}
+.route text.on{fill:var(--ink)}
+.route .ball{fill:var(--accent);filter:drop-shadow(0 0 10px rgba(28,228,128,.8))}
+
+.ask .q{min-width:0}
+@media (max-width:640px){.ask .q{white-space:normal}.ask .box{border-radius:26px;padding:12px 18px;align-items:flex-start;min-height:76px}.ask .box svg{margin-top:2px}.cards{grid-template-columns:minmax(0,1fr)}.wrap{padding:0 16px}.stage{padding:32px 16px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ask .ans{opacity:1;transform:none}.lit span{color:var(--ink)}}
+</style>
+</head>
+<body>
+<div class="wrap" style="padding-top:56px;padding-bottom:40px">
+<h1>Motion and graphics ideas, round 2</h1>
+<p style="font-size:20px;margin:18px 0 0;max-width:46ch">Six new ideas, each one about search, not decoration. Nothing here is on the live site. Scroll down and tell me the numbers you like.</p>
+</div>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 1. The search that types itself.</b> A search box types a real buyer search, then your client shows up as the answer. Both examples are real results. It would sit at the top of the home page.</p>
+<div class="stage"><div class="ask">
+<span class="tag">Asked in ChatGPT</span>
+<div class="box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1ce480" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg><span class="q" id="q"></span></div>
+<div class="ans" id="ans"><small>The first name in the answer</small><b><em>#1</em> <span id="a"></span></b></div>
+</div></div>
+</div></section>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 2. The buyer map.</b> Green dots travel from Google, AI answers, Reddit and Google Maps into your business. One picture that explains what I do.</p>
+<div class="stage">
+<svg class="hub" viewBox="0 0 420 360" role="img" aria-label="Buyers arrive from Google, AI answers, Reddit and Google Maps">
+<path class="wire" id="w1" d="M80 60 Q150 170 210 180"/><path class="wire" id="w2" d="M340 60 Q270 170 210 180"/><path class="wire" id="w3" d="M80 300 Q150 190 210 180"/><path class="wire" id="w4" d="M340 300 Q270 190 210 180"/>
+<circle class="me" r="5"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+<circle class="me" r="5"><animateMotion dur="2.6s" begin=".65s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+<circle class="me" r="5"><animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+<circle class="me" r="5"><animateMotion dur="2.6s" begin="1.95s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
+<rect class="pill" x="10" y="38" width="140" height="44" rx="22"/><text x="80" y="66">Google</text>
+<rect class="pill" x="270" y="38" width="140" height="44" rx="22"/><text x="340" y="66">AI answers</text>
+<rect class="pill" x="10" y="278" width="140" height="44" rx="22"/><text x="80" y="306">Reddit</text>
+<rect class="pill" x="270" y="278" width="140" height="44" rx="22"/><text x="340" y="306">Google Maps</text>
+<circle class="ring" cx="210" cy="180" r="58"/><circle class="core" cx="210" cy="180" r="58"/>
+<text x="210" y="175">Your</text><text x="210" y="197">business</text>
+</svg>
+</div>
+</div></section>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 3. Words that light up.</b> A big line starts dim. Each word turns on as you scroll past it. Scroll slowly to see it.</p>
+<div class="stage" style="min-height:420px"><p class="lit" id="lit">More leads from the places your buyers search.</p></div>
+</div></section>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 4. Cards that catch the light.</b> On a computer, a green light follows the mouse and the card leans toward it. On a phone, a soft shine passes over each card.</p>
+<div class="stage"><div class="cards" id="cards">
+<div class="lc"><img src="/images/clients/yonatan-arch.webp" alt="Yonatan Vinnik" width="96" height="120"><b>#1 on Google Maps in one week</b><span>Yonatan Vinnik, LSW</span></div>
+<div class="lc"><img src="/images/clients/zstander-arch.webp" alt="ZStander" width="96" height="120"><b>Google sales up 300%</b><span>ZStander</span></div>
+<div class="lc"><img src="/images/clients/sean-arch.webp" alt="Sean Littman" width="96" height="120"><b>Nearly 7 figures in revenue</b><span>Sean Littman, GiveSuite</span></div>
+</div></div>
+</div></section>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 5. The climb to #1.</b> A list of five results. The green one climbs from the bottom to the top, then starts again.</p>
+<div class="stage"><div class="climb" id="climb"></div></div>
+</div></section>
+
+<section class="idea"><div class="wrap">
+<p class="note"><b>Idea 6. The ball draws a route.</b> The scroll ball stops going straight down. It winds down the page, leaves a green line behind it and lights up each stop it passes. Scroll to move it.</p>
+<div class="stage" style="padding:40px 20px">
+<svg class="route" id="route" viewBox="0 0 340 660" role="img" aria-label="A route down the page with four stops">
+<path class="track" id="track" d="M170 20 C300 90 300 150 170 220 S40 350 170 420 S300 550 170 640"/>
+<path class="done" id="done" d="M170 20 C300 90 300 150 170 220 S40 350 170 420 S300 550 170 640"/>
+<g id="stops"></g>
+<circle class="ball" id="ball" r="9" cx="170" cy="20"/>
+</svg>
+</div>
+</div></section>
+<div style="height:140px"></div>
+
+<script>
+(function(){
+var still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var vh=function(){return innerHeight};
+var clamp=function(v){return Math.max(0,Math.min(1,v))};
+
+/* 1 */
+var qs=[['lucite shtenders','ZStander'],['best Midwood Brooklyn real estate agent','The Behfar Team']];
+var q=document.getElementById('q'),a=document.getElementById('a'),ans=document.getElementById('ans'),qi=0;
+function type(){var s=qs[qi][0],i=0;ans.classList.remove('on');q.textContent='';a.textContent=qs[qi][1];
+(function step(){q.textContent=s.slice(0,++i);if(i<s.length)setTimeout(step,55);else setTimeout(function(){ans.classList.add('on');setTimeout(function(){qi=(qi+1)%qs.length;type()},2800)},350)})()}
+if(still){q.textContent=qs[0][0];a.textContent=qs[0][1]}else type();
+
+/* 3 */
+var lit=document.getElementById('lit'),words=lit.textContent.split(' ');
+lit.innerHTML=words.map(function(w){return '<span'+(/leads|search/.test(w)?' class="g"':'')+'>'+w+'</span>'}).join(' ');
+var spans=lit.querySelectorAll('span');
+
+/* 4 */
+document.querySelectorAll('.lc').forEach(function(c){
+c.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(!still)c.style.transform='rotateY('+(x-.5)*10+'deg) rotateX('+(.5-y)*10+'deg)'});
+c.addEventListener('pointerleave',function(){c.style.transform=''})});
+
+/* 5 */
+var climb=document.getElementById('climb'),H=62,you;
+for(var i=0;i<5;i++){var n=document.createElement('div');n.className='n';n.style.top=i*H+'px';n.textContent=i+1;climb.appendChild(n)}
+var rows=[];for(i=0;i<5;i++){var r=document.createElement('div');r.className='r'+(i===4?' you':'');if(i===4){r.textContent='Your business';you=r}else r.innerHTML='<i style="width:'+[62,48,70,40][i]+'%"></i>';rows.push(r);climb.appendChild(r)}
+var order,busy=false,seen=false;
+function place(){order.forEach(function(r,k){r.style.transform='translateY('+k*H+'px)'})}
+function reset(){order=rows.slice();place()}
+function up(){var k=order.indexOf(you);if(k===0){setTimeout(function(){reset();setTimeout(run,900)},2600);return}order[k]=order[k-1];order[k-1]=you;place();setTimeout(up,750)}
+function run(){if(!seen){busy=false;return}busy=true;setTimeout(up,500)}
+reset();
+if(still){order=[you].concat(rows.slice(0,4));place()}
+else new IntersectionObserver(function(es){seen=es[0].isIntersecting;if(seen&&!busy)run()},{threshold:.5}).observe(climb);
+
+/* 6 */
+var route=document.getElementById('route'),track=document.getElementById('track'),done=document.getElementById('done'),ball=document.getElementById('ball'),g=document.getElementById('stops');
+var L=track.getTotalLength(),NS='http://www.w3.org/2000/svg',marks=[];
+[[.02,'Results'],[.34,'What I do'],[.66,'Plans'],[.98,'Send your site']].forEach(function(s){var p=track.getPointAtLength(L*s[0]);
+var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',7);c.setAttribute('class','stop');
+var t=document.createElementNS(NS,'text'),left=p.x>170;t.setAttribute('x',p.x+(left?-18:18));t.setAttribute('y',p.y+5);t.setAttribute('text-anchor',left?'end':'start');t.textContent=s[1];
+g.appendChild(c);g.appendChild(t);marks.push([s[0],c,t])});
+done.style.strokeDasharray=L;
+
+function frame(){
+var r=lit.getBoundingClientRect(),p=clamp((vh()*.85-r.top)/(vh()*.5+r.height));
+if(!still)spans.forEach(function(s,k){s.classList.toggle('on',k<Math.round(p*spans.length+.2))});
+r=route.getBoundingClientRect();p=still?1:clamp((vh()*.6-r.top)/r.height);
+var pt=track.getPointAtLength(L*p);ball.setAttribute('cx',pt.x);ball.setAttribute('cy',pt.y);done.style.strokeDashoffset=L*(1-p);
+marks.forEach(function(m){var on=p>=m[0]-.01;m[1].classList.toggle('on',on);m[2].classList.toggle('on',on)});
+}
+var tick=false;addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;frame()})},{passive:true});
+addEventListener('resize',frame);frame();
+})();
+</script>
+</body>
+</html>
