@@ -1,7 +1,38 @@
-import type { Block, ClaimContent } from '../components/lean/ClaimPage';
-import type { Receipt } from '../components/lean/Blocks';
+import type { Block, ClaimContent, PageVersion, Result } from '../components/lean/ClaimPage';
+import type { Photo, Receipt } from '../components/lean/Blocks';
 
-// Verified proof, used word for word from the site and the positioning notes.
+// COPY RULE (his call, 2026-11-18): first person, his LinkedIn voice, very short. Voice sheet: rebuild-2026-11/voice.md.
+// Do not repeat "I do the work myself" and do not compare against agencies. No refund promise.
+// Prices: only the fixed offers show a number. Audits, consulting and custom work are priced after a look at the site.
+
+export const one = (v: PageVersion) => ({ A: v, C: v });
+export const SHARE: Photo = { src: '/images/zechariah-tokar-outdoors.webp', alt: 'Zechariah Tokar', w: 640, h: 800 };
+export const MONTHLY = '$1,000 a month, month to month';
+
+const img = (k: string) => `/images/clients/${k}-arch.webp`;
+
+// Verified results. Quotes are word for word from his LinkedIn recommendations; figures are from his own posts and the case studies.
+export const RES: Record<string, Result> = {
+  yonatan: { who: 'Yonatan Vinnik, LSW', role: 'Child and family therapist', win: '#1 on Google Maps in one week', say: '“Within one week, our business was showing up #1 on Google Maps for every target search term we cared about.”', img: img('yonatan') },
+  zstander: { who: 'ZStander', role: 'Judaica store on Shopify', win: '#1 on ChatGPT for “lucite shtenders”', say: 'Google sales up 300%.', img: img('zstander') },
+  zstanderSales: { who: 'ZStander', role: 'Judaica store on Shopify', win: 'Google sales up 300%', say: 'Most collection pages had only a title and a product grid. I fixed the collection pages, the internal links and Google Shopping.', img: img('zstander') },
+  brett: { who: 'Brett Sheldon, LCSW', role: 'CEO, Launch Point Behavioral Health Network', win: 'Top of his key searches', say: '“Within a couple of months, I was ranking at the top for my key searches, which honestly shocked me.”', img: img('brett') },
+  brettMap: { who: 'Brett Sheldon, LCSW', role: 'Therapy practice in Morristown, NJ', win: 'Top of the Google map pack', say: '“Within a couple of months, I was ranking at the top for my key searches, which honestly shocked me.”', img: img('brett') },
+  brettSaved: { who: 'Brett Sheldon, LCSW', role: 'CEO, Launch Point Behavioral Health Network', win: 'Top of his key searches', say: '“I have literally saved a ridiculous amount of money, easily thousands of dollars!”', img: img('brett') },
+  sean: { who: 'Sean Littman', role: 'Founder, GiveSuite', win: 'Nearly 7 figures in revenue', say: '“He was able to help us fix our clients merchant center account in under 10 hours.”', img: img('sean') },
+  behfar: { who: 'The Behfar Team', role: 'Brooklyn real estate', win: '#1 on ChatGPT for “best Midwood Brooklyn real estate agent”', say: 'From 0 website inquiries to 2 to 4 a month.', logo: '/images/clients/behfar-logo.webp' },
+  behfarLocal: { who: 'The Behfar Team', role: 'Brooklyn real estate', win: 'From 0 inquiries to 2 to 4 a month', say: 'Top of Google for Midwood Brooklyn real estate searches.', logo: '/images/clients/behfar-logo.webp' },
+  therapy: { who: 'A local therapy practice', role: 'Before: generic AI content', win: '0 leads to up to 20 a month', say: 'Same site. My SEO system instead of AI slop.' },
+  northstar: { who: 'North Star Ranch', role: 'Micro-wedding venue', win: '10+ leads a month', say: 'A site built to be the answer for its searches. Client figure.' },
+  founder: { who: 'A founder', role: 'Reply to my AI SEO audit', win: '“WOW!! This deliverable is incredible!”', say: 'The audit found brand-name confusion and citation gaps.' },
+  reddit405: { who: 'My own Reddit post', role: 'Organic, no paid promotion', win: '405,000 views', say: '518 upvotes and 217 comments.' },
+  reddit12: { who: 'A client post', role: 'Written with the same method', win: '12,000 views' },
+  rivka: { who: 'Rivka Neumann', role: 'Founder, Flyhost.me', win: '“He doesn’t just tick boxes, he cares.”', say: '“SEO isn’t about doing all the right things, it’s about bringing the right people to your site. That’s exactly what he does.”' },
+  yehudah: { who: 'Yehudah Kreitenberg', role: 'CBDO, PayIP', win: '“Both creative and analytical, a rare combination”', say: '“Quickly understands how to deliver real results.”' },
+  menachem: { who: 'Menachem Encaoua', role: 'Founder', win: '“Very knowledgeable and honest”', say: '“He took the time to understand my business and explained strategy in a way that was practical and easy to follow.”' },
+};
+
+// Older proof records, still used by the home page, the results page and the Reddit SEO page.
 export const R: Record<string, Receipt> = {
   chatgpt: { src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, label: 'AI answer', metric: 'Named first', alt: 'ChatGPT answering where to buy lucite shtenders in the US and listing ZStander first', caption: 'Asked where to buy lucite shtenders in the US, **ChatGPT named ZStander first.**', source: 'Client: ZStander. Screenshot from Zechariah Tokar\'s LinkedIn.' },
   aiAudit: { src: '/images/proof-linkedin-ai-audit.jpg', w: 480, h: 127, label: 'AI SEO audit', metric: 'Client reply', alt: 'A client message praising an AI SEO audit deliverable', caption: 'A founder\'s reply to an AI SEO audit that found brand-name confusion and citation gaps.', source: 'Client message, shared on LinkedIn.' },
@@ -26,273 +57,221 @@ const STRIPE = {
   system: 'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U',
 };
 
-const DEMAND_SOURCE = 'Monthly US searches from Google Ads data (DataForSEO), measured 2 November 2026 for this site.';
+// How the work gets done. Said once per page, next to his photo.
+export const SYSTEM: Block = { kind: 'about', id: 'how-it-works', h2: 'How does it work?', answer: 'I built an AI system that runs SEO for my clients.', lines: [
+  'It writes the pages, sets up the backlinks and drafts the Reddit posts. I check everything before it goes live.',
+  'All I need is access to your website, your Search Console and your Google Business Profile.',
+  'You stop thinking about SEO. I handle it.',
+] };
 
 /* ------------------------------------------------------------------ AI SEO services */
-const ai = {
-  included: { kind: 'text', id: 'included', h2: 'What AI SEO services include', answer: 'Every engagement covers your own pages, the outside sources AI answers quote, and a record of where you stand.', check: true, list: [
-    '**Baseline:** the questions your buyers ask, run in ChatGPT, Gemini, Perplexity and Google AI Overviews, and logged.',
-    '**Source check:** which sites, reviews and Reddit threads the current answers are built from.',
-    '**Page work:** the answer in the first sentence, clear service facts, structured data (schema markup) and clean crawling. The page-rewrite part is sold alone as [generative engine optimization services](/geo-content-optimization).',
-    '**Mentions:** getting the brand honestly named in the sources those answers use, Reddit included.',
-    '**Brand clarity:** fixing it when an assistant mixes you up with a similar name.',
-    '**Tracking:** the same questions re-run every month, with what changed and why. Also sold alone as [AI visibility tracking](/ai-visibility-tracking-services).',
+const ai: Block[] = [
+  { kind: 'results', id: 'results', h2: 'Does AI SEO work? Here are my clients.', items: [RES.yonatan, RES.zstander, RES.brett, RES.sean, RES.behfar] },
+  { kind: 'text', id: 'included', h2: 'What do AI SEO services include?', answer: 'Everything it takes to get you named. Pages, links, Reddit, your Google profile and a monthly check of what AI says about you.', list: [
+    'A map of the searches your buyers type, with a page matched to each one',
+    'New pages built to win those searches and get cited in AI answers',
+    'Fixes to your existing pages: titles, internal links, speed, technical SEO',
+    'Backlinks, local citations and a filled-out Google Business Profile',
+    'Reddit and PR posts that put your name where your buyers hang out',
+    'Tracking what ChatGPT and Google AI Overviews say about you, and fixing what’s off',
+    'A plain-English report on what moved',
+  ], after: 'Only need one part? [ChatGPT SEO](/chatgpt-seo-services), [page rewrites for AI answers](/geo-content-optimization), [AI visibility tracking](/ai-visibility-tracking-services) or [ChatGPT ads setup](/chatgpt-ads-management).' },
+  { kind: 'table', id: 'plans', h2: 'How much does AI SEO cost?', answer: 'It depends on what you need. Four ways to work with me.', head: ['Option', 'What you get', 'Price'], rows: [
+    ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.', MONTHLY],
+    ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', 'Priced after I look at your site'],
+    ['Consultation', 'A call about your site and your plan. Good for teams that do the work themselves.', '[Book a call](/book)'],
+    ['Custom plan', 'Bigger sites, more locations, tougher markets.', 'Priced after I look at your site'],
   ] },
-  proof: { kind: 'receipts', id: 'proof', h2: 'Proof: brands named in AI answers', answer: 'ZStander is the clearest case: indexing fixes, foundational links, schema and clearer pages, then ChatGPT named the store first.', items: [R.chatgpt, R.aiAudit], after: 'North Star Ranch, a micro-wedding venue, got a site built to be the answer for its searches and reports 10+ leads a month (client figure). More named results are on the [results page](/case-studies).' },
-  plans: { kind: 'table', id: 'plans', h2: 'Ways to start and what they cost', answer: 'Start with a diagnosis or go straight to the monthly plan. The only fixed price is the monthly plan.', head: ['Option', 'What you get', 'Price'], rows: [
-    ['[AI visibility audit](/ai-visibility-audit)', 'Where AI answers name you, where they skip you, and why', 'Quoted after a look at your site'],
-    ['[Monthly AI SEO plan](/ai-seo-monthly)', 'Pages, links, Reddit, press releases, your Google profile and AI answer checks, with a monthly report', '$750 a month for the first 5 businesses'],
-    ['[ChatGPT SEO](/chatgpt-seo-services)', 'The ChatGPT part alone: buyer prompts, sources, page fixes and a monthly re-check', 'Quoted after a look at your site'],
-    ['[Generative engine optimization](/geo-content-optimization)', 'Your key pages rewritten to be quoted', 'Quoted per page set'],
-    ['[AI visibility tracking](/ai-visibility-tracking-services)', 'Monthly re-runs of your buyer questions', 'Quoted after a look at your site'],
-    ['[ChatGPT ads setup](/chatgpt-ads-management)', 'A setup service for paid placements in ChatGPT. No client result for ChatGPT ads yet.', 'Quoted per campaign'],
+  SYSTEM,
+  { kind: 'text', id: 'fit', h2: 'Who is AI SEO for?', answer: 'Local businesses and Shopify stores. That’s where it works best.', lines: [
+    'You have a good service. You want more customers at a fair price.',
+    'Not a fit: bulk AI content, or a report nobody acts on.',
   ] },
-  cards: { kind: 'cards', id: 'questions', h2: 'Answer engine optimization or an AI SEO consultant?', answer: 'Both names describe the same work here, done by one person.', cards: [
-    { id: 'answer-engine-optimization', h: 'Answer engine optimization services', p: ['Buyers searching for answer engine optimization (AEO) services want the same result: to be the answer an assistant gives. The work above covers it, priced once. You are not billed separately for AEO, AI SEO and classic SEO when the work overlaps.'] },
-    { id: 'consultant', h: 'Hiring an AI SEO consultant instead of an agency', p: ['You talk to the person who does the work. Zechariah Tokar runs the audit, writes the page changes and reports the results himself. Based in Israel, he writes in native US English for companies selling into the US, UK, Canada and Australia.'] },
+  { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+    { q: 'How long does AI SEO take?', a: 'One client was #1 on Google Maps in a week. Another took 3.5 months. No guarantees. SEO is not day trading.' },
+    { q: 'How do you measure AI visibility?', a: 'Every month I ask ChatGPT and Google’s AI your buyers’ questions and write down who they name. You see it next to your ranking in search results and your leads.' },
+    { id: 'answer-engine-optimization', q: 'Is AI SEO different from traditional SEO?', a: 'Same base. AI search and a regular search engine pull from the same places: pages that rank, Reddit threads and reviews. Answer engine optimization (AEO) and generative engine optimization (GEO) are names for the same job.' },
+    { q: 'Can ChatGPT do my SEO?', a: 'AI tools can write. They can’t tell you what’s working. I’ve seen owners burn down their site with AI slop and get 0 leads.' },
+    { q: 'Can you guarantee ChatGPT will name my business?', a: 'No. Nobody controls an AI answer. I fix your pages and what the web says about you, then check every month if it’s working.' },
+    { id: 'consultant', q: 'Can I hire you as an AI SEO consultant only?', a: 'Yes. Book a call. I look at your site, tell you what to fix first, and your team does the work.' },
   ] },
-  measure: { kind: 'text', id: 'measure', h2: 'How progress is measured', answer: 'The same buyer questions are asked again each month, and the share of answers that name you is counted.', list: [
-    'Nobody can promise an AI answer will name you. Organic mentions cannot be bought, so none are guaranteed.',
-    'Page fixes and new mentions show up first in the sources, then in the answers.',
-    'Google rankings still matter: AI Overviews and ChatGPT search lean on pages that already rank.',
-  ] },
-  fit: { kind: 'text', id: 'fit', h2: 'Who this fits', answer: 'Companies that rank on Google but are never named when a buyer asks an AI assistant who to use.', list: [
-    'Fits: SaaS, ecommerce, B2B and local service companies selling into English-speaking markets.',
-    'Not a fit: bulk AI content, or a report with no one to act on it.',
-  ] },
-  demand: { kind: 'demand', id: 'demand', h2: 'Buyers already search for this', title: 'US searches a month for AI search services', rows: [['AI SEO services', 1000], ['Generative engine optimization services', 720], ['Answer engine optimization services', 590], ['AI visibility tracking', 320], ['AI SEO consultant', 210], ['AI visibility audit', 210]], source: DEMAND_SOURCE },
-  faq: { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
-    { q: 'Can you guarantee ChatGPT will mention my brand?', a: 'No. Nobody controls an AI answer. The work improves your pages and the evidence about your brand, and the monthly re-runs show whether it is working.' },
-    { q: 'Do I need this if I already rank on Google?', a: 'Often yes. AI answers lean on what other sites say about you, not only on your homepage, so a brand can rank and still be left out.' },
-    { q: 'Do you work with companies outside Israel?', a: 'Yes. Most clients sell into the US and other English-speaking markets.' },
-  ] },
-} satisfies Record<string, Block>;
+];
 
 /* ------------------------------------------------------------------ Reddit marketing services */
-const reddit = {
-  how: { kind: 'steps', id: 'how-it-works', h2: 'How it works', answer: 'The method is slow on purpose: brands that skip the waiting get removed, and a removed account is worth nothing.', steps: [
-    { h: 'Read the subreddit', p: 'The words people use, the topics that come up, and what moderators remove.' },
-    { h: 'Earn trust first', p: 'Helpful comments, so the community sees a real person, not a new account with a link.' },
+const reddit: Block[] = [
+  { kind: 'results', id: 'results', h2: 'Does Reddit marketing work? Here are real posts.', items: [RES.reddit405, RES.reddit12] },
+  { kind: 'text', id: 'included', h2: 'What do Reddit marketing services include?', answer: 'Research first. Then only the posts that fit your brand and the subreddit.', list: [
+    'Subreddit and thread research: where your buyers compare options and what they distrust',
+    'Organic posts and comments that read like a member wrote them, not an ad',
+    'A risk check before anything goes public: subreddit rules, karma and account age, moderator habits',
+    'Reddit Ads advice when paid reach is the cleaner test',
+    'Landing page fixes so the click turns into a lead',
+    'A monthly review: replies, visits, branded searches and leads',
+  ], after: 'Want posts written and checked one at a time? Start with the [Reddit posting service](/reddit-posting-service).' },
+  { kind: 'steps', id: 'how-it-works', h2: 'How does it work?', answer: 'Slow on purpose. A removed account is worth nothing.', steps: [
+    { h: 'Read the subreddit', p: 'The words people use, what comes up, and what moderators remove.' },
+    { h: 'Earn trust first', p: 'Helpful comments, so people see a real person and not a new account with a link.' },
     { h: 'Answer real requests', p: 'A recommendation only where someone asked for one, with honest trade-offs.' },
     { h: 'Fix the landing page', p: 'The page people click to answers the same worry the thread raised.' },
   ] },
-  proof: { kind: 'receipts', id: 'proof', h2: 'Proof from real Reddit posts', answer: 'The method behind these posts is the same one used for client work.', items: [R.r405, R.r12] },
-  included: { kind: 'text', id: 'included', h2: 'What Reddit marketing services include', answer: 'Research first, then only the pieces that fit your brand and the community.', check: true, list: [
-    'Subreddit and thread research: where buyers compare options and what they distrust.',
-    'Organic posts and comments, written to read like a member, not an ad.',
-    'A risk review before anything goes public: subreddit rules, karma and account-age limits, moderator habits.',
-    'Reddit Ads advice when paid reach is the cleaner test.',
-    'Landing-page fixes so the click turns into a lead.',
-    'Monthly review: replies, referral visits, branded searches and leads.',
-  ], after: 'Need posts written and checked one at a time? The [Reddit posting service](/reddit-posting-service) is the smaller start.' },
-  rules: { kind: 'text', id: 'no-bans', h2: 'How bans are avoided', answer: 'No fake accounts, no bought upvotes, no link drops.', list: [
-    'Buying upvotes exists. It is not done here, and accounts that lean on it get caught.',
-    'Karma and account age help, but neither rescues a weak post.',
-    'Sometimes the right advice is to stay quiet in a subreddit and fix the website first.',
+  { kind: 'text', id: 'no-bans', h2: 'How do you avoid Reddit bans?', answer: 'No fake accounts. No bought upvotes. No link drops.', lines: [
+    'Karma and account age help. Neither one saves a weak post.',
+    'Sometimes I’ll tell you to stay quiet in a subreddit and fix your website first.',
   ] },
-  organic: { kind: 'table', id: 'organic-vs-ads', h2: 'Organic Reddit marketing or Reddit Ads?', answer: 'Ads buy attention fast and clearly labeled; organic posts earn trust slowly and keep ranking.', head: ['', 'Organic posts and comments', 'Reddit Ads'], rows: [
-    ['Best for', 'Brands with something useful to add to real questions', 'Testing an offer fast with clear targeting'],
-    ['Trust', 'High when the help is real', 'Labeled as an ad'],
-    ['Lasts', 'Threads keep showing in Google and AI answers', 'Stops when the budget stops'],
+  { kind: 'text', id: 'fit', h2: 'Who is Reddit marketing for?', answer: 'Brands whose buyers already ask Reddit which option to choose.', lines: [
+    'SaaS, ecommerce and service businesses with something useful to add.',
+    'Not a fit: fake reviews, bulk posting or a promised number of upvotes.',
   ] },
-  search: { kind: 'text', id: 'search', h2: 'Why Reddit threads matter for Google and AI answers', answer: 'Reddit threads rank in Google and feed ChatGPT, Perplexity and Google AI Overviews, so one honest recommendation keeps working after the conversation ends.', list: [
-    'The page people land on after a thread gets checked too, so the click is not wasted.',
-    'Brand mentions on Reddit are tracked alongside your Google results.',
+  { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+    { q: 'How much do Reddit marketing services cost?', a: 'It depends on how many subreddits and posts. Send me your brand and the topic and I’ll price it.' },
+    { q: 'Why does Reddit matter for Google and AI answers?', a: 'Reddit threads rank in Google and feed ChatGPT, Perplexity and Google AI Overviews. One honest recommendation keeps working long after the thread goes quiet.' },
+    { q: 'Organic posts or Reddit Ads?', a: 'Ads are fast and labeled as ads. Organic posts earn trust slowly and keep ranking. I’ll tell you which one fits.' },
+    { q: 'How do you measure it?', a: 'Views and upvotes show attention. Replies, visits, branded searches and leads show if it paid off.' },
+    { id: 'risk-review', q: 'Can you review my Reddit plan before I post?', a: 'Yes. I read the subreddits, the old threads and the search results. Then I tell you where to post, where to stay quiet and what to fix on your site first.' },
   ] },
-  cards: { kind: 'cards', id: 'expert', h2: 'Need a second opinion before you post?', cards: [
-    { id: 'risk-review', h: 'Reddit marketing expert review', p: ['Before a campaign goes public, Zechariah Tokar reviews the communities, the old threads and the search results, then says where the brand can take part, where it should stay quiet, and what to fix on the site first.'] },
-  ] },
-  fit: { kind: 'text', id: 'fit', h2: 'Who this fits', answer: 'B2B SaaS, ecommerce and service brands whose buyers already ask Reddit which option to choose.', list: [
-    'Not a fit: anyone who wants fake reviews, bulk posting or a guaranteed number of upvotes.',
-  ] },
-  faq: { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
-    { q: 'Do you buy upvotes or use fake accounts?', a: 'No. Both get brands and domains banned. Every post is written to help the people in the thread.' },
-    { q: 'How is success measured?', a: 'Views and upvotes show attention. Replies, referral visits, branded searches and leads show whether it paid off.' },
-    { q: 'What does it cost?', a: 'It depends on how many communities and posts are involved. Send the brand and the topic for a quote.' },
-  ] },
-} satisfies Record<string, Block>;
+];
 
 /* ------------------------------------------------------------------ Local SEO services */
-const local = {
-  ladder: { kind: 'table', id: 'prices', h2: 'Local SEO prices', answer: 'Three fixed prices. Each step builds on the one before, and you can start at any of them.', head: ['Offer', 'What you get', 'Price'], rows: [
+const local: Block[] = [
+  { kind: 'results', id: 'results', h2: 'Does local SEO work? Here are my clients.', items: [RES.yonatan, RES.brettMap, RES.behfarLocal, RES.therapy] },
+  { kind: 'table', id: 'prices', h2: 'How much does local SEO cost?', answer: 'Three fixed prices. Start at any step.', head: ['Offer', 'What you get', 'Price'], rows: [
     ['[Target Finder](/find-my-target)', 'The one local search worth owning first, found and checked', '$20'],
-    ['[Local Demand Capture Blueprint](/local-demand-capture-blueprint)', 'The full plan of pages, profile changes and links to rank for it', '$250'],
-    ['[Local Authority System](/local-authority-system)', 'The whole system built for you: money pages, supporting content, reputation and AI search setup', '$2,000'],
+    ['[Local Demand Capture Blueprint](/local-demand-capture-blueprint)', 'The full plan: pages, profile changes and links to rank for it', '$250'],
+    ['[Local Authority System](/local-authority-system)', 'I build the whole thing: money pages, supporting content, reputation and AI search setup', '$2,000'],
   ], buy: [
     { label: 'Buy Target Finder $20', href: STRIPE.target },
     { label: 'Buy Blueprint $250', href: STRIPE.blueprint },
     { label: 'Buy System $2,000', href: STRIPE.system },
-  ], after: 'Larger multi-location builds are quoted up from $2,000. After paying, a short form collects your business details.' },
-  included: { kind: 'text', id: 'included', h2: 'What local SEO services include', answer: 'The work covers the map pack, your website and the places Google and AI answers check you against.', check: true, list: [
-    'Pages for the exact searches ready-to-buy customers use. One page, one job.',
-    'Supporting content and internal links that push authority to those pages.',
-    'Your [Google Business Profile](/google-business-profile-seo) and Maps listing filled out and kept current.',
-    'Citations: your name, address and phone (NAP) consistent on the directories that matter.',
-    'Reddit and YouTube activity so the brand looks active wherever buyers check.',
-    'Clear public proof so ChatGPT, Gemini and Perplexity can recommend you by name.',
+  ], after: 'More locations? Bigger builds are quoted from $2,000. After you pay, a short form collects your business details.' },
+  { kind: 'text', id: 'included', h2: 'What do local SEO services include?', answer: 'The map pack, your website and the places Google and AI check you against.', list: [
+    'A page for each search ready-to-buy customers type. One page, one job.',
+    'Supporting content and internal links that push those pages up',
+    'Your [Google Business Profile](/google-business-profile-seo) and Maps listing filled out and kept current',
+    'Citations: the same name, address and phone on the directories that matter',
+    'Reddit and YouTube, so your brand looks alive wherever buyers check',
+    'Clear proof on your site, so ChatGPT and Google’s AI can name you',
   ] },
-  proof: { kind: 'receipts', id: 'proof', h2: 'Proof from local clients', answer: 'Real map-pack results and real leads, shown as screenshots.', items: [R.morristown, R.lead], after: 'The Behfar Team ranks #1 for Midwood Brooklyn real estate searches (client figure). More on the [results page](/case-studies).' },
-  quote: { kind: 'quotes', id: 'reviews', h2: 'What local clients say', items: [Q.yonatan, Q.brett] },
-  how: { kind: 'steps', id: 'how-it-works', h2: 'How it works', steps: [
+  { kind: 'steps', id: 'how-it-works', h2: 'How does it work?', answer: 'Pick one search. Win it. Then the next.', steps: [
     { h: 'Pick the search', p: 'The one local search where buyers are ready to call.' },
-    { h: 'Plan the pages', p: 'What the page, the profile and the citations need to win it.' },
-    { h: 'Build it', p: 'Done for you, or by your team from the plan.' },
+    { h: 'Plan the pages', p: 'What your page, your profile and your citations need to win it.' },
+    { h: 'Build it', p: 'I build it for you, or your team builds from the plan.' },
   ] },
-  ai: { kind: 'text', id: 'ai-answers', h2: 'Local results in AI answers too', answer: 'ChatGPT and Google AI Overviews now answer "who should I call near me" questions, and they draw on the same profile, reviews and pages.', list: [
-    'Clear service and location facts on your site make you easier to quote.',
-    'Consistent details across directories keep the answer from mixing you up with another business.',
+  { kind: 'text', id: 'fit', h2: 'Who is local SEO for?', answer: 'Businesses that want more calls from nearby buyers.', lines: [
+    'Clinics, therapy practices, real estate teams and home service companies.',
+    'Not a fit: no local search demand, or you only sell online.',
   ] },
-  fit: { kind: 'text', id: 'fit', h2: 'Who this fits', answer: 'Small businesses, clinics, therapy practices and home service companies that want more calls from nearby buyers.', list: [
-    'Not a fit: businesses with no local search demand, or that only sell online.',
+  { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+    { q: 'How long does local SEO take?', a: 'One client was #1 on Google Maps in a week. Most take a few months. No guarantees. Nobody controls Google.' },
+    { q: 'Do I need a website for local SEO?', a: 'A Google Business Profile can rank alone. A page for each main service usually makes it stronger.' },
+    { q: 'Does local SEO help with ChatGPT?', a: 'Yes. ChatGPT and Google AI Overviews now answer “who should I call near me”. They read the same profile, reviews and pages.' },
   ] },
-  demand: { kind: 'demand', id: 'demand', h2: 'How many people search for local SEO help', title: 'US searches a month for local SEO help', rows: [['Local SEO services', 6600], ['Local SEO for small business', 1300], ['Local SEO consultant', 880], ['Google Business Profile optimization service', 260]], source: DEMAND_SOURCE },
-  faq: { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
-    { q: 'How much do local SEO services cost?', a: 'Here: $20 for the Target Finder, $250 for the Blueprint, and $2,000 for the done-for-you Local Authority System. Larger multi-location builds are quoted up from $2,000.' },
-    { q: 'Do you guarantee the top spot in Google Maps?', a: 'No. Nobody controls Google\'s ranking. The work targets the pages, profile and proof Google ranks on, aimed at real leads.' },
-    { q: 'Do I need a website for local SEO?', a: 'A Google Business Profile can rank alone, but a page for each main service usually makes it stronger.' },
-  ] },
-} satisfies Record<string, Block>;
+];
 
 /* ------------------------------------------------------------------ SEO freelancer (seo-services-israel) */
-const seo = {
-  included: { kind: 'text', id: 'included', h2: 'What an SEO freelancer does for you', answer: 'The pages closest to revenue get fixed first, then the next pages that deserve to rank get built.', check: true, list: [
-    '[Technical SEO audit](/technical-seo-audit): crawling, indexing, speed and structured data problems, fixed in order of impact.',
-    '[SEO content writing](/content-marketing-for-seo): service, product and comparison pages written for buyers.',
-    '[B2B SEO](/b2b-seo-israel), [SaaS SEO](/saas-seo) and [cybersecurity SEO](/cybersecurity-seo): pages for buyers comparing vendors.',
-    '[YouTube SEO](/youtube-seo): videos that rank in YouTube and Google search.',
-    '[Ecommerce SEO](/ecommerce-seo-services), [Shopify SEO](/shopify-seo) and [Google Merchant Center](/google-merchant-center-seo) for online stores.',
-    '[WordPress SEO](/wordpress-seo-services): the audit and the fixes made inside your WordPress site.',
-    '[Programmatic SEO](/programmatic-seo): many useful pages built from one template and real data.',
+const seo: Block[] = [
+  { kind: 'results', id: 'results', h2: 'Is hiring an SEO freelancer worth it? Ask my clients.', items: [RES.zstanderSales, RES.sean, RES.brettSaved, RES.rivka] },
+  { kind: 'text', id: 'included', h2: 'What does an SEO freelancer do?', answer: 'I fix the pages closest to revenue first. Then I build the next ones that deserve to rank.', list: [
+    '[Technical SEO audit](/technical-seo-audit): crawling, indexing, speed and schema problems, fixed in order of impact',
+    '[SEO content writing](/content-marketing-for-seo): service, product and comparison pages written for buyers',
+    '[B2B SEO](/b2b-seo-israel), [SaaS SEO](/saas-seo) and [cybersecurity SEO](/cybersecurity-seo): pages for buyers comparing vendors',
+    '[Ecommerce SEO](/ecommerce-seo-services), [Shopify SEO](/shopify-seo) and [Google Merchant Center](/google-merchant-center-seo) for online stores',
+    '[WordPress SEO](/wordpress-seo-services): the audit and the fixes, made inside your site',
+    '[YouTube SEO](/youtube-seo): videos that rank in YouTube and Google',
+    '[Programmatic SEO](/programmatic-seo): many useful pages from one template and real data',
   ] },
-  proof: { kind: 'quotes', id: 'proof', h2: 'Proof from named clients', answer: 'ZStander grew Google sales 300% after collection-page and Google Shopping work (client figure). Zechariah Tokar is trusted by 40+ growth-focused companies.', items: [Q.sean, Q.rivka] },
-  vs: { kind: 'table', id: 'freelancer-vs-agency', h2: 'SEO freelancer or SEO agency?', answer: 'A senior freelancer does the strategy and the work; an agency splits them across a team.', head: ['', 'Zechariah Tokar (freelancer)', 'Typical agency'], rows: [
-    ['Who does the work', 'The same senior person you talk to', 'Often a junior team behind an account manager'],
-    ['Reporting', 'What changed, why, and what is next', 'Monthly reports and dashboards'],
-    ['Best when', 'You want direct senior work on the pages that sell', 'You need many people at once across many channels'],
-  ] },
-  hiring: { kind: 'steps', id: 'how-hiring-works', h2: 'How hiring works', answer: 'Send the site first. The reply says what to fix first and whether it is a fit.', steps: [
-    { h: 'Send your site', p: 'With the issue you want SEO to fix first.' },
+  { kind: 'steps', id: 'how-hiring-works', h2: 'How does hiring work?', answer: 'Send me your site first. I’ll tell you what to fix and if we’re a fit.', steps: [
+    { h: 'Send your site', p: 'With the one thing you want SEO to fix first.' },
     { h: 'Get the first fixes', p: 'A short list of the changes closest to revenue.' },
-    { h: 'Agree the scope', p: 'A one-time project or monthly work, priced after the review.' },
-    { h: 'Ship and measure', p: 'Changes go live and the results are reported in plain words.' },
+    { h: 'Agree the scope', p: 'A one-time project or monthly work. Priced after the review.' },
+    { h: 'Ship and measure', p: 'Changes go live. You get a plain-English report on what moved.' },
   ] },
-  cards: { kind: 'cards', id: 'more-services', h2: 'Other SEO work people ask about', cards: [
-    { id: 'consulting', h: 'SEO consulting', p: ['For teams with their own writers or developers: a senior review of the plan, the pages and the next priorities, then your team does the work.'] },
-    { id: 'link-building', h: 'Link building', p: ['Relevant links, mentions, profiles and citations for pages that already deserve to rank, chosen for quality over volume. No bulk link packages.'] },
-    { id: 'press-releases', h: 'Press releases for SEO', p: ['A press release backs a real news angle: who you are, what you do, and where buyers and AI answers can check the brand. The angle, wording and distribution are reviewed for fit first.'] },
+  SYSTEM,
+  { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+    { q: 'How much does an SEO freelancer cost?', a: 'It depends on your site and how much you want handled. Send me the site and I’ll price it. Local SEO has fixed prices on the [local SEO page](/local-seo-services).' },
+    { q: 'Do you only work with Israeli companies?', a: 'No. I’m based in Israel. Most clients sell in the US, UK, Canada and Australia, and I write in native US English. I don’t do Hebrew SEO.' },
+    { id: 'consulting', q: 'Do you offer SEO consulting?', a: 'Yes. For teams with their own writers or developers. I review the plan, the pages and the priorities. Your team does the work.' },
+    { id: 'link-building', q: 'Do you build links?', a: 'Yes. Relevant links, mentions and citations for pages that already deserve to rank. No bulk link packages.' },
+    { id: 'press-releases', q: 'Do press releases help SEO?', a: 'When there’s real news. I check the angle, the wording and where it goes out first.' },
+    { q: 'Can you guarantee rankings?', a: 'No. Nobody controls Google. I work on what moves rankings and leads, and I show you the result.' },
   ] },
-  where: { kind: 'text', id: 'where', h2: 'Based in Israel, writing for US buyers', answer: 'Zechariah Tokar works from Israel for companies in the US, UK, Canada and Australia.', list: [
-    'Copy is written in native US English.',
-    'This is not Hebrew SEO or local Israeli consumer marketing.',
-  ] },
-  demand: { kind: 'demand', id: 'demand', h2: 'What companies search for', title: 'US searches a month for SEO help from one person', rows: [['SEO freelancer', 1600], ['Technical SEO audit', 1000], ['Freelance SEO consultant', 390], ['Shopify SEO expert', 390], ['SaaS SEO consultant', 260]], source: DEMAND_SOURCE },
-  faq: { kind: 'faq', id: 'faq', h2: 'Questions buyers ask', items: [
-    { q: 'How much does an SEO freelancer cost?', a: 'The price depends on the site and how much you want handled. Send the site for a scope. The local SEO offers have fixed prices on the [local SEO page](/local-seo-services).' },
-    { q: 'Do you only work with Israeli companies?', a: 'No. Most clients sell into the US and other English-speaking markets.' },
-    { q: 'Can you guarantee rankings?', a: 'No. Nobody controls Google\'s ranking. The work targets what moves rankings and leads, and reports the result.' },
-  ] },
-} satisfies Record<string, Block>;
+];
 
 export const CLAIM_PAGES: Record<string, ClaimContent> = {
   ai: {
     claim: 'ai', path: '/ai-seo-services',
-    title: 'AI SEO Services | Get Named in ChatGPT and AI Overviews',
-    description: 'AI SEO services for US and English-speaking companies: get named in ChatGPT, Gemini, Perplexity and Google AI Overviews. Audit, page work, tracking, $750 monthly plan.',
-    h1: 'AI SEO Services That Get Your Company Named in ChatGPT',
-    photo: { src: '/images/service-tracking-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar at his desk wearing a headset', pos: 'center 25%', caption: 'Zechariah Tokar does the work himself.' },
+    title: 'AI SEO Services | Get Named in ChatGPT & Google AI',
+    description: 'AI SEO services for local businesses and Shopify stores. I get your business named in ChatGPT and Google AI Overviews. Monthly plan, audits and consulting.',
+    h1: 'AI SEO services',
+    photo: SHARE,
     glance: [
-      ['Who does the work', 'Zechariah Tokar, one senior consultant. No account managers.'],
-      ['AI answers covered', 'ChatGPT, Google AI Overviews, Gemini and Perplexity'],
-      ['Ways to start', 'An [AI visibility audit](/ai-visibility-audit), or the [monthly plan](/ai-seo-monthly) at $750 a month for the first 5 businesses'],
-      ['Proof', 'ZStander named first in ChatGPT; North Star Ranch reports 10+ leads a month'],
-      ['Guarantee', 'None. Progress is measured by asking the same buyer questions every month.'],
+      ['Covers', 'ChatGPT, Google AI Overviews, Google search'],
+      ['Best for', 'Local businesses and Shopify stores'],
+      ['Monthly plan', MONTHLY],
+      ['Also', 'Audits, consulting, custom plans'],
     ],
     serviceType: 'AI search optimization',
     formSubject: 'New Inquiry: AI SEO services', formService: 'AI SEO services',
-    formTitle: 'Send your site and the question you want AI answers to name you for.',
-    formBody: 'You will get a reply with where you stand today and the first fix.',
+    formTitle: 'Send me your site. I’ll look at it first.',
+    formBody: 'You get a reply with where you stand in AI answers and the first fix.',
     pick: 'A',
-    versions: {
-      A: { answer: 'Zechariah Tokar provides AI SEO services that get companies in the US and other English-speaking markets named in ChatGPT, Gemini, Perplexity and Google AI Overviews. For ZStander, ChatGPT named the store first when asked where to buy lucite shtenders in the US.',
-        blocks: [ai.included, ai.proof, ai.plans, ai.fit, ai.cards, ai.faq] },
-      C: { answer: 'Zechariah Tokar got ZStander named first in ChatGPT for lucite shtenders in the US, and offers the same AI SEO services to companies in the US and other English-speaking markets.',
-        blocks: [ai.proof, ai.included, { kind: 'photo', photo: { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers shown above classic search results', caption: 'Illustration: AI answers now sit above the classic results.' } }, ai.plans, ai.measure, ai.fit, ai.cards, ai.faq] },
-    },
+    versions: one({ answer: 'I get your business named when buyers ask ChatGPT who to hire.', blocks: ai }),
   },
   reddit: {
     claim: 'reddit', path: '/reddit-marketing-services',
     title: 'Reddit Marketing Services | Real Recommendations, No Bans',
-    description: 'Reddit marketing services for US and English-speaking brands: subreddit research, organic posts and comments that do not get removed, Reddit Ads advice. Method behind a 405K-view post.',
-    h1: 'Reddit Marketing Services That Earn Real Recommendations',
-    photo: { src: '/images/service-content-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar working at his desk', pos: 'center 25%', caption: 'Every post is planned and checked by Zechariah Tokar.' },
+    description: 'Reddit marketing services: subreddit research, organic posts and comments that don’t get removed, and Reddit Ads advice. The method behind my 405,000-view post.',
+    h1: 'Reddit marketing services',
+    photo: SHARE,
     glance: [
-      ['Who does the work', 'Zechariah Tokar, who wrote a Reddit post that passed 405,000 views'],
-      ['What you get', 'Subreddit research, posts and comments, a risk review, landing-page fixes'],
-      ['Never done', 'Fake accounts, bought upvotes, link drops'],
-      ['Smaller start', 'The [Reddit posting service](/reddit-posting-service): posts written and checked one at a time'],
-      ['Price', 'Quoted after a look at your brand and the communities'],
+      ['My own post', '405,000 views'],
+      ['You get', 'Research, posts, comments, page fixes'],
+      ['Never', 'Fake accounts, bought upvotes, link drops'],
+      ['Price', 'Priced after I look at your brand'],
     ],
     serviceType: 'Reddit marketing',
     formSubject: 'New Inquiry: Reddit marketing services', formService: 'Reddit marketing services',
-    formTitle: 'Send the brand and the Reddit topic you want to test first.',
-    formBody: 'You will get a reply on where your brand can take part and where it should stay quiet.',
+    formTitle: 'Send me your brand and the Reddit topic you want to test.',
+    formBody: 'You get a reply on where your brand can take part and where it should stay quiet.',
     pick: 'A',
-    versions: {
-      A: { answer: 'Zechariah Tokar provides Reddit marketing services that get real people recommending brands from the US and other English-speaking markets, without bans. The same method got one post to 405,000 views.',
-        blocks: [reddit.included, reddit.proof, reddit.how, reddit.rules, reddit.fit, reddit.cards, reddit.faq] },
-      C: { answer: 'Zechariah Tokar wrote a Reddit post that reached 405,000 views and runs Reddit marketing services for companies in the US and other English-speaking markets that want real recommendations without bans.',
-        blocks: [reddit.proof, reddit.how, reddit.search, { kind: 'photo', photo: { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a marketer working at a desk in a bright office', caption: 'Illustration: every post is read against the subreddit rules before it goes live.' } }, reddit.included, reddit.rules, reddit.organic, reddit.fit, reddit.faq] },
-    },
+    versions: one({ answer: 'I get real people recommending your brand on Reddit. No bans.', blocks: reddit }),
   },
   local: {
     claim: 'local', path: '/local-seo-services',
     title: 'Local SEO Services | Fixed Prices From $20 | Map Pack and AI Answers',
-    description: 'Local SEO services at fixed prices: $20 Target Finder, $250 Blueprint, $2,000 done-for-you system. Google Business Profile, map pack, citations, for US small businesses.',
-    h1: 'Local SEO Services at a Fixed Price',
-    photo: { src: '/images/zechariah-tokar-hat-suit.webp', w: 600, h: 876, alt: 'Zechariah Tokar in a black hat and suit, outdoors', pos: 'center 20%', caption: 'Zechariah Tokar builds every local system himself.' },
+    description: 'Local SEO services at fixed prices: $20 Target Finder, $250 Blueprint, $2,000 done-for-you system. Google Business Profile, map pack and citations for small businesses.',
+    h1: 'Local SEO services',
+    photo: SHARE,
     glance: [
-      ['Prices', '$20 Target Finder · $250 Blueprint · $2,000 Local Authority System'],
-      ['Who does the work', 'Zechariah Tokar, one senior consultant'],
-      ['What it covers', 'Google Business Profile, the map pack, local pages, citations, AI answers'],
-      ['Proof', 'Top of the Morristown, NJ map pack; #1 for Midwood Brooklyn real estate (client figure)'],
-      ['Guarantee', 'None. Nobody controls Google\'s ranking, and that is said up front.'],
+      ['Prices', '$20, $250 or $2,000'],
+      ['Covers', 'Google Maps, your website, citations, AI answers'],
+      ['Best for', 'Clinics, therapy practices, home services'],
+      ['Start', 'At any step. Each one builds on the last.'],
     ],
     serviceType: 'Local SEO',
     primary: { label: 'See the prices', href: '#prices' },
     formSubject: 'New Inquiry: Local SEO services', formService: 'Local SEO services',
-    formTitle: 'Not sure which step fits? Send your business.',
-    formBody: 'You will get a reply with the step that fits and the first search worth owning.',
+    formTitle: 'Not sure which step fits? Send me your business.',
+    formBody: 'You get a reply with the step that fits and the first search worth owning.',
     pick: 'A',
-    versions: {
-      A: { answer: 'Zechariah Tokar provides local SEO services for small businesses in the US and other English-speaking markets at three fixed prices, from $20. One client practice sits at the top of the Google map pack in Morristown, NJ.',
-        blocks: [local.ladder, local.included, local.proof, local.quote, local.fit, local.faq] },
-      C: { answer: 'Zechariah Tokar put a client practice at the top of the Google map pack in Morristown, NJ, and sells the same local SEO services to US small businesses at three fixed prices, from $20.',
-        blocks: [local.proof, local.quote, local.ai, { kind: 'photo', photo: { src: '/images/blog-web-designer-seo-recommendation.jpg', w: 1200, h: 669, alt: 'Illustration of site structure, mobile speed, brand and search visibility linked together', caption: 'Illustration: pages, speed and trust signals work as one system.' } }, local.ladder, local.included, local.how, local.fit, local.faq] },
-    },
+    versions: one({ answer: 'I get local businesses to the top of Google Maps. Fixed prices from $20.', blocks: local }),
   },
   seo: {
     claim: 'seo', path: '/seo-services-israel',
-    title: 'SEO Freelancer for US Companies | One Senior Consultant, No Agency',
-    description: 'Hire Zechariah Tokar, a senior SEO freelancer for US and English-speaking companies: technical audits, content, B2B, SaaS and Shopify SEO. ZStander +300% Google sales.',
-    h1: 'SEO Freelancer for Companies in the US and English-Speaking Markets',
-    photo: { src: '/images/service-audit-zechariah.webp', w: 800, h: 450, alt: 'Zechariah Tokar at his laptop', pos: 'center 30%', caption: 'Zechariah Tokar, SEO freelancer.' },
+    title: 'SEO Freelancer for US Companies | More Leads From Google',
+    description: 'SEO freelancer for companies selling in the US: technical audits, content, B2B, SaaS, Shopify and WordPress SEO. ZStander grew Google sales 300%.',
+    h1: 'SEO freelancer',
+    photo: SHARE,
     glance: [
-      ['Who does the work', 'Zechariah Tokar, one senior consultant, strategy and execution'],
-      ['Services', 'Technical audits, content, B2B, SaaS, Shopify and programmatic SEO'],
-      ['Proof', 'ZStander +300% Google sales (client figure); trusted by 40+ companies'],
-      ['Based', 'Israel, writing in native US English for US, UK, Canada and Australia'],
-      ['Price', 'Scoped after a review of your site'],
+      ['Services', 'Audits, content, B2B, SaaS, Shopify, WordPress'],
+      ['Result', 'ZStander: Google sales up 300%'],
+      ['Based', 'Israel. I write in native US English.'],
+      ['Price', 'Priced after I look at your site'],
     ],
     serviceType: 'SEO consulting',
     formSubject: 'New SEO Audit Request: SEO freelancer', formService: 'SEO freelancer',
-    formTitle: 'Send your site and the issue you want SEO to fix first.',
-    formBody: 'You will get a reply with the practical next step.',
+    formTitle: 'Send me your site and the one thing you want SEO to fix first.',
+    formBody: 'You get a reply with the practical next step.',
     pick: 'A',
-    versions: {
-      A: { answer: 'Zechariah Tokar is an SEO freelancer who works directly with companies in the US and other English-speaking markets. One senior person does the strategy and the work; ZStander grew Google sales 300% (client figure).',
-        blocks: [seo.included, seo.proof, seo.vs, seo.hiring, seo.cards, seo.faq] },
-      C: { answer: 'Zechariah Tokar helped ZStander grow Google sales 300% (client figure) and works as a senior SEO freelancer for companies in the US and other English-speaking markets.',
-        blocks: [seo.proof, seo.included, { kind: 'photo', photo: { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic flowing through a pipeline into revenue', caption: 'Illustration: the pages closest to revenue come first.' } }, seo.hiring, seo.vs, seo.cards, seo.where, seo.faq] },
-    },
+    versions: one({ answer: 'I get companies selling in the US more leads and sales from Google.', blocks: seo }),
   },
 };

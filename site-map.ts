@@ -20,7 +20,7 @@ export const CLAIMS: Record<ClaimKey, { path: string; label: string; short: stri
   ai: { path: '/ai-seo-services', label: 'AI SEO services', short: 'AI Search', line: 'Get your company named in ChatGPT and Google AI answers.' },
   reddit: { path: '/reddit-marketing-services', label: 'Reddit marketing services', short: 'Reddit', line: 'Get real people on Reddit recommending your brand, without bans.' },
   local: { path: '/local-seo-services', label: 'Local SEO services', short: 'Local SEO', line: 'Get your business into the map pack and the AI answer, at a fixed price.' },
-  seo: { path: '/seo-services-israel', label: 'SEO freelancer services', short: 'SEO Services', line: 'Hire one senior person for Google SEO instead of an agency.' },
+  seo: { path: '/seo-services-israel', label: 'SEO freelancer services', short: 'SEO Services', line: 'Get more leads and sales from Google.' },
 };
 
 export const HUBS: Record<string, { label: string; line: string }> = {
