@@ -188,7 +188,7 @@ export const LocalDemandCaptureBlueprintPage: React.FC = () => {
     <>
       <HeadSEO title={TITLE} description={DESC} path="/local-demand-capture-blueprint" image="/images/proof-linkedin-morristown.jpg" />
 
-      <main className="gp blueprint">
+      <main className="gp blueprint rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Local Demand Capture Blueprint
         </div>

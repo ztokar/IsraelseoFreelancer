@@ -36,7 +36,7 @@ export const SITE_PAGES: SitePage[] = [
   // entity
   { path: '/', label: 'Home', type: 'home', updated: D },
   { path: '/about', label: 'About Zechariah Tokar', type: 'entity', updated: D },
-  { path: '/book', label: 'Book a call', type: 'entity', updated: '2026-10-18' },
+  { path: '/book', label: 'Talk to me', type: 'entity', updated: '2026-11-18' },
   { path: '/privacy', label: 'Privacy', type: 'legal', updated: D },
 
   // claims
