@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../../utils/seo';
 import { FORMSPREE_ENDPOINT } from '../ContactCTA';
@@ -143,6 +143,32 @@ const Siblings: React.FC<{ current: ClaimKey }> = ({ current }) => (
 export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
   const v = c.versions[version || c.pick];
   useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
+  // Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+  const root = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = root.current;
+    if (!el || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.classList.add('anim');
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.classList.add('in');
+      const win = e.target.querySelector('.win');
+      const text = win?.textContent || '';
+      const m = text.match(/\d[\d,]*/);
+      const to = m ? Number(m[0].replace(/,/g, '')) : 0;
+      if (!win || !m || to < 10) return;
+      const t0 = performance.now();
+      const tick = (t: number) => {
+        const k = Math.min(1, (t - t0) / 1300);
+        win.textContent = text.replace(m[0], Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString('en-US'));
+        if (k < 1) requestAnimationFrame(tick); else win.textContent = text;
+      };
+      requestAnimationFrame(tick);
+    }), { threshold: 0.25 });
+    el.querySelectorAll('.card').forEach((n) => io.observe(n));
+    return () => { io.disconnect(); el.classList.remove('anim'); };
+  }, [c]);
   const faq = v.blocks.find((b) => b.kind === 'faq') as Extract<Block, { kind: 'faq' }> | undefined;
   const results = v.blocks.find((b) => b.kind === 'results');
   const primary = c.primary || { label: 'Send your site', href: '#contact' };
@@ -164,7 +190,7 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
     mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: plain(f.a) } })),
   };
   return (
-    <div className="rb">
+    <div className="rb" ref={root}>
       <HeadSEO title={c.title} description={c.description} path={c.path} image={c.photo.src} />
       <section className="hero"><div className="wrap">
         {leaf && <nav className="crumb" aria-label="Breadcrumb"><NavLink to="/">Home</NavLink><span aria-hidden="true">/</span><NavLink to={CLAIMS[c.claim].path}>{CLAIMS[c.claim].label}</NavLink></nav>}
@@ -176,6 +202,7 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
         </div>
         <p className="faces"><span>{FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
         <dl className="glance">{c.glance.slice(0, 4).map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
+        <div className="cue" aria-hidden="true"><i /></div>
       </div></section>
       {v.blocks.map(renderBlock)}
       {!leaf && <Siblings current={c.claim} />}

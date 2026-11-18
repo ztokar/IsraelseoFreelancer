@@ -122,3 +122,19 @@ body:has(.rb) .page-end a{color:var(--rb-accent)}
 }
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
 body:has(.rb) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
+/* motion: the dropping dot under the hero, and result cards that rise in */
+.rb .cue{position:relative;width:2px;height:96px;background:var(--rb-line);margin:36px auto -20px;border-radius:2px}
+.rb .cue i{position:absolute;left:-6px;top:0;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);animation:rb-drop 2.2s cubic-bezier(.5,0,.3,1) infinite}
+@keyframes rb-drop{0%{transform:translateY(-8px);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateY(92px);opacity:0}}
+.rb.anim .card{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1)}
+.rb.anim .card.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rb .cue i{animation:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
+/* booking page in the same look */
+.rb.booking-page,.rb .booking-intro,.rb .booking-calendar-section{background:var(--rb-canvas)!important;color:var(--rb-ink)}
+.rb.booking-page h1,.rb.booking-page h2,.rb.booking-page strong{color:var(--rb-ink)!important;font-family:var(--rb-display)}
+.rb.booking-page .eyebrow{color:var(--rb-accent)!important}
+.rb .booking-lead,.rb .booking-person span,.rb .booking-details span,.rb .booking-help,.rb .booking-loading p{color:var(--rb-soft)!important}
+.rb .booking-details,.rb .booking-frame-shell,.rb .booking-loading{background:var(--rb-surface)!important;border-color:var(--rb-line)!important;box-shadow:none!important}
+.rb .booking-details svg{color:var(--rb-accent)!important}
+.rb .booking-details div{border-color:var(--rb-line)!important}
+.rb.booking-page a{color:var(--rb-accent)!important}

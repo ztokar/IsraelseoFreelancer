@@ -7,7 +7,7 @@ import type { Photo, Receipt } from '../components/lean/Blocks';
 
 export const one = (v: PageVersion) => ({ A: v, C: v });
 export const SHARE: Photo = { src: '/images/zechariah-tokar-outdoors.webp', alt: 'Zechariah Tokar', w: 640, h: 800 };
-export const MONTHLY = '$1,000 a month, month to month';
+export const MONTHLY = '$750 a month, month to month';
 
 const img = (k: string) => `/images/clients/${k}-arch.webp`;
 

@@ -4,12 +4,12 @@ import { HeadSEO, updatePageSEO } from '../utils/seo';
 import './booking.css';
 
 const TITLE = 'Book a Meeting with Zechariah Tokar';
-const DESCRIPTION = 'Choose a time to talk with Zechariah about your website, SEO, AI search, or Reddit. Check availability and book a Google Meet call.';
+const DESCRIPTION = 'Book a paid SEO consultation with Zechariah Tokar ($250). Your website, AI search or Reddit, on a Google Meet call.';
 const MEETINGS = {
   consultation: {
     slug: 'consultation', title: TITLE, description: DESCRIPTION,
     heading: 'Find a time that works for you.',
-    lead: 'Tell me what you’re working on. We’ll talk through your website, what needs to improve, and whether I can help.',
+    lead: 'A consultation is $250. We go through your website, what needs to improve and what to fix first.',
     calendarHeading: 'Book a conversation.',
   },
   client: {
@@ -87,7 +87,7 @@ export const BookingPage: React.FC = () => {
 
   return <>
     <HeadSEO title={details.title} description={details.description} path="/book" image="/images/service-audit-zechariah.webp" />
-    <article className="gp booking-page">
+    <article className="gp booking-page rb">
       <section className="booking-intro">
         <div className="wrap booking-intro-grid">
           <div>
@@ -118,7 +118,7 @@ export const BookingPage: React.FC = () => {
               <p>{slow ? 'Taking longer than expected. You can open the calendar above or try again.' : 'Loading available times…'}</p>
               {slow && <button type="button" onClick={retry}>Try again</button>}
             </div>}
-            <iframe ref={frame} key={`${meeting}-${attempt}`} src={`${bookingUrl}/embed?embed=&theme=light&layout=month_view`} title="Choose a meeting time with Zechariah Tokar" className="booking-frame" style={{ height: frameHeight }} onError={() => setSlow(true)} />
+            <iframe ref={frame} key={`${meeting}-${attempt}`} src={`${bookingUrl}/embed?embed=&theme=dark&layout=month_view`} title="Choose a meeting time with Zechariah Tokar" className="booking-frame" style={{ height: frameHeight }} onError={() => setSlow(true)} />
           </div>
           <p className="booking-help">Have a question before booking? <a href="mailto:zack.tokar@gmail.com">Email me</a>.</p>
         </div>
