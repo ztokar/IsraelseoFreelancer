@@ -29,7 +29,7 @@ export const SystemIntakePage: React.FC = () => {
   return (
     <>
       <HeadSEO title={TITLE} description={DESC} path="/system-intake" />
-      <main className="gp blueprint">
+      <main className="gp blueprint rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Project kickoff
         </div>

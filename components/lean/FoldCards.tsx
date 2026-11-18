@@ -7,7 +7,7 @@ export const FoldCards: React.FC<{ path: string }> = ({ path }) => {
   const cards = FOLD_CARDS[path];
   if (!cards) return null;
   return (
-    <section className="lsec fold-cards lp" aria-label="More answers on this topic">
+    <section className="lsec fold-cards lp rbskin" aria-label="More answers on this topic">
       <div className="lwrap lsec-in">
         <h2>More answers on this topic</h2>
         <div className="acards">

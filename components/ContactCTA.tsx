@@ -29,7 +29,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({
   messageLabel,
   messagePlaceholder,
 }) => (
-  <div className="gp">
+  <div className="gp rbskin">
     <section className="gp-cta contact-cta" id={id}>
       <div className="wrap">
         {eyebrow && <span className="eyebrow">{eyebrow}</span>}

@@ -17,7 +17,7 @@ export const CaseStudyPage: React.FC<{ content: CaseStudyPageData }> = ({ conten
   return (
     <>
       <HeadSEO title={content.seoTitle} description={content.metaDescription} path={`/case-studies/${content.slug}`} />
-      <div className="gp">
+      <div className="gp rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           <NavLink to="/case-studies">Case Studies</NavLink><span>/</span>{content.client}

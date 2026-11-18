@@ -87,7 +87,44 @@ html,body{overflow-x:clip}
 .rb .sib:hover{border-color:var(--rb-accent)}
 .rb .sib b{display:block;font-family:var(--rb-display);font-size:19px;color:var(--rb-ink)}
 .rb .sib span{display:block;color:var(--rb-soft);margin-top:6px;font-size:16px;line-height:1.5}
+.rb .sibs.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rb .after a{text-underline-offset:3px}
 .rb .sec[id],.rb .photo[id]{scroll-margin-top:80px}
+/* the same dark look on the guide hubs, results, about and privacy pages (class rbskin on the .lp root): copy and markup untouched */
+.lp.rbskin{--l-ink:var(--rb-ink);--l-ink-soft:#d5e1da;--l-muted:var(--rb-soft);--l-canvas:var(--rb-canvas);--l-surface:var(--rb-surface);--l-acc:var(--rb-accent);--l-acc-deep:var(--rb-accent);--l-acc-tint:var(--rb-line);--l-hair:var(--rb-line);--l-shadow:none}
+.lp.rbskin h1,.lp.rbskin h2,.lp.rbskin h3{font-family:var(--rb-display);letter-spacing:-.03em}
+.lp.rbskin .lh{background:radial-gradient(60% 70% at 30% 0%,var(--rb-surface),var(--rb-canvas))}
+.lp.rbskin .lbtn-primary{color:var(--rb-accent-ink);box-shadow:none}
+.lp.rbskin .lbtn-primary:hover{background:var(--rb-ink)}
+.lp.rbskin .lbtn-ghost:hover{color:var(--rb-accent)}
+.lp.rbskin a:not(.lbtn):not(.pcard):hover{color:var(--rb-ink)}
+.lp.rbskin .glance th,.lp.rbskin .ltable thead th{background:var(--rb-canvas)}
+.lp.rbskin .pcard:hover{border-color:var(--rb-accent);box-shadow:none}
+.lp.rbskin .pcard-img,.lp.rbskin .lh-photo img,.lp.rbskin .mh{background:var(--rb-line)}
+.lp.rbskin .lh-photo::before{border-color:var(--rb-line)}
+.lp.rbskin .receipt,.lp.rbskin .glance{box-shadow:none}
+.lp.rbskin a.sibling{background:var(--rb-surface)}
+/* older .gp pages in the dark look: panels that were black-on-white stay dark, buttons use the banner green */
+.gp.rbskin .chl{background:var(--rb-surface)!important;border:1px solid var(--rb-accent);color:var(--rb-ink)!important}
+.gp.rbskin .chl .metric{color:var(--rb-accent)!important}
+.gp.rbskin .gtbl th{background:var(--rb-canvas)!important;color:var(--rb-soft)!important}
+.gp.rbskin form button[type="submit"]{background:var(--rb-accent)!important;color:var(--rb-accent-ink)!important;border-radius:999px}
+.gp.rbskin form button[type="submit"]:hover:not(:disabled){background:var(--rb-ink)!important}
+/* the two blog articles (utility-class markup): same dark look, copy untouched */
+.rbblog{background:var(--rb-canvas);color:#d5e1da}
+.rbblog header{background:radial-gradient(60% 70% at 50% 0%,var(--rb-surface),var(--rb-canvas))!important}
+.rbblog section,.rbblog article{background:var(--rb-canvas)!important}
+.rbblog div[class*="bg-"],.rbblog a[class*="border-slate"]{background:var(--rb-surface)!important;border-color:var(--rb-line)!important}
+.rbblog [class*="border-l-4"]{border:1px solid var(--rb-line)!important;border-radius:14px}
+.rbblog [class*="border-t"]{border-color:var(--rb-line)!important}
+.rbblog h1,.rbblog h2,.rbblog h3,.rbblog h4{font-family:var(--rb-display);color:var(--rb-ink)!important;letter-spacing:-.02em}
+.rbblog strong,.rbblog th,.rbblog code{color:var(--rb-ink)!important}
+.rbblog p,.rbblog li,.rbblog td,.rbblog span,.rbblog blockquote{color:#d5e1da!important}
+.rbblog a,.rbblog a span,.rbblog header div span{color:var(--rb-accent)!important}
+.rbblog a h3{color:var(--rb-ink)!important}
+.rbblog table,.rbblog th,.rbblog td,.rbblog hr{border-color:var(--rb-line)!important}
+.rbblog thead,.rbblog tr{background:transparent!important}
+.rbblog pre,.rbblog code{background:var(--rb-surface)!important}
 /* the site's real form, recoloured for the dark page */
 .rb .rbform label{color:var(--rb-soft)}
 .rb .rbform input,.rb .rbform textarea{background:var(--rb-surface);border:1px solid var(--rb-line);border-radius:14px;color:var(--rb-ink);min-height:50px}
@@ -107,7 +144,7 @@ body:has(:is(.rb,.rbskin)) .page-end{background:var(--rb-canvas);border-top:1px 
 body:has(:is(.rb,.rbskin)) .page-end p{color:var(--rb-soft)}
 body:has(:is(.rb,.rbskin)) .page-end a{color:var(--rb-accent)}
 @media (max-width:820px){
-.rb .cols,.rb .photo-grid,.rb .faq,.rb .cards,.rb .sibs{grid-template-columns:minmax(0,1fr)}
+.rb .cols,.rb .photo-grid,.rb .faq,.rb .cards,.rb .sibs,.rb .sibs.four{grid-template-columns:minmax(0,1fr)}
 .rb .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
 .rb .glance div:nth-child(3){border-left:0}
 .rb .glance div:nth-child(n+3){border-top:1px solid var(--rb-line)}
@@ -123,9 +160,13 @@ body:has(:is(.rb,.rbskin)) .page-end a{color:var(--rb-accent)}
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
 body:has(:is(.rb,.rbskin)) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
 /* motion: the dropping dot under the hero, and result cards that rise in */
-.rb .cue{position:relative;width:2px;height:96px;background:var(--rb-line);margin:36px auto -20px;border-radius:2px}
-.rb .cue i{position:absolute;left:-6px;top:0;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);animation:rb-drop 2.2s cubic-bezier(.5,0,.3,1) infinite}
-@keyframes rb-drop{0%{transform:translateY(-8px);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateY(92px);opacity:0}}
+/* the green ball rides down the right edge of the screen as the page scrolls (ScrollOrb sets --p 0..1 and --x) */
+.rb .orb{--p:0;--x:0px;position:fixed;z-index:30;right:clamp(7px,2.2vw,34px);top:calc(84px + var(--p) * (100vh - 124px));width:14px;height:14px;pointer-events:none;transform:translateX(var(--x));transition:transform .25s ease-out}
+.rb .orb i{display:block;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);box-shadow:0 0 0 5px rgba(28,228,128,.14),0 0 22px 4px rgba(28,228,128,.45);animation:rb-bob 1.5s cubic-bezier(.5,0,.3,1) infinite}
+.rb .orb::before{content:"";position:absolute;left:6px;bottom:12px;width:2px;height:calc(var(--p) * 64px + 10px);border-radius:2px;background:linear-gradient(180deg,transparent,var(--rb-accent));opacity:.55}
+.rb .orb.moved i{animation:none}
+@keyframes rb-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(16px)}}
+@media (max-width:820px){.rb .orb,.rb .orb i{width:10px;height:10px}.rb .orb{right:3px}.rb .orb::before{left:4px}}
 .rb.anim .card{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1)}
 .rb.anim .card.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rb .cue i{animation:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.rb .orb i{animation:none}.rb .orb{transition:none}.rb.anim .card{opacity:1;transform:none;transition:none}}

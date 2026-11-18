@@ -23,9 +23,9 @@ export const AboutPage: React.FC = () => {
         path="/about"
       />
 
-      <div className="gp">
+      <div className="gp rbskin">
       </div>
-      <div className="lp">
+      <div className="lp rbskin">
         <LeanHero
           h1="About Zechariah Tokar"
           answer="Zechariah Tokar is a search visibility consultant who gets companies in the US and other English-speaking markets found in Google, AI answers and Reddit. He is based in Israel, writes in native US English, and does the strategy and the work himself."
@@ -39,7 +39,7 @@ export const AboutPage: React.FC = () => {
           secondary={{ label: 'See the results', href: '/case-studies' }}
         />
       </div>
-      <div className="gp">
+      <div className="gp rbskin">
 
         <section className="authority">
           <div className="wrap">

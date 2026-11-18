@@ -43,7 +43,7 @@ export const GuidePage: React.FC<{ content: GuidePageData }> = ({ content }) => 
   return (
     <>
       <HeadSEO title={content.seoTitle} description={content.metaDescription} path={`/${content.slug}`} />
-      <div className="gp gp-guide">
+      <div className="gp gp-guide rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           {parentOf(`/${content.slug}`) && <><NavLink to={parentOf(`/${content.slug}`)!.path}>{parentOf(`/${content.slug}`)!.label}</NavLink><span>/</span></>}{content.h1}

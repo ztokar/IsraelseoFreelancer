@@ -64,7 +64,7 @@ export const ComparisonFreelancerVsAgency: React.FC = () => {
         }}
       />
 
-      <div className="gp gp-guide">
+      <div className="gp gp-guide rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           <NavLink to="/seo-services-israel">SEO Services</NavLink><span>/</span>SEO freelancer vs agency

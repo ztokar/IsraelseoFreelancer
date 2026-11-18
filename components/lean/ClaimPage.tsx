@@ -140,10 +140,34 @@ const Siblings: React.FC<{ current: ClaimKey }> = ({ current }) => (
   </div></section>
 );
 
-export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
-  const v = c.versions[version || c.pick];
-  useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
-  // Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+// Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+// The green ball (his ask 2026-11-18): it rides down the side of the screen, top to bottom, as the page scrolls, swaying a little.
+// Before the first scroll it bobs to invite scrolling. Decorative only: no pointer events, hidden from assistive tech.
+export const ScrollOrb: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf = 0;
+    const place = () => {
+      raf = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      el.style.setProperty('--p', p.toFixed(4));
+      el.style.setProperty('--x', still ? '0px' : `${(Math.sin(p * Math.PI * 7) * 9).toFixed(1)}px`);
+      el.classList.toggle('moved', window.scrollY > 40);
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(place); };
+    place();
+    window.addEventListener('scroll', on, { passive: true });
+    window.addEventListener('resize', on);
+    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  return <div className="orb" ref={ref} aria-hidden="true"><i /></div>;
+};
+
+export const useRise = (c: unknown) => {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = root.current;
@@ -169,6 +193,15 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
     el.querySelectorAll('.card').forEach((n) => io.observe(n));
     return () => { io.disconnect(); el.classList.remove('anim'); };
   }, [c]);
+  return root;
+};
+
+export const RB_FACES = ['yonatan', 'brett', 'sean', 'behfar'];
+
+export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
+  const v = c.versions[version || c.pick];
+  useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
+  const root = useRise(c);
   const faq = v.blocks.find((b) => b.kind === 'faq') as Extract<Block, { kind: 'faq' }> | undefined;
   const results = v.blocks.find((b) => b.kind === 'results');
   const primary = c.primary || { label: 'Send your site', href: '#contact' };
@@ -202,8 +235,8 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
         </div>
         <p className="faces"><span>{FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
         <dl className="glance">{c.glance.slice(0, 4).map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
-        <div className="cue" aria-hidden="true"><i /></div>
       </div></section>
+      <ScrollOrb />
       {v.blocks.map(renderBlock)}
       {!leaf && <Siblings current={c.claim} />}
       <section id="contact" className="sec"><div className="wrap cols">

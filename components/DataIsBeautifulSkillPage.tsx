@@ -19,7 +19,7 @@ export const DataIsBeautifulSkillPage: React.FC = () => {
   return (
     <>
       <HeadSEO title={TITLE} description={DESC} path="/resources/dataisbeautiful-claude-skill" />
-      <div className="gp">
+      <div className="gp rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           Resources<span>/</span>DataIsBeautiful Claude skill

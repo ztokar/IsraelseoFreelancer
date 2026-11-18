@@ -17,7 +17,7 @@ export const BlogArticle5: React.FC = () => {
   return (
     <>
       <HeadSEO title="Best Free SEO Checkers for Hebrew Websites & Israeli Startups in 2026 | Zechariah Tokar" description="Free SEO tools that actually work for Hebrew websites. Tested checkers for Israeli startups covering technical audits, keyword tracking, and content optimization." path="/blog/hebrew-seo-checkers-free-tools" image="/images/blog-hebrew-seo-checkers.jpg" type="article" />
-      <div className="animate-fade-in-up">
+      <div className="animate-fade-in-up rbskin rbblog">
       {/* Article Header */}
       <header className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-primary/5">
         <div className="max-w-4xl mx-auto w-full relative z-10 text-center space-y-6">

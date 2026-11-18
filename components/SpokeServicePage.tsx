@@ -73,7 +73,7 @@ export const SpokeServicePage: React.FC<SpokeServicePageProps> = ({ content }) =
     <>
       <HeadSEO title={content.seoTitle} description={content.metaDescription} path={`/${content.slug}`} />
 
-      <div className="gp">
+      <div className="gp rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>
           <NavLink to={(parentOf(`/${content.slug}`)?.path || content.parentPath)}>{(parentOf(`/${content.slug}`)?.label || content.parentLabel)}</NavLink><span>/</span>{content.eyebrow}

@@ -4,7 +4,7 @@ import { Section, List } from './lean/Blocks';
 
 // Plain description of what the site's own code collects. Draft for Zechariah to confirm before it goes live.
 export const PrivacyPage: React.FC = () => (
-  <div className="lp">
+  <div className="lp rbskin">
     <HeadSEO title="Privacy" description="What israelseofreelancer.com collects when you send a form, book a call or buy an offer, and who processes it." path="/privacy" />
     <section className="lh"><div className="lwrap"><h1>Privacy</h1>
       <p className="lh-answer">This site collects only what you send in a form, a booking or a payment, plus standard visit statistics. Zechariah Tokar runs the site and reads every message himself.</p>
