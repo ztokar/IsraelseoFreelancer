@@ -1,0 +1,82 @@
+/* Hallmark floor · version C "Banner" · his LinkedIn banner: deep green canvas, Sora, arch photo result cards · signature: the arch cards from his Featured section */
+/* critique: one accent (banner green), photos carry the proof, question headings with one bold answer each */
+:root{--canvas:#06110b;--surface:#0c1d14;--ink:#f3f8f5;--ink-soft:#a9bdb2;--line:#1d3a2a;--accent:#1ce480;--accent-ink:#06110b;--display:'Sora',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif}
+html,body{overflow-x:clip}
+body{background:var(--canvas)}
+.rb{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.rb *{box-sizing:border-box}
+.rb .wrap{max-width:1140px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.rb p{margin:0;color:inherit}
+.rb a{color:var(--accent)}
+.rb h1,.rb h2,.rb h3{font-family:var(--display);color:var(--ink);margin:0;font-weight:700;letter-spacing:-.03em;text-wrap:balance;overflow-wrap:break-word;min-width:0}
+.rb .hero{text-align:center;padding:clamp(44px,7vw,92px) 0 clamp(40px,6vw,72px);background:radial-gradient(60% 70% at 50% 0%,var(--surface),var(--canvas))}
+.rb h1{font-size:clamp(46px,7.4vw,96px);line-height:1}
+.rb .lead{font-size:clamp(19px,2vw,24px);line-height:1.4;color:var(--ink-soft);max-width:40ch;margin:22px auto 0}
+.rb .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.rb .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:999px;font:600 16px/1 var(--display);text-decoration:none;cursor:pointer;border:1px solid var(--accent);transition:transform .14s cubic-bezier(.23,1,.32,1),background-color .14s}
+.rb .btn.fill{background:var(--accent);color:var(--accent-ink)}
+.rb .btn.fill:hover{background:var(--ink);border-color:var(--ink)}
+.rb .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.rb .btn.ghost:hover{border-color:var(--accent)}
+.rb .btn:disabled{opacity:.5;cursor:not-allowed}
+.rb .btn:active{transform:scale(.97)}
+.rb a:focus-visible,.rb .btn:focus-visible,.rb input:focus-visible,.rb textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.rb .faces{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:26px;font-size:15px;color:var(--ink-soft)}
+.rb .faces span{display:flex}
+.rb .faces img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--canvas);margin-left:-10px;background:var(--line)}
+.rb .faces img:first-child{margin-left:0}
+.rb .glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(36px,5vw,60px) 0 0;border:1px solid var(--line);border-radius:20px;background:var(--surface);text-align:left}
+.rb .glance div{padding:18px 22px;border-left:1px solid var(--line)}
+.rb .glance div:first-child{border-left:0}
+.rb .glance dt{font-size:14px;color:var(--ink-soft)}
+.rb .glance dd{margin:4px 0 0;font-family:var(--display);font-weight:600;font-size:18px;line-height:1.3}
+.rb .sec{padding:clamp(48px,7vw,96px) 0;border-top:1px solid var(--line)}
+.rb h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08}
+.rb h3{font-size:20px;letter-spacing:-.015em;line-height:1.25}
+.rb .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:clamp(28px,4vw,44px)}
+.rb .card{display:grid;grid-template-columns:minmax(0,1fr) clamp(120px,15vw,190px);gap:20px;align-items:end;border:1px solid var(--accent);border-radius:22px;padding:26px 26px 0;background:linear-gradient(180deg,var(--surface),var(--canvas));overflow:hidden;min-height:260px}
+.rb .card.wide{grid-column:1/-1;grid-template-columns:minmax(0,1fr) clamp(170px,24vw,300px);min-height:320px}
+.rb .card .txt{padding-bottom:26px;align-self:center}
+.rb .card img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:999px 999px 0 0;border:1px solid var(--accent);border-bottom:0;background:var(--line)}
+.rb .card img.logo{aspect-ratio:auto;border-radius:14px;border:0;background:var(--ink);padding:16px;margin-bottom:26px;align-self:center;object-fit:contain}
+.rb .who{font-size:14px;color:var(--accent);line-height:1.35}
+.rb .who b{display:block;font-family:var(--display);font-size:17px;color:var(--ink)}
+.rb .win{font-family:var(--display);font-weight:700;letter-spacing:-.03em;font-size:clamp(24px,2.6vw,34px);line-height:1.08;margin-top:14px}
+.rb .card.wide .win{font-size:clamp(30px,4.6vw,60px);line-height:1}
+.rb .say{color:var(--ink-soft);margin-top:12px;font-size:16px;line-height:1.5;max-width:44ch}
+.rb .cols{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,5vw,72px);align-items:start}
+.rb .ans{font-family:var(--display);font-weight:600;font-size:clamp(20px,2vw,24px);line-height:1.35;color:var(--accent);margin-top:16px;max-width:30ch}
+.rb .sub{color:var(--ink-soft);margin-top:14px;max-width:38ch}
+.rb .ticks{list-style:none;margin:0;padding:0}
+.rb .ticks li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line)}
+.rb .ticks li:first-child{padding-top:0}
+.rb .ticks li::before{content:"";position:absolute;left:2px;top:22px;width:14px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.rb .ticks li:first-child::before{top:8px}
+.rb .plain p{font-size:19px;line-height:1.5}
+.rb .plain p+p{margin-top:12px;color:var(--ink-soft)}
+.rb .photo{border-top:1px solid var(--line);padding:clamp(48px,7vw,96px) 0;background:var(--surface)}
+.rb .photo-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:center}
+.rb .photo-grid img{display:block;width:100%;height:auto;max-height:520px;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:999px 999px 22px 22px;border:1px solid var(--accent)}
+.rb .photo-grid p:not(.ans){font-size:19px;margin-top:14px;color:var(--ink-soft);max-width:44ch}
+.rb .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,5vw,72px);margin-top:clamp(24px,3vw,36px)}
+.rb .faq div{padding:22px 0;border-top:1px solid var(--line)}
+.rb .faq p{color:var(--ink-soft);margin-top:8px}
+.rb .form{display:grid;gap:14px}
+.rb .form label{display:grid;gap:6px;font-size:14px;color:var(--ink-soft)}
+.rb .form input,.rb .form textarea{background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--ink);font:400 16px/1.4 var(--body);padding:13px 14px;min-height:50px;width:100%}
+.rb .form .btn{justify-self:start}
+.gpnav{background:var(--canvas)!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important}
+.gpnav .logo,.gpnav .menu a,.gpnav .mobile a{color:var(--ink)!important}
+.gpnav .menu a.active{background:var(--surface)!important;color:var(--accent)!important}
+.gpnav .pill{background:var(--accent)!important;color:var(--accent-ink)!important;box-shadow:none!important}
+.gpnav .burger span{background:var(--ink)!important}
+.gpnav .mobile{background:var(--canvas)!important}
+@media (max-width:820px){
+.rb .cols,.rb .photo-grid,.rb .faq,.rb .cards{grid-template-columns:minmax(0,1fr)}
+.rb .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rb .glance div:nth-child(3){border-left:0}
+.rb .glance div:nth-child(n+3){border-top:1px solid var(--line)}
+.rb .card,.rb .card.wide{grid-template-columns:minmax(0,1fr) 112px;padding:20px 20px 0;min-height:0}
+.rb .photo-grid img{max-width:320px}
+}
+@media (prefers-reduced-motion:reduce){.rb .btn{transition:none}}
