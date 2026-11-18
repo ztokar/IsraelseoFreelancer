@@ -121,3 +121,4 @@ body:has(.rb) .page-end a{color:var(--rb-accent)}
 .rb .tbl td{margin-top:6px}
 }
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
+body:has(.rb) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
