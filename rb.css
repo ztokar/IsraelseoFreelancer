@@ -115,7 +115,7 @@ html,body{overflow-x:clip}
 .rbblog header{background:radial-gradient(60% 70% at 50% 0%,var(--rb-surface),var(--rb-canvas))!important}
 .rbblog section,.rbblog article{background:var(--rb-canvas)!important}
 .rbblog div[class*="bg-"],.rbblog a[class*="border-slate"]{background:var(--rb-surface)!important;border-color:var(--rb-line)!important}
-.rbblog [class*="border-l-4"]{border-left-color:var(--rb-accent)!important}
+.rbblog [class*="border-l-4"]{border:1px solid var(--rb-line)!important;border-radius:14px}
 .rbblog [class*="border-t"]{border-color:var(--rb-line)!important}
 .rbblog h1,.rbblog h2,.rbblog h3,.rbblog h4{font-family:var(--rb-display);color:var(--rb-ink)!important;letter-spacing:-.02em}
 .rbblog strong,.rbblog th,.rbblog code{color:var(--rb-ink)!important}
