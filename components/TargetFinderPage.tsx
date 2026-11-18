@@ -86,7 +86,7 @@ export const TargetFinderPage: React.FC = () => {
     <>
       <HeadSEO title={TITLE} description={DESC} path="/find-my-target" image="/images/proof-google-lead.jpg" />
 
-      <main className="gp blueprint">
+      <main className="gp blueprint rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Find my target
         </div>

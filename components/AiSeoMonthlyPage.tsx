@@ -226,7 +226,7 @@ export const AiSeoMonthlyPage: React.FC = () => {
       <HeadSEO title={TITLE} description={DESC} path={PATH} image="/images/ai-seo-monthly-share.jpg" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
 
-      <main className="gp blueprint aim">
+      <main className="gp blueprint aim rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Monthly AI SEO
         </div>

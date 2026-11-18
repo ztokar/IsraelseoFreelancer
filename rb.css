@@ -2,7 +2,7 @@
 /* critique: one accent (banner green), photos carry the proof, question headings with one bold answer each */
 /* Applies only on pages that render .rb (the service pages). Tokens sit on body so the header picks them up too. */
 :root{--rb-ph:#7f9488;--rb-err:#ff9d8a;--rb-canvas:#06110b;--rb-surface:#0c1d14;--rb-ink:#f3f8f5;--rb-soft:#a9bdb2;--rb-line:#1d3a2a;--rb-accent:#1ce480;--rb-accent-ink:#06110b;--rb-display:'Sora',system-ui,sans-serif;--rb-body:'Inter',system-ui,sans-serif}
-body:has(.rb){background:var(--rb-canvas)}
+body:has(:is(.rb,.rbskin)){background:var(--rb-canvas)}
 html,body{overflow-x:clip}
 .rb{background:var(--rb-canvas);color:var(--rb-ink);font-family:var(--rb-body);font-size:17px;line-height:1.65}
 .rb *{box-sizing:border-box}
@@ -97,15 +97,15 @@ html,body{overflow-x:clip}
 .rb .rbform [role=status]{color:var(--rb-accent)}
 .rb .rbform [role=alert]{color:var(--rb-err)}
 /* header and page end on the dark pages */
-body:has(.rb) .gpnav{background:var(--rb-canvas)!important;border-bottom:1px solid var(--rb-line)!important;box-shadow:none!important}
-body:has(.rb) .gpnav .logo,body:has(.rb) .gpnav .menu a,body:has(.rb) .gpnav .mobile a{color:var(--rb-ink)!important}
-body:has(.rb) .gpnav .menu a.active{background:var(--rb-surface)!important;color:var(--rb-accent)!important}
-body:has(.rb) .gpnav .pill{background:var(--rb-accent)!important;color:var(--rb-accent-ink)!important;box-shadow:none!important}
-body:has(.rb) .gpnav .burger span{background:var(--rb-ink)!important}
-body:has(.rb) .gpnav .mobile{background:var(--rb-canvas)!important}
-body:has(.rb) .page-end{background:var(--rb-canvas);border-top:1px solid var(--rb-line);color:var(--rb-soft)}
-body:has(.rb) .page-end p{color:var(--rb-soft)}
-body:has(.rb) .page-end a{color:var(--rb-accent)}
+body:has(:is(.rb,.rbskin)) .gpnav{background:var(--rb-canvas)!important;border-bottom:1px solid var(--rb-line)!important;box-shadow:none!important}
+body:has(:is(.rb,.rbskin)) .gpnav .logo,body:has(:is(.rb,.rbskin)) .gpnav .menu a,body:has(:is(.rb,.rbskin)) .gpnav .mobile a{color:var(--rb-ink)!important}
+body:has(:is(.rb,.rbskin)) .gpnav .menu a.active{background:var(--rb-surface)!important;color:var(--rb-accent)!important}
+body:has(:is(.rb,.rbskin)) .gpnav .pill{background:var(--rb-accent)!important;color:var(--rb-accent-ink)!important;box-shadow:none!important}
+body:has(:is(.rb,.rbskin)) .gpnav .burger span{background:var(--rb-ink)!important}
+body:has(:is(.rb,.rbskin)) .gpnav .mobile{background:var(--rb-canvas)!important}
+body:has(:is(.rb,.rbskin)) .page-end{background:var(--rb-canvas);border-top:1px solid var(--rb-line);color:var(--rb-soft)}
+body:has(:is(.rb,.rbskin)) .page-end p{color:var(--rb-soft)}
+body:has(:is(.rb,.rbskin)) .page-end a{color:var(--rb-accent)}
 @media (max-width:820px){
 .rb .cols,.rb .photo-grid,.rb .faq,.rb .cards,.rb .sibs{grid-template-columns:minmax(0,1fr)}
 .rb .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -121,7 +121,7 @@ body:has(.rb) .page-end a{color:var(--rb-accent)}
 .rb .tbl td{margin-top:6px}
 }
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
-body:has(.rb) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
+body:has(:is(.rb,.rbskin)) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
 /* motion: the dropping dot under the hero, and result cards that rise in */
 .rb .cue{position:relative;width:2px;height:96px;background:var(--rb-line);margin:36px auto -20px;border-radius:2px}
 .rb .cue i{position:absolute;left:-6px;top:0;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);animation:rb-drop 2.2s cubic-bezier(.5,0,.3,1) infinite}
@@ -129,12 +129,3 @@ body:has(.rb) .gpnav .burger{background:transparent!important;border-color:var(-
 .rb.anim .card{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1)}
 .rb.anim .card.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rb .cue i{animation:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
-/* booking page in the same look */
-.rb.booking-page,.rb .booking-intro,.rb .booking-calendar-section{background:var(--rb-canvas)!important;color:var(--rb-ink)}
-.rb.booking-page h1,.rb.booking-page h2,.rb.booking-page strong{color:var(--rb-ink)!important;font-family:var(--rb-display)}
-.rb.booking-page .eyebrow{color:var(--rb-accent)!important}
-.rb .booking-lead,.rb .booking-person span,.rb .booking-details span,.rb .booking-help,.rb .booking-loading p{color:var(--rb-soft)!important}
-.rb .booking-details,.rb .booking-frame-shell,.rb .booking-loading{background:var(--rb-surface)!important;border-color:var(--rb-line)!important;box-shadow:none!important}
-.rb .booking-details svg{color:var(--rb-accent)!important}
-.rb .booking-details div{border-color:var(--rb-line)!important}
-.rb.booking-page a{color:var(--rb-accent)!important}

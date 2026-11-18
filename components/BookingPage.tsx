@@ -1,128 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import './booking.css';
+import { FORMSPREE_ENDPOINT } from './ContactCTA';
+import { ProtectedForm } from './ProtectedForm';
 
-const TITLE = 'Book a Meeting with Zechariah Tokar';
-const DESCRIPTION = 'Book a paid SEO consultation with Zechariah Tokar ($250). Your website, AI search or Reddit, on a Google Meet call.';
-const MEETINGS = {
-  consultation: {
-    slug: 'consultation', title: TITLE, description: DESCRIPTION,
-    heading: 'Find a time that works for you.',
-    lead: 'A consultation is $250. We go through your website, what needs to improve and what to fix first.',
-    calendarHeading: 'Book a conversation.',
-  },
-  client: {
-    slug: 'client-meeting', title: 'Book a Client Meeting with Zechariah Tokar',
-    description: 'Choose a time to review our work, ask questions, and agree on what happens next.',
-    heading: 'Let’s talk through the next step.',
-    lead: 'Choose a time to review our work, ask questions, and agree on what happens next.',
-    calendarHeading: 'Choose our next meeting.',
-  },
-  weekly: {
-    slug: 'weekly-check-in', title: 'Book Weekly Meetings with Zechariah Tokar',
-    description: 'Choose a starting time for our weekly check-ins. You can review the dates before you confirm.',
-    heading: 'Make time for a regular check-in.',
-    lead: 'Choose a starting time for our weekly check-ins. You can review the dates before you confirm.',
-    calendarHeading: 'Choose your weekly meeting time.',
-  },
-};
+// His rule (2026-11-18): nobody books a meeting directly. They message first; he sets up a call if it fits.
+// The old calendar embed (book.israelseofreelancer.com) was removed the same day because that server no longer answers.
+const TITLE = 'Talk to Zechariah Tokar | SEO Consultation';
+const DESCRIPTION = 'Message Zechariah Tokar about your website, SEO, AI search or Reddit. A paid SEO consultation or audit is $250.';
 
 export const BookingPage: React.FC = () => {
-  const { search } = useLocation();
-  const [meeting, setMeeting] = useState<keyof typeof MEETINGS>('consultation');
-  const [loaded, setLoaded] = useState(false);
-  const [slow, setSlow] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-  const frame = useRef<HTMLIFrameElement>(null);
-  const [frameHeight, setFrameHeight] = useState(820);
-  const details = MEETINGS[meeting];
-  const bookingUrl = `https://book.israelseofreelancer.com/zechariah/${details.slug}`;
-
-  useEffect(() => {
-    // Cal.diy keeps embedded pages hidden until its parent acknowledges readiness.
-    // Accept only messages from our own frame and exact scheduler origin.
-    const receive = (event: MessageEvent) => {
-      if (event.origin !== 'https://book.israelseofreelancer.com' || event.source !== frame.current?.contentWindow) return;
-      const message = event.data;
-      if (!message || message.originator !== 'CAL') return;
-      if (message.type === '__iframeReady') {
-        frame.current?.contentWindow?.postMessage({ originator: 'CAL', method: 'parentKnowsIframeReady' }, event.origin);
-      } else if (message.type === 'linkReady') {
-        setLoaded(true);
-      } else if (message.type === '__dimensionChanged') {
-        const height = message.data?.iframeHeight;
-        if (typeof height === 'number' && Number.isFinite(height)) setFrameHeight(Math.max(300, Math.min(3000, Math.ceil(height))));
-      } else if (message.type === '__routeChanged') {
-        const top = frame.current?.getBoundingClientRect().top;
-        if (typeof top === 'number' && top < 0) frame.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-    window.addEventListener('message', receive);
-    return () => window.removeEventListener('message', receive);
-  }, []);
-
-  useEffect(() => {
-    const requested = new URLSearchParams(search).get('meeting');
-    setMeeting(requested === 'client' || requested === 'weekly' ? requested : 'consultation');
-    setLoaded(false);
-    setSlow(false);
-  }, [search]);
-
-  useEffect(() => {
-    updatePageSEO({ title: details.title, description: details.description, path: '/book', image: '/images/service-audit-zechariah.webp' });
-  }, [details]);
-
-  useEffect(() => {
-    if (loaded) return;
-    const timeout = window.setTimeout(() => setSlow(true), 15000);
-    return () => window.clearTimeout(timeout);
-  }, [attempt, loaded, meeting]);
-
-  const retry = () => {
-    setLoaded(false);
-    setSlow(false);
-    setAttempt((value) => value + 1);
-  };
-
-  return <>
-    <HeadSEO title={details.title} description={details.description} path="/book" image="/images/service-audit-zechariah.webp" />
-    <article className="gp booking-page rb">
-      <section className="booking-intro">
-        <div className="wrap booking-intro-grid">
-          <div>
-            <span className="eyebrow">Let’s talk</span>
-            <h1>{details.heading}</h1>
-            <p className="booking-lead">{details.lead}</p>
-            <div className="booking-person">
-              <div><strong>Zechariah Tokar</strong><span>SEO, AI search &amp; Reddit</span></div>
-            </div>
-          </div>
-          <aside className="booking-details" aria-label="About the call">
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18"/></svg><span>Choose an available date and time below.</span></div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="m15 10 6-3v10l-6-3"/></svg><span>Meet online with Google Meet.</span></div>
-            <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><span>Check the time zone shown in the calendar.</span></div>
-          </aside>
+  useEffect(() => { updatePageSEO({ title: TITLE, description: DESCRIPTION, path: '/book', image: '/images/zechariah-tokar-outdoors.webp' }); }, []);
+  return (
+    <div className="rb">
+      <HeadSEO title={TITLE} description={DESCRIPTION} path="/book" image="/images/zechariah-tokar-outdoors.webp" />
+      <section className="hero"><div className="wrap">
+        <h1>Talk to me</h1>
+        <p className="lead">Message me first. If it’s a fit, I’ll set up a call.</p>
+        <dl className="glance">
+          <div><dt>Step 1</dt><dd>Send me your site and what you need</dd></div>
+          <div><dt>Step 2</dt><dd>I reply and tell you if I can help</dd></div>
+          <div><dt>Step 3</dt><dd>If it fits, we set a time to talk</dd></div>
+          <div><dt>Consultation or audit</dt><dd>$250</dd></div>
+        </dl>
+      </div></section>
+      <section id="contact" className="sec"><div className="wrap cols">
+        <div>
+          <h2>Send me a message</h2>
+          <p className="ans">Tell me about your site and what you want SEO to fix first.</p>
+          <p className="sub">Already a client? Use the same form, or message me the way we usually talk.</p>
         </div>
-      </section>
-
-      <section className="booking-calendar-section" aria-labelledby="booking-calendar-title">
-        <div className="wrap">
-          <div className="booking-calendar-heading">
-            <div><span className="eyebrow">Your next step</span><h2 id="booking-calendar-title">{details.calendarHeading}</h2></div>
-            <a href={bookingUrl} target="_blank" rel="noopener noreferrer">Open calendar in a new tab <span aria-hidden="true">↗</span></a>
-          </div>
-          <div className="booking-frame-shell">
-            {!loaded && <div className="booking-loading" role="status" aria-live="polite">
-              <div className="booking-skeleton" aria-hidden="true"><span/><span/><span/></div>
-              <p>{slow ? 'Taking longer than expected. You can open the calendar above or try again.' : 'Loading available times…'}</p>
-              {slow && <button type="button" onClick={retry}>Try again</button>}
-            </div>}
-            <iframe ref={frame} key={`${meeting}-${attempt}`} src={`${bookingUrl}/embed?embed=&theme=dark&layout=month_view`} title="Choose a meeting time with Zechariah Tokar" className="booking-frame" style={{ height: frameHeight }} onError={() => setSlow(true)} />
-          </div>
-          <p className="booking-help">Have a question before booking? <a href="mailto:zack.tokar@gmail.com">Email me</a>.</p>
+        <div className="rbform">
+          <ProtectedForm
+            formspreeEndpoint={FORMSPREE_ENDPOINT}
+            subject="New Inquiry: wants to talk"
+            submitButtonText="Send message"
+            showMessage
+            messageLabel="What do you want to talk about?"
+            messagePlaceholder="Your site, what is not working, and what you want from a call"
+            extraFields={<input type="hidden" name="service" value="Consultation request" />}
+          />
         </div>
-      </section>
-    </article>
-  </>;
+      </div></section>
+    </div>
+  );
 };
