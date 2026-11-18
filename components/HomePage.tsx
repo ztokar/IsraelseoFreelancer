@@ -3,31 +3,25 @@ import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { FORMSPREE_ENDPOINT } from './ContactCTA';
 import { ProtectedForm } from './ProtectedForm';
-import { rich } from './lean/Blocks';
-import { Block, RB_FACES, renderBlock, useRise } from './lean/ClaimPage';
+import { Block, RB_FACES, renderBlock, ScrollOrb, useRise } from './lean/ClaimPage';
 import { CLAIMS, ClaimKey, HUBS } from '../site-map';
-import { MONTHLY, RES, SYSTEM } from '../content/claims';
+import { RES, SYSTEM } from '../content/claims';
 
 // COPY RULE (his call, 2026-11-18): first person, his LinkedIn voice, very short. Voice sheet: rebuild-2026-11/voice.md.
 // Same Banner design as the service pages (rb.css). H1 and title are the researched ones from the 2026-11-12 build.
 const TITLE = 'Zechariah Tokar | SEO, AI Search and Reddit Consultant for US Companies';
 const DESC = 'I get companies found in Google, AI answers and Reddit. See the results my clients got, then send me your site and I will tell you what I would fix first.';
 
-const GLANCE: [string, string][] = [
-  ['Monthly AI SEO plan', MONTHLY],
-  ['Audit or consultation', '$250'],
-  ['Works best for', 'Local businesses and Shopify stores'],
-  ['How it starts', 'Send me your site. I look first.'],
-];
+// No prices on the home page (his call, 2026-11-18): the $750 plan is only the automated AI SEO plan; custom plans run to $3,000 and more.
 
 const RESULTS: Block = { kind: 'results', id: 'results', h2: 'Does it work? Here are my clients.', items: [RES.yonatan, RES.zstander, RES.brett, RES.sean, RES.behfar], after: 'More in [results and case studies](/case-studies).' };
 
-const PRICES: Block = { kind: 'table', id: 'prices', h2: 'How much does it cost?', answer: 'It depends on what you need. Fixed offers show a price.', head: ['Option', 'What you get', 'Price'], rows: [
-  ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.', MONTHLY],
-  ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', '$250'],
-  ['Consultation', 'A paid session on your site and your plan. Message me first so I can see if it’s a fit.', '$250'],
-  ['[Local SEO](/local-seo-services)', 'Three fixed steps for local businesses, from one target search to the full system.', '$20, $250 or $2,000'],
-  ['Custom plan', 'Bigger sites, more locations, tougher markets.', 'Priced after I look at your site'],
+const PRICES: Block = { kind: 'table', id: 'plans', h2: 'How can we work together?', answer: 'It depends on what you need.', head: ['Option', 'What you get'], rows: [
+  ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.'],
+  ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.'],
+  ['Consultation', 'A paid session on your site and your plan. Message me first.'],
+  ['[Local SEO](/local-seo-services)', 'Map pack, Google Business Profile and local pages.'],
+  ['Custom plan', 'Bigger sites, more locations, tougher markets.'],
 ] };
 
 const FIT: Block = { kind: 'text', id: 'fit', h2: 'Who is this for?', answer: 'Owners who want more customers, not SEO jargon.', lines: [
@@ -51,9 +45,8 @@ export const HomePage: React.FC<{ version?: 'A' | 'C' }> = () => {
           <a className="btn ghost" href="#results">See results</a>
         </div>
         <p className="faces"><span>{RB_FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
-        <dl className="glance">{GLANCE.map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
-        <div className="cue" aria-hidden="true"><i /></div>
       </div></section>
+      <ScrollOrb />
       {renderBlock(RESULTS, 0)}
       <section id="services" className="sec"><div className="wrap">
         <h2>What do I do?</h2>

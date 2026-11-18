@@ -160,9 +160,13 @@ body:has(:is(.rb,.rbskin)) .page-end a{color:var(--rb-accent)}
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
 body:has(:is(.rb,.rbskin)) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
 /* motion: the dropping dot under the hero, and result cards that rise in */
-.rb .cue{position:relative;width:2px;height:96px;background:var(--rb-line);margin:36px auto -20px;border-radius:2px}
-.rb .cue i{position:absolute;left:-6px;top:0;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);animation:rb-drop 2.2s cubic-bezier(.5,0,.3,1) infinite}
-@keyframes rb-drop{0%{transform:translateY(-8px);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateY(92px);opacity:0}}
+/* the green ball rides down the right edge of the screen as the page scrolls (ScrollOrb sets --p 0..1 and --x) */
+.rb .orb{--p:0;--x:0px;position:fixed;z-index:30;right:clamp(7px,2.2vw,34px);top:calc(84px + var(--p) * (100vh - 124px));width:14px;height:14px;pointer-events:none;transform:translateX(var(--x));transition:transform .25s ease-out}
+.rb .orb i{display:block;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);box-shadow:0 0 0 5px rgba(28,228,128,.14),0 0 22px 4px rgba(28,228,128,.45);animation:rb-bob 1.5s cubic-bezier(.5,0,.3,1) infinite}
+.rb .orb::before{content:"";position:absolute;left:6px;bottom:12px;width:2px;height:calc(var(--p) * 64px + 10px);border-radius:2px;background:linear-gradient(180deg,transparent,var(--rb-accent));opacity:.55}
+.rb .orb.moved i{animation:none}
+@keyframes rb-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(16px)}}
+@media (max-width:820px){.rb .orb,.rb .orb i{width:10px;height:10px}.rb .orb{right:3px}.rb .orb::before{left:4px}}
 .rb.anim .card{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1)}
 .rb.anim .card.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rb .cue i{animation:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.rb .orb i{animation:none}.rb .orb{transition:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
