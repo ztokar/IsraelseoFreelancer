@@ -19,7 +19,9 @@ interface ProtectedFormProps {
   submitButtonText: string;
 }
 
-const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
+const GATE_ENDPOINT = '/api/lead';
+
+const utmFields =['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
 const clickIdFields = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'] as const;
 
 const classifyReferrer = (referrer: string) => {
@@ -138,16 +140,26 @@ const FormContent: React.FC<ProtectedFormProps> = ({
       // Get reCAPTCHA token
       const token = await executeRecaptcha('contact_form');
 
-      formData.append('g-recaptcha-response', token);
+      formData.set('g-recaptcha-response', token);
+      // Page marker and time on page, read by the gate (netlify/functions/lead.mjs).
+      formData.set('_js', 'isf');
+      formData.set('_ms', String(Math.round(performance.now())));
 
-      // Submit to Formspree
-      const response = await fetch(formspreeEndpoint, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+      // Submit through the site's own gate (country block and spam checks), which relays to Formspree.
+      // If the gate itself is down or its relay is refused, post to Formspree directly so a real enquiry is never lost.
+      const direct = async () => {
+        formData.delete('_js');
+        formData.delete('_ms');
+        formData.set('g-recaptcha-response', await executeRecaptcha('contact_form'));
+        return fetch(formspreeEndpoint, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
+      };
+      let response: Response;
+      try {
+        response = await fetch(GATE_ENDPOINT, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
+        if (response.status >= 500 || response.status === 404 || (!response.ok && /recaptcha/i.test(await response.clone().text()))) response = await direct();
+      } catch {
+        response = await direct();
+      }
 
       if (response.ok) {
         setSubmitStatus('success');
