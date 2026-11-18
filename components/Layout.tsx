@@ -37,9 +37,9 @@ const FOOTER = [
   ] },
   { heading: 'Local SEO', links: [
     { label: 'Local SEO services', path: '/local-seo-services' },
-    { label: 'Target Finder $20', path: '/find-my-target' },
-    { label: 'Blueprint $250', path: '/local-demand-capture-blueprint' },
-    { label: 'Local Authority System $2,000', path: '/local-authority-system' },
+    { label: 'Target Finder', path: '/find-my-target' },
+    { label: 'Blueprint', path: '/local-demand-capture-blueprint' },
+    { label: 'Local Authority System', path: '/local-authority-system' },
     { label: 'Google Business Profile', path: '/google-business-profile-seo' },
   ] },
   { heading: 'SEO Services', links: [
