@@ -1,92 +1,95 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeadSEO, updatePageSEO } from '../utils/seo';
-import { ContactCTA } from './ContactCTA';
-import { Btn, MovingHero, Photo, PhotoCards, Quote, Receipts, Section } from './lean/Blocks';
-import { CLAIMS, HUBS, SENTENCE } from '../site-map';
-import { Q, R } from '../content/claims';
+import { FORMSPREE_ENDPOINT } from './ContactCTA';
+import { ProtectedForm } from './ProtectedForm';
+import { rich } from './lean/Blocks';
+import { Block, RB_FACES, renderBlock, useRise } from './lean/ClaimPage';
+import { CLAIMS, ClaimKey, HUBS } from '../site-map';
+import { MONTHLY, RES, SYSTEM } from '../content/claims';
 
+// COPY RULE (his call, 2026-11-18): first person, his LinkedIn voice, very short. Voice sheet: rebuild-2026-11/voice.md.
+// Same Banner design as the service pages (rb.css). H1 and title are the researched ones from the 2026-11-12 build.
 const TITLE = 'Zechariah Tokar | SEO, AI Search and Reddit Consultant for US Companies';
-const DESC = 'Zechariah Tokar gets companies in the US and other English-speaking markets found in Google, AI answers and Reddit. One senior operator, results published for named clients.';
+const DESC = 'I get companies found in Google, AI answers and Reddit. See the results my clients got, then send me your site and I will tell you what I would fix first.';
 
-const SHOTS: Photo[] = [
-  { src: '/images/zechariah-tokar-outdoors.webp', w: 800, h: 692, alt: 'Zechariah Tokar outdoors in a white cap', pos: 'center 30%', caption: 'Zechariah Tokar, search visibility consultant' },
-  { src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, alt: 'ChatGPT naming ZStander first for lucite shtenders in the US', caption: 'ChatGPT names ZStander first' },
-  { src: '/images/service-audit-zechariah.webp', w: 800, h: 450, alt: 'Zechariah Tokar at his laptop', pos: 'center 30%', caption: 'One senior operator does the work' },
-  { src: '/images/proof-reddit-405k.jpg', w: 471, h: 159, alt: 'Reddit post statistics: 405,000 views, 518 upvotes, 217 comments', caption: '405,000 views on one Reddit post' },
-  { src: '/images/proof-linkedin-morristown.jpg', w: 480, h: 217, alt: 'A client practice at the top of the Morristown NJ map pack', caption: 'Top of the Morristown, NJ map pack' },
-  { src: '/images/zechariah-tokar-hat-suit.webp', w: 600, h: 876, alt: 'Zechariah Tokar in a black hat and suit', pos: 'center 20%', caption: 'Results published for named clients' },
+const GLANCE: [string, string][] = [
+  ['Monthly AI SEO plan', MONTHLY],
+  ['Audit or consultation', '$250'],
+  ['Works best for', 'Local businesses and Shopify stores'],
+  ['How it starts', 'Send me your site. I look first.'],
 ];
 
-const CLAIM_CARDS = [
-  { path: CLAIMS.ai.path, title: CLAIMS.ai.label, text: CLAIMS.ai.line + ' ZStander was named first in ChatGPT.', image: { src: '/images/service-tracking-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar wearing a headset at his desk', pos: 'center 22%' } },
-  { path: CLAIMS.reddit.path, title: CLAIMS.reddit.label, text: CLAIMS.reddit.line + ' One post passed 405,000 views.', image: { src: '/images/proof-reddit-405k.jpg', w: 471, h: 159, alt: 'Reddit post with 405,000 views' } },
-  { path: CLAIMS.local.path, title: CLAIMS.local.label, text: CLAIMS.local.line + ' $20, $250 or $2,000.', image: { src: '/images/proof-linkedin-morristown.jpg', w: 480, h: 217, alt: 'Client practice at the top of a Google map pack', pos: 'left top' } },
-  { path: CLAIMS.seo.path, title: CLAIMS.seo.label, text: CLAIMS.seo.line + ' ZStander grew Google sales 300% (client figure).', image: { src: '/images/service-content-zechariah.webp', w: 562, h: 1000, alt: 'Zechariah Tokar working at his desk', pos: 'center 22%' } },
-];
+const RESULTS: Block = { kind: 'results', id: 'results', h2: 'Does it work? Here are my clients.', items: [RES.yonatan, RES.zstander, RES.brett, RES.sean, RES.behfar], after: 'More in [results and case studies](/case-studies).' };
 
-const HUB_IMG: Record<string, Photo> = {
-  '/ai-answers': { src: '/images/blog-ai-search-2026.jpg', w: 1600, h: 893, alt: 'Illustration of AI answers above search results' },
-  '/reddit-guides': { src: '/images/blog-claude-code-content-marketing.jpg', w: 1600, h: 893, alt: 'Illustration of a person working in a bright office' },
-  '/seo-guides': { src: '/images/blog-seo-drives-pipeline-b2b.jpg', w: 1600, h: 893, alt: 'Illustration of search traffic turning into revenue' },
-  '/case-studies': { src: '/images/proof-linkedin-chatgpt.jpg', w: 480, h: 255, alt: 'ChatGPT answer naming a client first' },
-};
+const PRICES: Block = { kind: 'table', id: 'prices', h2: 'How much does it cost?', answer: 'It depends on what you need. Fixed offers show a price.', head: ['Option', 'What you get', 'Price'], rows: [
+  ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.', MONTHLY],
+  ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', '$250'],
+  ['Consultation', 'A paid session on your site and your plan. Message me first so I can see if it’s a fit.', '$250'],
+  ['[Local SEO](/local-seo-services)', 'Three fixed steps for local businesses, from one target search to the full system.', '$20, $250 or $2,000'],
+  ['Custom plan', 'Bigger sites, more locations, tougher markets.', 'Priced after I look at your site'],
+] };
 
-// Version A (answer cards): the four doors first, proof after. Version C (proof first): receipts right under the hero.
-export const HOME_PICK: 'A' | 'C' = 'A';
+const FIT: Block = { kind: 'text', id: 'fit', h2: 'Who is this for?', answer: 'Owners who want more customers, not SEO jargon.', lines: [
+  'You have a good service. You want more customers at a fair price.',
+  'Local businesses and Shopify stores are where it works best. My clients are in the US, UK, Canada and Australia.',
+] };
 
-export const HomePage: React.FC<{ version?: 'A' | 'C' }> = ({ version = HOME_PICK }) => {
+const ORDER: ClaimKey[] = ['ai', 'reddit', 'local', 'seo'];
+
+export const HomePage: React.FC<{ version?: 'A' | 'C' }> = () => {
   useEffect(() => { updatePageSEO({ title: TITLE, description: DESC, path: '/' }); }, []);
-
-  const claims = (
-    <Section key="claims" h2="Four ways to get found" answer="Pick the place your buyers look first. Each page shows the work, the proof and the price.">
-      <PhotoCards items={CLAIM_CARDS} />
-    </Section>
-  );
-  const proof = (
-    <Section key="proof" h2="Results for named clients" answer="Screenshots, not promises." tone="tint">
-      <Receipts items={[R.chatgpt, R.r405, R.morristown]} />
-      <div className="lquotes" style={{ marginTop: 18 }}><Quote {...Q.sean} /><Quote {...Q.yonatan} /></div>
-    </Section>
-  );
-  const hubs = (
-    <Section key="hubs" h2="Guides and results" answer="Plain answers to the questions buyers ask before they hire.">
-      <PhotoCards items={Object.entries(HUBS).map(([path, h]) => ({ path, title: h.label, text: h.line, image: HUB_IMG[path] }))} />
-    </Section>
-  );
-  const order = version === 'C' ? [proof, claims, hubs] : [claims, proof, hubs];
-
+  const root = useRise('home');
   return (
-    <div className="lp">
+    <div className="rb" ref={root}>
       <HeadSEO title={TITLE} description={DESC} path="/" image="/images/ai-seo-monthly-share.jpg" />
-      <section className="lh">
-        <div className="lwrap lh-grid">
-          <div className="lh-copy">
-            <h1>Get Found in Google, AI Answers and Reddit</h1>
-            <p className="lh-answer">{SENTENCE} One senior operator does the work, and results are published for named clients.</p>
-            <ul className="home-proofline">
-              <li><b>Named first</b> in ChatGPT for ZStander</li>
-              <li><b>405K views</b> on one Reddit post</li>
-              <li><b>Top</b> of the Morristown, NJ map pack</li>
-            </ul>
-            <div className="lh-actions">
-              <Btn href="#contact">Send your site</Btn>
-              <Btn href="/case-studies" ghost>See the results</Btn>
-            </div>
-          </div>
-          <MovingHero shots={SHOTS} />
+      <section className="hero"><div className="wrap">
+        <h1 className="long">Get Found in Google, AI Answers and Reddit</h1>
+        <p className="lead">More leads from the places your buyers search. I handle the SEO.</p>
+        <div className="actions">
+          <a className="btn fill" href="#contact">Send your site</a>
+          <a className="btn ghost" href="#results">See results</a>
         </div>
-      </section>
-      {order}
-      <Section h2="Who you work with" tone="tint">
-        <p className="lsec-answer">Zechariah Tokar, based in Israel, writes in native US English for companies in the US, UK, Canada and Australia. No account managers and no junior handoff. <NavLink to="/about">More about Zechariah</NavLink>.</p>
-      </Section>
-      <ContactCTA
-        subject="New SEO Audit Request from Homepage"
-        title="Send your site. Get the first fix."
-        body="Send the site, your email and the issue you want fixed first. You will get a reply with the practical next step."
-        submitButtonText="Send my site"
-      />
+        <p className="faces"><span>{RB_FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
+        <dl className="glance">{GLANCE.map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
+        <div className="cue" aria-hidden="true"><i /></div>
+      </div></section>
+      {renderBlock(RESULTS, 0)}
+      <section id="services" className="sec"><div className="wrap">
+        <h2>What do I do?</h2>
+        <p className="ans widea">Four ways to get found. Pick the place your buyers look first.</p>
+        <div className="sibs four">
+          {ORDER.map((k) => <NavLink key={k} to={CLAIMS[k].path} className="sib"><b>{CLAIMS[k].label}</b><span>{CLAIMS[k].line}</span></NavLink>)}
+        </div>
+      </div></section>
+      {renderBlock(SYSTEM, 2)}
+      {renderBlock(PRICES, 3)}
+      {renderBlock(FIT, 4)}
+      <section id="guides" className="sec"><div className="wrap">
+        <h2>Want to read first?</h2>
+        <p className="ans widea">Plain answers to the questions owners ask before they hire.</p>
+        <div className="sibs four">
+          {Object.entries(HUBS).map(([path, h]) => <NavLink key={path} to={path} className="sib"><b>{h.label}</b><span>{h.line}</span></NavLink>)}
+        </div>
+        <p className="after"><NavLink to="/about">More about me</NavLink></p>
+      </div></section>
+      <section id="contact" className="sec"><div className="wrap cols">
+        <div>
+          <h2>How do I start?</h2>
+          <p className="ans">Send me your site.</p>
+          <p className="sub">I’ll look at it and tell you what I’d fix first. Want to talk? Message me first. If it’s a fit, I’ll set up a quick call.</p>
+        </div>
+        <div className="rbform">
+          <ProtectedForm
+            formspreeEndpoint={FORMSPREE_ENDPOINT}
+            subject="New SEO Audit Request from Homepage"
+            submitButtonText="Send your site"
+            showMessage
+            messageLabel="What do you want to be found for?"
+            messagePlaceholder="The search or question you want to show up for"
+          />
+        </div>
+      </div></section>
     </div>
   );
 };

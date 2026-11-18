@@ -3,7 +3,7 @@ import { ContactCTA } from './ContactCTA';
 import { RelatedPages } from './ConversionSections';
 
 export const BlogArticleConversion: React.FC<{ title: string }> = ({ title }) => (
-  <div className="gp">
+  <div className="gp rbskin">
     <RelatedPages
       title="Useful next pages."
       lede="If this article matches the problem you are seeing, these pages move from reading to action."

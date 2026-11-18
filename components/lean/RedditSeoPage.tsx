@@ -11,7 +11,7 @@ const DESC = 'Reddit SEO, defined: getting Reddit threads that mention your bran
 export const RedditSeoPage: React.FC = () => {
   useEffect(() => { updatePageSEO({ title: TITLE, description: DESC, path: '/reddit-seo' }); }, []);
   return (
-    <div className="lp">
+    <div className="lp rbskin">
       <HeadSEO title={TITLE} description={DESC} path="/reddit-seo" image="/images/proof-reddit-405k.jpg" />
       <LeanHero
         h1="What Is Reddit SEO?"

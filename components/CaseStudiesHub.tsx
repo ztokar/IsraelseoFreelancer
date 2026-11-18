@@ -24,7 +24,7 @@ export const CaseStudiesHub: React.FC = () => {
     hasPart: CASE_STUDY_PAGES.map((c) => ({ '@type': 'Article', name: c.h1, url: `${SITE_URL}/case-studies/${c.slug}` })),
   };
   return (
-    <div className="lp">
+    <div className="lp rbskin">
       <HeadSEO title={TITLE} description={DESC} path="/case-studies" image="/images/proof-linkedin-chatgpt.jpg" />
       <LeanHero
         h1="Results for Named Clients"

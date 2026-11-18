@@ -72,7 +72,7 @@ export const HubPage: React.FC<{ path: string }> = ({ path }) => {
     hasPart: children.filter((c) => c.type !== 'noindex').map((c) => ({ '@type': c.type === 'term' ? 'DefinedTerm' : 'Article', name: c.label, url: `${SITE_URL}${c.path}` })),
   };
   return (
-    <div className="lp">
+    <div className="lp rbskin">
       <HeadSEO title={h.title} description={h.description} path={path} image={h.photo.src} />
       <LeanHero h1={h.h1} answer={h.answer} photo={h.photo} primary={{ label: `Read the ${children.length} guides`, href: '#guides' }} />
       <Section id="guides" h2={`${children.length} guides, one question each`}>

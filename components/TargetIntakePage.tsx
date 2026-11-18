@@ -29,7 +29,7 @@ export const TargetIntakePage: React.FC = () => {
   return (
     <>
       <HeadSEO title={TITLE} description={DESC} path="/target-intake" />
-      <main className="gp blueprint">
+      <main className="gp blueprint rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Target Finder intake
         </div>

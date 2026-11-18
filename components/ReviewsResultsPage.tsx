@@ -25,7 +25,7 @@ export const ReviewsResultsPage: React.FC = () => {
         path="/reviews-results"
       />
 
-      <main className="gp">
+      <main className="gp rbskin">
         <div className="wrap crumb">
           <NavLink to="/">Home</NavLink><span>/</span>Reviews and results
         </div>

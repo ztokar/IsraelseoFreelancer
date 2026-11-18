@@ -140,10 +140,8 @@ const Siblings: React.FC<{ current: ClaimKey }> = ({ current }) => (
   </div></section>
 );
 
-export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
-  const v = c.versions[version || c.pick];
-  useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
-  // Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+// Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
+export const useRise = (c: unknown) => {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = root.current;
@@ -169,6 +167,15 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
     el.querySelectorAll('.card').forEach((n) => io.observe(n));
     return () => { io.disconnect(); el.classList.remove('anim'); };
   }, [c]);
+  return root;
+};
+
+export const RB_FACES = ['yonatan', 'brett', 'sean', 'behfar'];
+
+export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; leaf?: boolean }> = ({ content: c, version, leaf }) => {
+  const v = c.versions[version || c.pick];
+  useEffect(() => { updatePageSEO({ title: c.title, description: c.description, path: c.path }); }, [c]);
+  const root = useRise(c);
   const faq = v.blocks.find((b) => b.kind === 'faq') as Extract<Block, { kind: 'faq' }> | undefined;
   const results = v.blocks.find((b) => b.kind === 'results');
   const primary = c.primary || { label: 'Send your site', href: '#contact' };
