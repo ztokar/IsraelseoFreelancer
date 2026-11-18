@@ -21,8 +21,8 @@ body{background:var(--canvas)}
 .rb .btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--line)}
 .rb a:focus-visible,.rb .btn:focus-visible,.rb input:focus-visible,.rb textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .rb .wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto;gap:18px;margin-top:clamp(36px,5vw,64px);text-align:left}
-.rb .me{grid-column:2/4;grid-row:1/3;margin:0;border:2px solid var(--line);box-shadow:8px 8px 0 var(--line);background:var(--surface)}
-.rb .me img{display:block;width:100%;height:100%;max-height:560px;object-fit:cover;object-position:center 25%}
+.rb .me{grid-column:2/4;grid-row:1/3;margin:0;border:2px solid var(--line);box-shadow:8px 8px 0 var(--line);background:var(--surface);display:flex;flex-direction:column}
+.rb .me img{display:block;width:100%;flex:1 1 auto;min-height:0;height:auto;max-height:560px;object-fit:cover;object-position:center 25%}
 .rb .me figcaption{padding:10px 14px;font-size:14px;border-top:2px solid var(--line)}
 .rb .stat{border:2px solid var(--line);background:var(--surface);padding:20px 20px 18px;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px}
 .rb .stat b{font-family:var(--display);font-weight:700;font-size:clamp(44px,5.4vw,76px);line-height:.95;letter-spacing:-.02em}
@@ -66,6 +66,7 @@ body{background:var(--canvas)}
 .rb .two{grid-template-columns:minmax(0,1fr)}
 .rb .wall{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none}
 .rb .me{grid-column:1/3;grid-row:auto}
+.rb .me img{flex:none;aspect-ratio:1;max-height:none}
 .rb .s1,.rb .s2,.rb .s3,.rb .s4{grid-column:auto;grid-row:auto}
 .rb .stat{min-height:150px}
 .rb .quote-grid{grid-template-columns:minmax(0,1fr)}
