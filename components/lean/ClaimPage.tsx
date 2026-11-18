@@ -140,33 +140,83 @@ const Siblings: React.FC<{ current: ClaimKey }> = ({ current }) => (
   </div></section>
 );
 
-// Motion (his pick 2026-11-18): result cards rise in and their numbers count up once. Cards stay visible without scripting or with reduced motion.
-// The green ball (his ask 2026-11-18): it rides down the side of the screen, top to bottom, as the page scrolls, swaying a little.
-// Before the first scroll it bobs to invite scrolling. Decorative only: no pointer events, hidden from assistive tech.
+// The green ball (his pick 2026-11-18, ideas page round 2): it draws a winding route down the right edge of the screen as the page scrolls.
+// Each section of the page is a stop that lights up when the ball passes it. Before the first scroll the ball bobs to invite scrolling.
+// Decorative only: no pointer events, hidden from assistive tech.
 export const ScrollOrb: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const svg = el?.querySelector('svg');
+    const track = el?.querySelector<SVGPathElement>('.track');
+    const done = el?.querySelector<SVGPathElement>('.done');
+    const stops = el?.querySelector('g');
+    const ball = el?.querySelector('.ball');
+    if (!el || !svg || !track || !done || !stops || !ball) return;
     let raf = 0;
+    let len = 0;
+    let marks: [number, Element][] = [];
+    const span = () => document.documentElement.scrollHeight - window.innerHeight;
     const place = () => {
       raf = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const max = span();
       const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-      el.style.setProperty('--p', p.toFixed(4));
-      el.style.setProperty('--x', still ? '0px' : `${(Math.sin(p * Math.PI * 7) * 9).toFixed(1)}px`);
+      const pt = track.getPointAtLength(len * p);
+      ball.setAttribute('cx', pt.x.toFixed(1));
+      ball.setAttribute('cy', pt.y.toFixed(1));
+      done.style.strokeDashoffset = `${len * (1 - p)}`;
+      marks.forEach(([f, c]) => c.classList.toggle('on', p >= f - 0.004));
       el.classList.toggle('moved', window.scrollY > 40);
     };
+    const build = () => {
+      const small = window.innerWidth <= 820;
+      const w = small ? 11 : 40;
+      const amp = small ? 3 : 12;
+      const h = Math.max(200, window.innerHeight - 124);
+      svg.setAttribute('width', `${w}`);
+      svg.setAttribute('height', `${h}`);
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      const pts: string[] = [];
+      for (let k = 0; k <= 96; k += 1) pts.push(`${(w / 2 + Math.sin((k / 96) * Math.PI * 5) * amp).toFixed(1)} ${(10 + (k / 96) * (h - 20)).toFixed(1)}`);
+      const d = `M${pts.join('L')}`;
+      track.setAttribute('d', d);
+      done.setAttribute('d', d);
+      len = track.getTotalLength();
+      done.style.strokeDasharray = `${len}`;
+      ball.setAttribute('r', small ? '3.5' : '6');
+      stops.textContent = '';
+      marks = [];
+      const max = span();
+      let last = 0;
+      if (max > 0) el.closest('.rb')?.querySelectorAll('section.sec, section.photo').forEach((s) => {
+        const f = Math.min(1, (s.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.5) / max);
+        if (f < 0.03 || f - last < 0.035) return;
+        last = f;
+        const pt = track.getPointAtLength(len * f);
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('class', 'stop');
+        c.setAttribute('cx', pt.x.toFixed(1));
+        c.setAttribute('cy', pt.y.toFixed(1));
+        c.setAttribute('r', small ? '2' : '4');
+        stops.appendChild(c);
+        marks.push([f, c]);
+      });
+      el.classList.add('ready');
+      place();
+    };
     const on = () => { if (!raf) raf = requestAnimationFrame(place); };
-    place();
+    build();
+    const later = window.setTimeout(build, 1600);
     window.addEventListener('scroll', on, { passive: true });
-    window.addEventListener('resize', on);
-    return () => { window.removeEventListener('scroll', on); window.removeEventListener('resize', on); if (raf) cancelAnimationFrame(raf); };
+    window.addEventListener('resize', build);
+    window.addEventListener('load', build);
+    return () => { window.clearTimeout(later); window.removeEventListener('scroll', on); window.removeEventListener('resize', build); window.removeEventListener('load', build); if (raf) cancelAnimationFrame(raf); };
   }, []);
-  return <div className="orb" ref={ref} aria-hidden="true"><i /></div>;
+  return <div className="orb" ref={ref} aria-hidden="true"><svg><path className="track" /><path className="done" /><g /><circle className="ball" r="6" /></svg></div>;
 };
 
+// Motion (his pick 2026-11-18): result cards rise in and their numbers count up once; with a mouse, a green light follows the pointer
+// and the card leans toward it (phones get a passing shine in rb.css). Cards stay visible without scripting or with reduced motion.
 export const useRise = (c: unknown) => {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -190,8 +240,26 @@ export const useRise = (c: unknown) => {
       };
       requestAnimationFrame(tick);
     }), { threshold: 0.25 });
-    el.querySelectorAll('.card').forEach((n) => io.observe(n));
-    return () => { io.disconnect(); el.classList.remove('anim'); };
+    const move = (ev: Event) => {
+      const e = ev as PointerEvent;
+      const card = e.currentTarget as HTMLElement;
+      if (e.pointerType !== 'mouse' || !card.classList.contains('in')) return;
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--mx', `${(x * 100).toFixed(1)}%`);
+      card.style.setProperty('--my', `${(y * 100).toFixed(1)}%`);
+      card.style.transition = 'transform .15s ease-out';
+      card.style.transform = `perspective(1100px) rotateY(${((x - 0.5) * 5).toFixed(2)}deg) rotateX(${((0.5 - y) * 5).toFixed(2)}deg)`;
+    };
+    const leave = (ev: Event) => {
+      const card = ev.currentTarget as HTMLElement;
+      card.style.transition = 'transform .4s ease-out';
+      card.style.transform = '';
+    };
+    const cards = el.querySelectorAll('.card');
+    cards.forEach((n) => { io.observe(n); n.addEventListener('pointermove', move); n.addEventListener('pointerleave', leave); });
+    return () => { io.disconnect(); el.classList.remove('anim'); cards.forEach((n) => { n.removeEventListener('pointermove', move); n.removeEventListener('pointerleave', leave); }); };
   }, [c]);
   return root;
 };
