@@ -1,5 +1,5 @@
 import type { Block, ClaimContent } from '../components/lean/ClaimPage';
-import { MONTHLY, RES, SHARE, SYSTEM, one } from './claims';
+import { RES, SHARE, SYSTEM, one } from './claims';
 
 // Same copy rule as claims.ts: first person, his LinkedIn voice, very short.
 const STRIPE_SYSTEM = 'https://buy.stripe.com/00wbIU4rjfPh3cD3nV6c00U';
@@ -16,7 +16,7 @@ const audit: ClaimContent = {
     ['You get', 'Your buyer questions checked, the sources behind each answer, a short fix list'],
     ['AI checked', 'ChatGPT, Gemini, Perplexity, Google AI Overviews'],
     ['Type', 'One time. No monthly plan needed.'],
-    ['Price', '$250'],
+    ['Price', QUOTED],
   ],
   serviceType: 'AI visibility audit',
   formSubject: 'New Inquiry: AI visibility audit', formService: 'AI visibility audit',
@@ -40,7 +40,7 @@ const audit: ClaimContent = {
         ['Never finds your service page', 'Indexing, access and the links to that page', 'Fix discovery before buying content'],
       ] },
       { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
-        { q: 'How much does an AI visibility audit cost?', a: '$250. To start I need your website, your main competitors, the services that matter most, and two or three questions you want AI to name you for.' },
+        { q: 'How much does an AI visibility audit cost?', a: 'It’s a one-time fee. Send me your site and I’ll price it. To start I need your website, your main competitors, the services that matter most, and two or three questions you want AI to name you for.' },
         { q: 'How is it different from a technical SEO audit?', a: 'A technical audit asks if Google can crawl and index your site. This one asks why AI recommends someone else. The fixes often overlap, so I scope both together when you need both.' },
         { q: 'What happens after the audit?', a: 'You can fix it yourself, or I do it on the [monthly AI SEO plan](/ai-seo-monthly). Either way you can [track it](/how-to-track-ai-search-visibility) with the same questions. More in the [AI answers guides](/ai-answers).' },
       ] },
@@ -267,8 +267,8 @@ const chatgptSeo: ClaimContent = {
   glance: [
     ['You get', 'Your brand named when buyers ask ChatGPT'],
     ['The work', 'Clearer pages, the sources ChatGPT reads, a monthly re-check'],
-    ['Monthly plan', MONTHLY],
-    ['One time', 'An [audit](/ai-visibility-audit) for $250'],
+    ['Monthly plan', 'Month to month'],
+    ['One time', 'An [audit](/ai-visibility-audit)'],
   ],
   serviceType: 'ChatGPT search optimization',
   formSubject: 'New Inquiry: ChatGPT SEO services', formService: 'ChatGPT SEO services',
@@ -518,7 +518,7 @@ const gbp = leaf({
   claim: 'local', path: '/google-business-profile-seo', h1: 'Google Business Profile optimization', serviceType: 'Google Business Profile optimization',
   title: 'Google Business Profile SEO | Win the Local Map Pack',
   description: 'Google Business Profile optimization for local businesses: categories, services, reviews, photos, citations and local pages, so you show up in Google Maps.',
-  glance: [['For', 'Local businesses that want to show up in Google Maps'], ['I fix', 'Categories, services, reviews, photos, citations'], ['Result', 'Yonatan Vinnik: #1 on Maps in one week'], ['Price', 'From $20. See the three local offers.']],
+  glance: [['For', 'Local businesses that want to show up in Google Maps'], ['I fix', 'Categories, services, reviews, photos, citations'], ['Result', 'Yonatan Vinnik: #1 on Maps in one week'], ['Price', 'Priced after I look at your profile']],
   answer: 'I set up your Google Business Profile so you show up in Maps for the searches that bring calls.',
   formTitle: 'Send me your business profile and the city or service you want to be found for.',
   blocks: [
@@ -529,7 +529,7 @@ const gbp = leaf({
       'The same name, address and phone everywhere it’s listed',
       'Local page recommendations for your website',
       'A check of the Google Maps searches you want to win',
-    ], after: 'This is part of my [local SEO services](/local-seo-services), with fixed prices from $20. I build the whole thing in the [Local Authority System](/local-authority-system).' },
+    ], after: 'This is part of my [local SEO services](/local-seo-services). I build the whole thing in the [Local Authority System](/local-authority-system).' },
     { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
       { q: 'How long does it take to rank in Google Maps?', a: 'One client was #1 on Google Maps in a week. Most take longer. No guarantees. Nobody controls Google.' },
       { q: 'Do I need a website too?', a: 'A profile can rank alone. A page for each main service usually makes it stronger.' },
@@ -615,7 +615,7 @@ const technical = leaf({
   claim: 'seo', path: '/technical-seo-audit', h1: 'Technical SEO audit', serviceType: 'Technical SEO audit',
   title: 'Technical SEO Audit | A Short List of What to Fix First',
   description: 'A technical SEO audit covering crawling, indexing, Google Search Console, site structure, metadata, schema and Core Web Vitals, with a fix list in order.',
-  glance: [['You get', 'A short fix list, in order'], ['I check', 'Crawling, indexing, structure, metadata, schema, speed'], ['Tools', 'Search Console, Screaming Frog, GA4, PageSpeed Insights'], ['Price', '$250']],
+  glance: [['You get', 'A short fix list, in order'], ['I check', 'Crawling, indexing, structure, metadata, schema, speed'], ['Tools', 'Search Console, Screaming Frog, GA4, PageSpeed Insights'], ['Price', QUOTED]],
   answer: 'I tell you what to fix first. Not a giant PDF.',
   formTitle: 'Send me your site. I’ll check where technical SEO is blocking you.',
   blocks: [
@@ -635,7 +635,7 @@ const technical = leaf({
       { h: 'Put the fixes in order', p: 'The few that can change results go on top.' },
     ] },
     { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
-      { q: 'How much does a technical SEO audit cost?', a: '$250. Message me first so I can see if it’s a fit.' },
+      { q: 'How much does a technical SEO audit cost?', a: 'It depends on the size of the site. Send me the site and I’ll price it.' },
       { q: 'Can’t a free audit tool do this?', a: 'A tool can scan hundreds of URLs and flag problems. That’s raw data. The hard part is knowing which issues touch rankings and revenue, and which aren’t worth the developer time.' },
       { q: 'When should I run another audit?', a: 'After a migration, a redesign, a big content launch, a traffic drop or a template change.' },
       { q: 'Can you make the fixes too?', a: 'Yes. See [WordPress SEO](/wordpress-seo-services) and [Shopify SEO](/shopify-seo), or the full [SEO freelancer](/seo-services-israel) page.' },

@@ -3,7 +3,8 @@ import type { Photo, Receipt } from '../components/lean/Blocks';
 
 // COPY RULE (his call, 2026-11-18): first person, his LinkedIn voice, very short. Voice sheet: rebuild-2026-11/voice.md.
 // Do not repeat "I do the work myself" and do not compare against agencies. No refund promise.
-// Prices: only the fixed offers show a number. Audits, consulting and custom work are priced after a look at the site.
+// Prices (his call, 2026-11-18): no numbers on service pages, the footer or /book. Only the four pay pages show a price
+// (/ai-seo-monthly, /find-my-target, /local-demand-capture-blueprint, /local-authority-system).
 
 export const one = (v: PageVersion) => ({ A: v, C: v });
 export const SHARE: Photo = { src: '/images/zechariah-tokar-outdoors.webp', alt: 'Zechariah Tokar', w: 640, h: 800 };
@@ -76,12 +77,12 @@ const ai: Block[] = [
     'Tracking what ChatGPT and Google AI Overviews say about you, and fixing what’s off',
     'A plain-English report on what moved',
   ], after: 'Only need one part? [ChatGPT SEO](/chatgpt-seo-services), [page rewrites for AI answers](/geo-content-optimization), [AI visibility tracking](/ai-visibility-tracking-services) or [ChatGPT ads setup](/chatgpt-ads-management).' },
-  { kind: 'table', id: 'plans', h2: 'How much does AI SEO cost?', answer: 'It depends on what you need. Four ways to work with me.', head: ['Option', 'What you get', 'Price'], rows: [
-    ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.', MONTHLY],
-    ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', '$250'],
-    ['Consultation', 'A paid session on your site and your plan. Message me first so I can see if it’s a fit.', '$250'],
-    ['Custom plan', 'Bigger sites, more locations, tougher markets.', 'Priced after I look at your site'],
-  ] },
+  { kind: 'table', id: 'plans', h2: 'How much does AI SEO cost?', answer: 'It depends on what you need. Four ways to work with me.', head: ['Option', 'What you get'], rows: [
+    ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.'],
+    ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.'],
+    ['Consultation', 'A paid session on your site and your plan. Message me first so I can see if it’s a fit.'],
+    ['Custom plan', 'Bigger sites, more locations, tougher markets.'],
+  ], after: 'Send me your site and I’ll price it.' },
   SYSTEM,
   { kind: 'text', id: 'fit', h2: 'Who is AI SEO for?', answer: 'Local businesses and Shopify stores. That’s where it works best.', lines: [
     'You have a good service. You want more customers at a fair price.',
@@ -93,7 +94,7 @@ const ai: Block[] = [
     { id: 'answer-engine-optimization', q: 'Is AI SEO different from traditional SEO?', a: 'Same base. AI search and a regular search engine pull from the same places: pages that rank, Reddit threads and reviews. Answer engine optimization (AEO) and generative engine optimization (GEO) are names for the same job.' },
     { q: 'Can ChatGPT do my SEO?', a: 'AI tools can write. They can’t tell you what’s working. I’ve seen owners burn down their site with AI slop and get 0 leads.' },
     { q: 'Can you guarantee ChatGPT will name my business?', a: 'No. Nobody controls an AI answer. I fix your pages and what the web says about you, then check every month if it’s working.' },
-    { id: 'consultant', q: 'Can I hire you as an AI SEO consultant only?', a: 'Yes. A consultation is $250. Message me first. I look at your site, tell you what to fix first, and your team does the work.' },
+    { id: 'consultant', q: 'Can I hire you as an AI SEO consultant only?', a: 'Yes. A consultation is a paid session. Message me first. I look at your site, tell you what to fix first, and your team does the work.' },
   ] },
 ];
 
@@ -134,15 +135,11 @@ const reddit: Block[] = [
 /* ------------------------------------------------------------------ Local SEO services */
 const local: Block[] = [
   { kind: 'results', id: 'results', h2: 'Does local SEO work? Here are my clients.', items: [RES.yonatan, RES.brettMap, RES.behfarLocal, RES.therapy] },
-  { kind: 'table', id: 'prices', h2: 'How much does local SEO cost?', answer: 'Three fixed prices. Start at any step.', head: ['Offer', 'What you get', 'Price'], rows: [
-    ['[Target Finder](/find-my-target)', 'The one local search worth owning first, found and checked', '$20'],
-    ['[Local Demand Capture Blueprint](/local-demand-capture-blueprint)', 'The full plan: pages, profile changes and links to rank for it', '$250'],
-    ['[Local Authority System](/local-authority-system)', 'I build the whole thing: money pages, supporting content, reputation and AI search setup', '$2,000'],
-  ], buy: [
-    { label: 'Buy Target Finder $20', href: STRIPE.target },
-    { label: 'Buy Blueprint $250', href: STRIPE.blueprint },
-    { label: 'Buy System $2,000', href: STRIPE.system },
-  ], after: 'More locations? Bigger builds are quoted from $2,000. After you pay, a short form collects your business details.' },
+  { kind: 'table', id: 'steps', h2: 'How much does local SEO cost?', answer: 'Three steps. Start at any one.', head: ['Step', 'What you get'], rows: [
+    ['[Target Finder](/find-my-target)', 'The one local search worth owning first, found and checked'],
+    ['[Local Demand Capture Blueprint](/local-demand-capture-blueprint)', 'The full plan: pages, profile changes and links to rank for it'],
+    ['[Local Authority System](/local-authority-system)', 'I build the whole thing: money pages, supporting content, reputation and AI search setup'],
+  ], after: 'Each step has its own page. More locations? Send me your business and I’ll price it.' },
   { kind: 'text', id: 'included', h2: 'What do local SEO services include?', answer: 'The map pack, your website and the places Google and AI check you against.', list: [
     'A page for each search ready-to-buy customers type. One page, one job.',
     'Supporting content and internal links that push those pages up',
@@ -187,7 +184,7 @@ const seo: Block[] = [
   ] },
   SYSTEM,
   { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
-    { q: 'How much does an SEO freelancer cost?', a: 'It depends on your site and how much you want handled. Send me the site and I’ll price it. Local SEO has fixed prices on the [local SEO page](/local-seo-services).' },
+    { q: 'How much does an SEO freelancer cost?', a: 'It depends on your site and how much you want handled. Send me the site and I’ll price it.' },
     { q: 'Do you only work with Israeli companies?', a: 'No. I’m based in Israel. Most clients sell in the US, UK, Canada and Australia, and I write in native US English. I don’t do Hebrew SEO.' },
     { id: 'consulting', q: 'Do you offer SEO consulting?', a: 'Yes. For teams with their own writers or developers. I review the plan, the pages and the priorities. Your team does the work.' },
     { id: 'link-building', q: 'Do you build links?', a: 'Yes. Relevant links, mentions and citations for pages that already deserve to rank. No bulk link packages.' },
@@ -206,8 +203,8 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
     glance: [
       ['Covers', 'ChatGPT, Google AI Overviews, Google search'],
       ['Best for', 'Local businesses and Shopify stores'],
-      ['Monthly plan', MONTHLY],
-      ['Audit or consultation', '$250'],
+      ['Monthly plan', 'Month to month'],
+      ['Audit or consultation', 'One time. Message me first.'],
     ],
     serviceType: 'AI search optimization',
     formSubject: 'New Inquiry: AI SEO services', formService: 'AI SEO services',
@@ -237,23 +234,23 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
   },
   local: {
     claim: 'local', path: '/local-seo-services',
-    title: 'Local SEO Services | Fixed Prices From $20 | Map Pack and AI Answers',
-    description: 'Local SEO services at fixed prices: $20 Target Finder, $250 Blueprint, $2,000 done-for-you system. Google Business Profile, map pack and citations for small businesses.',
+    title: 'Local SEO Services | Map Pack and AI Answers for Local Businesses',
+    description: 'Local SEO services for small businesses: Google Business Profile, map pack, citations and local pages. Start with one search, a full plan or a done-for-you system.',
     h1: 'Local SEO services',
     photo: SHARE,
     glance: [
-      ['Prices', '$20, $250 or $2,000'],
+      ['Steps', 'Target Finder, Blueprint or the full system'],
       ['Covers', 'Google Maps, your website, citations, AI answers'],
       ['Best for', 'Clinics, therapy practices, home services'],
       ['Start', 'At any step. Each one builds on the last.'],
     ],
     serviceType: 'Local SEO',
-    primary: { label: 'See the prices', href: '#prices' },
+    primary: { label: 'See the steps', href: '#steps' },
     formSubject: 'New Inquiry: Local SEO services', formService: 'Local SEO services',
     formTitle: 'Not sure which step fits? Send me your business.',
     formBody: 'You get a reply with the step that fits and the first search worth owning.',
     pick: 'A',
-    versions: one({ answer: 'I get local businesses to the top of Google Maps. Fixed prices from $20.', blocks: local }),
+    versions: one({ answer: 'I get local businesses to the top of Google Maps. Start small or have me build the whole thing.', blocks: local }),
   },
   seo: {
     claim: 'seo', path: '/seo-services-israel',

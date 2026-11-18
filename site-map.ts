@@ -19,7 +19,7 @@ export interface SitePage {
 export const CLAIMS: Record<ClaimKey, { path: string; label: string; short: string; line: string }> = {
   ai: { path: '/ai-seo-services', label: 'AI SEO services', short: 'AI Search', line: 'Get your company named in ChatGPT and Google AI answers.' },
   reddit: { path: '/reddit-marketing-services', label: 'Reddit marketing services', short: 'Reddit', line: 'Get real people on Reddit recommending your brand, without bans.' },
-  local: { path: '/local-seo-services', label: 'Local SEO services', short: 'Local SEO', line: 'Get your business into the map pack and the AI answer, at a fixed price.' },
+  local: { path: '/local-seo-services', label: 'Local SEO services', short: 'Local SEO', line: 'Get your business into the map pack and the AI answer.' },
   seo: { path: '/seo-services-israel', label: 'SEO freelancer services', short: 'SEO Services', line: 'Get more leads and sales from Google.' },
 };
 
@@ -55,9 +55,9 @@ export const SITE_PAGES: SitePage[] = [
   // leaves: Reddit
   { path: '/reddit-posting-service', label: 'Reddit posting service', type: 'leaf', claim: 'reddit', updated: D },
   // leaves: local
-  { path: '/find-my-target', label: 'Target Finder ($20)', type: 'leaf', claim: 'local', updated: D },
-  { path: '/local-demand-capture-blueprint', label: 'Local Demand Capture Blueprint ($250)', type: 'leaf', claim: 'local', updated: D },
-  { path: '/local-authority-system', label: 'Local Authority System ($2,000)', type: 'leaf', claim: 'local', updated: D },
+  { path: '/find-my-target', label: 'Target Finder', type: 'leaf', claim: 'local', updated: D },
+  { path: '/local-demand-capture-blueprint', label: 'Local Demand Capture Blueprint', type: 'leaf', claim: 'local', updated: D },
+  { path: '/local-authority-system', label: 'Local Authority System', type: 'leaf', claim: 'local', updated: D },
   { path: '/google-business-profile-seo', label: 'Google Business Profile optimization', type: 'leaf', claim: 'local', updated: D },
   // leaves: SEO
   { path: '/b2b-seo-israel', label: 'B2B SEO', type: 'leaf', claim: 'seo', updated: D },

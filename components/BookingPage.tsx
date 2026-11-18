@@ -6,7 +6,7 @@ import { ProtectedForm } from './ProtectedForm';
 // His rule (2026-11-18): nobody books a meeting directly. They message first; he sets up a call if it fits.
 // The old calendar embed (book.israelseofreelancer.com) was removed the same day because that server no longer answers.
 const TITLE = 'Talk to Zechariah Tokar | SEO Consultation';
-const DESCRIPTION = 'Message Zechariah Tokar about your website, SEO, AI search or Reddit. A paid SEO consultation or audit is $250.';
+const DESCRIPTION = 'Message Zechariah Tokar about your website, SEO, AI search or Reddit. Consultations and audits are paid.';
 
 export const BookingPage: React.FC = () => {
   useEffect(() => { updatePageSEO({ title: TITLE, description: DESCRIPTION, path: '/book', image: '/images/zechariah-tokar-outdoors.webp' }); }, []);
@@ -20,7 +20,7 @@ export const BookingPage: React.FC = () => {
           <div><dt>Step 1</dt><dd>Send me your site and what you need</dd></div>
           <div><dt>Step 2</dt><dd>I reply and tell you if I can help</dd></div>
           <div><dt>Step 3</dt><dd>If it fits, we set a time to talk</dd></div>
-          <div><dt>Consultation or audit</dt><dd>$250</dd></div>
+          <div><dt>Consultation or audit</dt><dd>Paid. Message me first.</dd></div>
         </dl>
       </div></section>
       <section id="contact" className="sec"><div className="wrap cols">
