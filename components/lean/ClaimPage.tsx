@@ -172,7 +172,7 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
         <p className="lead">{rich(v.answer)}</p>
         <div className="actions">
           <RbBtn href={primary.href} external={primary.external}>{primary.label}</RbBtn>
-          {results?.id ? <RbBtn href={`#${results.id}`} ghost>See results</RbBtn> : <RbBtn href="/book" ghost>Book a call</RbBtn>}
+          {results?.id ? <RbBtn href={`#${results.id}`} ghost>See results</RbBtn> : <RbBtn href="#included" ghost>See what you get</RbBtn>}
         </div>
         <p className="faces"><span>{FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
         <dl className="glance">{c.glance.slice(0, 4).map(([k, val]) => <div key={k}><dt>{k}</dt><dd>{rich(val)}</dd></div>)}</dl>
@@ -183,7 +183,7 @@ export const ClaimPage: React.FC<{ content: ClaimContent; version?: 'A' | 'C'; l
         <div>
           <h2>How do I start?</h2>
           <p className="ans">{c.formTitle}</p>
-          <p className="sub">{c.formBody} Prefer to talk? <NavLink to="/book">Book a 30-minute call.</NavLink></p>
+          <p className="sub">{c.formBody} Want to talk? Message me first. If it’s a fit, I’ll set up a quick call.</p>
         </div>
         <div className="rbform">
           <ProtectedForm

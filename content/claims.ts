@@ -78,8 +78,8 @@ const ai: Block[] = [
   ], after: 'Only need one part? [ChatGPT SEO](/chatgpt-seo-services), [page rewrites for AI answers](/geo-content-optimization), [AI visibility tracking](/ai-visibility-tracking-services) or [ChatGPT ads setup](/chatgpt-ads-management).' },
   { kind: 'table', id: 'plans', h2: 'How much does AI SEO cost?', answer: 'It depends on what you need. Four ways to work with me.', head: ['Option', 'What you get', 'Price'], rows: [
     ['[Monthly AI SEO plan](/ai-seo-monthly)', 'My AI system runs your SEO every month: pages, links, Reddit, your Google profile and AI answer checks.', MONTHLY],
-    ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', 'Priced after I look at your site'],
-    ['Consultation', 'A call about your site and your plan. Good for teams that do the work themselves.', '[Book a call](/book)'],
+    ['[AI visibility audit](/ai-visibility-audit)', 'One time. Where AI names you, where it skips you, and the fix list.', '$250'],
+    ['Consultation', 'A paid session on your site and your plan. Message me first so I can see if it’s a fit.', '$250'],
     ['Custom plan', 'Bigger sites, more locations, tougher markets.', 'Priced after I look at your site'],
   ] },
   SYSTEM,
@@ -93,7 +93,7 @@ const ai: Block[] = [
     { id: 'answer-engine-optimization', q: 'Is AI SEO different from traditional SEO?', a: 'Same base. AI search and a regular search engine pull from the same places: pages that rank, Reddit threads and reviews. Answer engine optimization (AEO) and generative engine optimization (GEO) are names for the same job.' },
     { q: 'Can ChatGPT do my SEO?', a: 'AI tools can write. They can’t tell you what’s working. I’ve seen owners burn down their site with AI slop and get 0 leads.' },
     { q: 'Can you guarantee ChatGPT will name my business?', a: 'No. Nobody controls an AI answer. I fix your pages and what the web says about you, then check every month if it’s working.' },
-    { id: 'consultant', q: 'Can I hire you as an AI SEO consultant only?', a: 'Yes. Book a call. I look at your site, tell you what to fix first, and your team does the work.' },
+    { id: 'consultant', q: 'Can I hire you as an AI SEO consultant only?', a: 'Yes. A consultation is $250. Message me first. I look at your site, tell you what to fix first, and your team does the work.' },
   ] },
 ];
 
@@ -207,7 +207,7 @@ export const CLAIM_PAGES: Record<string, ClaimContent> = {
       ['Covers', 'ChatGPT, Google AI Overviews, Google search'],
       ['Best for', 'Local businesses and Shopify stores'],
       ['Monthly plan', MONTHLY],
-      ['Also', 'Audits, consulting, custom plans'],
+      ['Audit or consultation', '$250'],
     ],
     serviceType: 'AI search optimization',
     formSubject: 'New Inquiry: AI SEO services', formService: 'AI SEO services',

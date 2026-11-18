@@ -16,11 +16,11 @@ const audit: ClaimContent = {
     ['You get', 'Your buyer questions checked, the sources behind each answer, a short fix list'],
     ['AI checked', 'ChatGPT, Gemini, Perplexity, Google AI Overviews'],
     ['Type', 'One time. No monthly plan needed.'],
-    ['Price', QUOTED],
+    ['Price', '$250'],
   ],
   serviceType: 'AI visibility audit',
   formSubject: 'New Inquiry: AI visibility audit', formService: 'AI visibility audit',
-  formTitle: 'Send me your site and the question you want AI to name you for.', formBody: 'You get a reply with a price and the first thing the audit will check.',
+  formTitle: 'Send me your site and the question you want AI to name you for.', formBody: 'You get a reply with the first thing the audit will check.',
   pick: 'A',
   versions: one({
     answer: 'I show you where AI names your business, where it skips you, and what to fix first.',
@@ -40,7 +40,7 @@ const audit: ClaimContent = {
         ['Never finds your service page', 'Indexing, access and the links to that page', 'Fix discovery before buying content'],
       ] },
       { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
-        { q: 'What do you need for a price?', a: 'Your website, your main competitors, the services that matter most, and two or three questions you want AI to name you for.' },
+        { q: 'How much does an AI visibility audit cost?', a: '$250. To start I need your website, your main competitors, the services that matter most, and two or three questions you want AI to name you for.' },
         { q: 'How is it different from a technical SEO audit?', a: 'A technical audit asks if Google can crawl and index your site. This one asks why AI recommends someone else. The fixes often overlap, so I scope both together when you need both.' },
         { q: 'What happens after the audit?', a: 'You can fix it yourself, or I do it on the [monthly AI SEO plan](/ai-seo-monthly). Either way you can [track it](/how-to-track-ai-search-visibility) with the same questions. More in the [AI answers guides](/ai-answers).' },
       ] },
@@ -268,7 +268,7 @@ const chatgptSeo: ClaimContent = {
     ['You get', 'Your brand named when buyers ask ChatGPT'],
     ['The work', 'Clearer pages, the sources ChatGPT reads, a monthly re-check'],
     ['Monthly plan', MONTHLY],
-    ['One time', 'An [audit](/ai-visibility-audit), priced after I look'],
+    ['One time', 'An [audit](/ai-visibility-audit) for $250'],
   ],
   serviceType: 'ChatGPT search optimization',
   formSubject: 'New Inquiry: ChatGPT SEO services', formService: 'ChatGPT SEO services',
@@ -394,5 +394,285 @@ const wordpressSeo: ClaimContent = {
   }),
 };
 
-export const LEAF_PAGES: ClaimContent[] = [audit, geo, tracking, ads, las, b2b, chatgptSeo, ecommerceSeo, wordpressSeo];
+/* ================================================================== Second batch (2026-11-18): pages that used the older templates.
+   Facts come from the old page records in constants.tsx (SERVICE_SPOKES, SERVICE_DATA), rewritten short and first person. */
+
+const leaf = (p: {
+  claim: ClaimContent['claim']; path: string; title: string; description: string; h1: string; serviceType: string;
+  glance: [string, string][]; answer: string; formTitle: string; formBody?: string; blocks: Block[];
+}): ClaimContent => ({
+  claim: p.claim, path: p.path, title: p.title, description: p.description, h1: p.h1, photo: SHARE, glance: p.glance,
+  serviceType: p.serviceType, formSubject: `New Inquiry: ${p.serviceType}`, formService: p.serviceType,
+  formTitle: p.formTitle, formBody: p.formBody || 'You get a reply with the practical next step.', pick: 'A',
+  versions: one({ answer: p.answer, blocks: p.blocks }),
+});
+
+const saas = leaf({
+  claim: 'seo', path: '/saas-seo', h1: 'SaaS SEO', serviceType: 'SaaS SEO',
+  title: 'SaaS SEO | Turn Software Searches Into Demos',
+  description: 'SaaS SEO that turns search into demos and signups: comparison, alternatives, pricing and use-case pages, plus AI search visibility, for software sold in the US.',
+  glance: [['For', 'B2B SaaS that wants demos and signups from search'], ['I build', 'Comparison, alternatives, pricing and use-case pages'], ['Also', 'ChatGPT and Google AI naming your tool'], ['Price', QUOTED]],
+  answer: 'I build the pages where software buyers decide. Then I turn that traffic into demos.',
+  formTitle: 'Send me your SaaS site and the buyer search you most want to win.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'What do clients say?', items: [RES.sean, RES.rivka, RES.yehudah] },
+    { kind: 'text', id: 'included', h2: 'What does SaaS SEO include?', answer: 'The searches closest to a signup or a demo. Then the content that wins them.', list: [
+      'Buyer-intent pages: comparisons, alternatives, pricing and use cases',
+      'Keyword research mapped to your real buyer, not vanity volume',
+      'Technical SEO, so Google can crawl and trust a fast-moving app',
+      'AI search visibility, so ChatGPT and Google AI answers name your tool',
+      'Internal links that move readers from blog to product',
+      'A Search Console review to find pages one fix away from ranking',
+    ] },
+    { kind: 'text', id: 'fit', h2: 'Who is SaaS SEO for?', answer: 'Founders and marketers who want pipeline from search. Not a traffic chart.', lines: [
+      'Most SaaS sites rank for soft blog terms and miss the pages where buyers decide.',
+      'Not included: mass blog posts no buyer reads, or thin auto-generated pages.',
+    ] },
+    { kind: 'faq', id: 'faq', h2: 'More questions SaaS teams ask', items: [
+      { q: 'How is SaaS SEO different from regular SEO?', a: 'It targets the searches buyers run right before they pick a tool: comparisons, alternatives and pricing. The goal is demos and signups, not blog traffic.' },
+      { q: 'How long until SaaS SEO drives pipeline?', a: 'Buyer-intent pages can move within a few months, because the searches are less crowded. Broader terms take longer. I start with the pages closest to a signup.' },
+      { q: 'Do you work with SaaS companies selling into the US from abroad?', a: 'Yes. Many of my clients are based outside the US and sell into it. I write in native US English.' },
+      { q: 'Can SaaS SEO help us show up in AI answers?', a: 'Yes. When buyers ask ChatGPT which tool to use, the answer pulls from clear pages and real discussions. I build both. See [B2B SEO](/b2b-seo-israel) and [cybersecurity SEO](/cybersecurity-seo).' },
+    ] },
+  ],
+});
+
+const cyber = leaf({
+  claim: 'seo', path: '/cybersecurity-seo', h1: 'Cybersecurity SEO', serviceType: 'Cybersecurity SEO',
+  title: 'Cybersecurity SEO | Reach Security Buyers and CISOs',
+  description: 'Cybersecurity SEO that reaches security buyers and CISOs: comparison, category and use-case pages, plus AI search visibility, for security companies selling into the US.',
+  glance: [['For', 'Security companies selling into the US'], ['I build', 'Comparison, category and use-case pages'], ['Also', 'AI answers naming your product'], ['Price', QUOTED]],
+  answer: 'Security buyers research hard and trust slowly. I build the pages that answer them.',
+  formTitle: 'Send me your security site and the buyer search you want to win.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'What do clients say?', items: [RES.yehudah, RES.sean, RES.rivka] },
+    { kind: 'text', id: 'included', h2: 'What does cybersecurity SEO include?', answer: 'The searches a security buyer runs before a shortlist.', list: [
+      'Buyer-intent pages: vendor comparisons, alternatives and category explainers',
+      'Content that speaks to CISOs and security teams in their language',
+      'Technical SEO and schema, so Google trusts a complex security site',
+      'AI search visibility, so AI answers name your product as a safe option',
+      'Links earned from real security sources',
+      'A Search Console review to find security terms within reach',
+    ] },
+    { kind: 'text', id: 'fit', h2: 'Who is cybersecurity SEO for?', answer: 'Security founders and marketers who lose deals to bigger names in search.', lines: [
+      'Most security sites publish only news and threat blogs. The comparisons and clear category answers are missing.',
+      'Not included: fear-based fluff, or thin pages that cost you trust.',
+    ] },
+    { kind: 'faq', id: 'faq', h2: 'More questions security teams ask', items: [
+      { q: 'Can SEO reach CISOs?', a: 'Yes. CISOs and their teams search for comparisons, categories and proof before they shortlist. Pages that answer those questions put you in front of them at the right moment.' },
+      { q: 'Can we rank against bigger vendors?', a: 'You won’t outspend the giants. You can win the buyer searches they cover poorly: niche use cases, honest comparisons and clear category answers.' },
+      { q: 'Will this help us appear in AI answers?', a: 'Yes. When buyers ask AI which security tool fits, the answer pulls from clear pages and trusted discussions. I build both. See [B2B SEO](/b2b-seo-israel) and [SaaS SEO](/saas-seo).' },
+    ] },
+  ],
+});
+
+const shopify = leaf({
+  claim: 'seo', path: '/shopify-seo', h1: 'Shopify SEO', serviceType: 'Shopify SEO',
+  title: 'Shopify SEO Consultant | Collections and Products That Rank',
+  description: 'Shopify SEO: collection pages, product pages, technical cleanup and Google Shopping, so your store sells more from Google. ZStander: Google sales up 300%.',
+  glance: [['For', 'Shopify stores with products that should already show up in Google'], ['I fix', 'Collections, products, links, schema'], ['Result', 'ZStander: Google sales up 300%'], ['Price', 'Priced after I look at your store']],
+  answer: 'I get your Shopify collections and products found in Google.',
+  formTitle: 'Send me your Shopify store and the product category you care about most.',
+  formBody: 'You get a reply with the first pages to fix.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Does Shopify SEO work? Here are my clients.', items: [RES.zstanderSales, RES.zstander, RES.sean], after: 'The full story: [ZStander case study](/case-studies/zstander-shopify-seo).' },
+    { kind: 'text', id: 'included', h2: 'What does Shopify SEO include?', answer: 'Shopify SEO usually fails in the small places. I fix those first.', list: [
+      'Collection pages: real copy on pages that had only a title and a product grid',
+      'Product titles and metadata that match how buyers shop',
+      'Indexing and canonical checks, so duplicate product URLs stop competing',
+      'Internal links between products and collections',
+      'A Search Console review to find the searches you almost rank for',
+    ], after: 'Product feed problems? See [Google Merchant Center](/google-merchant-center-seo). Not on Shopify? See [ecommerce SEO](/ecommerce-seo-services).' },
+    { kind: 'faq', id: 'faq', h2: 'More questions store owners ask', items: [
+      { q: 'How much does Shopify SEO cost?', a: 'It depends on how many collections and products need work. Send me the store and I’ll price it.' },
+      { q: 'Why isn’t my Shopify store showing up in Google?', a: 'Usually thin collection pages, duplicate product signals, weak internal links, missing schema, or page words that don’t match how buyers search.' },
+      { q: 'Can you guarantee rankings or sales?', a: 'No. Nobody controls Google. I work on the pages that sell and show you the sales from Google.' },
+    ] },
+  ],
+});
+
+const gmc = leaf({
+  claim: 'seo', path: '/google-merchant-center-seo', h1: 'Google Merchant Center help', serviceType: 'Google Merchant Center',
+  title: 'Google Merchant Center SEO | Fix the Shopping Feed',
+  description: 'Google Merchant Center and product feed cleanup for stores that depend on Google Shopping: feed fields, product titles, disapproved products and landing pages.',
+  glance: [['For', 'Stores with feed errors or products missing from Google Shopping'], ['I fix', 'Feed fields, titles, landing pages, policy issues'], ['Result', 'One client fix: under 10 hours'], ['Price', 'Priced after I look at your store']],
+  answer: 'I fix the Merchant Center issues that keep your products out of Google.',
+  formTitle: 'Send me your store and the Merchant Center issue that matters most.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Does it work? Here are my clients.', items: [RES.sean, RES.zstanderSales] },
+    { kind: 'text', id: 'included', h2: 'What does Merchant Center help include?', answer: 'It’s not only ads. Your product data decides how you show up across Google.', list: [
+      'A review of your feed fields',
+      'Product title cleanup',
+      'Landing page checks, so the page matches the feed',
+      'Shopping and organic product visibility, looked at together',
+      'Merchant Center issues sorted by what to fix first',
+    ], after: 'Store pages need work too? See [Shopify SEO](/shopify-seo) and [ecommerce SEO](/ecommerce-seo-services).' },
+    { kind: 'faq', id: 'faq', h2: 'More questions store owners ask', items: [
+      { q: 'Why are my products disapproved in Merchant Center?', a: 'Common reasons: the landing page doesn’t match the feed, missing or wrong feed fields, or a policy issue. I find which one and fix it.' },
+      { q: 'How much does it cost?', a: 'It depends on the feed and the number of products. Send me the store and I’ll price it.' },
+    ] },
+  ],
+});
+
+const gbp = leaf({
+  claim: 'local', path: '/google-business-profile-seo', h1: 'Google Business Profile optimization', serviceType: 'Google Business Profile optimization',
+  title: 'Google Business Profile SEO | Win the Local Map Pack',
+  description: 'Google Business Profile optimization for local businesses: categories, services, reviews, photos, citations and local pages, so you show up in Google Maps.',
+  glance: [['For', 'Local businesses that want to show up in Google Maps'], ['I fix', 'Categories, services, reviews, photos, citations'], ['Result', 'Yonatan Vinnik: #1 on Maps in one week'], ['Price', 'From $20. See the three local offers.']],
+  answer: 'I set up your Google Business Profile so you show up in Maps for the searches that bring calls.',
+  formTitle: 'Send me your business profile and the city or service you want to be found for.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Does it work? Here are my local clients.', items: [RES.yonatan, RES.brettMap, RES.behfarLocal] },
+    { kind: 'text', id: 'included', h2: 'What does Google Business Profile optimization include?', answer: 'Local SEO is a trust problem. Google needs a clean profile and proof.', list: [
+      'Your categories and services, checked and filled out',
+      'Review and photo priorities',
+      'The same name, address and phone everywhere it’s listed',
+      'Local page recommendations for your website',
+      'A check of the Google Maps searches you want to win',
+    ], after: 'This is part of my [local SEO services](/local-seo-services), with fixed prices from $20. I build the whole thing in the [Local Authority System](/local-authority-system).' },
+    { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+      { q: 'How long does it take to rank in Google Maps?', a: 'One client was #1 on Google Maps in a week. Most take longer. No guarantees. Nobody controls Google.' },
+      { q: 'Do I need a website too?', a: 'A profile can rank alone. A page for each main service usually makes it stronger.' },
+    ] },
+  ],
+});
+
+const redditPosting = leaf({
+  claim: 'reddit', path: '/reddit-posting-service', h1: 'Reddit posting service', serviceType: 'Reddit posting service',
+  title: 'Reddit Posting Service | Posts That Do Not Get Removed',
+  description: 'Reddit posting service: I check if the post should go up at all, then write it to fit the subreddit, review it and line up the page it links to.',
+  glance: [['You get', 'Posts planned, written and checked one at a time'], ['First step', 'I check if posting is smart at all'], ['Never', 'Bulk posting, fake accounts, link drops'], ['Price', 'Priced after I look at your brand']],
+  answer: 'I write Reddit posts that fit the subreddit and don’t get removed.',
+  formTitle: 'Send me the draft idea, the subreddit and the page you want the post to support.',
+  formBody: 'You get a reply on whether the post should go up, and how.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Does it work? Here are real posts.', items: [RES.reddit405, RES.reddit12] },
+    { kind: 'text', id: 'included', h2: 'What does the Reddit posting service include?', answer: 'Most posting services start with a draft. I start with: should this be posted at all?', list: [
+      'Picking the angle of the post',
+      'Writing the title and the body',
+      'Checking the subreddit: rules, thread history, likely reaction',
+      'A review before anything goes public',
+      'Making sure the page you link to answers the same question',
+    ], after: 'If the idea is too promotional, too thin, or pointed at the wrong page, I’ll say so before it goes live. Want the full plan? See [Reddit marketing services](/reddit-marketing-services).' },
+    { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+      { q: 'Why do Reddit posts get removed?', a: 'Usually the post reads like an ad, breaks a subreddit rule, or comes from an account with no history. More in the [Reddit guides](/reddit-guides).' },
+      { q: 'Do you post from fake accounts?', a: 'No. No fake accounts, no fake engagement, no bulk posting.' },
+    ] },
+  ],
+});
+
+const youtube = leaf({
+  claim: 'seo', path: '/youtube-seo', h1: 'YouTube SEO', serviceType: 'YouTube SEO',
+  title: 'YouTube SEO Consultant | Make Your Videos Findable',
+  description: 'YouTube SEO: video topics, titles, descriptions, chapters and the pages that support them, so your videos get found in YouTube and Google.',
+  glance: [['For', 'Businesses that already make videos'], ['I fix', 'Topics, titles, descriptions, chapters'], ['Shows in', 'YouTube and Google video results'], ['Price', 'Priced after I look at your channel']],
+  answer: 'I make the videos you already have findable in YouTube and Google.',
+  formTitle: 'Send me your channel and the topic you want to be found for.',
+  blocks: [
+    { kind: 'text', id: 'included', h2: 'What does YouTube SEO include?', answer: 'YouTube SEO starts before you upload.', list: [
+      'Video topic research: what people search and what your video answers',
+      'Title and description cleanup',
+      'Chapter recommendations',
+      'A check of the Google results where videos show',
+      'Blog or service page ideas that support each video',
+    ] },
+    SYSTEM,
+    { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+      { q: 'Do you make the videos?', a: 'This service is about getting found: the topic, the title, the description and the chapters. I publish SEO videos myself and use YouTube as part of my own search work.' },
+      { q: 'How much does YouTube SEO cost?', a: 'It depends on how many videos. Send me the channel and I’ll price it.' },
+    ] },
+  ],
+});
+
+const programmatic = leaf({
+  claim: 'seo', path: '/programmatic-seo', h1: 'Programmatic SEO', serviceType: 'Programmatic SEO',
+  title: 'Programmatic SEO | Useful Pages at Scale, Not Doorway Spam',
+  description: 'Programmatic SEO: page templates built on real data, with internal links and indexing planned, so many pages rank without becoming thin spam.',
+  glance: [['For', 'Companies with real data: locations, categories, products, integrations'], ['I plan', 'Templates, data fields, links, indexing'], ['Start', 'A small pilot batch'], ['Price', QUOTED]],
+  answer: 'I build many useful pages from one template and your real data.',
+  formTitle: 'Send me the idea, your data source and one example page you want to scale.',
+  blocks: [
+    { kind: 'text', id: 'included', h2: 'What does programmatic SEO include?', answer: 'It only works when the page type deserves to exist.', list: [
+      'The page template strategy',
+      'An indexing risk review',
+      'Internal link structure',
+      'Which data fields each page needs',
+      'A pilot batch before the full build',
+    ] },
+    { kind: 'text', id: 'fit', h2: 'Who is programmatic SEO for?', answer: 'Companies with data that answers the same buyer question many times.', lines: [
+      'Locations, categories, products, integrations or use cases.',
+      'Thin generated pages create risk. A useful template answers a repeated question with specific data and a clear next step.',
+    ] },
+    SYSTEM,
+    { kind: 'faq', id: 'faq', h2: 'More questions teams ask', items: [
+      { q: 'Is programmatic SEO spam?', a: 'It can be. Pages with nothing specific on them are. Pages built on real data that answer a real question are not.' },
+      { q: 'How much does it cost?', a: 'It depends on the data and the number of templates. Send me the idea and I’ll price it.' },
+    ] },
+  ],
+});
+
+const technical = leaf({
+  claim: 'seo', path: '/technical-seo-audit', h1: 'Technical SEO audit', serviceType: 'Technical SEO audit',
+  title: 'Technical SEO Audit | A Short List of What to Fix First',
+  description: 'A technical SEO audit covering crawling, indexing, Google Search Console, site structure, metadata, schema and Core Web Vitals, with a fix list in order.',
+  glance: [['You get', 'A short fix list, in order'], ['I check', 'Crawling, indexing, structure, metadata, schema, speed'], ['Tools', 'Search Console, Screaming Frog, GA4, PageSpeed Insights'], ['Price', '$250']],
+  answer: 'I tell you what to fix first. Not a giant PDF.',
+  formTitle: 'Send me your site. I’ll check where technical SEO is blocking you.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Is a technical SEO audit worth it?', items: [RES.behfarLocal, RES.brettSaved, RES.founder] },
+    { kind: 'text', id: 'included', h2: 'What does a technical SEO audit include?', answer: 'Can Google reach the pages that matter? Is something keeping them out of search?', list: [
+      'A Google Search Console review',
+      'A full crawl of the site with Screaming Frog',
+      'Indexing: robots.txt, noindex rules, sitemaps, redirects and canonicals',
+      'Site structure and internal links',
+      'Metadata, schema and Core Web Vitals',
+      'A fix list in order of impact, written so a founder or a developer can use it',
+    ] },
+    { kind: 'steps', id: 'how-it-works', h2: 'How does the audit work?', answer: 'Crawling and indexing problems come first.', steps: [
+      { h: 'Review Search Console', p: 'What Google found, and what it left out.' },
+      { h: 'Crawl the site', p: 'Then I follow the important page paths myself.' },
+      { h: 'Check indexing and templates', p: 'The pages closest to revenue first.' },
+      { h: 'Put the fixes in order', p: 'The few that can change results go on top.' },
+    ] },
+    { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+      { q: 'How much does a technical SEO audit cost?', a: '$250. Message me first so I can see if it’s a fit.' },
+      { q: 'Can’t a free audit tool do this?', a: 'A tool can scan hundreds of URLs and flag problems. That’s raw data. The hard part is knowing which issues touch rankings and revenue, and which aren’t worth the developer time.' },
+      { q: 'When should I run another audit?', a: 'After a migration, a redesign, a big content launch, a traffic drop or a template change.' },
+      { q: 'Can you make the fixes too?', a: 'Yes. See [WordPress SEO](/wordpress-seo-services) and [Shopify SEO](/shopify-seo), or the full [SEO freelancer](/seo-services-israel) page.' },
+    ] },
+  ],
+});
+
+const writing = leaf({
+  claim: 'seo', path: '/content-marketing-for-seo', h1: 'SEO writing services', serviceType: 'SEO writing services',
+  title: 'SEO Writing Services | Pages That Rank and Convert',
+  description: 'SEO writing services: service pages, buyer-focused articles, content refreshes and briefs, written around buyer intent, proof and a clear next step.',
+  glance: [['You get', 'Service pages, buyer articles, refreshes, briefs'], ['Built on', 'Search intent, your proof, a clear next step'], ['Sold', 'Per page or per batch'], ['Price', QUOTED]],
+  answer: 'I write pages that rank, explain and get the buyer to act. Not blog volume.',
+  formTitle: 'Send me the page or the keyword you want to improve.',
+  blocks: [
+    { kind: 'results', id: 'results', h2: 'Does it work? Here are my clients.', items: [RES.therapy, RES.zstanderSales, RES.rivka] },
+    { kind: 'text', id: 'included', h2: 'What do SEO writing services include?', answer: 'A page can rank and still fail if the offer is unclear.', list: [
+      'Service pages that make the offer and the next step clear',
+      'Buyer-focused articles that answer a question before a purchase',
+      'Refreshes of pages that already have a head start',
+      'SEO briefs for your own writers',
+      'Titles, meta descriptions and internal links',
+    ] },
+    { kind: 'steps', id: 'how-it-works', h2: 'How do you decide what to write?', answer: 'I don’t start with a content calendar. I start with the page that should make money.', steps: [
+      { h: 'Check the search', p: 'The results, the pages that rank, and your Search Console.' },
+      { h: 'Pick the angle', p: 'What buyers still need that the ranking pages miss.' },
+      { h: 'Write for the buyer', p: 'Clear, short and useful. Search terms get added after the draft works.' },
+      { h: 'Add title, meta and links', p: 'So the page fits the rest of your site.' },
+    ] },
+    { kind: 'faq', id: 'faq', h2: 'More questions owners ask', items: [
+      { q: 'Do you use AI to write?', a: 'I use AI for research and speed. I don’t publish a first draft because it has the right terms in it. Every page gets verified facts, a real point of view and a quality check.' },
+      { q: 'Should I write new pages or fix old ones?', a: 'Often fixing wins. If Google already shows a page and it stopped earning clicks, I check the title, the opening answer, the proof and the path to your service.' },
+      { q: 'Do you also do video?', a: 'Yes. See [YouTube SEO](/youtube-seo).' },
+    ] },
+  ],
+});
+
+export const LEAF_PAGES: ClaimContent[] = [audit, geo, tracking, ads, las, b2b, chatgptSeo, ecommerceSeo, wordpressSeo,
+  saas, cyber, shopify, gmc, gbp, redditPosting, youtube, programmatic, technical, writing];
 export type { Block };
