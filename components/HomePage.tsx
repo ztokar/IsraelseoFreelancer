@@ -4,6 +4,7 @@ import { HeadSEO, updatePageSEO } from '../utils/seo';
 import { FORMSPREE_ENDPOINT } from './ContactCTA';
 import { ProtectedForm } from './ProtectedForm';
 import { Block, RB_FACES, renderBlock, ScrollOrb, useRise } from './lean/ClaimPage';
+import { AskDemo, BuyerMap, Climb } from './lean/Motion';
 import { CLAIMS, ClaimKey, HUBS } from '../site-map';
 import { RES, SYSTEM } from '../content/claims';
 
@@ -45,12 +46,14 @@ export const HomePage: React.FC<{ version?: 'A' | 'C' }> = () => {
           <a className="btn ghost" href="#results">See results</a>
         </div>
         <p className="faces"><span>{RB_FACES.map((f) => <img key={f} src={`/images/clients/${f}.webp`} alt="" width={40} height={40} />)}</span>Trusted by 45+ brands</p>
+        <AskDemo />
       </div></section>
       <ScrollOrb />
       {renderBlock(RESULTS, 0)}
       <section id="services" className="sec"><div className="wrap">
         <h2>What do I do?</h2>
         <p className="ans widea">Four ways to get found. Pick the place your buyers look first.</p>
+        <BuyerMap />
         <div className="sibs four">
           {ORDER.map((k) => <NavLink key={k} to={CLAIMS[k].path} className="sib"><b>{CLAIMS[k].label}</b><span>{CLAIMS[k].line}</span></NavLink>)}
         </div>
@@ -71,6 +74,7 @@ export const HomePage: React.FC<{ version?: 'A' | 'C' }> = () => {
           <h2>How do I start?</h2>
           <p className="ans">Send me your site.</p>
           <p className="sub">I’ll look at it and tell you what I’d fix first. Want to talk? Message me first. If it’s a fit, I’ll set up a quick call.</p>
+          <Climb />
         </div>
         <div className="rbform">
           <ProtectedForm

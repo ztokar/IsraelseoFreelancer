@@ -159,14 +159,52 @@ body:has(:is(.rb,.rbskin)) .page-end a{color:var(--rb-accent)}
 }
 @media (prefers-reduced-motion:reduce){.rb .btn,.rb .sib{transition:none}}
 body:has(:is(.rb,.rbskin)) .gpnav .burger{background:transparent!important;border-color:var(--rb-line)!important}
-/* motion: the dropping dot under the hero, and result cards that rise in */
-/* the green ball rides down the right edge of the screen as the page scrolls (ScrollOrb sets --p 0..1 and --x) */
-.rb .orb{--p:0;--x:0px;position:fixed;z-index:30;right:clamp(7px,2.2vw,34px);top:calc(84px + var(--p) * (100vh - 124px));width:14px;height:14px;pointer-events:none;transform:translateX(var(--x));transition:transform .25s ease-out}
-.rb .orb i{display:block;width:14px;height:14px;border-radius:50%;background:var(--rb-accent);box-shadow:0 0 0 5px rgba(28,228,128,.14),0 0 22px 4px rgba(28,228,128,.45);animation:rb-bob 1.5s cubic-bezier(.5,0,.3,1) infinite}
-.rb .orb::before{content:"";position:absolute;left:6px;bottom:12px;width:2px;height:calc(var(--p) * 64px + 10px);border-radius:2px;background:linear-gradient(180deg,transparent,var(--rb-accent));opacity:.55}
-.rb .orb.moved i{animation:none}
+/* motion he picked 2026-11-18: result cards rise in, catch the light and lean to the mouse; the scroll ball draws a winding route */
+/* ScrollOrb builds the route in script: a fixed strip on the right edge, the ball follows the page scroll and each section is a stop */
+.rb .orb{position:fixed;z-index:30;right:clamp(2px,1.4vw,22px);top:84px;pointer-events:none;opacity:0;transition:opacity .3s}
+.rb .orb.ready{opacity:1}
+.rb .orb svg{display:block;overflow:visible}
+.rb .orb path{fill:none;stroke-width:2;stroke-linecap:round}
+.rb .orb .track{stroke:var(--rb-line)}
+.rb .orb .done{stroke:var(--rb-accent)}
+.rb .orb .stop{fill:var(--rb-canvas);stroke:var(--rb-line);stroke-width:2;transition:fill .3s,stroke .3s}
+.rb .orb .stop.on{fill:var(--rb-accent);stroke:var(--rb-accent)}
+.rb .orb .ball{fill:var(--rb-accent);stroke:rgba(28,228,128,.18);stroke-width:9}
+.rb .orb:not(.moved) .ball{animation:rb-bob 1.5s cubic-bezier(.5,0,.3,1) infinite}
 @keyframes rb-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(16px)}}
-@media (max-width:820px){.rb .orb,.rb .orb i{width:10px;height:10px}.rb .orb{right:3px}.rb .orb::before{left:4px}}
 .rb.anim .card{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.23,1,.32,1)}
 .rb.anim .card.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rb .orb i{animation:none}.rb .orb{transition:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
+.rb .card{position:relative;--mx:50%;--my:0%}
+.rb .card::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(340px circle at var(--mx) var(--my),rgba(28,228,128,.2),transparent 65%);opacity:0;transition:opacity .25s}
+@media (hover:hover){.rb .card:hover::after{opacity:1}}
+@media (hover:none){.rb .card::after{inset:0 auto 0 -70%;width:60%;background:linear-gradient(100deg,transparent,rgba(28,228,128,.15),transparent);opacity:1;animation:rb-sheen 6s ease-in-out infinite}}
+@keyframes rb-sheen{0%,60%{left:-70%}100%{left:120%}}
+/* home graphics: the search that types itself, the buyer map, the climb to #1 (components/lean/Motion.tsx) */
+.rb .ask{width:min(540px,100%);margin:clamp(30px,4vw,44px) auto 0;text-align:left}
+.rb .ask .tag{display:inline-block;font:600 13px/1 var(--rb-display);color:var(--rb-canvas);background:var(--rb-accent);border-radius:999px;padding:7px 12px;margin-bottom:12px}
+.rb .ask .box{display:flex;align-items:center;gap:12px;border:1px solid var(--rb-accent);border-radius:999px;padding:0 20px;min-height:60px;background:var(--rb-surface);font-size:clamp(16px,2vw,20px);color:var(--rb-ink)}
+.rb .ask .box svg{flex:none;color:var(--rb-accent)}
+.rb .ask .q{min-width:0;white-space:nowrap;overflow:hidden}
+.rb .ask .q::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--rb-accent);margin-left:2px;vertical-align:-.18em;animation:rb-blink 1s steps(1) infinite}
+@keyframes rb-blink{50%{opacity:0}}
+.rb .ask .reply{margin-top:12px;border:1px solid var(--rb-line);border-radius:18px;padding:14px 20px;background:var(--rb-surface);opacity:0;transform:translateY(10px);transition:opacity .45s,transform .45s cubic-bezier(.23,1,.32,1)}
+.rb .ask .reply.on{opacity:1;transform:none}
+.rb .ask .reply small{display:block;color:var(--rb-soft);font-size:14px}
+.rb .ask .reply b{font:700 clamp(22px,3vw,30px)/1.2 var(--rb-display);color:var(--rb-ink)}
+.rb .ask .reply em{font-style:normal;color:var(--rb-accent)}
+.rb .hubmap{display:block;width:min(500px,100%);height:auto;margin:clamp(24px,4vw,40px) auto 0}
+.rb .hubmap .wire{fill:none;stroke:var(--rb-line);stroke-width:2}
+.rb .hubmap .pill{fill:var(--rb-surface);stroke:var(--rb-line)}
+.rb .hubmap text{font:600 19px var(--rb-display);fill:var(--rb-ink);text-anchor:middle}
+.rb .hubmap .core{fill:var(--rb-canvas);stroke:var(--rb-accent);stroke-width:2}
+.rb .hubmap .ring{fill:none;stroke:var(--rb-accent);stroke-width:2;transform-origin:210px 180px;animation:rb-ring 2.6s ease-out infinite}
+.rb .hubmap .me{fill:var(--rb-accent)}
+@keyframes rb-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+.rb .climb{position:relative;width:min(440px,100%);height:296px;margin-top:clamp(28px,4vw,40px)}
+.rb .climb .n{position:absolute;left:0;width:34px;height:48px;display:grid;place-items:center;font:700 18px var(--rb-display);color:var(--rb-soft)}
+.rb .climb .r{position:absolute;left:44px;right:0;top:0;height:48px;border:1px solid var(--rb-line);border-radius:14px;background:var(--rb-surface);display:flex;align-items:center;padding:0 16px;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.rb .climb .r i{display:block;height:10px;border-radius:6px;background:var(--rb-line)}
+.rb .climb .r.you{border-color:var(--rb-accent);background:linear-gradient(90deg,rgba(28,228,128,.18),var(--rb-surface));font:700 17px var(--rb-display);color:var(--rb-ink);z-index:2}
+@media (max-width:820px){.rb .orb{right:2px}.rb .orb .ball{stroke-width:5}}
+@media (max-width:640px){.rb .ask .q{white-space:normal}.rb .ask .box{border-radius:26px;padding:12px 18px;min-height:76px}}
+@media (prefers-reduced-motion:reduce){.rb .orb:not(.moved) .ball,.rb .card::after,.rb .ask .q::after,.rb .hubmap .ring{animation:none}.rb .hubmap .me{display:none}.rb .orb,.rb .climb .r,.rb .ask .reply{transition:none}.rb.anim .card{opacity:1;transform:none;transition:none}}
