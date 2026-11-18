@@ -5,14 +5,13 @@ import { Section, List } from './lean/Blocks';
 // Plain description of what the site's own code collects. Draft for Zechariah to confirm before it goes live.
 export const PrivacyPage: React.FC = () => (
   <div className="lp rbskin">
-    <HeadSEO title="Privacy" description="What israelseofreelancer.com collects when you send a form, book a call or buy an offer, and who processes it." path="/privacy" />
+    <HeadSEO title="Privacy" description="What israelseofreelancer.com collects when you send a form or buy an offer, and who processes it." path="/privacy" />
     <section className="lh"><div className="lwrap"><h1>Privacy</h1>
-      <p className="lh-answer">This site collects only what you send in a form, a booking or a payment, plus standard visit statistics. Zechariah Tokar runs the site and reads every message himself.</p>
+      <p className="lh-answer">This site collects only what you send in a form or a payment, plus standard visit statistics. Zechariah Tokar runs the site and reads every message himself.</p>
     </div></section>
     <Section h2="What is collected" answer="Only what you choose to send, and anonymous visit data.">
       <List items={[
-        '**Contact forms:** your website, email, the issue you describe and any message. Sent through Formspree and protected by Google reCAPTCHA.',
-        '**Bookings:** your name, email and the time you pick, handled by the booking page at book.israelseofreelancer.com.',
+        '**Contact forms:** your website, email, the issue you describe and any message. Sent through Formspree and protected by Google reCAPTCHA. The form also reads your country from your connection to block spam.',
         '**Payments:** offers are paid on Stripe. Card details go to Stripe, never to this site. After paying you fill in a Google Form with your project details.',
         '**Visit statistics:** Google Tag Manager loads Google Analytics and an X (Twitter) ads tag a few seconds after a page loads.',
       ]} />
